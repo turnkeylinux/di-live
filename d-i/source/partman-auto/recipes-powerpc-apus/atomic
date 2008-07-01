@@ -1,0 +1,31 @@
+partman-auto/text/atomic_scheme ::
+
+8 1 1 affs
+	$primary{ }
+	$bootable{ }
+	method{ affs } .
+
+128 512 256 ext3
+	$defaultignore{ }
+	$primary{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /boot }
+	options/relatime{ relatime } .
+
+500 10000 1000000000 ext3
+	$lvmok{ }
+	$primary{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ / }
+	options/relatime{ relatime } .
+
+96 512 300% linux-swap
+	$lvmok{ }
+	method{ swap }
+	format{ } .

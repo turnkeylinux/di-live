@@ -1,0 +1,67 @@
+Template: partman-ext3/progress_checking
+Type: text
+# :sl1:
+_Description: Checking the ext3 file system in partition #${PARTITION} of ${DEVICE}...
+
+Template: partman-ext3/check_failed
+Type: boolean
+# :sl2:
+_Description: Go back to the menu and correct errors?
+ The test of the file system with type ext3 in partition #${PARTITION}
+ of ${DEVICE} found uncorrected errors.
+ .
+ If you do not go back to the partitioning menu and correct these errors,
+ the partition will not be used at all.
+
+Template: partman-ext3/create_failed
+Type: error
+# :sl2:
+_Description: Failed to create a file system
+ The ext3 file system creation in partition
+ #${PARTITION} of ${DEVICE} failed.
+
+Template: partman-ext3/no_mount_point
+Type: boolean
+# :sl2:
+_Description: Do you want to return to the partitioning menu?
+ No mount point is assigned for the ext3 file system in partition
+ #${PARTITION} of ${DEVICE}.
+ .
+ If you do not go back to the partitioning menu and assign a mount point
+ from there, this partition will not be used at all.
+
+Template: partman-ext3/text/specify_mountpoint
+Type: text
+# :sl2:
+# This is an item in the menu "Action on the partition"
+_Description: Mount point:
+
+Template: partman-ext3/text/ext3
+Type: text
+# :sl1:
+# File system name (untranslatable in many languages)
+_Description: ext3
+
+Template: partman-ext3/options
+Type: multiselect
+# :sl2:
+# Note to translators : Please keep your translations of the choices
+# below a 65 columns limit (which means 65 characters
+# in single-byte languages)
+Choices-C: noatime, relatime, nodev, nosuid, noexec, ro, sync, usrquota, grpquota, user_xattr
+__Choices: noatime - do not update inode access times at each access, relatime - update inode access times relative to modify time, nodev - do not support character or block special devices, nosuid - ignore set-user-identifier or set-group-identifier bits, noexec - do not allow execution of any binaries, ro - mount the file system read-only, sync - all input/output activities occur synchronously, usrquota - user disk quota accounting enabled, grpquota - group disk quota accounting enabled, user_xattr - support user extended attributes
+# :sl2:
+_Description: Mount options:
+ Mount options can tune the behavior of the file system.
+
+Template: partman/filesystem_long/ext3
+Type: text
+# :sl2:
+# File system name
+_Description: Ext3 journaling file system
+
+Template: partman/filesystem_short/ext3
+Type: text
+# :sl1:
+# Short file system name (untranslatable in many languages)
+_Description: ext3
