@@ -12,7 +12,7 @@ Description: Would you like to restart now?
 Template: di-live/partman-failed-unmount
 Type: boolean
 Default: true
-_Description: Failed to unmount partitions
+Description: Failed to unmount partitions
  The installer needs to commit changes to partition tables, but cannot do so
  because partitions on the following mount points could not be unmounted:
  .
@@ -24,7 +24,7 @@ _Description: Failed to unmount partitions
 
 Template: di-live/partition-too-small
 Type: boolean
-_Description: Do you want to return to the partitioner?
+Description: Do you want to return to the partitioner?
  Some of the partitions you created are too small.  Please make the following
  partitions at least this large (in bytes):
  .
