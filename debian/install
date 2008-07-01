@@ -31,6 +31,9 @@ d-i/source/hw-detect/debian/hw-detect/bin/sysfs-update-devnames bin
 # partman
 d-i/source/partman-*/debian/partman-*/* .
 
+# partconf
+d-i/source/partconf/debian/partconf-*/* .
+
 # live-installer
 d-i/source/live-installer/src/print-inodes bin
 d-i/source/live-installer/support/rofs lib/live-installer/support
