@@ -1,0 +1,40 @@
+#!/bin/sh
+
+PIDFILE=/var/run/parted_server.pid
+if [ -e $PIDFILE ]; then
+    kill -9 $(cat $PIDFILE) >/dev/null
+    rm -f $PIDFILE
+    
+    #force auto-partitioning to be re-run
+    rm -rf /var/lib/partman
+fi
+
+#reset debconf for clean re-runs
+. /usr/share/debconf/confmodule
+
+db_reset partman-auto/init_automatically_partition
+db_reset partman-auto/automatically_partition
+db_reset partman-auto/select_disk
+db_reset partman-auto/select_disks
+db_reset partman-auto/text/use_device
+db_reset partman-auto/text/resize_use_free
+db_reset partman-auto/text/custom_partitioning
+db_reset partman-partitioning/confirm_resize
+db_reset partman-partitioning/confirm_new_label
+db_reset partman-partitioning/new_size
+db_reset partman/choose_partition
+db_reset partman/confirm
+db_reset partman/free_space
+db_reset partman/active_partition
+db_reset partman-partitioning/new_partition_size
+db_reset partman-partitioning/new_partition_type
+db_reset partman-partitioning/new_partition_place
+db_reset partman-target/choose_method
+db_reset partman-basicfilesystems/fat_mountpoint
+db_reset partman-basicfilesystems/mountpoint
+db_reset partman-basicfilesystems/mountpoint_manual
+db_reset partman/exception_handler
+db_reset partman/exception_handler_note
+
+PATH=/usr/lib/di-live/compat:$PATH /bin/partman
+
