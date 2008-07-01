@@ -1,0 +1,8 @@
+refer to d-i/source/*/debian/copyright for their respective copyright and license.
+
+the following code is loosly based on ubiquity 1.8.7
+    compat/
+    d-i/Makefile
+    additions/partman
+
+    
