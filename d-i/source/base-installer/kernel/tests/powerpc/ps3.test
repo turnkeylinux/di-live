@@ -1,0 +1,24 @@
+subarch ps3
+cpuinfo ps3.cpuinfo
+majors 2.6
+flavour cell
+kernel-2.6 \
+  linux-cell \
+  linux-image-cell
+usable \
+  linux-cell \
+  linux-image-cell \
+  linux-image-2.6.22-12-cell
+unusable \
+  linux-powerpc \
+  linux-powerpc-smp \
+  linux-powerpc64 \
+  linux-powerpc64-smp \
+  linux-image-powerpc \
+  linux-image-powerpc-smp \
+  linux-image-powerpc64 \
+  linux-image-powerpc64-smp \
+  linux-image-2.6.22-12-powerpc \
+  linux-image-2.6.22-12-powerpc-smp \
+  linux-image-2.6.22-12-powerpc64 \
+  linux-image-2.6.22-12-powerpc64-smp

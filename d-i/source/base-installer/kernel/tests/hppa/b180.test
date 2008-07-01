@@ -1,0 +1,11 @@
+cpuinfo b180.cpuinfo
+machine parisc
+majors 2.6
+flavour parisc
+kernel-2.6 \
+  linux-hppa32 \
+  linux-image-hppa32
+usable \
+  linux-hppa32
+unusable \
+  linux-hppa64

@@ -1,0 +1,13 @@
+subarch orion
+majors 2.6
+flavour orion
+kernel-2.6 linux-image-2.6-orion
+usable \
+  linux-image-2.6-orion \
+  linux-image-2.6.25-1-orion
+unusable \
+  linux-image-2.6-iop32x \
+  linux-image-2.6-netwinder \
+  linux-image-2.6-rpc \
+  linux-image-2.6-s3c2410 \
+  linux-image-2.6-ixp4xx
