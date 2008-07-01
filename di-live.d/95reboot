@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+db_fset di-live/reboot_now seen false
+
+db_input high di-live/reboot_now || true
+db_go || exit 10 # back to menu
+
+db_get di-live/reboot_now
+if [ "$RET" = "true" ]; then
+    reboot
+fi
+
+exit 0
+

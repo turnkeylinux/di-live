@@ -1,3 +1,9 @@
+Template: di-live/reboot_now
+Type: boolean
+Default: false
+Description: Would you like to restart now?
+ Installation is complete. You need to restart the computer in order to use the new installation.
+
 Template: di-live/partman-failed-unmount
 Type: boolean
 Default: true
