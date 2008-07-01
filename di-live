@@ -1,12 +1,78 @@
 #!/bin/sh
+set -e
 
-run_scripts()
+. /usr/share/debconf/confmodule
+
+info ()
+{
+    echo "di-live: $@" >> /var/log/di-live.log
+}
+
+get_choices()
+{
+    local choices
+    for script in $1/*; do
+        [ -x "$script" ] || continue
+
+        if [ "$choices" ]; then
+            choices="$choices, $(basename $script)"
+        else
+            choices="$(basename $script)"
+        fi
+    done
+    echo $choices
+}
+
+display_menu ()
+{
+    db_reset di-live/main_menu
+
+    db_subst di-live/main_menu CHOICES $(get_choices $1)
+    db_input high di-live/main_menu || true
+    db_go || exit 10
+
+    db_get di-live/main_menu
+    echo $RET
+}
+
+run_scripts ()
 {
     for script in $1/*; do
         [ -x "$script" ] || continue
-        . $script
+        if [ ! "$(basename $script)" \> "$last" ]; then
+            return 0
+        fi
+
+	info "executing script: $script"
+        . $script || return $? 
     done
+    return -1
 }
 
-run_scripts /usr/lib/di-live.d
+DIR=/usr/lib/di-live.d
+DEBIAN_PRIORITY_ORIG=DEBIAN_PRIORITY
+
+while [ true ]; do
+    if [ "$DEBIAN_PRIORITY" = "low" ] || [ "$DEBIAN_PRIORITY" = "medium" ]; then
+        choice=$(display_menu $DIR)
+        . $DIR/$choice || retcode=$?
+    else
+        run_scripts $DIR || retcode=$?
+    fi
+
+    info "retcode: $retcode"
+    case $retcode in
+        0)
+           last=$(basename $script)
+           DEBIAN_PRIORITY=$DEBIAN_PRIORITY_ORIG
+           ;;
+        *)
+	   if [ "$DEBIAN_PRIORITY_ORIG" != "low" ]; then
+               DEBIAN_PRIORITY=medium
+           fi
+           ;;
+    esac
+done
+
+exit 0
 

@@ -1,3 +1,8 @@
+Template: di-live/main_menu
+Type: select
+Choices: ${CHOICES}
+Description: Debian Installer Live Menu
+
 Template: di-live/reboot_now
 Type: boolean
 Default: false
