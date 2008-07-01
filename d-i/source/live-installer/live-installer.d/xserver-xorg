@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+# Reconfigure X.org
+if [ -e /target/var/lib/dpkg/info/xserver-xorg.postinst ]; then
+	in-target dpkg-reconfigure -fnoninteractive --no-reload xserver-xorg
+fi

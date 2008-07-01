@@ -1,0 +1,124 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# translation of DI_ne.po to Nepali
+# Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2006.
+# Shiva Pokharel <pokharelshiva@hotmail.com>, 2006.
+# Shyam Krishna Bal <shyam@mpp.org.np>, 2006.
+# Shiva Prasad Pokharel <pokharelshiva@hotmail.com>, 2006.
+# Shiva Pokharel <shiva@mpp.org.np>, 2007, 2008.
+# Shiva Prasad Pokharel <pokharelshiv@gmail.com>, 2007.
+# shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
+# Nabin Gautam <nabin@mpp.org.np>, 2007.
+# Shyam Krishna Bal <balshyam24@yahoo.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: DI_ne\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2008-03-17 22:51+0000\n"
+"PO-Revision-Date: 2008-02-05 19:19+0545\n"
+"Last-Translator: Shyam Krishna Bal <balshyam24@yahoo.com>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n !=1\n"
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../live-installer.templates:1001
+msgid "Install the system"
+msgstr "प्रणाली स्थापना गर्नुहोस्"
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../live-installer.templates:2001
+msgid "Installing the system..."
+msgstr "प्रणाली स्थापना गरिदैछ..."
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../live-installer.templates:3001
+msgid "Copying data to disk..."
+msgstr "डिस्कमा डेटा प्रतिलिपि गरिँदैछ..."
+
+#. Type: text
+#. Description
+#. :sl3:
+#. This string appears when the live-installer package
+#. drop network settings that are used only by the
+#. Live system
+#: ../live-installer.templates:4001
+#, fuzzy
+msgid "Cleaning up network settings..."
+msgstr "सञ्जाल सेटिङ्गहरू सङ्ग्रह गर्दैछ..."
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../live-installer.templates:5001
+#, fuzzy
+msgid "Removing packages specific to the live system..."
+msgstr "सञ्जाल सेटिङ्गहरू सङ्ग्रह गर्दैछ..."
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../live-installer.templates:6001
+#, fuzzy
+msgid "Reconfiguring X.org..."
+msgstr "सञ्जाल कन्फिगर गरिदै..."
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../live-installer.templates:7001
+msgid "Running ${SCRIPT}..."
+msgstr "${SCRIPT} चालु भइरहेको छ..."
+
+#. Type: select
+#. Choices
+#. :sl3:
+#: ../live-installer.templates:8001
+#, fuzzy
+msgid "normal"
+msgstr "ढाँचा"
+
+#. Type: select
+#. Choices
+#. :sl3:
+#: ../live-installer.templates:8001
+msgid "live"
+msgstr ""
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../live-installer.templates:8002
+#, fuzzy
+msgid "Type of installation:"
+msgstr "एउटा स्थापना चरण रोज्नुहोस् :"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../live-installer.templates:8002
+msgid ""
+"The live system can be installed to hard disk using one of the following "
+"options."
+msgstr ""
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../live-installer.templates:8002
+msgid ""
+"If you choose 'normal', the system will be installed as a regular system. If "
+"you choose 'live', the installed system will continue to act as a live "
+"system but it can then be launched directly from the hard disk."
+msgstr ""

@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+# Lenny support
+if [ -d /cdrom/live ]; then
+	in-target apt-get --yes remove --purge live-initramfs
+	if [ -f /target/var/lib/dpkg/live-sysvinit.list ]; then
+		in-target apt-get --yes remove --purge live-sysvinit
+	fi
+fi
+
+# Etch support
+if [ -d /cdrom/casper ]; then
+	in-target apt-get --yes remove --purge casper
+	in-target update-initramfs -k all -u
+fi

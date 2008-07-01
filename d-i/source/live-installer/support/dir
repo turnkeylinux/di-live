@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PLACES="$PLACES /cdrom/live/filesystem.dir"
+PLACES="$PLACES /cdrom/casper/filesystem.dir" # Etch support
+
+dir_prepare() {
+	cd $place
+}
+
+dir_count() {
+	echo `find . | wc -l`
+}
