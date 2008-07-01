@@ -1,0 +1,18 @@
+#!/bin/sh
+
+. /lib/partman/lib/base.sh
+
+for dev in $DEVICES/*; do
+    [ -d "$dev" ] || continue
+    cd $dev
+
+    open_dialog IS_CHANGED
+    read_line is_changed
+    close_dialog
+    [ "$is_changed" = yes ] || continue
+
+    disable_swap "$dev"
+
+    open_dialog COMMIT
+    close_dialog
+done

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf "bootable\tThe bootable flag\n"

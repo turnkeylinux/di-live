@@ -1,0 +1,75 @@
+#!/bin/sh
+
+set -e
+
+. /lib/partman/lib/base.sh
+
+ORIG_IFS="$IFS"
+
+part_of_sataraid () {
+	local raiddev
+	for raiddev in $(dmraid -r -c); do
+		if [ "$(readlink -f $raiddev)" = $1 ]; then
+			return 0
+		fi
+	done
+	return 1
+}
+
+if [ ! -f /var/run/parted_server.pid ]; then
+    mkdir -p /var/run
+    parted_server
+    RET=$?
+    if [ $RET != 0 ]; then
+        # TODO: How do we signal we couldn't start parted_server properly?
+        exit $RET
+    fi
+
+    if [ -d /var/lib/partman/old_devices ]; then
+	rm -rf /var/lib/partman/old_devices
+    fi
+    if [ -d $DEVICES ]; then
+	mv $DEVICES /var/lib/partman/old_devices
+    fi
+    mkdir $DEVICES || true
+    
+    IFS="$NL"
+    for partdev in $(parted_devices | 
+	    grep -v '^/dev/md' | 
+	    sed 's,^/dev/\(ide\|scsi\|[hs]d\),!/dev/\1,' | 
+	    sort | 
+	    sed 's,^!,,' ); do
+
+	IFS="$TAB"
+	set -- $partdev
+	IFS="$ORIG_IFS"
+
+	# Skip devices that are part of a dmraid device
+	if type dmraid >/dev/null 2>&1; then
+		if part_of_sataraid $partdev; then
+			continue
+		fi
+	fi
+
+	dirname=$(echo $1 | sed 's:/:=:g')
+	dev=$DEVICES/$dirname
+	if [ -d /var/lib/partman/old_devices/$dirname ]; then
+	    mv /var/lib/partman/old_devices/$dirname $dev
+	else
+	    mkdir $dev || continue
+	fi
+	printf "%s" "$1" >$dev/device
+	printf "%s" "$2" >$dev/size
+	printf "%s" "$3" >$dev/model
+	
+	cd $dev
+	open_dialog OPEN "$(cat $dev/device)"
+	read_line response
+	close_dialog
+	if [ "$response" = failed ]; then
+	    cd /
+	    rm -rf $dev
+	fi
+    done
+fi
+

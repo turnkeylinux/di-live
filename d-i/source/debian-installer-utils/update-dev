@@ -1,0 +1,12 @@
+#! /bin/sh
+set +e	# ignore errors
+
+# Make sure /dev is up to date after loading modules.
+if type udevtrigger >/dev/null 2>&1 && type udevsettle >/dev/null 2>&1; then
+	# Avoid sound events as they will trigger audio to be played on every
+	# call to udevtrigger; udevsettle.
+	udevtrigger --subsystem-nomatch=sound
+	udevsettle
+fi
+
+exit 0

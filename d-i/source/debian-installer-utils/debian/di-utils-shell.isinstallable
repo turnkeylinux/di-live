@@ -1,0 +1,5 @@
+#!/bin/sh
+if [ "$DEBIAN_FRONTEND" = gtk ]; then
+	exit 1
+fi
+exit 0

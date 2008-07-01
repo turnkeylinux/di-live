@@ -1,0 +1,80 @@
+#!/bin/sh
+. /usr/share/debconf/confmodule
+
+log() {
+	logger -t grub-installer "$@"
+}
+
+findfs () {
+	mount | grep "on /target${1%/} " | cut -d' ' -f1
+}
+
+findfstype () {
+	mount | grep "on /target${1%/} " | cut -d' ' -f5
+}
+
+is_sataraid () {
+	if type dmraid >/dev/null 2>&1; then
+		for frdisk in $(dmraid -s -c | grep -v "No RAID disks"); do
+			if echo "$1" | grep "/$frdisk[0-9]\+"; then
+				return 0
+			fi
+		done
+	fi
+	return 1
+}
+
+ARCH="$(archdetect)"
+
+case $ARCH in
+    i386/mac|amd64/mac)
+	# Note: depends on partman-efi to load the efivars module!
+	if [ -d /sys/firmware/efi ]; then
+		log "GRUB not yet usable on Intel-based Macs booted using EFI"
+		exit 1
+	fi
+    ;;
+esac
+
+bootfs=$(findfs /boot)
+[ -n "$bootfs" ] || bootfs="$(findfs /)"
+
+if [ -z "$bootfs" ]; then
+	# Probably not yet mounted.
+	exit 0
+fi
+
+# Check for the control file to work around lvdisplay refusal to work with
+# certian lvm device names.
+if lvdisplay "$bootfs" | grep -q 'LV Name' 2>/dev/null || [ -e "$(dirname $bootfs)/control" ]; then
+	if ! is_sataraid $bootfs; then
+		log "/boot is a lvm volume ($bootfs), cannot install grub"
+		exit 1
+	fi
+fi
+
+bootfstype=$(findfstype /boot)
+[ -n "$bootfstype" ] || bootfstype="$(findfstype /)"
+
+if [ "$bootfstype" = "xfs" ]; then
+	log "/boot on xfs, unsafe to install grub"
+	# Check this first to allow for preseeding forcing grub to xfs.
+	db_get grub-installer/install_to_xfs
+	if [ "$RET" != true ]; then
+		# grub behaves erratically on xfs. If priority is such that the
+		# main menu is not being displayed, remove grub from the menu.
+		# If main menu is displayed, grub will be left on it so expert
+		# users can choose to use it.
+		db_get debconf/priority
+		if [ "$RET" != low ] && [ "$RET" != medium ]; then
+			exit 1
+		fi
+	fi
+fi
+
+db_get grub-installer/skip
+if [ "$RET" = true ]; then
+	exit 1
+fi
+
+exit 0

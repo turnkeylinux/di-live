@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf "mountpoint\tMount point\n"

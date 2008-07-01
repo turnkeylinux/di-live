@@ -1,0 +1,9 @@
+05 number
+10 type
+15 size
+20 bootable
+25 method
+30 parted_fs
+35 filesystem
+40 name
+45 mountpoint

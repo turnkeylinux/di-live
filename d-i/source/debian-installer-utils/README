@@ -1,0 +1,76 @@
+These are simple utils for debian-installer:
+
+mapdevfs: Given a devfs device name, returns the name that would be used on
+a non devfs system. Only works for some devices, used by eg, boot loader
+installers.
+
+anna-install: Each parameter is a udeb that anna should install. If this
+command is run before anna has configured a default retriever, the udebs
+will be queued for the future anna run. If it's run after a default
+retriever is configured, the specified udebs will be installed immediately.
+
+apt-install: The parameter is a deb that should be installed into /target.
+If the /target environment is not yet set up, the package will be queued for
+later installation (at the end of base-installation).
+If /target is already set up, the package will be installed straightaway.
+apt-install makes use of in-target and debconf-apt-progress to allow
+condiguration questions to be asked and to allow media changes if multiple
+CD/DVD sources have been set up. In case of multiple CD/DVD sources,
+apt-install will unmount the installation CD/DVD in the D-I environment
+for the duration of the package installation; the installation CD/DVD is
+reloaded afterwards.
+
+in-target: Runs the specified command in /target and returns its exit
+status. The debconf passthrough frontend is used to make debconf questions
+be asked using cdebconf in the installer. This is especially useful for
+running things like dpkg-reconfigure, debconf-apt-progress, and tasksel.
+
+debconf-get: Prints out the value of a debconf question.
+
+debconf-set: Sets a debconf question to a value.
+
+register-module: Register a module to go in /etc/modules on the target. May
+be called before the target is mounted. Can optionally pass parameters that
+should be passed to the module on load; these are added to the appropriate
+files in /etc to mae modprobe use them. If the -p parameter is passed then
+the module is not added to /etc/modules and only the specified parameters
+are set for it. The -t parameter is used to specify the type of options
+(currently only the default type "options" is used).
+The -a parameter makes register-module add a param, without removing any
+other params that might have been previously registered.
+The -i parameter makes the module be added to the initrd used to boot the
+installed system, and loaded during boot. If the script is called with the
+-b parameter, the module will be blacklisted.
+
+user-params: Output the parameters the user passed to the kernel on boot,
+one per line. This should include only parameters the user entered by hand,
+and will skip over parameters used to pre-seed debconf values or set kernel
+module-specific parameters. For any of the user's parameters to be
+recognised, the kernel command line must include "--" in it, and then all
+parameters after the -- are assumed to be user input. Therefore, the
+installer's boot loader should pass "--" at the end of its kernel command
+line to make this work.
+
+log-output: Runs a command, logging any stdout/stderr output to the syslog,
+and preserving the command's exit code. If you use the --pass-stdout option,
+it will pass stdout through rather than logging it, so that you can redirect
+it to a file or pipe it to another process. Note that the command must be
+in the path, shell builtins won't work.
+
+debconf-disconnect: Scripts running under the control of debconf can use
+this to execute a command disconnected from debconf, with its standard file
+descriptors the same as those of the debconf frontend itself. This is most
+useful for starting interactive shells.
+
+update-dev: Make sure that new device nodes have been created after loading
+modules. This is particularly important for userdevfs, where disk device
+nodes are not created automatically at all, but it is also important for
+udev where there may be an asynchronous delay between loading the module and
+udev getting around to creating the device node.
+
+search-path: Returns true if a program is found in the path (d-i has no
+"which" command); this is deprecated, and new code should simply use
+"type PROGRAM >/dev/null 2>&1" instead.
+
+list-devices: List device nodes representing devices of various types,
+handling both devfs and udev naming schemes.

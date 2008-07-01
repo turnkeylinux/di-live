@@ -1,0 +1,19 @@
+#!/bin/sh
+
+cd $1
+
+num=$2
+id=$3
+size=$4
+type=$5
+fs=$6
+path=$7
+name=$8
+
+if [ "$fs" = free ]; then
+    nfs='FREE SPACE' #GETTEXT
+else
+    nfs="$fs"
+fi
+
+printf " %-10s" "$nfs"
