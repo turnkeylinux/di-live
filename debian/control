@@ -8,5 +8,6 @@ Standards-Version: 3.6.1
 Package: di-live
 Architecture: i386
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${bootloader-depends}, debconf, libdebconfclient0, os-prober
+Recommends: whiptail
 Section: admin
 Description: Debian Installer for Live systems
