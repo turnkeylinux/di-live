@@ -1,0 +1,12 @@
+#!/bin/sh
+
+mkdir -p /target/etc
+
+cat >/target/etc/fstab <<EOF
+# /etc/fstab: static file system information.
+#
+EOF
+
+printf "%-15s %-15s %-7s %-15s %-7s %s\n" '# <file system>' '<mount point>' '<type>' '<options>' '<dump>' '<pass>' >> /target/etc/fstab
+
+printf "%-15s %-15s %-7s %-15s %-7s %s\n" proc /proc proc defaults 0 0 >> /target/etc/fstab

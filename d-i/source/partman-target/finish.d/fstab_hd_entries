@@ -1,0 +1,43 @@
+#!/bin/sh
+
+[ -f /target/etc/fstab ] || exit 0
+
+fstab=$(
+	for i in /lib/partman/fstab.d/*; do
+		[ -x "$i" ] || continue
+		$i
+	done |
+	while read fs mp type options dump pass; do
+		echo $mp $fs $type $options $dump $pass
+	done |
+	sort |
+	while read mp fs type options dump pass; do
+		case "$fs" in
+		    (/dev/disk/*|/dev/fd[0-9]*|/dev/mapper/*_crypt)
+			printf "%-15s %-15s %-7s %-15s %-7s %s\n" "$(mapdevfs $fs)" "${mp}" "$type" "$options" "$dump" "$pass"
+			;;
+		    (/*)
+			dev="/var/lib/partman/devices/$(echo "$fs" | sed 's:/:=:g')"
+			if [ -f "$dev/loop" ]; then
+				loop="$(cat "$dev/loop")"
+				if [ "$options" = defaults ]; then
+					options=loop
+				else
+					options="loop,$options"
+				fi
+				printf "%-15s %-15s %-7s %-15s %-7s %s\n" "$loop" "${mp}" "$type" "$options" "$dump" "$pass"
+			else
+				uuid="$(PATH="/lib/udev:$PATH" vol_id -u $fs)"
+				if [ "$uuid" ]; then
+					printf "# %s\n" "$(mapdevfs $fs)"
+					printf "%-15s %-15s %-7s %-15s %-7s %s\n" "UUID=$uuid" "${mp}" "$type" "$options" "$dump" "$pass"
+				else
+					printf "%-15s %-15s %-7s %-15s %-7s %s\n" "$(mapdevfs $fs)" "${mp}" "$type" "$options" "$dump" "$pass"
+				fi
+			fi
+			;;
+		esac
+	done
+)
+
+echo "$fstab" >>/target/etc/fstab

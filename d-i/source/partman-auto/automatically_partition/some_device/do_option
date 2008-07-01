@@ -1,0 +1,11 @@
+#!/bin/sh
+
+. /lib/partman/lib/base.sh
+. /lib/partman/lib/auto-shared.sh
+
+disk=$(select_auto_disk) || exit 99
+
+autopartition $disk || exit $?
+
+# accept the autopartitioning
+exit 100

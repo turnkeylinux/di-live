@@ -1,0 +1,52 @@
+partman-auto/text/multi_scheme ::
+
+100 100 150 fat16
+	$primary{ }
+	method{ efi }
+	format{ } .
+
+100 800 500 ext3
+	$primary{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ / }
+	options/relatime{ relatime } .
+
+700 7000 7000 ext3
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /usr }
+	options/relatime{ relatime } .
+
+60 1500 3000 ext3
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /var }
+	options/relatime{ relatime } .
+
+96 512 2048 linux-swap
+	method{ swap }
+	format{ } .
+
+50 300 400 ext3
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /tmp }
+	options/relatime{ relatime } .
+
+300 3000 1000000000 ext3
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /home }
+	options/relatime{ relatime } .
+

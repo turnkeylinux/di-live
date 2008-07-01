@@ -1,0 +1,68 @@
+partman-auto/text/multi_scheme ::
+
+8 1 1 prep
+	$primary{ }
+	$bootable{ }
+	method{ prep } .
+
+128 512 256 ext3
+	$defaultignore{ }
+	$primary{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /boot }
+	options/relatime{ relatime } .
+
+70 800 300 ext3
+	$lvmok{ }
+	$primary{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ / }
+	options/relatime{ relatime } .
+
+500 3000 6000 ext3
+	$lvmok{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /usr }
+	options/relatime{ relatime } .
+
+70 1500 3000 ext3
+	$lvmok{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /var }
+	options/relatime{ relatime } .
+
+96 512 300% linux-swap
+	$lvmok{ }
+	method{ swap }
+	format{ } .
+
+20 300 400 ext3
+	$lvmok{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /tmp }
+	options/relatime{ relatime } .
+
+300 3000 1000000000 ext3
+	$lvmok{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext3 }
+	mountpoint{ /home }
+	options/relatime{ relatime } .
+

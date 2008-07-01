@@ -1,0 +1,29 @@
+#!/bin/sh
+
+. /usr/share/debconf/confmodule
+
+dev=$1
+id=$2
+tpl=$3
+part=$dev/$id
+filesystem=$(cat $part/acting_filesystem)
+
+cd $dev
+
+full_options=''
+for op in $(cat /lib/partman/mountoptions/$filesystem); do
+    if [ -f $part/options/$op ]; then
+	full_options="${full_options:+$full_options,}$(cat $part/options/$op)"
+    fi
+done
+db_set $tpl "$full_options"
+db_input critical $tpl || true
+db_go || exit
+db_get $tpl
+rm -rf $part/options
+mkdir $part/options
+IFS=,
+for op in $RET; do
+    op=${op# }
+    echo "$op" >$part/options/${op%% *}
+done
