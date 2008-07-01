@@ -1,0 +1,36 @@
+#! /usr/bin/make -f
+
+bootloader-depends := grub
+
+clean:
+	dh_clean
+	$(MAKE) -C d-i clean
+
+build:
+	dh_testdir
+	$(MAKE) -C d-i build
+
+install: 
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+
+binary-indep: install
+	dh_testdir
+	dh_testroot
+	$(MAKE) -C d-i install
+	cp d-i/templates debian/templates
+	dh_install
+	dh_installdocs
+	dh_installdebconf
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol -- -V'bootloader-depends=$(bootloader-depends)'
+	dh_md5sums 
+	dh_builddeb
+
+binary-arch: install
+
+binary: binary-indep binary-arch
+.PHONY: clean binary-indep binary-arch binary install
+

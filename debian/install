@@ -1,0 +1,33 @@
+# di-live
+di-live /usr/bin
+di-live.d /usr/lib
+
+# compat
+compat/anna-install usr/lib/di-live/compat
+compat/apt-install usr/lib/di-live/compat
+compat/udpkg usr/lib/di-live/compat
+
+# debian-installer-utils
+d-i/source/debian-installer-utils/debconf-get bin
+d-i/source/debian-installer-utils/list-devices bin
+d-i/source/debian-installer-utils/log-output bin
+d-i/source/debian-installer-utils/mapdevfs bin
+d-i/source/debian-installer-utils/register-module bin
+d-i/source/debian-installer-utils/register-module.post-base-installer usr/lib/di-live/debian-installer-utils
+d-i/source/debian-installer-utils/search-path bin
+d-i/source/debian-installer-utils/update-dev bin
+d-i/source/debian-installer-utils/user-params bin
+
+# grub-installer
+d-i/source/grub-installer/functions.sh usr/share/grub-installer
+d-i/source/grub-installer/grub-installer usr/share/grub-installer
+d-i/source/grub-installer/otheros.sh usr/share/grub-installer
+
+# hw-detect
+d-i/source/hw-detect/archdetect bin
+d-i/source/hw-detect/debian/hw-detect/bin/hw-detect bin
+d-i/source/hw-detect/debian/hw-detect/bin/sysfs-update-devnames bin
+
+# partman
+d-i/source/partman-*/debian/partman-*/* .
+

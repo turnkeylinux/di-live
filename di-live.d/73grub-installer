@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ ! -e /target ]; then
+    echo "error: /target is not available"
+    exit 1
+fi
+
+# mount /dev and /proc on target otherwise grub-installer will fail
+if ! grep -q /target/dev /proc/mounts; then
+    mount -o bind /dev /target/dev
+fi
+
+if ! grep -q /target/proc /proc/mounts; then
+    mount -o bind /proc /target/proc
+fi
+
+PATH=/usr/lib/di-live/compat:$PATH /usr/share/grub-installer/grub-installer /target
+
+umount -f /target/proc
+umount -f /target/dev
+
