@@ -1,0 +1,15 @@
+Source: live-installer
+Section: debian-installer
+Priority: optional
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Uploaders: Otavio Salvador <otavio@debian.org>, Daniel Baumann <daniel@debian.org>, Chris Lamb <chris@chris-lamb.co.uk>
+Build-Depends: cdbs (>= 0.4.35), debhelper (>= 5.0), po-debconf
+Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/live-installer
+
+Package: live-installer
+XC-Package-Type: udeb
+Architecture: any
+Depends: ${shlibs:Depends}, mounted-partitions, base-installer, squashfs-modules, archdetect
+Provides: kernel-installer, created-fstab, installed-base
+XB-Installer-Menu-Item: 6500
+Description: Install the system

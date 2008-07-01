@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+PLACES="$PLACES /cdrom/live/filesystem.ext3"
+PLACES="$PLACES /cdrom/casper/filesystem.ext3" # Etch support
+
+ext3_prepare() {
+	modprobe ext3 || true
+
+	mkdir -p /mnt
+	umount /mnt > /dev/null 2>&1 || true
+	if ! mount -t ext3 -o loop $place /mnt; then
+		error "$place has failed to be mounted as ext3."
+		exit 1
+	fi
+
+	cd /mnt
+}
+
+ext3_count() {
+	echo `print-inodes /mnt`
+}

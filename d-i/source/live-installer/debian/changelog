@@ -1,0 +1,238 @@
+live-installer (6) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Bail-out much earlier if a filesystem image cannot be found (Chris Lamb)
+    Closes: #486184
+  * Run base-install.d hooks after copying in the live system, to avoid
+    overwriting any files created by them. Closes: #486182
+  * Copy files using tar, avoids permissions problems and slowness.
+    Closes: #486926
+
+  [ Chris Lamb ]
+  * Add myself to Uploaders
+  * Rename Autotools bootstrapping script from "bootstrap" to "autogen.sh"
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Pavel Piatruk
+  * Slovenian (sl.po) by Matej Kovacic
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Sat, 21 Jun 2008 21:20:48 +0100
+
+live-installer (5) unstable; urgency=low
+
+  [ Updated translations ]
+  * Amharic (am.po) by tegegne tefera
+  * Arabic (ar.po) by Ossama M. Khayat
+  * German (de.po) by Jens Seidel
+  * Dzongkha (dz.po) by Jurmey Rabgay(Bongop) (DIT,BHUTAN)
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Finnish (fi.po) by Esko Arajärvi
+  * Hebrew (he.po) by Lior Kaplan
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Marathi (mr.po) by Sampada
+  * Norwegian Bokmal (nb.po) by Hans Fredrik Nordhaug
+  * Norwegian Nynorsk (nn.po) by Håvard Korsvoll
+  * Punjabi (Gurmukhi) (pa.po) by Amanpreet Singh Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Vietnamese (vi.po) by Clytie Siddall
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 08 May 2008 00:17:56 -0300
+
+live-installer (4) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Manually loading loop kernel module when using squashfs images. For some
+    reason, this doesn't get done automatically anymore.
+  * Passing --yes to apt-get in remove-packages, otherwise the removal is not
+    non-interactive anymore.
+  * Unconditionally bind-mount /dev on /target after unpacking of the image,
+    this needs to be done always and independently of udev anyway.
+  * Correcting accidentally wrong kernel parameter in live-mode.
+
+  [ Otavio Salvador ]
+  * Clean up postinst to remove unused variables.
+  * Add the required templates to provide translated progress info during
+    live-installer.d hooks progress.
+  * Add support to live image installing mode selection. Currently it
+    support two modes: normal that unpacks the image and do the need
+    changes to make it look just as a installed system system; live:
+    unpacks the image but keep it running as live.
+
+  [ Updated translations ]
+  * Amharic (am.po) by Tegegne Tefera
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * Esperanto (eo.po) by Serge Leblanc
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Dutch (nl.po) by Frans Pop
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Russian (ru.po) by Yuri Kozlov
+  * Swedish (sv.po) by Daniel Nylander
+  * Thai (th.po) by Theppitak Karoonboonyanan
+
+ -- Otavio Salvador <otavio@ossystems.com.br>  Mon, 24 Mar 2008 18:52:39 -0300
+
+live-installer (3) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Fixing typo in remove-packages, thanks to Vagrant Cascadian
+    <vagrant@freegeek.org>.
+
+  [ Updated translations ]
+  * Amharic (am.po) by tegegne tefera
+  * Belarusian (be.po) by Hleb Rubanau
+  * Dzongkha (dz.po) by Jurmey Rabgay
+  * Esperanto (eo.po) by Serge Leblanc
+  * Finnish (fi.po) by Esko Arajärvi
+  * Hindi (hi.po) by Kumar Appaiah
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Japanese (ja.po) by Kenshi Muto
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Korean (ko.po) by Changwoo Ryu
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Latvian (lv.po) by Viesturs Zarins
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Norwegian Bokmål (nb.po) by Hans Fredrik Nordhaug
+  * Norwegian Nynorsk (nn.po) by Håvard Korsvoll
+  * Panjabi (pa.po) by A S Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Romanian (ro.po) by Eddy Petrișor
+  * Slovenian (sl.po) by Matej Kovacic
+  * Albanian (sq.po) by Elian Myftiu
+  * Turkish (tr.po) by Recai Oktaş
+  * Ukrainian (uk.po)
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 15 Feb 2008 11:09:26 -0200
+
+live-installer (2) unstable; urgency=low
+
+  [ Otavio Salvador ]
+  * Fix copy of files with spaces on their names.
+  * Mount udev /dev on /target otherwise grub-installer fails.
+
+  [ Daniel Baumann ]
+  * Added myself to uploaders.
+
+  [ Updated translations ]
+  * Catalan (ca.po) by Jordi Mallach
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Italian (it.po) by Stefano Canepa
+  * Lithuanian (lt.po) by K#stutis Bili#nas
+  * Slovak (sk.po) by Peter Mann
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 18 Sep 2007 20:16:00 +0200
+
+live-installer (1) unstable; urgency=low
+
+  [ Otavio Salvador ]
+  * Make live-installer team maintained by d-i team.
+  * Added XS-Vcs-Svn header,
+
+  [ Joey Hess ]
+  * Add missing deps on base-installer and archdetect.
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Jamil Ahmed
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Jens Seidel
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Hebrew (he.po) by Lior Kaplan
+  * Nepali (ne.po) by Nabin Gautam
+  * Dutch (nl.po) by Frans Pop
+  * Panjabi (pa.po) by A S Alam
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Russian (ru.po) by Yuri Kozlov
+  * Swedish (sv.po) by Daniel Nylander
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Vietnamese (vi.po) by Clytie Siddall
+  
+ -- Otavio Salvador <otavio@debian.org>  Mon, 06 Aug 2007 16:13:42 -0300
+
+live-installer (0) unstable; urgency=low
+
+  * Initial release.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Belarusian (be.po) by Hleb Rubanau
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bengali (bn.po) by Mahay Alam Khan (মাহে আলম)
+  * Bosnian (bs.po) by Safir Secerovic
+  * Catalan (ca.po) by Jordi Mallach
+  * Czech (cs.po) by Miroslav Kure
+  * Danish (da.po) by Claus Hindsgaul
+  * German (de.po) by Jens Seidel
+  * Dzongkha (dz.po) by Tshewang Norbu
+  * Greek, Modern (1453-) (el.po) by galaxico
+  * Esperanto (eo.po) by Serge Leblanc
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Estonian (et.po) by Siim Põder
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Tapio Lehtonen
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Gujarati (gu.po) by Kartik Mistry
+  * Hebrew (he.po) by Lior Kaplan
+  * Hindi (hi.po) by Nishant Sharma
+  * Croatian (hr.po) by Josip Rodin
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Italian (it.po) by Stefano Canepa
+  * Japanese (ja.po) by Kenshi Muto
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Khmer (km.po) by Khoem Sokhem
+  * Korean (ko.po) by Sunjae Park
+  * Kurdish (ku.po) by Amed Çeko Jiyan
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Latvian (lv.po) by Aigars Mahinovs
+  * Macedonian (mk.po) by Georgi Stanojevski
+  * Malayalam (ml.po) by Praveen A
+  * Norwegian Bokmål (nb.po) by Bjørn Steensrud
+  * Nepali (ne.po) by Shiva Pokharel
+  * Dutch (nl.po) by Bart Cornelis
+  * Norwegian Nynorsk (nn.po)
+  * Panjabi (pa.po) by A S Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Peter Mann
+  * Slovenian (sl.po) by Matej Kovacic
+  * Albanian (sq.po) by Elian Myftiu
+  * Swedish (sv.po) by Daniel Nylander
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Tagalog (tl.po) by Eric Pareja
+  * Turkish (tr.po) by Recai Oktaş
+  * Ukrainian (uk.po)
+  * Vietnamese (vi.po) by Clytie Siddall
+  * Wolof (wo.po) by Mouhamadou Mamoune Mbacke
+  * Simplified Chinese (zh_CN.po) by Ming Hua
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Otavio Salvador <otavio@ossystems.com.br>  Fri, 29 Jun 2007 15:14:37 -0300
