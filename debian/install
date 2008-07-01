@@ -30,6 +30,8 @@ d-i/source/hw-detect/debian/hw-detect/bin/sysfs-update-devnames bin
 
 # partman
 d-i/source/partman-*/debian/partman-*/* .
+additions/partman/check.d/* lib/partman/check.d
+additions/partman/commit.d/* lib/partman/commit.d
 
 # partconf
 d-i/source/partconf/debian/partconf-*/* .
