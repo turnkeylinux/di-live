@@ -6,6 +6,7 @@ if [ ! -e /target ]; then
 fi
 
 # mount /dev and /proc on target otherwise grub-installer will fail
+# this should have been handled by live-installer
 if ! grep -q /target/dev /proc/mounts; then
     mount -o bind /dev /target/dev
 fi

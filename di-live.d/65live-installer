@@ -1,0 +1,4 @@
+#!/bin/sh
+
+PATH=/usr/lib/di-live/compat:$PATH /lib/live-installer/live-installer
+

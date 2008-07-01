@@ -1,2 +1,4 @@
-live-installer.d /usr/lib/
-support/* /lib/live-installer/
+live-installer.d usr/lib
+support lib/live-installer
+waypoints lib/live-installer
+live-installer lib/live-installer
