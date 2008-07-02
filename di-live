@@ -1,9 +1,25 @@
 #!/usr/bin/python
+"""
+Debian Installer Live
 
+Drives the installation, executing components according to alpha-numeric
+ordering, and responsible for dynamically assembling the menu and executing
+components when they are selected.
+
+Similar to d-i's main-menu, di-live's menu will only be visible when debconf
+priority is low or medium. Priority is reduced when a component fails,
+and returns to original level when next component completes successfully.
+
+Options:
+  -d --debug      Set DEBCONF_DEBUG=developer DEBIAN_FRONTEND=readline
+
+"""
 import os
-from os.path import *
-
+import sys
+import getopt
 import debconf
+
+from os.path import *
 
 class Error(Exception):
     pass
@@ -161,7 +177,30 @@ class Components_Menu:
             else:
                 self.priority.decrease()
 
+def usage(s=None):
+    if s:
+        print >> sys.stderr, "Error:", s 
+    print >> sys.stderr, "Syntax: %s [options]" % sys.argv[0]
+    print >> sys.stderr, __doc__
+    sys.exit(1)
+
 def main():
+    try:
+        opts, args = getopt.gnu_getopt(sys.argv[1:], "hd", ['help', 'debug'])
+    except getopt.GetoptError, e:
+        usage(e)
+
+    debug = False
+    for opt, val in opts:
+        if opt in ('-h', '--help'):
+            usage()
+        elif opt in ('-d', '--debug'):
+            debug = True
+
+    if debug:
+        os.environ['DEBCONF_DEVELOPER'] = 'developer'
+        os.environ['DEBIAN_FRONTEND'] = 'readline'
+
     components_dir = '/usr/lib/di-live.d'
     menu_template = 'di-live/main_menu'
     menu_title = 'Debian Installer Live'
