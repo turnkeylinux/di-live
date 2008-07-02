@@ -1,78 +1,132 @@
-#!/bin/sh
-set -e
+#!/usr/bin/python
 
-. /usr/share/debconf/confmodule
+import os
+from os.path import *
 
-info ()
-{
-    echo "di-live: $@" >> /var/log/di-live.log
-}
+import debconf
 
-get_choices()
-{
-    local choices
-    for script in $1/*; do
-        [ -x "$script" ] || continue
+class Error(Exception):
+    pass
 
-        if [ "$choices" ]; then
-            choices="$choices, $(basename $script)"
-        else
-            choices="$(basename $script)"
-        fi
-    done
-    echo $choices
-}
+class Component:
+    """class for managing a component"""
 
-display_menu ()
-{
-    db_reset di-live/main_menu
+    def __init__(self, path):
+        self.path = path
+        self.name = basename(path)
+        self.title = self.name # until components have titles
+        self.exitcode = None
 
-    db_subst di-live/main_menu CHOICES $(get_choices $1)
-    db_input high di-live/main_menu || true
-    db_go || exit 10
+    def execute(self):
+        error = os.system(self.path)
+        if error:
+            self.exitcode = os.WEXITSTATUS(error)
+            return False
 
-    db_get di-live/main_menu
-    echo $RET
-}
+        self.exitcode = 0
+        return True
 
-run_scripts ()
-{
-    for script in $1/*; do
-        [ -x "$script" ] || continue
-        if [ ! "$(basename $script)" \> "$last" ]; then
-            return 0
-        fi
+class Components(dict):
+    """class for holding components"""
 
-	info "executing script: $script"
-        . $script || return $? 
-    done
-    return -1
-}
+    def __init__(self, dirpath):
+        if not exists(dirpath):
+            raise Error('does not exist: %s' % dirpath)
 
-DIR=/usr/lib/di-live.d
-DEBIAN_PRIORITY_ORIG=DEBIAN_PRIORITY
+        for file in os.listdir(dirpath):
+            try:
+                self.add(join(dirpath, file))
+            except:
+                pass
 
-while [ true ]; do
-    if [ "$DEBIAN_PRIORITY" = "low" ] || [ "$DEBIAN_PRIORITY" = "medium" ]; then
-        choice=$(display_menu $DIR)
-        . $DIR/$choice || retcode=$?
-    else
-        run_scripts $DIR || retcode=$?
-    fi
+    def __iter__(self):
+        """return components in alpha-numeric ordering according to name"""
+        keys = self.keys()
+        keys.sort()
+        for key in keys:
+            yield self[key]
 
-    info "retcode: $retcode"
-    case $retcode in
-        0)
-           last=$(basename $script)
-           DEBIAN_PRIORITY=$DEBIAN_PRIORITY_ORIG
-           ;;
-        *)
-	   if [ "$DEBIAN_PRIORITY_ORIG" != "low" ]; then
-               DEBIAN_PRIORITY=medium
-           fi
-           ;;
-    esac
-done
+    @staticmethod
+    def _is_executable(path):
+        if os.stat(path).st_mode & 0111 == 0:
+            return False
+        return True
 
-exit 0
+    def add(self, path):
+        if not self._is_executable(path):
+            raise Error('not executable: %s' % path)
+
+        name = basename(path)
+        self[name] = Component(path)
+    
+    def remove(self, name):
+        del self[name]
+
+class Menu:
+    def __init__(self, template, title=None):
+        debconf.runFrontEnd()
+        self.template = template
+        self.db = debconf.Debconf(title)
+
+    def __del__(self):
+        self.db.stop()
+
+    def display(self, choices):
+        self.db.reset(self.template)
+        self.db.subst(self.template, 'CHOICES', choices)
+        self.db.input('high', self.template)
+        self.db.go()
+
+    def get_choice(self):
+        return self.db.get(self.template)
+
+class Components_Menu:
+    def __init__(self, component_dir, menu_template, menu_title=None):
+        self.components = Components(component_dir)
+        self.menu = Menu(menu_template, menu_title)
+
+    def _get_next_component(self):
+        priority = os.environ.get('DEBIAN_PRIORITY')
+        if priority == 'low' or priority == 'medium':
+            self.menu.display(", ".join([ c.title for c in self.components ]))
+
+            title = self.menu.get_choice()
+            for c in self.components:
+                if c.title == title:
+                    return c
+        else:
+            for c in self.components:
+                if c.name > self.last:
+                    return c
+
+        return None
+
+    def run(self):
+        self.last = '0'
+        priority = os.environ.get('DEBIAN_PRIORITY')
+        while 1:
+            component = self._get_next_component()
+            if component is None:
+                return
+
+            if component.execute():
+                self.last = component.name
+                os.environ['DEBIAN_PRIORITY'] = priority
+            else:
+                if priority == 'low':
+                    os.environ['DEBIAN_PRIORITY'] = 'low'
+                else:
+                    os.environ['DEBIAN_PRIORITY'] = 'medium'
+
+
+def main():
+    components_dir = '/usr/lib/di-live.d'
+    menu_template = 'di-live/main_menu'
+    menu_title = 'Debian Installer Live'
+
+    Components_Menu(components_dir, menu_template, menu_title).run()
+
+
+if __name__ == "__main__":
+    main()
 
