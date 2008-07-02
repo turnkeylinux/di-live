@@ -8,6 +8,67 @@ import debconf
 class Error(Exception):
     pass
 
+class Debian_Priority:
+    """class for controlling DEBIAN_PRIORITY"""
+
+    def __init__(self):
+        self.original = os.environ.get('DEBIAN_PRIORITY')
+        self.current = self.original
+
+    def __del__(self):
+        self.revert()
+
+    def get(self):
+        return self.current
+
+    def set(self, priority):
+        if priority in (None, self.current):
+            return
+
+        priorities = ('low', 'medium', 'high', 'critical')
+        if priority not in priorities:
+            raise Error('illegal debian priority', priority)
+
+        os.environ['DEBIAN_PRIORITY'] = priority
+        self.current = priority
+
+    def revert(self):
+        """revert priority back to original priority"""
+        self.set(self.original)
+
+    def decrease(self):
+        """decrease priority to medium (or low if original was low)"""
+        if self.original == 'low':
+            self.set('low')
+        else:
+            self.set('medium')
+
+class Menu:
+    """class for controlling a debconf menu with choices"""
+
+    def __init__(self, template, title=None, priority='high', subst='CHOICES'):
+        debconf.runFrontEnd()
+        self.template = template
+        self.db = debconf.Debconf(title)
+        self.priority = priority
+        self.subst = subst
+
+    def __del__(self):
+        self.db.stop()
+
+    def display(self, choices):
+        self.db.reset(self.template)
+        self.db.subst(self.template, self.subst, choices)
+        self.db.input(self.priority, self.template)
+        try:
+            self.db.go()
+        except debconf.DebconfError, e:
+            if not e[0] == 30 and not e[1] == "backup":
+                raise Error('debconf error', e)
+
+    def get_choice(self):
+        return self.db.get(self.template)
+
 class Component:
     """class for managing a component"""
 
@@ -31,7 +92,7 @@ class Components(dict):
 
     def __init__(self, dirpath):
         if not exists(dirpath):
-            raise Error('does not exist: %s' % dirpath)
+            raise Error('non existent components path', dirpath)
 
         for file in os.listdir(dirpath):
             try:
@@ -40,7 +101,7 @@ class Components(dict):
                 pass
 
     def __iter__(self):
-        """return components in alpha-numeric ordering according to name"""
+        """return component in alpha-numeric ordering according to name"""
         keys = self.keys()
         keys.sort()
         for key in keys:
@@ -54,7 +115,7 @@ class Components(dict):
 
     def add(self, path):
         if not self._is_executable(path):
-            raise Error('not executable: %s' % path)
+            raise Error('component not executable', path)
 
         name = basename(path)
         self[name] = Component(path)
@@ -62,35 +123,20 @@ class Components(dict):
     def remove(self, name):
         del self[name]
 
-class Menu:
-    def __init__(self, template, title=None):
-        debconf.runFrontEnd()
-        self.template = template
-        self.db = debconf.Debconf(title)
-
-    def __del__(self):
-        self.db.stop()
-
-    def display(self, choices):
-        self.db.reset(self.template)
-        self.db.subst(self.template, 'CHOICES', choices)
-        self.db.input('high', self.template)
-        self.db.go()
-
-    def get_choice(self):
-        return self.db.get(self.template)
-
 class Components_Menu:
+    """class to mimic d-i main-menu"""
+
     def __init__(self, component_dir, menu_template, menu_title=None):
         self.components = Components(component_dir)
         self.menu = Menu(menu_template, menu_title)
 
-    def _get_next_component(self):
-        priority = os.environ.get('DEBIAN_PRIORITY')
-        if priority == 'low' or priority == 'medium':
-            self.menu.display(", ".join([ c.title for c in self.components ]))
+        self.priority = Debian_Priority()
 
+    def _get_next_component(self):
+        if self.priority.get() in ('low', 'medium'):
+            self.menu.display(", ".join([ c.title for c in self.components ]))
             title = self.menu.get_choice()
+
             for c in self.components:
                 if c.title == title:
                     return c
@@ -102,22 +148,18 @@ class Components_Menu:
         return None
 
     def run(self):
-        self.last = '0'
-        priority = os.environ.get('DEBIAN_PRIORITY')
+        self.last = ''
         while 1:
             component = self._get_next_component()
             if component is None:
-                return
+                break
 
-            if component.execute():
+            component.execute()
+            if component.exitcode == 0:
                 self.last = component.name
-                os.environ['DEBIAN_PRIORITY'] = priority
+                self.priority.revert()
             else:
-                if priority == 'low':
-                    os.environ['DEBIAN_PRIORITY'] = 'low'
-                else:
-                    os.environ['DEBIAN_PRIORITY'] = 'medium'
-
+                self.priority.decrease()
 
 def main():
     components_dir = '/usr/lib/di-live.d'
