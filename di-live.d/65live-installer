@@ -1,4 +1,12 @@
-#!/bin/sh
+#!/usr/bin/python
 
-PATH=/usr/lib/di-live/compat:$PATH /lib/live-installer/live-installer
+from common import prepend_path, system
+
+def main():
+    prepend_path('/usr/lib/di-live/compat')
+    system('/lib/live-installer/live-installer')
+
+
+if __name__ == "__main__":
+    main()
 
