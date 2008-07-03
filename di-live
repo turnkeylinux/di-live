@@ -72,15 +72,30 @@ class Menu:
         debconf.runFrontEnd()
         self.template = template
         self.db = debconf.Debconf(title)
+
         self.priority = priority
         self.subst = subst
 
     def __del__(self):
         self.db.stop()
 
-    def display(self, choices):
+    def display(self, names):
+        titles = []
+        self.choices = {}
+        for name in names:
+            title = name
+            try:
+                template = 'debian-installer/%s/title' % name
+                title = self.db.metaget(template, 'description')
+            except debconf.DebconfError, e:
+                if not e[0] == 10:
+                    raise Error('DebconfError', e)
+
+            titles.append(title)
+            self.choices[title] = name
+
         self.db.reset(self.template)
-        self.db.subst(self.template, self.subst, choices)
+        self.db.subst(self.template, self.subst, ", ".join(titles))
         self.db.input(self.priority, self.template)
         try:
             self.db.go()
@@ -89,7 +104,10 @@ class Menu:
                 raise Error('debconf error', e)
 
     def get_choice(self):
-        return self.db.get(self.template)
+        ret = self.db.get(self.template)
+        if self.choices.has_key(ret):
+            return self.choices[ret]
+        return ret
 
 class Component:
     """class for managing a component"""
@@ -154,7 +172,7 @@ class Components_Menu:
 
     def _get_next_component(self):
         if self.priority.get() in ('low', 'medium'):
-            self.menu.display(", ".join([ c.name for c in self.components ]))
+            self.menu.display([ c.name for c in self.components ])
             choice = self.menu.get_choice()
 
             for c in self.components:
