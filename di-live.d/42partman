@@ -6,6 +6,8 @@ import signal
 import shutil
 import debconf
 
+from common import prepend_path, system
+
 def kill_server(pidfile):
     if os.path.exists(pidfile):
         try:
@@ -26,15 +28,6 @@ def reset_debconf_templates(templates):
 
     for template in templates:
         db.reset(template)
-
-def prepend_path(path):
-    os.environ['PATH'] = path + ":" + os.environ.get('PATH')
-
-def system(command):
-    """if command returns non-zero exitcode, exit with it"""
-    error = os.system(command)
-    if error:
-        sys.exit(os.WEXITSTATUS(error))
 
 def main():
     templates = ['partman-auto/init_automatically_partition',
