@@ -4,7 +4,6 @@ import os
 import sys
 import signal
 import shutil
-
 import debconf
 
 def kill_server(pidfile):
@@ -33,7 +32,7 @@ def prepend_path(path):
 
 def system(command):
     """if command returns non-zero exitcode, exit with it"""
-    error = os.system('/bin/partman')
+    error = os.system(command)
     if error:
         sys.exit(os.WEXITSTATUS(error))
 
