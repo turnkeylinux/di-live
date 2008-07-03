@@ -73,6 +73,7 @@ class Menu:
         self.template = template
         self.db = debconf.Debconf(title)
 
+        self.db.capb('backup')
         self.priority = priority
         self.subst = subst
 
