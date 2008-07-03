@@ -1,27 +1,65 @@
-#!/bin/sh
+#!/usr/bin/python
 
-. /usr/share/debconf/confmodule
+import os
+import sys
+import debconf
 
-db_capb backup
+from common import prepend_path, system, log
 
-if ! grep -q '/target ' /proc/mounts && \
-   ! grep -q '/target/ ' /proc/mounts; then
-    db_input critical base-installer/no_target_mounted || true
-    db_go || exit 10
-fi
+class Error(Exception):
+    pass
 
-# mount /dev and /proc on target otherwise grub-installer will fail
-# this should have been handled by live-installer
-if ! grep -q /target/dev /proc/mounts; then
-    mount -o bind /dev /target/dev
-fi
+class TargetMounts:
+    def __init__(self, target='/target'):
+        self.targetdev = os.path.join(target, 'dev')
+        self.targetproc = os.path.join(target, 'proc')
 
-if ! grep -q /target/proc /proc/mounts; then
-    mount -o bind /proc /target/proc
-fi
+        self.mount()
 
-PATH=/usr/lib/di-live/compat:$PATH /usr/share/grub-installer/grub-installer /target
+    def mount(self):
+        if not is_mounted(self.targetdev):
+            _system("mount -o bind /dev %s" % self.targetdev)
 
-umount -f /target/proc
-umount -f /target/dev
+        if not is_mounted(self.targetproc):
+            _system("mount -o bind /proc %s" % self.targetproc)
+
+    def umount(self):
+        _system("umount -f %s" % self.targetdev)
+        _system("umount -f %s" % self.targetproc)
+
+    def __del__(self):
+        self.umount()
+
+def _system(command):
+    error = os.system(command)
+    if error:
+        exitcode = os.WEXITSTATUS(error)
+        log("non-zero exitcode (%d) for command: %s" % (exitcode, command))
+        raise Error(command, exitcode)
+
+def is_mounted(dir):
+    mounts = file("/proc/mounts").read()
+    if mounts.find(dir) != -1:
+        return True
+    return False
+
+def main():
+    if not os.path.exists('/target') or not is_mounted('/target'):
+        debconf.runFrontEnd()
+        db = debconf.Debconf()
+
+        db.capb('backup')
+        db.input(debconf.CRITICAL, 'base-installer/no_target_mounted')
+        db.go()
+        sys.exit(10) #return to menu
+
+    #mount bind /dev and /proc on target otherwise grub-installer will fail
+    targetmounts = TargetMounts('/target')
+
+    prepend_path('/usr/lib/di-live/compat')
+    system('/usr/share/grub-installer/grub-installer /target')
+
+
+if __name__ == "__main__":
+    main()
 
