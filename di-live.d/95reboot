@@ -1,17 +1,22 @@
-#!/bin/sh
-set -e
+#!/usr/bin/python
 
-. /usr/share/debconf/confmodule
+import debconf
 
-db_fset di-live/reboot_now seen false
+from common import system
 
-db_input high di-live/reboot_now || true
-db_go || exit 10 # back to menu
+def main():
+    template = 'di-live/reboot_now'
 
-db_get di-live/reboot_now
-if [ "$RET" = "true" ]; then
-    reboot
-fi
+    debconf.runFrontEnd()
+    db = debconf.Debconf()
 
-exit 0
+    db.reset(template)
+    db.input(debconf.HIGH, template)
+    db.go()
+
+    if db.getBoolean(template):
+        system("reboot")
+
+if __name__ == "__main__":
+    main()
 
