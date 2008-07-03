@@ -111,10 +111,9 @@ class Components(dict):
             raise Error('non existent components path', dirpath)
 
         for file in os.listdir(dirpath):
-            try:
-                self.add(join(dirpath, file))
-            except:
-                pass
+            path = join(dirpath, file)
+            if self._is_executable(path):
+                self.add(path)
 
     def __iter__(self):
         """return component in alpha-numeric ordering according to name"""
@@ -142,8 +141,8 @@ class Components(dict):
 class Components_Menu:
     """class to mimic d-i main-menu"""
 
-    def __init__(self, component_dir, menu_template, menu_title=None):
-        self.components = Components(component_dir)
+    def __init__(self, components_dir, menu_template, menu_title=None):
+        self.components = Components(components_dir)
         self.menu = Menu(menu_template, menu_title)
 
         self.priority = Debian_Priority()
