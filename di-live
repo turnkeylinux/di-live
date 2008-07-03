@@ -21,6 +21,10 @@ import debconf
 
 from os.path import *
 
+LOGFILE = '/var/log/di-live.log'
+def log(s):
+    file(LOGFILE, 'a').write(s + "\n")
+
 class Error(Exception):
     pass
 
