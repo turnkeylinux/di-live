@@ -1,0 +1,39 @@
+#!/usr/bin/python
+
+import debconf
+
+from common import system
+
+def deep_umount(target):
+    paths = []
+    for mount in file("/proc/mounts", 'r').readlines():
+        path = mount.split()[1]
+        if path.startswith(target):
+            paths.append(path)
+
+    paths.sort(reverse=True)
+    for path in paths:
+        system("umount -f %s" % path)
+
+def reboot():
+    template = 'di-live/reboot_now'
+
+    debconf.runFrontEnd()
+    db = debconf.Debconf()
+
+    db.capb('backup')
+    db.reset(template)
+    db.input(debconf.HIGH, template)
+    db.go()
+
+    if db.getBoolean(template):
+        system("reboot")
+
+def main():
+    deep_umount('/target')
+    reboot()
+
+
+if __name__ == "__main__":
+    main()
+
