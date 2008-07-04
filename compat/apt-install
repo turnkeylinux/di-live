@@ -5,6 +5,6 @@
 # currently just logging
 
 for package; do
-	echo "apt-install: $package" >> /tmp/di-live.log
+	echo "apt-install: $package" >> /var/log/di-live.log
 done
 
