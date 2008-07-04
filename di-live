@@ -181,7 +181,7 @@ class Components_Menu:
                     return c
         else:
             for c in self.components:
-                if c.name > self.last:
+                if basename(c.path) > self.last:
                     return c
 
         return None
@@ -195,7 +195,7 @@ class Components_Menu:
 
             component.execute()
             if component.exitcode == 0:
-                self.last = component.name
+                self.last = basename(component.path)
                 self.priority.revert()
             else:
                 self.priority.decrease()
