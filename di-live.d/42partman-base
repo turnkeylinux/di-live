@@ -6,7 +6,7 @@ import signal
 import shutil
 import debconf
 
-from common import prepend_path, system
+from common import dilive_system
 
 def kill_server(pidfile):
     if os.path.exists(pidfile):
@@ -63,8 +63,7 @@ def main():
     # reset debconf for clean re-runs
     reset_debconf_templates(templates)
 
-    prepend_path('/usr/lib/di-live/compat')
-    system('/bin/partman')
+    dilive_system('/bin/partman')
 
 
 if __name__ == "__main__":

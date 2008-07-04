@@ -4,10 +4,7 @@ import os
 import sys
 import debconf
 
-from common import prepend_path, system, log
-
-class Error(Exception):
-    pass
+from common import dilive_system, system
 
 class TargetMounts:
     def __init__(self, target='/target'):
@@ -18,24 +15,17 @@ class TargetMounts:
 
     def mount(self):
         if not is_mounted(self.targetdev):
-            _system("mount -o bind /dev %s" % self.targetdev)
+            system("mount -o bind /dev %s" % self.targetdev)
 
         if not is_mounted(self.targetproc):
-            _system("mount -o bind /proc %s" % self.targetproc)
+            system("mount -o bind /proc %s" % self.targetproc)
 
     def umount(self):
-        _system("umount -f %s" % self.targetdev)
-        _system("umount -f %s" % self.targetproc)
+        system("umount -f %s" % self.targetdev)
+        system("umount -f %s" % self.targetproc)
 
     def __del__(self):
         self.umount()
-
-def _system(command):
-    error = os.system(command)
-    if error:
-        exitcode = os.WEXITSTATUS(error)
-        log("non-zero exitcode (%d) for command: %s" % (exitcode, command))
-        raise Error(command, exitcode)
 
 def is_mounted(dir):
     mounts = file("/proc/mounts").read()
@@ -56,8 +46,7 @@ def main():
     #mount bind /dev and /proc on target otherwise grub-installer will fail
     targetmounts = TargetMounts('/target')
 
-    prepend_path('/usr/lib/di-live/compat')
-    system('/usr/share/grub-installer/grub-installer /target')
+    dilive_system('/usr/share/grub-installer/grub-installer', '/target')
 
 
 if __name__ == "__main__":

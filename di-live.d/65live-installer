@@ -1,10 +1,9 @@
 #!/usr/bin/python
 
-from common import prepend_path, system
+from common import dilive_system
 
 def main():
-    prepend_path('/usr/lib/di-live/compat')
-    system('/lib/live-installer/live-installer')
+    dilive_system('/lib/live-installer/live-installer')
 
 
 if __name__ == "__main__":
