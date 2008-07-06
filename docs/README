@@ -1,0 +1,61 @@
+
+Debian Installer for Live systems
+=================================
+
+Introduction
+------------
+
+Debian-installer (d-i) is the preferred way of installing debian based
+systems. It runs in the initrd/initramfs (see notes/DebianInstaller).
+
+Ubiquity is developed by and used in ubuntu as its graphical desktop
+installer (alternative and server use pure d-i). Ubiquity uses d-i code
+as its backend, is a complex beast, and unfortunately not very modular
+(see notes/Ubiquity)
+
+di-live's objective is to provide the ability to install a "live" debian
+based system to the harddisk, leveraging the power/flexability of d-i,
+with a completely modular implementation (least amount of assumptions)
+that can be used by upstream (eg. as an ubiquity depends - seperation of
+concerns).
+
+Source structure
+----------------
+
+git-branches
+    #vanilla    prestine code downloaded from upstream
+    #master     patched upstream code and actual di-live code
+
+    git-diff vanilla compat/
+    git-diff vanilla d-i/
+
+
+di-live     - drives the installation (similar to d-i's main-menu)
+di-live.d/  - component directory (executed in alpha-numeric ordering)
+d-i/        - upstream d-i source code
+compat/     - compatibility scripts as d-i code assumes running in 
+              initrd/initramfs
+
+cli syntax
+----------
+
+The init script will execute di-live (on new vt) if the boot param 
+"di-live" is present on /proc/cmdline. di-live may be executed manually
+in a live system aswell.
+
+Syntax: di-live [options]
+
+Debian Installer Live
+
+Drives the installation, executing components according to alpha-numeric
+ordering, and responsible for dynamically assembling the menu and
+executing components when they are selected.
+
+Similar to d-i's main-menu, di-live's menu will only be visible when
+debconf priority is low or medium. Priority is reduced when a component
+fails, and returns to original level when next component completes 
+successfully.
+
+Options:
+  -d --debug      Set DEBCONF_DEBUG=developer DEBIAN_FRONTEND=readline
+
