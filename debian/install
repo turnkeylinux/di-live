@@ -1,5 +1,5 @@
 # di-live
-di-live /usr/bin
+di-live.py /usr/lib/di-live
 di-live.d /usr/lib
 
 # compat

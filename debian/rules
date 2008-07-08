@@ -20,6 +20,7 @@ binary-indep: install
 	dh_testroot
 	$(MAKE) -C d-i install
 	cat d-i/templates >> debian/templates
+	dh_link usr/lib/di-live/di-live.py usr/bin/di-live
 	dh_install
 	dh_installinit -r --no-start -- start 99 2 .
 	dh_installdocs
