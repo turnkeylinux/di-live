@@ -1,8 +1,82 @@
-refer to d-i/source/*/debian/copyright for their respective copyright and license.
+Author: Alon Swartz <alon@turnkeylinux.com>
 
-the following code is loosly based on ubiquity 1.8.7
-    compat/
-    d-i/Makefile
-    additions/partman
+Copyright:
 
-    
+d-i/source/base-installer
+    Author(s): Tollef Fog Heen <tfheen@debian.org>
+    License:   GNU General Public License, version 2
+
+d-i/source/debian-installer-utils
+    Author(s): David Whedon, Tollef Fog Heen, Thorsten Sauter
+    Copyright: 2001 David Whedon <dwhedon@debian.org>,
+               2002 Tollef Fog Heen <tfheen@debian.org>
+               2003 Thorsten Sauter <tsauter@gmx.net>
+               2003 Rob Landley <rob@landley.net>
+               2003 Joey Hess <joeyh@debian.org>
+               2005 Colin Watson <cjwatson@debian.org>
+    License:   GNU General Public License, version 2 or later.
+
+d-i/source/hw-detect
+    Author(s): David Whedon
+    Copyright: 2000 David Whedon <dwhedon@gordian.com>
+    License:   GNU General Public License, version 2 or later.
+
+d-i/source/live-installer
+    Copyright: 2007 O.S. Systems
+               2007 Otavio Salvador <otavio@ossystems.com.br>
+    License:   GNU General Public License, version 2 or later.
+
+d-i/source/partconf
+    Author(s): Martin Sjogren <sjogren@debian.org>
+               debian-installer team <debian-boot@lists.debian.org>
+    Copyright: 2003  Martin Sjogren
+    License:   GNU General Public License, version 2 or later.
+
+
+d-i/source/partman-auto-loop
+    Author(s): Colin Watson <cjwatson@ubuntu.com>
+               Based on work done on partman-auto and partman-auto-lvm by
+               Anton Zinoviev and others in the d-i team.
+    Copyright: 2007 Canonical Ltd.
+    License:   GNU General Public License, version 2 or later.
+
+d-i/source/grub-installer
+d-i/source/partman-auto
+d-i/source/partman-base
+d-i/source/partman-ext3
+d-i/source/partman-target
+d-i/source/partman-reiserfs
+d-i/source/partman-patitioning
+d-i/source/partman-basicmethods
+    License:   GNU General Public License, version 2 or later.
+
+compat
+d-i/Makefile
+additions/partman
+    Based on code from Ubiquity
+    Copyright: 2005  Javier Carranza
+               2005, 2006, 2007  Canonical Ltd.
+               2007 Mario Limonciello
+    License:   GNU General Public License, version 2 or later.
+
+License:
+
+    Copyright (C) 2008 Alon Swartz <alon@turnkeylinux.com>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+
+On Debian and Ubuntu systems, the complete text of the GNU General Public
+License can be found in /usr/share/common-licenses/GPL file.
+
