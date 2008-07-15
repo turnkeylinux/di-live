@@ -1,3 +1,4 @@
+# Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.com> - all rights reserved
 
 import os
 import sys

@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.com> - all rights reserved
+
 """
 Debian Installer Live
 
