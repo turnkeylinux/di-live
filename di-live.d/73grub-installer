@@ -3,7 +3,6 @@
 
 import os
 import sys
-import debconf
 
 from common import dilive_system, system, target_mounted, is_mounted
 

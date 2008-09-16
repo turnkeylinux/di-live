@@ -2,7 +2,6 @@
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 import os
-import sys
 import signal
 import shutil
 
@@ -54,7 +53,7 @@ def main():
     shutil.rmtree('/var/lib/partman', ignore_errors=True)
 
     # reset debconf for clean re-runs
-    preset_debconf(reset=templates)
+    preset_debconf(resets=templates)
 
     dilive_system('/bin/partman')
 

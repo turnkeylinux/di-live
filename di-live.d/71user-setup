@@ -2,6 +2,7 @@
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 import os
+import sys
 
 from common import dilive_system, preset_debconf, target_mounted
 
@@ -24,7 +25,7 @@ def main():
     preseeds = [('passwd/root-login', 'true'),
                 ('passwd/make-user', 'false')]
 
-    preset_debconf(reset=templates, preseed=preseeds)
+    preset_debconf(resets=templates, preseeds=preseeds)
 
     # skip check if root already has a password
     os.environ['OVERRIDE_ROOT_PASSWORD'] = 'y'

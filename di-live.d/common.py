@@ -75,7 +75,7 @@ def is_mounted(dir):
         return True
     return False
 
-def target_mounted(target='/target')
+def target_mounted(target='/target'):
     if not os.path.exists(target) or not is_mounted(target):
         debconf.runFrontEnd()
         db = debconf.Debconf()
