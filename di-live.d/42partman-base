@@ -5,9 +5,8 @@ import os
 import sys
 import signal
 import shutil
-import debconf
 
-from common import dilive_system
+from common import dilive_system, preset_debconf
 
 def kill_server(pidfile):
     if os.path.exists(pidfile):
@@ -22,13 +21,6 @@ def kill_server(pidfile):
             os.unlink(pidfile)
         except OSError:
             pass
-
-def reset_debconf_templates(templates):
-    debconf.runFrontEnd()
-    db = debconf.Debconf()
-
-    for template in templates:
-        db.reset(template)
 
 def main():
     templates = ['partman-auto/init_automatically_partition',
@@ -62,7 +54,7 @@ def main():
     shutil.rmtree('/var/lib/partman', ignore_errors=True)
 
     # reset debconf for clean re-runs
-    reset_debconf_templates(templates)
+    preset_debconf(reset=templates)
 
     dilive_system('/bin/partman')
 

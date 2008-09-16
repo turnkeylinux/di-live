@@ -2,6 +2,7 @@
 
 import os
 import sys
+import debconf
 import commands
 
 mkarg = commands.mkarg
@@ -55,4 +56,16 @@ def dilive_system(command, *args):
     except ExecError, e:
         log(str(e))
         sys.exit(e.exitcode)
+
+def preset_debconf(resets=None, preseeds=None):
+    debconf.runFrontEnd()
+    db = debconf.Debconf()
+
+    if resets:
+        for template in resets:
+            db.reset(template)
+
+    if preseeds:
+        for template, value in preseeds:
+            db.set(template, value)
 
