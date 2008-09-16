@@ -11,7 +11,7 @@ else
 fi
 export ROOT
 
-. /usr/lib/user-setup/functions.sh
+. /usr/lib/di-live/user-setup/functions.sh
 
 # For the convenience of heavy testers
 set_special_users() {
@@ -145,7 +145,7 @@ while :; do
 				continue
 			fi
 			
-			if grep -v '^#' /usr/lib/user-setup/reserved-usernames | \
+			if grep -v '^#' /usr/lib/di-live/user-setup/reserved-usernames | \
 			   grep -q "^$USER\$"; then
 				db_fset passwd/username seen false
 				db_fset passwd/username-reserved seen false

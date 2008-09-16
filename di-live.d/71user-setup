@@ -29,8 +29,8 @@ def main():
     # skip check if root already has a password
     os.environ['OVERRIDE_ROOT_PASSWORD'] = 'y'
 
-    dilive_system('/usr/lib/user-setup/user-setup-ask', '/target')
-    dilive_system('/usr/lib/user-setup/user-setup-apply', '/target')
+    dilive_system('/usr/lib/di-live/user-setup/user-setup-ask', '/target')
+    dilive_system('/usr/lib/di-live/user-setup/user-setup-apply', '/target')
 
 
 if __name__ == "__main__":
