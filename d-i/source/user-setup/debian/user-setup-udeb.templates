@@ -133,4 +133,3 @@ Template: finish-install/progress/user-setup
 Type: text
 # finish-install progress bar item
 _Description: Setting users and passwords...
-
