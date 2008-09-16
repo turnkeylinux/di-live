@@ -1,0 +1,48 @@
+#!/usr/bin/python
+# Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
+
+import os
+import debconf
+
+from common import dilive_system
+
+def preset_debconf(resets=None, preseeds=None):
+    debconf.runFrontEnd()
+    db = debconf.Debconf()
+
+    if resets:
+        for template in resets:
+            db.reset(template)
+
+    if preseeds:
+        for template, value in preseeds:
+            db.set(template, value)
+
+def main():
+    templates = ['passwd/shadow',
+                 'passwd/root-login',
+                 'passwd/root-password',
+                 'passwd/root-password-again',
+                 'passwd/root-password-crypted',
+                 'passwd/make-user',
+                 'passwd/username',
+                 'passwd/user-password',
+                 'passwd/user-password-again',
+                 'passwd/user-password-crypted']
+
+    # force user to set root password and skip user account creation
+    preseeds = [('passwd/root-login', 'true'),
+                ('passwd/make-user', 'false')]
+
+    preset_debconf(reset=templates, preseed=preseeds)
+
+    # skip check if root already has a password
+    os.environ['OVERRIDE_ROOT_PASSWORD'] = 'y'
+
+    dilive_system('/usr/lib/user-setup/user-setup-ask', '/target')
+    dilive_system('/usr/lib/user-setup/user-setup-apply', '/target')
+
+
+if __name__ == "__main__":
+    main()
+
