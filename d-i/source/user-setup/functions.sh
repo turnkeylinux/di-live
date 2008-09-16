@@ -21,7 +21,13 @@ is_system_user () {
 }
 
 # Returns a true value if root already has a password.
+# OVERRIDE_ROOT_PASSWORD overrides this to assume that root doesn't have
+# a password
 root_password () {
+    if [ "$OVERRIDE_ROOT_PASSWORD" ]; then
+        return 1
+    fi
+
 	if ! [ -e $ROOT/etc/passwd ]; then
 		return 1
 	fi
