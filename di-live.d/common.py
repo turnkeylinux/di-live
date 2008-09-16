@@ -69,3 +69,21 @@ def preset_debconf(resets=None, preseeds=None):
         for template, value in preseeds:
             db.set(template, value)
 
+def is_mounted(dir):
+    mounts = file("/proc/mounts").read()
+    if mounts.find(dir) != -1:
+        return True
+    return False
+
+def target_mounted(target='/target')
+    if not os.path.exists(target) or not is_mounted(target):
+        debconf.runFrontEnd()
+        db = debconf.Debconf()
+
+        db.capb('backup')
+        db.input(debconf.CRITICAL, 'base-installer/no_target_mounted')
+        db.go()
+        return False
+
+    return True
+

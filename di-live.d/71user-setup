@@ -3,9 +3,12 @@
 
 import os
 
-from common import dilive_system, preset_debconf
+from common import dilive_system, preset_debconf, target_mounted
 
 def main():
+    if not target_mounted('/target'):
+        sys.exit(10) #return to menu
+
     templates = ['passwd/shadow',
                  'passwd/root-login',
                  'passwd/root-password',

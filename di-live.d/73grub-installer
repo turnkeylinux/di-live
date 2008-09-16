@@ -5,7 +5,7 @@ import os
 import sys
 import debconf
 
-from common import dilive_system, system
+from common import dilive_system, system, target_mounted, is_mounted
 
 class TargetMounts:
     def __init__(self, target='/target'):
@@ -28,20 +28,8 @@ class TargetMounts:
     def __del__(self):
         self.umount()
 
-def is_mounted(dir):
-    mounts = file("/proc/mounts").read()
-    if mounts.find(dir) != -1:
-        return True
-    return False
-
 def main():
-    if not os.path.exists('/target') or not is_mounted('/target'):
-        debconf.runFrontEnd()
-        db = debconf.Debconf()
-
-        db.capb('backup')
-        db.input(debconf.CRITICAL, 'base-installer/no_target_mounted')
-        db.go()
+    if not target_mounted('/target'):
         sys.exit(10) #return to menu
 
     #mount bind /dev and /proc on target otherwise grub-installer will fail
