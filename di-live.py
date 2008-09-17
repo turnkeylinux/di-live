@@ -86,7 +86,7 @@ class Menu:
         titles = []
         self.choices = {}
         for name in names:
-            title = name
+            title = name.capitalize()
             try:
                 template = 'debian-installer/%s/title' % name
                 title = self.db.metaget(template, 'description')
