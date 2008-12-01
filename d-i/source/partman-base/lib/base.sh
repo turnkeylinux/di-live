@@ -96,7 +96,12 @@ debconf_select () {
 	db_get $template
 	IFS="$NL"
 	for x in $choices; do
-		if [ "$RET" = "${x#*$TAB}" ]; then
+		# IFS issues can ruin your day, removing spaces completely
+		# for the match
+		local RETURN=`echo $RET | sed 's/ //g'`
+		local OPTION=`echo ${x#*$TAB} | sed 's/ //g'`
+
+		if [ "$RETURN" = "$OPTION" ]; then
 			RET="${x%$TAB*}"
 			break
 		else
