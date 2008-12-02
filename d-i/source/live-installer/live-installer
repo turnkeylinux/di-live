@@ -107,9 +107,7 @@ install_live_system () {
 
 			if [ -x "$script" ] ; then
 				# be careful to preserve exit code
-				if log-output -t live-installer "$script"; then
-					:
-				else
+				if ! log-output -t live-installer chroot /target "$script"; then
 					warning "$script returned error code $?"
 				fi
 			else
