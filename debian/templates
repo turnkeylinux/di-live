@@ -5,7 +5,7 @@ Description: Debian Installer Live Menu
 
 Template: di-live/reboot_now
 Type: boolean
-Default: false
+Default: true
 Description: Would you like to restart now?
  Installation is complete. You need to restart the computer in order to use the new installation.
 
