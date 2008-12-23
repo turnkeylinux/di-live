@@ -28,7 +28,7 @@ def reboot():
     db.go()
 
     if db.getBoolean(template):
-        system("reboot")
+        system("/sbin/reboot -f")
 
 def main():
     deep_umount('/target')
