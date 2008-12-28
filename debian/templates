@@ -33,7 +33,31 @@ Description: Do you want to return to the partitioner?
  If you do not go back to the partitioner and increase the size of these
  partitions, the installation may fail.
 
+Template: di-live/mysql_root_password
+Type: password
+Description: New password for the MySQL "root" user:
+ ${DESCRIPTION}
+
+Template: di-live/mysql_root_password_again
+Type: password
+Description: Repeat password for the MySQL "root" user:
+
+Template: di-live/password_mismatch
+Type: error
+Description: Password input error
+ The two passwords you entered were not the same. Please try again.
+
+Template: di-live/password_empty
+Type: error
+Description: Empty password
+ You entered an empty password, which is not allowed.
+ Please choose a non-empty password.
+
 Template: debian-installer/root-password/title
 Type: title
 Description: Set root password
+
+Template: debian-installer/mysql-password/title
+Type: title
+Description: Set MySQL root password
 
