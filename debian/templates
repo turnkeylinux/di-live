@@ -42,6 +42,11 @@ Template: di-live/mysql_root_password_again
 Type: password
 Description: Repeat password for the MySQL "root" user:
 
+Template: di-live/mysql_allow_empty_root_password
+Type: boolean
+Default: true
+Description: should be preseeded - affects logic
+
 Template: di-live/password_mismatch
 Type: error
 Description: Password input error
