@@ -1,0 +1,80 @@
+#!/bin/bash
+# Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
+# Generate SSL certificate
+# Note: daemons using certificate need to be restarted for changes to take effect
+
+if [ $# -ne "0" ]; then
+    HELP=y
+fi
+
+set ${C:=""}
+set ${ST:=""}
+set ${L:=""}
+set ${O:="TurnKey Linux"}
+set ${OU:="Software appliances"}
+set ${CN:=""}
+set ${emailAddress:=""}
+
+set ${DAYS:=3650}
+set ${BITS:=1024}
+set ${KEYPASS:=<blank>}           # workaround: no way of passing a blank pass
+set ${CERTFILE:="/etc/ssl/certs/cert.pem"}
+
+if [ $HELP ]; then
+    echo "Generate SSL certificate"
+    echo
+    echo "# VARIABLE      EXPLANATION          [VALUE]"
+    echo "  C             Country Code         $C"
+    echo "  ST            State or province    $ST"
+    echo "  L             Locality (city)      $L"
+    echo "  O             Organization name    $O"
+    echo "  OU            Organizational unit  $OU"
+    echo "  CN            Common name          $CN"
+    echo "  emailAddress  Email address        $emailAddress"
+    echo
+    echo "  DAYS          Duration in days     $DAYS"
+    echo "  BITS          RSA bits to use      $BITS"
+    echo "  KEYPASS       Key password         $KEYPASS"
+    echo
+    echo "  CERTFILE      Output file          $CERTFILE"
+    echo
+    echo "# NOTES"
+    echo "  Warning: only set password if you know what your doing"
+    echo "  Display certificate: openssl x509 -text < $CERTFILE"
+    exit 1
+fi
+
+TMPCERT=.tmpcert.pem
+TMPKEY=.tmpkey.pem
+
+RDN="/"
+[ "$C"  ] && RDN="${RDN}C=${C}/"
+[ "$ST" ] && RDN="${RDN}ST=${ST}/"
+[ "$L"  ] && RDN="${RDN}L=${L}/"
+[ "$O"  ] && RDN="${RDN}O=${O}/"
+[ "$OU" ] && RDN="${RDN}OU=${OU}/"
+[ "$CN" ] && RDN="${RDN}CN=${CN}/"
+[ "$emailAddress" ] && RDN="${RDN}emailAddress=${emailAddress}/"
+
+# create key and password protected cert
+openssl req -x509 \
+    -newkey rsa:$BITS \
+    -keyout $TMPKEY -out $TMPCERT \
+    -passout pass:$KEYPASS \
+    -days $DAYS \
+    -multivalue-rdn -subj "$RDN"
+
+# remove password protection from key if not set by user
+if [ "$KEYPASS" == "<blank>" ]; then
+    openssl rsa -passin pass:$KEYPASS < $TMPKEY > $CERTFILE
+else
+    cat $TMPKEY > $CERTFILE
+fi
+
+# add certificate to certificate file and set permissions
+cat $TMPCERT >> $CERTFILE
+chmod 600 $CERTFILE
+
+# cleanup
+rm $TMPCERT $TMPKEY
+

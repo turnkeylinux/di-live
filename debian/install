@@ -1,6 +1,7 @@
 # di-live
 di-live.py /usr/lib/di-live
 di-live.d /usr/lib
+contrib /usr/share/di-live
 
 # compat
 compat/anna-install usr/lib/di-live/compat
