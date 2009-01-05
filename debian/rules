@@ -23,7 +23,7 @@ binary-indep: install
 	dh_link usr/lib/di-live/di-live.py usr/bin/di-live
 	dh_install
 	dh_installinit -r --no-start -- start 99 S .
-	dh_installdocs
+	dh_installdocs docs/
 	dh_installdebconf
 	dh_installdeb
 	dh_shlibdeps
