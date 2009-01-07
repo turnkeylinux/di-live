@@ -47,6 +47,20 @@ Type: boolean
 Default: true
 Description: should be preseeded - affects logic
 
+Template: di-live/pgsql_postgres_password
+Type: password
+Description: New password for the PostgreSQL "postgres" user:
+ ${DESCRIPTION}
+
+Template: di-live/pgsql_postgres_password_again
+Type: password
+Description: Repeat password for the PostgreSQL "postgres" user:
+
+Template: di-live/pgsql_allow_empty_postgres_password
+Type: boolean
+Default: true
+Description: should be preseeded - affects logic
+
 Template: di-live/password_mismatch
 Type: error
 Description: Password input error
@@ -65,4 +79,8 @@ Description: Set root password
 Template: debian-installer/mysql-password/title
 Type: title
 Description: Set MySQL root password
+
+Template: debian-installer/pgsql-password/title
+Type: title
+Description: Set PostgreSQL password
 
