@@ -41,9 +41,6 @@ class DebconfPass:
 
         self.password = ""
 
-    def __del__(self):
-        self.db.stop()
-
     def _db_input(self, template):
         template = "%s/%s" % (self.package, template)
         self.db.reset(template)
