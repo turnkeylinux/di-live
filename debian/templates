@@ -63,14 +63,11 @@ Description: should be preseeded - affects logic
 
 Template: di-live/password_mismatch
 Type: error
-Description: Password input error
- The two passwords you entered were not the same. Please try again.
+Description: Passwords do not match, please try again.
 
 Template: di-live/password_empty
 Type: error
-Description: Empty password
- You entered an empty password, which is not allowed.
- Please choose a non-empty password.
+Description: Please enter a non-empty password.
 
 Template: debian-installer/root-password/title
 Type: title
