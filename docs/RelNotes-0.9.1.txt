@@ -1,0 +1,41 @@
+====================
+v0.9.1 Release Notes
+====================
+
+* manual partitioning IFS bugfixi (took me ages to track down this bug)
+
+    - Due to IFS issues, the user choice RET was not matched up with
+      the available choices, so the choice key could not be returned.
+      So, by default it would return the RET itself, which would result
+      in a plugin error.
+  
+    - The plugin error would result in ask_user returning a failed 
+      exitcode, which in turn result in a "No root filesystem" message.
+
+* execute live-installer hooks in target chroot
+
+      - cleaner code
+      - allows hook scripts to be executed in live system as well
+
+* start the installer prior to single user mode
+
+      - doesn't make sense to run the demo functions if the user selects
+        running the installer from the boot menu
+  
+      - the system takes longer to boot, uses up more memory and worst of
+        all, it opens a window of vulnerability
+  
+      - it is highly recommended to include the kernel param "single" when
+        specifying di-live, so the system won't continue loading by default
+        post installation
+
+* templates
+
+    - changed reboot default to true
+    - added mysql password templates
+    - added postgresql password templates
+
+* replaced overly verbose password messages
+
+* imported DeconfPass related code common (used by mysql and pgsql)
+
