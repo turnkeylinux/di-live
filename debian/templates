@@ -33,30 +33,30 @@ Description: Do you want to return to the partitioner?
  If you do not go back to the partitioner and increase the size of these
  partitions, the installation may fail.
 
-Template: di-live/mysql_root_password
+Template: di-live/mysql_password
 Type: password
-Description: New password for the MySQL "root" user:
+Description: New password for the MySQL "${USER}" user:
  ${DESCRIPTION}
 
-Template: di-live/mysql_root_password_again
+Template: di-live/mysql_password_again
 Type: password
-Description: Repeat password for the MySQL "root" user:
+Description: Repeat password for the MySQL "${USER}" user:
 
-Template: di-live/mysql_allow_empty_root_password
+Template: di-live/mysql_allow_empty_password
 Type: boolean
 Default: true
 Description: should be preseeded - affects logic
 
-Template: di-live/pgsql_postgres_password
+Template: di-live/postgresql_password
 Type: password
-Description: New password for the PostgreSQL "postgres" user:
+Description: New password for the PostgreSQL "${USER}" user:
  ${DESCRIPTION}
 
-Template: di-live/pgsql_postgres_password_again
+Template: di-live/postgresql_password_again
 Type: password
-Description: Repeat password for the PostgreSQL "postgres" user:
+Description: Repeat password for the PostgreSQL "${USER}" user:
 
-Template: di-live/pgsql_allow_empty_postgres_password
+Template: di-live/postgresql_allow_empty_password
 Type: boolean
 Default: true
 Description: should be preseeded - affects logic
@@ -75,7 +75,7 @@ Description: Set root password
 
 Template: debian-installer/mysql-password/title
 Type: title
-Description: Set MySQL root password
+Description: Set MySQL password
 
 Template: debian-installer/pgsql-password/title
 Type: title

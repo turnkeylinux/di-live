@@ -32,8 +32,9 @@ class Chroot:
         system(*self._prepare_command(*command))
 
 class DebconfPass:
-    def __init__(self, package):
+    def __init__(self, package, user=None):
         self.package = package
+        self.user = user
 
         debconf.runFrontEnd()
         self.db = debconf.Debconf()
@@ -44,6 +45,8 @@ class DebconfPass:
     def _db_input(self, template):
         template = "%s/%s" % (self.package, template)
         self.db.reset(template)
+        if self.user:
+            self.db.subst(template, 'USER', self.user)
         self.db.input(debconf.HIGH, template)
         try:
             self.db.go()
