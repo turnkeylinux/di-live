@@ -31,18 +31,18 @@ class Chroot:
         """execute system command in chroot -> None"""
         system(*self._prepare_command(*command))
 
-debconf.runFrontEnd()
-DEBCONF = debconf.Debconf()
-DEBCONF.capb('backup')
-
-class DebconfPass:
+class Debconf:
     def __init__(self):
-        self.db = DEBCONF
+        debconf.runFrontEnd()
+        self.db = debconf.Debconf()
+        self.db.capb('backup')
 
-    def _db_input(self, template, description):
+    def _db_input(self, template, description=None, default=None):
         self.db.reset(template)
         if description:
             self.db.subst(template, 'DESCRIPTION', description)
+        if default:
+            self.db.set(template, default)
         self.db.input(debconf.HIGH, template)
         try:
             self.db.go()
@@ -54,12 +54,15 @@ class DebconfPass:
         self.db.reset(template)
         return ret
 
-    def ask(self, description, allow_empty=True):
-        self.password = ""
+    def get_input(self, description, default=None):
+        template = 'di-live/get-string'
+        return self._db_input(template, description, default)
+
+    def get_password(self, description, allow_empty=False):
         while 1:
-            self.password = self._db_input('di-live/password', description)
-            if self.password == self._db_input('di-live/password_again'):
-                if not self.password and not allow_empty:
+            password = self._db_input('di-live/password', description)
+            if password == self._db_input('di-live/password_again'):
+                if not password and not allow_empty:
                     self._db_input('di-live/password_empty')
                     continue
                 
@@ -67,28 +70,8 @@ class DebconfPass:
 
             self._db_input('di-live/password_mismatch')
 
+        return password
 
-class DebconfInput:
-    def __init__(self):
-        self.db = DEBCONF
-
-    def get_input(self, description, default=None):
-        template = 'di-live/get-string'
-        self.db.reset(template)
-        if default:
-            self.db.set(template, default)
-        self.db.subst(template, 'DESCRIPTION', description)
-
-        self.db.input(debconf.HIGH, template)
-        try:
-            self.db.go()
-        except debconf.DebconfError, e:
-            self.db.stop()
-            sys.exit(e[0])
-
-        ret = self.db.get(template)
-        self.db.reset(template)
-        return ret
 
 class ExecError(Exception):
     """Accessible attributes:
@@ -165,4 +148,5 @@ def target_mounted(target='/target'):
         return False
 
     return True
+
 
