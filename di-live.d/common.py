@@ -36,19 +36,13 @@ DEBCONF = debconf.Debconf()
 DEBCONF.capb('backup')
 
 class DebconfPass:
-    def __init__(self, package, user=None):
-        self.package = package
-        self.user = user
-
+    def __init__(self):
         self.db = DEBCONF
-        self.password = ""
 
-    def _db_input(self, template):
-        if not "/" in template:
-            template = "%s/%s" % (self.package, template)
+    def _db_input(self, template, description):
         self.db.reset(template)
-        if self.user:
-            self.db.subst(template, 'USER', self.user)
+        if description:
+            self.db.subst(template, 'DESCRIPTION', description)
         self.db.input(debconf.HIGH, template)
         try:
             self.db.go()
@@ -60,10 +54,11 @@ class DebconfPass:
         self.db.reset(template)
         return ret
 
-    def ask(self, password, password_again, allow_empty=True):
+    def ask(self, description, allow_empty=True):
+        self.password = ""
         while 1:
-            self.password = self._db_input(password)
-            if self.password == self._db_input(password_again):
+            self.password = self._db_input('di-live/password', description)
+            if self.password == self._db_input('di-live/password_again'):
                 if not self.password and not allow_empty:
                     self._db_input('di-live/password_empty')
                     continue
