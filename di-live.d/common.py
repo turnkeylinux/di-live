@@ -31,15 +31,16 @@ class Chroot:
         """execute system command in chroot -> None"""
         system(*self._prepare_command(*command))
 
+debconf.runFrontEnd()
+DEBCONF = debconf.Debconf()
+DEBCONF.capb('backup')
+
 class DebconfPass:
     def __init__(self, package, user=None):
         self.package = package
         self.user = user
 
-        debconf.runFrontEnd()
-        self.db = debconf.Debconf()
-        self.db.capb('backup')
-
+        self.db = DEBCONF
         self.password = ""
 
     def _db_input(self, template):
@@ -74,9 +75,7 @@ class DebconfInput:
     def __init__(self, package):
         self.package = package
 
-        debconf.runFrontEnd()
-        self.db = debconf.Debconf()
-        self.db.capb('backup')
+        self.db = DEBCONF
 
     def get_input(self, template):
         template = "%s/%s" % (self.package, template)
