@@ -70,6 +70,29 @@ class DebconfPass:
 
             self._db_input('password_mismatch')
 
+class DebconfInput:
+    def __init__(self, package):
+        self.package = package
+
+        debconf.runFrontEnd()
+        self.db = debconf.Debconf()
+        self.db.capb('backup')
+
+    def get_input(self, template):
+        template = "%s/%s" % (self.package, template)
+        self.db.reset(template)
+
+        self.db.input(debconf.HIGH, template)
+        try:
+            self.db.go()
+        except debconf.DebconfError, e:
+            self.db.stop()
+            sys.exit(e[0])
+
+        ret = self.db.get(template)
+        self.db.reset(template)
+        return ret
+
 class ExecError(Exception):
     """Accessible attributes:
     command     executed command
