@@ -44,7 +44,8 @@ class DebconfPass:
         self.password = ""
 
     def _db_input(self, template):
-        template = "%s/%s" % (self.package, template)
+        if not "/" in template:
+            template = "%s/%s" % (self.package, template)
         self.db.reset(template)
         if self.user:
             self.db.subst(template, 'USER', self.user)
@@ -64,12 +65,12 @@ class DebconfPass:
             self.password = self._db_input(password)
             if self.password == self._db_input(password_again):
                 if not self.password and not allow_empty:
-                    self._db_input('password_empty')
+                    self._db_input('di-live/password_empty')
                     continue
                 
                 break
 
-            self._db_input('password_mismatch')
+            self._db_input('di-live/password_mismatch')
 
 class DebconfInput:
     def __init__(self, package):
@@ -78,7 +79,8 @@ class DebconfInput:
         self.db = DEBCONF
 
     def get_input(self, template):
-        template = "%s/%s" % (self.package, template)
+        if not "/" in template:
+            template = "%s/%s" % (self.package, template)
         self.db.reset(template)
 
         self.db.input(debconf.HIGH, template)
