@@ -49,10 +49,9 @@ Template: di-live/password_empty
 Type: error
 Description: Please enter a non-empty password.
 
-Template: di-live/xmpp_domain
+Template: di-live/get-string
 Type: string
-Default: example.com
-Description: The domain for ejabberd and speeqe to serve
+Description: ${DESCRIPTION}
 
 Template: debian-installer/root-password/title
 Type: title

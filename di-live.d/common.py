@@ -67,16 +67,17 @@ class DebconfPass:
 
             self._db_input('di-live/password_mismatch')
 
-class DebconfInput:
-    def __init__(self, package):
-        self.package = package
 
+class DebconfInput:
+    def __init__(self):
         self.db = DEBCONF
 
-    def get_input(self, template):
-        if not "/" in template:
-            template = "%s/%s" % (self.package, template)
+    def get_input(self, description, default=None):
+        template = 'di-live/get-string'
         self.db.reset(template)
+        if default:
+            self.db.set(template, default)
+        self.db.subst(template, 'DESCRIPTION', description)
 
         self.db.input(debconf.HIGH, template)
         try:
