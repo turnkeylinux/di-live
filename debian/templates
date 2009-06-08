@@ -69,6 +69,11 @@ Template: di-live/password_empty
 Type: error
 Description: Please enter a non-empty password.
 
+Template: di-live/xmpp_domain
+Type: string
+Default: example.com
+Description: The domain for ejabberd and speeqe to serve
+
 Template: debian-installer/root-password/title
 Type: title
 Description: Set root password
