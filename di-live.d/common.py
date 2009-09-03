@@ -1,5 +1,6 @@
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
+import re
 import os
 import sys
 import debconf
@@ -70,7 +71,7 @@ class Debconf:
 
             self._db_input('di-live/password_mismatch')
 
-        return password
+        return re.escape(password)
 
 
 class ExecError(Exception):
