@@ -1,0 +1,15 @@
+====================
+v0.9.2 Release Notes
+====================
+
+* removed ad-hoc templates, replaced with generic templates:
+
+    - created generic di-live/password* templates with subst description
+    - created generic get-string template
+
+* created generic Debconf class
+
+    - high level wrapper to ask for debconf input/password
+    - cleaner code, remove duplication, flexible
+    - debconf instance was interfering with main debconf instance
+
