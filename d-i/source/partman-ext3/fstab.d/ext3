@@ -13,7 +13,7 @@ for dev in $DEVICES/*; do
 		method=$(cat $id/method)
 		filesystem=$(cat $id/acting_filesystem)
 		case "$filesystem" in
-		    ext3)
+		    ext3|ext4)
 			[ -f "$id/mountpoint" ] || continue
 			mountpoint=$(cat $id/mountpoint)
 			# due to #249322, #255135, #258117:
@@ -31,7 +31,7 @@ for dev in $DEVICES/*; do
 			else
 				pass=2
 			fi
-			echo "$path" "$mountpoint" ext3 $options 0 $pass
+			echo "$path" "$mountpoint" $filesystem $options 0 $pass
 			;;
 		esac
 	done

@@ -14,6 +14,10 @@ if [ -x /sbin/depmod ]; then
 	depmod -a > /dev/null 2>&1 || true
 fi
 
+log () { 
+	logger -t ethdetect "$@"
+}
+
 is_not_loaded() {
 	! ((cut -d" " -f1 /proc/modules | grep -q "^$1\$") || \
 	   (cut -d" " -f1 /proc/modules | sed -e 's/_/-/g' | grep -q "^$1\$"))
@@ -53,13 +57,21 @@ list_nic_modules() {
 }
 
 snapshot_devs() {
-	echo -n `grep : /proc/net/dev | sort | cut -d':' -f1`
+	echo -n `grep : /proc/net/dev | cut -d':' -f1`
 }
 
 compare_devs() {
 	local olddevs="$1"
 	local devs="$2"
-	echo ${devs#$olddevs} | sed -e 's/^ //'
+	local dev newdevs
+
+	newdevs=
+	for dev in $devs; do
+		if ! echo " $olddevs " | grep -q " $dev "; then
+			newdevs="${newdevs:+$newdevs }$dev"
+		fi
+	done
+	echo "$newdevs"
 }
 
 DEVNAMES_STATIC=/etc/network/devnames-static.gz
@@ -82,12 +94,15 @@ cleanup () {
 	rm -f $TEMP_EXTRACT
 }
 
+lsifaces () {
+	sed -e "s/lo://" < /proc/net/dev | grep "[a-z0-9]*:[ ]*[0-9]*" | sed "s/:.*//; s/^ *//"
+}
+
 ethernet_found() {
 	local ifaces=0
 	local firewire=0
 
-	for iface in $(sed -e "s/lo://" < /proc/net/dev | \
-			grep "[a-z0-9]*:[ ]*[0-9]*" | sed "s/:.*//; s/^ *//"); do
+	for iface in $(lsifaces); do
 		ifaces=$(expr $ifaces + 1)
 		if [ -f /etc/network/devnames ]; then
 			if grep "^$iface:" /etc/network/devnames | \
@@ -117,7 +132,6 @@ ethernet_found() {
 module_probe() {
 	local module="$1"
 	local priority="$2"
-	local question="$template/$module"
 	local modinfo=""
 	local devs=""
 	local olddevs=""
@@ -128,6 +142,7 @@ module_probe() {
 	if ! log-output -t ethdetect modprobe -v "$module"; then
 		# Prompt the user for parameters for the module.
 		local template="hw-detect/retry_params"
+		local question="$template/$module"
 		db_unregister "$question"
 		db_register "$template" "$question"
 		db_subst "$question" MODULE "$module"
@@ -168,7 +183,9 @@ module_probe() {
 	fi
 }
 
-hw-detect ethdetect/detect_progress_title || true
+if ! hw-detect ethdetect/detect_progress_title; then
+	log "hw-detect exited nonzero"
+fi
 
 while ! ethernet_found; do
 	CHOICES=""
@@ -206,17 +223,17 @@ while ! ethernet_found; do
 		fi
 	fi
 
-	if [ -e /usr/lib/debian-installer/retriever/floppy-retriever ]; then
+	if [ -e /usr/lib/debian-installer/retriever/media-retriever ]; then
 		db_capb backup
-		db_input critical hw-detect/load_floppy
+		db_input critical hw-detect/load_media
 		if ! db_go; then
 			cleanup
 			exit 10
 		fi
 		db_capb
-		db_get hw-detect/load_floppy
+		db_get hw-detect/load_media
 		if [ "$RET" = true ] && \
-		   anna floppy-retriever && \
+		   anna media-retriever && \
 		   hw-detect ethdetect/detect_progress_title; then
 			continue
 		fi
@@ -236,6 +253,14 @@ while ! ethernet_found; do
 		exit 0
 	fi
 done
+
+# Some modules only try to load firmware once brought up. So bring up and
+# then down all interfaces.
+for iface in $(lsifaces); do
+	ip link set "$iface" up || true
+	ip link set "$iface" down || true
+done
+check-missing-firmware
 
 sysfs-update-devnames || true
 cleanup

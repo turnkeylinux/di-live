@@ -30,7 +30,8 @@ for item in $(sed -e 's/[^ =]*="[^"]*[ ][^"]*"//g' \
 
 		# suppress installer-specific parameters
 		if [ "$var" = BOOT_DEBUG ] || [ "$var" = DEBIAN_FRONTEND ] || \
-		   [ "$var" = INSTALL_MEDIA_DEV ] || [ "$var" = lowmem ]; then
+		   [ "$var" = INSTALL_MEDIA_DEV ] || [ "$var" = lowmem ] || \
+		   [ "$var" = noshell ]; then
 			continue
 		fi
 
@@ -55,6 +56,12 @@ for item in $(sed -e 's/[^ =]*="[^"]*[ ][^"]*"//g' \
 
 		# Sometimes used on the live CD for debugging initramfs-tools.
 		if [ "$var" = break ]; then
+			continue
+		fi
+
+		# Skip live-CD-specific crud
+		if [ "${var%-ubiquity}" != "$var" ] || \
+		   [ "$var" = noninteractive ]; then
 			continue
 		fi
 

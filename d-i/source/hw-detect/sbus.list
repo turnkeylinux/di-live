@@ -8,9 +8,9 @@ ledma:"LANCE" 10Mbit Ethernet:sunlance:load
 lebuffer:"LANCE" 10Mbit Ethernet:sunlance:load
 qfe:"Quattro HME" Ethernet:sunhme:load
 SUNW,qfe:"Quattro HME" Ethernet:sunhme:load
-esp:ESP SCSI:esp:initrd
-SUNW,esp:ESP SCSI:esp:initrd
-SUNW,fas:FAS-336 ESP SCSI:esp:initrd
+esp:ESP SCSI:sun_esp:initrd
+SUNW,esp:ESP SCSI:sun_esp:initrd
+SUNW,fas:FAS-336 ESP SCSI:sun_esp:initrd
 qec:QuadEthernet 10baseT Ethernet:sunqe:load
 be:BigMAC 10/100baseT Ethernet:sunbmac:load
 

@@ -2,7 +2,7 @@
 # packages/po/km.po
 #
 # DO NOT MODIFY IT DIRECTLY : SUCH CHANGES WILL BE LOST
-# 
+#
 # translation of km.po to Khmer
 # translation of km.po to
 #
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: km\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-12-08 22:48+0000\n"
+"POT-Creation-Date: 2008-01-26 07:32+0000\n"
 "PO-Revision-Date: 2007-02-21 09:33+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -27,19 +27,32 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../partman-auto.templates:3
+#. :sl1:
+#: ../partman-auto.templates:1001
 msgid "Please wait..."
 msgstr "សូមរង់ចាំ..."
 
 #. Type: text
 #. Description
-#: ../partman-auto.templates:7
+#. :sl1:
+#: ../partman-auto.templates:2001
 msgid "Computing the new partitions..."
 msgstr "កំពុង​គណនាភាគ​ថាសថ្មី..."
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:11
+#. :sl2:
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-auto.templates:3001 ../partman-auto.templates:4001
+msgid "Failed to partition the selected disk"
+msgstr "បរាជ័យ​ក្នុងការ​ចែក​ថាស​ដែល​បាន​ជ្រើស​ជា​ភាគ"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-auto.templates:3001
 msgid ""
 "This probably happened because the selected disk or free space is too small "
 "to be automatically partitioned."
@@ -49,13 +62,8 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:17
-msgid "Failed to partition the selected disk"
-msgstr "បរាជ័យ​ក្នុងការ​ចែក​ថាស​ដែល​បាន​ជ្រើស​ជា​ភាគ"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:17
+#. :sl2:
+#: ../partman-auto.templates:4001
 msgid ""
 "This probably happened because there are too many (primary) partitions in "
 "the partition table."
@@ -63,7 +71,18 @@ msgstr "វា​ប្រហែល​ជា​កើត​ឡើង​ដោយ
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:24
+#. :sl1:
+#. Type: select
+#. Description
+#. :sl1:
+#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+msgid "Partitioning method:"
+msgstr "វិធីសាស្ត្រ​ចែក​ភាគ​ថាស ៖"
+
+#. Type: select
+#. Description
+#. :sl1:
+#: ../partman-auto.templates:5001
 msgid ""
 "The installer can guide you through partitioning a disk (using different "
 "standard schemes) or, if you prefer, you can do it manually. With guided "
@@ -76,13 +95,11 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:46
-msgid "Partitioning method:"
-msgstr "វិធីសាស្ត្រ​ចែក​ភាគ​ថាស ៖"
-
+#. :sl1:
 #. Type: select
 #. Description
-#: ../partman-auto.templates:46
+#. :sl1:
+#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
 msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
@@ -92,25 +109,28 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:61
+#. :sl1:
+#: ../partman-auto.templates:9001
 msgid "Partitioning scheme:"
 msgstr "គ្រោងការណ៍​ចែក​ភាគ​ថាស ៖"
 
 #. Type: select
 #. Description
+#. :sl1:
 #. "Selected for partitioning" can be either an entire disk
 #. of "the largest continuous free space" on an existing disk
 #. TRANSLATORS, please take care to choose something appropriate for both
 #.
 #. It is followed by a variable giving the chosen disk, hence the colon
 #. at the end of the sentence. Please keep it.
-#: ../partman-auto.templates:61
+#: ../partman-auto.templates:9001
 msgid "Selected for partitioning:"
 msgstr "បាន​ជ្រើស​ដើម្បី​ចែក​ជា​ភាគ ៖"
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:61
+#. :sl1:
+#: ../partman-auto.templates:9001
 msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
@@ -120,13 +140,15 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:71
+#. :sl2:
+#: ../partman-auto.templates:10001
 msgid "Unusable free space"
 msgstr "ទំហំ​ទំនេរ​ដែល​មិន​អាច​ប្រើ​បាន"
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:71
+#. :sl2:
+#: ../partman-auto.templates:10001
 msgid ""
 "Partitioning failed because the chosen free space may not be used. There are "
 "probably too many (primary) partitions in the partition table."
@@ -136,34 +158,39 @@ msgstr ""
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:90
+#: ../partman-auto.templates:13001
 msgid "Guided partitioning"
 msgstr "ការ​ចែក​ថាស​ជា​ភាគ​ដែល​បាន​ណែនាំ"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:95
+#: ../partman-auto.templates:14001
 msgid "Guided - use the largest continuous free space"
 msgstr "បានណែនាំ - ប្រើ​ទំហំ​ទំនេរ​បន្ត​ធំ​ជាង​គេ​បំផុត"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:100
+#: ../partman-auto.templates:15001
 msgid "Guided - use entire disk"
 msgstr "បាន​ណែនាំ - ប្រើ​ថាស​ទាំងមូល"
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:105
+#. :sl1:
+#: ../partman-auto.templates:16001
 msgid "Select disk to partition:"
 msgstr "ជ្រើស​ថាស​ត្រូវ​ចែក​ជាភាគ ៖"
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:105
+#. :sl1:
+#: ../partman-auto.templates:16001
 msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
@@ -173,13 +200,15 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../partman-auto.templates:112
+#. :sl1:
+#: ../partman-auto.templates:17001
 msgid "Select disk(s) to partition:"
 msgstr "ជ្រើស​ថាស​ដើម្បី​ចែក​ជា​ថាស ៖"
 
 #. Type: multiselect
 #. Description
-#: ../partman-auto.templates:112
+#. :sl1:
+#: ../partman-auto.templates:17001
 msgid ""
 "Note that all data on the disk(s) you select will be erased, but not before "
 "you have confirmed that you really want to make the changes."
@@ -189,44 +218,50 @@ msgstr ""
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #. This is a method for partioning - as in guided (automatic) versus manual
-#: ../partman-auto.templates:120
+#: ../partman-auto.templates:18001
 msgid "Manual"
 msgstr "ដោយដៃ"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:125
+#: ../partman-auto.templates:19001
 msgid "Automatically partition the free space"
 msgstr "ចែក​ទំហំ​ទំនេរ​ដោយ​ស្វ័យប្រវត្តិ"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:130
+#: ../partman-auto.templates:20001
 msgid "All files in one partition (recommended for new users)"
 msgstr "ឯកសារ​ទាំងអស់​ក្នុង​​ភាគថាសមួយ (ផ្ដល់​អនុសាសន៍​សម្រាប់​អ្នក​ប្រើថ្មី)"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:135
+#: ../partman-auto.templates:21001
 msgid "Separate /home partition"
 msgstr "បំបែក​ភាគ​ថាស /home"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:140
+#: ../partman-auto.templates:22001
 msgid "Separate /home, /usr, /var, and /tmp partitions"
 msgstr "បំបែក​ភាគថាស /home, /usr, /var និង /tmp"
 
 #. Type: text
 #. Description
+#. :sl2:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:145
+#: ../partman-auto.templates:23001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "គ្រោងការណ៍​ចែក​ថាស​តូចៗ (< ១ ជីកាបៃ)"
 
@@ -234,13 +269,13 @@ msgstr "គ្រោងការណ៍​ចែក​ថាស​តូចៗ (<
 #. Description
 #: ../partman-auto.templates:167
 msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
+msgstr "ប្ដូរ​ទំហំ​ភាគថាស ${PARTITION} ឡើង​វិញ​និង​ប្រើ​ទំហំ​ដែល​ទំនេរ"
 
 #. Type: error
 #. Description
 #: ../partman-auto.templates:171
 msgid "Failed to create enough space for installation"
-msgstr ""
+msgstr "បរាជ័យ​ក្នុង​ការ​បង្កើត​ទំហំ​គ្រប់​គ្រាន់​សម្រាប់​ការ​ដំឡើង"
 
 #. Type: error
 #. Description
@@ -249,3 +284,5 @@ msgid ""
 "The resize operation did not create enough free space for the installation. "
 "Resizing may have failed. You will have to set up partitions manually."
 msgstr ""
+"ការ​ប្ដូរ​ទំហំ​មិន​អាច​បង្កើត​ទំហំ​ទំនេរ​គ្រប់​គ្រាន់​សម្រាប់​ការ​ដំឡើង ។ ការ​ផ្លាស់​ប្ដូរ​ទំហំ​ត្រូវ​បរាជ័យ ។ អ្នក​ត្រូវ​តែ​"
+"រៀប​ចំ​ចែក​ភាគ​ថាស​ដោយ​ដៃ ។"

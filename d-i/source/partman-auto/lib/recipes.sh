@@ -27,14 +27,14 @@ autopartitioning_failed () {
 unnamed=0
 
 decode_recipe () {
-	local ignore ram line word min factor max fs -
+	local ignore ram line word min factor max fs iflabel label -
 	ignore="${2:+${2}ignore}"
 	unnamed=$(($unnamed + 1))
 	ram=$(grep ^Mem: /proc/meminfo | { read x y z; echo $y; }) # in bytes
 	if [ -z "$ram" ]; then
 		ram=$(grep ^MemTotal: /proc/meminfo | { read x y z; echo $y; })000
 	fi
-	ram=$(expr 0000000"$ram" : '0*\(..*\)......$') # convert to megabytes
+	ram=$(convert_to_megabytes $ram)
 	name="Unnamed.${unnamed}"
 	scheme=''
 	line=''
@@ -45,7 +45,7 @@ decode_recipe () {
 			line=''
 			;;
 		    ::)
-			db_metaget $line description
+			db_metaget $line description || RET=''
 			name="${RET:-Unnamed.$unnamed}"
 			line=''
 			;;
@@ -54,12 +54,20 @@ decode_recipe () {
 			set -- $line
 			if expr "$1" : '[0-9][0-9]*$' >/dev/null; then
 				min=$1
+			elif expr "$1" : '[0-9][0-9]*+[0-9][0-9]*%$' >/dev/null; then
+				ram_percent="${1#*+}"
+				ram_percent="${ram_percent%?}"
+				min=$((${1%%+*} + $ram * $ram_percent / 100))
 			elif expr "$1" : '[0-9][0-9]*%$' >/dev/null; then
 				min=$(($ram * ${1%?} / 100))
 			else # error
 				min=2200000000 # there is no so big storage device jet
 			fi
-			if expr "$2" : '[0-9][0-9]*%$' >/dev/null; then
+			if expr "$2" : '[0-9][0-9]*+[0-9][0-9]*%$' >/dev/null; then
+				ram_percent="${2#*+}"
+				ram_percent="${ram_percent%?}"
+				factor=$((${2%%+*} + $ram * $ram_percent / 100))
+			elif expr "$2" : '[0-9][0-9]*%$' >/dev/null; then
 				factor=$(($ram * ${2%?} / 100))
 			elif expr "$2" : '[0-9][0-9]*$' >/dev/null; then
 				factor=$2
@@ -69,19 +77,28 @@ decode_recipe () {
 			if [ $factor -lt $min ]; then
 				factor=$min
 			fi
-			if expr "$3" : '[0-9][0-9]*$' >/dev/null; then
+			if [ "$3" = "-1" ] || \
+			   expr "$3" : '[0-9][0-9]*$' >/dev/null; then
 				max=$3
+			elif expr "$3" : '[0-9][0-9]*+[0-9][0-9]*%$' >/dev/null; then
+				ram_percent="${3#*+}"
+				ram_percent="${ram_percent%?}"
+				max=$((${3%%+*} + $ram * $ram_percent / 100))
 			elif expr "$3" : '[0-9][0-9]*%$' >/dev/null; then
 				max=$(($ram * ${3%?} / 100))
 			else # error
 				max=$min # do not enlarge the partition
 			fi
-			if [ $max -lt $min ]; then
+			if [ $max -ne -1 ] && [ $max -lt $min ]; then
 				max=$min
 			fi
 			case "$4" in # allow only valid file systems
-			    ext2|ext3|xfs|reiserfs|jfs|linux-swap|fat16|fat32|hfs)
+			    ext2|ext3|ext4|xfs|reiserfs|jfs|linux-swap|fat16|fat32|hfs|ufs)
 				fs="$4"
+				;;
+			    \$default_filesystem)
+				db_get partman/default_filesystem
+				fs="$RET"
 				;;
 			    *)
 				fs=ext2
@@ -94,7 +111,27 @@ decode_recipe () {
 			if [ "$ignore" ] && [ "$(echo $line | grep "$ignore")" ]; then
 				:
 			else
-				scheme="${scheme:+$scheme$NL}$line"
+				# Exclude partitions that are only for a different
+				# disk label. The $PWD check avoids problems when
+				# running from partman-auto-lvm, where we aren't in
+				# a subdirectory of $DEVICES while decoding the
+				# recipe; but we do need to perform this check early
+				# so that size calculations work. As a result, for
+				# now, $iflabel will not work when doing automatic
+				# LVM partitioning.
+				iflabel="$(echo $line | sed -n 's/.*\$iflabel{ \([^}]*\) }.*/\1/p')"
+				if [ "$iflabel" ]; then
+					if [ "${PWD#$DEVICES/}" != "$PWD" ]; then
+						open_dialog GET_LABEL_TYPE
+						read_line label
+						close_dialog
+						if [ "$iflabel" = "$label" ]; then
+							scheme="${scheme:+$scheme$NL}$line"
+						fi
+					fi
+				else
+					scheme="${scheme:+$scheme$NL}$line"
+				fi
 			fi
 			line=''
 			;;
@@ -106,24 +143,19 @@ decode_recipe () {
 }
 
 foreach_partition () {
-	local - doing IFS partition former last
+	local - doing IFS pcount last partition
 	doing=$1
+	pcount=$(echo "$scheme" | wc -l)
+	last=no
+
 	IFS="$NL"
-	former=''
 	for partition in $scheme; do
 		restore_ifs
-		if [ "$former" ]; then
-			set -- $former
-			last=no
-			eval "$doing"
-		fi
-		former="$partition"
-	done
-	if [ "$former" ]; then
-		set -- $former
-		last=yes
+		[ $pcount -gt 1 ] || last=yes
+		set -- $partition
 		eval "$doing"
-	fi
+		pcount=$(($pcount - 1))
+	done
 }
 
 min_size () {
@@ -178,13 +210,13 @@ partition_after () {
 
 pull_primary () {
 	primary=''
-	logical=''
+	scheme_rest=''
 	foreach_partition '
 		if [ -z "$primary" ] && \
 		   echo $* | grep '\''\$primary{'\'' >/dev/null; then
 			primary="$*"
 		else
-			logical="${logical:+$logical$NL}$*"
+			scheme_rest="${scheme_rest:+$scheme_rest$NL}$*"
 		fi'
 }
 
@@ -205,6 +237,14 @@ setup_partition () {
 			write_line boot
 			write_line NO_MORE
 			close_dialog
+			;;
+		    \$default_filesystem{)
+			while [ "$1" != '}' ] && [ "$1" ]; do
+				shift
+			done
+			mkdir -p $id
+			db_get partman/default_filesystem
+			echo "$RET" >$id/filesystem
 			;;
 		    \$*{)
 			while [ "$1" != '}' ] && [ "$1" ]; do
@@ -265,7 +305,7 @@ choose_recipe () {
 	type=$1
 	target="$2"
 	free_size=$3
-	
+
 	# Preseeding of recipes
 	db_get partman-auto/expert_recipe
 	if [ -n "$RET" ]; then
@@ -285,7 +325,7 @@ choose_recipe () {
 	fi
 
 	recipedir=$(get_recipedir)
-	
+
 	choices=''
 	default_recipe=no
 	db_get partman-auto/choose_recipe
@@ -309,17 +349,18 @@ choose_recipe () {
 			fi
 		fi
 	done
-	
+
 	if [ -z "$choices" ]; then
 		db_input critical partman-auto/no_recipe || true
 		db_go || true # TODO handle backup right
 		return 1
 	fi
- 
+
 	db_subst partman-auto/choose_recipe TARGET "$target"
-	debconf_select medium partman-auto/choose_recipe "$choices" "$default_recipe"
+	debconf_select medium partman-auto/choose_recipe \
+		"$choices" "$default_recipe"
 	if [ $? = 255 ]; then
-		exit 0
+		return 255
 	fi
 	recipe="$RET"
 }
@@ -340,7 +381,7 @@ expand_scheme() {
 		max=$3
 		fs=$4
 		case "$fs" in
-		    ext2|ext3|linux-swap|fat16|fat32|hfs)
+		    ext2|ext3|ext4|linux-swap|fat16|fat32|hfs)
 			true
 			;;
 		    *)
@@ -374,7 +415,7 @@ expand_scheme() {
 			else
 				newmin=$(($min + $unallocated * $fact / $factsum))
 			fi
-			if [ $newmin -gt $max ]; then
+			if [ $max -ne -1 ] && [ $newmin -gt $max ]; then
 				echo $max 0 $max $*
 			elif [ $newmin -lt $min ]; then
 				echo $min 0 $min $*

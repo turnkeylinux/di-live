@@ -12,4 +12,4 @@ fs=$6
 path=$7
 name=$8
 
-printf " %8s" "$(longint2human $size)"
+printf "\${!ALIGN=RIGHT}%s" "$(longint2human $size)"

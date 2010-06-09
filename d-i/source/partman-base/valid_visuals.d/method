@@ -1,3 +1,0 @@
-#!/bin/sh
-
-printf "method\tUsage method: F - format K - keep and use existing data\n"

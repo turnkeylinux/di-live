@@ -1,3 +1,285 @@
+partman-ext3 (58ubuntu3) lucid; urgency=low
+
+  * Add preseedable partman-ext3/lazy_itable_init question, which if true
+    runs mkfs.ext* with '-E lazy_itable_init', greatly speeding up mkfs on
+    large drives (LP: #556621).  This defaults to false since it is
+    currently unsafe for use on areas of disk that previously contained a
+    filesystem.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 15 Apr 2010 00:52:48 +0100
+
+partman-ext3 (58ubuntu2) lucid; urgency=low
+
+  * Warn when reformatting an existing misaligned partition for use as
+    ext3/ext4, since it will result in poor performance and this is about
+    the only sensible opportunity to fix it (LP: #530071).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 31 Mar 2010 16:29:29 +0100
+
+partman-ext3 (58ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Special case loopmounted filesystems as it's safer to format the
+      underlying file, not the device.
+    - Offer ext4 before ext3.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 25 Jun 2009 22:22:25 +0100
+
+partman-ext3 (58) unstable; urgency=low
+
+  * Enable ext4 support. Closes: #534306.
+
+ -- Otavio Salvador <otavio@debian.org>  Tue, 23 Jun 2009 13:27:15 -0300
+
+partman-ext3 (57ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Special case loopmounted filesystems as it's safer to format the
+      underlying file, not the device.
+    - Enable ext4 support, and offer it before ext3.
+  * Drop ext3/ext4 relatime default, as it's now the default in the kernel.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 15 Jun 2009 17:33:37 +0100
+
+partman-ext3 (57) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Make valid_filesystems/ext4 executable.
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Md. Rezwan Shahid
+  * Estonian (et.po) by Mattias Põldaru
+  * Finnish (fi.po) by Esko Arajärvi
+  * Slovak (sk.po) by Ivan Masár
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 13 Jun 2009 08:15:03 +0200
+
+partman-ext3 (56ubuntu3) karmic; urgency=low
+
+  * Offer ext4 before ext3, since it's now the default.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 04 Jun 2009 23:48:03 +0100
+
+partman-ext3 (56ubuntu2) jaunty; urgency=low
+
+  * Make valid_filesystems/ext4 executable (LP: #354851).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 06 Apr 2009 12:52:19 +0100
+
+partman-ext3 (56ubuntu1) jaunty; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Special case loopmounted filesystems as it's safer to format the
+      underlying file, not the device.
+    - Default to mounting ext3 and ext4 with relatime.
+    - Enable ext4 support.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 01 Apr 2009 11:30:11 +0100
+
+partman-ext3 (56) unstable; urgency=low
+
+  [ Colin Watson ]
+  * check.d/nomountpoint_ext3:
+    - partman-ext3/no_mount_point is a boolean, not a select (thanks,
+      Nicolas Valcárcel; LP: #256459).
+  * Add ext4 support, merged from Ubuntu. This requires several changes
+    outside d-i before it's functional: see
+    http://lists.debian.org/debian-boot/2009/01/msg00188.html.
+  * Disable ext4 support for now until bugs elsewhere in Debian are
+    resolved; it'll be a one-line change here to re-enable it.
+
+  [ Frans Pop ]
+  * Remove myself as uploader.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 01 Apr 2009 11:01:56 +0100
+
+partman-ext3 (55ubuntu2) jaunty; urgency=low
+
+  * Add ext4 support (LP: #293465). Some translatable strings are still
+    incorrect, but that will be fixed once this gets into Debian.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 08 Jan 2009 16:51:06 +0000
+
+partman-ext3 (55ubuntu1) jaunty; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Special case loopmounted filesystems as it's safer to format the
+      underlying file, not the device.
+    - Default to mounting ext3 with relatime.
+    - check.d/nomountpoint_ext3: Make $RET look for a boolean value.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 10 Nov 2008 12:18:45 +0000
+
+partman-ext3 (55) unstable; urgency=low
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Bengali (bn.po) by Mahay Alam Khan (মাহে আলম খান)
+  * Bosnian (bs.po) by Armin Besirovic
+  * Catalan (ca.po) by Jordi Mallach
+  * Czech (cs.po) by Miroslav Kure
+  * Danish (da.po)
+  * German (de.po) by Jens Seidel
+  * Dzongkha (dz.po) by Jurmey Rabgay
+  * Greek, Modern (1453-) (el.po) by quad-nrg.net
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Finnish (fi.po) by Esko Arajärvi
+  * Galician (gl.po) by Jacobo Tarrio
+  * Hebrew (he.po) by Omer Zak
+  * Hindi (hi.po) by Kumar Appaiah
+  * Croatian (hr.po) by Josip Rodin
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Central Khmer (km.po) by KHOEM Sokhem
+  * Korean (ko.po) by Changwoo Ryu
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Latvian (lv.po) by Aigars Mahinovs
+  * Macedonian (mk.po) by Arangel Angov
+  * Malayalam (ml.po) by പ്രവീണണ്‍ അരിമ്പ്രത്തൊടിയിലല്‍
+  * Marathi (mr.po) by Sampada
+  * Bokmål, Norwegian (nb.po) by Hans Fredrik Nordhaug
+  * Nepali (ne.po) by Shiva Prasad Pokharel
+  * Norwegian Nynorsk (nn.po) by Håvard Korsvoll
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Romanian (ro.po) by Eddy Petrișor
+  * Slovak (sk.po) by Ivan Masár
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Albanian (sq.po) by Elian Myftiu
+  * Serbian (sr.po) by Veselin Mijušković
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Turkish (tr.po) by Mert Dirik
+  * Ukrainian (uk.po) by Borys Yanovych
+  * Vietnamese (vi.po) by Clytie Siddall
+  * Wolof (wo.po) by Mouhamadou Mamoune Mbacke
+  * Simplified Chinese (zh_CN.po) by Deng Xiyue
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 21 Sep 2008 21:14:17 -0300
+
+partman-ext3 (54) unstable; urgency=low
+
+  [ Martin Michlmayr ]
+  * Add a check to make sure the boot partition is a) the 1st primary
+    partition and b) either ext2 or ext3 on the HP mv2120, the Kurobox
+    Pro, Linkstation Pro/Live and GLAN Tank.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * Dzongkha (dz.po) by Jurmey Rabgay(Bongop) (DIT,BHUTAN)
+  * Greek, Modern (1453-) (el.po)
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Gujarati (gu.po) by Kartik Mistry
+  * Hindi (hi.po) by Kumar Appaiah
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Marathi (mr.po) by Sampada
+  * Norwegian Bokmål (nb.po) by Hans Fredrik Nordhaug
+  * Dutch (nl.po) by Frans Pop
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Turkish (tr.po) by Mert Dirik
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Martin Michlmayr <tbm@cyrius.com>  Wed, 27 Aug 2008 20:17:44 +0300
+
+partman-ext3 (53) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * Use cdebconf's new column alignment feature for active_partition.
+    Requires partman-base (>= 124).
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Croatian (hr.po) by Josip Rodin
+  * Italian (it.po) by Milo Casagrande
+
+ -- Otavio Salvador <otavio@debian.org>  Tue, 05 Aug 2008 13:55:11 -0300
+
+partman-ext3 (52ubuntu3) intrepid; urgency=low
+
+  * check.d/nomountpoint_ext3:
+    - Make $RET look for a boolean value (LP: #256459) 
+
+ -- Nicolas Valcárcel <nvalcarcel@ubuntu.com>  Fri, 03 Oct 2008 21:42:24 -0500
+
+partman-ext3 (52ubuntu2) intrepid; urgency=low
+
+  * Add Vcs-Bzr for Ubuntu.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 19 Sep 2008 02:33:24 +0100
+
+partman-ext3 (52ubuntu1) intrepid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Special case loopmounted filesystems as it's safer to format the
+      underlying file, not the device.
+    - Default to mounting ext3 with relatime.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 24 Jun 2008 16:00:17 +0100
+
+partman-ext3 (52) unstable; urgency=low
+
+  [ Updated translations ]
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Marathi (mr.po) by Sampada
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 08 May 2008 01:07:46 -0300
+
+partman-ext3 (51ubuntu1) intrepid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Special case loopmounted filesystems as it's safer to format the
+      underlying file, not the device.
+    - Default to mounting ext3 with relatime.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 07 May 2008 13:21:30 +0100
+
+partman-ext3 (51) unstable; urgency=low
+
+  * Use common mount options template; requires partman-basicfilesystems (59).
+  * Drop dependency on ancient version of di-utils.
+
+ -- Frans Pop <fjp@debian.org>  Wed, 26 Mar 2008 15:40:54 +0100
+
+partman-ext3 (50) unstable; urgency=low
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Esko Arajärvi
+  * Hindi (hi.po) by Kumar Appaiah
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Kurdish (ku.po) by Amed Çeko Jiyan
+  * Latvian (lv.po) by Viesturs Zarins
+  * Nepali (ne.po) by Shyam Krishna Bal
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Slovenian (sl.po) by Matej Kovacic
+  * Turkish (tr.po) by Recai Oktaş
+  * Ukrainian (uk.po)
+
+ -- Otavio Salvador <otavio@ossystems.com.br>  Fri, 15 Feb 2008 09:34:22 -0200
+
 partman-ext3 (49ubuntu2) hardy; urgency=low
 
   * Add Choices-C entries for mount options.

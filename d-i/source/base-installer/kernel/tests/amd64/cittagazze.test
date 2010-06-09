@@ -6,8 +6,12 @@ kernel-2.6 \
   linux-image-generic \
   linux-server \
   linux-image-server \
+  linux-virtual \
+  linux-image-virtual \
   linux-xen \
   linux-image-xen \
+  linux-preempt \
+  linux-image-preempt \
   linux-rt \
   linux-image-rt
 usable \

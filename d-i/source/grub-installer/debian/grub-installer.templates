@@ -1,6 +1,7 @@
 Template: grub-installer/with_other_os
 Type: boolean
 Default: true
+# :sl1:
 _Description: Install the GRUB boot loader to the master boot record?
  The following other operating systems have been detected on this
  computer: ${OS_LIST}
@@ -13,6 +14,7 @@ _Description: Install the GRUB boot loader to the master boot record?
 Template: grub-installer/only_debian
 Type: boolean
 Default: true
+# :sl1:
 _Description: Install the GRUB boot loader to the master boot record?
  It seems that this new installation is the only operating system
  on this computer. If so, it should be safe to install the GRUB boot loader
@@ -26,32 +28,48 @@ _Description: Install the GRUB boot loader to the master boot record?
 Template: grub-installer/sataraid
 Type: boolean
 Default: true
+# :sl3:
 _Description: Install the GRUB boot loader to the Serial ATA RAID disk?
  Installation of GRUB on Serial ATA RAID is experimental.
  .
  GRUB is always installed to the master boot record (MBR) of the
- Serial ATA RAID disk. It is also assumed that that disk is listed as
- the first hard disk in the boot order defined in the system's BIOS
- setup.
+ Serial ATA RAID disk. It is also assumed that disk is listed as the
+ first hard disk in the boot order defined in the system's BIOS setup.
  .
  The GRUB root device is: ${GRUBROOT}.
 
 Template: grub-installer/sataraid-error
 Type: error
+# :sl3:
 _Description: Unable to configure GRUB
  An error occurred while setting up GRUB for your Serial ATA RAID disk.
  .
  The GRUB installation has been aborted.
 
-Template: grub-installer/install_to_xfs
+Template: grub-installer/multipath
 Type: boolean
-Default: false
-_Description: Install the GRUB boot loader to XFS file system?
- The GRUB boot loader installation often fails or hangs when /boot is on a
- XFS file system. Using LILO in this situation is recommended.
+Default: true
+# :sl3:
+_Description: Install the GRUB boot loader to the multipath device?
+ Installation of GRUB on multipath is experimental.
+ .
+ GRUB is always installed to the master boot record (MBR) of the multipath
+ device. It is also assumed that the WWID of this device is selected as boot
+ device in the system's FibreChannel adapter BIOS.
+ .
+ The GRUB root device is: ${GRUBROOT}.
+
+Template: grub-installer/multipath-error
+Type: error
+# :sl3:
+_Description: Unable to configure GRUB
+ An error occurred while setting up GRUB for the multipath device.
+ .
+ The GRUB installation has been aborted.
 
 Template: grub-installer/bootdev
 Type: string
+# :sl2:
 _Description: Device for boot loader installation:
  You need to make the newly installed system bootable, by installing
  the GRUB boot loader on a bootable device. The usual way to do this is to
@@ -59,18 +77,18 @@ _Description: Device for boot loader installation:
  prefer, you can install GRUB elsewhere on the drive, or to another drive,
  or even to a floppy.
  .
- The device can be specified using GRUB's "(hdn,m)" notation, or as a device
- in /dev. Below are some examples:
-  - "(hd0)" or "/dev/hda" will install GRUB to the master boot record
-    of your first hard drive (IDE);
-  - "(hd0,1)" or "/dev/hda2" will use the second partition of your
-    first IDE drive;
-  - "(hd2,4)" or "/dev/sdc5" will use the first extended partition of
-    your third drive (SCSI here);
-  - "(fd0)" or "/dev/fd0" will install GRUB to a floppy.
+ The device should be specified as a device in /dev. Below are some
+ examples:
+  - "/dev/sda" will install GRUB to the master boot record of your first
+    hard drive;
+  - "/dev/sda2" will use the second partition of your first hard drive;
+  - "/dev/sdc5" will use the first extended partition of your third hard
+    drive;
+  - "/dev/fd0" will install GRUB to a floppy.
 
 Template: grub-installer/password
 Type: password
+# :sl2:
 _Description: GRUB password:
  The GRUB boot loader offers many powerful interactive features, which could
  be used to compromise your system if unauthorized users have access to the
@@ -94,7 +112,7 @@ Type: error
 _Description: Password input error
  The two passwords you entered were not the same. Please try again.
 
-# Allow preseeding the GRUB password with a crypted password
+# Allow preseeding the GRUB password with an encrypted password
 # rather than cleartext
 Template: grub-installer/password-crypted
 Type: password
@@ -102,12 +120,14 @@ Description: for internal use; can be preseeded
 
 Template: grub-installer/apt-install-failed
 Type: error
+# :sl2:
 _Description: GRUB installation failed
  The '${GRUB}' package failed to install into /target/. Without the GRUB
  boot loader, the installed system will not boot.
 
 Template: grub-installer/grub-install-failed
 Type: error
+# :sl2:
 _Description: Unable to install GRUB in ${BOOTDEV}
  Executing 'grub-install ${BOOTDEV}' failed.
  .
@@ -115,6 +135,7 @@ _Description: Unable to install GRUB in ${BOOTDEV}
 
 Template: grub-installer/update-grub-failed
 Type: error
+# :sl2:
 _Description: Unable to configure GRUB
  Executing 'update-grub' failed.
  .
@@ -122,7 +143,7 @@ _Description: Unable to configure GRUB
 
 Template: grub-installer/grub2_instead_of_grub_legacy
 Type: boolean
-Default: false
+Default: true
 # This is suitable for testing grub2 only. Do not translate it!
 Description: Install GRUB 2 instead of GRUB Legacy?
  GRUB 2 is the next generation of GNU GRUB. It has interesting new features but
@@ -146,40 +167,49 @@ Description: Install GRUB?
 
 Template: grub-installer/progress/title
 Type: text
+# :sl1:
 _Description: Installing GRUB boot loader
 
 Template: grub-installer/progress/step_os-probe
 Type: text
+# :sl1:
 _Description: Looking for other operating systems...
 
 Template: grub-installer/progress/step_install
 Type: text
+# :sl1:
 _Description: Installing the '${GRUB}' package...
 
 Template: grub-installer/progress/step_bootdev
 Type: text
+# :sl1:
 _Description: Determining GRUB boot device...
 
 Template: grub-installer/progress/step_install_loader
 Type: text
+# :sl1:
 _Description: Running "grub-install ${BOOTDEV}"...
 
 Template: grub-installer/progress/step_config_loader
 Type: text
+# :sl1:
 _Description: Running "update-grub"...
 
 Template: grub-installer/progress/step_update_etc
 Type: text
+# :sl1:
 _Description: Updating /etc/kernel-img.conf...
 
 Template: debian-installer/grub-installer/title
 Type: text
 #  Main menu item
+# :sl1:
 _Description: Install the GRUB boot loader on a hard disk
 
 Template: rescue/menu/grub-reinstall
 Type: text
 # Rescue menu item
+# :sl2:
 _Description: Reinstall GRUB boot loader
 
 Template: grub-installer/skip

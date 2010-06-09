@@ -4,23 +4,21 @@ partman-auto/text/atomic_scheme ::
 	$bootable{ }
 	method{ newworld } .
 
-128 512 256 ext3
+128 512 256 ext2
 	$defaultignore{ }
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext3 }
-	mountpoint{ /boot }
-	options/relatime{ relatime } .
+	filesystem{ ext2 }
+	mountpoint{ /boot } .
 
-500 10000 1000000000 ext3
+500 10000 -1 $default_filesystem
 	$lvmok{ }
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext3 }
-	mountpoint{ / }
-	options/relatime{ relatime } .
+	$default_filesystem{ }
+	mountpoint{ / } .
 
 96 512 300% linux-swap
 	$lvmok{ }

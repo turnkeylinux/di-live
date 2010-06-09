@@ -41,6 +41,16 @@ Type: text
 # :sl4:
 _Description: In order to start your new system, a so called boot loader is used.  It is installed in a boot partition.  You must set the bootable flag for the partition.  Such a partition will be marked with "${BOOTABLE}" in the main partitioning menu.
 
+Template: partman-target/same_label
+Type: error
+# :sl2:
+_Description: Identical labels for two file systems
+ Two file systems are assigned the same label (${LABEL}): ${PART1} and
+ ${PART2}. Since file system labels are usually used as unique identifiers,
+ this is likely to cause reliability problems later.
+ .
+ Please correct this by changing labels.
+
 Template: partman-target/same_mountpoint
 Type: error
 # :sl2:
@@ -81,8 +91,10 @@ _Description: Do you want to resume partitioning?
 Template: partman-target/choose_method
 Type: select
 # :sl2:
-Choices: ${CHOICES}
+Choices-C: ${CHOICES}
+Choices: ${DESCRIPTIONS}
 _Description: How to use this partition:
+Help: partman-target/help
 
 Template: partman-target/text/method
 Type: text
@@ -93,6 +105,28 @@ Template: partman-target/text/get_help
 Type: text
 # :sl1:
 _Description: Help on partitioning
+
+Template: partman/mount_style
+Type: select
+Choices: traditional, label, uuid
+Default: uuid
+Description: for internal use; can be preseeded
+ Normally, filesystems are mounted using a universally unique identifier
+ (UUID) as a key; this allows them to be mounted properly even if their
+ device name changes. UUIDs are long and difficult to read, so, if you
+ prefer, the installer can mount filesystems based on the traditional device
+ names, or based on a label you assign. However, note that traditional
+ device names may change based on the order in which the kernel discovers
+ devices at boot, which may cause the wrong filesystem to be mounted;
+ similarly, labels are likely to clash if you plug in a new disk or a USB
+ drive, and if that happens your system's behaviour when started will be
+ random.
+ .
+ If you set "label" here, any filesystems without a label will be mounted
+ using a UUID instead.
+ .
+ Devices with stable names, such as LVM logical volumes, will continue to
+ use their traditional names rather than UUIDs.
 
 Template: partman-target/clear_partitions_failed
 Type: error
@@ -108,7 +142,7 @@ Template: ubiquity/partman-system-unformatted
 Type: boolean
 _Description: Do you want to return to the partitioner?
  The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been marked
- for formatting.  Directories containing system files (/boot, /etc, /usr, /var,
+ for formatting.  Directories containing system files (/etc, /lib, /usr, /var,
  ...) that already exist under any defined mountpoint will be deleted during the
  install.
  .

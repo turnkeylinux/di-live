@@ -29,6 +29,12 @@ for KERNEL_MAJOR in $MAJORS; do
 		2.6)
 			WANT_KERNELS="$KERNEL_26"
 			;;
+		7)
+			WANT_KERNELS="$KERNEL_7"
+			;;
+		8)
+			WANT_KERNELS="$KERNEL_8"
+			;;
 	esac
 	WANT_KERNELS="$(echo "$WANT_KERNELS" | tr '\n' ' ' | tr -s ' ' | sed 's/ *$//')"
 	WANT_KERNEL_STEM="${WANT_KERNELS%% *}"
@@ -59,6 +65,16 @@ for KERNEL_MAJOR in $MAJORS; do
 	for kernel in $USABLE; do
 		testname="arch_check_usable_kernel $KERNEL_MAJOR $kernel should be usable"
 		if arch_check_usable_kernel "$kernel" "$GOT_FLAVOUR"; then
+			ok
+		else
+			notok
+		fi
+	done
+
+	# By default any postfix should be allowed
+	for kernel in $USABLE; do
+		testname="arch_check_usable_kernel $KERNEL_MAJOR ${kernel}-<postfix> should be usable"
+		if arch_check_usable_kernel "${kernel}-postfix" "$GOT_FLAVOUR"; then
 			ok
 		else
 			notok

@@ -1,3 +1,37 @@
+partman-auto-loop (0ubuntu18) karmic; urgency=low
+
+  * Bind-mount /host on /target/host during installation, to match the
+    installed system after reboot (LP: #435153).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 29 Sep 2009 22:12:41 +0100
+
+partman-auto-loop (0ubuntu17) karmic; urgency=low
+
+  * Upgrade to debhelper v7.
+  * Remove fstab.d/hostboot, which is no longer needed with GRUB 2's
+    loop-mounting support (LP: #428407).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 14 Sep 2009 11:41:02 +0100
+
+partman-auto-loop (0ubuntu16) jaunty; urgency=low
+
+  * Add ext4 support.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 04 Mar 2009 18:31:16 +0000
+
+partman-auto-loop (0ubuntu15) intrepid; urgency=low
+
+  * Adjust fstab.d/hostboot for move of definitions.sh to lib/base.sh.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 20 Jun 2008 13:23:03 +0100
+
+partman-auto-loop (0ubuntu14) hardy-proposed; urgency=low
+
+  * Make target mountpoint detection more robust in case of bindmounts
+    (LP: #238701).
+
+ -- Agostino Russo <agostino.russo@gmail.com>  Wed, 28 May 2008 23:08:22 +0100
+
 partman-auto-loop (0ubuntu13) hardy; urgency=low
 
   [ Agostino Russo ]

@@ -37,6 +37,7 @@ for dev in $DEVICES/*; do
 			if [ "$mountpoint" = /tmp ]; then
 				rm -f $id/options/noexec
 			fi
+			# grub and lilo (others?) fail without notail
 			if [ "$mountpoint" = /boot ] || \
 			   ([ "$mountpoint" = / ] && [ "$has_boot" = no ]); then
 				> $id/options/notail

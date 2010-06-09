@@ -2,7 +2,7 @@ The bootstrap-installer udeb is responsible for calling debootstrap to
 install the base system, as well as selecting and installing a kernel.
 
 The base-installer udeb provides a framework that can be used by
-alternative udebs that install the base system in other ways. A simple
+alternative udebs that install the base system in other ways. A simplified
 example of using this framework:
 
 	#!/bin/sh
@@ -18,8 +18,7 @@ example of using this framework:
 	waypoint 	1	check_target
 	waypoint	1	pre_install_hooks
 	waypoint	100	install_base_system
-	waypoint	1	configure_apt_preferences
-	waypoint	2	create_devices
+	waypoint	1	configure_apt
 	waypoint	5	post_install_hooks
 	waypoint	10	install_extra
 	
@@ -35,8 +34,8 @@ provided by library.sh. As a section is running, the progress bar displays
 the text in the debconf template base-installer/debootstrap/section/<name>.
 
 
-On progress bars:
-
+On progress bars
+----------------
 run-debootstrap translates the debootstrap progress stream into debconf
 progress bars. There are essentially two ways the progress information from
 debootstrap can be dislayed. The naive way is to start a new progress bar
@@ -70,9 +69,10 @@ postinst takes care of updating it to the final waypoint as it does the
 apt-install stuff.
 
 
-Appendix A: The debootstrap --debian-installer progress stream.
+Appendix A: The debootstrap --debian-installer progress stream
+==============================================================
 
-As far as I know, there is no other documentation of the data deboostrap
+As far as I know, there is no other documentation of the data debootstrap
 outputs on fd 3 if run with --debian-installer (except its source). 
 But then I have not looked too hard. Here is what I have been able to piece
 together.

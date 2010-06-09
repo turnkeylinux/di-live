@@ -14,7 +14,7 @@ for dev in $DEVICES/*; do
 		[ -f $id/method -a -f $id/acting_filesystem ] || continue
 		filesystem=$(cat $id/acting_filesystem)
 		case $filesystem in
-		    ext3)
+		    ext3|ext4)
 			ext3=yes
 			;;
 		esac

@@ -1,4 +1,3 @@
-LIBS = -lparted -ldl
 CFLAGS = -W -Wall
 
 ifdef DEBUG
@@ -10,13 +9,13 @@ PARTCONF_OBJS = util.o partconf.o find-parts.o
 all: partconf find-partitions mkfstab mountpoint
 
 partconf: $(PARTCONF_OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ $(LIBS) -ldebconfclient -ldebian-installer
+	$(CC) $(CFLAGS) -o $@ $^ -ldl -ldebconfclient -ldebian-installer -lparted
 
 find-partitions: partconf.h find-parts.c util.o
-	$(CC) $(CFLAGS) -o $@ -DFIND_PARTS_MAIN find-parts.c util.o $(LIBS) -ldebian-installer
+	$(CC) $(CFLAGS) -o $@ -DFIND_PARTS_MAIN find-parts.c util.o -lparted
 
 mkfstab: mkfstab.c mkfstab.h
-	$(CC) $(CFLAGS) -o $@ mkfstab.c $(LIBS) -ldebian-installer
+	$(CC) $(CFLAGS) -o $@ mkfstab.c -ldebian-installer
 
 mountpoint: mountpoint.c
 	$(CC) $(CFLAGS) -o $@ mountpoint.c -ldebian-installer

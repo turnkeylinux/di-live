@@ -16,7 +16,7 @@ open_dialog PARTITION_INFO $free_space
 read_line x1 x2 free_size free_type x3 x4 x5
 close_dialog
 
-free_size=$(expr 0000000"$free_size" : '0*\(..*\)......$') # convert to megabytes
+free_size=$(convert_to_megabytes $free_size)
 
 if [ "$free_type" = unusable ]; then
 	db_input critical partman-auto/unusable_space || true
@@ -34,10 +34,6 @@ db_progress STEP 1
 expand_scheme
 
 ensure_primary
-
-db_progress STEP 1
-
-clean_method
 
 db_progress STEP 1
 

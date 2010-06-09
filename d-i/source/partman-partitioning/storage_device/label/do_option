@@ -17,6 +17,7 @@ if [ "$RET" = false ]; then
 fi
 db_reset partman-partitioning/confirm_new_label
 
+prepare_new_labels "$dev"
 create_new_label "$dev" ""
 
 partitions=''

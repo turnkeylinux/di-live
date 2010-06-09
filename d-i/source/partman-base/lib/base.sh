@@ -29,11 +29,11 @@ maybe_escape () {
 	text="$1"
 	shift
 	if [ "$can_escape" ]; then
-		db_capb backup escape
+		db_capb backup align escape
 		code=0
 		"$@" "$(printf '%s' "$text" | debconf-escape -e)" || code=$?
 		saveret="$RET"
-		db_capb backup
+		db_capb backup align
 		RET="$saveret"
 		return $code
 	else
@@ -41,7 +41,8 @@ maybe_escape () {
 	fi
 }
 
-debconf_select () {
+# Deprecated debconf_select() for templates not switched to Choices-C yet.
+old_debconf_select () {
 	local IFS priority template choices default_choice default x u newchoices code
 	priority="$1"
 	template="$2"
@@ -96,12 +97,7 @@ debconf_select () {
 	db_get $template
 	IFS="$NL"
 	for x in $choices; do
-		# IFS issues can ruin your day, removing spaces completely
-		# for the match
-		local RETURN=`echo $RET | sed 's/ //g'`
-		local OPTION=`echo ${x#*$TAB} | sed 's/ //g'`
-
-		if [ "$RETURN" = "$OPTION" ]; then
+		if [ "$RET" = "${x#*$TAB}" ]; then
 			RET="${x%$TAB*}"
 			break
 		else
@@ -116,6 +112,69 @@ debconf_select () {
 		fi
 	done
 	restore_ifs
+	return $code
+}
+
+debconf_select () {
+	local IFS priority template choices default keys descriptions code x
+	priority="$1"
+	template="$2"
+	choices="$3"
+	default="$4"
+	case $PARTMAN_SNOOP in
+		?*)
+			> /var/lib/partman/snoop
+			;;
+	esac
+
+	if ! db_metaget $template choices-c; then
+		logger -t partman "warning: $template is not using Choices-C"
+		old_debconf_select "$@"
+		return $?
+	fi
+
+	if [ -z "$default" ]; then
+		db_get "$template" && default="$RET"
+	fi
+	keys=""
+	descriptions=""
+	case $PARTMAN_SNOOP in
+		?*)
+			echo "$choices" | sed "h; s/.*$TAB//; s/ *\$//g; s/^ /$debconf_select_lead/g; x; s/$TAB.*//; G; s/\\n/$TAB/; s/^$TAB\$//" >> /var/lib/partman/snoop
+			;;
+	esac
+	# Use the hold space carefully here to allow us to make some
+	# substitutions on only the RHS (description).
+	choices="$(echo "$choices" | sed "h; s/.*$TAB//; s/ *\$//g; s/^ /$debconf_select_lead/g; s/,/\\\\,/g; s/^ /\\\\ /; x; s/$TAB.*//; G; s/\\n/$TAB/; s/^$TAB\$//")"
+	IFS="$NL"
+	for x in $choices; do
+		local key plugin
+		restore_ifs
+		key="${x%$TAB*}"
+		keys="${keys:+${keys}, }$key"
+		descriptions="${descriptions:+${descriptions}, }${x#*$TAB}"
+
+		# If the question was asked via ask_user, this allow preseeding
+		# by using the name of the plugin responsible for the answer.
+		if [ -n "$default" ]; then
+			plugin="${key%%__________*}"
+			if [ "$default" = "$plugin" ] ||
+			   [ "$default" = "${plugin#[0-9][0-9]}" ]; then
+				default="$key"
+			fi
+		fi
+	done
+	# You can preseed questions asked through this function by using
+	# the key (the part before the tab).
+	if [ -n "$default" ]; then
+		db_set $template "$default"
+	fi
+	db_subst $template CHOICES "$keys"
+	db_subst $template DESCRIPTIONS "$descriptions"
+	code=0
+	db_input $priority $template || code=1
+	db_go || return 255
+	db_get $template
 	return $code
 }
 
@@ -134,11 +193,26 @@ ask_user () {
 		default=""
 	fi
 	choices=$(
+		if [ -e $dir/no_show_choices ]; then
+			printf "dummy__________dummy$TAB\n"
+			exit 0
+		fi
+		local skip_divider=1
 		for plugin in $dir/*; do
 			[ -d $plugin ] || continue
 			name=$(basename $plugin)
 			IFS="$NL"
 			for option in $($plugin/choices "$@"); do
+				# Skip a divider (only has space as description)
+				# if it's the first option or when two in a row
+				if echo "$option" | grep -q "$TAB *$"; then
+					if [ "$skip_divider" ]; then
+						continue
+					fi
+					skip_divider=1
+				else
+					skip_divider=
+				fi
 				printf "%s__________%s\n" $name "$option"
 			done
 			restore_ifs
@@ -152,12 +226,48 @@ ask_user () {
 	return 0
 }
 
+ask_active_partition () {
+	local dev=$1
+	local id=$2
+	local num=$3
+	local RET
+
+	db_subst partman/active_partition DEVICE "$(humandev $(cat device))"
+	db_subst partman/active_partition PARTITION "$num"
+
+	if [ -f $id/detected_filesystem ]; then
+		local filesystem=$(cat $id/detected_filesystem)
+		RET=''
+		db_metaget partman/filesystem_long/"$filesystem" description || RET=''
+		if [ "$RET" ]; then
+			filesystem="$RET"
+		fi
+		db_subst partman/text/there_is_detected FILESYSTEM "$filesystem"
+		db_metaget partman/text/there_is_detected description
+	else
+		db_metaget partman/text/none_detected description
+	fi
+	db_subst partman/active_partition OTHERINFO "${RET}"
+
+	if [ -f $id/detected_filesystem ] && [ -f $id/format ]; then
+		db_metaget partman/text/destroyed description
+		db_subst partman/active_partition DESTROYED "${RET}"
+	else
+		db_subst partman/active_partition DESTROYED ''
+	fi
+
+	ask_user /lib/partman/active_partition "$dev" "$id" || return $?
+}
+
 partition_tree_choices () {
 	local IFS
-	local whitespace_hack=""
 	for dev in $DEVICES/*; do
 		[ -d $dev ] || continue
-		printf "%s//\t%s\n" $dev "$(device_name $dev)" # GETTEXT?
+		if [ -e "$dev/partition_tree_cache" ]; then
+			cat "$dev/partition_tree_cache"
+			continue
+		fi
+		printf "%s//\t%s\n" $dev "$(device_name $dev)" >"$dev/partition_tree_cache" # GETTEXT?
 		cd $dev
 
 		open_dialog PARTITIONS
@@ -169,15 +279,10 @@ partition_tree_choices () {
 		while { read num id size type fs path name; [ "$id" ]; }; do
 			part=${dev}/$id
 			[ -f $part/view ] || continue
-			printf "%s//%s\t     %s\n" "$dev" "$id" $(cat $part/view)
+			printf "%s//%s\t%s\n" "$dev" "$id" $(cat $part/view) >>partition_tree_cache
 		done
+		cat partition_tree_cache
 		restore_ifs
-	done | while read line; do
-		# A hack to make sure each line in the table is unique and
-		# selectable by debconf -- pad lines with varying amounts of
-		# whitespace.
-    		whitespace_hack="$NBSP$whitespace_hack"
-		echo "$line$whitespace_hack"
 	done
 }
 
@@ -233,17 +338,26 @@ longint2human () {
 }
 
 human2longint () {
-	local human suffix int frac longint
+	local human orighuman gotb suffix int frac longint
 	set -- $*; human="$1$2$3$4$5" # without the spaces
+	orighuman="$human"
 	human=${human%b} #remove last b
 	human=${human%B} #remove last B
+	gotb=''
+	if [ "$human" != "$orighuman" ]; then
+		gotb=1
+	fi
 	suffix=${human#${human%?}} # the last symbol of $human
 	case $suffix in
 	k|K|m|M|g|G|t|T)
 		human=${human%$suffix}
 		;;
 	*)
-		suffix=''
+		if [ "$gotb" ]; then
+			suffix=B
+		else
+			suffix=''
+		fi
 		;;
 	esac
 	int="${human%[.,]*}"
@@ -253,6 +367,10 @@ human2longint () {
 	frac=${frac%${frac#????}} # only the first 4 digits of $frac
 	longint=$(expr "$int" \* 10000 + "$frac")
 	case $suffix in
+	b|B)
+		longint=${longint%????}
+		[ "$longint" ] || longint=0
+		;;
 	k|K)
 		longint=${longint%?}
 		;;
@@ -293,6 +411,11 @@ valid_human () {
 	return 1
 }
 
+convert_to_megabytes() {
+	local size="$1"
+	expr 0000000"$size" : '0*\(..*\)......$'
+}
+
 stop_parted_server () {
 	open_infifo
 	write_line "QUIT"
@@ -326,12 +449,13 @@ update_partition () {
 	read_line part
 	close_dialog
 	[ "$part" ] || return 0
+	rm -f partition_tree_cache
 	for u in /lib/partman/update.d/*; do
 		[ -x "$u" ] || continue
 		$u $1 $part
 	done
 }
-        
+
 DEVICES=/var/lib/partman/devices
 
 # 0, 1 and 2 are standard input, output and error.
@@ -406,7 +530,7 @@ error_handler () {
 		db_progress INFO $info
 		while { read_line frac state; [ "$frac" != ready ]; }; do
 		    if [ "$state" ]; then
-			db_subst $info STATE "$state" 
+			db_subst $info STATE "$state"
 			db_progress INFO $info
 		    fi
 		    db_progress SET $frac
@@ -452,6 +576,7 @@ error_handler () {
 	db_subst partman/exception_handler CHOICES "$options"
 	if
 	    expr "$options" : '.*,.*' >/dev/null \
+	    && db_fset partman/exception_handler seen false \
 	    && db_input $priority partman/exception_handler
 	then
 	    if db_go; then
@@ -463,6 +588,7 @@ error_handler () {
 	else
 	    db_subst partman/exception_handler_note TYPE "$type"
 	    maybe_escape "$message" db_subst partman/exception_handler_note DESCRIPTION
+	    db_fset partman/exception_handler_note seen false
 	    db_input $priority partman/exception_handler_note || true
 	    db_go || true
 	    write_line "unhandled"
@@ -519,9 +645,46 @@ memfree () {
 	fi
 }
 
+# return the device mapper table type
+dm_table () {
+	local type=""
+	if [ -x /sbin/dmsetup ]; then
+		type=$(/sbin/dmsetup table "$1" 2>/dev/null | head -n 1 | cut -d " " -f3)
+	fi
+	echo $type
+}
+
+# Check if a d-m device is a multipath device
+is_multipath_dev () {
+	local type
+
+	type=$(dm_table $1)
+	[ "$type" = multipath ] || return 1
+}
+
+# Check if a d-m device is a partition on a multipath device by checking if
+# the corresponding multipath map exists
+is_multipath_part () {
+	local type mp name
+
+	type multipath >/dev/null 2>&1 || return 1
+
+	type=$(dm_table $1)
+	[ "$type" = linear ] || return 1
+	name=$(dmsetup info --noheadings -c -oname "$1")
+
+	mp=${name%-part*}
+	if [ $(multipath -l $mp | wc -l) -gt  0 ]; then
+		return 0
+	fi
+	return 1
+}
+
 # TODO: this should not be global
 humandev () {
-    local host bus target part lun idenum targtype scsinum linux
+    local device disk drive host bus target part line controller lun
+    local idenum scsinum targtype linux kfreebsd mapping vglv vg lv wwid
+    local dev discipline frdisk type rtype desc n
     case "$1" in
 	/dev/ide/host*/bus[01]/target[01]/lun0/disc)
 	    host=`echo $1 | sed 's,/dev/ide/host\(.*\)/bus.*/target[01]/lun0/disc,\1,'`
@@ -668,19 +831,19 @@ humandev () {
 	    if [ "$host" = host ] ; then
 	       line=`echo "$line" | sed 's,target\([0-9]*\)/\([a-z]*\)\(.*\),\1 \2 \3,'`
 	       lun=`echo  "$line" | cut -d" " -f1`
-	       disc=`echo "$line" | cut -d" " -f2`
+	       disk=`echo "$line" | cut -d" " -f2`
 	       part=`echo "$line" | cut -d" " -f3`
 	    else
 	       line=`echo "$line" | sed 's,disc\([0-9]*\)/\([a-z]*\)\(.*\),\1 \2 \3,'`
 	       lun=`echo  "$line" | cut -d" " -f1`
 	       controller=$(($lun / 16))
 	       lun=$(($lun % 16))
-	       disc=`echo "$line" | cut -d" " -f2`
+	       disk=`echo "$line" | cut -d" " -f2`
 	       part=`echo "$line" | cut -d" " -f3`
 	    fi
 	    linux=$(mapdevfs $1)
 	    linux=${linux#/dev/}
-	    if [ "$disc" = disc ] ; then
+	    if [ "$disk" = disc ] ; then
 	       db_metaget partman/text/scsi_disk description
 	       printf "$RET" ".CCISS" "-" ${controller} ${lun} ${linux}
 	    else
@@ -714,27 +877,37 @@ humandev () {
 		printf "$RET" ".CCISS" "-" "$controller" "$lun" "$part" "$linux"
 	    fi
 	    ;;
+	/dev/mmcblk[0-9])
+	    drive=$(echo $1 | sed 's,^/dev/mmcblk\([0-9]\).*,\1,')
+	    linux=${1#/dev/}
+	    db_metaget partman/text/mmc_disk description
+	    printf "$RET" "$(($drive + 1))" "$linux"
+	    ;;
+	/dev/mmcblk[0-9]p[0-9]*)
+	    drive=$(echo $1 | sed 's,^/dev/mmcblk\([0-9]\).*,\1,')
+	    part=$(echo $1 | sed 's,^/dev/mmcblk[0-9]p\([0-9][0-9]*\).*,\1,')
+	    linux=${1#/dev/}
+	    db_metaget partman/text/mmc_partition description
+	    printf "$RET" "$(($drive + 1))" "$part" "$linux"
+	    ;;
 	/dev/md*|/dev/md/*)
 	    device=`echo "$1" | sed -e "s/.*md\/\?\(.*\)/\1/"`
-	    type=`grep "^md${device}[ :]" /proc/mdstat | sed -e "s/^.* : active raid\([[:alnum:]]\).*/\1/"`
+	    type=`grep "^md${device}[ :]" /proc/mdstat | sed -e "s/^.* : active raid\([[:alnum:]]\{,2\}\).*/\1/"`
 	    db_metaget partman/text/raid_device description
 	    printf "$RET" ${type} ${device}
 	    ;;
 	/dev/mapper/*)
-	    type=""
-	    if [ -x /sbin/dmsetup ]; then
-	        type=$(/sbin/dmsetup table "$1" | head -n 1 | cut -d " " -f3)
-	    fi
+	    type=$(dm_table "$1")
 
 	    # First check for Serial ATA RAID devices
-	    if type dmraid >/dev/null 2>&1; then
-		for frdisk in $(dmraid -s -c | grep -v "No RAID disks"); do
+	    if type dmraid >/dev/null 2>&1 && \
+	       dmraid -s -c >/dev/null 2>&1; then
+		for frdisk in $(dmraid -s -c); do
 			device=${1#/dev/mapper/}
 			case "$1" in
 			    /dev/mapper/$frdisk)
 				type=sataraid
-				superset=${device%_*}
-				desc=$(dmraid -s -c -c "$superset")
+				desc=$(dmraid -s -c -c "$device")
 				rtype=$(echo "$desc" | cut -d: -f4)
 				db_metaget partman/text/dmraid_volume description
 				printf "$RET" $device $rtype
@@ -755,6 +928,16 @@ humandev () {
 	        mapping=${1#/dev/mapper/}
 	        db_metaget partman/text/dmcrypt_volume description
 	        printf "$RET" $mapping
+	    elif [ "$type" = multipath ]; then
+		device=${1#/dev/mapper/}
+		wwid=$(multipath -l ${device} | head -n 1 | sed "s/^${device} \+(\([a-f0-9]\+\)).*/\1/")
+		db_metaget partman/text/multipath description
+		printf "$RET" ${device} ${wwid}
+	    elif is_multipath_part $1; then
+		part=$(echo "$1" | sed 's%.*-part\([0-9]\+\)$%\1%')
+		device=$(echo "$1" | sed 's%/dev/mapper/\(.*\)-part[0-9]\+$%\1%')
+		db_metaget partman/text/multipath_partition description
+		printf "$RET" ${device} ${part}
 	    else
 	        # LVM2 devices are found as /dev/mapper/<vg>-<lv>.  If the vg
 	        # or lv contains a dash, the dash is replaced by two dashes.
@@ -786,6 +969,51 @@ humandev () {
 	/dev/dasd*)
 	    disk="${1#/dev/}"
 	    humandev_dasd_disk /sys/block/$disk/$(readlink /sys/block/$disk/device)
+	    ;;
+	/dev/*vd[a-z])
+	    drive=$(printf '%d' "'$(echo $1 | sed 's,^/dev/x\?vd\([a-z]\).*,\1,')")
+	    drive=$(($drive - 96))
+	    linux=${1#/dev/}
+	    db_metaget partman/text/virtual_disk description
+	    printf "$RET" "$drive" "$linux"
+	    ;;
+	/dev/*vd[a-z][0-9]*)
+	    drive=$(printf '%d' "'$(echo $1 | sed 's,^/dev/x\?vd\([a-z]\).*,\1,')")
+	    drive=$(($drive - 96))
+	    part=$(echo $1 | sed 's,^/dev/x\?vd[a-z]\([0-9][0-9]*\).*,\1,')
+	    linux=${1#/dev/}
+	    db_metaget partman/text/virtual_partition description
+	    printf "$RET" "$drive" "$part" "$linux"
+	    ;;
+	/dev/ad[0-9]*[sp][0-9]*)
+	    drive=$(echo $1 | sed 's,/dev/ad\([0-9]\+\).*,\1,')
+	    drive=$(($drive + 1))
+	    part=$(echo $1 | sed 's,/dev/ad[0-9]\+[sp]\([0-9]\+\).*,\1,')
+	    kfreebsd=${1#/dev/}
+	    db_metaget partman/text/ata_partition description
+	    printf "$RET" "$drive" "$part" "$kfreebsd"
+	    ;;
+	/dev/ad[0-9]*)
+	    drive=$(echo $1 | sed 's,/dev/ad\([0-9]\+\).*,\1,')
+	    drive=$(($drive + 1))
+	    kfreebsd=${1#/dev/}
+	    db_metaget partman/text/ata_disk description
+	    printf "$RET" "$drive" "$kfreebsd"
+	    ;;
+	/dev/da[0-9]*[sp][0-9]*)
+	    drive=$(echo $1 | sed 's,/dev/da\([0-9]\+\).*,\1,')
+	    drive=$(($drive + 1))
+	    part=$(echo $1 | sed 's,/dev/da[0-9]\+[sp]\([0-9]\+\).*,\1,')
+	    kfreebsd=${1#/dev/}
+	    db_metaget partman/text/scsi_simple_partition description
+	    printf "$RET" "$drive" "$part" "$kfreebsd"
+	    ;;
+	/dev/da[0-9]*)
+	    drive=$(echo $1 | sed 's,/dev/da\([0-9]\+\).*,\1,')
+	    drive=$(($drive + 1))
+	    kfreebsd=${1#/dev/}
+	    db_metaget partman/text/scsi_simple_disk description
+	    printf "$RET" "$drive" "$kfreebsd"
 	    ;;
 	*)
 	    # Check if it's an LVM1 device
@@ -849,18 +1077,30 @@ enable_swap () {
 }
 
 disable_swap () {
+    local dev=$1
+    local id=$2
+
     [ -f /proc/swaps ] || return 0
-    if [ "$1" ] && [ -d "$1" ]; then
-	local path device dev
-	dev="$1"
+
+    if [ "$dev" ] && [ -d "$dev" ]; then
+	local device
 	cd $dev
-	device=$(cat device)
+	if [ "$id" ] && [ -d "$id" ]; then
+	    open_dialog PARTITION_INFO "$id"
+	    read_line x1 x2 x3 x4 x5 device x7
+	    close_dialog
+	    # Add space to ensure we won't match substrings.
+	    device="$device "
+	else
+	    device=$(cat device)
+	fi
+
 	grep "^$device" /proc/swaps \
 	    | while read path x; do
 		  swapoff $path
 	      done
     else
-	grep '^/dev' /proc/swaps \
+	grep '^/dev' /proc/swaps | grep -v '^/dev/ramzswap' \
 	    | while read path x; do
 		  swapoff $path
 	      done
@@ -869,19 +1109,23 @@ disable_swap () {
 
 # Lock a device or partition against further modifications
 partman_lock_unit() {
-	local device message dev testdev
+	local device message cwd dev testdev
 	device="$1"
 	message="$2"
 
+	# We need to preserve the current working directory as the caller might
+	# be working on a specific device.  See #488687 for details.
+	cwd="$(pwd)"
 	for dev in $DEVICES/*; do
 		[ -d "$dev" ] || continue
 		cd $dev
 
 		# First check if we should lock a device
-		if [ -e "device" ]; then
+		if [ -e device ]; then
 			testdev=$(mapdevfs $(cat device))
 			if [ "$device" = "$testdev" ]; then
 				echo "$message" > locked
+				cd "$cwd"
 				return 0
 			fi
 		fi
@@ -896,22 +1140,26 @@ partman_lock_unit() {
 		done
 		close_dialog
 	done
+	cd "$cwd"
 }
 
 # Unlock a device or partition to allow further modifications
 partman_unlock_unit() {
-	local device dev testdev
+	local device cwd dev testdev
 	device="$1"
 
+	# See partman_lock_unit() for details about $cwd.
+	cwd="$(pwd)"
 	for dev in $DEVICES/*; do
 		[ -d "$dev" ] || continue
 		cd $dev
 
 		# First check if we should unlock a device
-		if [ -e "device" ]; then
+		if [ -e device ]; then
 			testdev=$(mapdevfs $(cat device))
 			if [ "$device" = "$testdev" ]; then
 				rm -f locked
+				cd "$cwd"
 				return 0
 			fi
 		fi
@@ -926,149 +1174,43 @@ partman_unlock_unit() {
 		done
 		close_dialog
 	done
+	cd "$cwd"
 }
 
-# List the changes that are about to be committed and let the user confirm first
-confirm_changes () {
-	local template dev x part partitions num id size type fs path name filesystem partdesc partitems items formatted_previously
-	template="$1"
-
-	# Compute the changes we are going to do
-	partitems=''
-	items=''
-	formatted_previously=no
+partman_list_allowed() {
+	local allowed_func=$1
+	local IFS
+	local partitions
+	local freenum=1
 	for dev in $DEVICES/*; do
-		[ -d "$dev" ] || continue
+		[ -d $dev ] || continue
 		cd $dev
 
-		open_dialog IS_CHANGED
-		read_line x
-		close_dialog
-		if [ "$x" = yes ]; then
-			partitems="${partitems}   $(humandev $(cat device))
-"
-		fi
-
-		partitions=
 		open_dialog PARTITIONS
-		while { read_line num id size type fs path name; [ "$id" ]; }; do
-			[ "$fs" != free ] || continue
-			partitions="$partitions $id,$num"
-		done
+		partitions="$(read_paragraph)"
 		close_dialog
-	
-		for part in $partitions; do
-			id=${part%,*}
-			num=${part#*,}
-			[ -f $id/method -a -f $id/format \
-			  -a -f $id/visual_filesystem ] || continue
-			# if no filesystem (e.g. swap) should either be not
-			# formatted or formatted before the method is specified
-			[ -f $id/filesystem -o ! -f $id/formatted \
-			  -o $id/formatted -ot $id/method ] || continue
-			# if it is already formatted filesystem it must be formatted 
-			# before the method or filesystem is specified
-			[ ! -f $id/filesystem -o ! -f $id/formatted \
-			  -o $id/formatted -ot $id/method \
-			  -o $id/formatted -ot $id/filesystem ] ||
-			{
-				formatted_previously=yes
-				continue
-			}
-			filesystem=$(cat $id/visual_filesystem)
-			# Special case d-m devices to use a different description
-			if cat device | grep -q "/dev/mapper" ; then
-				partdesc="partman/text/confirm_unpartitioned_item"
-			else
-				partdesc="partman/text/confirm_item"
-				db_subst $partdesc PARTITION "$num"
-			fi
-			db_subst $partdesc TYPE "$filesystem"
-			db_subst $partdesc DEVICE $(humandev $(cat device))
-			db_metaget $partdesc description
 
-			items="${items}   ${RET}
-"
+		local id size fs path
+		IFS="$TAB"
+		echo "$partitions" |
+		while { read x1 id size x4 fs path x7; [ "$id" ]; }; do
+			restore_ifs
+			if $allowed_func "$dev" "$id"; then
+				if [ "$fs" = free ]; then
+					printf "%s\t%s\t%s\t%s free #%d\n" "$dev" "$id" "$size" "$(mapdevfs "$(cat "$dev/device")")" "$freenum"
+					freenum="$(($freenum + 1))"
+				else
+					printf "%s\t%s\t%s\t%s\n" "$dev" "$id" "$size" "$(mapdevfs "$path")"
+				fi
+			fi
+			IFS="$TAB"
 		done
+		restore_ifs
 	done
-
-	if [ "$items" ]; then
-		db_metaget partman/text/confirm_item_header description
-		items="$RET
-$items"
-	fi
-
-	if [ "$partitems" ]; then
-		db_metaget partman/text/confirm_partitem_header description
-		partitems="$RET
-$partitems"
-	fi
-
-	if [ "$partitems$items" ]; then
-		if [ -z "$items" ]; then
-			x="$partitems"
-		elif [ -z "$partitems" ]; then
-			x="$items"
-		else
-			x="$partitems
-$items"
-		fi
-		maybe_escape "$x" db_subst $template/confirm ITEMS
-		db_input critical $template/confirm
-		db_go || true
-		db_get $template/confirm
-		if [ "$RET" = false ]; then
-			db_reset $template/confirm
-			return 1
-		else
-			db_reset $template/confirm
-			return 0
-		fi
-	else
-		if [ "$formatted_previously" = no ]; then
-			db_input critical $template/confirm_nochanges
-			db_go || true
-			if [ $template = partman-dmraid ]; then
-				# for dmraid, only a note is displayed
-				return 1
-			fi
-			db_get $template/confirm_nochanges
-			if [ "$RET" = false ]; then
-				db_reset $template/confirm_nochanges
-				return 1
-			else
-				db_reset $template/confirm_nochanges
-				return 0
-			fi
-		else
-			return 0
-		fi
-	fi
 }
 
-commit_changes () {
-	local template
-	template=$1
 
-	for s in /lib/partman/commit.d/*; do
-		if [ -x $s ]; then
-			$s || {
-				db_input critical $template || true
-				db_go || true
-				for s in /lib/partman/init.d/*; do
-					if [ -x $s ]; then
-						$s || return 255
-					fi
-				done
-				return 1
-			}
-		fi
-	done
-
-	return 0
-}
-
-log '*******************************************************'
+[ "$PARTMAN_TEST" ] || log '*******************************************************'
 
 # Local Variables:
 # coding: utf-8

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 . /lib/partman/lib/base.sh
+. /lib/partman/lib/commit.sh
 
 abort () {
 	if [ -f /var/run/parted_server.pid ]; then
@@ -53,25 +54,15 @@ load_extra () {
 	fi
 }
 
-db_capb backup
-
 ###########################################################
 # Compute some constants in order to make things faster.
 ###########################################################
-
-# The width of partman/text/number.
-# number_width is used only in visual.d/number
-db_metaget partman/text/number description
-RET=$(printf "$RET" '')
-RET=$(stralign 50 "$RET" | sed 's/[^ ]//g')
-number_width=$((2 + 50 - ${#RET}))
-export number_width
 
 # Detect if Debconf can escape strings
 # non-empty means we can escape
 can_escape=''
 if type debconf-escape >/dev/null 2>&1; then
-	db_capb backup
+	db_capb backup align
 	for cap in $RET; do
 		case $cap in
 			escape)	can_escape=yes ;;
@@ -89,7 +80,7 @@ deci='.'
 export deci
 
 # work around bug #243373
-if [ "$TERM" = xterm -o "$TERM" = bterm ]; then
+if [ "$TERM" = xterm ] || [ "$TERM" = bterm ]; then
 	debconf_select_lead="$NBSP"
 else
 	debconf_select_lead="> "
@@ -106,8 +97,15 @@ export debconf_select_lead
 
 mkdir -p /var/lib/partman
 
-# Load additional components when sufficent memory is available
+# Load additional components when sufficient memory is available
 load_extra
+
+# Make sure all modules are available
+# Should really be done whenever anna installs a kernel package
+depmod -a
+
+# We need to set the capabilities after anna-install
+db_capb backup align
 
 while true; do
 	initcount=$(ls /lib/partman/init.d/* | wc -l)
@@ -140,6 +138,8 @@ while true; do
 					exitcode=$?
 					if [ $exitcode -eq 255 ]; then
 						abort 10 # back up to main menu
+					elif [ $exitcode -ge 128 ] && [ $exitcode -lt 192 ]; then
+						abort $exitcode # killed by signal
 					elif [ $exitcode -ge 100 ]; then
 						break # successful partitioning
 					else
@@ -148,7 +148,7 @@ while true; do
 				}
 			fi
 		done
-		
+
 		for s in /lib/partman/check.d/*; do
 			if [ -x $s ]; then
 				#logger -t partman "Running check.d/$s"
@@ -157,11 +157,11 @@ while true; do
 				fi
 			fi
 		done
-		if confirm_changes "partman"; then
+		if confirm_changes partman; then
 			break
 		fi
 	done
-	
+
 	if [ "$PARTMAN_NO_COMMIT" ]; then
 		exit 0
 	fi

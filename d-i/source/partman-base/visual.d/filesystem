@@ -13,9 +13,5 @@ path=$7
 name=$8
 
 if [ -f $id/visual_filesystem ]; then
-    fs=$(cat $id/visual_filesystem)
-else
-    fs=''
+	printf "%s" "$(cat $id/visual_filesystem)"
 fi
-
-stralign -11 " $fs" #TODO: language dependent length

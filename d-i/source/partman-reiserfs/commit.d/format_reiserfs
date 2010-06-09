@@ -65,9 +65,10 @@ for dev in $DEVICES/*; do
 					label=$(cat $id/label | \
 						sed 's/\(................\).*/\1/g')
 				fi
-				do_label="${label:+-l $label}"
+				# Ensure label is quoted correctly
 				if log-output -t partman --pass-stdout \
-				   mkfs.reiserfs $do_label -f -q $device >/dev/null; then
+				   mkfs.reiserfs ${label:+-l "$label"} -f -q \
+				   		 $device >/dev/null; then
 					sync
 					status=OK
 				else

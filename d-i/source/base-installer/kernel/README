@@ -27,6 +27,16 @@ Each architecture must define the following functions in kernel/$ARCH.sh:
     have subarchitectures that are incompatible at the kernel level. This
     function should cope with both cases.
 
+    Note that by default any postfix (starting with a hyphen) is allowed
+    after the flavor. This allows for custom kernels and also, for example,
+    for kernel meta packages for stable kernel updates that have a postfix
+    to distinguish them from the regular kernel meta packages.
+    This means that if a specific postfix (such as -smp, or -bigmem) is not
+    allowed, this should be tested explicitly.
+
+    The same goes for prefixes: any prefix before the flavor is allowed by
+    default.
+
     Returns zero if the kernel is usable on this flavour, or non-zero
     otherwise.
 
@@ -51,6 +61,8 @@ Shell variables all functions may expect:
     The major version of the running kernel, e.g. 2.6.
   KERNEL_VERSION
     The full version of the running kernel, e.g. 2.6.8.
+  KERNEL_FLAVOUR
+    The flavour of the running kernel, e.g. 486, 686-bigmem or ixp4xx.
   MACHINE
     The machine hardware name (as returned by uname -m).
   NUMCPUS

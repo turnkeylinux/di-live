@@ -22,6 +22,13 @@ if db_get hw-detect/load-ide && [ "$RET" = true ]; then
 	LOAD_IDE=1
 fi
 
+# Check for virtio devices
+if [ -d /sys/bus/pci/devices ] && \
+	grep -q 0x1af4 /sys/bus/pci/devices/*/vendor 2>/dev/null && \
+	! grep -q ^virtio_ /proc/modules; then
+	anna-install virtio-modules || true
+fi
+
 if [ -x /sbin/depmod ]; then
 	depmod -a > /dev/null 2>&1 || true
 fi
@@ -36,8 +43,7 @@ is_not_loaded() {
 }
 
 is_available () {
-	find /lib/modules/$(uname -r)/ | sed 's!.*/!!' | cut -d . -f 1 | \
-	grep -q "^$1$"
+	[ "$(modprobe -l $1)" ] || return 1
 }
 
 # Module as first parameter, description of device the second.
@@ -56,13 +62,21 @@ in_list() {
 }
 
 snapshot_devs() {
-	echo -n `grep : /proc/net/dev | sort | cut -d':' -f1`
+	echo -n `grep : /proc/net/dev | cut -d':' -f1`
 }
 
 compare_devs() {
 	local olddevs="$1"
 	local devs="$2"
-	echo "${devs#$olddevs}" | sed -e 's/^ //'
+	local dev newdevs
+
+	newdevs=
+	for dev in $devs; do
+		if ! echo " $olddevs " | grep -q " $dev "; then
+			newdevs="${newdevs:+$newdevs }$dev"
+		fi
+	done
+	echo "$newdevs"
 }
 
 load_module() {
@@ -169,17 +183,6 @@ get_manual_hw_info() {
 	fi
 	get_rtc_info
 
-	# on some hppa systems, nic and scsi won't be found because they're
-	# not on a bus that udev understands ... 
-	if [ "`udpkg --print-architecture`" = hppa ]; then
-		echo "lasi_82596:LASI Ethernet"
-		register-module lasi_82596
-		echo "lasi700:LASI SCSI"
-		register-module -i lasi700
-		echo "zalon7xx:Zalon SCSI"
-		register-module -i zalon7xx
-	fi
-
 	case $SUBARCH in
 		powerpc/ps3)
 			echo "ps3rom:PS3 internal CD-ROM drive"
@@ -190,10 +193,39 @@ get_manual_hw_info() {
 	esac
 }
 
+# Based on syslog from #486298
+megaraid_complete() {
+	dmesg | grep -Eq "megaraid mbox: (Wait for 0 commands to complete|reset sequence completed sucessfully)"
+}
+wait_megaraid_complete() {
+	local wait=300
+
+	if megaraid_complete; then
+		return 0
+	fi
+
+	sleep 10 # Early initialization phase
+	if dmesg | grep -q "megaraid mbox: Wait for [0-9]*[1-9] commands to complete"; then
+		log "Megaraid initialization: waiting for reset to complete"
+		while [ $wait -gt 0 ]; do
+			sleep 1
+			if megaraid_complete; then
+				log "Megaraid initialization: reset complete"
+				sleep 1
+				break
+			fi
+			wait=$(($wait - 1))
+		done
+		if [ $wait -eq 0 ]; then
+			log "Megaraid initialization: failed to complete reset!"
+		fi
+	fi
+}
+
 # Should be greater than the number of kernel modules we can reasonably
 # expect it will ever need to load.
 MAX_STEPS=1000
-OTHER_STEPS=4
+OTHER_STEPS=5
 # Use 1/10th of the progress bar for the non-module-load steps.
 OTHER_STEPSIZE=$(expr $MAX_STEPS / 10 / $OTHER_STEPS)
 db_progress START 0 $MAX_STEPS $PROGRESSBAR
@@ -217,6 +249,8 @@ fi
 
 # If using real hotplug, re-run the rc scripts to pick up new modules.
 # TODO: this just loads modules itself, rather than handing back a list
+# Since we've just run depmod, new modules might be available, so we
+# must trigger as well as settle.
 update-dev
 
 ALL_HW_INFO=$(get_detected_hw_info; get_manual_hw_info)
@@ -306,6 +340,34 @@ if [ -z "$LIST" ]; then
 	db_progress STEP $MODULE_STEPS
 fi
 
+# Load ide-generic and check if that results in new block devices.
+# If so, make sure it is added to the initrd for the installed system.
+# Note: this may need to be done for more systems than just systems
+# that have an ISA bus, but that seems like a good start; it could also
+# be done unconditionally.
+if [ -z "$LOAD_IDE" ] && is_not_loaded ide-generic && \
+   [ -e /sys/bus/isa ] && is_available ide-generic; then
+	update-dev --settle
+	blockdev_count=$(ls /sys/block | wc -w)
+
+	log "ISA bus detected; loading module 'ide-generic'"
+	load_module ide-generic
+	update-dev --settle
+	if [ $(ls /sys/block | wc -w) -gt $blockdev_count ]; then
+		log "New devices detected after loading ide-generic"
+
+		# This will tell initramfs-tools to load ide-generic
+		kopts=
+		if db_get debian-installer/add-kernel-opts && [ "$RET" ]; then
+			kopts="$RET"
+		fi
+		if ! echo "$kopt" | grep -Eq "(^| )all_generic_ide( |$)"; then
+			db_set debian-installer/add-kernel-opts \
+				"${kopts:+$kopts }all_generic_ide"
+		fi
+	fi
+fi
+
 if ! is_not_loaded ohci1394 || ! is_not_loaded firewire-ohci; then
 	# if firewire was found, try to enable firewire cd support
 	if is_not_loaded sbp2 && is_not_loaded firewire-sbp2 && \
@@ -375,20 +437,20 @@ apply_pcmcia_resource_opts() {
 }
 
 # get pcmcia running if possible
-PCMCIA_INIT=
-if [ -x /etc/init.d/pcmciautils ]; then
-	PCMCIA_INIT=/etc/init.d/pcmciautils
-fi
-if [ "$PCMCIA_INIT" ]; then
+PCMCIA_INIT=/etc/init.d/pcmciautils
+if [ -x "$PCMCIA_INIT" ]; then
 	if is_not_loaded pcmcia_core; then
-		db_input medium hw-detect/start_pcmcia || true
 		db_input low hw-detect/pcmcia_resources || true
 		db_go || true
+
 		if db_get hw-detect/pcmcia_resources && [ "$RET" ]; then
 			apply_pcmcia_resource_opts $RET
 		fi
-	fi
-	if db_go && db_get hw-detect/start_pcmcia && [ "$RET" = true ]; then
+		# cdebconf doesn't set seen flags, so this would normally be
+		# asked again on subsequent hw-detect runs, which is
+		# annoying.
+		db_fset hw-detect/pcmcia_resources seen true || true
+
 		db_progress INFO hw-detect/pcmcia_step
 		$PCMCIA_INIT start 2>&1 | log
 		db_progress STEP $OTHER_STEPSIZE
@@ -409,24 +471,23 @@ cardbus_check_netdev()
 {
 	local socket="$1"
 	local netdev="$2"
-	if [ -L $netdev/device ] && \
-		[ -d $socket/device/$(basename $(readlink $netdev/device)) ]; then
-		echo $(basename $netdev) >> /etc/network/devhotplug
+	if [ -L "$netdev/device" ] && \
+		[ -d "$socket/device/$(basename "$(readlink "$netdev/device")")" ]; then
+		echo "$(basename "$netdev")" >> /etc/network/devhotplug
 	fi
 }
-if ls /sys/class/pcmcia_socket/* >/dev/null 2>&1; then
-	for socket in /sys/class/pcmcia_socket/*; do
-		for netdev in /sys/class/net/*; do
-			cardbus_check_netdev $socket $netdev
-		done
-	done
-fi
 
 # Try to do this only once..
 if [ "$have_pcmcia" -eq 1 ] && \
    ! grep -q pcmciautils /var/lib/apt-install/queue 2>/dev/null; then
 	log "Detected PCMCIA, installing pcmciautils."
 	apt-install pcmciautils || true
+
+	for socket in /sys/class/pcmcia_socket/*; do
+		for netdev in /sys/class/net/*; do
+			cardbus_check_netdev "$socket" "$netdev"
+		done
+	done
 
 	if db_get hw-detect/pcmcia_resources && [ -n "$RET" ]; then
 		echo "mkdir /target/etc/pcmcia 2>/dev/null || true" \
@@ -439,36 +500,15 @@ fi
 # Install udev into target
 apt-install udev || true
 
-# TODO: should this really be conditional on hotplug support?
-if [ -f /proc/sys/kernel/hotplug ]; then
+# Install usbutils
+if [ -d /sys/bus/usb ]; then
 	apt-install usbutils || true
-fi
-
-# Install acpi
-if [ -d /proc/acpi ]; then
-	apt-install acpi || true
-	apt-install acpid || true
-	apt-install acpi-support-base || true
 fi
 
 # If hardware has support for pmu, install pbbuttonsd
 if [ -d /sys/class/misc/pmu/ ]; then
 	apt-install pbbuttonsd || true
 fi
-
-# Install mouseemu on systems likely to have single-button mice
-case $SUBARCH in
-	i386/mac|amd64/mac)
-		apt-install mouseemu || true
-	;;
-	powerpc/powermac_*)
-		# mouseemu causes an oops somewhere in the input layer on
-		# powerpc64 at the moment, so don't install it.
-		if [ ! -d /proc/ppc64 ]; then
-			apt-install mouseemu || true
-		fi
-	;;
-esac
 
 # Install eject?
 if [ -n "$(list-devices cd; list-devices maybe-usb-floppy)" ]; then
@@ -478,7 +518,7 @@ fi
 # Install optimised libc based on CPU type
 case "$(udpkg --print-architecture)" in
     i386)
-	case "$(grep '^cpu family' /proc/cpuinfo | cut -d: -f2)" in
+	case "$(grep '^cpu family' /proc/cpuinfo | head -n1 | cut -d: -f2)" in
 	    " 6"|" 15")
 		# intel 686 or Amd k6.
 		apt-install libc6-i686 || true
@@ -511,6 +551,28 @@ case $SUBARCH in
 		;;
 esac
 
+# Some hardware may need extra time to initialize:
+
+# megaraid_mbox hardware RAID
+if lsmod | grep -q megaraid_mbox; then
+	db_progress INFO hw-detect/hardware_init_step
+	wait_megaraid_complete
+
+	# Add rootdelay boot option for target system
+	if [ -z "$LOAD_IDE" ]; then
+		kopts=
+		if db_get debian-installer/add-kernel-opts && [ "$RET" ]; then
+			kopts="$RET"
+			# remove any existing rootdelay= option
+			kopts="$(echo "$kopts" | sed -r "s/(^| )rootdelay=[^ ]*//")"
+		fi
+		db_set debian-installer/add-kernel-opts \
+			"${kopts:+$kopts }rootdelay=10"
+	fi
+fi
+db_progress STEP $OTHER_STEPSIZE
+
+
 db_progress SET $MAX_STEPS
 db_progress STOP
 
@@ -518,11 +580,11 @@ if [ -n "$MISSING_MODULES_LIST" ]; then
 	log "Missing modules '$MISSING_MODULES_LIST"
 fi
 
+check-missing-firmware
+
 sysfs-update-devnames
 
-# Let userspace /dev tools rescan the devices.
-if type update-dev >/dev/null 2>&1; then
-	update-dev
-fi
+# Let userspace /dev tools rescan the devices
+update-dev --settle
 
 exit 0

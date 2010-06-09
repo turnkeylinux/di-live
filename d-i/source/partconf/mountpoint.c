@@ -14,6 +14,7 @@
 const char *fs_list[] = {
     "ext2",
     "ext3",
+    "ext4",
     "fat16",
     "fat32",
     "hfs",

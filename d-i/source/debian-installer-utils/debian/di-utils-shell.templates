@@ -1,5 +1,6 @@
 Template: di-utils-shell/do-shell
 Type: note
+# :sl2:
 _Description: Interactive shell
  After this message, you will be running "ash", a Bourne-shell clone. 
  .
@@ -15,4 +16,5 @@ Type: text
 #  Main menu item
 # The translation should not exceed 55 columns except for languages
 # that are only supported in the graphical version of the installer
+# :sl1:
 _Description: Execute a shell

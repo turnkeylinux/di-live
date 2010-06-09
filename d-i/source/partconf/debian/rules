@@ -17,7 +17,7 @@ clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp
-	-$(MAKE) clean
+	$(MAKE) clean
 	dh_clean
 	-for p in $(PACKAGES); do \
 	    rm -f debian/$$p.postinst; \

@@ -31,5 +31,4 @@ else
 fi
 
 db_metaget partman-basicmethods/text/format description
-RET=$(stralign -25 "$RET")
-printf "format\t%s%s\n" "${RET}" "$status"
+printf "format\t%s\${!TAB}%s\n" "${RET}" "$status"

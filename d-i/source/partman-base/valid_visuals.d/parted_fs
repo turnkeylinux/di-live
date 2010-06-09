@@ -1,3 +1,0 @@
-#!/bin/sh
-
-printf "parted_fs\tThe file system as known by parted\n"

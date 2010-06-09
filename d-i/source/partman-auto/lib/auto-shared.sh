@@ -1,12 +1,20 @@
 ## Shared code for all guided partitioning components
 
-auto_init_disk() {
+auto_init_disks() {
 	local dev
-	dev="$1"
 
 	# Create new disk label; don't prompt for label
 	. /lib/partman/lib/disk-label.sh
-	create_new_label "$dev" no || return 1
+	prepare_new_labels "$@" || return 1
+
+	for dev in "$@"; do
+		create_new_label "$dev" no || return 1
+	done
+}
+
+get_last_free_partition_infos() {
+	local dev
+	dev="$1"
 
 	cd $dev
 
@@ -22,6 +30,22 @@ auto_init_disk() {
 	close_dialog
 }
 
+# Mark a partition as LVM and add it to vgpath
+mark_partition_as_lvm() {
+	local id
+	id=$1
+	shift
+
+	open_dialog GET_FLAGS $id
+	flags=$(read_paragraph)
+	close_dialog
+	open_dialog SET_FLAGS $id
+	write_line "$flags"
+	write_line lvm
+	write_line NO_MORE
+	close_dialog
+}
+
 # Each disk must have at least one primary partition after autopartitioning.
 ensure_primary() {
 	if echo "$scheme" | grep -q '\$primary{'; then
@@ -30,6 +54,14 @@ ensure_primary() {
 	fi
 
 	cd $dev
+
+	open_dialog USES_EXTENDED
+	read_line uses_extended
+	close_dialog
+	if [ "$uses_extended" = no ]; then
+		# No need for this on this partition table type
+		return
+	fi
 
 	open_dialog PARTITIONS
 	local have_primary=
@@ -60,17 +92,18 @@ ensure_primary() {
 	)"
 }
 
-### XXXX: I am not 100% sure if this is exactly what this code is doing.
-### XXXX: Rename is of course an option. Just remember to do it here, in
-### XXXX: perform_recipe and in partman-auto-lvm.
 create_primary_partitions() {
 	cd $dev
 
 	while [ "$free_type" = pri/log ] && \
-	      echo $scheme | grep '\$primary{' >/dev/null; do
+	      echo $scheme | grep -q '\$primary{'; do
 		pull_primary
 		set -- $primary
-		open_dialog NEW_PARTITION primary $4 $free_space beginning ${1}000001
+		if [ -z "$scheme_rest" ]; then
+			open_dialog NEW_PARTITION primary $4 $free_space full ${1}000001
+		else
+			open_dialog NEW_PARTITION primary $4 $free_space beginning ${1}000001
+		fi
 		read_line num id size type fs path name
 		close_dialog
 		if [ -z "$id" ]; then
@@ -83,7 +116,11 @@ create_primary_partitions() {
 			read_line x1 new_free_space x2 new_free_type fs x3 x4
 			close_dialog
 		fi
-		if [ -z "$neighbour" ] || [ "$fs" != free ] || \
+		if [ -z "$scheme_rest" ]; then
+			# If this is the last partition to be created, it does
+			# not matter if we have space left for more partitions
+			:
+		elif [ -z "$neighbour" ] || [ "$fs" != free ] || \
 		   [ "$new_free_type" = primary ] || \
 		   [ "$new_free_type" = unusable ]; then
 			open_dialog DELETE_PARTITION $id
@@ -109,9 +146,15 @@ create_primary_partitions() {
 			fi
 		fi
 		shift; shift; shift; shift
+		if echo "$*" | grep -q "method{ lvm }"; then
+			pv_devices="$pv_devices $path"
+			mark_partition_as_lvm $id $*
+		elif echo "$*" | grep -q "method{ crypto }"; then
+			pv_devices="$pv_devices /dev/mapper/${path##*/}_crypt"
+		fi
 		setup_partition $id $*
 		primary=''
-		scheme="$logical"
+		scheme="$scheme_rest"
 		free_space=$new_free_space
 		free_type="$new_free_type"
 	done
@@ -154,35 +197,39 @@ create_partitions() {
 		db_progress STOP
 		autopartitioning_failed
 	fi
-
-	# Mark the partition LVM only if it is actually LVM and add it to vgpath
-	if echo "$*" | grep -q "method{ lvm }"; then
-		devfspv_devices="$devfspv_devices $path"
-		open_dialog GET_FLAGS $id
-		flags=$(read_paragraph)
-		close_dialog
-		open_dialog SET_FLAGS $id
-		write_line "$flags"
-		write_line lvm
-		write_line NO_MORE
-		close_dialog
-	fi
 	shift; shift; shift; shift
+	if echo "$*" | grep -q "method{ lvm }"; then
+		pv_devices="$pv_devices $path"
+		mark_partition_as_lvm $id $*
+	elif echo "$*" | grep -q "method{ crypto }"; then
+		pv_devices="$pv_devices /dev/mapper/${path##*/}_crypt"
+	fi
 	setup_partition $id $*
 	free_space=$(partition_after $id)'
 }
 
 get_auto_disks() {
-	local dev device
+	local dev device dmtype
 
 	for dev in $DEVICES/*; do
 		[ -d "$dev" ] || continue
 
-		# Skip /dev/mapper/X and /dev/mdX devices
 		device=$(cat $dev/device)
-		$(echo "$device" | grep -q "/dev/md[0-9]*$") && continue
-		$(echo "$device" | grep -q "/dev/mapper/") && continue
+		
+		# Skip devices containing the installation medium
+		[ -e "$dev/installation_medium" ] && continue
 
+		# Skip software RAID (mdadm) devices (/dev/md/X and /dev/mdX)
+		$(echo "$device" | grep -Eq "/dev/md/?[0-9]*$") && continue
+
+		# Skip device mapper devices (/dev/mapper/),
+		# except for dmraid or multipath devices
+		if echo $device | grep -q "^/dev/mapper/"; then
+			if [ ! -f "$dev/sataraid" ] && \
+			   ! is_multipath_dev $device; then
+				continue
+			fi
+		fi
 		printf "$dev\t$(device_name $dev)\n"
 	done
 }
@@ -192,12 +239,29 @@ select_auto_disk() {
 
 	DEVS=$(get_auto_disks)
 	[ -n "$DEVS" ] || return 1
-	#without this change, guided partitioning loops endlessly
-	#debconf_select critical partman-auto/select_disk "$DEVS" "" || return 1
-	debconf_select critical partman-auto/select_disk "$DEVS" ""
+	debconf_select critical partman-auto/select_disk "$DEVS" "" || return 1
 	echo "$RET"
 	return 0
 }
 
 # TODO: Add a select_auto_disks() function
 # Note: This needs a debconf_multiselect equiv.
+
+# Maps a devfs name to a partman directory
+dev_to_partman () {
+	local dev_name="$1"
+
+	local mapped_dev_name="$(mapdevfs $dev_name)"
+	if [ -n "$mapped_dev_name" ]; then
+		dev_name="$mapped_dev_name"
+	fi
+
+	for dev in $DEVICES/*; do
+		# mapdevfs both to allow for different ways to refer to the
+		# same device using devfs, and to allow user input in
+		# non-devfs form
+		if [ "$(mapdevfs $(cat $dev/device))" = "$dev_name" ]; then
+			echo $dev
+		fi
+	done
+}

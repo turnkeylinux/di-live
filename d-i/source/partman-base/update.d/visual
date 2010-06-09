@@ -14,16 +14,8 @@ cd $dev
 
 mkdir -p $id
 
-if [ ! -f visuals ]; then
-    for i in /lib/partman/valid_visuals.d/*; do
-	if [ -x "$i" ]; then $i; fi
-    done | 
-    sed 's/	.*//' | 
-    grep '^number$\|^type$\|^size$\|^name$\|^filesystem$\|^bootable$\|^method$\|^mountpoint$' >visuals 
-fi
-
-visuals=$(cat visuals)
-
-for v in $visuals; do
-    /lib/partman/visual.d/$v $dev $num $id $size $type $fs $path $name
+for v in /lib/partman/visual.d/*; do
+	[ -x "$v" ] || continue
+	$v $dev $num $id $size $type $fs $path $name
+	printf '${!TAB}'
 done >$id/view

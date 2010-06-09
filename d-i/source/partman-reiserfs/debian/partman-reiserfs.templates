@@ -42,18 +42,6 @@ Type: text
 # File system name (untranslatable in many languages)
 _Description: ReiserFS
 
-Template: partman-reiserfs/options
-Type: multiselect
-# Note to translators : Please keep your translations of the choices
-# below a 65 columns limit (which means 65 characters
-# in single-byte languages)
-Choices-C: notail, noatime, relatime, nodev, nosuid, noexec, ro, sync, usrquota, grpquota, user_xattr
-# :sl2:
-__Choices: notail - disable packing of files into the file system tree, noatime - do not update inode access times at each access, relatime - update inode access times relative to modify time, nodev - do not support character or block special devices, nosuid - ignore set-user-identifier or set-group-identifier bits, noexec - do not allow execution of any binaries, ro - mount the file system read-only, sync - all input/output activities occur synchronously, usrquota - user disk quota accounting enabled, grpquota - group disk quota accounting enabled, user_xattr - support user extended attributes
-# :sl2:
-_Description: Mount options:
- Mount options can tune the behavior of the file system.
-
 Template: partman/filesystem_long/reiserfs
 Type: text
 # :sl2:

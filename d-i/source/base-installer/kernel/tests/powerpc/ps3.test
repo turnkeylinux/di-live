@@ -1,24 +1,20 @@
 subarch ps3
 cpuinfo ps3.cpuinfo
 majors 2.6
-flavour cell
+flavour powerpc64
 kernel-2.6 \
-  linux-cell \
-  linux-image-cell
+  linux-powerpc64-smp \
+  linux-image-powerpc64-smp \
+  linux-powerpc64 \
+  linux-image-powerpc64
 usable \
-  linux-cell \
-  linux-image-cell \
-  linux-image-2.6.22-12-cell
+  linux-powerpc64-smp \
+  linux-image-powerpc64-smp \
+  linux-image-2.6.24-16-powerpc64-smp
 unusable \
   linux-powerpc \
   linux-powerpc-smp \
-  linux-powerpc64 \
-  linux-powerpc64-smp \
   linux-image-powerpc \
   linux-image-powerpc-smp \
-  linux-image-powerpc64 \
-  linux-image-powerpc64-smp \
-  linux-image-2.6.22-12-powerpc \
-  linux-image-2.6.22-12-powerpc-smp \
-  linux-image-2.6.22-12-powerpc64 \
-  linux-image-2.6.22-12-powerpc64-smp
+  linux-image-2.6.24-16-powerpc \
+  linux-image-2.6.24-16-powerpc-smp

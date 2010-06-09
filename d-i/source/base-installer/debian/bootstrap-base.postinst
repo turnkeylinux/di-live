@@ -10,6 +10,20 @@ ETCDIR=/target/etc
 ARCH=`udpkg --print-architecture`
 KEYRING=/usr/share/keyrings/ubuntu-archive-keyring.gpg
 
+# Set initial value to includes and excludes
+db_get base-installer/includes
+INCLUDES="$(printf '%s' "$RET" | sed 's/ /,/g')" || true
+
+db_get base-installer/excludes
+EXCLUDES="$(printf '%s' "$RET" | sed 's/ /,/g')" || true
+
+# Check if a specific script should be used
+db_get base-installer/debootstrap_script
+DEBOOTSTRAP_SCRIPT="$RET"
+if [ ! -e /usr/share/debootstrap/scripts/"$DEBOOTSTRAP_SCRIPT" ]; then
+	error "debootstrap script '$DEBOOTSTRAP_SCRIPT' doesn't exist"
+fi
+
 # Avoid debconf sending email during the base install process
 DEBCONF_ADMIN_EMAIL=""
 export DEBCONF_ADMIN_EMAIL
@@ -17,7 +31,11 @@ export DEBCONF_ADMIN_EMAIL
 SUBARCH="$(archdetect)"
 SUBARCH="${SUBARCH#*/}"
 
-# See kernel/README for the architecture-specific functions expected here.
+# Avoid locale related errors during package installations
+export IT_LANG_OVERRIDE=C
+
+
+# See kernel/README for the architecture-specific functions expected here
 if [ -f /usr/lib/base-installer/kernel.sh ]; then
 	. /usr/lib/base-installer/kernel.sh
 else
@@ -37,6 +55,14 @@ fi
 FLAVOUR="$(arch_get_kernel_flavour || true)"
 
 install_base_system () {
+	if [ -s /cdrom/.disk/base_include ]; then
+		INCLUDES="$INCLUDES,`grep -v '^#' /cdrom/.disk/base_include | tr '\n' , | sed 's/^,//g;s/,$//'`"
+	fi
+
+	if [ -s /cdrom/.disk/base_exclude ]; then
+		EXCLUDES="$EXCLUDES,`grep -v '^#' /cdrom/.disk/base_exclude | tr '\n' , | sed 's/^,//g;s/,$//'`"
+	fi
+
 	db_progress INFO base-installer/progress/preparing
 
 	if [ "${INCLUDES}" ]; then
@@ -57,12 +83,14 @@ install_base_system () {
 
 	test -d $ETCDIR || mkdir -p $ETCDIR
 
+	local copied_fstab=
 	if [ -f /target/etc/fstab ] ; then
-		# programs in debootstrap may scrawl on the fstab,
-		# so make a backup to be restored later
-		copied_fstab=true
+		# programs in debootstrap may scrawl on the fstab and
+		# a configured fstab can cause problems, so make a backup
+		# to be restored later and create a dummy file instead
+		copied_fstab=1
 		cp /target/etc/fstab /target/etc/fstab.orig
-		echo "# UNCONFIGURED FSTAB FOR BASE SYSTEM" >> /target/etc/fstab
+		echo "# UNCONFIGURED FSTAB FOR BASE SYSTEM" >/target/etc/fstab
 	fi
 
 	if [ "$PROTOCOL" = "http" ]; then
@@ -72,10 +100,11 @@ install_base_system () {
 			export http_proxy
 		fi
 	fi
-	
+
 	# clean up after any past debootstrap run
 	rm -f /target/var/lib/apt/* 2>/dev/null || true
-	
+
+	local debootstrap_failed=
 	if search-path cdebootstrap; then
 		cdebootstrap || debootstrap_failed=$?
 	else
@@ -87,29 +116,31 @@ install_base_system () {
 			${keyring} \
 			${DISTRIBUTION} /target \
 			"$PROTOCOL://$MIRROR$DIRECTORY" \
+			${DEBOOTSTRAP_SCRIPT} \
 			|| debootstrap_failed=$?
 	fi
 
-	if [ true = "$copied_fstab" ] ; then
+	if [ "$copied_fstab" ]; then
 		mv /target/etc/fstab.orig /target/etc/fstab
 	fi
 
-	if [ "$debootstrap_failed" ] ; then
+	if [ "$debootstrap_failed" ]; then
 		exit_error base-installer/debootstrap-failed
 	fi
 
-	# Progress bar is now stepped to 100.
+	# Progress bar is now stepped to 100
 }
 
 waypoint 1	check_target
 waypoint 1	get_mirror_info
 waypoint 1	pre_install_hooks
 waypoint 100	install_base_system
+waypoint 1	setup_dev
 waypoint 1	configure_apt_preferences
 waypoint 1	configure_apt
 waypoint 3	apt_update
-waypoint 2	setup_dev
 waypoint 5	post_install_hooks
+waypoint 2	install_filesystems
 waypoint 1	pick_kernel
 waypoint 20	install_linux
 waypoint 10	install_extra

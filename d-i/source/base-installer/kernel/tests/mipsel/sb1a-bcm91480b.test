@@ -6,6 +6,8 @@ kernel-2.6 linux-image-2.6-sb1a-bcm91480b
 usable \
   linux-image-2.6-sb1a-bcm91480b
 unusable \
+  linux-image-2.6-4kc-malta \
+  linux-image-2.6-5kc-malta \
   linux-image-2.6-qemu \
   linux-image-2.6-r3k-kn02 \
   linux-image-2.6-r4k-kn04 \

@@ -1,3 +1,643 @@
+partman-partitioning (72ubuntu4) lucid; urgency=low
+
+  * Check that minimum filesystem sizes reported by tune2fs and ntfsresize
+    are between the minimum partition size and the current partition size;
+    if not, refuse to resize the partition at all (LP: #568021).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 23 Apr 2010 11:54:21 +0100
+
+partman-partitioning (72ubuntu3) lucid; urgency=low
+
+  * Cache calls to tune2fs and ntfsresize, to make navigating through the
+    resize UI a little faster.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 11 Feb 2010 01:42:14 +0000
+
+partman-partitioning (72ubuntu2) karmic; urgency=low
+
+  * Set prefsize in get_*resize_range functions; pass RAWPREFSIZE instead of
+    RAWCURSIZE to ubiquity (preferred size instead of current size) and stop
+    passing ORISIZE. This allows ubiquity to set sensible preferred sizes
+    when resizing partitions (LP: #421407).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 06 Oct 2009 18:18:13 +0100
+
+partman-partitioning (72ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add ORISIZE, PATH, RAWMINSIZE, RAWCURSIZE, and RAWMAXSIZE
+      substitutions to partman-partitioning/new_size in support of
+      ubiquity's resize widget.
+    - When creating a new partition, default to logical if a primary
+      partition already exists.
+    - Add NTFS dependencies on lpia.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 23 Sep 2009 15:33:12 +0100
+
+partman-partitioning (72) unstable; urgency=low
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po) by Piarres Beobide
+  * Swedish (sv.po) by Daniel Nylander
+  * Turkish (tr.po) by Mert Dirik
+  * Vietnamese (vi.po) by Clytie Siddall
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 23 Sep 2009 10:36:25 +0100
+
+partman-partitioning (71ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add ORISIZE, PATH, RAWMINSIZE, RAWCURSIZE, and RAWMAXSIZE
+      substitutions to partman-partitioning/new_size in support of
+      ubiquity's resize widget.
+    - When creating a new partition, default to logical if a primary
+      partition already exists.
+    - Add NTFS dependencies on lpia.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 09 Sep 2009 01:26:40 +0100
+
+partman-partitioning (71) unstable; urgency=low
+
+  * Upgrade to debhelper v7.
+  * Convert BIOS GRUB boot area support to a method, thereby making it
+    impossible to accidentally put a filesystem on such a partition as well,
+    and making it simpler to preseed. See #491376. Thanks to Otavio Salvador
+    for reviewing this.
+  * Make partman-partitioning/bad_new_size,
+    partman-partitioning/big_new_size, and
+    partman-partitioning/small_new_size templates less terse (thanks, Evan
+    Dandrea; LP: #34974).
+
+  [ Updated translations ]
+  * Asturian (ast.po) by Marcos Antonio Alvarez Costales
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Holger Wansing
+  * Greek, Modern (1453-) (el.po) by Emmanuel Galatoulas
+  * French (fr.po) by Christian Perrier
+  * Korean (ko.po) by Changwoo Ryu
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Russian (ru.po) by Yuri Kozlov
+  * Swedish (sv.po) by Daniel Nylander
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Simplified Chinese (zh_CN.po) by Deng Xiyue
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 07 Sep 2009 11:21:02 +0100
+
+partman-partitioning (70) unstable; urgency=low
+
+  [ Aurelien Jarno ]
+  * Use msdos disklabel (gpt on mac) on kfreebsd-amd64 and kfreebsd-i386,
+    as on amd64 and i386.
+  * Also depends on ntfsprogs-udeb on kfreebsd-amd64 and kfreebsd-i386. 
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 23 Aug 2009 22:11:41 +0200
+
+partman-partitioning (69ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add ORISIZE, PATH, RAWMINSIZE, RAWCURSIZE, and RAWMAXSIZE
+      substitutions to partman-partitioning/new_size in support of
+      ubiquity's resize widget.
+    - When creating a new partition, default to logical if a primary
+      partition already exists.
+    - Add NTFS dependencies on lpia.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 04 Aug 2009 12:36:11 +0100
+
+partman-partitioning (69) unstable; urgency=low
+
+  [ Max Vozeler ]
+  * Use ask_active_partition from partman-base.
+    Requires partman-base 133.
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Hindi (hi.po)
+  * Italian (it.po) by Milo Casagrande
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 04 Aug 2009 12:12:09 +0100
+
+partman-partitioning (68ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add ORISIZE, PATH, RAWMINSIZE, RAWCURSIZE, and RAWMAXSIZE
+      substitutions to partman-partitioning/new_size in support of
+      ubiquity's resize widget.
+    - When creating a new partition, default to logical if a primary
+      partition already exists.
+    - Add NTFS dependencies on lpia.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 25 Jun 2009 22:06:35 +0100
+
+partman-partitioning (68) unstable; urgency=low
+
+  * Use cdebconf column alignment rather than stralign in toggle_biosgrub.
+
+ -- Colin Watson <cjwatson@debian.org>  Thu, 25 Jun 2009 00:23:46 +0100
+
+partman-partitioning (67) unstable; urgency=low
+
+  * Remove dependency on partman-base; main-menu does not support circular
+    dependencies, and the versioned dependency is not all that critical
+    (thanks, Per Andersson).
+
+ -- Colin Watson <cjwatson@debian.org>  Thu, 18 Jun 2009 14:47:44 +0100
+
+partman-partitioning (66ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add ORISIZE, PATH, RAWMINSIZE, RAWCURSIZE, and RAWMAXSIZE
+      substitutions to partman-partitioning/new_size in support of
+      ubiquity's resize widget.
+    - When creating a new partition, default to logical if a primary
+      partition already exists.
+    - Add NTFS dependencies on lpia.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 15 Jun 2009 15:36:01 +0100
+
+partman-partitioning (66) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Merge from Ubuntu:
+    - get_real_device: Add support for /dev/vd*, /dev/xvd*, /dev/cciss/*,
+      /dev/ida/*, and /dev/mmcblk* (LP: #282756).
+    - When resizing a non-virtual partition, update it after committing
+      changes, otherwise we might miss a change of filesystem that was just
+      committed (LP: #333356).
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Md. Rezwan Shahid
+  * Estonian (et.po) by Mattias Põldaru
+  * Italian (it.po) by Milo Casagrande
+  * Kazakh (kk.po) by Dauren Sarsenov
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 13 Jun 2009 09:05:52 +0200
+
+partman-partitioning (65ubuntu2) jaunty; urgency=low
+
+  * When resizing a non-virtual partition, update it after committing
+    changes, otherwise we might miss a change of filesystem that was just
+    committed (LP: #333356).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 31 Mar 2009 13:45:41 +0100
+
+partman-partitioning (65ubuntu1) jaunty; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add ORISIZE, PATH, RAWMINSIZE, RAWCURSIZE, and RAWMAXSIZE
+      substitutions to partman-partitioning/new_size in support of
+      ubiquity's resize widget.
+    - When creating a new partition, default to logical if a primary
+      partition already exists.
+    - Add NTFS dependencies on lpia.
+    - get_real_device: Add support for /dev/vd*, /dev/xvd*, /dev/cciss/*,
+      /dev/ida/*, and /dev/mmcblk*.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 20 Mar 2009 15:29:17 +0000
+
+partman-partitioning (65) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Merge from Ubuntu:
+    - Exit straight away if a called script is killed by a signal.
+    - Add lpia support to default_disk_label (Emmet Hikory).
+    - Add ext4 support.
+    - Honour partman/default_filesystem when creating new partitions.
+      Requires partman-base 129.
+    - Cope with rounding errors while asking for the new partition size; if
+      the value we convert back from human-readable notation is in the
+      round-off range at either end, just use the appropriate extreme.
+    - Use 'update-dev --settle' rather than 'update-dev' after resizing or
+      committing. Requires di-utils 1.66.
+
+  [ Riku Voipio ]
+  * Consolidate ARM partitioning.
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po) by Piarres Beobide
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by marce villarino
+  * Hindi (hi.po) by Kumar Appaiah
+  * Kazakh (kk.po) by daur88
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Marathi (mr.po) by Sampada
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Tagalog (tl.po) by Eric Pareja
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 04 Mar 2009 11:20:49 +0000
+
+partman-partitioning (64ubuntu6) jaunty; urgency=low
+
+  * get_real_device: Add support for /dev/vd*, /dev/xvd*, /dev/cciss/*,
+    /dev/ida/*, and /dev/mmcblk* (LP: #282756).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 18 Mar 2009 10:28:55 +0000
+
+partman-partitioning (64ubuntu5) jaunty; urgency=low
+
+  * Use 'update-dev --settle' rather than 'update-dev' after resizing or
+    committing. Requires di-utils 1.66.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 09 Mar 2009 11:54:38 +0000
+
+partman-partitioning (64ubuntu4) jaunty; urgency=low
+
+  * Cope with rounding errors while asking for the new partition size; if
+    the value we convert back from human-readable notation is in the
+    round-off range at either end, just use the appropriate extreme.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 27 Feb 2009 04:47:09 +0000
+
+partman-partitioning (64ubuntu3) jaunty; urgency=low
+
+  * Don't default to logical if an extended partition already exists, only
+    if a real primary partition exists.
+  * Honour partman/default_filesystem when creating new partitions. Requires
+    partman-base 128ubuntu6.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 09 Feb 2009 22:32:49 +0100
+
+partman-partitioning (64ubuntu2) jaunty; urgency=low
+
+  * Add ext4 support (LP: #293465).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 08 Jan 2009 16:55:00 +0000
+
+partman-partitioning (64ubuntu1) jaunty; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add ORISIZE, PATH, RAWMINSIZE, RAWCURSIZE, and RAWMAXSIZE
+      substitutions to partman-partitioning/new_size in support of
+      ubiquity's resize widget.
+    - Add lpia support to default_disk_label.
+    - When creating a new partition, default to logical if a primary
+      partition already exists.
+    - Exit straight away if a called script is killed by a signal.
+    - Add NTFS dependencies on lpia.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sat, 15 Nov 2008 00:35:14 +0000
+
+partman-partitioning (64) unstable; urgency=low
+
+  [ Giuseppe Iuculano ]
+  * free_space/new/do_option: remove check for sataraid when setting options
+    for partitions; Serial ATA RAID (dmraid) partitions are now treated like
+    any other partition.
+    Patch based on work done by Luke Yelavich <themuso@ubuntu.com> in Ubuntu.
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Mahay Alam Khan (মাহে আলম খান)
+  * Bosnian (bs.po) by Armin Besirovic
+  * Catalan (ca.po) by Jordi Mallach
+  * Danish (da.po)
+  * Esperanto (eo.po) by Felipe Castro
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Hebrew (he.po) by Omer Zak
+  * Hindi (hi.po) by Kumar Appaiah
+  * Croatian (hr.po) by Josip Rodin
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Central Khmer (km.po) by KHOEM Sokhem
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Latvian (lv.po) by Aigars Mahinovs
+  * Macedonian (mk.po) by Arangel Angov
+  * Malayalam (ml.po) by പ്രവീണണ്‍ അരിമ്പ്രത്തൊടിയിലല്‍
+  * Nepali (ne.po) by Shiva Prasad Pokharel
+  * Norwegian Nynorsk (nn.po) by Håvard Korsvoll
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Albanian (sq.po) by Elian Myftiu
+  * Serbian (sr.po) by Veselin Mijušković
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Ukrainian (uk.po) by Євгеній Мещеряков
+  * Wolof (wo.po) by Mouhamadou Mamoune Mbacke
+  * Simplified Chinese (zh_CN.po) by Deng Xiyue
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 21 Sep 2008 22:10:12 -0300
+
+partman-partitioning (62) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * Use convert_to_megabytes() in free_space/new/do_option and
+    lib/resize.sh:ask_for_size().
+    Depends: partman-base (>= 125)
+  * Move the cleanup of LVM and MD devices out of create_new_label() to
+    prepare_new_labels() that needs to be called before create_new_label().
+    This function handle multiple devices at once.
+    Breaks: partman-auto (<< 81)
+  * Update storage_device/label/do_option to call prepare_new_labels().
+  * Only restart partman once for all devices in prepare_new_labels().
+    Depends: partman-lvm (>= 64), partman-md (>= 43)
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Greek, Modern (el.po) by Emmanuel Galatoulas
+  * Italian (it.po) by Milo Casagrande
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Jérémy Bobbio <lunar@debian.org>  Mon, 25 Aug 2008 21:12:55 +0200
+
+partman-partitioning (61) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * Update to the new debconf_select interface.
+    Requires partman-base (>= 124).
+  * Use cdebconf's new column alignment feature for active_partition.
+    Requires partman-base (>= 124).
+  * The valid_visuals.d mechanism has been removed from partman-base.  No need
+    to ask for a refresh anymore in create_new_label().
+    Requires partman-base (>= 124).
+  * Remove unused partman-partitioning/new_partition_fs template.
+  * Remove useless stralign in active_partition/resize/choices.
+  * In create_new_label(), we now remove MD devices in the same way than LVM.
+    As partman-md now scans for existing MD devices during
+    partman initialization, it is required in order to make guided
+    partitioning work on a disk that was previously used for an MD device.
+    Requires partman-md (>= 42).
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Jens Seidel
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Croatian (hr.po) by Josip Rodin
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Marathi (mr.po) by Sampada
+  * Norwegian Bokmål (nb.po) by Hans Fredrik Nordhaug
+  * Dutch (nl.po) by Frans Pop
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Turkish (tr.po) by Mert Dirik
+	
+ -- Otavio Salvador <otavio@debian.org>  Tue, 05 Aug 2008 14:03:14 -0300
+
+partman-partitioning (60) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Silence warning in case $id/options already exists.
+  * Move 'local' down a line in create_new_partition in order to work
+    properly with bash, which initialises local variables without an
+    accompanying assignment to empty rather than to any previous value.
+  * When creating a new filesystem, set the default mount options to the
+    contents of /lib/partman/mountoptions/${fs}_defaults if it exists.
+  * Use explicit dummy variables in create_new_partition rather than
+    overriding $type, $size, et al.
+
+  [ Jérémy Bobbio ]
+  * Disable "resize" and "delete" for partitions on "loop" partition tables.
+    This will prevent unusable behaviour on RAID, crypto and LVM partitions.
+    (Closes: #318228, #417973)
+
+  [ Robert Millan ]
+  * Support for creating a BIOS boot partition in GPT (later used by GRUB).
+    (Closes: #488111)
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * Dzongkha (dz.po) by Tenzin Dendup
+  * Esperanto (eo.po) by Serge Leblanc
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Gujarati (gu.po) by Kartik Mistry
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Marathi (mr.po) by Sampada
+  * Dutch (nl.po) by Frans Pop
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Turkish (tr.po) by Mert Dirik
+  * Vietnamese (vi.po) by Clytie Siddall
+  * Wolof (wo.po) by Mouhamadou Mamoune Mbacke
+
+ -- Frans Pop <fjp@debian.org>  Wed, 16 Jul 2008 13:56:27 +0200
+
+partman-partitioning (59ubuntu7) intrepid; urgency=low
+
+  * Exit straight away if a called script is killed by a signal.
+  * Add NTFS dependencies on lpia.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 30 Sep 2008 18:08:22 +0100
+
+partman-partitioning (59ubuntu6) intrepid; urgency=low
+
+  * When creating a new partition, default to logical if a primary partition
+    already exists, since there are stricter constraints on primary
+    partitions and the only real reasons for them are Microsoft operating
+    systems or boot partitions (LP: #218938).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 16 Sep 2008 14:21:03 +0100
+
+partman-partitioning (59ubuntu5) intrepid; urgency=low
+
+  [ Emmet Hikory ]
+  * Add lpia support to default_disk_label.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 11 Sep 2008 11:24:13 +0100
+
+partman-partitioning (59ubuntu4) intrepid; urgency=low
+
+  * free_space/new/do_option: Remove check for sataraid when setting
+    options for partitions. Sataraid partitions are now treated like
+    any other partition.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Thu, 21 Aug 2008 09:46:46 +1000
+
+partman-partitioning (59ubuntu3) intrepid; urgency=low
+
+  * Don't convert origsize to a human readable number (LP: #247999).
+
+ -- Evan Dandrea <evand@ubuntu.com>  Mon, 14 Jul 2008 11:15:06 +0100
+
+partman-partitioning (59ubuntu2) intrepid; urgency=low
+
+  * Substitute RAWMINSIZE, RAWCURSIZE, and RAWMAXSIZE variables on
+    partman-partitioning/new_size, so that ubiquity can set accurate bounds
+    on resize widgets.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 22 May 2008 11:35:38 +0200
+
+partman-partitioning (59ubuntu1) intrepid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add ORISIZE (the actual size of the partition) and PATH (the block
+      device) debconf variables to partman-partitioning/new_size in support
+      of ubiquity's resize widget.
+    - When creating a new filesystem, set the default mount options to the
+      contents of /lib/partman/mountoptions/${fs}_defaults if it exists.
+    - Silence warning in case $id/options already exists.
+    - Move 'local' down a line in create_new_partition in order to work
+      properly with bash, which initialises local variables without an
+      accompanying assignment to empty rather than to any previous value.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sun, 18 May 2008 14:33:43 +0200
+
+partman-partitioning (59) unstable; urgency=low
+
+  [ Frans Pop ]
+  * Improve wording of templates asking for partition size. Closes: #473267.
+    Thanks to Justin Rye for pointing out the issue.
+
+  [ Updated translations ]
+  * Amharic (am.po) by tegegne tefera
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Jens Seidel
+  * Dzongkha (dz.po) by Jurmey Rabgay(Bongop) (DIT,BHUTAN)
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Gujarati (gu.po) by Kartik Mistry
+  * Hebrew (he.po) by Lior Kaplan
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Marathi (mr.po) by Sampada
+  * Norwegian Bokmål (nb.po) by Hans Fredrik Nordhaug
+  * Dutch (nl.po) by Frans Pop
+  * Norwegian Nynorsk (nn.po) by Håvard Korsvoll
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Vietnamese (vi.po) by Clytie Siddall
+  * Simplified Chinese (zh_CN.po) by Ming Hua
+  * Traditional Chinese (zh_TW.po) by Tetralet
+  
+ -- Otavio Salvador <otavio@debian.org>  Thu, 08 May 2008 13:42:27 -0300
+
+partman-partitioning (58) unstable; urgency=low
+
+  [ Frans Pop ]
+  * Add support for PA Semi's evaluation systems (#464429). Thanks to
+    Olof Johansson for the patch.
+
+  [ Martin Michlmayr ]
+  * Rename orion to orion5x to allow for support of other Orion
+    platforms in the future.
+
+  [ Colin Watson ]
+  * Only disable swap on devices that are being changed. Requires
+    partman-base (>= 117).
+
+  [ Updated translations ]
+  * Slovak (sk.po) by Ivan Masár
+
+ -- Frans Pop <fjp@debian.org>  Thu, 20 Mar 2008 09:27:41 +0100
+
+partman-partitioning (57) unstable; urgency=low
+
+  * Add missing sourcing of debconf confmodule in init.d/unsupported.
+    In my tests, this broke installation on mips in qemu when using a
+    blank disk image.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 05 Mar 2008 23:13:44 -0500
+
+partman-partitioning (56) unstable; urgency=low
+
+  [ Stephen R. Marenka]
+  * Add m68k/atari support.
+
+  [ Aurelien Jarno ]
+  * disk-label.sh: add support for MIPS Malta platform.
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Esko Arajärvi
+  * Hindi (hi.po) by Kumar Appaiah
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Latvian (lv.po) by Viesturs Zarins
+  * Nepali (ne.po) by Shyam Krishna Bal
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Slovenian (sl.po) by Matej Kovacic
+  * Turkish (tr.po) by Recai Oktaş
+  * Ukrainian (uk.po)
+  * Wolof (wo.po) by Mouhamadou Mamoune Mbacke
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 15 Feb 2008 15:40:45 -0200
+
+partman-partitioning (55) unstable; urgency=low
+
+  * Major whitespace cleanup and a few minor coding style fixes.
+  * Source base.sh from resize.sh instead of the parent script.
+  * Use new function library ./lib/commit.sh. Requires partman-base (>= 115).
+  * resize.sh: call device_cleanup_partitions() to ensure we remove obsolete
+    partition info after committing changes (for non-virtual partitions).
+    Requires: partman-base (>= 115).
+
+  [ Updated translations ]
+  * Amharic (am.po) by tegegne tefera
+  * Korean (ko.po) by Changwoo Ryu
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+
+ -- Frans Pop <fjp@debian.org>  Sat, 29 Dec 2007 22:15:28 +0100
+
 partman-partitioning (54ubuntu5) hardy; urgency=low
 
   * Backport from trunk:

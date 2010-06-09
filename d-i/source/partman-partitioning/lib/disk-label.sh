@@ -17,36 +17,10 @@ default_disk_label () {
 			echo bsd
 		else
 			echo msdos
-		fi;;	    
-	    arm|armel)
-		case "$sub" in
-		    iop32x)
-			echo msdos;;
-		    iop33x)
-			echo msdos;;
-		    ixp4xx)
-			echo msdos;;
-		    orion)
-			echo msdos;;
-		    riscstation)
-			echo msdos;;
-		    netwinder)
-			echo msdos;;
-		    ads)
-			echo msdos;;
-		    versatile)
-			echo msdos;;
-		    *)
-			echo UNKNOWN;;
-		esac;;
-	    armeb)
-		case "$sub" in
-		    ixp4xx)
-			echo msdos;;
-		    *)
-			echo UNKNOWN;;
-		esac;;
-	    amd64)
+		fi;;
+	    arm|armeb|armel)
+		echo msdos;;
+	    amd64|kfreebsd-amd64)
 		case "$sub" in
 		    mac)
 			echo gpt;;
@@ -57,31 +31,35 @@ default_disk_label () {
 		echo msdos;;
 	    ia64)
 		echo gpt;;
-	    i386)
+	    i386|kfreebsd-i386)
 		case "$sub" in
 		    mac)
 			echo gpt;;
 		    *)
 			echo msdos;;
 		esac;;
+	    lpia)
+		echo msdos;;
 	    m68k)
 		case "$sub" in
 		    amiga)
 			echo amiga;;
 		    atari|q40)
-			# unsupported by parted
-			echo UNSUPPORTED;;
+			echo atari;;
 		    mac)
 			echo mac;;
 		    *vme*)
 			echo msdos;;
 		    sun*)
-	    		echo sun;;
+			echo sun;;
 		    *)
 			echo UNKNOWN;;
 		esac;;
 	    mips)
 		case "$sub" in
+		    4kc-malta | 5kc-malta)
+			# MIPS Malta
+			echo msdos;;
 		    r4k-ip22 | r5k-ip22 | r8k-ip26 | r10k-ip28)
 			# Indy
 			echo dvh;;
@@ -101,6 +79,9 @@ default_disk_label () {
 		esac;;
 	    mipsel)
 		case "$sub" in
+		    4kc-malta | 5kc-malta)
+			# MIPS Malta
+			echo msdos;;
 		    # DECstation
 		    r3k-kn02)
 			echo msdos;;
@@ -130,6 +111,8 @@ default_disk_label () {
 			echo msdos;;
 		    chrp_pegasos)
 			echo amiga;;
+		    pasemi)
+			echo msdos;;
 		    prep)
 			echo msdos;;
 		    powermac_newworld)
@@ -152,17 +135,50 @@ default_disk_label () {
 	esac
 }
 
+prepare_new_labels() {
+	local dev devs restart code
+	devs="$*"
+
+	restart=
+	for dev in $devs; do
+		[ -d "$dev" ] || continue
+
+		if [ -e /lib/partman/lib/lvm-remove.sh ]; then
+			. /lib/partman/lib/lvm-remove.sh
+			device_remove_lvm "$dev"
+			code=$?
+			if [ $code = 99 ]; then
+				restart=1
+			elif [ $code != 0 ]; then
+				return $code
+			fi
+		fi
+		if [ -e /lib/partman/lib/md-remove.sh ]; then
+			. /lib/partman/lib/md-remove.sh
+			device_remove_md "$dev"
+			code=$?
+			if [ $code = 99 ]; then
+				restart=1
+			elif [ $code != 0 ]; then
+				return $code
+			fi
+		fi
+	done
+
+	if [ "$restart" ]; then
+		stop_parted_server
+		restart_partman || return 1
+	fi
+
+	return 0
+}
+
 create_new_label() {
 	local dev default_type chosen_type types
 	dev="$1"
 	prompt_for_label="$2"
 
 	[ -d "$dev" ] || return 1
-
-	if [ -e /lib/partman/lib/lvm-remove.sh ]; then
-		. /lib/partman/lib/lvm-remove.sh
-		device_remove_lvm "$dev" || return 1
-	fi
 
 	cd $dev
 
@@ -229,10 +245,4 @@ create_new_label() {
 		close_dialog
 		enable_swap
 	fi
-
-	# Different types partition tables support different visuals.
-	# Some have partition names others don't have, some have extended
-	# and logical partitions, others don't. Hence we have to regenerate
-	# the list of the visuals.
-	rm -f visuals
 }

@@ -13,7 +13,7 @@ case $method in
     existing)
 	[ -f $id/detected_filesystem ] || exit 0
 	fs=$(cat $id/detected_filesystem)
-	
+
 	case "$fs" in
 	    ext2)
 		echo ext2

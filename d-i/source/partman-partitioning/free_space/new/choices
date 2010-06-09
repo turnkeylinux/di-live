@@ -19,4 +19,3 @@ case "$type" in
 	printf "new\t${RET}\n"
 	;;
 esac
-

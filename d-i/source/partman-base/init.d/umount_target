@@ -10,20 +10,20 @@ if [ "$mp_stdev" ] && grep -q "^$mp_stdev /target" /proc/mounts; then
 fi
 
 cat /proc/mounts |
-while read dev dir type options dump pass; do
-    echo $dir
-done |
-grep '^/target' | 
-sort |
-{
-    # We miss the option -r of sort
-    dirs=''
-    while read dir; do
-	dirs="$dir
+	while read dev dir type options dump pass; do
+		echo $dir
+	done |
+	grep '^/target' |
+	sort |
+	{
+		# We miss the option -r of sort
+		dirs=''
+		while read dir; do
+		dirs="$dir
 $dirs"
-    done
-    echo -n "$dirs"
-} |
-while read dir; do
-    umount $dir
-done
+		done
+		echo -n "$dirs"
+	} |
+	while read dir; do
+		umount $dir
+	done

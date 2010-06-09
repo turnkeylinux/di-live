@@ -19,6 +19,7 @@ for dev in $DEVICES/*; do
 	path="${part#*,}"
 	[ -f "$id/method" ] || continue
 	[ ! -f "$id/format" ] || continue
+	[ ! -f "$id/formatted" ] || continue
 	[ -f "$id/acting_filesystem" ] || continue
 	[ -f "$id/mountpoint" ] || continue
 	mountpoint="$(cat "$id/mountpoint")"

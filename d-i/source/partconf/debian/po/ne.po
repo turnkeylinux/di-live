@@ -9,29 +9,34 @@
 # Shyam Krishna Bal <shyam@mpp.org.np>, 2006.
 # Shiva Prasad Pokharel <pokharelshiva@hotmail.com>, 2006.
 # Shiva Pokharel <shiva@mpp.org.np>, 2007.
+# Shiva Prasad Pokharel <pokharelshiv@gmail.com>, 2007.
+# shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
+# Nabin Gautam <nabin@mpp.org.np>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: ne\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-06-30 12:28+0000\n"
-"PO-Revision-Date: 2007-02-18 02:18+0545\n"
-"Last-Translator: Shiva Pokharel <shiva@mpp.org.np>\n"
+"POT-Creation-Date: 2008-01-26 07:33+0000\n"
+"PO-Revision-Date: 2007-07-31 11:12+0545\n"
+"Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; nplural(n!=1)\n"
+"Plural-Forms: nplurals=2;plural=(n!=1)\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:3
+#. :sl5:
+#: ../partconf.templates:1001
 msgid "No partitions found"
 msgstr "कुनै विभाजनहरू फेला परेन "
 
 #. Type: error
 #. Description
-#: ../partconf.templates:3
+#. :sl5:
+#: ../partconf.templates:1001
 msgid ""
 "No partitions were found in your system. You may need to partition your hard "
 "drives or load additional kernel modules."
@@ -41,13 +46,15 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partconf.templates:9
+#. :sl5:
+#: ../partconf.templates:2001
 msgid "No file systems found"
 msgstr "कुनै फाइल प्रणालीहरू फेला परेन"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:9
+#. :sl5:
+#: ../partconf.templates:2001
 msgid ""
 "No usable file systems were found. You may need to load additional kernel "
 "modules."
@@ -56,25 +63,27 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../partconf.templates:16
+#. :sl5:
+#: ../partconf.templates:3001
 msgid "Finish"
 msgstr "समाप्त गर्नुहोस्"
 
 #. Type: select
 #. Choices
-#: ../partconf.templates:16
+#. :sl5:
+#: ../partconf.templates:3001
 msgid "Abort"
 msgstr "परित्याग गर्नुहोस्"
 
 #. Type: select
 #. Description
-#: ../partconf.templates:17
+#: ../partconf.templates:3002
 msgid "Select a partition"
 msgstr "विभाजन चयन गर्नुहोस्"
 
 #. Type: select
 #. Description
-#: ../partconf.templates:17
+#: ../partconf.templates:3002
 msgid ""
 "These are the partitions that were detected in your system. Please select a "
 "partition to configure. No actual changes will be made until you select "
@@ -86,7 +95,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../partconf.templates:17
+#: ../partconf.templates:3002
 msgid ""
 "The information shown is, in order: device name, size, file system, and "
 "mount point."
@@ -94,16 +103,45 @@ msgstr "जानकारी: यन्त्र नाम, साइज, फ�
 
 #. Type: select
 #. Choices
+#. :sl5:
 #. Note to translators : Please keep your translations of the choices
 #. below a 65 columns limit (which means 65 characters
 #. in single-byte languages)
-#: ../partconf.templates:31
+#: ../partconf.templates:4001
 msgid "Leave the file system intact"
 msgstr "फाइल प्रणाली इन्ट्याक्ट छोड्नुहोस्"
 
 #. Type: select
+#. Choices
+#. :sl5:
+#. Note to translators : Please keep your translations of the choices
+#. below a 65 columns limit (which means 65 characters
+#. in single-byte languages)
+#. Type: select
+#. Choices
+#. :sl5:
+#. Note to translators : Please keep your translations of each choice
+#. (separated by commas)
+#. below a 65 columns limit (which means 65 characters
+#. in single-byte languages)
+#: ../partconf.templates:4001 ../partconf.templates:5001
+msgid "Create swap space"
+msgstr "स्वाप खाली ठाउँ सिर्जना गर्नुहोस्"
+
+#. Type: select
 #. Description
-#: ../partconf.templates:33
+#. :sl5:
+#. Type: select
+#. Description
+#. :sl5:
+#: ../partconf.templates:4002 ../partconf.templates:5002
+msgid "Action on ${PARTITION}:"
+msgstr "${PARTITION} मा कार्य :"
+
+#. Type: select
+#. Description
+#. :sl5:
+#: ../partconf.templates:4002
 msgid ""
 "This partition seems to already have a file system (${FSTYPE}). You can "
 "choose to leave this file system intact, create a new file system, or create "
@@ -114,24 +152,9 @@ msgstr ""
 "सक्नुहुन्छ । "
 
 #. Type: select
-#. Choices
-#. Note to translators : Please keep your translations of each choice
-#. (separated by commas)
-#. below a 65 columns limit (which means 65 characters
-#. in single-byte languages)
-#: ../partconf.templates:45
-msgid "Create swap space"
-msgstr "स्वाप खाली ठाउँ सिर्जना गर्नुहोस्"
-
-#. Type: select
 #. Description
-#: ../partconf.templates:47
-msgid "Action on ${PARTITION}:"
-msgstr "${PARTITION} मा कार्य :"
-
-#. Type: select
-#. Description
-#: ../partconf.templates:47
+#. :sl5:
+#: ../partconf.templates:5002
 msgid ""
 "This partition does not seem to have a file system. You can create a file "
 "system or swap space on it."
@@ -145,8 +168,9 @@ msgstr ""
 #. (separated by commas)
 #. below a 65 columns limit (which means 65 characters
 #. in single-byte languages)
+#. :sl5:
 #. "it" is a partition
-#: ../partconf.templates:62
+#: ../partconf.templates:6001
 msgid "Don't mount it"
 msgstr "यसलाई माउन्ट नगर्नुहोस्"
 
@@ -156,14 +180,26 @@ msgstr "यसलाई माउन्ट नगर्नुहोस्"
 #. (separated by commas)
 #. below a 65 columns limit (which means 65 characters
 #. in single-byte languages)
+#. :sl5:
 #. What's to be "entered manually" is a mount point
-#: ../partconf.templates:62
+#: ../partconf.templates:6001
 msgid "Enter manually"
 msgstr "म्यानुअल तरिकाले प्रविष्ट गर्नुहोस्"
 
 #. Type: select
 #. Description
-#: ../partconf.templates:63
+#. :sl5:
+#. Type: string
+#. Description
+#. :sl5:
+#: ../partconf.templates:6002 ../partconf.templates:7001
+msgid "Mount point for ${PARTITION}:"
+msgstr "${PARTITION} का लागि माउन्ट विन्दु: "
+
+#. Type: select
+#. Description
+#. :sl5:
+#: ../partconf.templates:6002
 msgid ""
 "When a partition is mounted, it is available to the users of the system. You "
 "always need a root (\"/\") partition, and it's often good to have a separate "
@@ -175,65 +211,66 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../partconf.templates:70
-msgid "Mount point for ${PARTITION}:"
-msgstr "${PARTITION} का लागि माउन्ट विन्दु: "
-
-#. Type: string
-#. Description
-#: ../partconf.templates:70
+#. :sl5:
+#: ../partconf.templates:7001
 msgid "Please enter where the partition should be mounted."
 msgstr "कृपया विभाजन माउन्ट हुने ठाउँ प्रविष्ट गर्नुहोस् ।"
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:76
+#. :sl5:
+#: ../partconf.templates:8001
 msgid "Do you want to unmount the partitions so you can make changes?"
 msgstr "के तपाईँ परिवर्तनहरू बनाउन सक्ने विभाजनहरू अनमाउन्ट गर्न चाहनुहुन्छ?"
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:76
+#. :sl5:
+#: ../partconf.templates:8001
 msgid ""
 "Since the partitions have already been mounted, you cannot do any changes."
 msgstr "विभाजनहरू पहिल्यै माउन्ट भइसकेको हुनाले, तपाईँ कुनै परिवर्तनहरू गर्न सक्नुहुन्न ।"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:82
+#. :sl5:
+#: ../partconf.templates:9001
 msgid "Failed to unmount partitions"
 msgstr "विभाजनहरू अनमाउन्ट गर्न असफल भयो"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:82
-#, fuzzy
+#. :sl5:
+#: ../partconf.templates:9001
 msgid "An unexpected error occurred while unmounting the partitions."
-msgstr "चयन गरिएको RAID कन्फिगरेसन सेटअप गर्दा एउटा अनपेक्षित त्रुटि देखापर्यो ।"
+msgstr "विभाजनहरू अनमाउन्ट गर्दा एउटा अनपेक्षित त्रुटि उत्पन्न भयो ।"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:82
-#, fuzzy
+#. :sl5:
+#: ../partconf.templates:9001
 msgid "The partition configuration process has been aborted."
-msgstr "कनफिगरेसन परित्याग गरियो ।"
+msgstr "विभाजन कन्फिगरेसन प्रक्रिया परित्याग गरियो ।"
 
 #. Type: text
 #. Description
-#: ../partconf.templates:89
+#. :sl5:
+#: ../partconf.templates:10001
 #, no-c-format
 msgid "Create %s file system"
 msgstr "%s फाइल प्रणाली सिर्जना गर्नुहोस्"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:93
+#. :sl5:
+#: ../partconf.templates:11001
 msgid "No root partition (/)"
 msgstr "मूल विभाजन (/) होइन"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:93
+#. :sl5:
+#: ../partconf.templates:11001
 msgid ""
 "You need a root partition. Please assign a partition to the root mount point "
 "before continuing."
@@ -243,26 +280,30 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partconf.templates:99
+#. :sl5:
+#: ../partconf.templates:12001
 msgid "Partition assigned to ${MOUNT}"
 msgstr "${MOUNT} मा विभाजन मानाङ्कन भयो"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:99
+#. :sl5:
+#: ../partconf.templates:12001
 msgid "Mounting a partition on ${MOUNT} makes no sense. Please change this."
 msgstr ""
 "${MOUNT} मा माउन्ट गरिएको विभाजनले कुनै संवेदन बनाएन । कृपया यसलाई परिवर्तन गर्नुहोस् ।"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:104
+#. :sl5:
+#: ../partconf.templates:13001
 msgid "Several partitions assigned to ${MOUNT}"
 msgstr "${MOUNT} मा विभिन्न विभाजनहरू मानाङ्कन भयो "
 
 #. Type: error
 #. Description
-#: ../partconf.templates:104
+#. :sl5:
+#: ../partconf.templates:13001
 msgid ""
 "You cannot assign several partitions to the same mount point. Please change "
 "all but one of them."
@@ -272,19 +313,22 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:111
+#. :sl5:
+#: ../partconf.templates:14001
 msgid "Ready to create file systems and mount partitions?"
 msgstr "माउन्ट फाइल प्रणालीहरू सिर्जना गर्न र विभाजनहरू माउन्ट गर्न तयार हुनुहुन्छ?"
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:111
+#. :sl5:
+#: ../partconf.templates:14001
 msgid "File systems will be created and partitions mounted."
 msgstr "फाइल प्रणालीहरू सिर्जना हुनेछन् र विभाजनहरू माउन्ट हुनेछन् ।"
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:111
+#. :sl5:
+#: ../partconf.templates:14001
 msgid ""
 "WARNING: This will destroy all data on the partitions you have assigned file "
 "systems to."
@@ -293,65 +337,85 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partconf.templates:119
+#. :sl5:
+#: ../partconf.templates:15001
 msgid "Failed to create swap space on ${PARTITION}"
 msgstr "${PARTITION} मा स्वाप खाली ठाउँ सिर्जना गर्न असफल भयो"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:119
+#. :sl5:
+#: ../partconf.templates:15001
 msgid "An error occurred when the swap space was created on ${PARTITION}."
 msgstr "${PARTITION} मा स्वाप खाली ठाउँ सिर्जना गर्दा त्रुटि उत्पन्न भयो ।"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:127
-msgid "Failed to activate the swap space on ${PARTITION}"
-msgstr "${PARTITION} मा स्वाप खाली ठाउँ सक्रिय गर्दा त्रुटि उत्पन्न भयो ।"
-
+#. :sl5:
 #. Type: error
 #. Description
-#: ../partconf.templates:127
-msgid "An error occurred when the swap space on ${PARTITION} was activated."
-msgstr "${PARTITION} मा स्वाप खाली ठाउँ सक्रिय गर्दा त्रुटि उत्पन्न भयो ।"
-
+#. :sl5:
 #. Type: error
 #. Description
-#: ../partconf.templates:135
-msgid "Failed to create ${FS} file system on ${PARTITION}"
-msgstr "${PARTITION} मा ${FS} फाइल प्रणाली सिर्जना गर्न असफल भयो"
-
+#. :sl5:
 #. Type: error
 #. Description
-#: ../partconf.templates:135
-msgid ""
-"An error occurred when the ${FS} file system was created on ${PARTITION}."
-msgstr "${PARTITION} मा ${FS} फाइल प्रणाली सिर्जना गर्दा त्रुटि उत्पन्न भयो ।"
-
-#. Type: error
-#. Description
-#: ../partconf.templates:143
-msgid "Failed to mount ${PARTITION} on ${MOUNT}"
-msgstr "${MOUNT} मा ${PARTITION} माउन्ट गर्न असफल भयो"
-
-#. Type: error
-#. Description
-#: ../partconf.templates:143
-msgid "An error occurred when ${PARTITION} was mounted on ${MOUNT}."
-msgstr "${MOUNT} मा ${PARTITION} माउन्ट गर्दा त्रुटि उत्पन्न भयो ।"
-
-#. Type: error
-#. Description
-#: ../partconf.templates:143
+#. :sl5:
+#: ../partconf.templates:15001 ../partconf.templates:16001
+#: ../partconf.templates:17001 ../partconf.templates:18001
 msgid ""
 "Please check the error log on the third console or /var/log/messages for "
 "more information."
 msgstr ""
 "कृपया धेरै जानकारीका लागि तेस्रो कन्सोलमा त्रुटि लग वा /var/log/messages जाँच्नुहोस् ।"
 
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:16001
+msgid "Failed to activate the swap space on ${PARTITION}"
+msgstr "${PARTITION} मा स्वाप खाली ठाउँ सक्रिय गर्दा त्रुटि उत्पन्न भयो ।"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:16001
+msgid "An error occurred when the swap space on ${PARTITION} was activated."
+msgstr "${PARTITION} मा स्वाप खाली ठाउँ सक्रिय गर्दा त्रुटि उत्पन्न भयो ।"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:17001
+msgid "Failed to create ${FS} file system on ${PARTITION}"
+msgstr "${PARTITION} मा ${FS} फाइल प्रणाली सिर्जना गर्न असफल भयो"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:17001
+msgid ""
+"An error occurred when the ${FS} file system was created on ${PARTITION}."
+msgstr "${PARTITION} मा ${FS} फाइल प्रणाली सिर्जना गर्दा त्रुटि उत्पन्न भयो ।"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:18001
+msgid "Failed to mount ${PARTITION} on ${MOUNT}"
+msgstr "${MOUNT} मा ${PARTITION} माउन्ट गर्न असफल भयो"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:18001
+msgid "An error occurred when ${PARTITION} was mounted on ${MOUNT}."
+msgstr "${MOUNT} मा ${PARTITION} माउन्ट गर्दा त्रुटि उत्पन्न भयो ।"
+
 #. Type: text
 #. Description
 #. Main menu item
-#: ../partconf.templates:152
+#. :sl5:
+#: ../partconf.templates:19001
 msgid "Configure and mount partitions"
 msgstr "विभाजनहरू कन्फिगर र माउन्ट गर्नुहोस्"

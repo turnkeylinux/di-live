@@ -53,10 +53,7 @@ for dir in $(find "/proc/device-tree/" -type d); do
 			if [ -f "$child/name" ]; then
 				childname="$(cat "$child/name" 2>/dev/null || true)"
 				if [ "$childname" = sound ]; then
-					# Loading snd-powermac locks up G5 systems
-					if  [ "$name" != i2s-a ]; then
-						register-module snd-powermac
-					fi
+					register-module snd-powermac
 				fi
 			fi
 		done

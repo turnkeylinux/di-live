@@ -1,9 +1,85 @@
-partman-reiserfs (39ubuntu1) hardy; urgency=low
+partman-reiserfs (45) unstable; urgency=low
 
-  * Add Choices-C entries for mount options.
-  * Default to mounting reiserfs with relatime (LP: #160450).
+  [ Colin Watson ]
+  * check.d/nomountpoint_reiserfs:
+    - partman-reiserfs/no_mount_point is a boolean, not a select (thanks,
+      Nicolas Valcárcel; LP: #256459).
 
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 04 Mar 2008 20:22:36 +0000
+  [ Updated translations ]
+  * Asturian (ast.po) by Marcos Alvarez Costales
+  * Bengali (bn.po) by Md. Rezwan Shahid
+  * Esperanto (eo.po) by Felipe Castro
+  * Estonian (et.po) by Mattias Põldaru
+  * Basque (eu.po) by Piarres Beobide
+  * Galician (gl.po) by marce villarino
+  * Hindi (hi.po) by Kumar Appaiah
+  * Italian (it.po) by Milo Casagrande
+  * Kazakh (kk.po) by daur88
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Marathi (mr.po) by Sampada
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Tagalog (tl.po) by Eric Pareja
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 13 Jun 2009 09:12:36 +0200
+
+partman-reiserfs (44) unstable; urgency=low
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Bosnian (bs.po) by Armin Besirovic
+  * Welsh (cy.po) by Jonathan Price
+  * Danish (da.po)
+  * Hebrew (he.po) by Omer Zak
+  * Croatian (hr.po) by Josip Rodin
+  * Latvian (lv.po) by Peteris Krisjanis
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Serbian (sr.po) by Veselin Mijušković
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 21 Sep 2008 21:23:10 -0300
+
+partman-reiserfs (43) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * Use cdebconf's new column alignment feature for active_partition.
+    Requires partman-base (>= 124).
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Croatian (hr.po) by Josip Rodin
+  * Italian (it.po) by Milo Casagrande
+  * Turkish (tr.po) by Mert Dirik
+	
+ -- Otavio Salvador <otavio@debian.org>  Tue, 05 Aug 2008 14:05:03 -0300
+
+partman-reiserfs (42) unstable; urgency=low
+
+  [ Updated translations ]
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Marathi (mr.po) by Sampada
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 08 May 2008 01:12:32 -0300
+
+partman-reiserfs (41) unstable; urgency=low
+
+  * Use common mount options template; requires partman-basicfilesystems (59).
+  * Drop dependency on ancient version of di-utils.
+
+ -- Frans Pop <fjp@debian.org>  Wed, 26 Mar 2008 15:41:50 +0100
+
+partman-reiserfs (40) unstable; urgency=low
+
+  * Properly quote file system label in case it contains spaces.
+    Thanks to Teodor for his help in hunting this down. Closes: #335947.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Basque (eu.po) by Piarres Beobide
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Slovak (sk.po) by Ivan Masár
+
+ -- Frans Pop <fjp@debian.org>  Thu, 20 Mar 2008 11:21:41 +0100
 
 partman-reiserfs (39) unstable; urgency=low
 

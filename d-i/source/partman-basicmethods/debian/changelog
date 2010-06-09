@@ -1,15 +1,90 @@
-partman-basicmethods (38ubuntu2) hardy; urgency=low
+partman-basicmethods (43ubuntu2) karmic; urgency=low
 
-  * Make choose_method/dont_use/choices executable again.
+  * Restore executable bit on choose_method/dont_use/choices.
 
- -- Colin Watson <cjwatson@ubuntu.com>  Thu, 06 Mar 2008 11:58:17 +0000
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 27 Oct 2009 14:53:04 +0000
 
-partman-basicmethods (38ubuntu1) hardy; urgency=low
+partman-basicmethods (43ubuntu1) karmic; urgency=low
 
+  * Don't send the SET_FLAGS command when the new flags are the same as the
+    old ones; this avoids partition tables being rewritten when all we did
+    was set the method to "don't use" (LP: #445067).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sat, 24 Oct 2009 01:22:56 +0100
+
+partman-basicmethods (43) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Bump debhelper compatibility level to 6
+  * Set myself as uploader
+
+  [ Updated translations ]
+  * Asturian (ast.po) by Marcos Alvarez Costales
+  * Bengali (bn.po) by Md. Rezwan Shahid
+  * Esperanto (eo.po) by Felipe Castro
+  * Estonian (et.po) by Mattias Põldaru
+  * Basque (eu.po) by Piarres Beobide
+  * Galician (gl.po) by Marce Villarino
+  * Hindi (hi.po) by Kumar Appaiah
+  * Italian (it.po) by Milo Casagrande
+  * Kazakh (kk.po) by daur88
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Marathi (mr.po) by Sampada
+  * Tagalog (tl.po) by Eric Pareja
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 14 Jun 2009 18:53:29 +0200
+
+partman-basicmethods (42) unstable; urgency=low
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Bosnian (bs.po) by Armin Besirovic
+  * Welsh (cy.po) by Jonathan Price
+  * Danish (da.po)
+  * Croatian (hr.po) by Josip Rodin
+  * Latvian (lv.po) by Peteris Krisjanis
+  * Macedonian (mk.po) by Arangel Angov
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Serbian (sr.po) by Veselin Mijušković
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 21 Sep 2008 21:06:02 -0300
+
+partman-basicmethods (41) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * Remove lvm, raid and swap flags when selecting dont_use.  Otherwise
+    switching from raid or lvm methods to dont_use would not be effectful
+    (as $id/method is written again in update.d/{md,lvm}_sync_flags scripts).
+  * Use cdebconf's new column alignment feature for active_partition.
+    Requires partman-base (>= 124).
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Felipe Castro
+	
+ -- Otavio Salvador <otavio@debian.org>  Tue, 05 Aug 2008 13:50:16 -0300
+
+partman-basicmethods (40) unstable; urgency=low
+
+  [ Colin Watson ]
   * When changing filesystem, set the default mount options to the contents
-    of /lib/partman/mountoptions/${fs}_defaults if it exists (LP: #160450).
+    of /lib/partman/mountoptions/${fs}_defaults if it exists.
 
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 04 Mar 2008 11:43:04 +0000
+  [ Updated translations ]
+  * Belarusian (be.po) by Pavel Piatruk
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+
+ -- Frans Pop <fjp@debian.org>  Wed, 16 Jul 2008 13:55:00 +0200
+
+partman-basicmethods (39) unstable; urgency=low
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Esko Arajärvi
+  * Marathi (mr.po) by Sampada
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Slovak (sk.po) by Ivan Masár
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 08 May 2008 00:59:12 -0300
 
 partman-basicmethods (38) unstable; urgency=low
 

@@ -11,7 +11,7 @@ arch_get_kernel_flavour () {
 }
 
 arch_check_usable_kernel () {
-	if expr "$1" : '.*-sparc64.*' >/dev/null; then return 0; fi
+	if echo "$1" | grep -Eq -- "-sparc64(-.*)?$"; then return 0; fi
 	return 1
 }
 

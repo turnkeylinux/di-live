@@ -1,11 +1,14 @@
 #!/usr/bin/make -f
 
-build: build-stamp
+build: test build-stamp
 build-stamp:
 	dh_testdir
 	$(MAKE)
 	grep -v '^#' devnames-static.txt | gzip -9c > devnames-static.gz
 	touch build-stamp
+
+test:
+	set -e; for sh in *.sh; do sh -n $$sh; done
 
 clean:
 	dh_testdir

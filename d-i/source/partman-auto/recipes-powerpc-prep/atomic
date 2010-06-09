@@ -5,15 +5,14 @@ partman-auto/text/atomic_scheme ::
 	$bootable{ }
 	method{ prep } .
 
-500 10000 1000000000 ext3
+500 10000 -1 $default_filesystem
 	$lvmok{ }
 	$primary{ }
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext3 }
-	mountpoint{ / }
-	options/relatime{ relatime } .
+	$default_filesystem{ }
+	mountpoint{ / } .
 
 96 512 300% linux-swap
 	$lvmok{ }

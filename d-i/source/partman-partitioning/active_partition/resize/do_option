@@ -1,6 +1,5 @@
 #!/bin/sh
 
-. /lib/partman/lib/base.sh
 . /lib/partman/lib/resize.sh
 
 dev=$2
@@ -11,25 +10,12 @@ cd $dev
 check_virtual
 
 if [ "$virtual" = no ] && [ -f $oldid/detected_filesystem ]; then
-	case "$(cat $oldid/detected_filesystem)" in
-		ntfs)
-			if ! get_ntfs_resize_range; then
-				db_input critical partman-partitioning/impossible_resize || true
-				db_go || true
-				exit 1
-			fi
-			;;
-		ext2|ext3)
-			if ! get_ext2_resize_range; then
-				db_input critical partman-partitioning/impossible_resize || true
-				db_go || true
-				exit 1
-			fi
-			;;
-		*)
-			get_resize_range
-			;;
-	esac
+	if ! get_real_resize_range "$oldid" \
+			"$(cat "$oldid/detected_filesystem")"; then
+		db_input critical partman-partitioning/impossible_resize || true
+		db_go || true
+		exit 1
+	fi
 else
 	get_resize_range
 fi
@@ -44,11 +30,11 @@ fi
 human_resize_range
 
 if [ "$virtual" = no ]; then
-	db_set partman-partitioning/confirm_resize 'false'
+	db_set partman-partitioning/confirm_resize false
 	db_input critical partman-partitioning/confirm_resize || true
 	db_go || exit 0
 	db_get partman-partitioning/confirm_resize
-	[ "$RET" = 'true' ] || exit 0
+	[ "$RET" = true ] || exit 0
 fi
 
 ask_for_size || exit $?

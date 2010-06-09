@@ -1,5 +1,6 @@
 cpuinfo paer.cpuinfo
 machine parisc64
+numcpus 2
 majors 2.6
 flavour parisc64
 kernel-2.6 \

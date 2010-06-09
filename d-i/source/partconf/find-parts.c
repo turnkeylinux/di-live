@@ -15,7 +15,6 @@
 #endif
 
 #include "partconf.h"
-#include <debian-installer.h>
 
 // If it's an LVM volume, it's on the form
 // /dev/<group>/<volume> and there's info in
@@ -152,7 +151,7 @@ get_partition_info(struct partition *p, PedPartition *part, PedDevice *dev, bool
     if (PART_SIZE_BYTES(dev, part) > 0)
         p->size = PART_SIZE_BYTES(dev, part);
     if (!ignore_fs_type && part->fs_type != NULL) {
-        if (strcmp(part->fs_type->name, "linux-swap") == 0)
+        if (strncmp(part->fs_type->name, "linux-swap", 10) == 0)
             p->fstype = strdup("swap");
         else
             p->fstype = strdup(part->fs_type->name);
@@ -181,6 +180,8 @@ get_all_partitions(struct partition *parts[], const int max_parts, bool ignore_f
     while ((dev = ped_device_get_next(dev)) != NULL) {
         if (dev->read_only)
             continue;
+        if (strstr(dev->path, "/dev/mtd") == dev->path)
+            continue;
         if (!ped_disk_probe(dev))
             continue;
         disk = ped_disk_new(dev);
@@ -204,18 +205,7 @@ get_all_partitions(struct partition *parts[], const int max_parts, bool ignore_f
 
             p = malloc(sizeof(*p));
             p->path = ped_partition_get_path(part);
-            if (strstr(p->path, "/dev/ide/") == p->path) {
-                static char *targets[] = { "master", "slave" };
-                int host, bus, target, lun, part;
-
-                if (sscanf(p->path, "/dev/ide/host%d/bus%d/target%d/lun%d/part%d",
-                            &host, &bus, &target, &lun, &part) == 5
-                        && target >= 0 && target <= 1)
-                    asprintf(&p->description, "IDE%d %s\\, part. %d",
-                            2*host + bus + 1, targets[target], part);
-                else
-                    p->description = strdup(p->path);
-            } else if (strstr(p->path, "/dev/hd") == p->path) {
+            if (strstr(p->path, "/dev/hd") == p->path) {
                 static char *targets[] = { "master", "slave" };
                 char drive;
                 int part;
@@ -225,15 +215,6 @@ get_all_partitions(struct partition *parts[], const int max_parts, bool ignore_f
                     asprintf(&p->description, "IDE%d %s\\, part. %d",
                             (drive - 'a') / 2 + 1, targets[(drive - 'a') % 2],
                             part);
-                else
-                    p->description = strdup(p->path);
-            } else if (strstr(p->path, "/dev/scsi/") == p->path) {
-                int host, bus, target, lun, part;
-
-                if (sscanf(p->path, "/dev/scsi/host%d/bus%d/target%d/lun%d/part%d",
-                            &host, &bus, &target, &lun, &part) == 5)
-                    asprintf(&p->description, "SCSI%d (%d\\,%d\\,%d) part. %d",
-                            host + 1, bus, target, lun, part);
                 else
                     p->description = strdup(p->path);
             } else if (strstr(p->path, "/dev/sd") == p->path) {

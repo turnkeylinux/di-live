@@ -1,3 +1,677 @@
+user-setup (1.28ubuntu7) lucid; urgency=low
+
+  * Allow forcing the encrypted home option (LP: #566552).
+
+ -- Evan Dandrea <evand@ubuntu.com>  Wed, 21 Apr 2010 17:18:02 +0100
+
+user-setup (1.28ubuntu6) lucid; urgency=low
+
+  * Update Ubuntu-specific translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 15 Apr 2010 01:10:31 +0100
+
+user-setup (1.28ubuntu5) lucid; urgency=low
+
+  * Provide a progress message for wiping swap space (LP: #432422).
+
+ -- Evan Dandrea <evand@ubuntu.com>  Fri, 05 Mar 2010 11:51:32 +0000
+
+user-setup (1.28ubuntu4) lucid; urgency=low
+
+  * Fix check for already-mounted /dev in ecryptfs setup.
+
+ -- Evan Dandrea <evand@ubuntu.com>  Thu, 04 Mar 2010 16:31:18 +0000
+
+user-setup (1.28ubuntu3) lucid; urgency=low
+
+  * Fix automatic login on situations where custom.conf didn't exist
+    already on the target.
+
+ -- Mario Limonciello <mario_limonciello@dell.com>  Tue, 19 Jan 2010 17:30:12 -0600
+
+user-setup (1.28ubuntu2) lucid; urgency=low
+
+  * user-setup-apply: preserve old values in custom.conf. Only replace
+    what's needed (LP: #507121)
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 15 Jan 2010 12:38:22 +0000
+
+user-setup (1.28ubuntu1) lucid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Add the initial user to the adm, dip, lpadmin, and sambashare groups
+      too, and to the admin group if no root password is set. Do not add
+      them to the audio, video, floppy, dip, netdev, powerdev, scanner, or
+      bluetooth groups.
+    - Allow the admin group to gain root privileges using sudo.
+    - Default passwd/root-login to false.
+    - Create the spu group on powerpc/ps3 and powerpc/cell.
+    - Make is_system_user always return false if OVERRIDE_SYSTEM_USER is
+      set.
+    - Add preseedable passwd/auto-login question; if set to true, configure
+      gdm and kdm for automatic login. Add passwd/auto-login-backup question
+      which backs up the previous contents of the files as well.
+    - Ask whether the user wants to encrypt their home directory.
+    - Zero out swap devices at the end of install when encryption is
+      enabled.
+    - If user-setup/allow-password-empty is preseeded to true, allow empty
+      passwords.
+    - Disable installation of pre-pkgsel.d/10kdesudo; it does nothing for
+      Ubuntu, and causes a confusing message that worries some people.
+    - Add weak password detection (purely length-based for now, matching
+      partman-crypto).
+    - Consider a password of '!' in shadow for root to be unset.
+
+ -- Evan Dandrea <evand@ubuntu.com>  Wed, 11 Nov 2009 13:51:01 +0000
+
+user-setup (1.28) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Add initial user to new bluetooth group (split from netdev group
+    in bluez-utils 4.40-3)
+
+ -- Otavio Salvador <otavio@ossystems.com.br>  Tue, 21 Jul 2009 12:28:09 -0300
+
+user-setup (1.27ubuntu11) karmic; urgency=low
+
+  * Check if filesystems are already mounted before attempting to mount
+    them (LP: #461546).
+
+ -- Evan Dandrea <evand@ubuntu.com>  Tue, 27 Oct 2009 12:52:33 +0000
+
+user-setup (1.27ubuntu10) karmic; urgency=low
+
+  * Update translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 01 Sep 2009 13:29:11 +0100
+
+user-setup (1.27ubuntu9) karmic; urgency=low
+
+  * Zero out swap devices at the end of install when encryption is
+    enabled.
+
+ -- Evan Dandrea <evand@ubuntu.com>  Mon, 24 Aug 2009 18:31:18 +0100
+
+user-setup (1.27ubuntu8) karmic; urgency=low
+
+  * Mount /proc, bind-mount /dev, and pass the necessary options for
+    ecryptfs-setup-swap.
+
+ -- Evan Dandrea <evand@ubuntu.com>  Wed, 19 Aug 2009 15:05:13 +0100
+
+user-setup (1.27ubuntu7) karmic; urgency=low
+
+  * Encrypt all swap partitions when the encrypt-home option is set.
+
+ -- Evan Dandrea <evand@ubuntu.com>  Tue, 18 Aug 2009 11:33:50 +0100
+
+user-setup (1.27ubuntu6) karmic; urgency=low
+
+  * user-setup-apply: karmic's merge brought in new functionality that
+    uses usermod to set the user's initial password, which walks the PAM
+    stack;  when this happens, pam_ecryptfs handles the initial passphrase
+    wrapping and the forceful hack in user-setup-apply is not needed;
+    in fact, it's broken because /dev/.ecryptfs-$USER will be cleaned up
+    by pam_ecryptfs; adjust conditional accordingly
+
+ -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 28 Jul 2009 15:36:21 -0500
+
+user-setup (1.27ubuntu5) karmic; urgency=low
+
+  [ Colin Watson ]
+  * If a root user is being created so we aren't in sudo mode, configure
+    libgksu to use su rather than sudo.
+
+  [ Martin Pitt ]
+  * user-setup-apply: Don't set AutomaticLogin=ubuntu, use the actual user
+    name. (LP: #402707)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue, 21 Jul 2009 22:24:51 +0200
+
+user-setup (1.27ubuntu4) karmic; urgency=low
+
+  * Use /etc/gdm/custom.conf rather than /etc/gdm/gdm.conf-custom (LP:
+    #395861).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 06 Jul 2009 14:25:38 +0100
+
+user-setup (1.27ubuntu3) karmic; urgency=low
+
+  * Update autologin code to work with new gdm (thanks, Martin Pitt).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 03 Jul 2009 17:55:40 +0100
+
+user-setup (1.27ubuntu2) karmic; urgency=low
+
+  * Error out more gracefully, although with a clear red-screen error, if
+    /dev/shm/.ecryptfs-$USER doesn't exist when trying to set up home
+    directory encryption (LP: #395082).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 03 Jul 2009 13:47:52 +0100
+
+user-setup (1.27ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Add the initial user to the adm, dip, lpadmin, and sambashare groups
+      too, and to the admin group if no root password is set. Do not add
+      them to the audio, video, floppy, dip, netdev, powerdev, or scanner
+      groups.
+    - Allow the admin group to gain root privileges using sudo.
+    - Default passwd/root-login to false.
+    - Create the spu group on powerpc/ps3 and powerpc/cell.
+    - Make is_system_user always return false if OVERRIDE_SYSTEM_USER is
+      set.
+    - Add preseedable passwd/auto-login question; if set to true, configure
+      gdm and kdm for automatic login. Add passwd/auto-login-backup question
+      which backs up the previous contents of the files as well.
+    - Ask whether the user wants to encrypt their home directory.
+    - If user-setup/allow-password-empty is preseeded to true, allow empty
+      passwords.
+    - Disable installation of pre-pkgsel.d/10kdesudo; it does nothing for
+      Ubuntu, and causes a confusing message that worries some people.
+    - Add weak password detection (purely length-based for now, matching
+      partman-crypto).
+    - Consider a password of '!' in shadow for root to be unset.
+    - Allow underscores in usernames, matching change in adduser
+      3.110ubuntu3.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 24 Jun 2009 13:59:33 +0100
+
+user-setup (1.27) unstable; urgency=low
+
+  [ Updated translations ]                                                                                   
+  * Czech (cs.po) by Miroslav Kure                                                                           
+  * Basque (eu.po) by pi                                                                                     
+  * Finnish (fi.po) by Esko Arajärvi                                                                         
+  * Simplified Chinese (zh_CN.po) by Deng Xiyue                                                              
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 14 Jun 2009 19:26:17 +0200
+
+user-setup (1.26ubuntu2) karmic; urgency=low
+
+  * Allow underscores in usernames, matching change in adduser 3.110ubuntu3
+    (LP: #388822).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 18 Jun 2009 12:13:54 +0100
+
+user-setup (1.26ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Add the initial user to the adm, dip, lpadmin, and sambashare groups
+      too, and to the admin group if no root password is set. Do not add
+      them to the audio, video, floppy, dip, netdev, powerdev, or scanner
+      groups.
+    - Allow the admin group to gain root privileges using sudo.
+    - Default passwd/root-login to false.
+    - Create the spu group on powerpc/ps3 and powerpc/cell.
+    - Make is_system_user always return false if OVERRIDE_SYSTEM_USER is
+      set.
+    - Add preseedable passwd/auto-login question; if set to true, configure
+      gdm and kdm for automatic login. Add passwd/auto-login-backup question
+      which backs up the previous contents of the files as well.
+    - Ask whether the user wants to encrypt their home directory.
+    - If user-setup/allow-password-empty is preseeded to true, allow empty
+      passwords.
+    - Disable installation of pre-pkgsel.d/10kdesudo; it does nothing for
+      Ubuntu, and causes a confusing message that worries some people.
+    - Add weak password detection (purely length-based for now, matching
+      partman-crypto).
+    - Consider a password of '!' in shadow for root to be unset.
+  * Rearrange our templates file to put all Ubuntu-specific entries at the
+    end, to simplify future merges.
+  * Drop compatibility for passwd/allow-password-empty, as promised in the
+    changelog for 1.23ubuntu14.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 03 Jun 2009 15:19:28 +0100
+
+user-setup (1.26) unstable; urgency=low
+
+  [ Frans Pop ]
+  * user-setup-apply: remove unused variable OPTS.
+  * user-setup-apply: restore compatibility with Lenny version of passwd
+    (without PAM support).
+
+  [ Otavio Salvador ]
+  * user-setup-apply: use dpkg-query instead of dpkg -s to get the passwd
+    package version. Thanks to Adeodato Simó for the tip.
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 24 May 2009 15:07:22 +0200
+
+user-setup (1.25) unstable; urgency=low
+
+  * Brown paper bag release
+  * Do not use chpasswd when the password has been preseeded.
+    Thanks to Nicolas François for pointing this.
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 20 May 2009 19:31:55 +0200
+
+user-setup (1.24) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Be more careful about test arguments in the root_password function, in
+    case (for example) the encrypted password string is "!" (thanks, Uli
+    Heller; LP: #307443).
+
+  [ Joey Hess ]
+  * Add initial user to scanner group, (created by libsane).
+
+  [ Frans Pop ]
+  * Remove myself as uploader.
+
+  [ Luk Claes ]
+  * Add myself as uploader.
+  * Disable root account and activate sudo when there is no root passwd given.
+
+  [ Christian Perrier ]
+  * No longer use the "-m" switch of chpasswd. It uses PAM now and no
+    longer has this switch. The password will use settings from
+    libpam-runtime, so MD5 by default.
+    Closes: #529475
+  * Replace chpasswd by usermod to set pre-encrypted passwords.
+    Thanks to Jordi Pujol for the patch.
+    Closes: #528610
+  * Use 6 as debhelper compatibility level
+  * Bump Standards to 3.8.1 (checked, no change)
+  * Add lintian overrides
+
+  [ Updated translations ]
+  * Asturian (ast.po) by Marcos Alvarez Costales
+  * Bengali (bn.po) by Md. Rezwan Shahid
+  * German (de.po) by Jens Seidel
+  * Esperanto (eo.po) by Felipe Castro
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Estonian (et.po) by Mattias Põldaru
+  * Basque (eu.po) by Piarres Beobide
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by marce villarino
+  * Hindi (hi.po) by Kumar Appaiah
+  * Italian (it.po) by Milo Casagrande
+  * Kazakh (kk.po) by daur88
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Marathi (mr.po) by Sampada
+  * Norwegian Bokmal (nb.po) by Hans Fredrik Nordhaug
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Tagalog (tl.po) by Eric Pareja
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 20 May 2009 09:40:54 +0200
+
+user-setup (1.23ubuntu20) jaunty; urgency=low
+
+  * Add preseedable passwd/auto-login-backup question; if set (e.g. to
+    "oem") and passwd/auto-login=true, this backs up the previous contents
+    of the configuration files (e.g. to /etc/kde4/kdm/kdmrc.oem). This can
+    be used by oem-config to recover the old contents of the configuration
+    files later (LP: #361272).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 16 Apr 2009 14:28:56 +0100
+
+user-setup (1.23ubuntu19) jaunty; urgency=low
+
+  * Install ecryptfs-utils if it's already in use by users on an existing
+    /home (LP: #361627).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 15 Apr 2009 12:29:32 +0100
+
+user-setup (1.23ubuntu18) jaunty; urgency=low
+
+  * Update Ubuntu-specific strings from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 09 Apr 2009 02:26:42 +0100
+
+user-setup (1.23ubuntu17) jaunty; urgency=low
+
+  * Update Ubuntu-specific strings from Launchpad, including some strings
+    previously stuck with old fuzzy translations due to a scripting error
+    (LP: #356876).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 07 Apr 2009 13:36:42 +0100
+
+user-setup (1.23ubuntu16) jaunty; urgency=low
+
+  * Don't offer encrypting the home directory if the selected user's home
+    directory already exists (LP: #321345).
+  * Update Ubuntu-specific strings from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 01 Apr 2009 12:38:09 +0100
+
+user-setup (1.23ubuntu15) jaunty; urgency=low
+
+  [ Bryan McLellan ]
+  * Consider a password of '!' in shadow for root to be unset (LP: #340841).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 17 Mar 2009 14:16:04 +0000
+
+user-setup (1.23ubuntu14) jaunty; urgency=low
+
+  * user-setup/password-weak can't be preseeded since that would interfere
+    with correct interactive behaviour, but create
+    user-setup/allow-password-weak which can.
+  * Rename passwd/allow-password-empty to user-setup/allow-password-empty,
+    for consistency with user-setup/password-empty. Provide compatibility
+    with the old name for one release.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 27 Feb 2009 05:37:10 +0000
+
+user-setup (1.23ubuntu13) jaunty; urgency=low
+
+  * updated to edit the kde4 kdmrc as kde4 is the default now
+
+ -- Roman Shtylman <shtylman@gmail.com>  Thu, 19 Feb 2009 15:55:40 +0000
+
+user-setup (1.23ubuntu12) jaunty; urgency=low
+
+  * Add weak password detection (purely length-based for now, matching
+    partman-crypto).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 18 Feb 2009 21:42:45 +0000
+
+user-setup (1.23ubuntu11) jaunty; urgency=low
+
+  * Disable installation of pre-pkgsel.d/10kdesudo; it does nothing for
+    Ubuntu, and causes a confusing message that worries some people.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 17 Feb 2009 12:27:02 +0000
+
+user-setup (1.23ubuntu10) jaunty; urgency=low
+
+  * Update translation templates.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 09 Feb 2009 13:55:42 +0100
+
+user-setup (1.23ubuntu9) jaunty; urgency=low
+
+  * chroot to get the mount passphrase and mount /sys and /dev/shm to
+    support the encrypted home code.
+
+ -- Evan Dandrea <evand@ubuntu.com>  Tue, 03 Feb 2009 09:44:19 +0100
+
+user-setup (1.23ubuntu8) jaunty; urgency=low
+
+  * apt-install ecryptfs-utils in user-setup-ask rather than -apply to
+    better accommodate ubiquity.
+
+ -- Evan Dandrea <evand@ubuntu.com>  Tue, 27 Jan 2009 18:02:52 +0000
+
+user-setup (1.23ubuntu7) jaunty; urgency=low
+
+  * Backport from trunk:
+    - Be more careful about test arguments in the root_password function, in
+      case (for example) the encrypted password string is "!" (thanks, Uli
+      Heller; LP: #307443).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 21 Jan 2009 17:59:52 +0000
+
+user-setup (1.23ubuntu6) jaunty; urgency=low
+
+  [ Dustin Kirkland ]
+  * user-setup-apply: add support for initial passphrase wrapping,
+    in the encrypted home directory case, LP: #314482
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 06 Jan 2009 23:02:06 +0000
+
+user-setup (1.23ubuntu5) jaunty; urgency=low
+
+  * Load aes, cbc, and ecb modules after installing crypto-modules but
+    before running ecryptfs-setup-private.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 06 Jan 2009 15:35:10 +0000
+
+user-setup (1.23ubuntu4) jaunty; urgency=low
+
+  * Install crypto-modules if home directory encryption is requested
+    (LP: #309541).
+  * Re-enable home directory encryption option.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 06 Jan 2009 00:21:36 +0000
+
+user-setup (1.23ubuntu3) jaunty; urgency=low
+
+  * Disable home directory encryption option for now, since the kernel
+    doesn't yet provide the right pieces (e.g. ecryptfs.ko) in udebs.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 17 Dec 2008 16:34:24 +0000
+
+user-setup (1.23ubuntu2) jaunty; urgency=low
+
+  [ Dustin Kirkland ]
+  Changes for LP: #302870
+  * user-setup-apply: Add support for adduser --encrypt-home;  remove
+    deprecated encrypted-private (replaced in the installer by
+    encrypted home support)
+  * debian/user-setup-udeb.templates: Add encrypt-home debconf question;
+    remove deprecated encrypted-private
+  * user-setup-ask: prompt for encrypt-home; remove the more complicated
+    encrypted-private dialogs
+
+ -- Evan Dandrea <evand@ubuntu.com>  Wed, 10 Dec 2008 13:50:38 -0800
+
+user-setup (1.23ubuntu1) jaunty; urgency=low
+
+  [ Evan Dandrea ]
+  * Do not force chpasswd to md5 crypted passwords (LP: #51551).
+
+  [ Colin Watson ]
+  * Resynchronise with Debian. Remaining changes:
+    - Add the initial user to the adm, dip, lpadmin, and sambashare
+      groups too, and to the admin group if no root password is set. Do not
+      add them to the audio, video, floppy, dip, netdev, or powerdev groups.
+    - Allow the admin group to gain root privileges using sudo.
+    - Default passwd/root-login to false.
+    - Create the spu group on powerpc/ps3 and powerpc/cell.
+    - Make is_system_user always return false if OVERRIDE_SYSTEM_USER is
+      set.
+    - Add preseedable passwd/auto-login question; if set to true, configure
+      gdm and kdm for automatic login.
+    - Ask whether the user wants to set up an encrypted private directory.
+    - If passwd/allow-password-empty is preseeded to true, allow empty
+      passwords.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 27 Nov 2008 18:32:51 +0000
+
+user-setup (1.23) unstable; urgency=low
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bosnian (bs.po) by Armin Besirovic
+  * Danish (da.po)
+  * Croatian (hr.po) by Josip Rodin
+  * Latvian (lv.po) by Peteris Krisjanis
+  * Macedonian (mk.po) by Arangel Angov
+  * Serbian (sr.po) by Veselin Mijušković
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 21 Sep 2008 20:52:37 -0300
+
+user-setup (1.22) unstable; urgency=low
+
+  [ Jérémy Bobbio ]
+  * Source confmodule in pre-pkgsel.d/10kdesudo.
+  * As cdebconf is now fixed, on errors in root password, return to root
+    password dialog (and not the one before it).
+    Depends: cdebconf-udeb (>= 0.133)
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * French (fr.po) by Christian Perrier
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Jérémy Bobbio <lunar@debian.org>  Tue, 26 Aug 2008 10:56:42 +0200
+
+user-setup (1.21) unstable; urgency=low
+
+  [ Frans Pop ]
+  * user-setup-apply: avoid locale errors from perl when used in D-I.
+  * Add pre-pkgsel hook script to setup kdesudo for KDE desktop installs
+    without root account (#485655). Thanks to Didier Raboud for bringing up
+    the subject and suggesting the solution.
+
+  [ Colin Watson ]
+  * Don't exit user-setup-apply if update-gconf-defaults fails.
+
+  [ Updated translations ]
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Finnish (fi.po) by Esko Arajärvi
+  * Italian (it.po) by Milo Casagrande
+  * Turkish (tr.po) by Mert Dirik
+  * Simplified Chinese (zh_CN.po) by Kov Chai
+
+ -- Frans Pop <fjp@debian.org>  Wed, 16 Jul 2008 13:52:07 +0200
+
+user-setup (1.20ubuntu10) intrepid; urgency=low
+
+  * Update Ubuntu-specific strings from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 16 Oct 2008 19:42:05 +0100
+
+user-setup (1.20ubuntu9) intrepid; urgency=low
+
+  * Update translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sat, 11 Oct 2008 23:28:45 +0100
+
+user-setup (1.20ubuntu8) intrepid; urgency=low
+
+  * Add support and template for passwd/allow-password-empty as a
+    boolean preseed value that overrides the test for an empty
+    password. (LP: #280014)
+
+ -- Emmet Hikory <persia@ubuntu.com>  Tue, 07 Oct 2008 18:23:28 +0900
+
+user-setup (1.20ubuntu7) intrepid; urgency=low
+
+  * debian/user-setup-udeb.templates: Do not put the initial user into the fuse
+    group, too. We now assign a dynamic ACL to /dev/fuse, in an effort to
+    reduce the misuse of groups for assigning privileges. See
+    intrepid-device-permissions spec.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Thu, 25 Sep 2008 17:55:53 +0200
+
+user-setup (1.20ubuntu6) intrepid; urgency=low
+
+  [ Dustin Kirkland ]
+  * Adjust encrypted private directory templates for readability and so that
+    the initial question fits on the screen.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 03 Sep 2008 21:44:39 +0100
+
+user-setup (1.20ubuntu5) intrepid; urgency=low
+
+  * Ask whether the user wants to set up an encrypted private directory.
+    Requires busybox 1:1.10.2-1ubuntu4.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 22 Aug 2008 12:14:02 +0100
+
+user-setup (1.20ubuntu4) intrepid; urgency=low
+
+  [ Michael Terry ]
+  * Add preseedable passwd/auto-login question; if set to true, configure
+    gdm and kdm for automatic login (LP: #241372).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 25 Jul 2008 09:35:57 +0100
+
+user-setup (1.20ubuntu3) intrepid; urgency=low
+
+  * debian/user-setup-udeb.templates: Drop the initial user from some groups
+    which have better dynamic replacements, in an effort to reduce the misuse
+    of groups for assigning privileges:
+    - audio, video, floppy: Hal assigns ACLs for local foreground console
+      users; remote users should not have these. 'cdrom' has to stay for
+      apt-cdrom (Debian #464899), 'plugdev' has to stay for static mountpoints
+      created by the installer.
+    - dip: Not used anywhere in Ubuntu.
+    See intrepid-device-permissions spec.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 21 Jul 2008 16:10:17 +0200
+
+user-setup (1.20ubuntu2) intrepid; urgency=low
+
+  * Create sambashare group and add the initial user to it (thanks, Mantas
+    Kriaučiūnas; LP: #238224).
+  * Stop creating /etc/aliases, since apparently postfix would rather have a
+    blank slate (LP: #228391).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 03 Jul 2008 01:27:31 +0100
+
+user-setup (1.20ubuntu1) intrepid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Adjust /etc/aliases to send root mail to the initial user.
+    - Add the initial user to the adm, dip, lpadmin, and fuse groups too,
+      and to the admin group if no root password is set. Do not add them to
+      the netdev or powerdev groups.
+    - Allow the admin group to gain root privileges using sudo.
+    - Default passwd/root-login to false.
+    - Create the spu group on powerpc/ps3 and powerpc/cell.
+    - Make is_system_user always return false if OVERRIDE_SYSTEM_USER is
+      set.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 16 Jun 2008 13:37:07 +0100
+
+user-setup (1.20) unstable; urgency=low
+
+  [ Updated translations ]
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Gujarati (gu.po) by Kartik Mistry
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Marathi (mr.po) by Sampada
+  * Dutch (nl.po) by Frans Pop
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 08 May 2008 00:47:15 -0300
+
+user-setup (1.19) unstable; urgency=low
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Esko Arajärvi
+  * Hindi (hi.po) by Kumar Appaiah
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Latvian (lv.po) by Viesturs Zarins
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Turkish (tr.po) by Recai Oktaş
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 15 Feb 2008 09:28:30 -0200
+
+user-setup (1.18) unstable; urgency=low
+
+  * In shadow version 4.1.0, the chpassword -e and -m options are
+    mutially exclusive. Avoid sending both options when a pre-encrypted
+    password is provided by preseeding. Thanks, Jordi-Pujol. Closes: #462387
+
+ -- Joey Hess <joeyh@debian.org>  Thu, 24 Jan 2008 17:05:00 -0500
+
+user-setup (1.17) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Call dh_md5sums.
+
+  [ Otavio Salvador ]
+  * Bump Standards-Version to 3.7.2 (no changes needed).
+
+  [ Colin Watson ]
+  * Fix comment attached to passwd/user-default-groups.
+  * hal was renamed to haldaemon in hal 0.5.7.1-1; Hal is also a reasonably
+    common human name. Remove it from reserved-usernames.
+
+  [ Updated translations ]
+  * Amharic (am.po) by tegegne tefera
+  * Basque (eu.po) by Piarres Beobide
+  * Italian (it.po) by Stefano Canepa
+  * Korean (ko.po) by Changwoo Ryu
+  * Malayalam (ml.po) by Praveen|പരവീണ A|എ
+  * Panjabi (pa.po) by A S Alam
+  * Romanian (ro.po) by Eddy Petrișor
+  * Slovak (sk.po) by Ivan Masár
+  * Vietnamese (vi.po) by Clytie Siddall
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 11 Jan 2008 18:56:46 +0100
+
 user-setup (1.16ubuntu5) hardy; urgency=low
 
   * Make is_system_user always return false if OVERRIDE_SYSTEM_USER is set

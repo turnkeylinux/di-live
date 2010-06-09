@@ -8,42 +8,37 @@ partman-auto/text/multi_scheme ::
 	format{ }
 	use_filesystem{ }
 	filesystem{ ext2 }
-	mountpoint{ /boot }
-	options/relatime{ relatime } .
+	mountpoint{ /boot } .
 
-570 3400 5280 ext3
+570 3400 5280 $default_filesystem
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext3 }
-	mountpoint{ / }
-	options/relatime{ relatime } .
+	$default_filesystem{ }
+	mountpoint{ / } .
 
-70 1500 3000 ext3
+70 1500 3000 $default_filesystem
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext3 }
-	mountpoint{ /var }
-	options/relatime{ relatime } .
+	$default_filesystem{ }
+	mountpoint{ /var } .
 
 96 512 300% linux-swap
 	method{ swap }
 	format{ } .
 
-20 300 400 ext3
+20 300 400 $default_filesystem
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext3 }
-	mountpoint{ /tmp }
-	options/relatime{ relatime } .
+	$default_filesystem{ }
+	mountpoint{ /tmp } .
 
-300 3000 1000000000 ext3
+300 3000 -1 $default_filesystem
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext3 }
-	mountpoint{ /home }
-	options/relatime{ relatime } .
+	$default_filesystem{ }
+	mountpoint{ /home } .
 

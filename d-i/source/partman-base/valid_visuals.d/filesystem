@@ -1,3 +1,0 @@
-#!/bin/sh
-
-printf "filesystem\tFile system\n"

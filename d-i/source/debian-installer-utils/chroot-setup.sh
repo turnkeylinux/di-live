@@ -10,7 +10,7 @@ chroot_setup () {
 	   [ ! -d /target/proc ]; then
 		return 1
 	fi
-	if [ ! -d /target/sys ] ; then
+	if [ ! -d /target/sys ]; then
 		return 1
 	fi
 
@@ -44,19 +44,38 @@ exit 0
 EOF
 	chmod a+rx /target/sbin/start-stop-daemon
 	
+	# If Upstart is in use, add a dummy initctl to stop it starting jobs.
+	if [ -x /target/sbin/initctl ]; then
+		mv /target/sbin/initctl /target/sbin/initctl.REAL
+		cat > /target/sbin/initctl <<EOF
+#!/bin/sh
+echo 1>&2
+echo 'Warning: Fake initctl called, doing nothing.' 1>&2
+exit 0
+EOF
+		chmod a+rx /target/sbin/initctl
+	fi
+
 	# Record the current mounts
 	mountpoints > /tmp/mount.pre
 
 	# Some packages (eg. the kernel-image package) require a mounted
 	# /proc/. Only mount it if not mounted already
-	if [ ! -f /target/proc/cmdline ] ; then
+	if [ ! -f /target/proc/cmdline ]; then
 		mount -t proc proc /target/proc
 	fi
 
 	# For installing >=2.6.14 kernels we also need sysfs mounted
 	# Only mount it if not mounted already
-	if [ ! -d /target/sys/devices ] ; then
+	if [ ! -d /target/sys/devices ]; then
 		mount -t sysfs sysfs /target/sys
+	fi
+
+	# In Lenny, /dev/ lacks the pty devices, so we need devpts mounted
+	if [ ! -e /target/dev/pts/0 ]; then
+		mkdir -p /target/dev/pts
+		mount -t devpts devpts -o noexec,nosuid,gid=5,mode=620 \
+			/target/dev/pts
 	fi
 
 	# Try to enable proxy when using HTTP.
@@ -64,7 +83,7 @@ EOF
 	RET=$(debconf-get mirror/protocol || true)
 	if [ "$RET" = "http" ]; then
 		RET=$(debconf-get mirror/http/proxy || true)
-		if [ "$RET" ] ; then
+		if [ "$RET" ]; then
 			http_proxy="$RET"
 			export http_proxy
 		fi
@@ -74,7 +93,7 @@ EOF
 	DEBIAN_PRIORITY=$(debconf-get debconf/priority || true)
 	export DEBIAN_PRIORITY
 
-	LANG=$(debconf-get debian-installer/locale || true)
+	LANG=${IT_LANG_OVERRIDE:-$(debconf-get debian-installer/locale || true)}
 	export LANG
 	export PERL_BADLANG=0
 
@@ -87,6 +106,9 @@ EOF
 	# Avoid debconf mailing notes.
 	DEBCONF_ADMIN_EMAIL=""
 	export DEBCONF_ADMIN_EMAIL
+	# Avoid apt-listchanges doing anything.
+	APT_LISTCHANGES_FRONTEND=none
+	export APT_LISTCHANGES_FRONTEND
 
 	return 0
 }
@@ -94,6 +116,9 @@ EOF
 chroot_cleanup () {
 	rm -f /target/usr/sbin/policy-rc.d
 	mv /target/sbin/start-stop-daemon.REAL /target/sbin/start-stop-daemon
+	if [ -x /target/sbin/initctl.REAL ]; then
+		mv /target/sbin/initctl.REAL /target/sbin/initctl
+	fi
 
 	# Undo the mounts done by the packages during installation.
 	# Reverse sorting to umount the deepest mount points first.
@@ -101,7 +126,7 @@ chroot_cleanup () {
 	for dir in $( (cat /tmp/mount.pre /tmp/mount.pre; mountpoints ) | \
 		     sort -r | uniq -c | grep "^[[:space:]]*1[[:space:]]" | \
 		     sed "s/^[[:space:]]*[0-9][[:space:]]//"); do
-		if ! umount $dir ; then
+		if ! umount $dir; then
 			logger -t $0 "warning: Unable to umount '$dir'"
 		fi
 	done

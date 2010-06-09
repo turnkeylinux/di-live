@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-06-30 12:28+0000\n"
+"POT-Creation-Date: 2008-01-26 07:33+0000\n"
 "PO-Revision-Date: 2007-07-07 11:50+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -21,13 +21,15 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partconf.templates:3
+#. :sl5:
+#: ../partconf.templates:1001
 msgid "No partitions found"
 msgstr "ไม่พบพาร์ทิชัน"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:3
+#. :sl5:
+#: ../partconf.templates:1001
 msgid ""
 "No partitions were found in your system. You may need to partition your hard "
 "drives or load additional kernel modules."
@@ -37,13 +39,15 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partconf.templates:9
+#. :sl5:
+#: ../partconf.templates:2001
 msgid "No file systems found"
 msgstr "ไม่พบระบบแฟ้ม"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:9
+#. :sl5:
+#: ../partconf.templates:2001
 msgid ""
 "No usable file systems were found. You may need to load additional kernel "
 "modules."
@@ -51,25 +55,27 @@ msgstr "ไม่พบระบบแฟ้มที่ใช้การได
 
 #. Type: select
 #. Choices
-#: ../partconf.templates:16
+#. :sl5:
+#: ../partconf.templates:3001
 msgid "Finish"
 msgstr "เสร็จสิ้น"
 
 #. Type: select
 #. Choices
-#: ../partconf.templates:16
+#. :sl5:
+#: ../partconf.templates:3001
 msgid "Abort"
 msgstr "ยกเลิก"
 
 #. Type: select
 #. Description
-#: ../partconf.templates:17
+#: ../partconf.templates:3002
 msgid "Select a partition"
 msgstr "เลือกพาร์ทิชัน"
 
 #. Type: select
 #. Description
-#: ../partconf.templates:17
+#: ../partconf.templates:3002
 msgid ""
 "These are the partitions that were detected in your system. Please select a "
 "partition to configure. No actual changes will be made until you select "
@@ -81,7 +87,7 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../partconf.templates:17
+#: ../partconf.templates:3002
 msgid ""
 "The information shown is, in order: device name, size, file system, and "
 "mount point."
@@ -89,16 +95,45 @@ msgstr "ข้อมูลจะแสดงตามลำดับดังน
 
 #. Type: select
 #. Choices
+#. :sl5:
 #. Note to translators : Please keep your translations of the choices
 #. below a 65 columns limit (which means 65 characters
 #. in single-byte languages)
-#: ../partconf.templates:31
+#: ../partconf.templates:4001
 msgid "Leave the file system intact"
 msgstr "ปล่อยระบบแฟ้มไว้ตามเดิม"
 
 #. Type: select
+#. Choices
+#. :sl5:
+#. Note to translators : Please keep your translations of the choices
+#. below a 65 columns limit (which means 65 characters
+#. in single-byte languages)
+#. Type: select
+#. Choices
+#. :sl5:
+#. Note to translators : Please keep your translations of each choice
+#. (separated by commas)
+#. below a 65 columns limit (which means 65 characters
+#. in single-byte languages)
+#: ../partconf.templates:4001 ../partconf.templates:5001
+msgid "Create swap space"
+msgstr "สร้างพื้นที่สลับ"
+
+#. Type: select
 #. Description
-#: ../partconf.templates:33
+#. :sl5:
+#. Type: select
+#. Description
+#. :sl5:
+#: ../partconf.templates:4002 ../partconf.templates:5002
+msgid "Action on ${PARTITION}:"
+msgstr "การกระทำใน ${PARTITION}:"
+
+#. Type: select
+#. Description
+#. :sl5:
+#: ../partconf.templates:4002
 msgid ""
 "This partition seems to already have a file system (${FSTYPE}). You can "
 "choose to leave this file system intact, create a new file system, or create "
@@ -108,24 +143,9 @@ msgstr ""
 "หรือสร้างระบบแฟ้มใหม่ หรือสร้างพื้นที่สลับก็ได้"
 
 #. Type: select
-#. Choices
-#. Note to translators : Please keep your translations of each choice
-#. (separated by commas)
-#. below a 65 columns limit (which means 65 characters
-#. in single-byte languages)
-#: ../partconf.templates:45
-msgid "Create swap space"
-msgstr "สร้างพื้นที่สลับ"
-
-#. Type: select
 #. Description
-#: ../partconf.templates:47
-msgid "Action on ${PARTITION}:"
-msgstr "การกระทำใน ${PARTITION}:"
-
-#. Type: select
-#. Description
-#: ../partconf.templates:47
+#. :sl5:
+#: ../partconf.templates:5002
 msgid ""
 "This partition does not seem to have a file system. You can create a file "
 "system or swap space on it."
@@ -137,8 +157,9 @@ msgstr "พาร์ทิชันนี้ดูเหมือนจะไม
 #. (separated by commas)
 #. below a 65 columns limit (which means 65 characters
 #. in single-byte languages)
+#. :sl5:
 #. "it" is a partition
-#: ../partconf.templates:62
+#: ../partconf.templates:6001
 msgid "Don't mount it"
 msgstr "ไม่ต้องเมานท์"
 
@@ -148,14 +169,26 @@ msgstr "ไม่ต้องเมานท์"
 #. (separated by commas)
 #. below a 65 columns limit (which means 65 characters
 #. in single-byte languages)
+#. :sl5:
 #. What's to be "entered manually" is a mount point
-#: ../partconf.templates:62
+#: ../partconf.templates:6001
 msgid "Enter manually"
 msgstr "ป้อนชื่อเอง"
 
 #. Type: select
 #. Description
-#: ../partconf.templates:63
+#. :sl5:
+#. Type: string
+#. Description
+#. :sl5:
+#: ../partconf.templates:6002 ../partconf.templates:7001
+msgid "Mount point for ${PARTITION}:"
+msgstr "ตำแหน่งเมานท์สำหรับ ${PARTITION}:"
+
+#. Type: select
+#. Description
+#. :sl5:
+#: ../partconf.templates:6002
 msgid ""
 "When a partition is mounted, it is available to the users of the system. You "
 "always need a root (\"/\") partition, and it's often good to have a separate "
@@ -166,63 +199,66 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../partconf.templates:70
-msgid "Mount point for ${PARTITION}:"
-msgstr "ตำแหน่งเมานท์สำหรับ ${PARTITION}:"
-
-#. Type: string
-#. Description
-#: ../partconf.templates:70
+#. :sl5:
+#: ../partconf.templates:7001
 msgid "Please enter where the partition should be mounted."
 msgstr "กรุณาป้อนตำแหน่งที่พาร์ทิชันนี้ควรจะเมานท์"
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:76
+#. :sl5:
+#: ../partconf.templates:8001
 msgid "Do you want to unmount the partitions so you can make changes?"
 msgstr "คุณต้องการเลิกเมานท์พาร์ทิชัน เพื่อที่จะได้เปลี่ยนแปลงได้หรือไม่?"
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:76
+#. :sl5:
+#: ../partconf.templates:8001
 msgid ""
 "Since the partitions have already been mounted, you cannot do any changes."
 msgstr "เนื่องจากพาร์ทิชันเหล่านี้ถูกเมานท์ไว้แล้ว คุณจึงยังเปลี่ยนแปลงอะไรไม่ได้"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:82
+#. :sl5:
+#: ../partconf.templates:9001
 msgid "Failed to unmount partitions"
 msgstr "เลิกเมานท์พาร์ทิชันไม่สำเร็จ"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:82
+#. :sl5:
+#: ../partconf.templates:9001
 msgid "An unexpected error occurred while unmounting the partitions."
 msgstr "เกิดข้อผิดพลาดขณะเลิกเมานท์พาร์ทิชัน"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:82
+#. :sl5:
+#: ../partconf.templates:9001
 msgid "The partition configuration process has been aborted."
 msgstr "จะยกเลิกกระบวนการตั้งค่าพาร์ทิชัน"
 
 #. Type: text
 #. Description
-#: ../partconf.templates:89
+#. :sl5:
+#: ../partconf.templates:10001
 #, no-c-format
 msgid "Create %s file system"
 msgstr "สร้างระบบแฟ้ม %s"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:93
+#. :sl5:
+#: ../partconf.templates:11001
 msgid "No root partition (/)"
 msgstr "ไม่มีพาร์ทิชันราก (/)"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:93
+#. :sl5:
+#: ../partconf.templates:11001
 msgid ""
 "You need a root partition. Please assign a partition to the root mount point "
 "before continuing."
@@ -230,25 +266,29 @@ msgstr "คุณต้องมีพาร์ทิชันราก กร�
 
 #. Type: error
 #. Description
-#: ../partconf.templates:99
+#. :sl5:
+#: ../partconf.templates:12001
 msgid "Partition assigned to ${MOUNT}"
 msgstr "พาร์ทิชันถูกกำหนดให้เมานท์ที่ ${MOUNT}"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:99
+#. :sl5:
+#: ../partconf.templates:12001
 msgid "Mounting a partition on ${MOUNT} makes no sense. Please change this."
 msgstr "ไม่มีเหตุผลที่จะเมานท์พาร์ทิชันที่ ${MOUNT} กรุณาเปลี่ยนใหม่"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:104
+#. :sl5:
+#: ../partconf.templates:13001
 msgid "Several partitions assigned to ${MOUNT}"
 msgstr "มีหลายพาร์ทิชันถูกกำหนดให้เมานท์ที่ ${MOUNT}"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:104
+#. :sl5:
+#: ../partconf.templates:13001
 msgid ""
 "You cannot assign several partitions to the same mount point. Please change "
 "all but one of them."
@@ -258,19 +298,22 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:111
+#. :sl5:
+#: ../partconf.templates:14001
 msgid "Ready to create file systems and mount partitions?"
 msgstr "พร้อมที่จะสร้างระบบแฟ้มและเมานท์พาร์ทิชันหรือยัง?"
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:111
+#. :sl5:
+#: ../partconf.templates:14001
 msgid "File systems will be created and partitions mounted."
 msgstr "จะสร้างระบบแฟ้ม และเมานท์พาร์ทิชัน"
 
 #. Type: boolean
 #. Description
-#: ../partconf.templates:111
+#. :sl5:
+#: ../partconf.templates:14001
 msgid ""
 "WARNING: This will destroy all data on the partitions you have assigned file "
 "systems to."
@@ -278,65 +321,85 @@ msgstr "คำเตือน: ข้อมูลทั้งหมดในพ�
 
 #. Type: error
 #. Description
-#: ../partconf.templates:119
+#. :sl5:
+#: ../partconf.templates:15001
 msgid "Failed to create swap space on ${PARTITION}"
 msgstr "ไม่สามารถสร้างพื้นที่สลับใน ${PARTITION}"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:119
+#. :sl5:
+#: ../partconf.templates:15001
 msgid "An error occurred when the swap space was created on ${PARTITION}."
 msgstr "เกิดข้อผิดพลาดขณะสร้างพื้นที่สลับใน ${PARTITION}"
 
 #. Type: error
 #. Description
-#: ../partconf.templates:127
-msgid "Failed to activate the swap space on ${PARTITION}"
-msgstr "ไม่สามารถเปิดใช้พื้นที่สลับใน ${PARTITION} ได้"
-
+#. :sl5:
 #. Type: error
 #. Description
-#: ../partconf.templates:127
-msgid "An error occurred when the swap space on ${PARTITION} was activated."
-msgstr "เกิดข้อผิดพลาดขณะเปิดใช้พื้นที่สลับใน ${PARTITION}"
-
+#. :sl5:
 #. Type: error
 #. Description
-#: ../partconf.templates:135
-msgid "Failed to create ${FS} file system on ${PARTITION}"
-msgstr "ไม่สามารถสร้างระบบแฟ้ม ${FS} ใน ${PARTITION}"
-
+#. :sl5:
 #. Type: error
 #. Description
-#: ../partconf.templates:135
-msgid ""
-"An error occurred when the ${FS} file system was created on ${PARTITION}."
-msgstr "เกิดข้อผิดพลาดขณะสร้างระบบแฟ้ม ${FS} ใน ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partconf.templates:143
-msgid "Failed to mount ${PARTITION} on ${MOUNT}"
-msgstr "ไม่สามารถเมานท์ ${PARTITION} ที่ ${MOUNT} ได้"
-
-#. Type: error
-#. Description
-#: ../partconf.templates:143
-msgid "An error occurred when ${PARTITION} was mounted on ${MOUNT}."
-msgstr "เกิดข้อผิดพลาดขณะเมานท์ ${PARTITION} ที่ ${MOUNT}"
-
-#. Type: error
-#. Description
-#: ../partconf.templates:143
+#. :sl5:
+#: ../partconf.templates:15001 ../partconf.templates:16001
+#: ../partconf.templates:17001 ../partconf.templates:18001
 msgid ""
 "Please check the error log on the third console or /var/log/messages for "
 "more information."
 msgstr ""
 "กรุณาตรวจสอบบันทึกข้อผิดพลาดในคอนโซลที่สาม หรือที่แฟ้ม /var/log/messages เพื่อดูข้อมูลเพิ่มเติม"
 
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:16001
+msgid "Failed to activate the swap space on ${PARTITION}"
+msgstr "ไม่สามารถเปิดใช้พื้นที่สลับใน ${PARTITION} ได้"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:16001
+msgid "An error occurred when the swap space on ${PARTITION} was activated."
+msgstr "เกิดข้อผิดพลาดขณะเปิดใช้พื้นที่สลับใน ${PARTITION}"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:17001
+msgid "Failed to create ${FS} file system on ${PARTITION}"
+msgstr "ไม่สามารถสร้างระบบแฟ้ม ${FS} ใน ${PARTITION}"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:17001
+msgid ""
+"An error occurred when the ${FS} file system was created on ${PARTITION}."
+msgstr "เกิดข้อผิดพลาดขณะสร้างระบบแฟ้ม ${FS} ใน ${PARTITION}"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:18001
+msgid "Failed to mount ${PARTITION} on ${MOUNT}"
+msgstr "ไม่สามารถเมานท์ ${PARTITION} ที่ ${MOUNT} ได้"
+
+#. Type: error
+#. Description
+#. :sl5:
+#: ../partconf.templates:18001
+msgid "An error occurred when ${PARTITION} was mounted on ${MOUNT}."
+msgstr "เกิดข้อผิดพลาดขณะเมานท์ ${PARTITION} ที่ ${MOUNT}"
+
 #. Type: text
 #. Description
 #. Main menu item
-#: ../partconf.templates:152
+#. :sl5:
+#: ../partconf.templates:19001
 msgid "Configure and mount partitions"
 msgstr "ตั้งค่าและเมานท์พาร์ทิชัน"

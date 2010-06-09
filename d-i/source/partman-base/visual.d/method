@@ -10,16 +10,14 @@ fs=$6
 path=$7
 name=$8
 
-if [ ! -f $id/method ]; then
-    printf "  "
-else
-    if [ -f $id/format ]; then
-	if [ -f $id/detected_filesystem ]; then
-	    printf " F"
+if [ -f $id/method ]; then
+	if [ -f $id/format ]; then
+		if [ -f $id/detected_filesystem ]; then
+			printf "F"
+		else
+			printf "f"
+		fi
 	else
-	    printf " f"
+		printf "K"
 	fi
-    else
-	printf " K"
-    fi
 fi

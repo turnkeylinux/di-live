@@ -1,6 +1,24 @@
 #!/bin/sh
 
+. /usr/share/debconf/confmodule
+
 [ -f /target/etc/fstab ] || exit 0
+
+escape () {
+	printf %s "$1" | \
+		sed 's/\\/\\134/g; s/ /\\040/g; s/	/\\011/g; s/\n/\\012/g'
+}
+
+# dev, mountpoint, type, options, dump, pass
+addfstab () {
+	printf "%-15s %-15s %-7s %-15s %-7s %s\n" \
+		"$(escape "$1")" "$(escape "$2")" \
+		"$(escape "$3")" "$(escape "$4")" \
+		"$5" "$6"
+}
+
+db_get partman/mount_style
+style="$RET"
 
 fstab=$(
 	for i in /lib/partman/fstab.d/*; do
@@ -13,8 +31,8 @@ fstab=$(
 	sort |
 	while read mp fs type options dump pass; do
 		case "$fs" in
-		    (/dev/disk/*|/dev/fd[0-9]*|/dev/mapper/*_crypt)
-			printf "%-15s %-15s %-7s %-15s %-7s %s\n" "$(mapdevfs $fs)" "${mp}" "$type" "$options" "$dump" "$pass"
+		    (/dev/disk/*|/dev/fd[0-9]*|/dev/mapper/*)
+			addfstab "$(mapdevfs $fs)" "${mp}" "$type" "$options" "$dump" "$pass"
 			;;
 		    (/*)
 			dev="/var/lib/partman/devices/$(echo "$fs" | sed 's:/:=:g')"
@@ -25,14 +43,24 @@ fstab=$(
 				else
 					options="loop,$options"
 				fi
-				printf "%-15s %-15s %-7s %-15s %-7s %s\n" "$loop" "${mp}" "$type" "$options" "$dump" "$pass"
+				addfstab "$loop" "${mp}" "$type" "$options" "$dump" "$pass"
 			else
-				uuid="$(PATH="/lib/udev:$PATH" vol_id -u $fs)"
-				if [ "$uuid" ]; then
-					printf "# %s\n" "$(mapdevfs $fs)"
-					printf "%-15s %-15s %-7s %-15s %-7s %s\n" "UUID=$uuid" "${mp}" "$type" "$options" "$dump" "$pass"
+				case "$mp" in
+				    (/*)	desc="$mp" ;;
+				    (*)		desc="$type" ;;
+				esac
+				if [ "$style" = label ] && \
+				   label="$(block-attr --label $fs)" && \
+				   [ "$label" ]; then
+					printf "# %s was on %s during installation\n" "$desc" "$(mapdevfs $fs)"
+					addfstab "LABEL=$label" "${mp}" "$type" "$options" "$dump" "$pass"
+				elif ([ "$style" = label ] || [ "$style" = uuid ]) && \
+				     uuid="$(block-attr --uuid $fs)" && \
+				     [ "$uuid" ]; then
+					printf "# %s was on %s during installation\n" "$desc" "$(mapdevfs $fs)"
+					addfstab "UUID=$uuid" "${mp}" "$type" "$options" "$dump" "$pass"
 				else
-					printf "%-15s %-15s %-7s %-15s %-7s %s\n" "$(mapdevfs $fs)" "${mp}" "$type" "$options" "$dump" "$pass"
+					addfstab "$(mapdevfs $fs)" "${mp}" "$type" "$options" "$dump" "$pass"
 				fi
 			fi
 			;;

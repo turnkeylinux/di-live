@@ -11,9 +11,5 @@ path=$7
 name=$8
 
 if [ -f $id/visual_mountpoint ]; then
-    mountpoint=$(cat $id/visual_mountpoint)
-else
-    mountpoint=''
+	printf "%s" "$(cat $id/visual_mountpoint)"
 fi
-
-printf " %-20s" "$mountpoint"

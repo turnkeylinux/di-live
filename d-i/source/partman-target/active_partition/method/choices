@@ -6,8 +6,6 @@ dev=$1
 id=$2
 cd $dev
 
-[ ! -f sataraid ] || exit 0
-
 if [ -f $id/method ]; then
 	method=$(cat $id/method)
 else
@@ -33,5 +31,4 @@ else
 fi
 
 db_metaget partman-target/text/method description
-RET=$(stralign -25 "$RET")
-printf "method\t%s%s\n" "${RET}" "$description"
+printf "method\t%s\${!TAB}%s\n" "${RET}" "$description"

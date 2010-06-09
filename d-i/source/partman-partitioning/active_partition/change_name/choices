@@ -15,7 +15,6 @@ if [ "$x" = yes ]; then
 	read_line x1 id x3 x4 x5 x6 old_name
 	close_dialog
 	db_metaget partman-partitioning/text/set_name description
-	RET=$(stralign -25 "$RET")
-	printf "setname\t%s%s\n" "${RET}" "$old_name"
+	printf "setname\t%s\${!TAB}%s\n" "${RET}" "$old_name"
 fi
 

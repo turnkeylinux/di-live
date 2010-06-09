@@ -1,26 +1,32 @@
 Template: partman-auto/progress/title
 Type: text
+# :sl1:
 _Description: Please wait...
 
 Template: partman-auto/progress/info
 Type: text
+# :sl1:
 _Description: Computing the new partitions...
 
 Template: partman-auto/no_recipe
 Type: error
+# :sl2:
 _Description: Failed to partition the selected disk
  This probably happened because the selected disk or free space is too
  small to be automatically partitioned.
 
 Template: partman-auto/autopartitioning_failed
 Type: error
+# :sl2:
 _Description: Failed to partition the selected disk
  This probably happened because there are too many (primary) partitions in
  the partition table.
 
 Template: partman-auto/init_automatically_partition
 Type: select
-Choices: ${CHOICES}
+Choices-C: ${CHOICES}
+Choices: ${DESCRIPTIONS}
+# :sl1:
 _Description: Partitioning method:
  The installer can guide you through partitioning a disk (using different
  standard schemes) or, if you prefer, you can do it manually. With guided
@@ -42,14 +48,18 @@ Description: for internal use; can be preseeded
 
 Template: partman-auto/automatically_partition
 Type: select
-Choices: ${CHOICES}
+Choices-C: ${CHOICES}
+Choices: ${DESCRIPTIONS}
+# :sl1:
 _Description: Partitioning method:
  If you choose guided partitioning for an entire disk, you will next be
  asked which disk should be used.
 
 Template: partman-auto/choose_recipe
 Type: select
-Choices: ${CHOICES}
+Choices-C: ${CHOICES}
+Choices: ${DESCRIPTIONS}
+# :sl1:
 #flag:comment:2
 # "Selected for partitioning" can be either an entire disk
 # of "the largest continuous free space" on an existing disk
@@ -68,6 +78,7 @@ _Description: Partitioning scheme:
 
 Template: partman-auto/unusable_space
 Type: error
+# :sl2:
 _Description: Unusable free space
  Partitioning failed because the chosen free space may not be used.
  There are probably too many (primary) partitions in the partition table.
@@ -86,22 +97,27 @@ Description: for internal use; can be preseeded
 
 Template: partman-auto/text/automatically_partition
 Type: text
+# :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Guided partitioning
 
 Template: partman-auto/text/use_biggest_free
 Type: text
+# :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Guided - use the largest continuous free space
 
 Template: partman-auto/text/use_device
 Type: text
+# :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Guided - use entire disk
 
 Template: partman-auto/select_disk
 Type: select
-Choices: ${CHOICES}
+Choices-C: ${CHOICES}
+Choices: ${DESCRIPTIONS}
+# :sl1:
 _Description: Select disk to partition:
  Note that all data on the disk you select will be erased, but not before
  you have confirmed that you really want to make the changes.
@@ -109,38 +125,45 @@ _Description: Select disk to partition:
 Template: partman-auto/select_disks
 Type: multiselect
 Choices: ${CHOICES}
+# :sl1:
 _Description: Select disk(s) to partition:
  Note that all data on the disk(s) you select will be erased, but not before
  you have confirmed that you really want to make the changes.
 
 Template: partman-auto/text/custom_partitioning
 Type: text
+# :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 # This is a method for partioning - as in guided (automatic) versus manual
 _Description: Manual
 
 Template: partman-auto/text/auto_free_space
 Type: text
+# :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Automatically partition the free space
 
 Template: partman-auto/text/atomic_scheme
 Type: text
+# :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: All files in one partition (recommended for new users)
 
 Template: partman-auto/text/home_scheme
 Type: text
+# :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Separate /home partition
 
 Template: partman-auto/text/multi_scheme
 Type: text
+# :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Separate /home, /usr, /var, and /tmp partitions
 
 Template: partman-auto/text/small_disk
 Type: text
+# :sl2:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 _Description: Small-disk (< 1GB) partitioning scheme
 

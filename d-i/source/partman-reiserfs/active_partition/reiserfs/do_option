@@ -18,7 +18,7 @@ case $1 in
 	fi
 	;;
     options)
-	select_mountoptions $dev $id partman-reiserfs/options
+	select_mountoptions $dev $id
 	;;
     label)
 	label=''

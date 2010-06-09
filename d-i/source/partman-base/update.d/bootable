@@ -14,21 +14,21 @@ name=$8
 cd $dev
 
 if [ $fs = free ]; then
-    rm -f $id/bootable
-else
-    bootable=no
-    open_dialog GET_FLAGS $id
-    while { read_line flag; [ "$flag" ]; }; do
-	if [ "$flag" = boot ]; then
-	    bootable=yes
-	fi
-    done
-    close_dialog
-    
-    if [ $bootable = yes ]; then
-	mkdir -p $id
-	>$id/bootable
-    else
 	rm -f $id/bootable
-    fi
+else
+	bootable=no
+	open_dialog GET_FLAGS $id
+	while { read_line flag; [ "$flag" ]; }; do
+		if [ "$flag" = boot ]; then
+			bootable=yes
+		fi
+	done
+	close_dialog
+
+	if [ $bootable = yes ]; then
+		mkdir -p $id
+		>$id/bootable
+	else
+		rm -f $id/bootable
+	fi
 fi

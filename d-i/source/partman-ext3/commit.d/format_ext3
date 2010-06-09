@@ -22,7 +22,7 @@ for dev in $DEVICES/*; do
 		  -a -f $id/acting_filesystem ] || continue
 		filesystem=$(cat $id/acting_filesystem)
 		case $filesystem in
-		    ext3)
+		    ext3|ext4)
 			if [ -f $id/formatted ] && \
 			   [ $id/formatted -nt $id/method ] && \
 			   ([ ! -f $id/filesystem ] || \
@@ -41,8 +41,8 @@ for dev in $DEVICES/*; do
 			close_dialog
 
 			RET=''
-			db_metaget partman/filesystem_short/ext3 description || RET=''
-			[ "$RET" ] || RET=ext3
+			db_metaget partman/filesystem_short/$filesystem description || RET=''
+			[ "$RET" ] || RET=$filesystem
 			db_subst $template TYPE "$RET"
 			db_subst $template PARTITION "$num"
 			db_subst $template DEVICE $(humandev $(cat device))
@@ -80,11 +80,16 @@ for dev in $DEVICES/*; do
 				# author, it is safer to format the loop file,
 				# rather than the device.
 				if [ -s loop ]; then
-				    device="$(cat loop)"
-				    force=-F
+					device="$(cat loop)"
+					force=-F
+				fi
+				options=''
+				db_get partman-ext3/lazy_itable_init
+				if [ "$RET" = true ]; then
+					options='-E lazy_itable_init'
 				fi
 				if log-output -t partman --pass-stdout \
-				   mkfs.ext3 $force "$device" $usage >/dev/null; then
+				   mkfs.$filesystem $options $force "$device" $usage >/dev/null; then
 					sync
 					status=OK
 				else
@@ -108,6 +113,10 @@ for dev in $DEVICES/*; do
 				fi
 			fi
 			if [ "$status" != OK ]; then
+				RET=''
+				db_metaget partman/filesystem_short/"$filesystem" description || RET=''
+				[ "$RET" ] || RET="$filesystem"
+				db_subst partman-ext3/create_failed TYPE "$RET"
 				db_subst partman-ext3/create_failed PARTITION "$num"
 				db_subst partman-ext3/create_failed DEVICE $(humandev $(cat device))
 				db_input critical partman-ext3/create_failed || true

@@ -2,7 +2,7 @@
 # packages/po/ro.po
 #
 # DO NOT MODIFY IT DIRECTLY : SUCH CHANGES WILL BE LOST
-# 
+#
 # translation of ro.po to Romanian
 # Romanian translation
 #
@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2007-12-08 22:48+0000\n"
+"POT-Creation-Date: 2008-01-26 07:32+0000\n"
 "PO-Revision-Date: 2007-10-26 02:25+0300\n"
 "Last-Translator: Eddy Petrișor <eddy.petrisor@gmail.com>\n"
 "Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
@@ -36,19 +36,32 @@ msgstr ""
 
 #. Type: text
 #. Description
-#: ../partman-auto.templates:3
+#. :sl1:
+#: ../partman-auto.templates:1001
 msgid "Please wait..."
 msgstr "Vă rugăm să așteptați..."
 
 #. Type: text
 #. Description
-#: ../partman-auto.templates:7
+#. :sl1:
+#: ../partman-auto.templates:2001
 msgid "Computing the new partitions..."
 msgstr "Se calculează partițiile noi..."
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:11
+#. :sl2:
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-auto.templates:3001 ../partman-auto.templates:4001
+msgid "Failed to partition the selected disk"
+msgstr "Eșec la partiționarea discului selectat"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-auto.templates:3001
 msgid ""
 "This probably happened because the selected disk or free space is too small "
 "to be automatically partitioned."
@@ -58,13 +71,8 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:17
-msgid "Failed to partition the selected disk"
-msgstr "Eșec la partiționarea discului selectat"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:17
+#. :sl2:
+#: ../partman-auto.templates:4001
 msgid ""
 "This probably happened because there are too many (primary) partitions in "
 "the partition table."
@@ -74,7 +82,18 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:24
+#. :sl1:
+#. Type: select
+#. Description
+#. :sl1:
+#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+msgid "Partitioning method:"
+msgstr "Metoda de partiționare:"
+
+#. Type: select
+#. Description
+#. :sl1:
+#: ../partman-auto.templates:5001
 msgid ""
 "The installer can guide you through partitioning a disk (using different "
 "standard schemes) or, if you prefer, you can do it manually. With guided "
@@ -88,13 +107,11 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:46
-msgid "Partitioning method:"
-msgstr "Metoda de partiționare:"
-
+#. :sl1:
 #. Type: select
 #. Description
-#: ../partman-auto.templates:46
+#. :sl1:
+#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
 msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
@@ -104,25 +121,28 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:61
+#. :sl1:
+#: ../partman-auto.templates:9001
 msgid "Partitioning scheme:"
 msgstr "Schema de partiționare:"
 
 #. Type: select
 #. Description
+#. :sl1:
 #. "Selected for partitioning" can be either an entire disk
 #. of "the largest continuous free space" on an existing disk
 #. TRANSLATORS, please take care to choose something appropriate for both
 #.
 #. It is followed by a variable giving the chosen disk, hence the colon
 #. at the end of the sentence. Please keep it.
-#: ../partman-auto.templates:61
+#: ../partman-auto.templates:9001
 msgid "Selected for partitioning:"
 msgstr "Selectat pentru partiționare:"
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:61
+#. :sl1:
+#: ../partman-auto.templates:9001
 msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
@@ -132,13 +152,15 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:71
+#. :sl2:
+#: ../partman-auto.templates:10001
 msgid "Unusable free space"
 msgstr "Spațiu liber inutilizabil"
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:71
+#. :sl2:
+#: ../partman-auto.templates:10001
 msgid ""
 "Partitioning failed because the chosen free space may not be used. There are "
 "probably too many (primary) partitions in the partition table."
@@ -148,34 +170,39 @@ msgstr ""
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:90
+#: ../partman-auto.templates:13001
 msgid "Guided partitioning"
 msgstr "Partiționare ghidată"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:95
+#: ../partman-auto.templates:14001
 msgid "Guided - use the largest continuous free space"
 msgstr "Ghidată - pe cel mai mare spațiu liber continuu"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:100
+#: ../partman-auto.templates:15001
 msgid "Guided - use entire disk"
 msgstr "Ghidată - pe întreg discul"
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:105
+#. :sl1:
+#: ../partman-auto.templates:16001
 msgid "Select disk to partition:"
 msgstr "Selectați discul de partiționat:"
 
 #. Type: select
 #. Description
-#: ../partman-auto.templates:105
+#. :sl1:
+#: ../partman-auto.templates:16001
 msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
@@ -186,13 +213,15 @@ msgstr ""
 
 #. Type: multiselect
 #. Description
-#: ../partman-auto.templates:112
+#. :sl1:
+#: ../partman-auto.templates:17001
 msgid "Select disk(s) to partition:"
 msgstr "Discul(urile) de partiționat:"
 
 #. Type: multiselect
 #. Description
-#: ../partman-auto.templates:112
+#. :sl1:
+#: ../partman-auto.templates:17001
 msgid ""
 "Note that all data on the disk(s) you select will be erased, but not before "
 "you have confirmed that you really want to make the changes."
@@ -203,44 +232,50 @@ msgstr ""
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #. This is a method for partioning - as in guided (automatic) versus manual
-#: ../partman-auto.templates:120
+#: ../partman-auto.templates:18001
 msgid "Manual"
 msgstr "Manuală"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:125
+#: ../partman-auto.templates:19001
 msgid "Automatically partition the free space"
 msgstr "Partiționează automat spațiul liber"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:130
+#: ../partman-auto.templates:20001
 msgid "All files in one partition (recommended for new users)"
 msgstr "Tot pe o partiție (recomandat pentru începători)"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:135
+#: ../partman-auto.templates:21001
 msgid "Separate /home partition"
 msgstr "Partiție /home separată"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:140
+#: ../partman-auto.templates:22001
 msgid "Separate /home, /usr, /var, and /tmp partitions"
 msgstr "Partiții /home, /usr, /var și /tmp separate"
 
 #. Type: text
 #. Description
+#. :sl2:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:145
+#: ../partman-auto.templates:23001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Schema de partiționare pentru discuri mici (< 1GO)"
 

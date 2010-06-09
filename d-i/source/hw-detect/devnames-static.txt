@@ -133,6 +133,7 @@ via-velocity:VIA Velocity PCI Ethernet
 wavelan_cs:Lucent WaveLAN/IEEE + compatibles 802.11
 wd:ISA WD 8003/8013 or SMC Elite/16 Ethernet
 winbond-840:Winbond W89c840 Ethernet
+xen-netfront:Xen Virtual Ethernet
 xirc2ps_cs:Xircom PCMCIA Ethernet
 xircom_cb:Xircom Cardbus Ethernet
 xircom_tulip_cb:Xircom CBE-100 Ethernet

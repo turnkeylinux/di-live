@@ -1,3 +1,590 @@
+debian-installer-utils (1.72ubuntu5) lucid; urgency=low
+
+  * Backport from trunk:
+    - list-devices: Consider virtio devices as disks (LP: #568143).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 23 Apr 2010 00:07:00 +0100
+
+debian-installer-utils (1.72ubuntu4) lucid; urgency=low
+
+  * user-params: Skip *-ubiquity and noninteractive command line options,
+    only used on the live CD.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 12 Feb 2010 16:04:35 +0000
+
+debian-installer-utils (1.72ubuntu3) lucid; urgency=low
+
+  * Backport from trunk:
+    - list-devices: Don't fall over if dmraid fails (thanks, Joel Ebel;
+      LP: #514595).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 04 Feb 2010 11:27:40 -0800
+
+debian-installer-utils (1.72ubuntu2) lucid; urgency=low
+
+  * Backport from trunk:
+    - list-devices: Add support for dmraid disks and partitions.  Exclude
+      disks and partitions that are already part of a dmraid set.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 27 Jan 2010 16:42:07 +0000
+
+debian-installer-utils (1.72ubuntu1) lucid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http;
+      the latter doesn't seem to exist in d-i.
+    - list-devices: new "mmc-partition" type for detecting partitions on MMC
+      devices.
+    - Don't include the battery subsystem on calls to udevadm trigger.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sun, 15 Nov 2009 17:38:02 -0600
+
+debian-installer-utils (1.72) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Upgrade to debhelper v7.
+  * Add a dummy initctl similar to the dummy start-stop-daemon, so that
+    attempts to control Upstart jobs (if Upstart is in use) won't do
+    anything.
+
+  [ Aurelien Jarno ]
+  * Also ship other terminfo on GNU/kFreeBSD, they are also used in some
+    cases (e.g. installation through ssh).
+
+  [ Chris Lamb ]
+  * Add "usb-partition" argument to list-devices for detecting partitions on
+    USB drives. Patch originally by Tormod Volden <debian.tormod@gmail.com>.
+    Option is to be used for creating Debian Live USB sticks.
+
+  [ Frans Pop ]
+  * apt-install: no longer disable Recommends; it is now a global setting.
+  * register-module: stop calling the obsolete update-modules.
+
+  [ Ryan Niebur ]
+  * add support for tftp to fetch-url for preseeding (Closes: 509723)
+
+  [ Frans Pop ]
+  * Remove no longer needed Lintian override for missing Standards-
+    Version field.
+
+  [ Updated translations ]
+  * Amharic (am.po) by Tegegne Tefera
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Asturian (ast.po) by Marcos Antonio Alvarez Costales
+  * Czech (cs.po) by Miroslav Kure
+  * Danish (da.po) by Ask Hjorth Larsen
+  * Estonian (et.po) by Mattias Põldaru
+  * Finnish (fi.po) by Esko Arajärvi
+  * Hindi (hi.po)
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Dutch (nl.po) by Frans Pop
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Vietnamese (vi.po) by Clytie Siddall
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 15 Nov 2009 23:27:59 +0000
+
+debian-installer-utils (1.71ubuntu1) lucid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http;
+      the latter doesn't seem to exist in d-i.
+    - list-devices: new "usb-partition" type for detecting partitions on USB
+      drives; new "mmc-partition" type for detecting partitions on MMC
+      devices.
+    - Don't include the battery subsystem on calls to udevadm trigger.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 12 Nov 2009 03:21:30 -0800
+
+debian-installer-utils (1.71) unstable; urgency=low
+
+  [ Luca Favatella ]
+  * Add 'cons25' terminfo file (used by kfreebsd-i386).
+  * Make di-utils-terminfo Architecture: any to avoid size increase.
+
+ -- Colin Watson <cjwatson@debian.org>  Sat, 18 Jul 2009 20:58:07 +0200
+
+debian-installer-utils (1.70ubuntu2) karmic; urgency=low
+
+  * list-devices: also allow platform-mxsdhci and platform-orion-ehci as
+    ID_PATH for mmc devices.
+
+ -- Loïc Minier <loic.minier@ubuntu.com>  Tue, 06 Oct 2009 23:03:39 +0100
+
+debian-installer-utils (1.70ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http;
+      the latter doesn't seem to exist in d-i.
+    - list-devices: new "usb-partition" type for detecting partitions on USB
+      drives; new "mmc-partition" type for detecting partitions on MMC
+      devices.
+    - Don't include the battery subsystem on calls to udevadm trigger.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 07 Jul 2009 12:52:08 +0100
+
+debian-installer-utils (1.70) unstable; urgency=low
+
+  [ Otavio Salvador ]
+  * di-utils-exit-installer: change template description to make it generic.
+
+  [ Colin Watson ]
+  * Change in-target and apt-install to pass through non-zero exit codes
+    unmolested rather than collapsing them to 1. In particular, this allows
+    cancellation exit codes from debconf-apt-progress to be detected by
+    apt-setup (see
+    http://lists.debian.org/debian-boot/2008/01/msg00094.html).
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 03 Jul 2009 14:26:17 +0100
+
+debian-installer-utils (1.69ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http;
+      the latter doesn't seem to exist in d-i.
+    - list-devices: new "usb-partition" type for detecting partitions on USB
+      drives; new "mmc-partition" type for detecting partitions on MMC
+      devices.
+    - Don't include the battery subsystem on calls to udevadm trigger.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 15 Jun 2009 17:29:47 +0100
+
+debian-installer-utils (1.69) unstable; urgency=low
+
+  * block-attr: The 'type' builtin doesn't seem to handle variable
+    assignments in quite the way I'd expected; work around this by exporting
+    PATH as a separate command in a subshell.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 02 Jun 2009 13:02:50 +0100
+
+debian-installer-utils (1.68ubuntu1) karmic; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http;
+      the latter doesn't seem to exist in d-i.
+    - list-devices: new "usb-partition" type for detecting partitions on USB
+      drives; new "mmc-partition" type for detecting partitions on MMC
+      devices.
+    - Don't include the battery subsystem on calls to udevadm trigger.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 12 May 2009 14:19:48 +0100
+
+debian-installer-utils (1.68) unstable; urgency=low
+
+  [ Frans Pop ]
+  * Add 'dumb' terminfo file (used by s390; possibly useful for serial console).
+
+  [ Colin Watson ]
+  * vol_id is being merged into blkid upstream. So that we don't have to
+    keep tracking this kind of thing in several different udebs, add a
+    block-attr wrapper that tries both.
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Md. Rezwan Shahid
+  * Estonian (et.po) by Mattias Põldaru
+  * Slovak (sk.po) by Ivan Masár
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 12 May 2009 11:28:15 +0100
+
+debian-installer-utils (1.67ubuntu1) karmic; urgency=low
+
+  [ Colin Watson ]
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http;
+      the latter doesn't seem to exist in d-i.
+    - list-devices: new "usb-partition" type for detecting partitions on USB
+      drives.
+
+  [ Evan Dandrea ]
+  * Don't include the battery subsystem on calls to udevadm trigger
+    (LP: #331883).
+
+  [ Loic Minier ]
+  * Add support for listing MMC partitions in list-devices; note that many MMC
+    devices in e.g. netbooks or screens are actually connected over USB
+    though; LP: #364604.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 29 Apr 2009 00:46:18 +0100
+
+debian-installer-utils (1.67) unstable; urgency=low
+
+  [ Frans Pop ]
+  * Remove myself as uploader.
+  * Append .conf extention to /etc/modprobe.d files, as required for
+    module-init-tools >= 3.7.
+
+  [ Updated translations ]
+  * Italian (it.po) by Milo Casagrande
+	
+ -- Otavio Salvador <otavio@debian.org>  Sun, 05 Apr 2009 17:53:18 -0300
+
+debian-installer-utils (1.66ubuntu1) jaunty; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http;
+      the latter doesn't seem to exist in d-i.
+    - list-devices: new "usb-partition" type for detecting partitions on USB
+      drives.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 27 Feb 2009 06:50:43 +0000
+
+debian-installer-utils (1.66) unstable; urgency=low
+
+  * start-shell: Use cdebconf-newt-terminal if available (closes: #412168).
+  * update-dev: Add a --settle switch to skip 'udevadm trigger', which can
+    cause problems in some cases (see e.g.
+    https://lists.ubuntu.com/archives/ubuntu-devel/2009-January/027260.html),
+    but is necessary in others (e.g. we just installed new modules so need
+    to get udev to reprocess old events in light of their presence).
+  * user-params: Exclude noshell, used by rootskel 1.74. See #504381.
+  * Don't ignore 'make clean' errors; we always have a Makefile.
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po) by Piarres Beobide
+  * Galician (gl.po) by Marce Villarino
+  * Hindi (hi.po) by Kumar Appaiah
+  * Kazakh (kk.po) by daur88
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Marathi (mr.po) by Sampada
+  * Swedish (sv.po) by Daniel Nylander
+  * Tagalog (tl.po) by Eric Pareja
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 27 Feb 2009 06:08:26 +0000
+
+debian-installer-utils (1.65ubuntu2) jaunty; urgency=low
+
+  * start-shell: Use cdebconf-newt-terminal if available (closes: #412168,
+    LP: #35400).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 16 Feb 2009 14:00:25 +0000
+
+debian-installer-utils (1.65ubuntu1) jaunty; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http;
+      the latter doesn't seem to exist in d-i.
+    - list-devices: new "usb-partition" type for detecting partitions on USB
+      drives.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 03 Nov 2008 14:08:16 +0000
+
+debian-installer-utils (1.65) unstable; urgency=low
+
+  * When looking for partitions, only consider device subdirectories that end
+    with a number to avoid matching directories such as power, slaves, etc.
+  * Add support for MMC/SD card devices (mmcblkX). The devices are matched on
+    name as udev does not return an ID_TYPE environment variable.
+
+ -- Frans Pop <fjp@debian.org>  Mon, 29 Sep 2008 20:25:52 +0200
+
+debian-installer-utils (1.64) unstable; urgency=low
+
+  [ Joey Hess ]
+  * update-dev: Add back support for userdevfs, which was removed mistakenly
+    as part of code cleanup in version 1.47.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bengali (bn.po) by Mahay Alam Khan (মাহে আলম খান)
+  * Bosnian (bs.po) by Armin Besirovic
+  * Catalan (ca.po) by Jordi Mallach
+  * Czech (cs.po) by Miroslav Kure
+  * Welsh (cy.po) by Jonathan Price
+  * Danish (da.po)
+  * German (de.po) by Jens Seidel
+  * Greek, Modern (1453-) (el.po)
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Hebrew (he.po) by Omer Zak
+  * Hindi (hi.po) by Kumar Appaiah
+  * Croatian (hr.po) by Josip Rodin
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Central Khmer (km.po) by KHOEM Sokhem
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Latvian (lv.po) by Aigars Mahinovs
+  * Macedonian (mk.po) by Arangel Angov
+  * Malayalam (ml.po) by Praveen|പ്രവീണണ്‍ A|എ
+  * Nepali (ne.po) by Shiva Prasad Pokharel
+  * Dutch (nl.po) by Frans Pop
+  * Norwegian Nynorsk (nn.po) by Håvard Korsvoll
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Polish (pl.po) by Bartosz Fenski
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Albanian (sq.po) by Elian Myftiu
+  * Serbian (sr.po) by Veselin Mijušković
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Turkish (tr.po) by Mert Dirik
+  * Ukrainian (uk.po) by Євгеній Мещеряков
+  * Vietnamese (vi.po) by Clytie Siddall
+  * Wolof (wo.po) by Mouhamadou Mamoune Mbacke
+  * Simplified Chinese (zh_CN.po) by Deng Xiyue
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 21 Sep 2008 21:54:41 -0300
+
+debian-installer-utils (1.63) unstable; urgency=low
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Belarusian (be.po) by Pavel Piatruk
+  * Dzongkha (dz.po) by Jurmey Rabgay(Bongop) (DIT,BHUTAN)
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Marathi (mr.po) by Sampada
+  * Norwegian Bokmål (nb.po) by Hans Fredrik Nordhaug
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Turkish (tr.po) by Mert Dirik
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 09 Aug 2008 16:32:56 -0300
+
+debian-installer-utils (1.62) unstable; urgency=low
+
+  [ Frans Pop ]
+  * fetch-url: fix initialization of TRY_REPEAT and TRY_CONTINUE variables.
+  * fetch-url-methods/http: don't attempt continuation retries if the file
+    does not already exist (i.e. not at least partially downloaded).
+
+  [ Philip Hands ]
+  * remove some code duplication introduced in Alex Owen's #491098 patch.
+
+  [ Jérémy Bobbio ]
+  * Ship start-shell in di-utils.  It allows a shell to be started either with
+    debconf-disconnect or with the terminal plugin for the GTK+ frontend.
+  * Use start-shell in di-utils-shell.postinst.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama M. Khayat
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Jens Seidel
+  * Esperanto (eo.po) by Felipe Castro
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Esko Arajärvi
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jacobo Tarrio
+  * Croatian (hr.po) by Josip Rodin
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Marathi (mr.po) by Sampada
+  * Dutch (nl.po) by Frans Pop
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 01 Aug 2008 14:45:27 -0300
+
+debian-installer-utils (1.61) unstable; urgency=low
+
+  * update-dev: remove obsolete fallbacks to udevtrigger and udevsettle.
+  * Apply patch from Alex Owen to update wget error checks to current busybox
+    wget output and similar checking for FTP. Closes: #491098.
+
+  [ Updated translations ]
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+
+ -- Frans Pop <fjp@debian.org>  Wed, 16 Jul 2008 20:06:49 +0200
+
+debian-installer-utils (1.60) unstable; urgency=low
+
+  * Use new "mountmedia floppy" command instead of mountfloppy.
+
+ -- Joey Hess <joeyh@debian.org>  Mon, 07 Jul 2008 14:09:33 -0400
+
+debian-installer-utils (1.59ubuntu3) intrepid; urgency=low
+
+  * list-devices: new "usb-partition" type for detecting partitions on
+    USB drives (LP: #234185)
+
+ -- Tormod Volden <debian.tormod@gmail.com>  Mon, 22 Sep 2008 00:31:05 +0200
+
+debian-installer-utils (1.59ubuntu2) intrepid; urgency=low
+
+  * Use /proc/self/fd/4 rather than /dev/fd/4 in fetch-url-methods/http; the
+    latter doesn't seem to exist in d-i.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 30 Jul 2008 13:48:12 +0100
+
+debian-installer-utils (1.59ubuntu1) intrepid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 23 Jun 2008 18:07:32 +0100
+
+debian-installer-utils (1.59) unstable; urgency=low
+
+  * Ensure that terminfo files do not have strange modes, as in the last
+    upload.
+
+ -- Joey Hess <joeyh@debian.org>  Fri, 20 Jun 2008 13:04:48 -0400
+
+debian-installer-utils (1.58) unstable; urgency=low
+
+  [ Evan Dandrea ]
+  * Avoid triggering sound events, which can cause audio to be played every
+    time update-dev runs; only relevant in live CD environments such as
+    Ubuntu's (LP: #178057).
+
+  [ Philip Hands ]
+  * Move fetch-url here from preseed.
+  * Take inspiration from cdebconf about wget -c.
+  * Add wrapper to wget that allows it to differentiate 404s as originally
+    suggested by Alex Owen (closes: #422088).
+  * Modify all fetch methods to return 4 for missing files.
+  * Incorporate loads of suggestions from Frans Pop.
+
+  [ Frans Pop ]
+  * in-target: accept --pass-stdout option and pass it on to log-output.
+    Allows more flexible use of in-target, especially for single commands
+    that need a correct target environment.
+  * chroot-setup.sh: allow to override the normal LANG setting.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Pavel Piatruk
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Marathi (mr.po) by Sampada
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+
+ -- Frans Pop <fjp@debian.org>  Tue, 17 Jun 2008 14:20:06 +0200
+
+debian-installer-utils (1.57ubuntu1) intrepid; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - user-params: Don't propagate vga=* or break=* to installed system.
+    - update-dev: Avoid triggering sound events, which can cause audio to be
+      played every time update-dev runs.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 08 May 2008 01:28:48 +0100
+
+debian-installer-utils (1.57) unstable; urgency=low
+
+  * Remove David Kimdon, Matt Kraai and Tollef Fog Heen as Uploaders with many
+    thanks for their past contributions.
+  * Unmount /cdrom during package installation even if the user did not scan
+    additional CDs as otherwise accessing the CD may fail. See: #474346.
+
+  [ Updated translations ]
+  * Malayalam (ml.po) by Praveen|പ്രവീണ്‍ A|എ
+  * Marathi (mr.po)
+
+ -- Frans Pop <fjp@debian.org>  Mon, 28 Apr 2008 07:11:36 +0200
+
+debian-installer-utils (1.56) unstable; urgency=low
+
+  * Make apt-install safe to be used during pkgsel when the installation CD
+    may already be unmounted in the D-I environment.
+  * user-params: also exclude debconf variables with '?=' (unset seen flag).
+    Update testset to catch that. Closes: #470892.
+
+  [ Updated translations ]
+  * Basque (eu.po) by Piarres Beobide
+  * Dutch (nl.po) by Frans Pop
+
+ -- Frans Pop <fjp@debian.org>  Wed, 19 Mar 2008 20:52:10 +0100
+
+debian-installer-utils (1.55) unstable; urgency=low
+
+  * chroot-setup.sh: also mount /dev/pts to avoid errors like:
+    Can not write log, openpty() failed (/dev/pts not mounted?)
+    Thanks to Petter Reinholdtsen for the patch. Closes: #463866.
+
+ -- Frans Pop <fjp@debian.org>  Sat, 16 Feb 2008 13:48:36 +0100
+
+debian-installer-utils (1.54) unstable; urgency=low
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Esko Arajärvi
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Turkish (tr.po) by Recai Oktaş
+  * Traditional Chinese (zh_TW.po) by Tetralet
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 15 Feb 2008 08:08:48 -0200
+
+debian-installer-utils (1.53) unstable; urgency=low
+
+  * apt-install: add -q option for apt-get which fixes the restarting of the
+    progress bar every time apt-install was called from base-installer.
+
+  [ Updated translations ]
+  * Latvian (lv.po) by Viesturs Zarins
+  * Panjabi (pa.po) by Amanpreet Singh Alam
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+
+ -- Frans Pop <fjp@debian.org>  Thu, 07 Feb 2008 08:12:51 +0100
+
+debian-installer-utils (1.52) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Spell "Debian" correctly in packages' descriptions
+  * Do not ignore errors from 'make clean' in the clean target
+
+  [ Updated translations ]
+  * Amharic (am.po) by tegegne tefera
+  * Korean (ko.po) by Changwoo Ryu
+  * Malayalam (ml.po) by Praveen|പരവീണ A|എ
+  * Panjabi (pa.po) by A S Alam
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 10 Jan 2008 07:38:00 +0100
+
+debian-installer-utils (1.51) unstable; urgency=low
+
+  [ Colin Watson ]
+  * user-params: Exclude ks=, used by kickseed.
+  * list-devices: udev 117 merged all udev tools into a single binary called
+    udevadm. Check for this and use it instead of udevinfo if available.
+  * update-dev: Likewise for udevtrigger and udevsettle.
+
+  [ Joey Hess ]
+  * chroot-setup.sh: Prepare for apt-listchanges being priority standard
+    by avoiding it trying to display changes in the d-i environment. (Could
+    happen if a package installation involves upgrading something else.)
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 03 Dec 2007 12:43:29 +0000
+
 debian-installer-utils (1.50ubuntu3) hardy; urgency=low
 
   * Backport from trunk:

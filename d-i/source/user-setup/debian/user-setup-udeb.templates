@@ -16,21 +16,23 @@ Template: passwd/user-uid
 Type: string
 Description: for internal use only
 
-# Allow preseeding the UID allocated to the first created user
+# Allow preseeding the groups to which the first created user is added
 Template: passwd/user-default-groups
 Type: string
-Default: adm audio cdrom dialout floppy video dip lpadmin plugdev fuse
+Default: adm cdrom dialout lpadmin plugdev sambashare
 Description: for internal use only
 
 Template: passwd/root-login
 Type: boolean
 Default: false
+# :sl1:
 _Description: Allow login as root?
  If you choose not to allow root to log in, then a user account will be
  created and given the power to become root using the 'sudo' command.
 
 Template: passwd/root-password
 Type: password
+# :sl1:
 _Description: Root password:
  You need to set a password for 'root', the system administrative
  account. A malicious or unqualified user with root access can have
@@ -41,10 +43,16 @@ _Description: Root password:
  A good password will contain a mixture of letters, numbers and punctuation
  and should be changed at regular intervals.
  .
+ The root user should not have an empty password. If you leave this
+ empty, the root account will be disabled and the system's initial user
+ account will be given the power to become root using the "sudo"
+ command.
+ .
  Note that you will not be able to see the password as you type it.
 
 Template: passwd/root-password-again
 Type: password
+# :sl1:
 _Description: Re-enter password to verify:
  Please enter the same root password again to verify that you have typed it
  correctly.
@@ -52,6 +60,7 @@ _Description: Re-enter password to verify:
 Template: passwd/make-user
 Type: boolean
 Default: true
+# :sl2:
 _Description: Create a normal user account now?
  It's a bad idea to use the root account for normal day-to-day activities,
  such as the reading of electronic mail, because even a small mistake can
@@ -64,6 +73,7 @@ _Description: Create a normal user account now?
 
 Template: passwd/user-fullname
 Type: string
+# :sl1:
 _Description: Full name for the new user:
  A user account will be created for you to use instead of the root
  account for non-administrative activities.
@@ -75,6 +85,7 @@ _Description: Full name for the new user:
 
 Template: passwd/username
 Type: string
+# :sl1:
 _Description: Username for your account:
  Select a username for the new account. Your first name is a reasonable choice.
  The username should start with a lower-case letter, which can be
@@ -82,6 +93,7 @@ _Description: Username for your account:
 
 Template: passwd/username-bad
 Type: error
+# :sl2:
 _Description: Invalid username
  The username you entered is invalid. Note that usernames must start with
  a lower-case letter, which can be followed by any combination of numbers
@@ -89,29 +101,34 @@ _Description: Invalid username
 
 Template: passwd/username-reserved
 Type: error
+# :sl2:
 _Description: Reserved username
  The username you entered (${USERNAME}) is reserved for use by the system.
  Please select a different one.
 
 Template: passwd/user-password
 Type: password
+# :sl1:
 _Description: Choose a password for the new user:
  A good password will contain a mixture of letters, numbers and punctuation
  and should be changed at regular intervals.
 
 Template: passwd/user-password-again
 Type: password
+# :sl1:
 _Description: Re-enter password to verify:
  Please enter the same user password again to verify you have typed it
  correctly.
 
 Template: user-setup/password-mismatch
 Type: error
+# :sl2:
 _Description: Password input error
  The two passwords you entered were not the same. Please try again.
 
 Template: user-setup/password-empty
 Type: error
+# :sl2:
 _Description: Empty password
  You entered an empty password, which is not allowed.
  Please choose a non-empty password.
@@ -119,6 +136,7 @@ _Description: Empty password
 Template: passwd/shadow
 Type: boolean
 Default: true
+# :sl2:
 _Description: Enable shadow passwords?
  Shadow passwords make your system more secure because nobody is able to
  view even encrypted passwords. The passwords are stored in a separate file
@@ -127,9 +145,72 @@ _Description: Enable shadow passwords?
 
 Template: debian-installer/user-setup-udeb/title
 Type: title
+# :sl1:
 _Description: Set up users and passwords
 
 Template: finish-install/progress/user-setup
 Type: text
 # finish-install progress bar item
+# :sl1:
 _Description: Setting users and passwords...
+
+Template: user-setup/password-weak
+Type: boolean
+# :sl2:
+_Description: Use weak password?
+ You entered a password that consists of less than eight characters, which
+ is considered too weak. You should choose a stronger password.
+
+Template: user-setup/encrypt-home
+Type: boolean
+Default: false
+# :sl2:
+_Description: Encrypt your home directory?
+ You may configure your home directory for encryption, such that any files
+ stored there remain private even if your computer is stolen.
+ .
+ The system will seamlessly mount your encrypted home directory each time
+ you login and automatically unmount when you log out of all active sessions.
+
+Template: user-setup/encrypt-home-failed
+Type: error
+# :sl2:
+_Description: Home directory encryption failed
+ The installer failed to set up home directory encryption. Your home
+ directory will be unencrypted after installation. This is probably a bug,
+ and you may wish to investigate and reinstall.
+ .
+ Check /var/log/syslog or see virtual console 4 for the details.
+
+# Allow preseeding whether to automatically log in the first created user
+Template: passwd/auto-login
+Type: boolean
+Default: false
+Description: for internal use only
+
+# Back up the pre-auto-login configuration files?
+Template: passwd/auto-login-backup
+Type: string
+Description: for internal use only
+
+# Allow preseeding whether to permit a blank password for created non-root user
+Template: user-setup/allow-password-empty
+Type: boolean
+Default: false
+Description: for internal use only
+
+# Allow preseeding whether to permit a weak password for created user
+Template: user-setup/allow-password-weak
+Type: boolean
+Default: false
+Description: for internal use only
+
+Template: user-setup/progress/wipe-swap
+Type: text
+_Description: Wiping swap space for security (this may take a while)...
+
+# Do not preseed this, it will be overwritten.
+Template: user-setup/force-encrypt-home
+Type: boolean
+Default: false
+Description: for internal use only

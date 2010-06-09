@@ -9,26 +9,6 @@ fi
 
 . /lib/partman/lib/auto-shared.sh
 
-dev_to_partman () {
-	local dev_name="$1"
-	
-	local mapped_dev_name="$(mapdevfs $dev_name)"
-	if [ -n "$mapped_dev_name" ]; then
-		dev_name="$mapped_dev_name"
-	fi
-
-	for dev in $DEVICES/*; do
-		[ -d "$dev" ] || continue
-
-		# mapdevfs both to allow for different ways to refer to the
-		# same device using devfs, and to allow user input in
-		# non-devfs form
-		if [ "$(mapdevfs $(cat $dev/device))" = "$dev_name" ]; then
-			echo $dev
-		fi
-	done
-}
-
 # Skip if no disks detected and don't run on S/390
 if [ -z "$(get_auto_disks)" ] || \
    [ "$(udpkg --print-architecture)" = s390 ]; then
@@ -76,13 +56,15 @@ if [ "$method" ] && [ "$disks" ]; then
 		;;
 	    lvm)
 		search-path autopartition-lvm || exit 1
+		ids=""
 		for disk in $disks; do
 			id=$(dev_to_partman "$disk") || true
-			if [ "$id" ]; then
-				autopartition-lvm "$id"
-				exit 0
-			fi
+			ids="${ids:+$ids }$id"
 		done
+		if [ "$ids" ]; then
+			autopartition-lvm "$ids"
+			exit 0
+		fi
 		exit 1
 		;;
 	    crypto)
@@ -99,12 +81,13 @@ if [ "$method" ] && [ "$disks" ]; then
 	    raid)
 		# Partition all the disks given ready for
 		# partman-auto-raid
+		ids=""
 		for disk in $disks; do
 			id=$(dev_to_partman "$disk") || true
-			if [ "$id" ]; then
-				autopartition "$id"
-			fi
+			ids="${ids:+$ids }$id"
 		done
+		auto_init_disks $ids || exit $?
+		autopartition "$ids"
 		exit 0
 		;;
 	    loop)
@@ -129,7 +112,7 @@ qfile=/lib/partman/automatically_partition/question
 echo "partman-auto/init_automatically_partition" >$qfile
 code=99 # signals a retry
 while [ $code = 99 ]; do
-	ask_user /lib/partman/automatically_partition 
+	ask_user /lib/partman/automatically_partition
 	code=$?
 done
 if [ $code -gt 0 ] && [ $code -lt 100 ]; then

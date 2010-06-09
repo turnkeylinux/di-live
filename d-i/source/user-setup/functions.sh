@@ -21,13 +21,7 @@ is_system_user () {
 }
 
 # Returns a true value if root already has a password.
-# OVERRIDE_ROOT_PASSWORD overrides this to assume that root doesn't have
-# a password
 root_password () {
-    if [ "$OVERRIDE_ROOT_PASSWORD" ]; then
-        return 1
-    fi
-
 	if ! [ -e $ROOT/etc/passwd ]; then
 		return 1
 	fi
@@ -37,17 +31,37 @@ root_password () {
 		return 0
 	fi
 
+	# Be more careful than usual about test arguments in the following,
+	# just in case (for example) the encrypted password string is "!".
+
 	if [ -e $ROOT/etc/shadow ] && \
-	   [ "`grep ^root: $ROOT/etc/shadow | cut -d : -f 2`" ] && \
-	   [ "`grep ^root: $ROOT/etc/shadow | cut -d : -f 2`" != '*' ]; then
+	   [ -n "`grep ^root: $ROOT/etc/shadow | cut -d : -f 2`" ] && \
+	   [ "x`grep ^root: $ROOT/etc/shadow | cut -d : -f 2`" != 'x*' ] && \
+	   [ "x`grep ^root: $ROOT/etc/shadow | cut -d : -f 2`" != 'x!' ]; then
 		return 0
 	fi
 	
 	if [ -e $ROOT/etc/passwd ] && \
-		[ "`grep ^root: $ROOT/etc/passwd | cut -d : -f 2`" ] && \
-		[ "`grep ^root: $ROOT/etc/passwd | cut -d : -f 2`" != 'x' ]; then
+		[ -n "`grep ^root: $ROOT/etc/passwd | cut -d : -f 2`" ] && \
+		[ "x`grep ^root: $ROOT/etc/passwd | cut -d : -f 2`" != 'xx' ]; then
 			return 0
 	fi
 
 	return 1
+}
+
+password_is_empty () {
+	db_get user-setup/allow-password-empty
+	if [ "$RET" = true ]; then
+		return 1 # don't consider this as empty if explicitly allowed
+	fi
+	[ -z "$1" ]
+}
+
+password_is_weak () {
+	db_get user-setup/allow-password-weak
+	if [ "$RET" = true ]; then
+		return 1 # don't consider this as weak if explicitly allowed
+	fi
+	[ "$(printf %s "$1" | wc -c)" -lt 8 ]
 }

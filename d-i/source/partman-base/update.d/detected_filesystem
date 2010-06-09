@@ -3,7 +3,7 @@
 . /lib/partman/lib/base.sh
 
 if [ -f /var/lib/partman/filesystems_detected ]; then
-    exit 0
+	exit 0
 fi
 
 dev=$1
@@ -18,17 +18,16 @@ name=$8
 cd $dev
 
 if [ $fs = free ]; then
-    rm -f $id/detected_filesystem
-else
-    open_dialog GET_FILE_SYSTEM $id
-    read_line filesystem
-    close_dialog
-    
-    if [ "$filesystem" = none ]; then
 	rm -f $id/detected_filesystem
-    else
-	mkdir -p $id
-	echo "$filesystem" >$id/detected_filesystem
-    fi  
-fi
+else
+	open_dialog GET_FILE_SYSTEM $id
+	read_line filesystem
+	close_dialog
 
+	if [ "$filesystem" = none ]; then
+		rm -f $id/detected_filesystem
+	else
+		mkdir -p $id
+		echo "$filesystem" >$id/detected_filesystem
+	fi
+fi

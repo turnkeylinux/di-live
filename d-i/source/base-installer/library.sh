@@ -6,23 +6,36 @@ NUM_STEPS=0
 export PB_POSITION=0
 export PB_WAYPOINT_LENGTH=0
 
-# used by kernel installation code
+# used for setting up apt
 PROTOCOL=
 MIRROR=
 DIRECTORY=
 COMPONENTS=
 DISTRIBUTION=
-INCLUDES=
-EXCLUDES=
+
+# used by kernel installation code
 KERNEL=
 KERNEL_LIST=/tmp/available_kernels.txt
 KERNEL_MAJOR="$(uname -r | cut -d . -f 1,2)"
 KERNEL_VERSION="$(uname -r | cut -d - -f 1)"
 KERNEL_ABI="$(uname -r | cut -d - -f 1,2)"
+KERNEL_FLAVOUR=$(uname -r | cut -d - -f 3-)
 MACHINE="$(uname -m)"
 NUMCPUS=$(cat /var/numcpus 2>/dev/null) || true
 CPUINFO=/proc/cpuinfo
-SPEAKUP=/proc/speakup
+MEMTOTAL=0
+if [ -x /usr/lib/base-installer/dmi-available-memory ]; then
+	MEMTOTAL="$(/usr/lib/base-installer/dmi-available-memory)"
+fi
+if [ "$MEMTOTAL" = 0 ]; then
+	MEMTOTAL="$(grep '^MemTotal:[[:space:]]*' /proc/meminfo | \
+		    sed 's/^MemTotal:[[:space:]]*//; s/ .*//')"
+fi
+
+# files and directories
+APT_SOURCES=/target/etc/apt/sources.list
+APT_CONFDIR=/target/etc/apt/apt.conf.d
+IT_CONFDIR=/target/etc/initramfs-tools/conf.d
 
 log() {
 	logger -t base-installer "$@"
@@ -66,7 +79,7 @@ run_waypoints () {
 
 update_progress () {
 	# Updates the progress bar to a new position within the space allocated
-	# for the current waypoint. 
+	# for the current waypoint.
 	NW_POS=$(($PB_POSITION + $PB_WAYPOINT_LENGTH * $1 / $2))
 	db_progress SET $NW_POS
 }
@@ -78,7 +91,7 @@ check_target () {
 	   ! grep -q '/target/ ' /proc/mounts; then
 		exit_error base-installer/no_target_mounted
 	fi
-	
+
 	# Warn about installation over an existing unix.
 	if [ -e /target/bin/sh -o -L /target/bin/sh ]; then
 		warning "attempting to install to unclean target"
@@ -114,7 +127,11 @@ setup_dev () {
 	mount --bind /target/dev /dev/.static/dev
 	# Mirror device nodes in D-I environment to target
 	mount --bind /dev /target/dev/
+}
 
+# TODO: as we no longer have to create devices here, the apt-install calls
+# could possibly better be done as post-base-installer hooks from partman
+install_filesystems () {
 	# RAID
 	if [ -e /proc/mdstat ] && grep -q ^md /proc/mdstat ; then
 		apt-install mdadm
@@ -132,7 +149,7 @@ setup_dev () {
 		fi
 
 		if type dmraid >/dev/null 2>&1; then
-			if [ "$(dmraid -s -c | grep -v "No RAID disks")" ]; then
+			if dmraid -s -c >/dev/null 2>&1; then
 				apt-install dmraid
 			fi
 		fi
@@ -144,23 +161,30 @@ setup_dev () {
 }
 
 configure_apt_preferences () {
-	[ ! -d /target/etc/apt/apt.conf.d ] && mkdir -p /target/etc/apt/apt.conf.d
-	
+	[ ! -d "$APT_CONFDIR" ] && mkdir -p "$APT_CONFDIR"
+
+	# Install Recommends?
+	if db_get base-installer/install-recommends && [ "$RET" = false ]; then
+		cat >$APT_CONFDIR/00InstallRecommends <<EOT
+APT::Install-Recommends "false";
+EOT
+	fi
+
 	# Make apt trust Debian CDs. This is not on by default (we think).
 	# This will be left in place on the installed system.
-	cat > /target/etc/apt/apt.conf.d/00trustcdrom <<EOT
+	cat > $APT_CONFDIR/00trustcdrom <<EOT
 APT::Authentication::TrustCDROM "true";
 EOT
 
 	# Avoid clock skew causing gpg verification issues.
 	# This file will be left in place until the end of the install.
-	cat > /target/etc/apt/apt.conf.d/00IgnoreTimeConflict << EOT
+	cat > $APT_CONFDIR/00IgnoreTimeConflict << EOT
 Acquire::gpgv::Options { "--ignore-time-conflict"; };
 EOT
 
 	if db_get debian-installer/allow_unauthenticated && [ "$RET" = true ]; then
 		# This file will be left in place until the end of the install.
-		cat > /target/etc/apt/apt.conf.d/00AllowUnauthenticated << EOT
+		cat > $APT_CONFDIR/00AllowUnauthenticated << EOT
 APT::Get::AllowUnauthenticated "true";
 Aptitude::CmdLine::Ignore-Trust-Violations "true";
 EOT
@@ -170,7 +194,7 @@ EOT
 apt_update () {
 	log-output -t base-installer chroot /target apt-get update \
 		|| apt_update_failed=$?
-	
+
 	if [ "$apt_update_failed" ]; then
 		warning "apt update failed: $apt_update_failed"
 	fi
@@ -178,7 +202,7 @@ apt_update () {
 
 install_extra () {
 	info "Installing queued packages into /target/."
-	
+
 	if [ -f /var/lib/apt-install/queue ] ; then
 		# We need to install these one by one in case one fails.
 		PKG_COUNT=`cat /var/lib/apt-install/queue | wc -w`
@@ -199,15 +223,18 @@ install_extra () {
 }
 
 pre_install_hooks () {
+	# avoid apt-install installing things; apt is not configured yet
+	rm -f $APT_SOURCES
+
 	partsdir="/usr/lib/base-installer.d"
 	if [ -d "$partsdir" ]; then
-		for script in `ls "$partsdir"/*`; do
+		for script in `ls "$partsdir"/* 2>/dev/null`; do
 			base=$(basename $script | sed 's/[0-9]*//')
 			if ! db_progress INFO base-installer/progress/$base; then
 				db_subst base-installer/progress/fallback SCRIPT "$base"
 				db_progress INFO base-installer/progress/fallback
 		    	fi
-	
+
 		    	if [ -x "$script" ] ; then
 				# be careful to preserve exit code
 				if log-output -t base-installer "$script"; then
@@ -223,9 +250,12 @@ pre_install_hooks () {
 }
 
 post_install_hooks () {
+	# locales will now be installed, so unset
+	unset IT_LANG_OVERRIDE
+
 	partsdir="/usr/lib/post-base-installer.d"
 	if [ -d "$partsdir" ]; then
-		scriptcount=`ls "$partsdir"/* | wc -l`
+		scriptcount=`ls "$partsdir"/* 2>/dev/null | wc -l`
 		scriptcur=0
 		for script in "$partsdir"/*; do
 			base="$(basename "$script" | sed 's/[0-9]*//')"
@@ -264,20 +294,17 @@ get_mirror_info () {
 		MIRROR=""
 		DIRECTORY="/cdrom/"
 		if [ -s /cdrom/.disk/base_components ]; then
-			COMPONENTS=`grep -v '^#' /cdrom/.disk/base_components | tr '\n' , | sed 's/,$//'`
+			if db_get apt-setup/restricted && [ "$RET" = false ]; then
+				COMPONENTS=`grep -v '^#' /cdrom/.disk/base_components | egrep -v '^(restricted|multiverse)$' | tr '\n' , | sed 's/,$//'`
+			else
+				COMPONENTS=`grep -v '^#' /cdrom/.disk/base_components | tr '\n' , | sed 's/,$//'`
+			fi
 		else
 			COMPONENTS="*"
 		fi
-		if [ -s /cdrom/.disk/base_include ]; then
-			INCLUDES=`grep -v '^#' /cdrom/.disk/base_include | tr '\n' , | sed 's/,$//'`
-		fi
-			
-		if [ -s /cdrom/.disk/base_exclude ]; then
-			EXCLUDES=`grep -v '^#' /cdrom/.disk/base_exclude | tr '\n' , | sed 's/,$//'`
-		fi
 
-		# Sanity check: an error reading /cdrom/.disk/base_components can cause
-		# ugly errors in debootstrap because $COMPONENTS will be empty.
+		# Sanity check: an error reading /cdrom/.disk/base_components can
+		# cause ugly errors in debootstrap because $COMPONENTS will be empty
 		if [ -z "$COMPONENTS" ]; then
 			exit_error base-installer/cannot_install
 		fi
@@ -289,7 +316,7 @@ get_mirror_info () {
 		fi
 
 		mirror_error=""
-		
+
 		db_get mirror/protocol || mirror_error=1
 		PROTOCOL="$RET"
 
@@ -299,7 +326,11 @@ get_mirror_info () {
 		db_get mirror/$PROTOCOL/directory || mirror_error=1
 		DIRECTORY="$RET"
 
-		COMPONENTS="main,restricted"
+		if db_get apt-setup/restricted && [ "$RET" = false ]; then
+			COMPONENTS="main"
+		else
+			COMPONENTS="main,restricted"
+		fi
 
 		if [ "$mirror_error" = 1 ] || [ -z "$PROTOCOL" ] || [ -z "$MIRROR" ]; then
 			exit_error base-installer/cannot_install
@@ -312,7 +343,7 @@ kernel_update_list () {
 	(set +e;
 	# Hack to get the metapackages in the right order; should be
 	# replaced by something better at some point.
-	chroot /target apt-cache search ^linux- | grep '^linux-\(amd64\|386\|686\|k7\|generic\|server\|virtual\|rt\|xen\|power\|cell\|itanium\|mckinley\|sparc\|hppa\)';
+	chroot /target apt-cache search ^linux- | grep '^linux-\(amd64\|386\|686\|k7\|generic\|server\|virtual\|preempt\|rt\|xen\|power\|cell\|ia64\|sparc\|hppa\|imx51\|dove\|omap\)';
 	chroot /target apt-cache search ^linux-image- | grep -v '^linux-image-2\.';
 	chroot /target apt-cache search ^linux-image-2. | sort -r) | \
 	cut -d" " -f1 | uniq > "$KERNEL_LIST.unfiltered"
@@ -384,11 +415,19 @@ pick_kernel () {
 		db_fset base-installer/kernel/image seen false || true
 
 		if [ -n "$FLAVOUR" ]; then
-			arch_kernel=$(arch_get_kernel "$FLAVOUR")
+			arch_kernel="$(arch_get_kernel "$FLAVOUR")"
+
+			# Hack to support selection of meta packages with a postfix
+			# added to the normal name (for updated kernels in stable).
+			if db_get base-installer/kernel/altmeta && [ "$RET" ]; then
+				arch_kernel="$(echo "$arch_kernel" | \
+					sed "s/$/-$RET/"; \
+					echo "$arch_kernel")"
+			fi
 		else
 			arch_kernel=""
 		fi
-	
+
 		got_arch_kernel=
 		if [ "$arch_kernel" ]; then
 			info "arch_kernel candidates: $arch_kernel"
@@ -442,7 +481,7 @@ install_linux () {
 		info "Not installing any kernel"
 		return
 	fi
-	
+
 	target_kernel_major="$(echo "$KERNEL" | sed 's/^kernel-image-//; s/^linux-image-//; s/-.*//' | cut -d . -f 1,2)"
 	case $target_kernel_major in
 		2.?)	;;
@@ -512,7 +551,7 @@ EOF
 
 		# initramfs-tools needs busybox-initramfs pre-installed (and
 		# only recommends it)
-		if [ "$rd_generator" = "initramfs-tools" ]; then
+		if [ "$rd_generator" = initramfs-tools ]; then
 			if ! log-output -t base-installer apt-install busybox-initramfs; then
 				db_subst base-installer/kernel/failed-package-install PACKAGE busybox-initramfs
 				exit_error base-installer/kernel/failed-package-install
@@ -527,7 +566,7 @@ EOF
 			db_subst base-installer/kernel/failed-package-install PACKAGE "$rd_generator"
 			exit_error base-installer/kernel/failed-package-install
 		fi
-		
+
 		# Figure out how to configure the ramdisk creation tool
 		# FJP 20070306: Possibly this can go completely
 		case "$rd_generator" in
@@ -549,6 +588,31 @@ EOF
 			rm $QUEUEFILE
 			FIRSTMODULE=0
 		done
+
+		# Select and set driver inclusion policy for initramfs-tools
+		if [ "$rd_generator" = initramfs-tools ]; then
+			if db_get base-installer/initramfs-tools/driver-policy && \
+			   [ -z "$RET" ]; then
+				# Get default for architecture
+				db_get base-installer/kernel/linux/initramfs-tools/driver-policy
+				db_set base-installer/initramfs-tools/driver-policy "$RET"
+			fi
+			db_input medium base-installer/initramfs-tools/driver-policy || true
+			if ! db_go; then
+				db_progress stop
+				exit 10
+			fi
+
+			db_get base-installer/initramfs-tools/driver-policy
+			if [ "$RET" != most ]; then
+				cat > $IT_CONFDIR/driver-policy <<EOF
+# Driver inclusion policy selected during installation
+# Note: this setting overrides the value set in the file
+# /etc/initramfs-tools/initramfs.conf
+MODULES=$RET
+EOF
+			fi
+		fi
 	else
 		info "Not installing an initrd generator."
 	fi
@@ -573,7 +637,7 @@ EOF
 		# Set up a default resume partition.
 		case $rd_generator in
 		    initramfs-tools)
-			resumeconf=/target/etc/initramfs-tools/conf.d/resume
+			resumeconf=$IT_CONFDIR/resume
 			;;
 		    *)
 			resumeconf=
@@ -585,8 +649,8 @@ EOF
 		else
 			resume=
 		fi
-		if [ "$resume" ] && PATH="/lib/udev:$PATH" type vol_id >/dev/null 2>&1; then
-			resume_uuid="$(PATH="/lib/udev:$PATH" vol_id -u "$resume" || true)"
+		if [ "$resume" ]; then
+			resume_uuid="$(block-attr --uuid "$resume" || true)"
 			if [ "$resume_uuid" ]; then
 				resume="UUID=$resume_uuid"
 			fi
@@ -603,7 +667,7 @@ EOF
 		# Set PReP root partition
 		if [ "$ARCH" = powerpc ] && [ "$SUBARCH" = prep ] && \
 		   [ "$rd_generator" = initramfs-tools ]; then
-			prepconf=/target/etc/initramfs-tools/conf.d/prep-root
+			prepconf=$IT_CONFDIR/prep-root
 			rootpart_devfs=$(mount | grep "on /target " | cut -d' ' -f1)
 			rootpart=$(mapdevfs $rootpart_devfs)
 			if [ -f $prepconf ] && grep -q "^#* *ROOT=" $prepconf; then
@@ -618,10 +682,46 @@ EOF
 	# Advance progress bar to 30% of allocated space for install_linux
 	update_progress 30 100
 
+	# Always ignore Recommends for the kernel; we don't want to install
+	# bootloaders at this point
+	cat >$APT_CONFDIR/00InstallRecommendsKernel <<EOT
+APT::Install-Recommends "false";
+EOT
+
 	# Install the kernel
 	db_subst base-installer/section/install_kernel_package SUBST0 "$KERNEL"
 	db_progress INFO base-installer/section/install_kernel_package
 	log-output -t base-installer apt-install "$KERNEL" || kernel_install_failed=$?
+
+	rm -f $APT_CONFDIR/00InstallRecommendsKernel
+
+	db_get base-installer/kernel/headers
+	if [ "$RET" = true ]; then
+		# Advance progress bar to 80% of allocated space for install_linux
+		update_progress 80 100
+
+		# Install kernel headers if possible
+		HEADERS="$(echo "$KERNEL" | sed 's/linux\(-image\|\)/linux-headers/')"
+		db_subst base-installer/section/install_kernel_package SUBST0 "$HEADERS"
+		db_progress INFO base-installer/section/install_kernel_package
+		log-output -t base-installer apt-install "$HEADERS" || true
+	fi
+
+	db_get base-installer/kernel/backports-modules
+	if [ "$RET" ]; then
+		BACKPORTS_MODULES="$RET"
+
+		# Advance progress bar to 85% of allocated space for install_linux
+		update_progress 85 100
+
+		# Install kernel backports modules if possible
+		for backports_module in $BACKPORTS_MODULES; do
+			LBM="$(echo "$KERNEL" | sed "s/linux\\(-image\\|\\)/linux-backports-modules-$backports_module-$DISTRIBUTION/")"
+			db_subst base-installer/section/install_kernel_package SUBST0 "$LBM"
+			db_progress INFO base-installer/section/install_kernel_package
+			log-output -t base-installer apt-install "$LBM" || true
+		done
+	fi
 
 	# Advance progress bar to 90% of allocated space for install_linux
 	update_progress 90 100
@@ -642,6 +742,12 @@ get_resume_partition () {
 	biggest_partition=
 	while read filename type size other; do
 		if [ "$type" != partition ]; then
+			continue
+		fi
+		if [ ! -e "$filename" ]; then
+			continue
+		fi
+		if [ "${filename#/dev/ramzswap}" != "$filename" ]; then
 			continue
 		fi
 		if [ "$size" -gt "$biggest_size" ]; then
@@ -713,32 +819,31 @@ addmodule_yaird () {
 	fi
 }
 
+# Assumes the file protocol is only used for CD (image) installs
 configure_apt () {
-	# let apt inside the chroot see the cdrom
-	if [ "$PROTOCOL" = file ] ; then
+	if [ "$PROTOCOL" = file ]; then
+		rm -f /var/lib/install-cd.id
+
+		# Let apt inside the chroot see the cdrom
 		if [ -n "$DIRECTORY" ]; then
 			umount /target$DIRECTORY 2>/dev/null || true
 			if [ ! -e /target/$DIRECTORY ]; then
 				mkdir -p /target/$DIRECTORY
 			fi
 		fi
+
+		# The bind mount is left mounted, for future apt-install
+		# calls to use.
 		if ! mount -o bind $DIRECTORY /target$DIRECTORY; then
 			warning "failed to bind mount /target$DIRECTORY"
 		fi
-		# The bind mount is left mounted, for future apt-install
-		# calls to use.
-	fi
 
-	# sources.list uses space to separate the components, not comma
-	COMPONENTS=`echo $COMPONENTS | tr , " "`
-	APTSOURCE="$PROTOCOL://$MIRROR$DIRECTORY"
-
-	# This assumes the file protocol is only used for CD (image) installs
-	if [ "$PROTOCOL" = file ] ; then
 		# Make apt-cdrom and apt not unmount/mount CD-ROMs;
-		# needed to support CD images (hd-media installs)
-		# This file will be left in place until the end of the install.
-		cat > /target/etc/apt/apt.conf.d/00NoMountCDROM << EOT
+		# needed to support CD images (hd-media installs).
+		# This file will be left in place until the end of the
+		# install for hd-media installs, but is removed again
+		# during apt-setup for installs using real CD/DVDs.
+		cat > $APT_CONFDIR/00NoMountCDROM << EOT
 APT::CDROM::NoMount "true";
 Acquire::cdrom {
   mount "/cdrom";
@@ -746,24 +851,35 @@ Acquire::cdrom {
     Mount  "true";
     UMount "true";
   };
+  AutoDetect "false";
 }
 EOT
+
 		# Scan CD-ROM or CD image; start with clean sources.list
-		: > /target/etc/apt/sources.list
-		if ! log-output -t base-installer chroot /target apt-cdrom add ; then
+		# Prevent apt-cdrom from prompting
+		: > $APT_SOURCES
+		if ! log-output -t base-installer \
+		     chroot /target apt-cdrom add </dev/null; then
 			error "error while running apt-cdrom"
 		fi
+		if db_get apt-setup/restricted && [ "$RET" = false ]; then
+			sed -i 's/ \(restricted\|multiverse\)//g' $APT_SOURCES
+		fi
 	else
-		echo "deb $APTSOURCE $DISTRIBUTION $COMPONENTS" > /target/etc/apt/sources.list
-		echo "deb $APTSOURCE $DISTRIBUTION-updates $COMPONENTS" >> /target/etc/apt/sources.list
+		# sources.list uses space to separate the components, not comma
+		COMPONENTS=$(echo $COMPONENTS | tr , " ")
+		APTSOURCE="$PROTOCOL://$MIRROR$DIRECTORY"
+
+		echo "deb $APTSOURCE $DISTRIBUTION $COMPONENTS" > $APT_SOURCES
+		echo "deb $APTSOURCE $DISTRIBUTION-updates $COMPONENTS" >> $APT_SOURCES
 		if db_get apt-setup/security_host; then
 			SECMIRROR="$RET"
 		else
 			SECMIRROR="$MIRROR"
 		fi
-		echo "deb $PROTOCOL://$MIRROR/ubuntu $DISTRIBUTION-security $COMPONENTS" >> /target/etc/apt/sources.list
+		echo "deb $PROTOCOL://$SECMIRROR/ubuntu $DISTRIBUTION-security $COMPONENTS" >> $APT_SOURCES
 		if db_get apt-setup/proposed && [ "$RET" = true ]; then
-			echo "deb $APTSOURCE $DISTRIBUTION-proposed $COMPONENTS" >> /target/etc/apt/sources.list
+			echo "deb $APTSOURCE $DISTRIBUTION-proposed $COMPONENTS" >> $APT_SOURCES
 		fi
 	fi
 }

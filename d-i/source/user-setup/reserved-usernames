@@ -60,12 +60,15 @@ asterisk
 vpopmail
 vchkpw
 
+# Ubuntu creates the admin group and adds the first user to it in order to
+# grant them sudo privileges.
+admin
+
 # Other miscellaneous system users/groups created by common packages. While
 # it's useful to add things here that people might run into, it's not
 # absolutely critical; the worst that will happen is that the installation
 # will fail at some later point.
 Debian-exim
-admin
 bind
 crontab
 cupsys

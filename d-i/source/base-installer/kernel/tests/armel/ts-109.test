@@ -1,13 +1,25 @@
-subarch orion
+subarch orion5x
+cpuinfo ts-109.cpuinfo
 majors 2.6
-flavour orion
-kernel-2.6 linux-image-2.6-orion
+flavour orion5x
+kernel-2.6 \
+  linux-orion5x \
+  linux-image-orion5x
 usable \
-  linux-image-2.6-orion \
-  linux-image-2.6.25-1-orion
+  linux-image-orion5x \
+  linux-image-2.6.25-1-orion5x
 unusable \
-  linux-image-2.6-iop32x \
-  linux-image-2.6-netwinder \
-  linux-image-2.6-rpc \
-  linux-image-2.6-s3c2410 \
-  linux-image-2.6-ixp4xx
+  linux-imx51 \
+  linux-iop32x \
+  linux-ixp4xx \
+  linux-kirkwood \
+  linux-netwinder \
+  linux-rpc \
+  linux-s3c2410 \
+  linux-image-imx51 \
+  linux-image-iop32x \
+  linux-image-kirkwood \
+  linux-image-netwinder \
+  linux-image-rpc \
+  linux-image-s3c2410 \
+  linux-image-ixp4xx

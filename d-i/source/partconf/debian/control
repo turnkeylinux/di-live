@@ -1,13 +1,15 @@
 Source: partconf
 Section: debian-installer
 Priority: standard
-Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
-Uploaders: Martin Sjogren <sjogren@debian.org>, Frans Pop <fjp@debian.org>
-Build-Depends: debhelper (>> 5.0.22), libdebconfclient0-dev (>= 0.47), libparted1.7-dev (>= 1.7.1-1), po-debconf (>= 0.5.3), libdebian-installer4-dev (>= 0.41)
-XS-Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/partconf
+Maintainer: Ubuntu Installer Team <ubuntu-installer@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Uploaders: Frans Pop <fjp@debian.org>
+Build-Depends: debhelper (>> 5.0.22), libdebconfclient0-dev (>= 0.47), libparted0-dev (>= 2.2), po-debconf (>= 0.5.3), libdebian-installer4-dev (>= 0.41)
+XS-Original-Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/partconf
+Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/partconf/ubuntu
 
 Package: partconf
-Architecture: m68k mips
+Architecture: mips
 Depends: ${shlibs:Depends}, partconf-mkfstab
 Recommends: partitioned-harddrives
 Provides: made-filesystems, made-swapspace, mounted-partitions, created-fstab
@@ -32,5 +34,5 @@ Priority: optional
 Depends: ${shlibs:Depends}
 XC-Package-Type: udeb
 Description: debian-installer utility for creating fstab file
- Helper program for creating fstab files in the new installed debian
+ Helper program for creating fstab files in the new installed Debian
  system.
