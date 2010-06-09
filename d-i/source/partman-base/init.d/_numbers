@@ -1,4 +1,3 @@
-01 early_command
 10 umount_target
 30 parted
 35 dump
