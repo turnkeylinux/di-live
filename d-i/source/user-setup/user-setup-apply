@@ -14,7 +14,7 @@ else
 	log=
 fi
 
-. /usr/lib/user-setup/functions.sh
+. /usr/lib/di-live/user-setup/functions.sh
 
 # Set a password, via chpasswd.
 # Use a heredoc rather than echo, to avoid the password
