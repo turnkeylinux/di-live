@@ -13,7 +13,7 @@ d-i/source/debian-installer-utils/list-devices bin
 d-i/source/debian-installer-utils/log-output bin
 d-i/source/debian-installer-utils/mapdevfs bin
 d-i/source/debian-installer-utils/register-module bin
-d-i/source/debian-installer-utils/register-module.post-base-installer usr/lib/di-live/debian-installer-utils
+d-i/source/debian-installer-utils/post-base-installer.d usr/lib/di-live/debian-installer-utils
 d-i/source/debian-installer-utils/search-path bin
 d-i/source/debian-installer-utils/update-dev bin
 d-i/source/debian-installer-utils/user-params bin
