@@ -8,6 +8,7 @@ compat/apt-install usr/lib/di-live/compat
 compat/udpkg usr/lib/di-live/compat
 
 # debian-installer-utils
+d-i/source/debian-installer-utils/block-attr bin
 d-i/source/debian-installer-utils/debconf-get bin
 d-i/source/debian-installer-utils/list-devices bin
 d-i/source/debian-installer-utils/log-output bin
