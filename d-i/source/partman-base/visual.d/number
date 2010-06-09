@@ -14,5 +14,5 @@ name=$8
 
 if [ "$fs" != free ]; then
 	db_metaget partman/text/number description
-	printf "\${!ALIGN=RIGHT}$RET" $num
+	printf " $RET" $num
 fi
