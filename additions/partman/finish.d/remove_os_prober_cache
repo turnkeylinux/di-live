@@ -1,4 +1,0 @@
-#! /bin/sh
-set -e
-rm -rf /var/lib/ubiquity/os-prober-cache \
-       /var/lib/ubiquity/linux-boot-prober-cache

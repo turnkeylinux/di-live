@@ -1,7 +1,0 @@
-#! /bin/sh -e
-
-. /usr/share/debconf/confmodule
-
-db_set ubiquity/partman-rebuild-cache ALL
-
-exit 0
