@@ -1,0 +1,21 @@
+====================
+v0.9.3 Release Notes
+====================
+
+- upgraded all d-i source code for Lucid compatibility.
+
+- updated build depends.
+- updated depends: grub -> grub-pc (ie. grub2).
+- including block-attr (required by partman).
+- allow weak passwords (annoying, UX is wrong).
+
+- re-applied bugfixes to updated code.
+    - guided partitioning loops endlessly.
+    - user-setup OVERRIDE_ROOT_PASSWORD, paths.
+    - replaced casper/filesystem.size test.
+    - partman di-live templates.
+
+- bugfix: removed alignment tags from partman (requires cdebconf).
+- bugfix: d-i template compilation.
+- bugfix: removed partman early_command (currently no preseed support).
+
