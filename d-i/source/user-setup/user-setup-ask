@@ -70,7 +70,12 @@ while :; do
 				# identical, or if empty.
 				db_get passwd/root-password
 				ROOT_PW="$RET"
-				if [ -z "$ROOT_PW" ]; then
+				if password_is_empty "$ROOT_PW"; then
+					db_fset user-setup/password-empty seen false
+					db_input critical user-setup/password-empty
+					STATE=1
+					continue
+				elif [ -z "$ROOT_PW" ]; then
 					db_set passwd/root-login false
 					STATE=1
 					continue

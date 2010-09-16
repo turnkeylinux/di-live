@@ -43,11 +43,6 @@ _Description: Root password:
  A good password will contain a mixture of letters, numbers and punctuation
  and should be changed at regular intervals.
  .
- The root user should not have an empty password. If you leave this
- empty, the root account will be disabled and the system's initial user
- account will be given the power to become root using the "sudo"
- command.
- .
  Note that you will not be able to see the password as you type it.
 
 Template: passwd/root-password-again
@@ -193,7 +188,7 @@ Template: passwd/auto-login-backup
 Type: string
 Description: for internal use only
 
-# Allow preseeding whether to permit a blank password for created non-root user
+# Allow preseeding whether to permit a blank password for root / non-root user
 Template: user-setup/allow-password-empty
 Type: boolean
 Default: false
