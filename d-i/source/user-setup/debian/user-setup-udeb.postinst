@@ -1,9 +1,0 @@
-#!/bin/sh
-set -e
-CODE=0
-user-setup-ask /target || CODE="$?"
-if [ "$CODE" = 30 ]; then
-	exit 10
-else
-	exit $CODE
-fi

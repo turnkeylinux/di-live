@@ -45,9 +45,3 @@ d-i/source/live-installer/live-installer lib/live-installer
 # base-installer
 d-i/source/base-installer/library.sh usr/lib/base-installer
 
-# user-setup
-d-i/source/user-setup/user-setup-ask usr/lib/di-live/user-setup
-d-i/source/user-setup/user-setup-apply usr/lib/di-live/user-setup
-d-i/source/user-setup/functions.sh usr/lib/di-live/user-setup
-d-i/source/user-setup/reserved-usernames usr/lib/di-live/user-setup
-
