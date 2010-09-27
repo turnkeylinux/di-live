@@ -1,0 +1,15 @@
+Source: partman-auto-lvm
+Section: debian-installer
+Priority: optional
+Maintainer: Ubuntu Installer Team <ubuntu-installer@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Uploaders: Anton Zinoviev <zinoviev@debian.org>, Joey Hess <joeyh@debian.org>
+Build-Depends: debhelper (>= 4.2.0), po-debconf (>= 0.5.0)
+XS-Debian-Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/partman/partman-auto-lvm
+Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/partman-auto-lvm/ubuntu
+
+Package: partman-auto-lvm
+XC-Package-Type: udeb
+Architecture: all
+Depends: ${misc:Depends}, partman-base (>= 125), partman-auto (>= 84), partman-lvm (>= 62), di-utils (>= 1.66)
+Description: Automatically partition storage devices using LVM

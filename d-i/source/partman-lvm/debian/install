@@ -1,0 +1,2 @@
+lib lib/partman
+post-base-installer.d usr/lib

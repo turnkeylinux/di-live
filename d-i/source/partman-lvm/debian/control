@@ -1,0 +1,16 @@
+Source: partman-lvm
+Section: debian-installer
+Priority: optional
+Maintainer: Ubuntu Installer Team <ubuntu-installer@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Uploaders: Anton Zinoviev <zinoviev@debian.org>, Joey Hess <joeyh@debian.org>, Christian Perrier <bubulle@debian.org>, Max Vozeler <xam@debian.org>
+Build-Depends: debhelper (>= 7.0.8), dh-di, po-debconf (>= 0.5.0)
+XS-Original-Vcs-Svn: svn://svn.debian.org/d-i/trunk/packages/partman/partman-lvm
+Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/partman-lvm/ubuntu
+
+Package: partman-lvm
+XC-Package-Type: udeb
+Architecture: all
+Depends: ${misc:Depends}, partman-base (>= 134), cdebconf-udeb (>= 0.133), di-utils (>= 1.14), md-modules, lvm2-udeb
+Description: Adds support for LVM to partman
+

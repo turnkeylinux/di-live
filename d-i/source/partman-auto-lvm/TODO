@@ -1,0 +1,7 @@
+- support for using all available free space for lvm is broken according to
+  https://bugs.launchpad.net/ubuntu/+source/partman-auto-lvm/+bug/21242
+  and has been removed until it can be fixed
+
+- before creating new partitions on the disk, we need to check if there are
+  older lvm stuff on the disk and wipe it away or ask the user if we can wipe it,
+  otherwise the result is "interesting".

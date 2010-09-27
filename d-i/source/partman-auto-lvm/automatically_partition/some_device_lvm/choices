@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. /lib/partman/lib/base.sh
+. /lib/partman/lib/recipes.sh
+
+# If there are no recipies that support LVM then don't offer auto-lvm
+recipedir=$(get_recipedir)
+if ! grep -q "\$lvmok" $recipedir/*; then
+	exit 0
+fi
+
+db_metaget partman-auto-lvm/text/choice description
+printf "lvm\t$RET\n"

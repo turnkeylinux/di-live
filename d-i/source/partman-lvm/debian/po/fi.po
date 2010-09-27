@@ -1,0 +1,1024 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# Finnish messages for debian-installer.
+# Copyright (C) 2003 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+# Thanks to laatu@lokalisointi.org.
+#
+#
+# Tommi Vainikainen <thv+debian@iki.fi>, 2003 - 2004.
+# Tapio Lehtonen <tale@debian.org>, 2004 - 2006.
+# Esko Arajärvi <edu@iki.fi>, 2007 - 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
+"POT-Creation-Date: 2009-07-24 12:28+0000\n"
+"PO-Revision-Date: 2009-10-14 23:35+0300\n"
+"Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:1001
+msgid "Unallocated physical volumes:"
+msgstr "Käyttämättömät fyysiset levyniteet:"
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:2001
+msgid "Volume groups:"
+msgstr "Levynideryhmät:"
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:3001
+msgid "Uses physical volume:"
+msgstr "Käyttää fyysistä levynidettä:"
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:4001
+msgid "Provides logical volume:"
+msgstr "Tarjoaa loogisen levyniteen:"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. "none" here == "No Physical Volumes"
+#: ../partman-lvm.templates:5001
+msgid ""
+"none[ Do not translate what's inside the brackets and just put the "
+"translation for the word \"none\" in your language without any brackets. "
+"This \"none\" relates to \"Physical Volumes:\" ]"
+msgstr "ei mikään"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. "none" here == "No Volume Groups"
+#: ../partman-lvm.templates:6001
+msgid ""
+"none[ Do not translate what's inside the brackets and just put the "
+"translation for the word \"none\" in your language without any brackets. "
+"This \"none\" relates to \"Volume Groups:\" ]"
+msgstr "ei mikään"
+
+#. Type: text
+#. Description
+#. Type: text
+#. Description
+#. :sl3:
+#. Main menu item
+#. Use infinitive form
+#: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
+msgid "Configure the Logical Volume Manager"
+msgstr "Tee levyniteiden hallintaohjelman asetukset."
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Translators: use the acronym for "Physical Volume" in your language here
+#: ../partman-lvm.templates:8001
+msgid "PV"
+msgstr "FLN"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. What is "in use" is a partition
+#: ../partman-lvm.templates:9001
+msgid "In use by LVM volume group ${VG}"
+msgstr "Osio käytössä LVM:n levynideryhmässä ${VG}"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Menu entry
+#. Use infinitive form
+#: ../partman-lvm.templates:10001
+msgid "Display configuration details"
+msgstr "Näytä asetukset yksityiskohtaisesti"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Menu entry
+#. Use infinitive form
+#: ../partman-lvm.templates:11001
+msgid "Create volume group"
+msgstr "Luo levynideryhmä"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Menu entry
+#. Use infinitive form
+#: ../partman-lvm.templates:12001
+msgid "Delete volume group"
+msgstr "Poista levynideryhmä"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Menu entry
+#. Use infinitive form
+#: ../partman-lvm.templates:13001
+msgid "Extend volume group"
+msgstr "Kasvata levynideryhmää"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Menu entry
+#. Use infinitive form
+#: ../partman-lvm.templates:14001
+msgid "Reduce volume group"
+msgstr "Pienennä levynideryhmää"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Menu entry
+#. Use infinitive form
+#: ../partman-lvm.templates:15001
+msgid "Create logical volume"
+msgstr "Luo looginen nide"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Menu entry
+#. Use infinitive form
+#: ../partman-lvm.templates:16001
+msgid "Delete logical volume"
+msgstr "Poista looginen nide"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. Menu entry
+#. Use infinitive form
+#: ../partman-lvm.templates:17001
+msgid "Finish"
+msgstr "Lopeta"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:18001
+msgid "Write the changes to disks and configure LVM?"
+msgstr "Tallenna muutokset levyille ja tee LVM:n asetukset?"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:18001
+msgid ""
+"Before the Logical Volume Manager can be configured, the current "
+"partitioning scheme has to be written to disk.  These changes cannot be "
+"undone."
+msgstr ""
+"Ennen kuin levyniteiden hallintaohjelman asetukset voidaan tehdä, on "
+"muutokset tallennettava levyille. Näitä muutoksia ei voi perua."
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:18001
+msgid ""
+"After the Logical Volume Manager is configured, no additional changes to the "
+"partitioning scheme of disks containing physical volumes are allowed during "
+"the installation. Please decide if you are satisfied with the current "
+"partitioning scheme before continuing."
+msgstr ""
+"Kun levyniteiden hallintaohjelman asetukset on tehty, ei ole enää "
+"mahdollista asennuksen aikana tehdä lisämuutoksia niiden levyjen osioille, "
+"joissa fyysiset levyniteet sijaitsevat. Varmista, että nyt tehdyt levyosiot "
+"ovat sellaiset kuin haluat."
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:19001
+msgid "Keep current partition layout and configure LVM?"
+msgstr "Säilytä nykyiset levyosiot ja tee LVM:n asetukset?"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:19001
+msgid ""
+"After the Logical Volume Manager is configured, no additional changes to the "
+"partitions in the disks containing physical volumes are allowed. Please "
+"decide if you are satisfied with the current partitioning scheme in these "
+"disks before continuing."
+msgstr ""
+"Kun levyniteiden hallintaohjelman asetukset on tehty, ei ole enää "
+"mahdollista tehdä lisämuutoksia niille levyille, joissa fyysiset levyniteet "
+"sijaitsevat. Varmista, että nyt tehdyt levyosiot ovat sellaiset kuin haluat."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:20001
+msgid "LVM configuration failure"
+msgstr "Levyniteiden hallintaohjelman asetuksissa on virhe"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:20001
+msgid "An error occurred while writing the changes to the disks."
+msgstr "Tallennettaessa muutoksia levyille tapahtui virhe."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:20001
+msgid "Logical Volume Manager configuration has been aborted."
+msgstr "Levyniteiden hallintaohjelman (LVM) asetusten teko on keskeytetty."
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:21001
+msgid "physical volume for LVM"
+msgstr "fyysinen levynide LVM:lle"
+
+#. Type: text
+#. Description
+#. :sl3:
+#. keep it short (ideally a 3-letter acronym)
+#: ../partman-lvm.templates:22001
+msgid "lvm"
+msgstr "LVM"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:24001
+msgid "LVM configuration action:"
+msgstr "LVM:n muokkaustoiminnot:"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:24001
+msgid "Summary of current LVM configuration:"
+msgstr "Yhteenveto käytössä olevista LVM:n asetuksista:"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:24001
+msgid ""
+" Free Physical Volumes:  ${FREE_PVS}\n"
+" Used Physical Volumes:  ${USED_PVS}\n"
+" Volume Groups:          ${VGS}\n"
+" Logical Volumes:        ${LVS}"
+msgstr ""
+" Vapaat fyysiset levyniteet:  ${FREE_PVS}\n"
+" Käytössä olevat FLN:t:       ${USED_PVS}\n"
+" Levynideryhmät:              ${VGS}\n"
+" Loogiset levyniteet:         ${LVS}"
+
+#. Type: note
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:25001
+msgid "Current LVM configuration:"
+msgstr "Käytössä olevat LVM:n asetukset:"
+
+#. Type: multiselect
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:26001
+msgid "Devices for the new volume group:"
+msgstr "Uuden levynideryhmän laitteet:"
+
+#. Type: multiselect
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:26001
+msgid "Please select the devices for the new volume group."
+msgstr "Valitse uuden levynideryhmän laitteet."
+
+#. Type: multiselect
+#. Description
+#. :sl3:
+#. Type: multiselect
+#. Description
+#. :sl3:
+#. Type: multiselect
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:26001 ../partman-lvm.templates:39001
+#: ../partman-lvm.templates:44001
+msgid "You can select one or more devices."
+msgstr "Voit valita yhden tai useamman laitteen."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:27001
+msgid "Volume group name:"
+msgstr "Levynideryhmän nimi:"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:27001
+msgid "Please enter the name you would like to use for the new volume group."
+msgstr "Mitä nimeä haluat käyttää uudelle levynideryhmälle."
+
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:28001 ../partman-lvm.templates:40001
+#: ../partman-lvm.templates:45001
+msgid "No physical volumes selected"
+msgstr "Yhtään levynidettä ei ole valittuna"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:28001
+msgid ""
+"No physical volumes were selected. The creation of a new volume group has "
+"been aborted."
+msgstr ""
+"Levyniteitä ei ollut valittuna. Uuden levynideryhmän luonti keskeytettiin."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:29001
+msgid "No volume group name entered"
+msgstr "Levynideryhmän nimeä ei annettu"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:29001
+msgid "No name for the volume group has been entered. Please enter a name."
+msgstr "Levynideryhmälle ei ole annettu nimeä. Anna jokin nimi."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:30001
+msgid "Volume group name already in use"
+msgstr "Levynideryhmän nimi on jo käytössä"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:30001
+msgid ""
+"The selected volume group name is already in use. Please choose a different "
+"name."
+msgstr "Valittu levynideryhmän nimi on jo käytössä. Valitse jokin muu nimi."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:31001
+msgid "Volume group name overlaps with device name"
+msgstr "Levynideryhmän nimi on jo laitenimenä"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:31001
+msgid ""
+"The selected volume group name overlaps with an existing device name. Please "
+"choose a different name."
+msgstr ""
+"Valittu levynideryhmän nimi on jo käytössä laitenimenä. Valitse jokin muu "
+"nimi."
+
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Tapahtui virhe pienennettäessä levynideryhmää"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:32001
+msgid "The volume group ${VG} could not be created."
+msgstr "Levynideryhmää ${VG} ei voitu muodostaa."
+
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
+#: ../partman-lvm.templates:53001 ../partman-lvm.templates:57001
+#: ../partman-lvm.templates:60001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr ""
+"Tarkista tiedosto /var/log/syslog tai katso tarkempaa tietoa "
+"virtuaalikonsolista 4."
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:33001
+msgid "Volume group to delete:"
+msgstr "Poistettava levynideryhmä:"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:33001
+msgid "Please select the volume group you wish to delete."
+msgstr "Valitse poistettava levynideryhmä."
+
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
+#: ../partman-lvm.templates:42001 ../partman-lvm.templates:47001
+msgid "No volume group found"
+msgstr "Ei löytynyt yhtään levynideryhmää"
+
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
+#: ../partman-lvm.templates:42001
+msgid "No volume group has been found."
+msgstr "Yhtään levynideryhmää ei löytynyt."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:34001
+msgid "The volume group may have already been deleted."
+msgstr "Levynideryhmä saattaa olla jo poistettu."
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:35001
+msgid "Really delete the volume group?"
+msgstr "Haluatko varmasti poistaa levynideryhmän?"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:35001
+msgid "Please confirm the ${VG} volume group removal."
+msgstr "Vahvista levynideryhmän ${VG} poisto."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:36001
+msgid "Error while deleting volume group"
+msgstr "Tapahtui virhe poistettaessa levynideryhmä."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:36001
+msgid ""
+"The selected volume group could not be deleted. One or more logical volumes "
+"may currently be in use."
+msgstr ""
+"Valittua levynideryhmää ei voitu poistaa. Yksi tai useampia loogisia "
+"levyniteitä voi olla parhaillaan käytössä."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:37001
+msgid "No volume group can be deleted."
+msgstr "Mitään levynideryhmää ei voida poistaa."
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:38001
+msgid "Volume group to extend:"
+msgstr "Kasvatettava levynideryhmä:"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:38001
+msgid "Please select the volume group you wish to extend."
+msgstr "Valitse kasvatettava levynideryhmä."
+
+#. Type: multiselect
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:39001
+msgid "Devices to add to the volume group:"
+msgstr "Levynideryhmään lisättävät laitteet:"
+
+#. Type: multiselect
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:39001
+msgid "Please select the devices you wish to add to the volume group."
+msgstr "Valitse levynideryhmään lisättävät laitteet."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:40001
+msgid ""
+"No physical volumes were selected. Extension of the volume group has been "
+"aborted."
+msgstr ""
+"Yhtään levynidettä ei ollut valittuna. Levynideryhmän kasvattaminen "
+"keskeytettiin."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:41001
+msgid "Error while extending volume group"
+msgstr "Tapahtui virhe kasvatettaessa levynideryhmää"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:41001
+msgid ""
+"The physical volume ${PARTITION} could not be added to the selected volume "
+"group."
+msgstr "Levynidettä ${PARTITION} ei voitu lisätä valittuun levynideryhmään."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:42001
+msgid "No volume group can be reduced."
+msgstr "Minkään levynideryhmän kokoa ei voida pienentää."
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:43001
+msgid "Volume group to reduce:"
+msgstr "Pienennettävä levynideryhmä:"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:43001
+msgid "Please select the volume group you wish to reduce."
+msgstr "Valitse pienennettävä levynideryhmä."
+
+#. Type: multiselect
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:44001
+msgid "Devices to remove from the volume group:"
+msgstr "Levynideryhmästä poistettavat laitteet:"
+
+#. Type: multiselect
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:44001
+msgid "Please select the devices you wish to remove from the volume group."
+msgstr "Valitse levynideryhmästä poistettavat laitteet."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:45001
+msgid ""
+"No physical volumes were selected. Reduction of the volume group was aborted."
+msgstr ""
+"Yhtään fyysistä levynidettä ei ollut valittuna. Levynideryhmän pienentäminen "
+"keskeytettiin."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
+msgid ""
+"The physical volume ${PARTITION} could not be removed from the selected "
+"volume group."
+msgstr "Levynidettä ${PARTITION} ei voitu lisätä valittuun levynideryhmään."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:47001
+msgid ""
+"No free volume groups were found for creating a new logical volume. Please "
+"create more physical volumes and volume groups, or reduce an existing volume "
+"group."
+msgstr ""
+"Ei löytynyt yhtään vapaata levynideryhmää, josta luotaisiin uusi looginen "
+"nide. Luo lisää fyysisiä niteitä ja levynideryhmiä, tai pienennä olemassa "
+"olevaa levynideryhmää."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:48001
+msgid "Logical volume name:"
+msgstr "Loogisen levyniteen nimi:"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:48001
+msgid "Please enter the name you would like to use for the new logical volume."
+msgstr "Nimeä uusi levynideryhmä."
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:49001
+msgid "Volume group:"
+msgstr "Levynideryhmä:"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:49001
+msgid ""
+"Please select the volume group where the new logical volume should be "
+"created."
+msgstr "Valitse mihin levynideryhmään uusi looginen levynide luodaan."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:50001
+msgid "No logical volume name entered"
+msgstr "Loogisen levyniteen nimeä ei annettu"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:50001
+msgid "No name for the logical volume has been entered.  Please enter a name."
+msgstr "Loogiselle levyniteelle ei annettu nimeä. Anna jokin nimi."
+
+#. Type: error
+#. Description
+#. :sl3:
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:51001 ../partman-lvm.templates:53001
+msgid "Error while creating a new logical volume"
+msgstr "Tapahtui virhe luotaessa uutta levynidettä"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:51001
+msgid ""
+"The name ${LV} is already in use by another logical volume on the same "
+"volume group (${VG})."
+msgstr ""
+"Nimi ${LV} on jo käytössä toisessa levyniteessä samassa levynideryhmässä "
+"(${VG})."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:52001
+msgid "Logical volume size:"
+msgstr "Loogisen levyniteen koko:"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:52001
+msgid ""
+"Please enter the size of the new logical volume. The size may be entered in "
+"the following formats: 10K (Kilobytes), 10M (Megabytes), 10G (Gigabytes), "
+"10T (Terabytes). The default unit is Megabytes."
+msgstr ""
+"Anna uuden loogisen levyniteen koko jossain seuraavista muodoista: 10K "
+"(kilotavua), 10M (Megatavua), 10G (Gigatavua), 10T (Teratavua). "
+"Oletusyksikkö on Megatavua."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:53001
+msgid ""
+"Unable to create a new logical volume (${LV}) on ${VG} with the new size "
+"${SIZE}."
+msgstr ""
+"Uutta levynidettä (${LV}) kooltaan ${SIZE} ei voitu luoda ryhmään ${VG}."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:54001
+msgid "No logical volume found"
+msgstr "Ei löytynyt yhtään levynidettä"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:54001
+msgid ""
+"No logical volume has been found.  Please create a logical volume first."
+msgstr "Ei löytynyt yhtään loogista levynidettä. Luo ensin looginen levynide."
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:55001
+msgid "Logical volume:"
+msgstr "Looginen levynide:"
+
+#. Type: select
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:55001
+msgid "Please select the logical volume to delete."
+msgstr "Valitse poistettava looginen levynide."
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:56001
+msgid "in VG ${VG}"
+msgstr "levynideryhmässä ${VG}"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:57001
+msgid "Error while deleting the logical volume"
+msgstr "Tapahtui virhe poistettaessa levynide"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:57001
+msgid "The logical volume (${LV}) on ${VG} could not be deleted."
+msgstr "Levynidettä (${LV}) levynideryhmässä ${VG} ei voitu poistaa."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:58001
+msgid "No usable physical volumes found"
+msgstr "Ei löytynyt yhtään käytettävissä olevaa levynidettä."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:58001
+msgid ""
+"No physical volumes (i.e. partitions) were found in your system. All "
+"physical volumes may already be in use. You may also need to load some "
+"required kernel modules or re-partition the hard drives."
+msgstr ""
+"Yhtään levynidettä (t.s. levyosiota) ei löytynyt laitteistosta. Kaikki "
+"levyniteet ovat ehkä jo käytössä. Mahdollisesti on ladattava tarvittavia "
+"ytimen moduuleita tai tehtävä kiintolevyjen levyosiot uudestaan."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:59001
+msgid "Logical Volume Manager not available"
+msgstr "Levyniteiden hallintaohjelmaa ei ole käytettävissä"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:59001
+msgid ""
+"The current kernel doesn't support the Logical Volume Manager. You may need "
+"to load the lvm-mod module."
+msgstr ""
+"Ajossa oleva ydin ei tue levyniteiden hallintaohjelmaa (LVM). Moduuli lvm-"
+"mod olisi ehkä ladattava."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:60001
+msgid "Error while initializing physical volume"
+msgstr "Tapahtui virhe alustettaessa fyysistä levynidettä"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:60001
+msgid "The physical volume ${PV} could not be initialized."
+msgstr "Fyysistä levynidettä ${PV} ei voitu alustaa."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:61001
+msgid "Invalid logical volume or volume group name"
+msgstr "Loogisen levyniteen tai levynideryhmän nimi ei kelpaa."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:61001
+msgid ""
+"Logical volume or volume group names may only contain alphanumeric "
+"characters, hyphen, plus, period and underscore. They must be 128 characters "
+"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
+"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+msgstr ""
+"Loogisten levyniteiden tai levynideryhmien nimissä saa olla vain kirjaimia, "
+"numeroita, tavuviiva, plusmerkki, piste ja alaviiva. Nimen enimmäispituus on "
+"128 merkkiä. Nimi ei saa alkaa tavuviivalla. Nimet ”.” ja ”..” eivät kelpaa. "
+"Lisäksi loogisten levyniteiden nimen alku ei saa olla ”snapshot”."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:61001
+msgid "Please choose a different name."
+msgstr "Valitse jokin muu nimi."
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:62001
+msgid "Remove existing logical volume data?"
+msgstr ""
+"Poistetaanko kaikki levyn vanhoja loogisia levyniteitä koskevat tiedot?"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:62001
+msgid ""
+"The selected device already contains the following LVM logical volumes, "
+"volume groups and physical volumes which are about to be removed:"
+msgstr ""
+"Valitulla laitteella on jo seuraavat loogiset levyniteet, levynideryhmät ja "
+"fyysiset levyniteet, joita ollaan poistamassa:"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:62001
+msgid "Logical volume(s) to be removed: ${LVTARGETS}"
+msgstr "Poistettavat loogiset levyniteet: ${LVTARGETS}"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:62001
+msgid "Volume group(s) to be removed: ${VGTARGETS}"
+msgstr "Poistettavat levynideryhmät: ${VGTARGETS}"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:62001
+msgid "Physical volume(s) to be removed: ${PVTARGETS}"
+msgstr "Poistettavat fyysiset levyniteet: ${PVTARGETS}"
+
+#. Type: boolean
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:62001
+msgid ""
+"Note that this will also permanently erase any data currently on the logical "
+"volumes."
+msgstr ""
+"Huomaa, että tämä myös poistaa peruuttamattomasti kaiken tiedon loogisilta "
+"levyniteiltä."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:63001
+msgid "Unable to automatically remove LVM data"
+msgstr "LVM-tietojen automaattinen poisto ei onnistu"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:63001
+msgid ""
+"Because the volume group(s) on the selected device also consist of physical "
+"volumes on other devices, it is not considered safe to remove its LVM data "
+"automatically. If you wish to use this device for partitioning, please "
+"remove its LVM data first."
+msgstr ""
+"Koska valitulla laitteella oleviin levynideryhmiin kuuluu toisissa "
+"laitteissa olevia fyysisiä niteitä, niiden LVM-tietojen automaattista "
+"poistamista ei pidetä turvallisena. Jos haluat käyttää tätä laitetta "
+"osiointiin, poista sen LVM-tiedot ensin."
+
+#. Type: note
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:64001
+msgid "Logical Volume Management"
+msgstr "Loogisten levyniteiden hallinta (LVM)"
+
+#. Type: note
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:64001
+msgid ""
+"A common situation for system administrators is to find that some disk "
+"partition (usually the most important one) is short on space, while some "
+"other partition is underused. The Logical Volume Manager (LVM) can help with "
+"this."
+msgstr ""
+"Usein toistuu tilanne, jossa jollain (yleensä tärkeällä) levyosiolla on "
+"liian vähän tilaa ja jollain toisella osiolla on ylimääräistä tilaa. "
+"Looginen levyniteiden hallinta (LVM) voi auttaa tässä tilanteessa."
+
+#. Type: note
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:64001
+msgid ""
+"LVM allows combining disk or partition devices (\"physical volumes\") to "
+"form a virtual disk (\"volume group\"), which can then be divided into "
+"virtual partitions (\"logical volumes\"). Volume groups and logical volumes "
+"may span several physical disks. New physical volumes may be added to a "
+"volume group at any time, and logical volumes can be resized up to the "
+"amount of unallocated space in the volume group."
+msgstr ""
+"LVM mahdollistaa levyjen ja osiolaitteiden (”fyysisten levyniteiden”) "
+"yhdistämisen virtuaaliseksi levyksi (”levynideryhmäksi”), joka voidaan "
+"sitten jakaa virtuaalisiin osioihin (”loogisiin levyniteisiin”). "
+"Levynideryhmät ja loogiset levyniteet voivat koostua useammasta fyysisestä "
+"levystä. Uusia levyjä voidaan lisätä levynideryhmään koska vain ja loogisten "
+"levyniteiden kokoja voidaan muuttaa levynideryhmän jakamattoman tilan "
+"rajoissa."
+
+#. Type: note
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:64001
+msgid ""
+"The items on the LVM configuration menu can be used to edit volume groups "
+"and logical volumes. After you return to the main partition manager screen, "
+"logical volumes will be displayed in the same way as ordinary partitions, "
+"and should be treated as such."
+msgstr ""
+"LVM:n asetusvalikon kohtia voidaan käyttää levynideryhmien ja loogisten "
+"levyniteiden muokkaamiseen. Palattuasi takaisin osiointisovelluksen "
+"päävalikkoon, loogiset levyniteet näytetään samalla tavalla kuin normaalit "
+"osiot ja niitä tulisi käsitellä normaaleina osioina."
