@@ -102,7 +102,7 @@ def system(command, *args):
     sys.stderr.flush()
 
     command = fmt_command(command, *args)
-    error = os.system(command)
+    error = os.system(command + " 2>>%s" % LOGFILE)
     if error:
         exitcode = os.WEXITSTATUS(error)
         raise ExecError(command, exitcode)
@@ -111,6 +111,7 @@ def dilive_system(command, *args):
     """convenience function for di-live debconf related command execution
     - prepend compat to path
     - catch and log execution exception, exit with exitcode
+    - stderr is redirected to the logfile by system()
     """
     prepend_path('/usr/lib/di-live/compat')
     try:
