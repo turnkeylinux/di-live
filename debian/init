@@ -1,48 +1,77 @@
-#!/bin/sh
+#!/bin/bash
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
+### BEGIN INIT INFO
+# Provides:          di-live
+# Required-Start:    $syslog
+# Required-Stop:
+# Should-Start:      $local_fs
+# Should-Stop:       halt reboot
+# Default-Start:     1
+# Default-Stop:      0 6
+# Short-Description: TurnKey Linux installer (di-live)
+# Description:       On 'start' will launch di-live, if set as boot option
+#                    On 'stop' will eject disc and prompt user, if post install
+### END INIT INFO
 
 NAME=di-live
+EJECT_FLAG=/tmp/.di-live-finalize
 
 set -e
 . /lib/lsb/init-functions
 
-unset INSTALL
-for x in $(cat /proc/cmdline); do
-    if [ $x = "di-live" ]; then
-        INSTALL="y"
-    fi
-done
+cache_path() {
+    path="$1"
 
-[ $INSTALL ] || exit 0
-which openvt >/dev/null || exit 0
+    if [ -d "$path" ]; then
+        find "$path" -type f | xargs cat > /dev/null 2>&1
+    elif [ -f "$path" ]; then
+        if [ -x "$path" ]; then
+            if file "$path" | grep -q 'dynamically linked'; then
+                for lib in $(ldd "$path" | awk '{ print $3 }'); do
+                    cache_path "$lib"
+                done
+            fi
+        fi
+        cat "$path" >/dev/null 2>&1
+    fi
+}
 
 case "$1" in
   start)
-    log_begin_msg "Starting $NAME"
+        grep -qs di-live /proc/cmdline || exit 0
+        which openvt >/dev/null || exit 0
 
-    # if usplash is running, make sure to stop it now, yes "start" kills it.
-    if pidof usplash > /dev/null; then
-        DO_NOT_SWITCH_VT=yes /etc/init.d/usplash start
-    fi
+        log_begin_msg "Starting $NAME"
+        setterm -blank 0
+        FGVT=$(fgconsole) openvt -c 8 -s -w -- di-live
+        log_action_end_msg $?
+        ;;
 
-    # turn off console blanking for install process
-    setterm -blank 0
+  stop)
+        grep -qs boot=casper /proc/cmdline || exit 0
+        [ -e $EJECT_FLAG ] || exit 0
+        which file >/dev/null || exit 0
+        which eject >/dev/null || exit 0
 
-    # start the installer on a new virtual terminal
-    openvt -s -w -- di-live
+        for path in $(which stty bash true halt reboot) /etc/bash.bashrc /etc/rc?.d /etc/default; do
+            cache_path "$path"
+        done
 
-    log_action_end_msg $?
-  ;;
+        stty sane < /dev/console
+        eject -p -m /cdrom >/dev/null 2>&1
+
+        MSG="Please remove the disc (if any) and press ENTER (timeout: 10 sec): "
+        /bin/bash -c "read -t 10 -p '$MSG' VAL" || /bin/true
+        ;;
+
   restart|reload|force-reload)
         echo "Error: argument '$1' not supported" >&2
         exit 3
         ;;
-  stop)
-        # No-op
-        ;;
+
   *)
     N=/etc/init.d/$NAME
-    echo "Usage: $N {start}" >&2
+    echo "Usage: $N {start|stop}" >&2
     exit 1
   ;;
 esac

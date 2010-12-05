@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
+import os
 import debconf
 
 from common import system
@@ -27,11 +28,20 @@ def reboot():
     db.input(debconf.HIGH, template)
     db.go()
 
+    cmd = []
+    fgvt = os.environ.get("FGVT")
+    if fgvt:
+        cmd.append("chvt %s" % fgvt)
+
     if db.getBoolean(template):
-        system("/sbin/reboot -f")
+        cmd.append("shutdown -r now")
+
+    if cmd:
+        system("; ".join(cmd))
 
 def main():
     deep_umount('/target')
+    file('/tmp/.di-live-finalize', 'w').write('')
     reboot()
 
 
