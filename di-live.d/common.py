@@ -120,7 +120,7 @@ def dilive_system(command, *args):
         log(str(e))
         sys.exit(e.exitcode)
 
-def preset_debconf(resets=None, preseeds=None):
+def preset_debconf(resets=None, preseeds=None, seen=None):
     debconf.runFrontEnd()
     db = debconf.Debconf()
 
@@ -131,6 +131,10 @@ def preset_debconf(resets=None, preseeds=None):
     if preseeds:
         for template, value in preseeds:
             db.set(template, value)
+
+    if seen:
+        for template, value in seen:
+            db.fset(template, 'seen', value)
 
 def is_mounted(dir):
     mounts = file("/proc/mounts").read()
