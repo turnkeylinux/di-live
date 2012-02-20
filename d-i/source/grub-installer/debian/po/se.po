@@ -10,20 +10,18 @@
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt#
 #
-# Børre Gaup <boerre@skolelinux.no>, 2006, 2010.
+# Børre Gaup <boerre@skolelinux.no>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: se\n"
-"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-30 22:49+0000\n"
-"PO-Revision-Date: 2010-12-31 02:09+0100\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2010-03-26 09:46+0000\n"
+"PO-Revision-Date: 2006-11-25 21:21+0100\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
-"Language-Team: Northern Sami <i18n-sme@lister.ping.uio.no>\n"
-"Language: se\n"
+"Language-Team: Northern Saami <i18n-sme@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: boolean
 #. Description
@@ -33,7 +31,7 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
 msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Sajáiduhte vuolggahangieđahalli GRUB váldovuolggahansektovrii?"
+msgstr "Sajáiduhte vuolggáhangieđahalli GRUB váldovuolggáhansektorii?"
 
 #. Type: boolean
 #. Description
@@ -55,9 +53,9 @@ msgid ""
 "operating systems or your new system."
 msgstr ""
 "Jus buot operatiivavuogádat dán mašiinnas leat dán listtus, de galggašii "
-"leat sihkkar sajáiduhttit vuolggahangieđahalli garraskearru "
-"váldovuolggahansektovrii. Go dát dihtor vuolggahuvvo de sáhtát válljet jus "
-"vuolggahat okta daid eará operatiivavuogádagain dahje iežat ođđa vuogádaga."
+"leat sihkkar sajáiduhttit vuolggáhangieđahalli garraskearru "
+"váldovuolggáhansektorii. Go dát dihtor vuolggáhuvvo de sáhtát válljet jus "
+"vuolggáhat okta daid eará operatiivavuogádagain dahje iežat ođa vuogádaga."
 
 #. Type: boolean
 #. Description
@@ -69,8 +67,8 @@ msgid ""
 "master boot record of your first hard drive."
 msgstr ""
 "Orru leamen dego dát lea áidna operatiivavuogádat dán dihtoris. Danne "
-"galggašii leat sihkkar sajáiduhttit vuolggahangieđahalli GRUB "
-"váldovuolggahansektovrii (Master Boot Record, MBR) iežat vuosttaš "
+"galggašii leat sihkkar sajáiduhttit vuolggáhangieđahalli GRUB "
+"váldovuolggáhansektorii (Master Boot Record, MBR) iežat vuosttaš "
 "garraskearrus."
 
 #. Type: boolean
@@ -83,11 +81,6 @@ msgid ""
 "operating system temporarily unbootable, though GRUB can be manually "
 "configured later to boot it."
 msgstr ""
-"Váruhus: Jus sajáiduhtti ii gávdnan operatiivavuogádaga mii juo gávdno\n"
-"du dihtoris, de dat vuogádat gaskaboddosaččat ii šatta vuolggahahtti go \n"
-"«Master Boot Record» rievdaduvvo, muhto lea vejolaš heivehit GRUB "
-"maŋileabbut \n"
-"nu ahte dat fas šaddá vuolggahahtti."
 
 #. Type: boolean
 #. Description
@@ -135,8 +128,9 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
 #: ../grub-installer.templates:14001
+#, fuzzy
 msgid "Unable to configure GRUB"
-msgstr "Ii sáhte heivehet GRUB"
+msgstr "Ii sáhte heivehet GRUB:a"
 
 #. Type: error
 #. Description
@@ -194,8 +188,9 @@ msgstr "Meattáhus čuožžilii čálidettiin rievdadusaid vurkenovttadahkii."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid "Device for boot loader installation:"
-msgstr "Ovttadat gosa vuolggahangieđahalli bidjo:"
+msgstr "Ovttadat gosa vuolggáhangieđahalli bidju:"
 
 #. Type: string
 #. Description
@@ -228,8 +223,9 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:8001
+#, fuzzy
 msgid "GRUB password:"
-msgstr "GRUB-beassansátni:"
+msgstr "Root-beassansátni:"
 
 #. Type: password
 #. Description
@@ -258,8 +254,9 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:9001
+#, fuzzy
 msgid "Re-enter password to verify:"
-msgstr "Čális beassansáni ođđasit nannen dihte:"
+msgstr "Čális beassansáni ođđasit nannendihte:"
 
 #. Type: password
 #. Description
@@ -291,8 +288,9 @@ msgstr "Dát beassansánit eai leat seamma lágán. Geahččal fas."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:12001
+#, fuzzy
 msgid "GRUB installation failed"
-msgstr "GRUB-sajáiduhttin filtii"
+msgstr "LILO-sajáiduhttin filtii"
 
 #. Type: error
 #. Description
@@ -337,97 +335,69 @@ msgstr ""
 msgid "Executing 'update-grub' failed."
 msgstr "Vuodjimin «update-grub» ..."
 
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-#, fuzzy
-#| msgid "Installing GRUB boot loader"
-msgid "Install GRUB?"
-msgstr "Sajáiduhttimin vuolggahangieđahalli GRUB"
-
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-msgid ""
-"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
-"used on i386/amd64 PCs. It is now also available for ${ARCH}."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-msgid ""
-"It has interesting new features but is still experimental software for this "
-"architecture. If you choose to install it, you should be prepared for "
-"breakage, and have an idea on how to recover your system if it becomes "
-"unbootable. You're advised not to try this in production environments."
-msgstr ""
-
-#. Type: text
-#. Description
-#. :sl1:
-#: ../grub-installer.templates:16001
-msgid "Installing GRUB boot loader"
-msgstr "Sajáiduhttimin vuolggahangieđahalli GRUB"
-
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:17001
-msgid "Looking for other operating systems..."
-msgstr "Ohcamin eará operatiivavuogádaga …"
+msgid "Installing GRUB boot loader"
+msgstr "Sajáiduhttimin vuolggáhangieđahalli GRUB"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:18001
-msgid "Installing the '${GRUB}' package..."
-msgstr "Sajáiduhttimin «${GRUB}»-páhka …"
+msgid "Looking for other operating systems..."
+msgstr "Ohcamin eará operatiivavuogádaga ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:19001
-msgid "Determining GRUB boot device..."
-msgstr "Mearrideamen GRUB vuolggahanovttadat …"
+#, fuzzy
+msgid "Installing the '${GRUB}' package..."
+msgstr "Sajáiduhttimin grub-páhka ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:20001
-msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "Vuodjimin «grub-install ${BOOTDEV}» …"
+msgid "Determining GRUB boot device..."
+msgstr "Mearrideamen GRUB:a vuolggáhanovttadat …"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:21001
-msgid "Running \"update-grub\"..."
-msgstr "Vuodjimin «update-grub» …"
+msgid "Running \"grub-install ${BOOTDEV}\"..."
+msgstr "Vuodjimin «grub-install ${BOOTDEV}» ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:22001
+msgid "Running \"update-grub\"..."
+msgstr "Vuodjimin «update-grub» ..."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:23001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "Ođasmahttimin /etc/kernel-img.conf …"
+msgstr "Ođasmahttimin /etc/kernel-img.conf ..."
 
 #. Type: text
 #. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:23001
+#: ../grub-installer.templates:24001
 msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Sajáiduhte vuolggahangieđahalli GRUB garraskerrui"
+msgstr "Sajáiduhte vuolggáhangieđahalli GRUB garraskearrui"
 
 #. Type: text
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:25001
 #, fuzzy
 msgid "Reinstall GRUB boot loader"
 msgstr "Sajáiduhttimin vuolggáhangieđahalli GRUB"

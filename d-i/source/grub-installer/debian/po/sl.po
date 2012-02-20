@@ -18,17 +18,14 @@
 # Jure Cuhalev <gandalf@owca.info>, 2006.
 # Matej Kovačič <matej.kovacic@owca.info>, 2006.
 # Jožko Škrablin <jozko.skrablni@gmail.com>, 2006.
-# Vanja Cvelbar <cvelbar@gmail.com>, 2008
-# Vanja Cvelbar <cvelbar@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: sl\n"
-"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-30 22:49+0000\n"
-"PO-Revision-Date: 2010-11-16 15:21+0100\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2010-03-26 09:46+0000\n"
+"PO-Revision-Date: 2008-09-17 16:21+0100\n"
 "Last-Translator: Vanja Cvelbar <cvelbar@gmail.com>\n"
-"Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
-"Language: sl\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +40,7 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
 msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Namestitev zagonskega nalagalnika GRUB na glavni zagonski zapis?"
+msgstr "Namestim zagonski nalagalnik GRUB na glavni zagonski zapis?"
 
 #. Type: boolean
 #. Description
@@ -52,8 +49,7 @@ msgstr "Namestitev zagonskega nalagalnika GRUB na glavni zagonski zapis?"
 msgid ""
 "The following other operating systems have been detected on this computer: "
 "${OS_LIST}"
-msgstr ""
-"Na računalniku so bili zaznani naslednji operacijski sistemi: ${OS_LIST}"
+msgstr "Na računalniku sem zaznal naslednje operacijske sisteme: ${OS_LIST}"
 
 #. Type: boolean
 #. Description
@@ -65,10 +61,10 @@ msgid ""
 "When your computer boots, you will be able to choose to load one of these "
 "operating systems or your new system."
 msgstr ""
-"V primeru, da so v zgornjem seznamu vsi vaši operacijski sistemi potem je "
-"verjetno varno namestiti zagonski nalagalnik na glavni zagonski zapis prvega "
-"trdega diska. Ko se bo vaš računalnik zagnal boste lahko izbrali zagon enega "
-"od teh operacijskih sistemov ali pa zagon vašega novega sistema."
+"Če so zgoraj napisani vsi vaši operacijski sistemi potem je verjetno varno "
+"namestiti zagonski nalagalnik na glavni zagonski zapis vašega trdega diska. "
+"Ko se vaš računalnik zažene boste lahko izbrali zagon enega od teh "
+"operacijskih sistemov ali pa zagon vašega novega sistema."
 
 #. Type: boolean
 #. Description
@@ -79,8 +75,8 @@ msgid ""
 "computer. If so, it should be safe to install the GRUB boot loader to the "
 "master boot record of your first hard drive."
 msgstr ""
-"Zdi se, da bo ta namestitev edini operacijski sistem na tem računalniku. V "
-"tem primeru je verjetno varno namestiti zagonski nalagalnik GRUB na glavni "
+"Izgleda, da bo ta namestitev edini operacijski sistem na tem računalniku. Če "
+"je temu tako je verjetno varno namestiti zagonski nalagalnik GRUB v glavni "
 "zagonski zapis prvega trdega diska."
 
 #. Type: boolean
@@ -93,10 +89,10 @@ msgid ""
 "operating system temporarily unbootable, though GRUB can be manually "
 "configured later to boot it."
 msgstr ""
-"Opozorilo: V primeru, da namestitev ni zaznala drugega operacijskega "
-"sistema, ki je na vašem računalniku, bo sprememba glavnega zagonskega zapisa "
-"naredila ta operacijski sistem začasno nedosegljiv. GRUB je mogoče kasneje "
-"ročno nastaviti za njegov zagon."
+"Opozorilo: Če namestitev ni zaznala drugega operacijskega sistema, ki je na "
+"voljo na vašem računalniku, bo sprememba glavnega zagonskega zapisa naredila "
+"ta operacijski sistem začasno nezaganljiv, čeprav je mogoče GRUB kasneje "
+"ročno nastaviti, da omogoča njegov zagon."
 
 #. Type: boolean
 #. Description
@@ -133,7 +129,7 @@ msgstr ""
 #. :sl3:
 #: ../grub-installer.templates:3001 ../grub-installer.templates:5001
 msgid "The GRUB root device is: ${GRUBROOT}."
-msgstr "Korenska naprava GRUB je: ${GRUBROOT}."
+msgstr "GRUB korenska naprava je: ${GRUBROOT}."
 
 #. Type: error
 #. Description
@@ -147,7 +143,7 @@ msgstr "Korenska naprava GRUB je: ${GRUBROOT}."
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
 #: ../grub-installer.templates:14001
 msgid "Unable to configure GRUB"
-msgstr "Ni mogoče nastaviti GRUB-a"
+msgstr "Ne morem nastaviti GRUB-a"
 
 #. Type: error
 #. Description
@@ -192,7 +188,7 @@ msgid ""
 msgstr ""
 "GRUB je vedno nameščen na  glavni zagonski zapis (MBR) večpotne (multipath) "
 "naprave. Predvideva se tudi, da je WWID (World Wide IDentification) te "
-"naprave izbran kot zagonska naprava v vmesniku FibreChannel v BIOS-u."
+"naprave izbran kot zagonska naprava v FibreChannel vmesniku v BIOS-u."
 
 #. Type: error
 #. Description
@@ -208,7 +204,7 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid "Device for boot loader installation:"
-msgstr "Naprava za namestitev zagonskega nalagalnika:"
+msgstr "Naprava za namestitev zagonskega nalaganika:"
 
 #. Type: string
 #. Description
@@ -237,9 +233,9 @@ msgstr ""
 #| "device in /dev. Below are some examples:\n"
 #| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
 #| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,2)\" or \"/dev/hda2\" will use the second partition of your\n"
+#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
 #| "   first IDE drive;\n"
-#| " - \"(hd2,5)\" or \"/dev/sdc5\" will use the first extended partition of\n"
+#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
 #| "   your third drive (SCSI here);\n"
 #| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
@@ -256,9 +252,9 @@ msgstr ""
 "naprava v /dev. Na primer:\n"
 " - \"(hd0)\" ali \"/dev/hda\" bo namestil GRUB v glavni zagonski zapis\n"
 "   vašega prvega trdega diska (IDE);\n"
-" - \"(hd0,2)\" ali \"/dev/hda2\" bo uporabil drug razdelek vaše prve\n"
+" - \"(hd0,1)\" ali \"/dev/hda2\" bo uporabil drug razdelek vaše prve\n"
 "   enote IDE;\n"
-" - \"(hd2,5)\" ali \"/dev/sdc5\" bo uporabil prvi razširjen razdelek vaše\n"
+" - \"(hd2,4)\" ali \"/dev/sdc5\" bo uporabil prvi razširjen razdelek vaše\n"
 "   tretje enote (tukaj SCSI);\n"
 " - \"(fd0)\" ali \"/dev/fd0\" bo namestil GRUB na disketo."
 
@@ -267,7 +263,7 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:8001
 msgid "GRUB password:"
-msgstr "Geslo za GRUB:"
+msgstr "GRUB geslo:"
 
 #. Type: password
 #. Description
@@ -283,7 +279,7 @@ msgid ""
 msgstr ""
 "Zagonski nalagalnik GRUB omogoča mnogo zmogljivih interaktivnih ukazov, ki "
 "jih lahko spretni napadalec uporabi za nepooblaščen dostop do sistema ob "
-"zagonu računalnika. Za zaščito pred tem lahko nastavite geslo, ki ga bo "
+"zagonu računalnika. Za boj proti temu lahko nastavite geslo, ki ga bo "
 "potrebno vtipkati pred urejanjem menijskih vnosov ali pred vstopom v GRUB "
 "ukazni način. Privzeta nastavitev je, da lahko uporabniki še vedno poženejo "
 "katerikoli menijski vnos ne da bi morali zato vnesti še geslo."
@@ -293,7 +289,7 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:8001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
-msgstr "Če ne želite nastaviti gesla za GRUB, pustite to polje prazno."
+msgstr "Če ne želite nastaviti GRUB gesla, pustite to polje prazno."
 
 #. Type: password
 #. Description
@@ -342,7 +338,7 @@ msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
 msgstr ""
-"Paketa '${GRUB}' ni bilo mogoče namestiti na /target/. Brez zagonskega "
+"Paketa '${GRUB}' nisem uspel namestiti na /target/. Brez zagonskega "
 "nalagalnika GRUB se nameščeni sistem ne bo zagnal."
 
 #. Type: error
@@ -350,7 +346,7 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:13001
 msgid "Unable to install GRUB in ${BOOTDEV}"
-msgstr "GRUB-a ni mogoče namestiti na ${BOOTDEV}"
+msgstr "GRUB-a ne morem namestiti na ${BOOTDEV}"
 
 #. Type: error
 #. Description
@@ -376,88 +372,60 @@ msgstr "To je usodna napaka."
 msgid "Executing 'update-grub' failed."
 msgstr "Izvajanje 'update-grub' ni uspelo.·"
 
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-#, fuzzy
-msgid "Install GRUB?"
-msgstr "Nameščanje zagonskega nalagalnik GRUB"
-
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-msgid ""
-"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
-"used on i386/amd64 PCs. It is now also available for ${ARCH}."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-msgid ""
-"It has interesting new features but is still experimental software for this "
-"architecture. If you choose to install it, you should be prepared for "
-"breakage, and have an idea on how to recover your system if it becomes "
-"unbootable. You're advised not to try this in production environments."
-msgstr ""
-
-#. Type: text
-#. Description
-#. :sl1:
-#: ../grub-installer.templates:16001
-msgid "Installing GRUB boot loader"
-msgstr "Nameščanje zagonskega nalagalnik GRUB"
-
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:17001
-msgid "Looking for other operating systems..."
-msgstr "Iskanje drugih operacijskih sistemov ..."
+msgid "Installing GRUB boot loader"
+msgstr "Nameščam zagonski nalagalnik GRUB"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:18001
-msgid "Installing the '${GRUB}' package..."
-msgstr "Nameščanje paketa '${GRUB}' ..."
+msgid "Looking for other operating systems..."
+msgstr "Iščem ostale operacijske sisteme..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:19001
-msgid "Determining GRUB boot device..."
-msgstr "Iskanje zagonske naprave GRUB ..."
+msgid "Installing the '${GRUB}' package..."
+msgstr "Nameščam paket '${GRUB}'..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:20001
-msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "Zaganjanje \"grub-install ${BOOTDEV}\"..."
+msgid "Determining GRUB boot device..."
+msgstr "Iščem zagonsko napravo GRUB..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:21001
-msgid "Running \"update-grub\"..."
-msgstr "Zaganjanje \"update-grub\" ..."
+msgid "Running \"grub-install ${BOOTDEV}\"..."
+msgstr "Poganjam \"grub-install ${BOOTDEV}\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:22001
+msgid "Running \"update-grub\"..."
+msgstr "Zaganjam \"update-grub\"..."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:23001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "Posodabljanje /etc/kernel-img.conf ..."
+msgstr "Posodabljam /etc/kernel-img.conf..."
 
 #. Type: text
 #. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:23001
+#: ../grub-installer.templates:24001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "Namesti zagonski nalagalnik GRUB na trdi disk"
 
@@ -465,6 +433,6 @@ msgstr "Namesti zagonski nalagalnik GRUB na trdi disk"
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:25001
 msgid "Reinstall GRUB boot loader"
 msgstr "Ponovno namesti zagonski nalagalnik GRUB"

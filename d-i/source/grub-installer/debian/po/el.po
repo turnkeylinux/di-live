@@ -3,6 +3,7 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# translation of el.po to Greek
 # translation of el.po to
 # Greek messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
@@ -15,17 +16,14 @@
 # quad-nrg.net <galaxico@quad-nrg.net>, 2005, 2006, 2007.
 # quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
 # QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
-# galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009.
-# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
-"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-30 22:49+0000\n"
-"PO-Revision-Date: 2010-09-04 19:11+0300\n"
-"Last-Translator: Emmanuel Galatoulas <galaxico@quad-nrg.net>\n"
+"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"POT-Creation-Date: 2010-03-26 09:46+0000\n"
+"PO-Revision-Date: 2008-09-10 10:28+0300\n"
+"Last-Translator: quad-nrg.net <yodesy@quad-nrg.net>\n"
 "Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -236,9 +234,9 @@ msgstr ""
 #| "device in /dev. Below are some examples:\n"
 #| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
 #| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,2)\" or \"/dev/hda2\" will use the second partition of your\n"
+#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
 #| "   first IDE drive;\n"
-#| " - \"(hd2,5)\" or \"/dev/sdc5\" will use the first extended partition of\n"
+#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
 #| "   your third drive (SCSI here);\n"
 #| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
@@ -256,9 +254,9 @@ msgstr ""
 "παραδείγματα \n"
 " - \"(hd0)\" ή \"/dev/hda\" θα εγκαταστήσει το GRUB στο master boot record\n"
 "   του πρώτου σκληρού δίσκου (IDE).\n"
-" - \"(hd0,2)\" ή \"/dev/hda2\" θα το εγκαταστήσει στην δεύτερη κατάτμηση\n"
+" - \"(hd0,1)\" ή \"/dev/hda2\" θα το εγκαταστήσει στην δεύτερη κατάτμηση\n"
 "   του πρώτου σκληρού δίσκου IDE.\n"
-" - \"(hd2,5)\" ή \"/dev/sdc5\" θα χρησιμοποιήσει την πρώτη εκτεταμένη "
+" - \"(hd2,4)\" ή \"/dev/sdc5\" θα χρησιμοποιήσει την πρώτη εκτεταμένη "
 "κατάτμηση\n"
 "   του τρίτου σας δίσκου (σ' αυτήν την περίπτωση SCSI);\n"
 " - \"(fd0)\" ή \"/dev/fd0\" θα εγκαταστήσει το GRUB σε μια δισκέττα."
@@ -380,80 +378,52 @@ msgstr "Αυτό είναι ένα μοιραίο σφάλμα."
 msgid "Executing 'update-grub' failed."
 msgstr "Η εκτέλεση του 'update-grub' απέτυχε."
 
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-#, fuzzy
-msgid "Install GRUB?"
-msgstr "Εγκατάσταση του φορτωτή εκκίνησης GRUB"
-
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-msgid ""
-"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
-"used on i386/amd64 PCs. It is now also available for ${ARCH}."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl4:
-#: ../grub-installer.templates:15001
-msgid ""
-"It has interesting new features but is still experimental software for this "
-"architecture. If you choose to install it, you should be prepared for "
-"breakage, and have an idea on how to recover your system if it becomes "
-"unbootable. You're advised not to try this in production environments."
-msgstr ""
-
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:16001
+#: ../grub-installer.templates:17001
 msgid "Installing GRUB boot loader"
 msgstr "Εγκατάσταση του φορτωτή εκκίνησης GRUB"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:17001
+#: ../grub-installer.templates:18001
 msgid "Looking for other operating systems..."
 msgstr "Ανίχνευση άλλων λειτουργικών συστημάτων..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:18001
+#: ../grub-installer.templates:19001
 msgid "Installing the '${GRUB}' package..."
 msgstr "Εγκατάσταση του πακέτου '${GRUB}'..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:19001
+#: ../grub-installer.templates:20001
 msgid "Determining GRUB boot device..."
 msgstr "Εξακριβώνεται η συσκευή εκκίνησης για το GRUB..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:20001
+#: ../grub-installer.templates:21001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
 msgstr "Εκτελείται το \"grub-install ${BOOTDEV}\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:21001
+#: ../grub-installer.templates:22001
 msgid "Running \"update-grub\"..."
 msgstr "Εκτελείται το \"update-grub\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:22001
+#: ../grub-installer.templates:23001
 msgid "Updating /etc/kernel-img.conf..."
 msgstr "Ενημέρωση του /etc/kernel-img.conf..."
 
@@ -461,7 +431,7 @@ msgstr "Ενημέρωση του /etc/kernel-img.conf..."
 #. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:23001
+#: ../grub-installer.templates:24001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "Εγκατάσταση του φορτωτή εκκίνησης GRUB"
 
@@ -469,6 +439,6 @@ msgstr "Εγκατάσταση του φορτωτή εκκίνησης GRUB"
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:25001
 msgid "Reinstall GRUB boot loader"
 msgstr "Επανεγκατάσταση του φορτωτή εκκίνησης GRUB"
