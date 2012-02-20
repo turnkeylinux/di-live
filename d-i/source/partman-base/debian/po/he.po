@@ -9,22 +9,41 @@
 # This file is distributed under the same license as debian-installer.
 #
 #
-# Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008.
 # Amit Dovev <debian.translator@gmail.com>, 2007.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Omer Zak <w1@zak.co.il>, 2008, 2010.
+# Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011.
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Free Software Foundation, Inc., 2002,2004
+#   Alastair McKinstry <mckinstry@computer.org>, 2002
+#   Translations from KDE:
+#   Meni Livne <livne@kde.org>, 2000.
+#
+#   Translations taken from KDE:
+#
+#   Free Software Foundation, Inc., 2002,2003.
+#   Alastair McKinstry <mckinstry@computer.org>, 2002.
+#   - Meni Livne <livne@kde.org>, 2000.
+#   Lior Kaplan <kaplan@debian.org>, 2005,2006, 2007, 2008, 2010.
+#   Meital Bourvine <meitalbourvine@gmail.com>, 2007.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: he\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2009-08-23 18:41+0200\n"
-"PO-Revision-Date: 2010-02-22 14:52+0200\n"
-"Last-Translator: Omer Zak <w1@zak.co.il>\n"
-"Language-Team: Hebrew <debian-hebrew-common@lists.alioth.debian.org>\n"
+"POT-Creation-Date: 2011-07-27 22:47+0000\n"
+"PO-Revision-Date: 2011-07-29 11:55+0200\n"
+"Last-Translator: Lior Kaplan <kaplan@debian.org>\n"
+"Language-Team: Hebrew <>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. Type: text
 #. Description
@@ -39,7 +58,7 @@ msgstr "הפעלת מנהל החלוקה למחיצות"
 #. Type: text
 #. Description
 #. :sl2:
-#: ../partman-base.templates:2001 ../partman-base.templates:24001
+#: ../partman-base.templates:2001 ../partman-base.templates:25001
 msgid "Please wait..."
 msgstr "אנא המתן..."
 
@@ -62,7 +81,7 @@ msgstr "בודק מערכות קבצים..."
 #. :sl2:
 #: ../partman-base.templates:5001
 msgid "Device in use"
-msgstr "רכיב בשימוש"
+msgstr "התקן בשימוש"
 
 #. Type: error
 #. Description
@@ -137,14 +156,20 @@ msgstr ""
 #. Type: boolean
 #. Description
 #. :sl1:
-#: ../partman-base.templates:11001
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../partman-base.templates:11001 ../partman-base.templates:12001
 msgid "Write the changes to disks?"
 msgstr "לכתוב את השינויים לדיסק הקשיח?"
 
 #. Type: boolean
 #. Description
 #. :sl1:
-#: ../partman-base.templates:11001
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../partman-base.templates:11001 ../partman-base.templates:12001
 msgid ""
 "If you continue, the changes listed below will be written to the disks. "
 "Otherwise, you will be able to make further changes manually."
@@ -166,7 +191,7 @@ msgstr ""
 #. Type: text
 #. Description
 #. :sl2:
-#: ../partman-base.templates:12001
+#: ../partman-base.templates:13001
 msgid "The following partitions are going to be formatted:"
 msgstr "המחיצות הבאות יאותחלו:"
 
@@ -174,7 +199,7 @@ msgstr "המחיצות הבאות יאותחלו:"
 #. Description
 #. :sl2:
 #. for example: "partition #6 of IDE0 master as ext3 journaling file system"
-#: ../partman-base.templates:13001
+#: ../partman-base.templates:14001
 msgid "partition #${PARTITION} of ${DEVICE} as ${TYPE}"
 msgstr "מחיצה מספר ${PARTITION} על התקן ${DEVICE} מסוג ${TYPE}"
 
@@ -183,42 +208,42 @@ msgstr "מחיצה מספר ${PARTITION} על התקן ${DEVICE} מסוג ${TYPE
 #. :sl2:
 #. for devices which have no partitions
 #. for example: "LVM VG Debian, LV Root as ext3 journaling file system"
-#: ../partman-base.templates:14001
+#: ../partman-base.templates:15001
 msgid "${DEVICE} as ${TYPE}"
 msgstr "${DEVICE} מסוג ${TYPE}"
 
 #. Type: text
 #. Description
 #. :sl2:
-#: ../partman-base.templates:15001
+#: ../partman-base.templates:16001
 msgid "The partition tables of the following devices are changed:"
 msgstr "טבלת המחיצות של ההתקנים הבאים שונתה:"
 
 #. Type: select
 #. Description
 #. :sl2:
-#: ../partman-base.templates:16001
+#: ../partman-base.templates:17001
 msgid "What to do with this device:"
 msgstr "מה לעשות עם ההתקן:"
 
 #. Type: select
 #. Description
 #. :sl2:
-#: ../partman-base.templates:17001
+#: ../partman-base.templates:18001
 msgid "How to use this free space:"
 msgstr "כיצד להשתמש בשטח הפנוי:"
 
 #. Type: select
 #. Description
 #. :sl2:
-#: ../partman-base.templates:18001
+#: ../partman-base.templates:19001
 msgid "Partition settings:"
 msgstr "הגדרת המחיצות:"
 
 #. Type: select
 #. Description
 #. :sl2:
-#: ../partman-base.templates:18001
+#: ../partman-base.templates:19001
 msgid ""
 "You are editing partition #${PARTITION} of ${DEVICE}. ${OTHERINFO} "
 "${DESTROYED}"
@@ -228,49 +253,49 @@ msgstr ""
 #. Type: text
 #. Description
 #. :sl2:
-#: ../partman-base.templates:19001
-msgid "This partition is formatted with the ${FILESYSTEM}."
-msgstr "המחיצה מכילה את ${FILESYSTEM}."
-
-#. Type: text
-#. Description
-#. :sl2:
 #: ../partman-base.templates:20001
-msgid "No existing file system was detected in this partition."
-msgstr "לא אותרה מערכת קבצים קיימת על המחיצה הזאת."
+msgid "This partition is formatted with the ${FILESYSTEM}."
+msgstr "המחיצה מפורמטת כך שתכיל את מערכת הקבצים ${FILESYSTEM}."
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-base.templates:21001
+msgid "No existing file system was detected in this partition."
+msgstr "לא אותרה מערכת קבצים קיימת במחיצה זו."
+
+#. Type: text
+#. Description
+#. :sl2:
+#: ../partman-base.templates:22001
 msgid "All data in it WILL BE DESTROYED!"
 msgstr "כל המידע בתוכו ייהרס!"
 
 #. Type: note
 #. Description
 #. :sl2:
-#: ../partman-base.templates:22001
+#: ../partman-base.templates:23001
 msgid "The partition starts from ${FROMCHS} and ends at ${TOCHS}."
 msgstr "המחיצה מתחילה ב-${FROMCHS} ומסתיימת ב-${TOCHS}."
 
 #. Type: note
 #. Description
 #. :sl2:
-#: ../partman-base.templates:23001
+#: ../partman-base.templates:24001
 msgid "The free space starts from ${FROMCHS} and ends at ${TOCHS}."
 msgstr "השטח הפנוי מתחיל ב-${FROMCHS} ומסתיים ב-${TOCHS}."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:25001
+#: ../partman-base.templates:26001
 msgid "Partitions formatting"
 msgstr "פרמוט מחיצות"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:26001
+#: ../partman-base.templates:27001
 msgid "Processing..."
 msgstr "מבצע..."
 
@@ -280,44 +305,44 @@ msgstr "מבצע..."
 #. Type: text
 #. Description
 #. :sl2:
-#: ../partman-base.templates:28001 ../partman-base.templates:32001
+#: ../partman-base.templates:29001 ../partman-base.templates:33001
 msgid "Show Cylinder/Head/Sector information"
 msgstr "הצגת מידע פיזי (Cylinder/Head/Sector)"
 
 #. Type: text
 #. Description
 #. :sl2:
-#: ../partman-base.templates:29001
+#: ../partman-base.templates:30001
 msgid "Done setting up the partition"
 msgstr "סיום הגדרת המחיצה"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:30001
+#: ../partman-base.templates:31001
 msgid "Finish partitioning and write changes to disk"
 msgstr "סיום פעולת הגדרת המחיצות וכתיבת המידע לכונן"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:31001
+#: ../partman-base.templates:32001
 msgid "Undo changes to partitions"
 msgstr "ביטול השינויים שבוצעו למחיצות"
 
 #. Type: text
 #. Description
 #. :sl2:
-#: ../partman-base.templates:33001
+#: ../partman-base.templates:34001
 #, no-c-format
 msgid "Dump partition info in %s"
-msgstr "הכוון את מידע המחיצות לתוך %s"
+msgstr "שפוך את מידע המחיצות לתוך %s"
 
 #. Type: text
 #. Description
 #. Keep short
 #. :sl1:
-#: ../partman-base.templates:34001
+#: ../partman-base.templates:35001
 msgid "FREE SPACE"
 msgstr "שטח פנוי"
 
@@ -325,7 +350,7 @@ msgstr "שטח פנוי"
 #. Description
 #. "unusable free space".  No more than 8 symbols.
 #. :sl1:
-#: ../partman-base.templates:35001
+#: ../partman-base.templates:36001
 msgid "unusable"
 msgstr "לא שמיש"
 
@@ -333,7 +358,7 @@ msgstr "לא שמיש"
 #. Description
 #. "primary partition".  No more than 8 symbols.
 #. :sl1:
-#: ../partman-base.templates:36001
+#: ../partman-base.templates:37001
 msgid "primary"
 msgstr "ראשית"
 
@@ -341,7 +366,7 @@ msgstr "ראשית"
 #. Description
 #. "logical partition".  No more than 8 symbols.
 #. :sl1:
-#: ../partman-base.templates:37001
+#: ../partman-base.templates:38001
 msgid "logical"
 msgstr "לוגית"
 
@@ -349,7 +374,7 @@ msgstr "לוגית"
 #. Description
 #. "primary or logical".  No more than 8 symbols.
 #. :sl1:
-#: ../partman-base.templates:38001
+#: ../partman-base.templates:39001
 msgid "pri/log"
 msgstr "ראש/לוג"
 
@@ -361,7 +386,7 @@ msgstr "ראש/לוג"
 #. No %s
 #. N. %s
 #. :sl1:
-#: ../partman-base.templates:39001
+#: ../partman-base.templates:40001
 #, no-c-format
 msgid "#%s"
 msgstr "%s"
@@ -370,7 +395,7 @@ msgstr "%s"
 #. Description
 #. For example ATA1 (ad0)
 #. :sl1:
-#: ../partman-base.templates:40001
+#: ../partman-base.templates:41001
 #, no-c-format
 msgid "ATA%s (%s)"
 msgstr "ATA%s (%s)"
@@ -379,7 +404,7 @@ msgstr "ATA%s (%s)"
 #. Description
 #. For example ATA1, partition #5 (ad0s5)
 #. :sl1:
-#: ../partman-base.templates:41001
+#: ../partman-base.templates:42001
 #, no-c-format
 msgid "ATA%s, partition #%s (%s)"
 msgstr "ATA%s, מחיצה מס' %s (%s)"
@@ -388,7 +413,7 @@ msgstr "ATA%s, מחיצה מס' %s (%s)"
 #. Description
 #. For example IDE0 master (hda)
 #. :sl1:
-#: ../partman-base.templates:42001
+#: ../partman-base.templates:43001
 #, no-c-format
 msgid "IDE%s master (%s)"
 msgstr "IDE%s master (%s)"
@@ -397,7 +422,7 @@ msgstr "IDE%s master (%s)"
 #. Description
 #. For example IDE1 slave (hdd)
 #. :sl1:
-#: ../partman-base.templates:43001
+#: ../partman-base.templates:44001
 #, no-c-format
 msgid "IDE%s slave (%s)"
 msgstr "IDE%s slave (%s)"
@@ -406,7 +431,7 @@ msgstr "IDE%s slave (%s)"
 #. Description
 #. For example IDE1 master, partition #5 (hdc5)
 #. :sl1:
-#: ../partman-base.templates:44001
+#: ../partman-base.templates:45001
 #, no-c-format
 msgid "IDE%s master, partition #%s (%s)"
 msgstr "IDE%s master, מחיצה מס' %s (%s)"
@@ -415,7 +440,7 @@ msgstr "IDE%s master, מחיצה מס' %s (%s)"
 #. Description
 #. For example IDE2 slave, partition #5 (hdf5)
 #. :sl1:
-#: ../partman-base.templates:45001
+#: ../partman-base.templates:46001
 #, no-c-format
 msgid "IDE%s slave, partition #%s (%s)"
 msgstr "IDE%s slave, מחיצה מס'%s (%s)"
@@ -423,7 +448,7 @@ msgstr "IDE%s slave, מחיצה מס'%s (%s)"
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:46001
+#: ../partman-base.templates:47001
 #, no-c-format
 msgid "SCSI%s (%s,%s,%s) (%s)"
 msgstr "SCSI%s (%s,%s,%s) (%s)"
@@ -431,7 +456,7 @@ msgstr "SCSI%s (%s,%s,%s) (%s)"
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:47001
+#: ../partman-base.templates:48001
 #, no-c-format
 msgid "SCSI%s (%s,%s,%s), partition #%s (%s)"
 msgstr "SCSI%s (%s,%s,%s), מחיצה מספר%s (%s)"
@@ -439,7 +464,7 @@ msgstr "SCSI%s (%s,%s,%s), מחיצה מספר%s (%s)"
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:48001
+#: ../partman-base.templates:49001
 #, no-c-format
 msgid "SCSI%s (%s)"
 msgstr "SCSI%s (%s)"
@@ -447,15 +472,33 @@ msgstr "SCSI%s (%s)"
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:49001
+#: ../partman-base.templates:50001
 #, no-c-format
 msgid "SCSI%s, partition #%s (%s)"
 msgstr "SCSI%s, מחיצה מס' %s (%s)"
 
 #. Type: text
 #. Description
+#. For example MMC/SD card #1 (mmcblk0)
+#. :sl3:
+#: ../partman-base.templates:51001
+#, fuzzy, no-c-format
+msgid "MMC/SD card #%s (%s)"
+msgstr "DASD %s (%s)"
+
+#. Type: text
+#. Description
+#. For example MMC/SD card #1, partition #2 (mmcblk0p2)
 #. :sl3:
 #: ../partman-base.templates:52001
+#, fuzzy, no-c-format
+msgid "MMC/SD card #%s, partition #%s (%s)"
+msgstr "SCSI%s, מחיצה מס' %s (%s)"
+
+#. Type: text
+#. Description
+#. :sl3:
+#: ../partman-base.templates:53001
 #, no-c-format
 msgid "RAID%s device #%s"
 msgstr "RAID%s device #%s"
@@ -463,7 +506,7 @@ msgstr "RAID%s device #%s"
 #. Type: text
 #. Description
 #. :sl3:
-#: ../partman-base.templates:53001
+#: ../partman-base.templates:54001
 #, no-c-format
 msgid "Encrypted volume (%s)"
 msgstr "נפח מוצפן (%s)"
@@ -472,7 +515,7 @@ msgstr "נפח מוצפן (%s)"
 #. Description
 #. For example: Serial ATA RAID isw_dhiiedgihc_Volume0 (mirror)
 #. :sl3:
-#: ../partman-base.templates:54001
+#: ../partman-base.templates:55001
 #, no-c-format
 msgid "Serial ATA RAID %s (%s)"
 msgstr "Serial ATA RAID %s (%s)"
@@ -481,10 +524,10 @@ msgstr "Serial ATA RAID %s (%s)"
 #. Description
 #. For example: Serial ATA RAID isw_dhiiedgihc_Volume01 (partition #1)
 #. :sl3:
-#: ../partman-base.templates:55001
+#: ../partman-base.templates:56001
 #, no-c-format
 msgid "Serial ATA RAID %s (partition #%s)"
-msgstr "Serial ATA RAID %s (מחיצה #%s)"
+msgstr "Serial ATA RAID %s (partition #%s)"
 
 #. Type: text
 #. Description
@@ -500,7 +543,7 @@ msgstr "Serial ATA RAID %s (מחיצה #%s)"
 #. aggregated paths.
 #. WWID stands for World-Wide IDentification
 #. :sl3:
-#: ../partman-base.templates:56001
+#: ../partman-base.templates:57001
 #, no-c-format
 msgid "Multipath %s (WWID %s)"
 msgstr "Multipath %s (WWID %s)"
@@ -508,23 +551,31 @@ msgstr "Multipath %s (WWID %s)"
 #. Type: text
 #. Description
 #. :sl3:
-#: ../partman-base.templates:57001
+#: ../partman-base.templates:58001
 #, no-c-format
 msgid "Multipath %s (partition #%s)"
-msgstr "Serial ATA RAID %s (מחיצה #%s)"
+msgstr "Serial ATA RAID %s (partition #%s)"
 
 #. Type: text
 #. Description
 #. :sl3:
-#: ../partman-base.templates:58001
+#: ../partman-base.templates:59001
 #, no-c-format
 msgid "LVM VG %s, LV %s"
 msgstr "LVM VG %s, LV %s"
 
 #. Type: text
 #. Description
+#. :sl5:
+#: ../partman-base.templates:60001
+#, no-c-format
+msgid "ZFS pool %s, volume %s"
+msgstr "מאגר ZFS %s, כרך %s"
+
+#. Type: text
+#. Description
 #. :sl3:
-#: ../partman-base.templates:59001
+#: ../partman-base.templates:61001
 #, no-c-format
 msgid "Loopback (loop%s)"
 msgstr "לולאה פנימית (loop%s)"
@@ -532,7 +583,7 @@ msgstr "לולאה פנימית (loop%s)"
 #. Type: text
 #. Description
 #. :sl5:
-#: ../partman-base.templates:60001
+#: ../partman-base.templates:62001
 #, no-c-format
 msgid "DASD %s (%s)"
 msgstr "DASD %s (%s)"
@@ -540,7 +591,7 @@ msgstr "DASD %s (%s)"
 #. Type: text
 #. Description
 #. :sl5:
-#: ../partman-base.templates:61001
+#: ../partman-base.templates:63001
 #, no-c-format
 msgid "DASD %s (%s), partition #%s"
 msgstr "DASD %s (%s), מחיצה מספר%s"
@@ -549,7 +600,7 @@ msgstr "DASD %s (%s), מחיצה מספר%s"
 #. Description
 #. eg. Virtual disk 1 (xvda)
 #. :sl4:
-#: ../partman-base.templates:62001
+#: ../partman-base.templates:64001
 #, no-c-format
 msgid "Virtual disk %s (%s)"
 msgstr "דיסק וירטואלי %s (%s)"
@@ -558,7 +609,7 @@ msgstr "דיסק וירטואלי %s (%s)"
 #. Description
 #. eg. Virtual disk 1, partition #1 (xvda1)
 #. :sl4:
-#: ../partman-base.templates:63001
+#: ../partman-base.templates:65001
 #, no-c-format
 msgid "Virtual disk %s, partition #%s (%s)"
 msgstr "דיסק וירטואלי %s, מחיצה מספר %s (%s)"
@@ -566,7 +617,7 @@ msgstr "דיסק וירטואלי %s, מחיצה מספר %s (%s)"
 #. Type: text
 #. Description
 #. :sl1:
-#: ../partman-base.templates:64001
+#: ../partman-base.templates:66001
 msgid "Cancel this menu"
 msgstr "בטל תפריט זה"
 
@@ -574,7 +625,7 @@ msgstr "בטל תפריט זה"
 #. Description
 #. Main menu entry
 #. :sl1:
-#: ../partman-base.templates:65001
+#: ../partman-base.templates:67001
 msgid "Partition disks"
 msgstr "חלוקה למחיצות"
 

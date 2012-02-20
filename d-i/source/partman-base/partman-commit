@@ -3,13 +3,6 @@ set -e
 
 . /lib/partman/lib/base.sh
 
-cleanup () {
-	if [ -f /var/run/parted_server.pid ]; then
-		stop_parted_server
-	fi
-}
-trap cleanup EXIT
-
 ###########################################################
 # Compute some constants in order to make things faster.
 ###########################################################
@@ -30,7 +23,7 @@ export can_escape
 # The decimal separator (dot or comma)
 #db_metaget partman/text/deci description
 #deci="$RET"
-# The comma has special meaning for debconf.  Lets force dot until we
+# The comma has special meaning for debconf.  Let's force dot until we
 # start using escaped strings.
 deci='.'
 export deci

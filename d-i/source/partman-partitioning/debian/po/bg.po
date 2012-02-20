@@ -10,20 +10,21 @@
 #
 # Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004, 2005, 2006.
 # Nikola Antonov <nikola@linux-bg.org>, 2004.
-# Damyan Ivanov <dam@modsoftsys.com>, 2006, 2007, 2008.
-# Damyan Ivanov <dmn@debian.org>, 2008, 2009.
+# Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2009-09-04 22:47+0000\n"
-"PO-Revision-Date: 2009-01-27 10:41+0200\n"
+"PO-Revision-Date: 2011-03-19 11:47+0200\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: bg\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
@@ -212,9 +213,8 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:10001
-#, fuzzy
 msgid "The size entered is invalid"
-msgstr "Мястото за монтиране, което сте въвели, е неправилно."
+msgstr "Въведената големина е неправилна."
 
 #. Type: error
 #. Description
@@ -225,13 +225,16 @@ msgid ""
 "size followed by an optional unit of measure (e.g. \"200 GB\"). The default "
 "unit of measure is the megabyte."
 msgstr ""
+"Въведената големина е неразбираема. Въведете положително цяло число, "
+"евентуално последвано от мерна единица (напр. „200 GB“). Мерната единица по "
+"подразбиране е мегабайт."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:11001
 msgid "The size entered is too large"
-msgstr ""
+msgstr "Въведената големина е твърде голяма"
 
 #. Type: error
 #. Description
@@ -241,13 +244,15 @@ msgid ""
 "The size you entered is larger than the maximum size of the partition. "
 "Please enter a smaller size to continue."
 msgstr ""
+"Въведената големина е по-голяма от максималната за дяла. За да продължите "
+"въведете по-малко число."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:12001
 msgid "The size entered is too small"
-msgstr ""
+msgstr "Въведената големина е твърде малка."
 
 #. Type: error
 #. Description
@@ -257,6 +262,8 @@ msgid ""
 "The size you entered is smaller than the minimum size of the partition. "
 "Please enter a larger size to continue."
 msgstr ""
+"Въведената големина е по-малка от минималната за дяла. За да продължите "
+"въведете по-голямо число."
 
 #. Type: error
 #. Description
@@ -607,9 +614,8 @@ msgstr "Създаване на нова празна таблица на дял
 #. Setting to reserve a small part of the disk for use by BIOS-based bootloaders
 #. such as GRUB.
 #: ../partman-partitioning.templates:36001
-#, fuzzy
 msgid "Reserved BIOS boot area"
-msgstr "Резервирана област за първоначално зареждане в BIOS:"
+msgstr "Резервирана област за първоначално зареждане в BIOS"
 
 #. Type: text
 #. Description
@@ -618,4 +624,4 @@ msgstr "Резервирана област за първоначално зар
 #. Up to 10 character positions
 #: ../partman-partitioning.templates:37001
 msgid "biosgrub"
-msgstr ""
+msgstr "biosgrub"

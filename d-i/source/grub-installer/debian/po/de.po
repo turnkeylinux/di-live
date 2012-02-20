@@ -3,31 +3,47 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# German messages for debian-installer.
+# German messages for debian-installer (sublevel1).
 # Copyright (C) 2003 Software in the Public Interest, Inc.
+# Console-setup strings translations:
+# (identified by "./console-setup.templates")
+# Copyright (C) 2006, the console-setup package'c copyright holder
+# Copyright (C) 2006, Matthias Julius
+# Copyright (C) 2007-2009 Helge Kreutzmann
+# Copyright (C) 2008-2011 Holger Wansing
 # This file is distributed under the same license as debian-installer.
-#
-# Holger Wansing <linux@wansing-online.de>, 2008.
+# Holger Wansing <linux@wansing-online.de>, 2008, 2009, 2010, 2011.
 # Jens Seidel <jensseidel@users.sf.net>, 2005, 2006, 2007, 2008.
 # Dennis Stampfer <seppy@debian.org>, 2003, 2004, 2005.
 # Alwin Meschede <ameschede@gmx.de>, 2003, 2004.
 # Bastian Blank <waldi@debian.org>, 2003.
 # Jan Luebbe <jluebbe@lasnet.de>, 2003.
 # Thorsten Sauter <tsauter@gmx.net>, 2003.
-#
-# This file is maintained by Jens Seidel <jensseidel@users.sf.net>
-#
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@computer.org>, 2001.
+# Björn Ganslandt <bganslan@gmx.net>, 2000, 2001.
+# Bruno Haible <bruno@clisp.org>, 2004, 2007.
+# Christian Stimming <stimming@tuhh.de>, 2006.
+# Dennis Stampfer <seppy@debian.org>, 2004.
+# Karl Eichwalder <ke@suse.de>, 2001.
+# Simon Hürlimann <simon.huerlimann@access.unizh.ch>, 2004.
+# Stefan Siegel <siegel@mandrakesoft.com>, 2001.
+# Tobias Quathamer <toddy@debian.org>, 2006, 2007, 2008, 2009, 2010.
+# Translations taken from ICU SVN on 2007-09-09
+# Wolfgang Rohdewald <wolfgang@rohdewald.de>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2010-03-26 09:46+0000\n"
-"PO-Revision-Date: 2008-10-30 21:04+0100\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2011-07-30 22:49+0000\n"
+"PO-Revision-Date: 2011-08-14 21:42+0200\n"
 "Last-Translator: Holger Wansing <linux@wansing-online.de>\n"
 "Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: boolean
 #. Description
@@ -91,9 +107,9 @@ msgid ""
 msgstr ""
 "Warnung: Wenn der Installer ein anderes Betriebssystem auf Ihrem Computer "
 "nicht richtig erkennt, Sie aber den Master Boot Record verändern, werden Sie "
-"dieses vorläufig nicht mehr starten können. Allerdings kann GRUB im "
-"Nachhinein manuell konfiguriert werden, so dass das Betriebssystem wieder "
-"startet."
+"dieses andere Betriebssystem vorläufig nicht mehr starten können. Allerdings "
+"kann GRUB im Nachhinein manuell konfiguriert werden, so dass das andere "
+"Betriebssystem wieder startet."
 
 # FIXME: THE disk?
 #. Type: boolean
@@ -108,7 +124,7 @@ msgstr "Den GRUB-Bootloader auf die Serial-ATA-RAID-Platte installieren?"
 #. :sl3:
 #: ../grub-installer.templates:3001
 msgid "Installation of GRUB on Serial ATA RAID is experimental."
-msgstr "Die Installation von GRUB auf Serial ATA RAID ist experimentell."
+msgstr "Die Installation von GRUB auf Serial-ATA-RAID ist experimentell."
 
 #. Type: boolean
 #. Description
@@ -121,7 +137,7 @@ msgid ""
 msgstr ""
 "GRUB wird immer in den Master Boot Record (MBR) der Serial-ATA-RAID-Platte "
 "installiert. Es wird auch angenommen, dass diese Platte als erste Festplatte "
-"in der Bootreihenfolge im BIOS aufgeführt wird."
+"in der Boot-Reihenfolge im BIOS aufgeführt ist."
 
 #. Type: boolean
 #. Description
@@ -190,8 +206,8 @@ msgid ""
 "device in the system's FibreChannel adapter BIOS."
 msgstr ""
 "GRUB wird immer in den Master Boot Record (MBR) des Multipath-Geräts "
-"installiert. Es wird auch angenommen, dass die entsprechende WWID als "
-"Bootgerät im BIOS des FibreChannel-Adapters ausgewählt ist."
+"installiert. Es wird auch angenommen, dass die entsprechende WWID als Boot-"
+"Gerät im BIOS des FibreChannel-Adapters ausgewählt ist."
 
 #. Type: error
 #. Description
@@ -219,27 +235,16 @@ msgid ""
 "can install GRUB elsewhere on the drive, or to another drive, or even to a "
 "floppy."
 msgstr ""
-"Das neu installierte System muss bootfähig gemacht werden, indem der GRUB-"
-"Bootloader auf einem bootfähigen Medium installiert wird. Gewöhnlich wird "
+"Das neu installierte System muss boot-fähig gemacht werden, indem der GRUB-"
+"Bootloader auf einem boot-fähigen Medium installiert wird. Gewöhnlich wird "
 "dazu GRUB im Master Boot Record Ihrer ersten Festplatte installiert. Wenn "
-"Sie möchten, können Sie GRUB auch auf einer anderen Partition, Laufwerk oder "
-"auch auf einer Diskette installieren."
+"Sie möchten, können Sie GRUB auch auf einer anderen Partition, einem anderen "
+"Laufwerk oder auch auf einer Diskette installieren."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -250,16 +255,15 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Das Gerät kann mit den »(hdn,m)« Bezeichnungen von GRUB oder als Gerätedatei "
-"in /dev angegeben werden. Im Folgenden sind einige Beispiele:\n"
-" - »(hd0)« oder »/dev/hda« installiert GRUB in den Master Boot Record\n"
-"   Ihrer ersten Festplatte (IDE);\n"
-" - »(hd0,1)« oder »/dev/hda2« installiert GRUB auf die zweite\n"
-"   Partition Ihrer ersten IDE-Festplatte;\n"
-" - »(hd2,4)« oder »/dev/sdc5« installiert GRUB auf die erste\n"
-"   erweiterte Partition Ihrer dritten Festplatte (in diesem Fall\n"
-"   SCSI);\n"
-" - »(fd0)« oder »/dev/fd0« installiert GRUB auf einer Diskette."
+"Das Gerät sollte als Gerätedatei in /dev angegeben werden. Im Folgenden "
+"einige Beispiele:\n"
+" - »/dev/sda« installiert GRUB in den Master Boot Record\n"
+"   Ihrer ersten Festplatte;\n"
+" - »/dev/sda2« installiert GRUB in die zweite Partition\n"
+"   Ihrer ersten Festplatte;\n"
+" - »/dev/sdc5« installiert GRUB in die erste erweiterte\n"
+"   Partition Ihrer dritten Festplatte;\n"
+" - »/dev/fd0« installiert GRUB auf eine Diskette."
 
 #. Type: password
 #. Description
@@ -284,8 +288,9 @@ msgstr ""
 "genutzt werden könnten, in das System einzudringen, wenn nicht-autorisierte "
 "Personen während des Startvorgangs Zugang zum Computer haben. Um das zu "
 "verhindern, können Sie ein Passwort wählen, welches eingegeben werden muss, "
-"bevor das GRUB-Menü oder die GRUB-Kommandozeile bearbeitet werden kann. Als "
-"Standard ist kein Passwort eingestellt."
+"bevor GRUB-Menüeinträge bearbeitet werden können oder Zugriff auf die GRUB-"
+"Kommandozeile gewährt wird. Standardmäßig ist es für jeden möglich, einen "
+"der Menüeinträge ohne Passwort zu starten."
 
 #. Type: password
 #. Description
@@ -310,8 +315,8 @@ msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
 msgstr ""
-"Bitte geben Sie das selbe GRUB-Passwort nochmal ein, um sicher zu gehen, "
-"dass Sie es richtig eingegeben haben."
+"Bitte geben Sie dasselbe GRUB-Passwort nochmal ein, um sicherzustellen, dass "
+"Sie sich nicht vertippt haben."
 
 #. Type: error
 #. Description
@@ -326,7 +331,7 @@ msgstr "Passworteingabefehler"
 #: ../grub-installer.templates:10001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr ""
-"Die beiden Passwörter, die Sie eingegeben haben, sind nicht gleich. Bitte "
+"Die beiden Passwörter, die Sie eingegeben haben, sind nicht identisch. Bitte "
 "versuchen Sie es noch einmal."
 
 #. Type: error
@@ -334,7 +339,7 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:12001
 msgid "GRUB installation failed"
-msgstr "Die Installation von GRUB schlug fehl"
+msgstr "Die Installation von GRUB ist fehlgeschlagen"
 
 #. Type: error
 #. Description
@@ -344,7 +349,7 @@ msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
 msgstr ""
-"Das Paket »${GRUB}« konnte nicht unter /target/ installiert werden. Ohne den "
+"Das Paket »${GRUB}« konnte nicht in /target/ installiert werden. Ohne den "
 "GRUB-Bootloader wird das installierte System nicht booten."
 
 #. Type: error
@@ -352,7 +357,7 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:13001
 msgid "Unable to install GRUB in ${BOOTDEV}"
-msgstr "GRUB konnte nicht nach ${BOOTDEV} installiert werden."
+msgstr "GRUB konnte nicht auf ${BOOTDEV} installiert werden."
 
 #. Type: error
 #. Description
@@ -376,62 +381,97 @@ msgstr "Dies ist ein schwerwiegender Fehler."
 #. :sl2:
 #: ../grub-installer.templates:14001
 msgid "Executing 'update-grub' failed."
-msgstr "Ausführung von »update-grub« fehlgeschlagen."
+msgstr "Ausführung von »update-grub« fehlgeschlagen"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:15001
+msgid "Install GRUB?"
+msgstr "GRUB installieren?"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:15001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+"GRUB2 ist die nächste Generation von GNU GRUB, dem Bootloader, der allgemein "
+"auf i386-/amd64-PCs verwendet wird. Er ist jetzt auch für ${ARCH} verfügbar."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:15001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
+"Er bietet interessante neue Funktionalitäten, ist jedoch für diese "
+"Architektur immer noch experimentell. Falls Sie sich entscheiden, ihn zu "
+"installieren, sollten Sie darauf vorbereitet sein, dass das System "
+"beschädigt werden könnte und wissen, wie Sie es reparieren können, falls es "
+"nicht mehr bootet. Sie tun gut daran, dies nicht in Produktionsumgebungen "
+"auszuprobieren."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:16001
+msgid "Installing GRUB boot loader"
+msgstr "Installieren des GRUB-Bootloaders"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:17001
-msgid "Installing GRUB boot loader"
-msgstr "Installiere GRUB-Bootloader"
+msgid "Looking for other operating systems..."
+msgstr "Suchen nach weiteren Betriebssystemen ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:18001
-msgid "Looking for other operating systems..."
-msgstr "Suche nach weiteren Betriebssystemen ..."
+msgid "Installing the '${GRUB}' package..."
+msgstr "Installieren des Pakets »${GRUB}« ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:19001
-msgid "Installing the '${GRUB}' package..."
-msgstr "Installiere das Paket »${GRUB}« ..."
+msgid "Determining GRUB boot device..."
+msgstr "Feststellen des Boot-Geräts für GRUB ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:20001
-msgid "Determining GRUB boot device..."
-msgstr "Stelle das GRUB-Bootgerät fest ..."
+msgid "Running \"grub-install ${BOOTDEV}\"..."
+msgstr "Ausführen von »grub-install ${BOOTDEV}« ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:21001
-msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "Führe »grub-install ${BOOTDEV}« aus ..."
+msgid "Running \"update-grub\"..."
+msgstr "Ausführen von »update-grub« ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:22001
-msgid "Running \"update-grub\"..."
-msgstr "Führe »update-grub« aus ..."
-
-#. Type: text
-#. Description
-#. :sl1:
-#: ../grub-installer.templates:23001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "Aktualisiere /etc/kernel-img.conf ..."
+msgstr "Aktualisieren von /etc/kernel-img.conf ..."
 
 #. Type: text
 #. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:23001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "GRUB-Bootloader auf einer Festplatte installieren"
 
@@ -439,6 +479,6 @@ msgstr "GRUB-Bootloader auf einer Festplatte installieren"
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
+#: ../grub-installer.templates:24001
 msgid "Reinstall GRUB boot loader"
-msgstr "Installiere den GRUB-Bootloader neu"
+msgstr "Den GRUB-Bootloader neu installieren"

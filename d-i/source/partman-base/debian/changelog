@@ -1,3 +1,390 @@
+partman-base (151ubuntu2) oneiric; urgency=low
+
+  * Handle /dev/zram* the same way as /dev/ramzswap* (exclude from
+    partitioning, and don't disable swap devices there).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 23 Sep 2011 15:32:39 +0100
+
+partman-base (151ubuntu1) oneiric; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Ubiquity integration: If PARTMAN_NO_COMMIT is set, then exit rather
+      than running commit.d and finish.d scripts; add a partman-commit
+      script; dump extra information to /var/lib/partman/snoop if
+      PARTMAN_SNOOP is set; check for per-menu 'no_show_choices' file in
+      ask_user and don't reshow the menu if it exists.
+    - Don't skip over dmraid devices if the user chooses not to activate
+      them.
+    - If the only thing mounted on a disk is the installation medium and it
+      uses more or less the whole disk, then silently exclude that disk; if
+      the installation medium is mounted but doesn't use the whole disk,
+      issue a warning that partitioning may be difficult; if anything else
+      is mounted, offer to unmount it. partman/filter_mounted=false disables
+      this.
+    - Build with -O2 on powerpc to avoid a suspected toolchain bug.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 08 Sep 2011 18:51:05 +0100
+
+partman-base (151) unstable; urgency=low
+
+  [ Otavio Salvador ]
+  * Add ZFS description support. Thanks to Robert Millan
+    <rmh@debian.org> for the patch. Closes: #635398.
+
+  [ Colin Watson ]
+  * Localise some more variables in partman_lock_unit and
+    partman_unlock_unit.
+
+  [ Updated translations ]
+  * Asturian (ast.po) by MAAC
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Holger Wansing
+  * Basque (eu.po)
+  * French (fr.po) by Christian Perrier
+  * Hebrew (he.po) by Lior Kaplan
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Macedonian (mk.po) by Arangel Angov
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Russian (ru.po) by Yuri Kozlov
+  * Sinhala (si.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Colin Watson <cjwatson@debian.org>  Thu, 08 Sep 2011 18:36:48 +0100
+
+partman-base (150ubuntu1) oneiric; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Ubiquity integration: If PARTMAN_NO_COMMIT is set, then exit rather
+      than running commit.d and finish.d scripts; add a partman-commit
+      script; dump extra information to /var/lib/partman/snoop if
+      PARTMAN_SNOOP is set; check for per-menu 'no_show_choices' file in
+      ask_user and don't reshow the menu if it exists.
+    - Don't skip over dmraid devices if the user chooses not to activate
+      them.
+    - If the only thing mounted on a disk is the installation medium and it
+      uses more or less the whole disk, then silently exclude that disk; if
+      the installation medium is mounted but doesn't use the whole disk,
+      issue a warning that partitioning may be difficult; if anything else
+      is mounted, offer to unmount it. partman/filter_mounted=false disables
+      this.
+    - Build with -O2 on powerpc to avoid a suspected toolchain bug.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 03 May 2011 12:48:28 +0100
+
+partman-base (150) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Holger Wansing
+  * Esperanto (eo.po) by Felipe Castro
+  * Estonian (et.po) by Mattias Põldaru
+  * Persian (fa.po) by Behrad Eslamifar
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Korean (ko.po) by Changwoo Ryu
+  * Marathi (mr.po) by sampada
+  * Bokmål, Norwegian (nb.po) by Hans Fredrik Nordhaug
+  * Nepali (ne.po)
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Uighur (ug.po) by Sahran
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 23 Apr 2011 13:51:51 +0200
+
+partman-base (149) unstable; urgency=low
+
+  * Team upload
+  * Resync translations with D-I master files
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 17 Feb 2011 21:36:20 +0100
+
+partman-base (148) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Make partman/text/mmc_disk and partman/text/mmc_partition
+    translatable
+  * Make ext4 the default file system for Linux
+
+  [ Colin Watson ]
+  * Include <sys/stat.h> in parted_server.c for mkfifo.
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 11 Feb 2011 19:45:59 +0100
+
+partman-base (147ubuntu1) natty; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Ubiquity integration: If PARTMAN_NO_COMMIT is set, then exit rather
+      than running commit.d and finish.d scripts; add a partman-commit
+      script; dump extra information to /var/lib/partman/snoop if
+      PARTMAN_SNOOP is set; check for per-menu 'no_show_choices' file in
+      ask_user and don't reshow the menu if it exists.
+    - Don't skip over dmraid devices if the user chooses not to activate
+      them.
+    - If the only thing mounted on a disk is the installation medium and it
+      uses more or less the whole disk, then silently exclude that disk; if
+      the installation medium is mounted but doesn't use the whole disk,
+      issue a warning that partitioning may be difficult; if anything else
+      is mounted, offer to unmount it. partman/filter_mounted=false disables
+      this.
+    - Use ext4 as the default filesystem for new partitions.
+    - Build with -O2 on powerpc to avoid a suspected toolchain bug.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 05 Jan 2011 13:40:57 +0000
+
+partman-base (147) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Fix link line ordering to avoid breaking with 'ld --as-needed'.
+
+  [ Updated translations ]
+  * Kazakh (kk.po) by Baurzhan Muftakhidinov
+  * Lao (lo.po) by Anousak Souphavanh
+  * Northern Sami (se.po) by Børre Gaup
+  * Sinhala (si.po) by Danishka Navin
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Telugu (te.po) by Arjuna Rao Chavala
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 24 Dec 2010 19:17:25 -0200
+
+partman-base (146ubuntu2) natty; urgency=low
+
+  * Fix link line ordering to avoid breaking with 'ld --as-needed'.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 15 Nov 2010 11:53:41 +0000
+
+partman-base (146ubuntu1) natty; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Ubiquity integration: If PARTMAN_NO_COMMIT is set, then exit rather
+      than running commit.d and finish.d scripts; add a partman-commit
+      script; dump extra information to /var/lib/partman/snoop if
+      PARTMAN_SNOOP is set; check for per-menu 'no_show_choices' file in
+      ask_user and don't reshow the menu if it exists.
+    - Don't skip over dmraid devices if the user chooses not to activate
+      them.
+    - If the only thing mounted on a disk is the installation medium and it
+      uses more or less the whole disk, then silently exclude that disk; if
+      the installation medium is mounted but doesn't use the whole disk,
+      issue a warning that partitioning may be difficult; if anything else
+      is mounted, offer to unmount it. partman/filter_mounted=false disables
+      this.
+    - Use ext4 as the default filesystem for new partitions.
+    - Build with -O2 on powerpc to avoid a suspected toolchain bug.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 15 Nov 2010 10:56:16 +0000
+
+partman-base (146) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Israt Jahan
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 12 Nov 2010 16:20:32 -0200
+
+partman-base (145ubuntu1) natty; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Ubiquity integration: If PARTMAN_NO_COMMIT is set, then exit rather
+      than running commit.d and finish.d scripts; add a partman-commit
+      script; dump extra information to /var/lib/partman/snoop if
+      PARTMAN_SNOOP is set; check for per-menu 'no_show_choices' file in
+      ask_user and don't reshow the menu if it exists.
+    - Don't skip over dmraid devices if the user chooses not to activate
+      them.
+    - If the only thing mounted on a disk is the installation medium and it
+      uses more or less the whole disk, then silently exclude that disk; if
+      the installation medium is mounted but doesn't use the whole disk,
+      issue a warning that partitioning may be difficult; if anything else
+      is mounted, offer to unmount it. partman/filter_mounted=false disables
+      this.
+    - Use ext4 as the default filesystem for new partitions.
+    - Build with -O2 on powerpc to avoid a suspected toolchain bug.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 03 Nov 2010 15:30:35 +0000
+
+partman-base (145) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Merge from Ubuntu:
+    - Expand the small gap we leave at the end of the disk to avoid MD
+      superblock ambiguity so that it correctly covers the region where
+      ambiguity might arise.  The previous gap was insufficient on disks
+      that were between 512 and 65535 bytes larger than a multiple of
+      1048576 bytes (LP: #569900).
+
+ -- Otavio Salvador <otavio@debian.org>  Tue, 02 Nov 2010 22:40:12 -0200
+
+partman-base (144ubuntu1) natty; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Ubiquity integration: If PARTMAN_NO_COMMIT is set, then exit rather
+      than running commit.d and finish.d scripts; add a partman-commit
+      script; dump extra information to /var/lib/partman/snoop if
+      PARTMAN_SNOOP is set; check for per-menu 'no_show_choices' file in
+      ask_user and don't reshow the menu if it exists.
+    - Don't skip over dmraid devices if the user chooses not to activate
+      them.
+    - If the only thing mounted on a disk is the installation medium and it
+      uses more or less the whole disk, then silently exclude that disk; if
+      the installation medium is mounted but doesn't use the whole disk,
+      issue a warning that partitioning may be difficult; if anything else
+      is mounted, offer to unmount it. partman/filter_mounted=false disables
+      this.
+    - Use ext4 as the default filesystem for new partitions.
+    - Build with -O2 on powerpc to avoid a suspected toolchain bug.
+    - Expand the small gap we leave at the end of the disk to avoid MD
+      superblock ambiguity so that it correctly covers the region where
+      ambiguity might arise.  The previous gap was insufficient on disks
+      that were between 512 and 65535 bytes larger than a multiple of
+      1048576 bytes.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 12 Oct 2010 12:07:22 +0100
+
+partman-base (144) unstable; urgency=low
+
+  [ Jeremie Koenig ]
+  * debian/rules: add a case for Hurd's DEFAULT_FS (closes: #586870).
+
+  [ Updated translations ]
+  * Asturian (ast.po) by maacub
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Danish (da.po) by Jacob Sparre Andersen
+  * Serbian (sr.po) by Karolina Kalic
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon, 23 Aug 2010 11:54:35 +0200
+
+partman-base (143) unstable; urgency=low
+
+  * Use 'dh $@ --options' rather than 'dh --options $@', for
+    forward-compatibility with debhelper v8.
+  * If the PED_DISK_CYLINDER_ALIGNMENT flag isn't available, then
+    (confusingly) assume that only cylinder alignment is available and
+    calculate constraints accordingly (closes: #579948).
+
+  [ Updated translations ]
+  * Serbian (sr.po) by Janos Guljas
+  * Serbian Latin (sr@latin.po) by Karolina Kalic
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 03 Aug 2010 17:22:00 +0100
+
+partman-base (142) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Add ALIGNMENT_OFFSET to partman-command.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Viktar Siarheichyk
+  * Bosnian (bs.po) by Armin Beširović
+  * Catalan (ca.po) by Jordi Mallach
+  * Danish (da.po) by Jacob Sparre Andersen
+  * Dzongkha (dz.po) by Jurmey Rabgay
+  * Persian (fa.po) by acathur
+  * Galician (gl.po) by Jorge Barreiro
+  * Croatian (hr.po) by Josip Rodin
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Kazakh (kk.po) by Baurzhan Muftakhidinov
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Latvian (lv.po) by Aigars Mahinovs
+  * Macedonian (mk.po) by Arangel Angov
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Nepali (ne.po)
+  * Norwegian Nynorsk (nn.po) by Eirik U. Birkeland
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Romanian (ro.po) by ioan-eugen stan
+  * Tagalog (tl.po) by Eric Pareja
+  * Ukrainian (uk.po) by Borys Yanovych
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 11 Jul 2010 18:56:12 +0200
+
+partman-base (141ubuntu2) maverick; urgency=low
+
+  * Expand the small gap we leave at the end of the disk to avoid MD
+    superblock ambiguity so that it correctly covers the region where
+    ambiguity might arise.  The previous gap was insufficient on disks that
+    were between 512 and 65535 bytes larger than a multiple of 1048576 bytes
+    (LP: #569900).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 28 Sep 2010 21:17:07 +0100
+
+partman-base (141ubuntu1) maverick; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Ubiquity integration: If PARTMAN_NO_COMMIT is set, then exit rather
+      than running commit.d and finish.d scripts; add a partman-commit
+      script; dump extra information to /var/lib/partman/snoop if
+      PARTMAN_SNOOP is set; check for per-menu 'no_show_choices' file in
+      ask_user and don't reshow the menu if it exists.
+    - Don't skip over dmraid devices if the user chooses not to activate
+      them.
+    - If the only thing mounted on a disk is the installation medium and it
+      uses more or less the whole disk, then silently exclude that disk; if
+      the installation medium is mounted but doesn't use the whole disk,
+      issue a warning that partitioning may be difficult; if anything else
+      is mounted, offer to unmount it. partman/filter_mounted=false disables
+      this.
+    - Use ext4 as the default filesystem for new partitions.
+    - Build with -O2 on powerpc to avoid a suspected toolchain bug.
+  * Remove cleanup trap in partman-commit, whose only effect is to break
+    repeated runs of partman-commit (LP: #536673).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sat, 08 May 2010 15:14:55 +0200
+
+partman-base (141) unstable; urgency=low
+
+  * parted 2.1 changed the semantics of ped_disk_clobber: it now zeroes out
+    the first few and last few sectors of the disk, regardless of whether
+    there appears to be a valid partition table on it.  Unfortunately, this
+    means that creating a filesystem on a whole disk device and then calling
+    ped_disk_commit_to_dev zeroes the filesystem header we just created.  To
+    avoid this, call ped_disk_commit_to_dev only if the partition doesn't
+    start at sector zero (LP: #539324, #549260).
+  * Check return values from asprintf for memory allocation failures.
+  * Ignore free space smaller than the grain size of the partition creation
+    constraint, rather than only free space smaller than a cylinder.
+  * Always leave a small gap at the end of the disk (except on device-mapper
+    devices), to avoid confusing mdadm by leaving the MD 0.90 superblock at
+    the end of the disk as well as the end of a partition (LP: #527401).
+  * Allow preseeding partman/alignment to "cylinder", "minimal", or
+    "optimal"; "cylinder" restores old alignment behaviour for the benefit
+    of those with crotchety BIOSes, while "optimal" is the default.
+  * Don't apply optimal alignment to extended partitions (LP: #558382).
+
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Tamil (ta.po) by Dr,T,Vasudevan
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 27 Apr 2010 10:46:05 +0100
+
+partman-base (140) unstable; urgency=low
+
+  * Don't warn about data loss on formatted/removed partitions when there
+    are no such partitions (LP: #151266).
+  * Build against parted 2.2.
+  * Use linux-swap(v1) instead of linux-swap(new) to reflect changes to
+    parted (thanks, Evan Dandrea; closes: #539908).
+  * Apply optimal alignment constraints to new partitions, or when
+    maximising an extended partition (LP: #530071).
+  * Add an ALIGNMENT_OFFSET command which can be used to detect whether a
+    partition is misaligned.
+
+  [ Updated translations ]
+  * French (fr.po) by Christian Perrier
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 21 Mar 2010 23:47:56 +0000
+
 partman-base (139ubuntu6) lucid; urgency=low
 
   * Don't apply optimal alignment to extended partitions (LP: #558382).

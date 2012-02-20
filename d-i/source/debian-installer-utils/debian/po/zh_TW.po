@@ -19,6 +19,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Type: note
 #. Description
@@ -75,10 +76,8 @@ msgstr "呼叫 shell"
 #. that are only supported in the graphical version of the installer
 #. :sl2:
 #: ../di-utils-exit-installer.templates:1001
-#, fuzzy
-#| msgid "Exit installer demo"
 msgid "Exit installer"
-msgstr "關閉安裝程式的展示"
+msgstr "離開安裝程式"
 
 #. Type: boolean
 #. Description

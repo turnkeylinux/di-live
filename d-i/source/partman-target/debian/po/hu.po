@@ -13,13 +13,14 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-03-17 22:51+0000\n"
-"PO-Revision-Date: 2008-04-29 23:36+0100\n"
+"PO-Revision-Date: 2010-11-08 09:16+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
 "org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
 #. Type: note
@@ -141,9 +142,8 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../partman-target.templates:4001
-#, fuzzy
 msgid "Identical labels for two file systems"
-msgstr "Azonos csatolási pont 2 fájlrendszerhez"
+msgstr "Azonos címke 2 fájlrendszerhez"
 
 #. Type: error
 #. Description
@@ -154,14 +154,16 @@ msgid ""
 "${PART2}. Since file system labels are usually used as unique identifiers, "
 "this is likely to cause reliability problems later."
 msgstr ""
+"2 fájlrendszer azonos címkével: (${LABEL}): ${PART1} és ${PART2}. Mivel a "
+"fájlrendszer címkéket általában egyedi azonosítóként használjuk, ez később "
+"megbízhatósági gondokat okozhat."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:4001
-#, fuzzy
 msgid "Please correct this by changing labels."
-msgstr "Módosítsd a megadott csatolási pontokat."
+msgstr "Javítsd ki a címkék módosításával."
 
 #. Type: error
 #. Description

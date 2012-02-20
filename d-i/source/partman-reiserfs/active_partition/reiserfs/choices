@@ -30,13 +30,13 @@ choice_mountpoint () {
 		db_metaget partman-basicfilesystems/text/no_mountpoint description
 		mp="$RET"
 	fi
-	db_metaget partman-reiserfs/text/specify_mountpoint description
-	printf "mountpoint\t%s %s\n" "$RET" "$mp"
+	db_metaget partman-basicfilesystems/text/specify_mountpoint description
+	printf "mountpoint\t%s\${!TAB}%s\n" "$RET" "$mp"
 }
 
 choice_options () {
 	db_metaget partman-basicfilesystems/text/options description
-	printf "options\t%s %.45s\n" "$RET" "$(get_mountoptions $dev $id)"
+	printf "options\t%s\${!TAB}%.45s\n" "$RET" "$(get_mountoptions $dev $id)"
 }
 
 choice_label () {
@@ -54,7 +54,7 @@ choice_label () {
 			label=$RET
 		fi
 		db_metaget partman-basicfilesystems/text/specify_label description
-		printf "label\t%s %s\n" "$RET" "$label"
+		printf "label\t%s\${!TAB}%s\n" "$RET" "$label"
 		;;
 	esac
 }

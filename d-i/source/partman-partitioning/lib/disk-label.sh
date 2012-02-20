@@ -1,7 +1,7 @@
 # Calling scripts should also source base.sh if create_new_label is called
 
 default_disk_label () {
-	if [ -x /bin/archdetect ]; then
+	if type archdetect >/dev/null 2>&1; then
 		archdetect=$(archdetect)
 	else
 		archdetect=unknown/generic
@@ -18,11 +18,11 @@ default_disk_label () {
 		else
 			echo msdos
 		fi;;
-	    arm|armeb|armel)
+	    arm|armeb|armel|armhf)
 		echo msdos;;
 	    amd64|kfreebsd-amd64)
 		case "$sub" in
-		    mac)
+		    mac|efi)
 			echo gpt;;
 		    *)
 			echo msdos;;
@@ -31,15 +31,13 @@ default_disk_label () {
 		echo msdos;;
 	    ia64)
 		echo gpt;;
-	    i386|kfreebsd-i386)
+	    i386|kfreebsd-i386|hurd-i386)
 		case "$sub" in
-		    mac)
+		    mac|efi)
 			echo gpt;;
 		    *)
 			echo msdos;;
 		esac;;
-	    lpia)
-		echo msdos;;
 	    m68k)
 		case "$sub" in
 		    amiga)
@@ -126,9 +124,13 @@ default_disk_label () {
 		    *)
 			echo UNKNOWN;;
 		esac;;
+	    ppc64)
+		echo mac;;
 	    s390)
 		echo msdos;;
-	    sparc)
+	    sh4)
+		echo msdos;;
+	    sparc|sparc64)
 		echo sun;;
 	    *)
 		echo UNKNOWN;;

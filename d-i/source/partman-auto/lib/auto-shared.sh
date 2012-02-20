@@ -92,9 +92,22 @@ ensure_primary() {
 	)"
 }
 
+reuse_partitions() {
+	cd $dev
+	local scheme
+
+	scheme="$scheme_reused"
+	foreach_partition '
+		id="$(echo " $*" | sed -n '\''s/.* \$reuse{ \([^}]*\) }.*/\1/p'\'')"
+		if [ -z "$id" ]; then
+			db_progress STOP
+			autopartitioning_failed
+		fi
+		setup_partition $id $*'
+}
+
 create_primary_partitions() {
 	cd $dev
-
 	while [ "$free_type" = pri/log ] && \
 	      echo $scheme | grep -q '\$primary{'; do
 		pull_primary
@@ -239,9 +252,7 @@ select_auto_disk() {
 
 	DEVS=$(get_auto_disks)
 	[ -n "$DEVS" ] || return 1
-	#without this change, guided partitioning loops endlessly
-	#debconf_select critical partman-auto/select_disk "$DEVS" "" || return 1
-	debconf_select critical partman-auto/select_disk "$DEVS" ""
+	debconf_select critical partman-auto/select_disk "$DEVS" "" || return 1
 	echo "$RET"
 	return 0
 }

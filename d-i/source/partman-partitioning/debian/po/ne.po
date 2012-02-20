@@ -13,15 +13,15 @@
 # shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
 # Nabin Gautam <nabin@mpp.org.np>, 2007.
 # Shyam Krishna Bal <balshyam24@yahoo.com>, 2008.
-# Shiva Prasad Pokharel <shiva@mpp.org.np>, 2008.
+# Shiva Prasad Pokharel <shiva@mpp.org.np>, 2008, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_ne\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2009-09-04 22:47+0000\n"
-"PO-Revision-Date: 2008-09-09 18:15+0545\n"
-"Last-Translator: Shiva Prasad Pokharel <shiva@mpp.org.np>\n"
-"Language-Team: Nepali <info@mpp.org.np>\n"
+"PO-Revision-Date: 2011-01-26 17:38-0600\n"
+"Last-Translator: \n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -204,9 +204,8 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:10001
-#, fuzzy
 msgid "The size entered is invalid"
-msgstr "तपाईँले प्रविष्टि गर्नु भएको माउन्ट विन्दु अवैध छ ।"
+msgstr "तपाईँले प्रविष्टि गर्नु भएको साईज अवैध छ ।"
 
 #. Type: error
 #. Description
@@ -217,13 +216,16 @@ msgid ""
 "size followed by an optional unit of measure (e.g. \"200 GB\"). The default "
 "unit of measure is the megabyte."
 msgstr ""
+"तपाईँले प्रविष्टि गर्नुभएको साईज बूझिएन । कृपया मापनको इकाईद्वारा (उदाहरणको लागि "
+"\"200 GB\") साईज लाई मानेर पोजिटिभ ईन्टिजर प्रविष्ट गर्नुहोस् । मापनको पूर्वनिर्धारित "
+"इकाई मेगाबाईट हो ।"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:11001
 msgid "The size entered is too large"
-msgstr ""
+msgstr "प्रविष्टि गरीएको साईज धेरै लामो छ"
 
 #. Type: error
 #. Description
@@ -233,13 +235,15 @@ msgid ""
 "The size you entered is larger than the maximum size of the partition. "
 "Please enter a smaller size to continue."
 msgstr ""
+"तपाईँले प्रविष्टि गर्नुभएको साईज बिभाजनको अधिकतम साईज भन्दा पनि ठूलो छ । कृपया कार्य "
+"जारिराख्नको लागि अलि सानो साईज प्रविष्ट गर्नुहोस् ।"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:12001
 msgid "The size entered is too small"
-msgstr ""
+msgstr "प्रविष्ट गरीएको साईज धेरै सानो भयो"
 
 #. Type: error
 #. Description
@@ -249,6 +253,8 @@ msgid ""
 "The size you entered is smaller than the minimum size of the partition. "
 "Please enter a larger size to continue."
 msgstr ""
+"तपाईँले प्रविष्टि गर्नुभएको साईज बिभाजनको न्यूनतम साईज भन्दा पनि सानो छ । कृपया कार्य "
+"जारिराख्नको लागि अलि ठूलो साईज प्रविष्ट गर्नुहोस् ।"
 
 #. Type: error
 #. Description
@@ -540,7 +546,7 @@ msgstr "नाम:"
 #. :sl2:
 #: ../partman-partitioning.templates:28001
 msgid "Bootable flag:"
-msgstr "बुट गर्न सक्षम झन्डाहरु:"
+msgstr "बुटेबल झन्डा:"
 
 #. Type: text
 #. Description
@@ -597,9 +603,8 @@ msgstr "यो यन्त्रमा एउटा नयाँ खाली �
 #. Setting to reserve a small part of the disk for use by BIOS-based bootloaders
 #. such as GRUB.
 #: ../partman-partitioning.templates:36001
-#, fuzzy
 msgid "Reserved BIOS boot area"
-msgstr "उल्टा BIOS बुट क्षेत्र:"
+msgstr "संचित BIOS बुट क्षेत्र"
 
 #. Type: text
 #. Description
@@ -608,4 +613,4 @@ msgstr "उल्टा BIOS बुट क्षेत्र:"
 #. Up to 10 character positions
 #: ../partman-partitioning.templates:37001
 msgid "biosgrub"
-msgstr ""
+msgstr "biosqrup"

@@ -34,7 +34,7 @@ choice_mountpoint () {
 			mp="$RET"
 		fi
 		db_metaget partman-basicfilesystems/text/specify_mountpoint description
-		printf "mountpoint\t%s %s\n" "$RET" "$mp"
+		printf "mountpoint\t%s\${!TAB}%s\n" "$RET" "$mp"
 		;;
 	esac
 }
@@ -45,7 +45,7 @@ choice_options () {
 		return
 	fi
 	db_metaget partman-basicfilesystems/text/options description
-	printf "options\t%s %.45s\n" "$RET" "$(get_mountoptions $dev $id)"
+	printf "options\t%s\${!TAB}%.45s\n" "$RET" "$(get_mountoptions $dev $id)"
 }
 
 choice_format_swap () {
@@ -55,10 +55,10 @@ choice_format_swap () {
 		description="$RET"
 		if [ -f $part/format ]; then
 			db_metaget partman-basicfilesystems/text/yes description
-			printf "dont_format_swap\t%s %s\n" "$description" "${RET}"
+			printf "dont_format_swap\t%s\${!TAB}%s\n" "$description" "${RET}"
 		else
 			db_metaget partman-basicfilesystems/text/no description
-			printf "format_swap\t%s %s\n" "$description" "${RET}"
+			printf "format_swap\t%s\${!TAB}%s\n" "$description" "${RET}"
 		fi
 	fi
 }
@@ -78,7 +78,7 @@ choice_label () {
 			label=$RET
 		fi
 		db_metaget partman-basicfilesystems/text/specify_label description
-		printf "label\t%s %s\n" "$RET" "$label"
+		printf "label\t%s\${!TAB}%s\n" "$RET" "$label"
 		;;
 	    _no_fat16|_no_fat32) # we dont have tools to set label of FAT file systems
 		if [ -f $part/label ]; then
@@ -88,7 +88,7 @@ choice_label () {
 			label=$RET
 		fi
 		db_metaget partman-basicfilesystems/text/specify_label description
-		printf "label\t%s %s\n" "$RET" "$label"
+		printf "label\t%s\${!TAB}%s\n" "$RET" "$label"
 		;;
 	esac
 }
@@ -107,7 +107,7 @@ choice_reserved () {
 		reserved=5
 	fi
 	db_metaget partman-basicfilesystems/text/reserved_for_root description
-	printf "reserved_for_root\t%s %s\n" "$RET" "$reserved%"
+	printf "reserved_for_root\t%s\${!TAB}%s\n" "$RET" "$reserved%"
 }
 
 choice_usage () {
@@ -125,7 +125,7 @@ choice_usage () {
 		usage=$RET
 	fi
 	db_metaget partman-basicfilesystems/text/usage description
-	printf "usage\t%s %s\n" "$RET" "$usage"
+	printf "usage\t%s\${!TAB}%s\n" "$RET" "$usage"
 }
 
 choice_mountpoint
