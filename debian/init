@@ -6,7 +6,7 @@
 # Required-Stop:
 # Should-Start:      $local_fs
 # Should-Stop:       halt reboot
-# Default-Start:     1
+# Default-Start:     S
 # Default-Stop:      0 6
 # Short-Description: TurnKey Linux installer (di-live)
 # Description:       On 'start' will launch di-live, if set as boot option
