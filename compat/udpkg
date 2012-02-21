@@ -1,4 +1,8 @@
 #! /bin/sh
 # Some scripts use this to figure out the architecture.
 # Just call dpkg instead.
-exec dpkg "$@"
+if [ "$1" = --print-os ]; then
+    echo linux
+else
+    exec dpkg "$@"
+fi
