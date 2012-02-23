@@ -1,0 +1,12 @@
+====================
+v0.9.4 Release Notes
+====================
+
+- upgraded d-i source code
+
+- added lvm partitioning support (set as default, 90% free for snapshots)
+- removed rootpass component (handled on firstboot)
+- redirect stderr of system calls to log file
+- eject and display prompt to user (if post install)
+- misc bugfixes
+
