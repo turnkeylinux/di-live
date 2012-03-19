@@ -3,21 +3,25 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of wo.po to Wolof
-#
-#
-# Mouhamadou Mamoune Mbacke <mouhamadoumamoune@gmail.com>, 2005, 2006, 2007, 2008.
+# translation of te.po to Telugu
+# Telugu translation for debian-installer
+# This file is distributed under the same license as the debian-installer package.
+# వీవెన్ (Veeven) <launchpad.net>, 2007.
+# Y Giridhar Appaji Nag <giridhar@appaji.net>, 2008.
+# Arjuna Rao Chavala <arjunaraoc@gmail.com>,2010
+# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: wo\n"
+"Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2010-03-26 09:46+0000\n"
-"PO-Revision-Date: 2008-09-23 12:02+0200\n"
-"Last-Translator: Mouhamadou Mamoune Mbacke <mouhamadoumamoune@gmail.com>\n"
-"Language-Team: Wolof <en@li.org>\n"
+"PO-Revision-Date: 2010-07-27 14:46+0530\n"
+"Last-Translator: Arjuna Rao Chavala <arjunaraoc@gmail.com>\n"
+"Language-Team: Telugu <debian-in-workers@lists.alioth.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: te\n"
 
 #. Type: boolean
 #. Description
@@ -27,7 +31,7 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
 msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Ndax nu istale sëfkatu boot bii di GRUB ci MBR bi?"
+msgstr "GRUB బూట్ లోడర్ ని మాస్టర్ బూట్ రికార్డ్ లో స్థాపించాలా?"
 
 #. Type: boolean
 #. Description
@@ -37,7 +41,7 @@ msgid ""
 "The following other operating systems have been detected on this computer: "
 "${OS_LIST}"
 msgstr ""
-"Yaneen sistem u doxaliin yii giseesna leen ci bii kompiyutar: ${OS_LIST}"
+"మీ కంప్యూటర్ పై  క్రిందఇవ్వబడిన ఇతర ఆపరేటింగ్ సిస్టమ్లు  వున్నట్లు కనుగొనబడినవి: ${OS_LIST}"
 
 #. Type: boolean
 #. Description
@@ -49,10 +53,9 @@ msgid ""
 "When your computer boots, you will be able to choose to load one of these "
 "operating systems or your new system."
 msgstr ""
-"Bu fekkee sa sistem i doxal yeppu ñi ngi ci list bi, kon man ngaa istale "
-"sëfkatu boot bi ci MBR bu sa disk budëgër bu jëkk. Saa bu sa kompiyutar di "
-"boot, danga mana tann benn ci yooyu sistem u doxaliin walla nga tann sa "
-"sistem u Debian bu bees bi."
+"అన్ని ఆపరేటింగ్ సిస్టమ్లు  పైన ఇవ్వబడిన ట్లయితే, బూట్ లోడర్ ని  మొదటి  హార్డ్ డిస్క్ లో  మాస్టర్ బూట్ రికార్డ్ "
+"లో స్థాపన చేయడం సురక్షితం. మీ కంప్యూటర్ బూట్  అయినప్పుడు, ఆపరేటింగ్ సిస్టమ్ లలో ఒకదానిని కాని, మీ కొత్త "
+"సిస్టమ్ ని కాని ఎక్కించటానికి  ఎంచుకునే వీలుంటుంది."
 
 #. Type: boolean
 #. Description
@@ -63,9 +66,8 @@ msgid ""
 "computer. If so, it should be safe to install the GRUB boot loader to the "
 "master boot record of your first hard drive."
 msgstr ""
-"Dafa mel ne Debian bii ngay istale moom rekk mooy sistem u doxal bi ne ci "
-"bii kompiyutar. Su demee noonu, kon man ngaa istale sëfkatu boot bii di GRUB "
-"ci MBR bu disk budëgër bu jëkk bi."
+"మీ కంప్యూటర్ పై   కొత్త స్థాపన  అయిన  ఆపరేటింగ్ సిస్టము ఒక్కటే   వున్నట్లుగా వుంది. అలాగయితే, GRUB "
+"బూట్ లోడర్ ని  మొదటి  హార్డ్ డిస్క్ లో  మాస్టర్ బూట్ రికార్డ్ లో స్థాపన చేయడం సురక్షితం."
 
 #. Type: boolean
 #. Description
@@ -77,24 +79,23 @@ msgid ""
 "operating system temporarily unbootable, though GRUB can be manually "
 "configured later to boot it."
 msgstr ""
-"Wattandikul: Bu installer bii manula daj baneen sistem u doxaliin bu ne ci "
-"sa kompiyutar bi, kon boo soppee dara ci MBR bi man naa tax doo man a boot "
-"boobu sistem u doxaliin, doonte sax man ngaa komfigure waat GRUB ak sa loxo "
-"ngir man koo boot."
+"హెచ్చరిక:  స్థాపక వ్యవస్థ   మీ కంప్యూటర్లో వున్ని ఇంకొక  ఆపరేటింగ్ సిస్టము   కనుగొనటంలో విఫలమైతే,    "
+"మాస్టర్ బూట్ రికార్డ్  మార్చితే  ఆ ఆపరేటింగ్ సిస్టము తాత్కాలికంగా  బూట్ చేయుటకుదరదు. GRUB ని స్వయంగా  "
+"మలచటం ద్వారా  బూట్అయ్యేటట్లు చేయవచ్చు."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:3001
 msgid "Install the GRUB boot loader to the Serial ATA RAID disk?"
-msgstr "Istale prograamu demaare  bi GRUB ci ab disk seeri ATA RAID?"
+msgstr ""
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:3001
 msgid "Installation of GRUB on Serial ATA RAID is experimental."
-msgstr "Istale GRUB ci disk seeri ATA RAID dafa tollu ci ñukoy nattu."
+msgstr ""
 
 #. Type: boolean
 #. Description
@@ -105,9 +106,6 @@ msgid ""
 "RAID disk. It is also assumed that disk is listed as the first hard disk in "
 "the boot order defined in the system's BIOS setup."
 msgstr ""
-"GRUB ñingikoy istale ci MBR bu disk seeri ATA RAID bi. Ta disk boobu moom "
-"lañuy def mu jiitu bu sistem bi di boot, maanaam buy takk. Loolu yaangi koy "
-"reglee ci BIOS bi."
 
 #. Type: boolean
 #. Description
@@ -117,7 +115,7 @@ msgstr ""
 #. :sl3:
 #: ../grub-installer.templates:3001 ../grub-installer.templates:5001
 msgid "The GRUB root device is: ${GRUBROOT}."
-msgstr "Periferik bu reen bu GRUB mooy: ${GRUBROOT}."
+msgstr ""
 
 #. Type: error
 #. Description
@@ -131,14 +129,14 @@ msgstr "Periferik bu reen bu GRUB mooy: ${GRUBROOT}."
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
 #: ../grub-installer.templates:14001
 msgid "Unable to configure GRUB"
-msgstr "Manul a komfigure GRUB"
+msgstr "GRUB ని అమరిక చేయుట కుదరలేదు"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:4001
 msgid "An error occurred while setting up GRUB for your Serial ATA RAID disk."
-msgstr "Ab njuumte amna bi nuy komfigure GRUB ci sa disk seeri ATA RAID bi."
+msgstr ""
 
 #. Type: error
 #. Description
@@ -148,7 +146,7 @@ msgstr "Ab njuumte amna bi nuy komfigure GRUB ci sa disk seeri ATA RAID bi."
 #. :sl3:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
 msgid "The GRUB installation has been aborted."
-msgstr "Komfiguraasioŋ bu GRUB bayyeesna ko."
+msgstr ""
 
 #. Type: boolean
 #. Description
@@ -156,14 +154,13 @@ msgstr "Komfiguraasioŋ bu GRUB bayyeesna ko."
 #: ../grub-installer.templates:5001
 msgid "Install the GRUB boot loader to the multipath device?"
 msgstr ""
-"Ndax nu istale prograamu demaare bii di GRUB ci ab periferik bu bare ay yoon?"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:5001
 msgid "Installation of GRUB on multipath is experimental."
-msgstr "Istale GRUB ci periferik bu bare ay yoon dafa tollu ci ñukoy nattu."
+msgstr ""
 
 #. Type: boolean
 #. Description
@@ -174,23 +171,21 @@ msgid ""
 "device. It is also assumed that the WWID of this device is selected as boot "
 "device in the system's FibreChannel adapter BIOS."
 msgstr ""
-"GRUB ñingi koy istale ci MBR bu periferik bu bare ay yoon bi. Ta WWID bu "
-"boobu periferik deeskoy def muy periferik bu mana demaare ci adapatatéer "
-"FibreChannel bu BIOS bu sistem bi."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:6001
+#, fuzzy
 msgid "An error occurred while setting up GRUB for the multipath device."
-msgstr "Ab njuumte amna bi nuy komfigure GRUB ci periferik bu bare ay yoon bi."
+msgstr "పాకేజీలను వ్యవస్థీకరించడంలో ఒక సమస్య తలెత్తింది"
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid "Device for boot loader installation:"
-msgstr "Periferik u istalaasioŋ bu sëfkatu boot bi:"
+msgstr "బూట్ లోడర్ స్థాపన కు డివైస్ :"
 
 #. Type: string
 #. Description
@@ -203,11 +198,9 @@ msgid ""
 "can install GRUB elsewhere on the drive, or to another drive, or even to a "
 "floppy."
 msgstr ""
-"Sa  sistem bii ngay door a istlale dafa wara man a demaare (boot), ngir "
-"loolu man a am da ngay istale sëfkatu boot bii di GRUB ci ab periferik bu "
-"mana demaare (boot). Li ñu baaxoo def moodi istale GRUB ci MBR bu sa disk "
-"budëgër bu jëkk bi. Bula gënalee nak man nga koo istale faneen ci disk bi, "
-"walla ci baneen disk, walla sax ci ab disket."
+"మీ కొత్త వ్యవస్థ బూట్ చేయటానికి , బూట్ లోడర్ ని బూట్ చేయగల డివైస్ పై స్థాపించాలి. GRUB ని మాస్టర్ బూట్ "
+"రికార్డ్ ని మొదటి హార్డ్ డిస్క్ పై స్థాపన చేయటం సాధారణంగా చేస్తారు.  మీకిష్టమైతే, GRUB ని డ్రైవ్ పై వేరేచోట, లేక "
+"వేరొక డ్రైవ్ పైన లేక ఫ్లాపీ పైన స్థాపన చేయవచ్చు ."
 
 #. Type: string
 #. Description
@@ -234,24 +227,20 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Man ngaa joxee turu periferik bi niko GRUB di binde \"(hdn,m)\", walla niki "
-"periferik yi ci /dev. Ay misaal ñi ngi ci suuf:\n"
-"- \"(hd0)\" walla \"/dev/hda\" dana istale GRUB ci MBR bi\n"
-"   ci sa disk budëgër bu jëkk (IDE);\n"
-" - \"(hd0,1)\" walla \"/dev/hda2\"dana jëfandikoo ñareel u partisoŋbu sa "
-"disk\n"
-"   IDE bu jëkk;\n"
-" - \"(hd2,4)\" walla \"/dev/sdc5\" dana jëfandikoo bi jëkk ci sa partisoŋ "
-"yiñu yaatal yi ne ci\n"
-"   ñatteel u disk (SCSI fii);\n"
-" - \"(fd0)\" walla \"/dev/fd0\" dana istale GRUB ci ab disket."
+"GRUB యొక్క  \"(hdn,m)\" తీరులో డివైస్ ని పేర్కొనవచ్చు, లేక /dev లో డివైస్ లాగా. కొన్ని ఉదాహరణలు "
+"క్రింద ఇవ్వబడినవి:\n"
+" - \"(hd0)\" లేక \"/dev/hda\"  GRUB ని మాస్టర్ బూట్ రికార్డ్ ని మొదటి హార్డ్ డిస్క్(IDE) పై "
+"స్థాపన;\n"
+" - \"(hd0,1)\" లేక \"/dev/hda2\" మొదటి హార్డ్ డిస్క్(IDE)  పై రెండవ విభజన వాడుతుంది. \n"
+" - \"(hd2,4)\"లేక  \"/dev/sdc5\" మొదటిపొడిగింపబడిన విభజన  మూడవ డ్రైవ్ (SCSI ఇక్కడ);\n"
+" - \"(fd0)\" లేక  \"/dev/fd0\" GRUB ఫ్లాపీపై స్థాపన చేస్తుంది."
 
 #. Type: password
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:8001
 msgid "GRUB password:"
-msgstr "Baatujall bu GRUB:"
+msgstr "GRUB సంకేతపదం:"
 
 #. Type: password
 #. Description
@@ -265,27 +254,25 @@ msgid ""
 "GRUB command-line interface. By default, any user will still be able to "
 "start any menu entry without entering the password."
 msgstr ""
-"Sëfkatu boot bii di GRUB amna ay karakteeristik yu interaktif yu bare yoo "
-"xamne, bu nit ku amul ndigal manee aksi ci sa sistem bi, man na leen a "
-"jëfandikoo ngir def ci lula neexul. Ngir aaru ci lumel nee man ngaa joxe ab "
-"baatujall booxam ne deesnako laaj keppu ku nara soppi dara ci antre yi ci "
-"menu bi, walla muy dugg ci interfaas bu liiñ u komaand bu GRUB. Ci defóo nak "
-"kuy jëfandikoo masin bi kune man naa tambule menu bu ko neex ci ludul muy "
-"joxe ab baatujall."
+"GRUB బూట్ లోడర్ చాలా శక్తివంతమైన సంవాదిత లక్షణాలు కలిగివున్నది. అందుకని, మీ వ్యవస్థ ప్రారంభంలో, "
+"అనుమతిలేని వాడుకరుల చేతిలో వుంటే, మీ వ్యవస్థని చెడుగా వాడుకోటానికి ఆస్కారముంటుంది.  దీనికి రక్షణగా, మీరు "
+"ఒక సంకేతపదము ని ఎంపిక చేసుకోవచ్చు. మెనూ నమోదులు మార్పులకు, GRUB కమాండ్ లైన్ సంపర్కంలోకి "
+"మారేముందు దీని అవసరము వుంటుంది.  సంకేత పదం లేకుండా, ఏ వాడుకరి ఐనా, మెను నమోదుని  ప్రారంభించటం "
+"(అప్రమేయంగా)చేయవచ్చు."
 
 #. Type: password
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:8001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
-msgstr "Soo baggul a joxe ab baatu jall bu GRUB, kon bul bind fii dara."
+msgstr "GRUB సంకేతపదము ఇవ్వదలచుకోకపోతే, దీనిని ఖాళీగా వుంచండి."
 
 #. Type: password
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:9001
 msgid "Re-enter password to verify:"
-msgstr "Dugëlaatal baatujall bi ngir nu wóorlu:"
+msgstr "ధృవీకరణకు సంకేత పదాన్ని మరల  టైప్ చేయండి:"
 
 #. Type: password
 #. Description
@@ -294,30 +281,28 @@ msgstr "Dugëlaatal baatujall bi ngir nu wóorlu:"
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
-msgstr ""
-"Dugëlaatal  baatujall bu GRUB binga defoon ngir seet baxam tappeewoon nga ko "
-"bu baax."
+msgstr "మీరు సరిగా టైపుచేసారని నిర్ధారించుకునేందుకు, GRUB యొక్క సంకేతపదాన్ని మళ్ళీ ఇవ్వండి."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:10001
 msgid "Password input error"
-msgstr "Njuumte bu dugël baatujall bi"
+msgstr "సంకేత పదం ప్రవేశపెట్టటంలో తప్పు"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:10001
 msgid "The two passwords you entered were not the same. Please try again."
-msgstr "Ñaari baatujall yi nga dugël bokku ñu. Jéemaatal baneen yoon ba xam."
+msgstr "మీరు ప్రవేశపెట్టిన  రెండు సంకేతపదాలు ఒకేలాగా లేవు. మరల ప్రయత్నించండి."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:12001
 msgid "GRUB installation failed"
-msgstr "Istalaasioŋ u GRUB antuwul"
+msgstr "GRUB స్థాపన విఫలమయింది"
 
 #. Type: error
 #. Description
@@ -327,22 +312,22 @@ msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
 msgstr ""
-"Paketu '${GRUB}' manula istalewu ci /target/. Boo amul prograam demaare bii "
-"di GRUB kon sa sistem bi nga istale du demaare."
+"/target/ పై '${GRUB}'  పాకేజీ స్థాపన విఫలమైంది. GRUB బూట్ లోడర్ లేకుండా, స్థాపించిన వ్యవస్థ బూట్ "
+"కాదు. "
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:13001
 msgid "Unable to install GRUB in ${BOOTDEV}"
-msgstr "Manula istale GRUB ci ${BOOTDEV}"
+msgstr "${BOOTDEV} లో  GRUB స్థాపన విఫలమైంది."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:13001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
-msgstr "Doxal 'grub-install ${BOOTDEV}' antuwul."
+msgstr "'grub-install ${BOOTDEV}' నడుపుట  విఫలమైంది."
 
 #. Type: error
 #. Description
@@ -352,63 +337,63 @@ msgstr "Doxal 'grub-install ${BOOTDEV}' antuwul."
 #. :sl2:
 #: ../grub-installer.templates:13001 ../grub-installer.templates:14001
 msgid "This is a fatal error."
-msgstr "Lii ab njuumte buy faat la."
+msgstr "ఇది ఒక నాశకరమైన పొరపాటు."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:14001
 msgid "Executing 'update-grub' failed."
-msgstr "Doxal 'update-grub' antuwul."
+msgstr "'update-grub' నడుపుట  విఫలమైంది."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:17001
 msgid "Installing GRUB boot loader"
-msgstr "Mi ngi istale sëfkatu boot bi GRUB"
+msgstr "GRUB బూట్ లోడర్ ని  స్థాపన చేయుట"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:18001
 msgid "Looking for other operating systems..."
-msgstr "Mi ngi wër yaneen sistem u doxaliin yi..."
+msgstr " ఇతర ఆపరేటింగ్ సిస్టమ్లు  కొరకు వెతుకుట..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:19001
 msgid "Installing the '${GRUB}' package..."
-msgstr "Mingi istale paket bu '${GRUB}'..."
+msgstr "'${GRUB}' పాకేజీని స్థాపన చేయుట..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:20001
 msgid "Determining GRUB boot device..."
-msgstr "Mi ngi jéema xam periferik bu boot bu GRUB..."
+msgstr "GRUBబూట్ డివైస్ ని నిర్ణయించుట..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:21001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "Mi ngi doxal \"grub-install ${BOOTDEV}\"..."
+msgstr "\"grub-install ${BOOTDEV}\" నడుపుట..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:22001
 msgid "Running \"update-grub\"..."
-msgstr "Mi ngi doxal \"update-grub\"..."
+msgstr "\"update-grub\" నడుపుట..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:23001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "Mi ngi yeesal /etc/kernel-img.conf..."
+msgstr "/etc/kernel-img.conf ని తాజాచేయట..."
 
 #. Type: text
 #. Description
@@ -416,7 +401,7 @@ msgstr "Mi ngi yeesal /etc/kernel-img.conf..."
 #. :sl1:
 #: ../grub-installer.templates:24001
 msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Istale sëfkatu boot bi GRUB ci ab disk budëgër"
+msgstr "GRUB బూట్ లోడర్ ని  హార్డ్ డిస్క్ లో  స్థాపన చేయు"
 
 #. Type: text
 #. Description
@@ -424,4 +409,4 @@ msgstr "Istale sëfkatu boot bi GRUB ci ab disk budëgër"
 #. :sl2:
 #: ../grub-installer.templates:25001
 msgid "Reinstall GRUB boot loader"
-msgstr "Istalewaat prograam u tambule bii di GRUB"
+msgstr "GRUB బూట్ లోడర్ ని మరల స్థాపనచేయండి"
