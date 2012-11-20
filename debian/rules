@@ -1,6 +1,6 @@
 #! /usr/bin/make -f
 
-bootloader-depends := grub
+bootloader-depends := grub-pc
 
 clean:
 	dh_clean
