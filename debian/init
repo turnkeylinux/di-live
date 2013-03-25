@@ -43,7 +43,7 @@ case "$1" in
 
         log_begin_msg "Starting $NAME"
         setterm -blank 0
-        FGVT=$(fgconsole) openvt -c 8 -s -w -- di-live
+        FGVT=$(fgconsole) openvt -c 8 -s -w -b -- di-live
         log_action_end_msg $?
         ;;
 
