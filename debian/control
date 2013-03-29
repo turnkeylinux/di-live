@@ -8,6 +8,6 @@ Standards-Version: 3.6.1
 Package: di-live
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, grub-pc, python (>= 2.4), debconf, libdebconfclient0, os-prober
-Recommends: whiptail, console-tools, lvm2, file, eject
+Recommends: whiptail, console-tools | console-utilities, lvm2, file, eject
 Section: admin
 Description: Debian Installer for Live systems
