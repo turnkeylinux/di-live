@@ -4,25 +4,39 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # translation of lv.po to Latvian
-# Aigars Mahinovs <aigarius@debian.org>, 2006, 2008.
-# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
-# Peteris Krisjanis <pecisk@gmail.com>, 2008.
 # Latvian messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
+#
+# Translations from iso-codes:
+# Copyright (C) Free Software Foundation, Inc., 2001,2003.
+# Translations from KDE:
+# Andris Maziks <andzha@latnet.lv>
+#
+# Aigars Mahinovs <aigarius@debian.org>, 2006, 2008.
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
+# Aigars Mahinovs <aigarius@debian.org>, 2006.
+# Alastair McKinstry <mckinstry@computer.org>, 2001, 2002.
+# Free Software Foundation, Inc., 2002,2004.
+# Juris Kudiņš <cooker@inbox.lv>, 2001.
+# Rihards Priedītis <rprieditis@gmail.com>, 2009, 2010.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012.
+# Peteris Krisjanis <pecisk@gmail.com>, 2008, 2012.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-09-20 08:43+0300\n"
-"Last-Translator: Aigars Mahinovs <aigarius@debian.org>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2012-05-27 12:29+0300\n"
+"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latviešu <locale-l10n@googlegroups.com>\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2)\n"
 
 #. Type: text
 #. Description
@@ -30,7 +44,7 @@ msgstr ""
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto-lvm.templates:1001
 msgid "Guided - use entire disk and set up LVM"
-msgstr "Vadītā - izmantot visu disku un iestatīt LVM"
+msgstr "Vadītā — izmantot visu disku un iestatīt LVM"
 
 #. Type: string
 #. Description
@@ -66,15 +80,15 @@ msgid ""
 "This happened because the selected recipe does not contain any partition "
 "that can be created on LVM volumes."
 msgstr ""
-"Šī kļūda notika, jo izvēlētā recepte nesatur sadaļas, kas varētu tikt "
-"izveidotas uz LVM sējumiem."
+"Šī kļūda notika, jo izvēlētā recepte nesatur nodalījumus, kas varētu tikt "
+"izveidoti uz LVM sējumiem."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:5001
 msgid "Continue installation without /boot partition?"
-msgstr "Turpināt instalāciju bez /boot sadaļas?"
+msgstr "Turpināt instalāciju bez /boot nodalījuma?"
 
 #. Type: boolean
 #. Description
@@ -84,8 +98,8 @@ msgid ""
 "The recipe you selected does not contain a separate partition for /boot. "
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
-"Izvēlētā recepte nesatur atsevišķu /boot sadaļu. Parasti tā ir nepieciešama, "
-"lai varētu ielādēt sistēmu, izmantojot LVM."
+"Izvēlētā recepte nesatur atsevišķu /boot nodalījumu. Parasti tas ir "
+"nepieciešams, lai varētu palaist sistēmu, izmantojot LVM."
 
 #. Type: boolean
 #. Description
@@ -114,9 +128,9 @@ msgid ""
 "in use. Lowering the priority for configuration questions will allow you to "
 "specify an alternative name."
 msgstr ""
-"Automātiskajā LVM dalīšanā izmantotais sējumu grupas vārds jau tiek "
-"izmantots. Samazinot konfigurēšanas jautājumu prioritāti, jums parādīsies "
-"iespēja ievadīt alternatīvu sējumu grupas vārdu."
+"Automātiskajā LVM dalīšanā izmantotais sējumu grupas nosaukums jau tiek "
+"izmantots. Lai ievadītu citu sējumu grupas nosaukumu, samaziniet "
+"konfigurēšanas jautājumu prioritāti."
 
 #. Type: error
 #. Description
@@ -166,7 +180,7 @@ msgstr "Neeksistējošs fiziskais sējums"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr "Sējumu grupas apraksts satur atsauci uz neeksistējošu fizisko sejumu."
+msgstr "Sējumu grupas apraksts satur atsauci uz neeksistējošu fizisko sējumu."
 
 #. Type: error
 #. Description
@@ -176,8 +190,8 @@ msgid ""
 "Please check that all devices are properly connected. Alternatively, please "
 "check the automatic partitioning recipe."
 msgstr ""
-"Lūdzu pārbaudies, ka visas iekārtas ir pievienotas vai arī pārbaudiet "
-"automatiskās dalīšanas recepti."
+"Lūdzu, pārliecinieties, ka visas ierīces ir labi pievienotas. Vai arī "
+"pārbaudiet automātiskās dalīšanas recepti."
 
 #. Type: error
 #. Description
@@ -248,8 +262,8 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
-"Piezīme: Maksimalā izmēra norādīšanai vai ierakstīt vārdu \"max\", bet lai "
-"norādītu izmēru kā daļu no maksimālā var izmantot procenta zīmi, piemēram "
+"Piezīme: Maksimālā izmēra norādīšanai vai ierakstīt vārdu \"max\", bet lai "
+"norādītu izmēru kā daļu no maksimālā var izmantot procenta zīmi, piemēram, "
 "\"20%\"."
 
 #. Type: error

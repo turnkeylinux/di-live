@@ -7,21 +7,23 @@
 # Kurdish messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-#
 # Rizoyê Xerzî <riza dot seckin at gmail dot com>
 # Erdal Ronahi <erdal dot ronahi at gmail dot com>, 2008.
+# Erdal <erdal.ronahi@gmail.com>, 2010.
+# Erdal Ronahî <erdal.ronahi@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ku\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-09-07 22:52+0200\n"
+"PO-Revision-Date: 2010-07-09 21:51+0200\n"
 "Last-Translator: Erdal Ronahi <erdal.ronahi@gmail.com>\n"
-"Language-Team: ku <ubuntu-l10n-kur@lists.ubuntu.com>\n"
+"Language-Team: Kurdish Team http://pckurd.net\n"
+"Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!= 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -56,7 +58,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:4001
 msgid "Failed to partition the selected disk"
-msgstr "partîsiyonkirina diska hilbijartî serneket"
+msgstr "Partîsiyonkirina diska hilbijartî serneket"
 
 #. Type: error
 #. Description
@@ -149,9 +151,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:8001
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Multiple disks (%s)"
-msgstr "Dîska farazî %s (%s)"
+msgstr "Gelek dîsk (%s)"
 
 #. Type: error
 #. Description
@@ -182,9 +184,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
-#, fuzzy
 msgid "No physical volume defined in volume group"
-msgstr "Di jêbirinê koma voluman çewtiyek derket holê"
+msgstr "Di koma voluman de cîldeke fîzîkî nehate nasandin"
 
 #. Type: error
 #. Description
@@ -199,9 +200,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
-#, fuzzy
 msgid "Please check the automatic partitioning recipe."
-msgstr "Ji kerema xwe re pêşeka dabeşkirinê vê yekê sererast bikî."
+msgstr "Ji kerema xwe re lîsteya dabeşkirinê ya jixweber kontrol bike."
 
 #. Type: string
 #. Description

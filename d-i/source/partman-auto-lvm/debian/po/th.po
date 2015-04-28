@@ -4,18 +4,30 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Thai translation of debian-installer.
-# Copyright (C) 2006-2008 Software in the Public Interest, Inc.
+# Copyright (C) 2006-2011 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2006-2008.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2006-2011.
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Free Software Foundation, Inc., 2002,2003,2004
+#   Alastair McKinstry <mckinstry@computer.org>, 2002, 2004
+#   Translations from KDE:
+#   - Thanomsub Noppaburana <donga@midaassets.com>
+#   Thanomsub Noppaburana <donga@midaassets.com> (Translations from KDE)
+#   Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2011
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-08-17 14:03+0700\n"
+"PO-Revision-Date: 2011-08-18 17:17+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -143,7 +155,7 @@ msgstr "ดิสก์หลายตัว (%s)"
 #. :sl3:
 #: ../partman-auto-lvm.templates:9001
 msgid "Non-existing physical volume"
-msgstr "ไม่มี physical volume อยู่"
+msgstr "โวลุมจริงไม่มีอยู่จริง"
 
 #. Type: error
 #. Description
@@ -152,7 +164,7 @@ msgstr "ไม่มี physical volume อยู่"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr "ข้อกำหนดกลุ่มโวลุมมีการอ้างถึง physical volume ที่ไม่มีอยู่"
+msgstr "ข้อกำหนดกลุ่มโวลุมมีการอ้างถึงโวลุมจริงที่ไม่มีอยู่จริง"
 
 #. Type: error
 #. Description
@@ -170,7 +182,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "No physical volume defined in volume group"
-msgstr "ไม่ได้กำหนด physical volume ในกลุ่มโวลุม"
+msgstr "ไม่ได้กำหนดโวลุมจริงในกลุ่มโวลุม"
 
 #. Type: error
 #. Description
@@ -179,7 +191,7 @@ msgstr "ไม่ได้กำหนด physical volume ในกลุ่ม�
 msgid ""
 "The automatic partitioning recipe contains the definition of a volume group "
 "that does not contain any physical volume."
-msgstr "สูตรการแบ่งพาร์ทิชันแบบอัตโนมัติมีข้อกำหนดของกลุ่มโวลุมที่ไม่ได้มี physical volume อยู่เลย"
+msgstr "สูตรการแบ่งพาร์ทิชันแบบอัตโนมัติมีข้อกำหนดของกลุ่มโวลุมที่ไม่ได้มีโวลุมจริงอยู่เลย"
 
 #. Type: error
 #. Description

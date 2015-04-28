@@ -13,19 +13,33 @@
 # Halil Demirezen <halild@bilmuh.ege.edu.tr>, 2004.
 # Murat Demirten <murat@debian.org>, 2004.
 #
-# Mert Dirik <mertdirik@gmail.com>, 2008, 2009.
+# Mert Dirik <mertdirik@gmail.com>, 2008-2012.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   (translations from drakfw)
+#   Fatih Demir <kabalak@gmx.net>, 2000.
+#   Free Software Foundation, Inc., 2000,2004
+#   Kemal Yilmaz <kyilmaz@uekae.tubitak.gov.tr>, 2001.
+#   Mert Dirik <mertdirik@gmail.com>, 2008.
+#   Nilgün Belma Bugüner <nilgun@fide.org>, 2001.
+#   Recai Oktaş <roktas@omu.edu.tr>, 2004.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Ömer Fadıl USTA <omer_fad@hotmail.com>, 1999.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-01-26 07:32+0000\n"
-"PO-Revision-Date: 2010-10-29 17:13+0200\n"
+"PO-Revision-Date: 2013-10-13 18:05-0000\n"
 "Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
 "Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: boolean
@@ -41,8 +55,8 @@ msgstr "Menüye geri dönülsün mü?"
 #: ../partman-basicmethods.templates:1001
 msgid "No file system is specified for partition #${PARTITION} of ${DEVICE}."
 msgstr ""
-"${DEVICE} aygıtındaki #${PARTITION} bölümü için herhangi bir dosya sistemi "
-"belirtilmedi."
+"${DEVICE} aygıtının ${PARTITION} numaralı bölümü için herhangi bir dosya "
+"sistemi belirtilmedi."
 
 #. Type: boolean
 #. Description
@@ -52,7 +66,7 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a file system to "
 "this partition, it won't be used at all."
 msgstr ""
-"Menüye geri dönerek bir dosya sistemi belirlemezseniz bölüm "
+"Bölümleme menüsüne geri dönerek bir dosya sistemi belirlemezseniz bölüm "
 "kullanılmayacaktır."
 
 #. Type: text
@@ -60,7 +74,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicmethods.templates:2001
 msgid "do not use the partition"
-msgstr "Bölümü kullanma"
+msgstr "Bu bölümü kullanma"
 
 #. Type: text
 #. Description
@@ -75,7 +89,7 @@ msgstr "Bölümü biçimlendir:"
 #. :sl2:
 #: ../partman-basicmethods.templates:4001
 msgid "yes, format it"
-msgstr "evet, biçimle"
+msgstr "evet, biçimlendir"
 
 #. Type: text
 #. Description

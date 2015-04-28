@@ -1,22 +1,30 @@
 #! /usr/bin/make -f
 %:
-	dh $@ --with d-i
+	dh $@ --with autoreconf,d-i
 
-ARCH_OS=$(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+DEB_HOST_ARCH_OS := $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
 
-ifeq ($(ARCH_OS),linux)
+ifeq ($(DEB_HOST_ARCH_OS),linux)
 DEFAULT_FS=ext4
 endif
-ifeq ($(ARCH_OS),kfreebsd)
+ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
 DEFAULT_FS=ufs
 endif
-ifeq ($(ARCH_OS),hurd)
+ifeq ($(DEB_HOST_ARCH_OS),hurd)
 DEFAULT_FS=ext2
 endif
 
 PROVIDES=made-filesystems, mounted-partitions, partitioned-harddrives, created-fstab
 
 MENUITEMNUM=4200
+
+export DEB_CFLAGS_MAINT_APPEND := -Wall -Os
+
+override_dh_auto_configure:
+	dh_auto_configure -- --prefix=/
+
+override_dh_install:
+	dh_install --fail-missing
 
 override_dh_installdebconf:
 	dh_installdebconf

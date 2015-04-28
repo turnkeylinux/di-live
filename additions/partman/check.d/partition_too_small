@@ -41,7 +41,11 @@ for part in $parts; do
 	mountpoint="${part%,*}"
 	size="${part#*,}"
 	if [ "$mountpoint" = "/" ]; then
-		rofssize="$(du -s --block-size=1 /rofs | cut -f1)"
+		if [ -e /cdrom/casper/filesystem.size ]; then
+			rofssize="$(cat /cdrom/casper/filesystem.size)"
+		else
+			rofssize="$(du -s --block-size=1 /rofs | cut -f1)"
+		fi
 		rootrofssize="$rofssize"
 		rootsize="$size"
 	else
@@ -90,12 +94,12 @@ fi
 if [ -n "$partitions" ]; then
     partitions="$(echo "$partitions" | sed -e 's/, /\n/g')"
     db_capb escape
-    db_reset di-live/partition-too-small
-    db_subst di-live/partition-too-small PARTITIONS "$(printf %s "$partitions" | debconf-escape -e)"
+    db_reset ubiquity/partition-too-small
+    db_subst ubiquity/partition-too-small PARTITIONS "$(printf %s "$partitions" | debconf-escape -e)"
     db_capb
-    db_input critical di-live/partition-too-small || true
+    db_input critical ubiquity/partition-too-small || true
     db_go || true
-    db_get di-live/partition-too-small
+    db_get ubiquity/partition-too-small
     if [ "$RET" = true ]; then
         exit 1
     fi

@@ -11,18 +11,30 @@
 # in doc/i18n/i18n.txt
 #
 #
+#
+# Translations from iso-codes:
+#   Data taken from ICU-2.8; originally from:
+#   - Shehnaz Nagpurwala and Anwar Nagpurwala [first version]
+#   - IBM NLTC:  http://w3.torolab.ibm.com/gcoc/documents/india/hi-nlsgg.htm
+#   - Arundhati Bhowmick [IBM Cupertino]
+#
+#
 # Nishant Sharma <me@nishants.net>, 2005, 2006.
 # Kumar Appaiah <akumar@ee.iitm.ac.in>, 2008.
-# Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008, 2009.
+# Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008, 2009, 2010.
 # Kumar Appaiah <kumar.appaiah@gmail.com>, 2009.
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+# Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008.
+# Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-07-06 22:29-0400\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2011-09-22 23:26-0500\n"
+"Last-Translator: Kumar Appaiah\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -190,7 +202,7 @@ msgstr "परिवर्तनों को डिस्क में लि�
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "लॉजिकल वॉल्यूम प्रबंधक के व्यवस्थापन से पहले वर्तमान पार्टिशनिंग अभिन्यास को डिस्क पर "
@@ -420,12 +432,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "वॉल्यूम समूह का आकार घटाने में त्रुटि"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "वॉल्यूम समूह को मिटाते समय त्रुटि हुई"
 
 #. Type: error
 #. Description
@@ -648,6 +659,13 @@ msgstr "कोई भी फिज़िकल वॉल्यूम चयन�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "वॉल्यूम समूह का आकार घटाने में त्रुटि"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -706,8 +724,8 @@ msgstr "लॉजिकल वॉल्यूम का कोई भी ना�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "लॉजिकल वॉल्यूम के लिए कोई भी नाम नहीं भरा गया. कृपया एक नाम प्रविष्ट करें."
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr "लॉजिकल वॉल्यूम के लिए कोई भी नाम नहीं भरा गया. कृपया एक नाम प्रविष्ट करें. "
 
 #. Type: error
 #. Description
@@ -770,8 +788,7 @@ msgstr "कोई लॉज़िकल वॉल्यूम नहीं म�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "कोई भी लॉजिकल वॉल्यूम नहीं पाया गया. कृपया पहले एक लॉजिकल वॉल्यूम बनायें."
 
 #. Type: select
@@ -806,7 +823,7 @@ msgstr "लॉजिकल वॉल्यूम को मिटाने म�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
 msgstr "लॉजिकल वॉल्यूम (${LV}) जोकि ${VG} पर है, मिटाया नहीं जा सका."
 
 #. Type: error
@@ -874,14 +891,15 @@ msgstr "अवैध लॉजिकल वॉल्यूम या वॉल�
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "लॉजिकल वॉल्यूम या वॉल्यूम समूह के नामों में केवल अक्षर, अंक, समास चिन्ह, धन चिन्ह, "
 "पूर्णविराम बिंदु और अधोरेखा ही हो सकते हैं. इनकी लम्बाई 128 अक्षर या उससे कम होनी चाहिए "
 "और यह समास चिन्ह से ं प्रारंनहीं भ होना चाहिए. \".\" और \"..\" नामों की तरह स्वीकार्य "
-"नहीं है. साथ ही, लॉजिकल वॉल्यूमों के नाम \"snapshot\" से प्रारंभ नहीं हो सकते हैं."
+"नहीं है. साथ ही, लॉजिकल वॉल्यूमों के नाम \"snapshot\" से प्रारंभ नहीं हो सकते हैं. "
 
 #. Type: error
 #. Description
@@ -965,10 +983,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
-msgstr "लॉज़िकल वॉल्यूम नाम:"
+msgstr "लॉज़िकल वॉल्यूम व्यवस्थापन:"
 
 #. Type: note
 #. Description
@@ -980,6 +996,9 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"कई बार सिस्टम एडमिनिस्ट्रेटर को पता लग सकता है को कोई पार्टीशन(अक्सर सबसे मत्त्वपूर्ण "
+"पार्टीशन) में जगह की कमी हो सकती है, जबकि किसी अन्यपार्टीशन पर अनेक जगह उपलब्ध है. "
+"ऐसी स्थितियों में लॉजिकल वॉल्यूम मेनेजर (LVM)काम आ सकता है."
 
 #. Type: note
 #. Description
@@ -993,6 +1012,11 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"LVM द्वारा तंत्र या पार्टीशन यन्त्र (\"फिजिकल वॉल्यूम\") कोजोड़ कर एक वर्चुअल तंत्र "
+"(\"वॉल्यूम समूह\") बनाया जाता है, जिसेवर्चुअल पार्टीशन (\"लौजिकल वॉल्यूम\") में बांटा "
+"जाता है. वॉल्यूम समूह औरलौजिकल वॉल्यूम कई यन्त्र पर रह सकते हैं. नए फिजिकल वॉल्यूम किसी "
+"भीसमय वॉल्यूम समूह में जोड़े जा सकते हैं, और लौजिकल वॉल्यूम के आकार कोवॉल्यूम समूह के रिक्त "
+"जगह के अंत तक बढाया जा सकता है."
 
 #. Type: note
 #. Description
@@ -1004,3 +1028,6 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"लवम व्यवस्थापन सूची के द्वारा वॉल्यूम समूह और लौजिकल वॉल्यूम में बदलावकिया जा सकता है. "
+"वापस मूल पार्टीशन मैनेजर पर लौटने पर लौजिकल वॉल्यूमको साधारण पार्टीशन के रूप में दिखाया "
+"जाएगा, और उन्हें ऐसे पार्टीशन जैसे मानलेना चाहिए."

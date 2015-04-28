@@ -8,18 +8,32 @@
 # This file is distributed under the same license as debian-installer.
 # Marius Gedminas <mgedmin@b4net.lt>, 2004.
 # Darius Skilinskas <darius10@takas.lt>, 2005.
-# Kęstutis Biliūnas <kebil@kaunas.init.lt>, 2004...2009.
+# Kęstutis Biliūnas <kebil@kaunas.init.lt>, 2004...2010.
+# Translations from iso-codes:
+# Gintautas Miliauskas <gintas@akl.lt>, 2008.
+# Tobias Quathamer <toddy@debian.org>, 2007.
+# Translations taken from ICU SVN on 2007-09-09
+# Translations from KDE:
+# - Ričardas Čepas <rch@richard.eu.org>
+# Free Software Foundation, Inc., 2000-2001, 2004
+# Gediminas Paulauskas <menesis@delfi.lt>, 2000-2001.
+# Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+# Kęstutis Biliūnas <kebil@kaunas.init.lt>, 2004, 2006, 2008, 2009, 2010.
+# Rimas Kudelis <rq@akl.lt>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-12-09 11:27+0200\n"
-"Last-Translator: Kęstutis Biliūnas <kebil@kaunas.init.lt>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-05-27 19:07+0300\n"
+"Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Type: text
 #. Description
@@ -47,7 +61,7 @@ msgstr "Fizinio tomo (physical volume) naudojimas:"
 #. :sl3:
 #: ../partman-lvm.templates:4001
 msgid "Provides logical volume:"
-msgstr "Loginio tomos (logical volume) pateikimas:"
+msgstr "Loginio tomo (logical volume) pateikimas:"
 
 #. Type: text
 #. Description
@@ -183,11 +197,11 @@ msgstr "Ar įrašyti pakeitimus į diskus ir konfigūruoti LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Prieš loginių tomų tvarkyklės (LVM) konfigūravimą, dabartinė disko dalijimo "
-"schema turi būti įrašyta į diską.  Šie pakeitimai negali būti neatlikti."
+"Prieš konfigūruojant loginių tomų tvarkytuvę, dabartinė disko dalijimo "
+"schema turi būti įrašyta į diską.  Šis pakeitimas negrįžtamas."
 
 #. Type: boolean
 #. Description
@@ -420,12 +434,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Klaida bandant sumažinti tomų grupę (Volume Group)"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Klaida bandant išmesti tomų grupę (Volume Group)"
 
 #. Type: error
 #. Description
@@ -656,6 +669,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Klaida bandant sumažinti tomų grupę (Volume Group)"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -721,8 +741,8 @@ msgstr "Neįvestas loginio tomo (Logical Volume) pavadinimas"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "Neįvestas loginio tomo (Logical Volume) pavadinimas. Prašau jį įvesti."
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr "Neįvestas loginio tomo vardas. Įveskite vardą."
 
 #. Type: error
 #. Description
@@ -788,10 +808,8 @@ msgstr "Neradau loginių tomų (Logical Volume)"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
-msgstr ""
-"Neradau nė vieno loginio tomo (Logical Volume). Pirma sukurkite loginį tomą."
+msgid "No logical volume has been found. Please create a logical volume first."
+msgstr "Nerastas nė vienas loginis tomas. Pirma sukurkite loginį tomą."
 
 #. Type: select
 #. Description
@@ -825,8 +843,8 @@ msgstr "Klaida bandant išmesti loginį tomą (Logical Volume)"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Nepavyko išmesti loginio tomo (${LV}) iš ${VG}."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Nepavyko pašalinti loginio tomo „${LV}“ iš grupės „${VG}“."
 
 #. Type: error
 #. Description
@@ -893,15 +911,16 @@ msgstr "Netinkamas loginio tomo ar tomų grupės vardas"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
-"Loginių tomų ar tomų grupių vardus gali sudaryti tik raidės, skaitmenys, "
-"brūkšnelis, pliuso ženklas, taškas ir pabraukimo ženklas. Jie gali būti iki "
-"128 simbolių ilgio ir negali prasidėti brūkšneliu. Vardai \".\" ir\"..\" "
-"neleistini. Be to, loginių tomų vardai negali prasidėti žodžiu ·\"snapshot\"."
-"·"
+"Loginių tomų ar tomų grupių vardus gali sudaryti tik lotyniškos raidės, "
+"skaitmenys, brūkšnelis, pliuso ženklas, taškas ir pabraukimo ženklas. Jie "
+"gali būti iki 128 simbolių ilgio ir negali prasidėti brūkšneliu. Vardai „.“ "
+"ir „..“ neleistini. Be to, loginių tomų vardai negali prasidėti žodžiu "
+"„snapshot“."
 
 #. Type: error
 #. Description

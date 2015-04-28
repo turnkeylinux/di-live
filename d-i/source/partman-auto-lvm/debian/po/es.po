@@ -16,7 +16,8 @@
 # Steve Langasek <vorlon@debian.org>, 2004
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2005
 # Rubén Porras Campo <nahoo@inicia.es>, 2005
-# Javier Fernández-Sanguino <jfs@debian.org>, 2003-2007
+# Javier Fernández-Sanguino <jfs@debian.org>, 2003-2010
+# Omar Campagne <ocampagne@gmail.com>, 2010
 #
 # Equipo de traducción al español, por favor lean antes de traducir
 # los siguientes documentos:
@@ -49,9 +50,10 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-09-06 22:55+0200\n"
-"Last-Translator: Javier Fernández-Sanguino Peña <jfs@debian.org>\n"
+"PO-Revision-Date: 2011-02-04 03:13+0100\n"
+"Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team:  Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -258,8 +260,8 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
-"Usted puede utilizar todo el volumen para el particionado guiado, o parte de "
-"el. Si utiliza sólo una parte, o si añade más discos después, entonces usted "
+"Puede utilizar todo el volumen para el particionado guiado, o parte de el. "
+"Si utiliza solo una parte, o si añade más discos después, entonces usted "
 "será capaz de engrandecer los volúmenes lógicos usando las herramientas de "
 "LVM, así que usar una parte menor del grupo de volumen en el momento de "
 "instalación puede ofrecer una mayor flexibilidad."
@@ -273,10 +275,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"El tamaño mínimo de la partición seleccioneada es de ${MINSIZE} (o "
-"${PERCENT}); por favor, tenga en cuenta que los paquetes que elegio a "
-"instalar puede requerir más espacio que esto. El tamaño máximo disponible es "
-"de ${MAXSIZE}."
+"El tamaño mínimo de la partición seleccionada es de ${MINSIZE} (o "
+"${PERCENT}); tenga en cuenta que los paquetes que eligió instalar pueden "
+"requerir más espacio que esto. El tamaño máximo disponible es de ${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -320,8 +321,8 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
-"Usted preguntó por ${SIZE} a ser usado para particionado guiado, pero el "
-"espacio disponible es de sólo ${MAXSIZE}."
+"Pidió usar ${SIZE} en el particionado guiado, pero el espacio disponible es "
+"de solo ${MAXSIZE}."
 
 #. Type: error
 #. Description

@@ -10,7 +10,7 @@ bail_out() {
 	exit 1
 }
 
-# Add a partition to hold a Physical Volume to the given receipe
+# Add a partition to hold a Physical Volume to the given recipe
 # (Need $method in scope.)
 add_envelope() {
 	local scheme="$1"
@@ -153,20 +153,26 @@ auto_lvm_prepare() {
 		fi
 	done
 
-	# We need to be in some subdirectory of $DEVICES when decoding the
-	# recipe, although it doesn't much matter which one.
-	cd ${devs%% *}
-
+	# Change to any one of the devices - we arbitrarily pick the first -
+	# to ensure that partman-auto can detect its label.  Of course this
+	# only works if all the labels match, but that should be the case
+	# since we just initialised them all following the same rules.
+	cd "${devs%% *}"
 	decode_recipe $recipe lvm
+	cd -
 
 	# Make sure the recipe contains lvmok tags
 	if ! echo "$scheme" | grep -q lvmok; then
 		bail_out unusable_recipe
 	fi
 
-	# Make sure a boot partition isn't marked as lvmok
+	# Make sure a boot partition isn't marked as lvmok, unless the user
+	# has told us it is ok for /boot to reside on a logical volume
 	if echo "$scheme" | grep lvmok | grep -q "[[:space:]]/boot[[:space:]]"; then
-		bail_out unusable_recipe
+		db_input critical partman-auto-lvm/no_boot || true
+		db_go || return 255
+		db_get partman-auto-lvm/no_boot || true
+		[ "$RET" = true ] || bail_out unusable_recipe
 	fi
 
 	# This variable will be used to store the partitions that will be LVM
@@ -252,6 +258,20 @@ auto_lvm_prepare() {
 		close_dialog
 		device_cleanup_partitions
 	done
+
+	# Remove zombie LVMs which happed to be left-over on the newly
+	# created partition, because the disk was not zeroed out.
+	# Wait for devices to settle
+	if type update-dev >/dev/null 2>&1; then
+		log-output -t update-dev update-dev --settle
+	fi
+	# Give LVM a kick to rescan devices
+	/sbin/vgdisplay 2>/dev/null
+	# Finally purge LVM remains
+	for dev in $devs; do
+	    device_remove_lvm $dev
+	done
+
 	update_all
 }
 
@@ -267,7 +287,7 @@ auto_lvm_perform() {
 			defvgname=$(cat /etc/hostname | head -n 1 | tr -d " ")
 		fi
 		if [ "$defvgname" ]; then
-			db_set partman-auto-lvm/new_vg_name $defvgname
+			db_set partman-auto-lvm/new_vg_name $defvgname-vg
 		else
 			db_set partman-auto-lvm/new_vg_name Ubuntu
 		fi
@@ -282,7 +302,7 @@ auto_lvm_perform() {
 		defvgname="$RET"
 
 		# Check that the volume group name is not in use
-		if ! vg_get_info "$defvgname"; then
+		if ! vg_get_info "$defvgname" && ! stat "/dev/$defvgname"; then
 			break
 		fi
 		noninteractive="bail_out vg_exists"

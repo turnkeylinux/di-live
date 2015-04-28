@@ -3,17 +3,30 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# Translation of Debian Installer templates to Brazilian Portuguese.
 # This file is distributed under the same license as debian-installer.
+#
+# Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
+#   Free Software Foundation, Inc., 2000
+#   Juan Carlos Castro y Castro <jcastro@vialink.com.br>, 2000-2005.
+#   Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2006-2009.
+#   Lisiane Sztoltz <lisiane@conectiva.com.br>
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2008-08-07 19:53-0300\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-06-24 19:11-0300\n"
 "Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,14 +43,14 @@ msgstr "Volumes físicos não alocados:"
 #. :sl3:
 #: ../partman-lvm.templates:2001
 msgid "Volume groups:"
-msgstr "Grupos de volume:"
+msgstr "Grupos de volumes:"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:3001
 msgid "Uses physical volume:"
-msgstr "Utiliza volume lógico:"
+msgstr "Usa volume físico:"
 
 #. Type: text
 #. Description
@@ -93,7 +106,7 @@ msgstr "VF"
 #. What is "in use" is a partition
 #: ../partman-lvm.templates:9001
 msgid "In use by LVM volume group ${VG}"
-msgstr "Em uso pelo grupo de volume LVM ${VG}"
+msgstr "Em uso pelo grupo de volumes LVM ${VG}"
 
 #. Type: text
 #. Description
@@ -111,7 +124,7 @@ msgstr "Exibir detalhes de configuração"
 #. Use infinitive form
 #: ../partman-lvm.templates:11001
 msgid "Create volume group"
-msgstr "Criar grupo de volume"
+msgstr "Criar grupo de volumes"
 
 #. Type: text
 #. Description
@@ -120,7 +133,7 @@ msgstr "Criar grupo de volume"
 #. Use infinitive form
 #: ../partman-lvm.templates:12001
 msgid "Delete volume group"
-msgstr "Excluir grupo de volume"
+msgstr "Excluir grupo de volumes"
 
 #. Type: text
 #. Description
@@ -129,7 +142,7 @@ msgstr "Excluir grupo de volume"
 #. Use infinitive form
 #: ../partman-lvm.templates:13001
 msgid "Extend volume group"
-msgstr "Estender grupo de volume"
+msgstr "Estender grupo de volumes"
 
 #. Type: text
 #. Description
@@ -138,7 +151,7 @@ msgstr "Estender grupo de volume"
 #. Use infinitive form
 #: ../partman-lvm.templates:14001
 msgid "Reduce volume group"
-msgstr "Reduzir grupo de volume"
+msgstr "Reduzir grupo de volumes"
 
 #. Type: text
 #. Description
@@ -180,7 +193,7 @@ msgstr "Gravar as mudanças nos discos e configurar LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Antes que o Gerenciador de Volumes Lógicos possa ser configurado, o esquema "
@@ -198,9 +211,9 @@ msgid ""
 "partitioning scheme before continuing."
 msgstr ""
 "Depois que o Gerenciador de Volumes Lógicos for configurado, nenhuma mudança "
-"adicional no esquema de particionamento dos disco que contém os volumes "
-"físicos será permitida. Por favor, decida se você está satisfeito com o "
-"esquema de particionamento atual antes de continuar."
+"adicional no esquema de particionamento dos discos que contêm os volumes "
+"físicos será permitida durante a instalação. Por favor, decida se você está "
+"satisfeito com o esquema de particionamento atual antes de continuar."
 
 #. Type: boolean
 #. Description
@@ -220,9 +233,9 @@ msgid ""
 "disks before continuing."
 msgstr ""
 "Depois que o Gerenciador de Volumes Lógicos for configurado, nenhuma mudança "
-"adicional nos disco que contém os volumes físicos será permitida. Por favor, "
-"decida se você está satisfeito com o esquema de particionamento atual nesses "
-"discos antes de continuar."
+"adicional nos discos que contêm os volumes físicos será permitida. Por "
+"favor, decida se você está satisfeito com o esquema de particionamento atual "
+"nesses discos antes de continuar."
 
 #. Type: error
 #. Description
@@ -286,7 +299,7 @@ msgid ""
 msgstr ""
 " Volumes Físicos Livres: ${FREE_PVS}\n"
 " Volumes Físicos Usados: ${USED_PVS}\n"
-" Grupos de Volume:       ${VGS}\n"
+" Grupos de Volumes:      ${VGS}\n"
 " Volumes Lógicos:        ${LVS}"
 
 #. Type: note
@@ -301,14 +314,14 @@ msgstr "Configuração LVM atual:"
 #. :sl3:
 #: ../partman-lvm.templates:26001
 msgid "Devices for the new volume group:"
-msgstr "Dispositivos para o novo Grupo de Volume:"
+msgstr "Dispositivos para o novo grupo de volumes:"
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:26001
 msgid "Please select the devices for the new volume group."
-msgstr "Por favor, selecione os dispositivos para o novo Grupo de Volume."
+msgstr "Por favor, selecione os dispositivos para o novo grupo de volumes."
 
 #. Type: multiselect
 #. Description
@@ -329,7 +342,7 @@ msgstr "Você pode selecionar um ou mais dispositivos."
 #. :sl3:
 #: ../partman-lvm.templates:27001
 msgid "Volume group name:"
-msgstr "Nome do Grupo de Volume:"
+msgstr "Nome do grupo de volumes:"
 
 #. Type: string
 #. Description
@@ -337,8 +350,8 @@ msgstr "Nome do Grupo de Volume:"
 #: ../partman-lvm.templates:27001
 msgid "Please enter the name you would like to use for the new volume group."
 msgstr ""
-"Por favor, informe o nome que você gostaria de usar para o novo Grupo de "
-"Volume."
+"Por favor, informe o nome que você gostaria de usar para o novo grupo de "
+"volumes."
 
 #. Type: error
 #. Description
@@ -362,7 +375,7 @@ msgid ""
 "No physical volumes were selected. The creation of a new volume group has "
 "been aborted."
 msgstr ""
-"Nenhum volume físico foi selecionado. A criação de um novo grupo de volume "
+"Nenhum volume físico foi selecionado. A criação de um novo grupo de volumes "
 "foi abortada."
 
 #. Type: error
@@ -370,7 +383,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:29001
 msgid "No volume group name entered"
-msgstr "Nenhum nome de Grupo de Volume informado"
+msgstr "Nenhum nome de grupo de volumes informado"
 
 #. Type: error
 #. Description
@@ -378,14 +391,15 @@ msgstr "Nenhum nome de Grupo de Volume informado"
 #: ../partman-lvm.templates:29001
 msgid "No name for the volume group has been entered. Please enter a name."
 msgstr ""
-"Nenhum nome de grupo de volume foi informado. Por favor, informe um nome."
+"Nenhum nome para o grupo de volumes foi informado. Por favor, informe um "
+"nome."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:30001
 msgid "Volume group name already in use"
-msgstr "Nome do Grupo de Volume já em uso"
+msgstr "Nome do grupo de volumes já em uso"
 
 #. Type: error
 #. Description
@@ -395,15 +409,15 @@ msgid ""
 "The selected volume group name is already in use. Please choose a different "
 "name."
 msgstr ""
-"O nome do grupo de volume selecionado já está em uso. Por favor, selecione "
-"um nome diferente."
+"O nome do grupo de volumes selecionado já está em uso. Por favor, escolha um "
+"nome diferente."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:31001
 msgid "Volume group name overlaps with device name"
-msgstr "Nome do Grupo de Volume conflita com nome de dispositivo"
+msgstr "Nome do grupo de volumes conflita com nome de dispositivo"
 
 #. Type: error
 #. Description
@@ -413,25 +427,24 @@ msgid ""
 "The selected volume group name overlaps with an existing device name. Please "
 "choose a different name."
 msgstr ""
-"O nome do grupo de volume selecionado conflita com um nome de dispositivo "
-"existente. Por favor, selecione um nome diferente."
+"O nome do grupo de volumes selecionado conflita com um nome de dispositivo "
+"existente. Por favor, escolha um nome diferente."
 
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Erro reduzindo o Grupo de Volume"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Erro na exclusão do grupo de volumes"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
 msgid "The volume group ${VG} could not be created."
-msgstr "Não foi possível criar o grupo de volume ${VG}."
+msgstr "Não foi possível criar o grupo de volumes ${VG}."
 
 #. Type: error
 #. Description
@@ -453,7 +466,7 @@ msgstr "Não foi possível criar o grupo de volume ${VG}."
 #: ../partman-lvm.templates:60001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
 msgstr ""
-"Confira o arquivo /var/log/syslog ou consulte o console 4 para maiores "
+"Verifique o arquivo /var/log/syslog ou consulte o console virtual 4 para os "
 "detalhes."
 
 #. Type: select
@@ -461,14 +474,14 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:33001
 msgid "Volume group to delete:"
-msgstr "Grupo de Volume a ser excluído:"
+msgstr "Grupo de volumes a ser excluído:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:33001
 msgid "Please select the volume group you wish to delete."
-msgstr "Por favor, selecione o Grupo de Volume que você deseja excluir."
+msgstr "Por favor, selecione o grupo de volumes que você deseja excluir."
 
 #. Type: error
 #. Description
@@ -485,7 +498,7 @@ msgstr "Por favor, selecione o Grupo de Volume que você deseja excluir."
 #: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
 #: ../partman-lvm.templates:42001 ../partman-lvm.templates:47001
 msgid "No volume group found"
-msgstr "Nenhum Grupo de Volume foi encontrado"
+msgstr "Nenhum grupo de volumes encontrado"
 
 #. Type: error
 #. Description
@@ -499,35 +512,35 @@ msgstr "Nenhum Grupo de Volume foi encontrado"
 #: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
 #: ../partman-lvm.templates:42001
 msgid "No volume group has been found."
-msgstr "Nenhum Grupo de Volume foi encontrado."
+msgstr "Nenhum grupo de volumes foi encontrado."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:34001
 msgid "The volume group may have already been deleted."
-msgstr "O Grupo de Volume pode já ter sido excluído."
+msgstr "O grupo de volumes pode já ter sido excluído."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:35001
 msgid "Really delete the volume group?"
-msgstr "Realmente excluir o Grupo de Volume?"
+msgstr "Realmente excluir o grupo de volume?"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:35001
 msgid "Please confirm the ${VG} volume group removal."
-msgstr "Por favor, confirme a remoção do grupo de volume ${VG}."
+msgstr "Por favor, confirme a remoção do grupo de volumes ${VG}."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:36001
 msgid "Error while deleting volume group"
-msgstr "Erro na remoção do Grupo de Volume"
+msgstr "Erro na exclusão do grupo de volumes"
 
 #. Type: error
 #. Description
@@ -537,36 +550,36 @@ msgid ""
 "The selected volume group could not be deleted. One or more logical volumes "
 "may currently be in use."
 msgstr ""
-"Não foi possível excluir o Grupo de Volume selecionado. Um ou mais Volumes "
-"Lógicos podem estar atualmente em uso."
+"Não foi possível excluir o grupo de volumes selecionado. Um ou mais volumes "
+"lógicos podem estar atualmente em uso."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:37001
 msgid "No volume group can be deleted."
-msgstr "Não foi possível excluir nenhum Grupo de Volume."
+msgstr "Não foi possível excluir nenhum grupo de volumes."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:38001
 msgid "Volume group to extend:"
-msgstr "Grupo de Volume a ser estendido:"
+msgstr "Grupo de volumes a ser estendido:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:38001
 msgid "Please select the volume group you wish to extend."
-msgstr "Por favor, selecione o Grupo de Volume que você deseja estender."
+msgstr "Por favor, selecione o grupo de volumes que você deseja estender."
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:39001
 msgid "Devices to add to the volume group:"
-msgstr "Dispositivos a adicionar ao Grupo de Volume:"
+msgstr "Dispositivos a adicionar ao grupo de volumes:"
 
 #. Type: multiselect
 #. Description
@@ -574,8 +587,8 @@ msgstr "Dispositivos a adicionar ao Grupo de Volume:"
 #: ../partman-lvm.templates:39001
 msgid "Please select the devices you wish to add to the volume group."
 msgstr ""
-"Por favor, selecione os dispositivos que você deseja adicionar ao Grupo de "
-"Volume."
+"Por favor, selecione os dispositivos que você deseja adicionar ao grupo de "
+"volumes."
 
 #. Type: error
 #. Description
@@ -585,7 +598,7 @@ msgid ""
 "No physical volumes were selected. Extension of the volume group has been "
 "aborted."
 msgstr ""
-"Nenhum volume físico foi selecionado. A extensão do grupo de volume foi "
+"Nenhum volume físico foi selecionado. A extensão do grupo de volumes foi "
 "abortada."
 
 #. Type: error
@@ -593,7 +606,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:41001
 msgid "Error while extending volume group"
-msgstr "Erro estendendo o Grupo de Volume"
+msgstr "Erro estendendo o grupo de volumes"
 
 #. Type: error
 #. Description
@@ -603,7 +616,7 @@ msgid ""
 "The physical volume ${PARTITION} could not be added to the selected volume "
 "group."
 msgstr ""
-"Não foi possível adicionar o volume físico ${PARTITION} ao Grupo de Volume "
+"Não foi possível adicionar o volume físico ${PARTITION} ao grupo de volumes "
 "selecionado."
 
 #. Type: error
@@ -611,28 +624,28 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:42001
 msgid "No volume group can be reduced."
-msgstr "Não foi possível reduzir nenhum Grupo de Volume."
+msgstr "Não foi possível reduzir nenhum grupo de volumes."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:43001
 msgid "Volume group to reduce:"
-msgstr "Grupo de volume a ser reduzido:"
+msgstr "Grupo de volumes a ser reduzido:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:43001
 msgid "Please select the volume group you wish to reduce."
-msgstr "Por favor, selecione o Grupo de Volume que você deseja reduzir."
+msgstr "Por favor, selecione o grupo de volumes que você deseja reduzir."
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:44001
 msgid "Devices to remove from the volume group:"
-msgstr "Dispositivos a serem removidos do grupo de volume:"
+msgstr "Dispositivos a serem removidos do grupo de volumes:"
 
 #. Type: multiselect
 #. Description
@@ -641,7 +654,7 @@ msgstr "Dispositivos a serem removidos do grupo de volume:"
 msgid "Please select the devices you wish to remove from the volume group."
 msgstr ""
 "Por favor, selecione os dispositivos que você deseja remover do grupo de "
-"volume."
+"volumes."
 
 #. Type: error
 #. Description
@@ -650,8 +663,15 @@ msgstr ""
 msgid ""
 "No physical volumes were selected. Reduction of the volume group was aborted."
 msgstr ""
-"Nenhum volume físico foi selecionado. A redução do grupo de volume foi "
+"Nenhum volume físico foi selecionado. A redução do grupo de volumes foi "
 "abortada."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Erro reduzindo o grupo de volumes"
 
 #. Type: error
 #. Description
@@ -661,7 +681,7 @@ msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
 msgstr ""
-"Não foi possível remover o volume físico ${PARTITION} do Grupo de Volume "
+"Não foi possível remover o volume físico ${PARTITION} do grupo de volumes "
 "selecionado."
 
 #. Type: error
@@ -673,16 +693,16 @@ msgid ""
 "create more physical volumes and volume groups, or reduce an existing volume "
 "group."
 msgstr ""
-"Não foi encontrado nenhum grupo de volume livre para criação de um volume "
-"lógico. Por favor, crie mais volumes físicos e grupos de volume ou reduza um "
-"grupo de volume existente."
+"Não foi encontrado nenhum grupo de volumes livre para criação de um novo "
+"volume lógico. Por favor, crie mais volumes físicos e grupos de volumes ou "
+"reduza um grupo de volumes existente."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:48001
 msgid "Logical volume name:"
-msgstr "Nome do Volume Lógico:"
+msgstr "Nome do volume lógico:"
 
 #. Type: string
 #. Description
@@ -690,15 +710,15 @@ msgstr "Nome do Volume Lógico:"
 #: ../partman-lvm.templates:48001
 msgid "Please enter the name you would like to use for the new logical volume."
 msgstr ""
-"Por favor, informe o nome que você gostaria de usar para o novo Volume "
-"Lógico."
+"Por favor, informe o nome que você gostaria de usar para o novo volume "
+"lógico."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:49001
 msgid "Volume group:"
-msgstr "Grupo de Volume:"
+msgstr "Grupo de volumes:"
 
 #. Type: select
 #. Description
@@ -708,7 +728,7 @@ msgid ""
 "Please select the volume group where the new logical volume should be "
 "created."
 msgstr ""
-"Por favor, selecione o Grupo de Volume onde o novo Volume Lógico deverá ser "
+"Por favor, selecione o grupo de volumes onde o novo volume lógico deverá ser "
 "criado."
 
 #. Type: error
@@ -716,15 +736,15 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:50001
 msgid "No logical volume name entered"
-msgstr "Nenhum nome de Volume Lógico informado"
+msgstr "Nenhum nome de volume lógico informado"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr ""
-"Nenhum nome de Volume Lógico foi informado, Por favor, informe um nome."
+"Nenhum nome para o volume lógico foi informado, Por favor, informe um nome."
 
 #. Type: error
 #. Description
@@ -734,7 +754,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:51001 ../partman-lvm.templates:53001
 msgid "Error while creating a new logical volume"
-msgstr "Erro na criação de um novo Volume Lógico"
+msgstr "Erro na criação de um novo volume lógico"
 
 #. Type: error
 #. Description
@@ -744,15 +764,15 @@ msgid ""
 "The name ${LV} is already in use by another logical volume on the same "
 "volume group (${VG})."
 msgstr ""
-"O nome ${LV} já está em uso por um outro Volume Lógico no mesmo Grupo de "
-"Volume (${VG})."
+"O nome ${LV} já está em uso por um outro volume lógico no mesmo grupo de "
+"volumes (${VG})."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:52001
 msgid "Logical volume size:"
-msgstr "Tamanho do Volume Lógico:"
+msgstr "Tamanho do volume lógico:"
 
 #. Type: string
 #. Description
@@ -763,9 +783,9 @@ msgid ""
 "the following formats: 10K (Kilobytes), 10M (Megabytes), 10G (Gigabytes), "
 "10T (Terabytes). The default unit is Megabytes."
 msgstr ""
-"Por favor, informe o tamanho do novo Volume Lógico. O tamanho pode ser "
+"Por favor, informe o tamanho do novo volume lógico. O tamanho pode ser "
 "informado nos seguintes formatos: 10K (Kilobytes), 10M (Megabytes), 10G "
-"(Gigabytes), 10T (Terabytes). A unidade padrão é em Megabytes."
+"(Gigabytes), 10T (Terabytes). A unidade padrão é Megabytes."
 
 #. Type: error
 #. Description
@@ -783,16 +803,15 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:54001
 msgid "No logical volume found"
-msgstr "Nenhum Volume Lógico encontrado"
+msgstr "Nenhum volume lógico encontrado"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
-"Nenhum Volume Lógico foi encontrado. Por favor, crie um Volume Lógico "
+"Nenhum volume lógico foi encontrado. Por favor, crie um volume lógico "
 "primeiro."
 
 #. Type: select
@@ -800,7 +819,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:55001
 msgid "Logical volume:"
-msgstr "Volume Lógico:"
+msgstr "Volume lógico:"
 
 #. Type: select
 #. Description
@@ -821,14 +840,14 @@ msgstr "no VG ${VG}"
 #. :sl3:
 #: ../partman-lvm.templates:57001
 msgid "Error while deleting the logical volume"
-msgstr "Erro na remoção do Volume Lógico"
+msgstr "Erro na remoção do volume lógico"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Não foi possível excluir o Volume Lógico (${LV}) em ${VG}."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Não foi possível excluir o volume lógico ${LV} de ${VG}."
 
 #. Type: error
 #. Description
@@ -847,8 +866,9 @@ msgid ""
 "required kernel modules or re-partition the hard drives."
 msgstr ""
 "Nenhum volume físico (ou seja, nenhuma partição) foi encontrado em seu "
-"sistema. Você pode também precisar carregar alguns módulos de kernel "
-"necessários ou reparticionar os discos rígidos."
+"sistema. Todos os volumes físicos podem já estar em uso. Pode ser que você "
+"também tenha que carregar alguns módulos de kernel necessários ou "
+"reparticionar os discos rígidos."
 
 #. Type: error
 #. Description
@@ -873,7 +893,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:60001
 msgid "Error while initializing physical volume"
-msgstr "Erro na inicialização do volume lógico"
+msgstr "Erro na inicialização do volume físico"
 
 #. Type: error
 #. Description
@@ -887,7 +907,7 @@ msgstr "Não foi possível inicializar o volume físico ${PV}."
 #. :sl3:
 #: ../partman-lvm.templates:61001
 msgid "Invalid logical volume or volume group name"
-msgstr "Nome de volume lógico ou de grupo de volume inválido"
+msgstr "Nome de volume lógico ou de grupo de volumes inválido"
 
 #. Type: error
 #. Description
@@ -895,14 +915,15 @@ msgstr "Nome de volume lógico ou de grupo de volume inválido"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Nomes de volumes lógicos ou de grupos de volumes podem conter somente "
-"caracteres alfanuméricos, hifens, sinais de adição, pontos e sinais de caixa-"
-"baixa (underscore). Os mesmos deve ter no máximo 128 caracteres e não podem "
-"iniciar com um hífen. Os nomes \".\" e \"..\" não são permitidos. "
+"caracteres alfanuméricos, hifens, sinais de adição, pontos e sinais de "
+"sublinhado (underscore). Os mesmos devem ter no máximo 128 caracteres e não "
+"podem iniciar com um hífen. Os nomes \".\" e \"..\" não são permitidos. "
 "Adicionalmente, nomes de volumes lógicos não podem iniciar com a palavra "
 "\"snapshot\"."
 
@@ -929,21 +950,21 @@ msgid ""
 "volume groups and physical volumes which are about to be removed:"
 msgstr ""
 "O dispositivo selecionado já possui os seguintes volumes físicos, grupos de "
-"volume e volumes lógicos LVM que estão prestes a serem removidos:"
+"volumes e volumes lógicos LVM que estão prestes a serem removidos:"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Logical volume(s) to be removed: ${LVTARGETS}"
-msgstr "Volume(s) lógico(s) a serem removidos: ${LVTARGETS}"
+msgstr "Volume(s) lógico(s) a ser(em) removido(s): ${LVTARGETS}"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Volume group(s) to be removed: ${VGTARGETS}"
-msgstr "Grupo(s) de Volume a ser(em) removido(s): ${VGTARGETS}"
+msgstr "Grupo(s) de volumes a ser(em) removido(s): ${VGTARGETS}"
 
 #. Type: boolean
 #. Description
@@ -980,19 +1001,17 @@ msgid ""
 "automatically. If you wish to use this device for partitioning, please "
 "remove its LVM data first."
 msgstr ""
-"Como o(s) grupo(s) de volume no dispositivo selecionado também consiste(m) "
-"de volumes em outros dispositivos, não é considerado seguro remover seus "
-"dados LVM automaticamente. Se você deseja usar este dispositivo para "
+"Como o(s) grupo(s) de volumes no dispositivo selecionado também consiste(m) "
+"de volumes físicos em outros dispositivos, não é considerado seguro remover "
+"seus dados LVM automaticamente. Se você deseja usar este dispositivo para "
 "particionamento, por favor, remove seus dados LVM primeiro."
 
 #. Type: note
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
-msgstr "Nome do Volume Lógico:"
+msgstr "Gerenciamento de Volumes Lógicos"
 
 #. Type: note
 #. Description
@@ -1004,6 +1023,10 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"Uma situação comum para administradores de sistemas é descobrir que alguma "
+"partição (geralmente a mais importante) está com pouco espaço, enquanto "
+"outras partições estão subutilizadas. O Gerenciador de Volumes Lógicos (LVM "
+"-- Logical Volume Manager) pode ajudá-lo com esse problema."
 
 #. Type: note
 #. Description
@@ -1017,6 +1040,13 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"LVM permite combinar discos ou partições (\"volumes físicos\") para formar "
+"um disco virtual (\"grupo de volumes\"), que pode ser dividido em partições "
+"virtuais (\"volumes lógicos\"). Grupos de volumes e volumes lógicos podem "
+"estar distribuídos em vários discos físicos. Novos volumes físicos podem ser "
+"adicionados a um grupo de volumes a qualquer momento e volumes lógicos podem "
+"ser redimensionados até a quantidade de espaço não alocado no grupo de "
+"volumes."
 
 #. Type: note
 #. Description
@@ -1028,3 +1058,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"Os itens no menu de configuração LVM podem ser usados para editar grupos de "
+"volumes e volumes lógicos. Após retornar à tela principal do gerenciador de "
+"partições, os volumes lógicos serão exibidos da mesma forma que partições "
+"tradicionais e você deverá tratá-los como tais."

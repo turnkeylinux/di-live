@@ -7,12 +7,19 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Free Software Foundation, 2002,2004 
+#   Miroslav Kure <kurem@debian.cz>, 2004--2010.
+#   Petr Cech <cech@debian.org> (Petr Čech), 2000.
+#   Stanislav Brabec <utx@penguin.cz>, 2001.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2010-08-20 22:02+0200\n"
-"PO-Revision-Date: 2011-02-20 19:50+0100\n"
+"POT-Creation-Date: 2014-08-31 22:00+0000\n"
+"PO-Revision-Date: 2014-09-27 18:30+0200\n"
 "Last-Translator:  Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team:  Czech <provoz@debian.cz>\n"
 "Language: cs\n"
@@ -566,10 +573,25 @@ msgstr "fat32"
 #. Type: text
 #. Description
 #. :sl2:
+#: ../partman-basicfilesystems.templates:36001
+msgid "NTFS journaling file system"
+msgstr "žurnálovací souborový systém NTFS"
+
 #. Type: text
 #. Description
-#: ../partman-basicfilesystems.templates:36001
+#. :sl1:
+#. Short file system name (untranslatable in many languages)
+#: ../partman-basicfilesystems.templates:37001
+msgid "ntfs"
+msgstr "ntfs"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Type: text
+#. Description
 #: ../partman-basicfilesystems.templates:38001
+#: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
 msgstr "odkládací prostor"
 
@@ -581,8 +603,8 @@ msgstr "odkládací prostor"
 #. Description
 #. :sl1:
 #. Short variant of `swap space'
-#: ../partman-basicfilesystems.templates:37001
 #: ../partman-basicfilesystems.templates:39001
+#: ../partman-basicfilesystems.templates:41001
 msgid "swap"
 msgstr "swap"
 
@@ -591,15 +613,15 @@ msgstr "swap"
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:40001
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options:"
 msgstr "Volby připojení:"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
 msgstr "Volby připojení mohou vyladit chování souborového systému."
 
@@ -608,16 +630,25 @@ msgstr "Volby připojení mohou vyladit chování souborového systému."
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
-msgstr "noatime - neaktualizuje čas přístupu k souboru"
+msgstr "noatime - neaktualizuje čas přístupu k souborům"
 
 #. Type: text
 #. Description
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:43001
+#: ../partman-basicfilesystems.templates:45001
+msgid "nodiratime - do not update directory inode access times"
+msgstr "nodiratime - neaktualizuje čas přístupu k adresářům"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:46001
 msgid "relatime - update inode access times relative to modify time"
 msgstr "relatime - aktualizuje čas přístupu relativně k času modifikace"
 
@@ -626,7 +657,7 @@ msgstr "relatime - aktualizuje čas přístupu relativně k času modifikace"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:44001
+#: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
 msgstr "nodev - zakáže speciální znaková nebo bloková zařízení"
 
@@ -635,7 +666,7 @@ msgstr "nodev - zakáže speciální znaková nebo bloková zařízení"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:45001
+#: ../partman-basicfilesystems.templates:48001
 msgid "nosuid - ignore set-user-identifier or set-group-identifier bits"
 msgstr "nosuid - ignoruje příznaky setuid a setgid"
 
@@ -644,7 +675,7 @@ msgstr "nosuid - ignoruje příznaky setuid a setgid"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:46001
+#: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
 msgstr "noexec - nedovolí spouštění spustitelných souborů"
 
@@ -653,7 +684,7 @@ msgstr "noexec - nedovolí spouštění spustitelných souborů"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:47001
+#: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
 msgstr "ro - připojí souborový systém pouze pro čtení"
 
@@ -662,7 +693,7 @@ msgstr "ro - připojí souborový systém pouze pro čtení"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:48001
+#: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
 msgstr "sync - všechny vstupně/výstupní operace se dějí synchronně"
 
@@ -671,7 +702,7 @@ msgstr "sync - všechny vstupně/výstupní operace se dějí synchronně"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:49001
+#: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
 msgstr "usrquota - povolí používání diskových kvót"
 
@@ -680,7 +711,7 @@ msgstr "usrquota - povolí používání diskových kvót"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:50001
+#: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
 msgstr "grpquota - povolí používání skupinových diskových kvót"
 
@@ -689,7 +720,7 @@ msgstr "grpquota - povolí používání skupinových diskových kvót"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:51001
+#: ../partman-basicfilesystems.templates:54001
 msgid "user_xattr - support user extended attributes"
 msgstr "user_xattr - podpora pro uživatelské rozšířené atributy"
 
@@ -698,7 +729,7 @@ msgstr "user_xattr - podpora pro uživatelské rozšířené atributy"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:52001
+#: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
 msgstr "quiet - změny vlastníka a přístupových práv nevrátí chybu"
 
@@ -707,16 +738,25 @@ msgstr "quiet - změny vlastníka a přístupových práv nevrátí chybu"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:53001
+#: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
 msgstr "notail - zakáže shlukování konců souborů dohromady"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:57001
+msgid "discard - trim freed blocks from underlying block device"
+msgstr "discard - na blokovém zařízení skutečně uvolní smazané bloky"
 
 #. Type: text
 #. Description
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:54001
+#: ../partman-basicfilesystems.templates:58001
 msgid "acls - support POSIX.1e Access Control List"
 msgstr "acls - podpora POSIX.1e Access Control List"
 
@@ -725,6 +765,60 @@ msgstr "acls - podpora POSIX.1e Access Control List"
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:55001
+#: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
 msgstr "shortnames - povolí názvy souborů jen ve starém formátu 8.3"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid "Go back to the menu and correct this problem?"
+msgstr "Vrátit se zpět do menu a opravit tento problém?"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+msgid ""
+"Your boot partition has not been configured with the ext2 file system. This "
+"is needed by your machine in order to boot. Please go back and use the ext2 "
+"file system."
+msgstr ""
+"Zaváděcí oblast nepoužívá souborový systém ext2, což je na tomto počítači "
+"nutný předpoklad pro správné zavádění systému. Vraťte se prosím zpět a "
+"použijte souborový systém ext2."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid ""
+"If you do not go back to the partitioning menu and correct this error, the "
+"partition will be used as is. This means that you may not be able to boot "
+"from your hard disk."
+msgstr ""
+"Pokud se nevrátíte zpět do rozdělovacího menu a neopravíte tyto chyby, "
+"oblast se použije tak, jak je. To znamená, že se možná nepovede zavést "
+"systém z pevného disku."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:61001
+msgid ""
+"Your boot partition is not located on the first partition of your hard disk. "
+"This is needed by your machine in order to boot.  Please go back and use "
+"your first partition as a boot partition."
+msgstr ""
+"Zaváděcí oblast není umístěna na první oblasti pevného disku, což je na "
+"tomto počítači nutný předpoklad pro správné zavádění systému. Vraťte se "
+"prosím zpět a použijte pro zavádění první oblast."

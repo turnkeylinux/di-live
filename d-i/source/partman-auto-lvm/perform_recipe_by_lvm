@@ -32,7 +32,7 @@ db_progress STEP 1
 # lvm overhead gets calculated properly only using kbytes.
 # Switch to that. The worst scenario is that the last partition will
 # be one PE smaller, but in the big numbers it's nothing (4MB).
-free_size=$(vgs -o vg_free --units K --noheading --nosuffix $VG_name | sed -e 's/^[[:space:]]*//; s/\..*//g')
+free_size=$(LC_ALL=C vgs -o vg_free --units K --noheading --nosuffix $VG_name | sed -e 's/^[[:space:]]*//; s/\..*//g')
 
 newscheme=''
 foreach_partition '
@@ -194,6 +194,8 @@ foreach_partition '
 	printf "%s" "$4" >$dev/size
 	printf "%s" "$VG_name - $lvname" >$dev/model
 
+	update-dev --settle
+
 	cd $dev
 	open_dialog OPEN "$(cat $dev/device)"
 	read_line response
@@ -211,18 +213,27 @@ foreach_partition '
 	open_dialog PARTITIONS
 	free_space=""
 	while { read_line num id size type fs path name; [ "$id" ]; }; do
-		if [ "$fs" = free ]; then
+		case $fs in
+		    free|unknown)
 			free_space=$id
 			free_size=$size
-		fi
+			free_fs=$fs
+			;;
+		esac
 	done
 	close_dialog
 
 	# create partition in the free space
 	[ "$free_space" ] || autopartitioning_failed
-	open_dialog NEW_PARTITION primary ext2 $free_space full $free_size
-	read_line num id size type fs path name
-	close_dialog
+	if [ "$free_fs" = unknown ]; then
+		# parted >= 3.2 gives us a partition automatically.
+		id=$free_space
+	else
+		# With parted < 3.2 we must create a partition manually.
+		open_dialog NEW_PARTITION primary ext2 $free_space full $free_size
+		read_line num id size type fs path name
+		close_dialog
+	fi
 
 	shift; shift; shift; shift
 	setup_partition $id $*

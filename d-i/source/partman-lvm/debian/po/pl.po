@@ -6,19 +6,42 @@
 # Polish messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Copyright (C) 2004-2008 Bartosz Feński <fenio@debian.org>
+# Copyright (C) 2004-2010 Bartosz Feński <fenio@debian.org>
 #
+#
+# Translations from iso-codes:
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#      Translations from KDE:
+#      - Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>
+#
+#   Tobias Toedter <t.toedter@gmx.net>, 2007.
+#   Jakub Bogusz <qboosh@pld-linux.org>, 2009-2011.
+#      Alastair McKinstry <mckinstry@computer.org>, 2001.
+#      Alastair McKinstry, <mckinstry@debian.org>, 2004.
+#      Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>, 2007.
+#      Cezary Jackiewicz <cjackiewicz@poczta.onet.pl>, 2000-2001.
+#      Free Software Foundation, Inc., 2000-2010.
+#      Free Software Foundation, Inc., 2004-2009.
+#      GNOME PL Team <translators@gnome.pl>, 2001.
+#      Jakub Bogusz <qboosh@pld-linux.org>, 2007-2011.
+#      Tomasz Z. Napierala <zen@debian.linux.org.pl>, 2004, 2006.
+# Marcin Owsiany <porridge@debian.org>, 2011.
+# Michał Kułach <michal.kulach@gmail.com>, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2010-01-05 11:20+0100\n"
-"Last-Translator: Bartosz Fenski <fenio@debian.org>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2014-11-18 19:57+0100\n"
+"Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #. Type: text
 #. Description
@@ -87,7 +110,7 @@ msgstr "Konfiguruj menedżera woluminów logicznych"
 #. Translators: use the acronym for "Physical Volume" in your language here
 #: ../partman-lvm.templates:8001
 msgid "PV"
-msgstr "FW"
+msgstr "WF"
 
 #. Type: text
 #. Description
@@ -182,7 +205,7 @@ msgstr "Zapisać zmiany do dysków i skonfigurować LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Zanim logiczny menedżer woluminów będzie mógł zostać skonfigurowany, "
@@ -416,12 +439,9 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Błąd podczas pomniejszania grupy woluminów"
+#: ../partman-lvm.templates:32001
+msgid "Error while creating volume group"
+msgstr "Błąd podczas tworzenia grupy woluminów"
 
 #. Type: error
 #. Description
@@ -649,6 +669,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Błąd podczas pomniejszania grupy woluminów"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -713,9 +740,9 @@ msgstr "Nie wprowadzono nazwy woluminu logicznego"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr ""
-"Nie wprowadzono żadnej nazwy woluminu logicznego. Proszę wprowadzić nazwę."
+"Nie wprowadzono nazwy dla woluminu logicznego. Proszę wprowadzić nazwę."
 
 #. Type: error
 #. Description
@@ -780,10 +807,9 @@ msgstr "Nie znaleziono logicznych woluminów"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
-"Nie znaleziono grupy woluminów logicznych. Najpierw utwórz jakiś wolumin "
+"Nie znaleziono woluminu logicznego. Proszę utworzyć najpierw jakiś wolumin "
 "logiczny."
 
 #. Type: select
@@ -818,8 +844,8 @@ msgstr "Błąd podczas usuwania woluminu logicznego"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Logiczny wolumin (${LV}) nie może zostać usunięty z ${VG}."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Wolumin logiczny ${LV} w ${VG} nie mógł zostać usunięty."
 
 #. Type: error
 #. Description
@@ -837,7 +863,7 @@ msgid ""
 "physical volumes may already be in use. You may also need to load some "
 "required kernel modules or re-partition the hard drives."
 msgstr ""
-"Nie znaleziono fizycznych woluminów (np. partycji) w Twoim systemie. "
+"Nie znaleziono fizycznych woluminów (tzn. partycji) w Twoim systemie. "
 "Możliwe, że wszystkie fizyczne woluminy są aktualnie używane. Możesz również "
 "spróbować załadować wymagane moduły do jądra lub przepartycjonować dysk "
 "twardy."
@@ -872,7 +898,7 @@ msgstr "Błąd podczas inicjalizacji woluminu fizycznego"
 #. :sl3:
 #: ../partman-lvm.templates:60001
 msgid "The physical volume ${PV} could not be initialized."
-msgstr "Fizyczny wolumin (${PV}) nie może zostać zainicjalizowany."
+msgstr "Fizyczny wolumin ${PV} nie mógł zostać zainicjalizowany."
 
 #. Type: error
 #. Description
@@ -887,14 +913,16 @@ msgstr "Nieprawidłowa nazwa woluminu logicznego lub grupy woluminów"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Nazwa woluminu logicznego lub grupy woluminów może zawierać tylko znaki "
-"alfanumeryczne, myślnik, znak plus, kropkę i podkreślenie. Musi mieć 128 lub "
-"mniej znaków i nie może zaczynać się od myślnika. Niedozwolone są również "
-"nazwy \".\" i \"..\" oraz nie mogą zaczynać się od \"snapshot\"."
+"alfanumeryczne, myślnik, znak plus, kropkę i podkreślenie. Musi mieć do 128 "
+"znaków i nie może zaczynać się od myślnika. Niedozwolone są nazwy \".\" i "
+"\"..\". Ponadto, nazwy woluminów logicznych nie mogą zaczynać się od "
+"\"snapshot\"."
 
 #. Type: error
 #. Description
@@ -972,8 +1000,8 @@ msgid ""
 msgstr ""
 "Ponieważ grupy woluminów na wybranym urządzeniu składają się z fizycznych "
 "woluminów również z innych urządzeń, nie jest uważane za bezpieczne usuwanie "
-"danych LVM automatycznie. Jeśli chcesz spartycjonować to urządzenie, usuń "
-"jego dane LVM najpierw."
+"danych LVM automatycznie. Jeśli chcesz spartycjonować to urządzenie, "
+"najpierw usuń jego dane LVM."
 
 #. Type: note
 #. Description

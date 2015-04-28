@@ -11,10 +11,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
 "PO-Revision-Date: 2008-05-01 11:22-0000\n"
 "Last-Translator: tegegne tefera <tefera@mekuria.com>\n"
 "Language-Team: Amharic\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -182,7 +183,7 @@ msgstr "ለውጡን ዲስኩ ላይ ይጻፍና LVM ይስተካከል?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 
@@ -405,12 +406,11 @@ msgstr "የተመረጠው የይዘት ግሩፕ ስም በፊት ከነበር 
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "የይዘት ግሩፑ በማሳነስ ላይ ስህተት ተፈጥሯል"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "የይዘት ግሩፑ ሲሰረዝ ችግር አጋጥሟል"
 
 #. Type: error
 #. Description
@@ -629,6 +629,13 @@ msgstr "ምንም አካላዊ ይዘት አልተመረጠም። የይዘት �
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "የይዘት ግሩፑ በማሳነስ ላይ ስህተት ተፈጥሯል"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -687,7 +694,10 @@ msgstr "ምንም የሎጂካዊ ይዘት ስም አልተሰጠም"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+#, fuzzy
+#| msgid ""
+#| "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr "ለሎጂካዊ ይዘት ስም አልተመረጠለትም። እባክዎ ስም ያስገቡ፡፡"
 
 #. Type: error
@@ -746,8 +756,10 @@ msgstr "ምንም ሎጂካል ይዘት አልተገኘም"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+#, fuzzy
+#| msgid ""
+#| "No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "ምንም ሎጂካዊ ይዘት አልተገኘም። እባክዎ በቅድሚያ ሎጂካዊ ይዘትን ይፍጠሩ።"
 
 #. Type: select
@@ -782,7 +794,9 @@ msgstr "የይዘት ግሩፑ ሲሰረዝ ችግር አጋጥሟል"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
+#, fuzzy
+#| msgid "The logical volume (${LV}) on ${VG} could not be deleted."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
 msgstr "በ ${VG} ላይ ያለው የይዘት ግሩፕ(${LV})ን መሰረዝ አልተቻለም"
 
 #. Type: error
@@ -846,9 +860,10 @@ msgstr "የማይሰራ ሎጂካዊ ይዘት ወይም የይዘት ግሩፕ"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 
 #. Type: error

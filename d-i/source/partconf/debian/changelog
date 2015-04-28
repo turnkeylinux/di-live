@@ -1,3 +1,119 @@
+partconf (1.46) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * Build-depend on libparted-dev rather than transitional package
+    libparted0-dev.
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 15 Oct 2014 08:22:56 +0200
+
+partconf (1.45) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 14 Mar 2014 17:40:56 +0100
+
+partconf (1.44) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bosnian (bs.po) by Amila Valjevčić
+  * Hungarian (hu.po) by Judit Gyimesi
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 13 Dec 2013 20:17:06 +0100
+
+partconf (1.43) unstable; urgency=low
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 08 Sep 2013 16:06:14 +0200
+
+partconf (1.42) unstable; urgency=low
+
+  [ Dmitrijs Ledkovs ]
+  * Set debian source format to '3.0 (native)'.
+  * Bump debhelper compat level to 9.
+  * Set Vcs-* to canonical format.
+
+  [ Colin Watson ]
+  * Handle asprintf failures consistently.
+  * Ignore uninteresting system failures.
+  * Handle fgets failures.
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 14 Jul 2013 13:00:59 +0200
+
+partconf (1.41) unstable; urgency=low
+
+  [ Milan Kupcevic ]
+  * Exclude CD/DVD drives from partition search. (thanks, Frank Fegert)
+    Closes: #332227
+
+  [ Colin Watson ]
+  * Use correct compiler and strip when cross-building.
+  * Avoid use of nested functions, fixing build with clang.
+  * Fix -Wsign-compare warnings in build_part_choices.
+  * Remove unnecessary comparison which triggered a -Wtype-limits warning.
+  * Mark argc and argv in mkfstab's main() as unused.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 04 Jun 2013 14:37:34 +0100
+
+partconf (1.40) unstable; urgency=low
+
+  [ Updated translations ]
+  * Malayalam (ml.po) by Hrishikesh K B
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 20 Oct 2012 18:12:50 +0200
+
+partconf (1.39) unstable; urgency=low
+
+  * Replace XC-Package-Type by Package-Type in debian/control
+  * Add myself to Uploaders
+
+  [ Updated translations ]
+  * Asturian (ast.po) by ivarela
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 15 Oct 2012 09:23:29 +0200
+
+partconf (1.38) unstable; urgency=low
+
+  [ Updated translations ]
+  * Asturian (ast.po) by Mikel González
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Tibetan (bo.po) by Tennom
+  * Czech (cs.po) by Miroslav Kure
+  * Welsh (cy.po) by Dafydd Tomos
+  * German (de.po) by Holger Wansing
+  * Esperanto (eo.po) by Felipe Castro
+  * Estonian (et.po) by Mattias Põldaru
+  * Basque (eu.po) by Piarres Beobide
+  * Galician (gl.po) by Jorge Barreirod
+  * Hebrew (he.po) by Lior Kaplanc
+  * Hindi (hi.po) by Kumar Appaiah
+  * Indonesian (id.po) by Mahyuddin Susantoh
+  * Icelandic (is.po) by Sveinn í Felli
+  * Italian (it.po) by Milo Casagrande
+  * Kannada (kn.po) by Prabodh C P
+  * Korean (ko.po) by Changwoo Ryu-
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Latvian (lv.po) by Rūdolfs Mazurs
+  * Macedonian (mk.po) by Arangel Angov
+  * Nepali (ne.po)i
+  * Dutch (nl.po) by Jeroen Schot
+  * Panjabi (pa.po) by A S Alam
+  * Polish (pl.po) by Marcin Owsiany
+  * Romanian (ro.po) by Ioan Eugen Stan
+  * Russian (ru.po) by Yuri Kozlov
+  * Sinhala (si.po)
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Uyghur (ug.po) by Sahran
+  * Ukrainian (uk.po) by Borys Yanovych
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+  * Traditional Chinese (zh_TW.po) by Yao Wei (魏銘廷)
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 17 Jun 2012 17:59:30 +0200
+
 partconf (1.37) unstable; urgency=low
 
   [ Aurelien Jarno ]

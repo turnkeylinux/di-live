@@ -1,9 +1,409 @@
-partman-lvm (69ubuntu1) lucid; urgency=low
+partman-lvm (105) unstable; urgency=medium
+
+  [ Steve McIntyre ]
+  * Don't list free devices that are too small (less than 4MB). They're
+    not going to be useful at all, and they're also likely to simply be
+    alignment artifacts that we can't use anyway. Closes: #775683
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 26 Jan 2015 08:15:59 +0100
+
+partman-lvm (103) unstable; urgency=low
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Viktar Siarheichyk
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 22 Dec 2014 06:59:55 +0100
+
+partman-lvm (102) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 17 Dec 2014 09:50:53 +0100
+
+partman-lvm (101) unstable; urgency=low
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Felipe Castro
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 08 Dec 2014 15:31:56 +0100
+
+partman-lvm (100) unstable; urgency=low
+
+  [ Updated translations ]
+  * Polish (pl.po) by Michał Kułach
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 19 Nov 2014 21:07:11 +0100
+
+partman-lvm (99) unstable; urgency=low
+
+  [ Updated translations ]
+  * Galician (gl.po) by Jorge Barreiro
+  * Italian (it.po) by Milo Casagrande
+  * Slovak (sk.po) by Ivan Masár
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 15 Nov 2014 08:13:33 +0100
+
+partman-lvm (98) unstable; urgency=low
+
+  [ Updated translations ]
+  * Slovenian (sl.po) by Vanja Cvelbar
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 22 Oct 2014 12:00:52 +0200
+
+partman-lvm (97) unstable; urgency=low
+
+  [ Updated translations ]
+  * Danish (da.po) by Joe Hansen
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 20 Oct 2014 07:53:08 +0200
+
+partman-lvm (96) unstable; urgency=low
+
+  [ Updated translations ]
+  * Russian (ru.po) by Yuri Kozlov
+  * Ukrainian (uk.po) by Anton Gladky
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 18 Oct 2014 08:45:16 +0200
+
+partman-lvm (95) unstable; urgency=low
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 02 Oct 2014 07:52:15 +0200
+
+partman-lvm (94) unstable; urgency=low
+
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+  * Japanese (ja.po) by Kenshi Muto
+  * Bokmål, Norwegian (nb.po) by Hans Fredrik Nordhaug
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 25 Sep 2014 18:13:56 +0200
+
+partman-lvm (93) unstable; urgency=low
+
+  [ Updated translations ]
+  * French (fr.po) by Christian Perrier
+  * Korean (ko.po) by Changwoo Ryu
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Thai (th.po) by Theppitak Karoonboonyanan
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 20 Sep 2014 14:21:10 +0200
+
+partman-lvm (92) unstable; urgency=low
+
+  * Add '--wipesignatures n' to the lvcreate call in lv_create() to make
+    sure the installer do not hang when an old swap or file system
+    signature is found when a new logical volume is created (Closes: #757818).
+  * Correct error message when unable to create a volume group (Closes:
+    #635438).  Thank you Robert Millan for the tip.
+
+ -- Petter Reinholdtsen <pere@debian.org>  Wed, 10 Sep 2014 00:08:04 +0200
+
+partman-lvm (91) unstable; urgency=medium
+
+  * Cope with parted 3.2 automatically creating a partition when creating a
+    fresh loop label (closes: #757664).
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 10 Aug 2014 11:18:35 +0100
+
+partman-lvm (90) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 14 Mar 2014 18:28:16 +0100
+
+partman-lvm (89) unstable; urgency=low
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+  * Hungarian (hu.po) by Judit Gyimesi
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 18 Jan 2014 08:13:06 +0100
+
+partman-lvm (88) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bosnian (bs.po) by Amila Valjevčić
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 19 Dec 2013 19:44:16 +0100
+
+partman-lvm (87) unstable; urgency=low
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 08 Sep 2013 16:33:52 +0200
+
+partman-lvm (86) unstable; urgency=low
+
+  * Mark apt-install executable in finish.d. Otherwise it's not executed,
+    not run, and doesn't install lvm2 utilities in the target system and
+    dependent libraries for device mapper (Closes: #680542).
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Wed, 07 Aug 2013 15:30:17 +0100
+
+partman-lvm (85) unstable; urgency=low
+
+  [ Dmitrijs Ledkovs ]
+  * Set debian source format to '3.0 (native)'.
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 13 Jul 2013 14:02:55 +0200
+
+partman-lvm (84) unstable; urgency=low
+
+  * Move apt-install call from post-base-installer.d to finish.d, in case
+    post-base-installer is not run at all (as is the case in ubiquity) or
+    otherwise failed to run (Closes: #680542).
+  * Bump debehlper compat to 9.
+  * Use standard VCS URLs.
+
+ -- Dmitrijs Ledkovs <dmitrijs.ledkovs@canonical.com>  Thu, 23 May 2013 13:43:28 +0100
+
+partman-lvm (83) unstable; urgency=low
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Tomislav Krznar
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 19 May 2013 18:05:20 +0200
+
+partman-lvm (82) unstable; urgency=low
+
+  [ Updated translations ]
+  * Malayalam (ml.po) by Hrishikesh K B
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 20 Oct 2012 19:12:50 +0200
+
+partman-lvm (81) unstable; urgency=low
+
+  [ Updated translations ]
+  * Asturian (ast.po) by ivarela
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 16 Oct 2012 13:00:47 +0200
+
+partman-lvm (80) unstable; urgency=low
+
+  * Add myself to Uploaders and remove Anton. Thanks for your work on
+    partman.
+
+  [ Updated translations ]
+  * Romanian (ro.po) by Bradut Boghita
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 04 Aug 2012 23:01:53 +0200
+
+partman-lvm (79) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 26 Jun 2012 09:14:58 +0200
+
+partman-lvm (78) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Tomislav Krznar
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 21 Jun 2012 23:07:19 +0200
+
+partman-lvm (77) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Galician (gl.po) by Jorge Barreiro
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 17 Jun 2012 12:53:02 +0200
+
+partman-lvm (76) unstable; urgency=low
+
+  * Team upload
+  * Replace XC-Package-Type by Package-Type
+  * Minor corrections to debconf templates (consistency with reviewed
+    partman-zfs)
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama Khayat
+  * Asturian (ast.po) by Mikel González
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bengali (bn.po) by Ayesha Akhtar
+  * Tibetan (bo.po) by Tennom
+  * Bosnian (bs.po) by Armin Besirovic
+  * Catalan (ca.po) by Jordi Mallach
+  * Czech (cs.po) by Miroslav Kure
+  * Welsh (cy.po) by Dafydd Tomos
+  * Danish (da.po) by Joe Hansen
+  * German (de.po) by Holger Wansing
+  * Dzongkha (dz.po) by dawa pemo
+  * Greek, Modern (1453-) (el.po) by galaxico
+  * Esperanto (eo.po) by Felipe Castro
+  * Spanish (es.po) by Javier Fernández-Sanguino
+  * Estonian (et.po) by Mattias Põldaru
+  * Basque (eu.po)
+  * Persian (fa.po) by Behrad Eslamifar
+  * Finnish (fi.po) by Timo Jyrinki
+  * French (fr.po) by Christian Perrier
+  * Galician (gl.po) by Jorge Barreiro
+  * Hebrew (he.po) by Omer Zak
+  * Hindi (hi.po) by Kumar Appaiah
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Mahyuddin Susanto
+  * Icelandic (is.po) by Sveinn í Felli
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Kazakh (kk.po) by Baurzhan Muftakhidinov
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Kannada (kn.po) by Prabodh C P
+  * Korean (ko.po) by Changwoo Ryu
+  * Lao (lo.po) by Anousak Souphavanh
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Latvian (lv.po) by Rūdolfs Mazurs
+  * Macedonian (mk.po) by Arangel Angov
+  * Marathi (mr.po) by sampada
+  * Bokmål, Norwegian (nb.po) by Hans Fredrik Nordhaug
+  * Dutch (nl.po) by Jeroen Schot
+  * Panjabi (pa.po) by A S Alam
+  * Polish (pl.po) by Marcin Owsiany
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Romanian (ro.po) by Bradut Boghita
+  * Russian (ru.po) by Yuri Kozlov
+  * Sinhala (si.po)
+  * Slovak (sk.po) by Ivan Masár
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Serbian (sr.po) by Karolina Kalic
+  * Swedish (sv.po) by Martin Bagge / brother
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Telugu (te.po) by Arjuna Rao Chavala
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Turkish (tr.po) by Mert Dirik
+  * Uyghur (ug.po) by Sahran
+  * Ukrainian (uk.po) by Borys Yanovych
+  * Vietnamese (vi.po) by Hai-Nam Nguyen
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+  * Traditional Chinese (zh_TW.po) by Yao Wei (魏銘廷)
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 15 Jun 2012 19:50:22 +0200
+
+partman-lvm (75) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * Esperanto (eo.po) by Felipe Castro
+  * Spanish (es.po) by Javier Fernández-Sanguino
+  * Estonian (et.po) by Mattias Põldaru
+  * Korean (ko.po) by Changwoo Ryu
+  * Nepali (ne.po)
+  * Romanian (ro.po) by Eddy Petrișor
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Telugu (te.po) by Arjuna Rao Chavala
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Uyghur (ug.po) by Sahran
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 24 Apr 2011 10:30:16 +0200
+
+partman-lvm (74) unstable; urgency=low
+
+  [ Updated translations ]
+  * Lao (lo.po) by Anousak Souphavanh
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Northern Sami (se.po) by Børre Gaup
+  * Sinhala (si.po) by Danishka Navin
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Telugu (te.po) by Arjuna Rao Chavala
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 24 Dec 2010 20:29:42 -0200
+
+partman-lvm (73) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Israt Jahan
+  * Catalan (ca.po) by Jordi Mallach
+  * Persian (fa.po) by Behrad Eslamifar
+  * Icelandic (is.po) by Sveinn í Felli
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 12 Nov 2010 16:24:01 -0200
+
+partman-lvm (72) unstable; urgency=low
+
+  [ Colin Watson]
+  * Use 'dh $@ --options' rather than 'dh --options $@', for
+    forward-compatibility with debhelper v8.
+
+  [ Aurelien Jarno ]
+  * Don't try to detect LVM support on non Linux.
+  * Disable all LVM menus if LVM support is not detected, so that
+    the user only get a single critical message.
+
+  [ Updated translations ]
+  * Asturian (ast.po) by maacub
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bosnian (bs.po) by Armin Beširović
+  * Danish (da.po) by Jacob Sparre Andersen
+  * Persian (fa.po) by Behrad Eslamifar
+  * Finnish (fi.po) by Esko Arajärvi
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Serbian (sr.po) by Karolina Kalic
+  * Telugu (te.po) by Arjuna Rao Chavala
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon, 23 Aug 2010 15:22:25 +0200
+
+partman-lvm (71) unstable; urgency=low
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Viktar Siarheichyk
+  * Bosnian (bs.po) by Armin Beširović
+  * Catalan (ca.po) by Jordi Mallach
+  * Danish (da.po) by Jacob Sparre Andersen
+  * Dzongkha (dz.po) by Jurmey Rabgay
+  * Persian (fa.po) by acathur
+  * Croatian (hr.po) by Josip Rodin
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Indonesian (id.po) by Arief S Fitrianto
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Kazakh (kk.po) by Baurzhan Muftakhidinov
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Latvian (lv.po) by Aigars Mahinovs
+  * Macedonian (mk.po) by Arangel Angov
+  * Norwegian Nynorsk (nn.po) by Eirik U. Birkeland
+  * Panjabi (pa.po) by A S Alam
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Romanian (ro.po) by ioan-eugen stan
+  * Ukrainian (uk.po) by Borys Yanovych
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 11 Jul 2010 19:23:34 +0200
+
+partman-lvm (70) unstable; urgency=low
 
   * Register partman-lvm/confirm_nooverwrite, associated with the
     partman-lvm/confirm template.
 
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 26 Apr 2010 14:53:45 +0100
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+  * Spanish (es.po) by Javier Fernández-Sanguino Peña
+  * French (fr.po) by Christian Perrier
+  * Hebrew (he.po) by Omer Zak
+  * Hindi (hi.po) by Kumar Appaiah
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Marathi (mr.po) by Sampada
+  * Dutch (nl.po) by Frans Pop
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Tamil (ta.po) by Dr,T,Vasudevan
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 27 Apr 2010 11:07:00 +0100
 
 partman-lvm (69) unstable; urgency=low
 
@@ -1468,6 +1868,3 @@ partman-lvm (1) unstable; urgency=low
 
  -- Anton Zinoviev <zinoviev@debian.org>  Sat,  6 Mar 2004 19:26:28 +0200
 
-Local Variables:
-coding: utf-8
-End:

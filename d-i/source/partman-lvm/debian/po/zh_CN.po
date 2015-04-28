@@ -12,17 +12,35 @@
 # Ming Hua (2005,2006,2007,2008), Xiyue Deng (2008), Kov Chai (2008),
 # Kenlen Lai (2008), WCM (2008), Ren Xiaolei (2008).
 #
+#
+# Translations from iso-codes:
+#   Tobias Toedter <t.toedter@gmx.net>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#   Free Software Foundation, Inc., 2002, 2003, 2007, 2008.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Translations taken from KDE:
+#   - Wang Jian <lark@linux.net.cn>, 2000.
+#   - Carlos Z.F. Liu <carlosliu@users.sourceforge.net>, 2004 - 2006.
+#   LI Daobing <lidaobing@gmail.com>, 2007, 2008, 2009, 2010.
+#   YunQiang Su <wzssyqa@gmail.com>, 2011.
+#
+#   Mai Hao Hui <mhh@126.com>, 2001 (translations from galeon)
+# YunQiang Su <wzssyqa@gmail.com>, 2010, 2011, 2012, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-12-25 18:46+0800\n"
-"Last-Translator: 苏运强 <wzssyqa@gmail.com>\n"
-"Language-Team: Simplified Chinese <debian-chinese-gb@lists.debian.org>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2014-12-01 17:17+0800\n"
+"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: text
 #. Description
@@ -186,7 +204,7 @@ msgstr "将修改写入磁盘并配置 LVM 吗？"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "必须先将当前的分区方案写入磁盘，然后才能开始对逻辑卷管理器进行配置。这些改动"
@@ -413,12 +431,9 @@ msgstr "所选卷组名与某个现有设备名相同。请选用另一个名称
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "缩小卷组时出错"
+#: ../partman-lvm.templates:32001
+msgid "Error while creating volume group"
+msgstr "创建卷组出错"
 
 #. Type: error
 #. Description
@@ -637,6 +652,13 @@ msgstr "没有选择物理卷。缩小卷组的动作被中止。"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "缩小卷组时出错"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -695,8 +717,8 @@ msgstr "未输入逻辑卷名"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "尚未设定逻辑卷名，请为此逻辑卷输入一个名称。"
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr "尚未设定逻辑卷名，请输入一个名称。"
 
 #. Type: error
 #. Description
@@ -756,8 +778,7 @@ msgstr "未找到逻辑卷"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "没有找到逻辑卷。请先创建一个逻辑卷。"
 
 #. Type: select
@@ -792,8 +813,8 @@ msgstr "删除逻辑卷时出错"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "${VG} 上的逻辑卷 (${LV}) 不能被删除。"
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "${VG} 上的逻辑卷 ${LV} 不能删除。"
 
 #. Type: error
 #. Description
@@ -857,13 +878,14 @@ msgstr "无效的逻辑卷或卷组名称"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
-"逻辑卷或卷组的名称只能包含半角的英文字母、数字、连字符 (-)、加号、句点和下划"
-"线。这些名称必须少于或等于 128 个字符，并且不能以连字符开始。“.”和“..”两个名"
-"称是不被允许的。另外，逻辑卷的名称不能以“snapshot”开始。"
+"逻辑卷或卷组的名称只能包含半角的英文字母、连字符 (-)、加号、句点和下划线。这"
+"些名称必须少于或等于 128 个字符，并且不能以连字符开始。“.”和“..”两个名称是不"
+"被允许的。另外，逻辑卷的名称不能以“snapshot”开始。"
 
 #. Type: error
 #. Description
@@ -936,7 +958,7 @@ msgid ""
 "automatically. If you wish to use this device for partitioning, please "
 "remove its LVM data first."
 msgstr ""
-"您所选择的设备上的卷组里还包含其它设备上的物理卷，所以自动移除该设备上的 LVM "
+"您所选择的设备上的卷组里还包含其他设备上的物理卷，所以自动移除该设备上的 LVM "
 "数据是不安全的。如果您想要使用这个设备进行磁盘分区，请先移除它上面的 LVM 数"
 "据。"
 

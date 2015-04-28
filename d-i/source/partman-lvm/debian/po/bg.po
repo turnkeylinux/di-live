@@ -10,20 +10,39 @@
 #
 # Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004, 2005, 2006.
 # Nikola Antonov <nikola@linux-bg.org>, 2004.
-# Damyan Ivanov <dam@modsoftsys.com>, 2006, 2007, 2008.
-# Damyan Ivanov <dmn@debian.org>, 2008, 2009, 2010.
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Free Software Foundation, Inc., 2004.
+#   Georgi Georgiev <assenov_g@operamail.com>, 2001, 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004.
+#   Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010.
+# Copyright (C)
+#   (translations from drakfw)
+#   - further translations from ICU-3.9
+# Translation of ISO 639 (language names) to Bulgarian
+# Copyright (C) 2010 Free Software Foundation, Inc.
+#
+# Copyright (C)
+#   Roumen Petrov <transl@roumenpetrov.info>, 2010.
+# Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2010-01-11 07:52+0200\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2014-12-16 23:00+0200\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
-"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language-Team: Български <dict@fsa-bg.org>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. Type: text
 #. Description
@@ -187,7 +206,7 @@ msgstr "Записване на промените на диска и настр
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Преди Logical Volume Manager да може да бъде настроен, текущата схема на "
@@ -421,12 +440,9 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Грешка при смаляване на група от томове"
+#: ../partman-lvm.templates:32001
+msgid "Error while creating volume group"
+msgstr "Грешка при създаване на група от томове"
 
 #. Type: error
 #. Description
@@ -657,6 +673,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Грешка при смаляване на група от томове"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -719,7 +742,7 @@ msgstr "Не е въведено име за логически том"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr "Не е въведено име за логически том. Моля, въведете име."
 
 #. Type: error
@@ -785,8 +808,7 @@ msgstr "Не е намерен логически том"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "Не е намерен логически том. Моля, първо създайте логически том."
 
 #. Type: select
@@ -821,8 +843,8 @@ msgstr "Грешка при изтриване на логически том"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Логическият том ${LV} в ${VG} не може да бъде изтрит."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Логическият том ${LV} в групата ${VG} не може да бъде изтрит."
 
 #. Type: error
 #. Description
@@ -889,13 +911,14 @@ msgstr "Непозволено име на логически том или гр
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Имената на логическите томове и групите томове могат да съдържат само букви "
 "на латиница, цифри, тире, плюс, точка и подчертаващо тире. Дължината на "
-"името не трябва да превишава 128 символа; името не може да започва с тире. "
+"името не трябва да превишава 128 знака; името не може да започва с тире. "
 "Имената „.“ и „..“ не са позволени. В добавка, имената на логическите томове "
 "не могат да започват със „snapshot“."
 

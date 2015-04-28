@@ -8,16 +8,32 @@
 # This file is distributed under the same license as debian-installer.
 # coor: SZERVÁC Attila - sas 321hu -- 2006-2008
 #
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#   Arpad Biro <biro_arpad@yahoo.com>, 2001.
+#   VERÓK István <vi@fsf.hu>, 2004.
+#   SZERVÁC Attila <sas@321.hu>, 2006.
+#   Kálmán Kéménczy <kkemenczy@novell.com>, 2007, 2008.
+#   Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007.
+#   Kalman Kemenczy <kkemenczy@gmail.com>, 2010.
+#   Andras TIMAR <timar@gnome.hu>, 2000-2001.
+# SZERVÁC Attila <sas@321.hu>, 2012.
+# Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>, 2012.
+# Judit Gyimesi <judit.gyimesi.x@gmail.com>, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2010-11-08 09:16+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
+"PO-Revision-Date: 2013-11-18 21:15+0100\n"
+"Last-Translator: Judit Gyimesi <judit.gyimesi.x@gmail.com>\n"
 "Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
 "org>\n"
-"Language: \n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +54,7 @@ msgstr "Particionáló indítása"
 #. :sl2:
 #: ../partman-base.templates:2001 ../partman-base.templates:25001
 msgid "Please wait..."
-msgstr "Türelem..."
+msgstr "Kérem, várjon..."
 
 #. Type: text
 #. Description
@@ -54,6 +70,9 @@ msgstr "Lemezek átnézése..."
 msgid "Detecting file systems..."
 msgstr "Fájlrendszerek felderítése..."
 
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl2:
@@ -61,6 +80,9 @@ msgstr "Fájlrendszerek felderítése..."
 msgid "Device in use"
 msgstr "Használt eszköz"
 
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl2:
@@ -70,6 +92,9 @@ msgid ""
 "reasons:"
 msgstr "${DEVICE} eszköz nem módosítható az alábbi okokból:"
 
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl2:
@@ -77,6 +102,12 @@ msgstr "${DEVICE} eszköz nem módosítható az alábbi okokból:"
 msgid "Partition in use"
 msgstr "Használt partíció"
 
+# Type: error
+# Description
+# :sl2:
+# This should be translated as "partition *number* ${PARTITION}"
+# In short, ${PARTITION} will indeed contain the partition
+# NUMBER and not the partition NAME
 #. Type: error
 #. Description
 #. :sl2:
@@ -99,18 +130,24 @@ msgid ""
 "etc.), a free space to create partitions, or a device to initialize its "
 "partition table."
 msgstr ""
-"Ez a jelenleg konfigurált partíciók és csatolási pontok áttekintése. Válassz "
-"egy partíciót beállításai módosításához (fájlrendszer, csatolási pont, "
-"stb.), egy szabad területet partíció létrehozásához vagy egy eszközt "
+"Ez a jelenleg konfigurált partíciók és csatolási pontok áttekintése. "
+"Válasszon egy partíciót beállításai módosításához (fájlrendszer, csatolási "
+"pont, stb.), egy szabad területet partíció létrehozásához vagy egy eszközt "
 "partíciós tábla létrehozásához."
 
+# Type: boolean
+# Description
+# :sl2:
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-base.templates:10001
 msgid "Continue with the installation?"
-msgstr "Folytatod a telepítést?"
+msgstr "Folytatja a telepítést?"
 
+# Type: boolean
+# Description
+# :sl2:
 #. Type: boolean
 #. Description
 #. :sl2:
@@ -120,6 +157,9 @@ msgid ""
 msgstr ""
 "Partíciós táblák változatlanul maradnak, új fájlrendszerek sem jönnek létre."
 
+# Type: boolean
+# Description
+# :sl2:
 #. Type: boolean
 #. Description
 #. :sl2:
@@ -128,8 +168,8 @@ msgid ""
 "If you plan on using already created file systems, be aware that existing "
 "files may prevent the successful installation of the base system."
 msgstr ""
-"Meglévő fájlrendszerek használata esetén, tudni kell, hogy a rajtuk lévő "
-"egyes fájlok meghiúsíthatják az alaprendszer telepítését."
+"Meglévő fájlrendszerek használata esetén tudni kell, hogy a rajtuk lévő "
+"egyes fájlok meghiúsíthatják az alaprendszer sikeres telepítését."
 
 #. Type: boolean
 #. Description
@@ -139,7 +179,7 @@ msgstr ""
 #. :sl1:
 #: ../partman-base.templates:11001 ../partman-base.templates:12001
 msgid "Write the changes to disks?"
-msgstr "Lemezekre írjuk a változásokat?"
+msgstr "Lemezekre írjam a változásokat?"
 
 #. Type: boolean
 #. Description
@@ -166,6 +206,9 @@ msgstr ""
 "FIGYELEM: Ez az eltávolításra és a formázásra kijelölt összes partíció "
 "minden adatát törölni fogja."
 
+# Type: text
+# Description
+# :sl2:
 #. Type: text
 #. Description
 #. :sl2:
@@ -173,6 +216,10 @@ msgstr ""
 msgid "The following partitions are going to be formatted:"
 msgstr "Formázásra kijelölt partíciók:"
 
+# Type: text
+# Description
+# :sl2:
+# for example: "partition #6 of IDE0 master as ext3 journaling file system"
 #. Type: text
 #. Description
 #. :sl2:
@@ -181,6 +228,11 @@ msgstr "Formázásra kijelölt partíciók:"
 msgid "partition #${PARTITION} of ${DEVICE} as ${TYPE}"
 msgstr "${DEVICE} ${PARTITION}. partíciója erre: ${TYPE}"
 
+# Type: text
+# Description
+# :sl2:
+# for devices which have no partitions
+# for example: "LVM VG Debian, LV Root as ext3 journaling file system"
 #. Type: text
 #. Description
 #. :sl2:
@@ -190,6 +242,9 @@ msgstr "${DEVICE} ${PARTITION}. partíciója erre: ${TYPE}"
 msgid "${DEVICE} as ${TYPE}"
 msgstr "${DEVICE} mint ${TYPE}"
 
+# Type: text
+# Description
+# :sl2:
 #. Type: text
 #. Description
 #. :sl2:
@@ -197,6 +252,9 @@ msgstr "${DEVICE} mint ${TYPE}"
 msgid "The partition tables of the following devices are changed:"
 msgstr "Az alábbi eszközök partíciós táblái változtak:"
 
+# Type: select
+# Description
+# :sl2:
 #. Type: select
 #. Description
 #. :sl2:
@@ -204,6 +262,9 @@ msgstr "Az alábbi eszközök partíciós táblái változtak:"
 msgid "What to do with this device:"
 msgstr "Kijelölt eszköz kezelése:"
 
+# Type: select
+# Description
+# :sl2:
 #. Type: select
 #. Description
 #. :sl2:
@@ -211,6 +272,9 @@ msgstr "Kijelölt eszköz kezelése:"
 msgid "How to use this free space:"
 msgstr "E szabad hely kezelése:"
 
+# Type: select
+# Description
+# :sl2:
 #. Type: select
 #. Description
 #. :sl2:
@@ -218,6 +282,9 @@ msgstr "E szabad hely kezelése:"
 msgid "Partition settings:"
 msgstr "Partíció beállításai:"
 
+# Type: select
+# Description
+# :sl2:
 #. Type: select
 #. Description
 #. :sl2:
@@ -229,6 +296,9 @@ msgstr ""
 "Szerkesztés alatt: ${DEVICE} ${PARTITION}. partíciója. ${OTHERINFO} "
 "${DESTROYED}"
 
+# Type: text
+# Description
+# :sl2:
 #. Type: text
 #. Description
 #. :sl2:
@@ -236,13 +306,19 @@ msgstr ""
 msgid "This partition is formatted with the ${FILESYSTEM}."
 msgstr "Formázott partíció, fájlrendszere: ${FILESYSTEM}."
 
+# Type: text
+# Description
+# :sl2:
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-base.templates:21001
 msgid "No existing file system was detected in this partition."
-msgstr "A partíció felderítése nem talált fájlrendszert."
+msgstr "Ebben a partícióban nem található fájlrendszer."
 
+# Type: text
+# Description
+# :sl2:
 #. Type: text
 #. Description
 #. :sl2:
@@ -250,6 +326,9 @@ msgstr "A partíció felderítése nem talált fájlrendszert."
 msgid "All data in it WILL BE DESTROYED!"
 msgstr "A rajta levő minden adat EL FOG VESZNI!"
 
+# Type: note
+# Description
+# :sl2:
 #. Type: note
 #. Description
 #. :sl2:
@@ -257,6 +336,9 @@ msgstr "A rajta levő minden adat EL FOG VESZNI!"
 msgid "The partition starts from ${FROMCHS} and ends at ${TOCHS}."
 msgstr "A partíció kezdete: ${FROMCHS}, vége: ${TOCHS}."
 
+# Type: note
+# Description
+# :sl2:
 #. Type: note
 #. Description
 #. :sl2:
@@ -278,6 +360,12 @@ msgstr "Partíciók formázása"
 msgid "Processing..."
 msgstr "Feldolgozás..."
 
+# Type: text
+# Description
+# :sl2:
+# Type: text
+# Description
+# :sl2:
 #. Type: text
 #. Description
 #. :sl2:
@@ -288,6 +376,9 @@ msgstr "Feldolgozás..."
 msgid "Show Cylinder/Head/Sector information"
 msgstr "Cilinder/Fej/Szektor-adatok megjelenítése"
 
+# Type: text
+# Description
+# :sl2:
 #. Type: text
 #. Description
 #. :sl2:
@@ -309,6 +400,9 @@ msgstr "Particionálás lezárása és változások mentése"
 msgid "Undo changes to partitions"
 msgstr "Partíciók változásainak visszavonása"
 
+# Type: text
+# Description
+# :sl2:
 #. Type: text
 #. Description
 #. :sl2:
@@ -461,18 +555,18 @@ msgstr "SCSI%s, #%s. (%s) partíció"
 #. For example MMC/SD card #1 (mmcblk0)
 #. :sl3:
 #: ../partman-base.templates:51001
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "MMC/SD card #%s (%s)"
-msgstr "DASD %s (%s)"
+msgstr "MMC/SD card #%s (%s)"
 
 #. Type: text
 #. Description
 #. For example MMC/SD card #1, partition #2 (mmcblk0p2)
 #. :sl3:
 #: ../partman-base.templates:52001
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "MMC/SD card #%s, partition #%s (%s)"
-msgstr "SCSI%s, #%s. (%s) partíció"
+msgstr "MMC/SD card #%s, #%s partíció (%s)"
 
 #. Type: text
 #. Description
@@ -549,7 +643,7 @@ msgstr "LVM VG %s, LV %s"
 #: ../partman-base.templates:60001
 #, no-c-format
 msgid "ZFS pool %s, volume %s"
-msgstr ""
+msgstr "%s ZFS tároló, %s kötet"
 
 #. Type: text
 #. Description
@@ -620,8 +714,7 @@ msgstr "Leválasztja a használatban lévő partíciókat?"
 msgid ""
 "The installer has detected that the following disks have mounted partitions:"
 msgstr ""
-"A telepítő megállapította, hogy a következő lemezeken felcsatolt partíciók "
-"vannak:"
+"A telepítő észlelte, hogy a következő lemezeken csatolt partíciók vannak:"
 
 #. Type: boolean
 #. Description

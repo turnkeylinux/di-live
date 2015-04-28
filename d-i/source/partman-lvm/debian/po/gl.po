@@ -3,7 +3,12 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of gl.po to galician
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# translation of gl.po to Galician
 # Galician messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
@@ -11,14 +16,16 @@
 # Marce Villarino <mvillarino@users.sourceforge.net>, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@gmail.com>, 2009.
+# Jorge Barreiro <xurxo@findomundo.es>, 2010, 2011, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-11-22 22:28+0100\n"
-"Last-Translator: Marce Villarino <mvillarino@gmail.com>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2014-11-13 23:34+0100\n"
+"Last-Translator: Jorge Barreiro <xurxo@findomundo.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -186,11 +193,11 @@ msgstr "Desexa gardar nos discos as modificacións e configurar LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Antes de poder configurar LVM ten que se gardar no disco o esquema actual de "
-"particionamento. Estas modificacións non se poden desfacer."
+"Antes de poder configurar o LVM tense que gardar no disco o esquema actual "
+"de particionamento. Estas modificacións non se poden desfacer."
 
 #. Type: boolean
 #. Description
@@ -240,14 +247,14 @@ msgstr "Fallo na configuración do LVM"
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "An error occurred while writing the changes to the disks."
-msgstr "Aconteceu un erro ao gardar as modificacións nos discos."
+msgstr "Produciuse un erro ao gardar as modificacións nos discos."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "Logical Volume Manager configuration has been aborted."
-msgstr "Abortouse a configuración de LVM."
+msgstr "Interrompeuse a configuración de LVM."
 
 #. Type: text
 #. Description
@@ -364,8 +371,8 @@ msgid ""
 "No physical volumes were selected. The creation of a new volume group has "
 "been aborted."
 msgstr ""
-"Non se escolleu ningún volume físico. Abortouse a creación dun novo grupo de "
-"volumes."
+"Non se escolleu ningún volume físico. Interrompeuse a creación dun novo "
+"grupo de volumes."
 
 #. Type: error
 #. Description
@@ -421,12 +428,9 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Erro ao reducir o grupo de volumes"
+#: ../partman-lvm.templates:32001
+msgid "Error while creating volume group"
+msgstr "Produciuse un erro ao crear o grupo de volumes"
 
 #. Type: error
 #. Description
@@ -583,7 +587,7 @@ msgid ""
 "No physical volumes were selected. Extension of the volume group has been "
 "aborted."
 msgstr ""
-"Non se escolleu ningún volume físico. Abortouse a extensión do grupo de "
+"Non se escolleu ningún volume físico. Interrompeuse a extensión do grupo de "
 "volumes."
 
 #. Type: error
@@ -646,8 +650,15 @@ msgstr "Escolla os dispositivos que quere eliminar do grupo de volumes."
 msgid ""
 "No physical volumes were selected. Reduction of the volume group was aborted."
 msgstr ""
-"Non se escolleu ningún volume físico. Abortouse a reducción do grupo de "
+"Non se escolleu ningún volume físico. Interrompeuse a reducción do grupo de "
 "volumes."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Erro ao reducir o grupo de volumes"
 
 #. Type: error
 #. Description
@@ -715,7 +726,7 @@ msgstr "Non se introduciu ningún nome para o volume lóxico"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr "Non se introduciu un nome para o volume lóxico. Introduza un nome."
 
 #. Type: error
@@ -781,8 +792,7 @@ msgstr "Non se atopou ningún volume lóxico"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "Non se atopou ningún volume lóxico. Cree antes un volume lóxico."
 
 #. Type: select
@@ -817,8 +827,8 @@ msgstr "Erro ao borrar o volume lóxico"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Non foi posíbel borrar o volume lóxico (${LV}) en ${VG}."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Non foi posíbel borrar o volume lóxico ${LV} en ${VG}."
 
 #. Type: error
 #. Description
@@ -885,15 +895,16 @@ msgstr "Nome de volume lóxico ou grupo de volumes non válido"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Os nomes dos volumes lóxicos ou dos grupos de volumes só poden conter "
 "carácteres alfanuméricos, guións, signos máis, puntos e guións baixos. Deben "
 "ter 128 caracteres ou menos e non poden comezar por un guión. Non se admiten "
-"os nomes «.» nin «..». Ademais, os nomes dos volumes lóxicos non poden comezar "
-"por «snapshot»."
+"os nomes «.» nin «..». Ademais, os nomes dos volumes lóxicos non poden "
+"comezar por «snapshot»."
 
 #. Type: error
 #. Description
@@ -991,10 +1002,10 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
-"Unha situación común dos administradores de sistema é ter algunha partición "
-"do disco (xeralmente a menos importante) con pouco espazo libre mentres "
-"outras particións están infrautilizados. O xestor de volumes lóxicos (LVM) "
-"pode axudalo nestes casos."
+"Unha situación común para os administradores de sistemas é ter algunha "
+"partición do disco (xeralmente a máis importante) con pouco espazo libre "
+"mentres outras particións están infrautilizadas. O xestor de volumes lóxicos "
+"(LVM) pode axudalo nestes casos."
 
 #. Type: note
 #. Description
@@ -1009,11 +1020,11 @@ msgid ""
 "amount of unallocated space in the volume group."
 msgstr ""
 "LVM permite combinar discos ou particións («volumes físicos») e formar un "
-"disco virtual («grupo de volumes») que se pode dividir en particións virtuais "
-"(«volumes lóxicos»). Os grupos de volumes e os volumes lóxicos poden abarcar "
-"varios discos físicos. Poden engadirse novos volumes físicos a un grupo de "
-"volumes en calquera momento, e pode aumentar o tamaño dos volumes lóxicos "
-"até o espazo non reservado do grupo de volumes."
+"disco virtual («grupo de volumes») que se pode dividir en particións "
+"virtuais («volumes lóxicos»). Os grupos de volumes e os volumes lóxicos "
+"poden abarcar varios discos físicos. Poden engadirse novos volumes físicos a "
+"un grupo de volumes en calquera momento, e pode aumentar o tamaño dos "
+"volumes lóxicos até o espazo non reservado do grupo de volumes."
 
 #. Type: note
 #. Description

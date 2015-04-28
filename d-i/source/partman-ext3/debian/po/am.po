@@ -8,14 +8,20 @@
 # tegegne tefera <tefera@mekuria.com>, 2006.
 #
 #
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Data taken from ICU-2.8; contributed by:
+#   - Daniel Yacob <yacob@geez.org>, Ge'ez Frontier Foundation
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-ext3@packages.debian.org\n"
-"POT-Creation-Date: 2010-02-26 22:58+0000\n"
-"PO-Revision-Date: 2010-06-29 17:14+0800\n"
-"Last-Translator: Tegegne Tefera <tefera@mekuria.com>\n"
+"POT-Creation-Date: 2011-07-23 22:48+0000\n"
+"PO-Revision-Date: 2012-06-17 22:22+0100\n"
+"Last-Translator: Tegegne Tefera <tefera.tegegne@gmail.com>\n"
 "Language-Team: Amharic\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -153,6 +159,9 @@ msgid ""
 "${OFFSET} bytes from the minimum alignment for this disk, which may lead to "
 "very poor performance."
 msgstr ""
+"The partition ${PARTITION} assigned to ${MOUNTPOINT} starts at an offset of "
+"${OFFSET} bytes from the minimum alignment for this disk, which may lead to "
+"very poor performance."
 
 #. Type: boolean
 #. Description

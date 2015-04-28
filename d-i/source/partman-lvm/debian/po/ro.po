@@ -18,19 +18,32 @@
 #
 #    Developers do not need to manually edit POT or PO files.
 #
-# Eddy Petrișor <eddy.petrisor@gmail.com>, 2004, 2005, 2006, 2007, 2008.
+# Eddy Petrișor <eddy.petrisor@gmail.com>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+#
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@debian.org>, 2004
+# Andrei Popescu <andreimpopescu@gmail.com>, 2010.
+# Eddy Petrișor <eddy.petrisor@gmail.com>, 2004, 2006, 2007, 2008, 2009.
+# Free Software Foundation, Inc., 2000, 2001
+# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2009, 2010.
+# Mişu Moldovan <dumol@go.ro>, 2000, 2001.
+# Tobias Toedter <t.toedter@gmx.net>, 2007.
+# Translations taken from ICU SVN on 2007-09-09
+# Ioan Eugen Stan <stan.ieugen@gmail.com>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2008-07-25 21:14+0300\n"
-"Last-Translator: Eddy Petrișor <eddy.petrisor@gmail.com>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-06-26 22:46+0300\n"
+"Last-Translator: Bradut Boghita <bradut@bradut.com>\n"
 "Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"Content-Transfer-Encoding: utf-8\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
 
 #. Type: text
@@ -195,7 +208,7 @@ msgstr "Se scriu schimbările pe discuri și configurează LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Înainte ca Managerul de volume logice (LVM) să poată fi configurat, schema "
@@ -213,9 +226,9 @@ msgid ""
 "partitioning scheme before continuing."
 msgstr ""
 "După ce Managerul de volume logice este configurat, în timpul instalării, nu "
-"mai sunt permise alte schimbări pe discurile care conțin volume fizice. Vă "
-"rugăm să vă decideți dacă sunteți satisfăcut(ă) cu modelul de partiționare "
-"actual înainte de a continua."
+"mai sunt permise alte schimbări la schema de partiționare a discurilor care "
+"conțin volume fizice. Vă rugăm să vă decideți dacă schema de partiționare "
+"este cea finală înainte de a continua."
 
 #. Type: boolean
 #. Description
@@ -236,9 +249,9 @@ msgid ""
 "disks before continuing."
 msgstr ""
 "După ce Managerul de volume logice este configurat, nu mai sunt permise alte "
-"schimbări suplimentare pe discurile care conțin volume fizice. Vă rugăm să "
-"vă decideți dacă sunteți satisfăcut cu modelul de partiționare curent de pe "
-"aceste discuri înainte de a continua."
+"schimbări la partițiile de pe discurile care conțin volume fizice. Vă rugăm "
+"să vă decideți dacă schema de partiționare de pe aceste discuri este cea "
+"finală înainte de a continua."
 
 #. Type: error
 #. Description
@@ -266,7 +279,7 @@ msgstr "Configurarea Managerului de volume logice a fost abandonată."
 #. :sl3:
 #: ../partman-lvm.templates:21001
 msgid "physical volume for LVM"
-msgstr "Volumul fizic pentru LVM"
+msgstr "volumul fizic pentru LVM"
 
 #. Type: text
 #. Description
@@ -378,8 +391,8 @@ msgid ""
 "No physical volumes were selected. The creation of a new volume group has "
 "been aborted."
 msgstr ""
-"Nu s-a selectat nici un volum fizic. Crearea unui nou grup de volume (Volume "
-"Group) a fost abandonată."
+"Nu s-a selectat nici un volum fizic. Crearea unui nou grup de volume a fost "
+"abandonată."
 
 #. Type: error
 #. Description
@@ -436,12 +449,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Eroare în timpul reducerii Grupului de volume"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Eroare în timpul ștergerii Grupului de volume"
 
 #. Type: error
 #. Description
@@ -515,7 +527,7 @@ msgstr "Nu s-a găsit un grup de volume"
 #: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
 #: ../partman-lvm.templates:42001
 msgid "No volume group has been found."
-msgstr "Nu a fost găsit nici un grup de volume (Volume Group)."
+msgstr "Nu a fost găsit nici un grup de volume."
 
 #. Type: error
 #. Description
@@ -554,14 +566,14 @@ msgid ""
 "may currently be in use."
 msgstr ""
 "Grupul de volume nu a putut fi șters. Este posibil ca unul sau mai multe "
-"volume logice să fie utilizat(e) în prezent."
+"volume logice să fie utilizate în prezent."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:37001
 msgid "No volume group can be deleted."
-msgstr "Nu se poate șterge nici un grup de volume (Volume Group)."
+msgstr "Nu se poate șterge nici un grup de volume."
 
 #. Type: select
 #. Description
@@ -627,7 +639,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:42001
 msgid "No volume group can be reduced."
-msgstr "Nu se poate reduce nici un grup de volume (Volume Group)."
+msgstr "Nu se poate reduce nici un grup de volume."
 
 #. Type: select
 #. Description
@@ -668,6 +680,13 @@ msgid ""
 msgstr ""
 "Nu s-a selectat nici un volum fizic. Reducerea grupului de volume a fost "
 "abandonată."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Eroare în timpul reducerii Grupului de volume"
 
 #. Type: error
 #. Description
@@ -737,7 +756,7 @@ msgstr "Nume de volum logic neintrodus"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr ""
 "Nu s-a introdus nici un nume pentru volumul logic. Vă rugăm să introduceți "
 "un nume."
@@ -781,7 +800,7 @@ msgid ""
 msgstr ""
 "Vă rugăm să introduceți dimensiunea noului volum logic. Dimensiunea poate fi "
 "introdusă în următoarele formate: 10K (kiloocteți), 10M (megaocteți), 10G "
-"(gigaocteți), 10T (teraocteți). Unitatea de măsură implicită este "
+"(gigaocteți), 10T (terraocteți). Unitatea de măsură implicită este "
 "megaoctetul."
 
 #. Type: error
@@ -806,8 +825,7 @@ msgstr "Nu s-a găsit un volum logic"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
 "Nu a fost găsit nici un volum logic. Vă rugăm, mai întâi, să creați un volum "
 "logic."
@@ -844,8 +862,8 @@ msgstr "Eroare în timpul ștergerii volumului logic"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Volumul logic (${LV}) de pe ${VG} nu a putut fi șters."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Volumul logic ${LV} de pe ${VG} nu a putut fi șters."
 
 #. Type: error
 #. Description
@@ -913,9 +931,10 @@ msgstr "Nume de volum logic sau de grup de volume nevalid"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Volumele logice sau numele de grupuri de volume pot conține doar caractere "
 "de tip alfa-numeric, cratimă, plus, punct și liniuță de subliniere. Trebuie "
@@ -998,18 +1017,16 @@ msgid ""
 "remove its LVM data first."
 msgstr ""
 "Deoarece grupul/grupurile de volume de pe dispozitivul selectat cuprinde și "
-"volume fizice aflate pe alte dispozitive, nu se consideră că e bine să-i fie "
-"șterse automat datele LVM. Dacă doriți să folosiți acest dispozitiv pentru "
-"partiționare, mai întâi ștergeți-i datele LVM."
+"volume fizice aflate pe alte dispozitive, nu se consideră sigur să se "
+"șteargă automat datele LVM ale acestuia. Dacă doriți să folosiți acest "
+"dispozitiv pentru partiționare, ștergeți mai întâi datele LVM."
 
 #. Type: note
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
-msgstr "Numele volumului logic:"
+msgstr "Managementul volumelor logice"
 
 #. Type: note
 #. Description
@@ -1021,6 +1038,10 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"O situație des întâlnită de administratorii de sistem este să rămână fără "
+"spațiu pe o partiție (de obicei cea mai importantă) în timp ce altele sunt "
+"supra-dimensionate. Managerul de volume logice (LVM) poate rezolva astfel de "
+"situații."
 
 #. Type: note
 #. Description
@@ -1034,6 +1055,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"LVM permite combinarea discurilor și partițiilor („volume fizice”) pentru a "
+"forma un disc virtual („grup de volume”), care poate fi împărțit în partiții "
+"virtuale („volume logice”). Grupurile de volume și volumele logice se pot "
+"întinde pe mai multe discuri fizice. La un grup de volume pot fi adăugate "
+"oricând noi volume fizice și volumele logice pot fi redimensionate până la "
+"dimensiunea spațiului nealocat din grupul de volume."
 
 #. Type: note
 #. Description
@@ -1045,3 +1072,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"Elementele din meniul de configurare LVM pot fi folosite pentru a edita "
+"grupurile de volume și volumele logice. După ce reveniți la ecranul "
+"principal al administratorului de partiții, volumele logice vor fi afișate "
+"în aceeași manieră ca partițiile obișnuite și trebuie folosite ca atare."

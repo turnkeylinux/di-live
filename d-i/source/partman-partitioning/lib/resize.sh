@@ -409,8 +409,7 @@ perform_resizing () {
 
 	else
 
-		# Resize virtual partitions, ext2, ext3, ext4, swap, fat16, fat32
-		# and probably reiserfs
+		# Resize virtual partitions, swap, fat16, fat32
 		name_progress_bar partman-partitioning/progress_resizing
 		open_dialog RESIZE_PARTITION $oldid $newsize
 		read_line newid

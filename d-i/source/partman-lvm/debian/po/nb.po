@@ -11,18 +11,35 @@
 # Klaus Ade Johnstad <klaus@skolelinux.no>, 2004.
 # Axel Bojer <axelb@skolelinux.no>, 2004.
 # Bjørn Steensrud <bjornst@powertech.no>, 2004-2007.
-# Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2005, 2007-2009.
+# Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2005, 2007-2014.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2002
+#   Axel Bojer <axelb@skolelinux.no>, 2004.
+#   Bjørn Steensrud <bjornst@powertech.no>, 2006.
+#   Free Software Foundation, Inc., 2002,2004
+#   Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2007-2014.
+#   Håvard Korsvoll <korsvoll@skulelinux.no>, 2004.
+#   Knut Yrvin <knuty@skolelinux.no>, 2004.
+#   Tobias Toedter <t.toedter@gmx.net>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Translations from KDE:
+#   Rune Nordvik <rune@linuxnorge.com>, 2001
+#   Kjartan Maraas <kmaraas@broadpark.no>, 2009.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-11-27 01:25+0100\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2014-09-23 11:29+0200\n"
 "Last-Translator: Hans Fredrik Nordhaug <hans@nordhaug.priv.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -186,7 +203,7 @@ msgstr "Vil du skrive endringene til harddiskene og sette opp LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Før den logiske volumstyringen kan settes opp må partisjoneringsoppsettet "
@@ -423,19 +440,16 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Feil ved reduseringen av et gruppert dataområde"
+#: ../partman-lvm.templates:32001
+msgid "Error while creating volume group"
+msgstr "Feil ved oppretting av et gruppert dataområde"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
 msgid "The volume group ${VG} could not be created."
-msgstr "Kunne ikke opprette det grupperte dataområdet ${VG}."
+msgstr "Klarte ikke opprette det grupperte dataområdet ${VG}."
 
 #. Type: error
 #. Description
@@ -655,6 +669,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Feil ved reduseringen av et gruppert dataområde"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -718,7 +739,7 @@ msgstr "Mangler navn på det logiske dataområdet"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr ""
 "Det er ikke oppgitt noe navn for det logiske dataområdet. Skriv inn et navn."
 
@@ -785,8 +806,7 @@ msgstr "Fant intet logisk dataområde"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "Fant intet logisk dataområde. Opprett et logisk dataområde først."
 
 #. Type: select
@@ -821,8 +841,8 @@ msgstr "Feil ved sletting av det logiske dataområdet"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Det logiske dataområdet (${LV}) på ${VG} kunne ikke slettes."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Det logiske dataområdet ${LV} på ${VG} kunne ikke slettes."
 
 #. Type: error
 #. Description
@@ -874,7 +894,7 @@ msgstr "Feil ved klargjøring av det fysiske dataområdet"
 #. :sl3:
 #: ../partman-lvm.templates:60001
 msgid "The physical volume ${PV} could not be initialized."
-msgstr "Kunne ikke klargjøre det fysiske dataområdet ${PV}."
+msgstr "Klarte ikke klargjøre det fysiske dataområdet ${PV}."
 
 #. Type: error
 #. Description
@@ -889,9 +909,10 @@ msgstr "Ugyldig navn på logisk dataområde eller gruppert område"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Navn på logiske dataområder eller grupperte områder kan bare inneholde "
 "alfanumeriske tegn, bindestrek, pluss, punktum og understrek. De må være "

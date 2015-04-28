@@ -3,17 +3,30 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# Translation of Debian Installer templates to Brazilian Portuguese.
 # This file is distributed under the same license as debian-installer.
+#
+# Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
+#   Free Software Foundation, Inc., 2000
+#   Juan Carlos Castro y Castro <jcastro@vialink.com.br>, 2000-2005.
+#   Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2006-2009.
+#   Lisiane Sztoltz <lisiane@conectiva.com.br>
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-08-25 23:58-0300\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2012-06-23 22:23-0300\n"
 "Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,7 +47,7 @@ msgstr "Assistido - usar o disco inteiro e configurar LVM"
 #. :sl3:
 #: ../partman-auto-lvm.templates:2001 ../partman-auto-lvm.templates:3001
 msgid "Name of the volume group for the new system:"
-msgstr "Nome do grupo de volume para o novo sistema:"
+msgstr "Nome do grupo de volumes para o novo sistema:"
 
 #. Type: string
 #. Description
@@ -43,8 +56,8 @@ msgstr "Nome do grupo de volume para o novo sistema:"
 msgid ""
 "The selected volume group name is already in use. Please choose another name."
 msgstr ""
-"O nome do Grupo de Volume selecionado já está em uso. Por favor, selecione "
-"um outro nome."
+"O nome do grupo de volumes selecionado já está em uso. Por favor, escolha "
+"outro nome."
 
 #. Type: error
 #. Description
@@ -61,7 +74,7 @@ msgid ""
 "This happened because the selected recipe does not contain any partition "
 "that can be created on LVM volumes."
 msgstr ""
-"Isto ocorreu devido ao modelo selecionado não conter nenhuma partição que "
+"Isto ocorreu devido à receita selecionada não conter nenhuma partição que "
 "possa ser criada em volumes LVM."
 
 #. Type: boolean
@@ -79,9 +92,9 @@ msgid ""
 "The recipe you selected does not contain a separate partition for /boot. "
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
-"O modelo que você selecionou não contém uma partição separada para o /boot. "
-"Normalmente isso é necessário para permitir que seu sistema inicie quando "
-"você está usando LVM."
+"A receita que você selecionou não contém uma partição separada para o /boot. "
+"Normalmente isso é necessário para permitir que seu sistema inicialize "
+"quando você está usando LVM."
 
 #. Type: boolean
 #. Description
@@ -99,7 +112,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:6001
 msgid "Volume group name already in use"
-msgstr "Nome do Grupo de Volume já em uso"
+msgstr "Nome do grupo de volumes já em uso"
 
 #. Type: error
 #. Description
@@ -110,7 +123,7 @@ msgid ""
 "in use. Lowering the priority for configuration questions will allow you to "
 "specify an alternative name."
 msgstr ""
-"O nome do grupo de volume usado para particionar automaticamente usando LVM "
+"O nome do grupo de volumes usado para particionar automaticamente usando LVM "
 "já está em uso. Diminuir a prioridade das perguntas de configuração "
 "permitirá que você especifique um nome alternativo."
 
@@ -119,7 +132,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:7001
 msgid "Unexpected error while creating volume group"
-msgstr "Erro inesperado na criação de grupo de volume"
+msgstr "Erro inesperado na criação de grupo de volumes"
 
 #. Type: error
 #. Description
@@ -130,7 +143,7 @@ msgid ""
 "the volume group."
 msgstr ""
 "O autoparticionamento usando LVM falhou devido a um erro ter ocorrido "
-"durante a criação do grupo de volume."
+"durante a criação do grupo de volumes."
 
 #. Type: error
 #. Description
@@ -138,7 +151,7 @@ msgstr ""
 #: ../partman-auto-lvm.templates:7001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
 msgstr ""
-"Confira o arquivo /var/log/syslog ou consulte o console 4 para maiores "
+"Verifique o arquivo /var/log/syslog ou consulte o console virtual 4 para os "
 "detalhes."
 
 #. Type: text
@@ -154,7 +167,7 @@ msgstr "Múltiplos discos (%s)"
 #. :sl3:
 #: ../partman-auto-lvm.templates:9001
 msgid "Non-existing physical volume"
-msgstr "Volume físico não existente:"
+msgstr "Volume físico não existente"
 
 #. Type: error
 #. Description
@@ -164,8 +177,8 @@ msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
 msgstr ""
-"Uma definição de grupo de volume contém uma referência para um volume físico "
-"não existente."
+"Uma definição de grupo de volumes contém uma referência para um volume "
+"físico não existente."
 
 #. Type: error
 #. Description
@@ -184,7 +197,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "No physical volume defined in volume group"
-msgstr "Nenhum volume físico definido no grupo de volume"
+msgstr "Nenhum volume físico definido no grupo de volumes"
 
 #. Type: error
 #. Description
@@ -195,7 +208,7 @@ msgid ""
 "that does not contain any physical volume."
 msgstr ""
 "A receita de particionamento automático contém a definição de um grupo de "
-"volume que não contém nenhum volume físico."
+"volumes que não contém nenhum volume físico."
 
 #. Type: error
 #. Description

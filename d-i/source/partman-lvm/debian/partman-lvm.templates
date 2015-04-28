@@ -110,7 +110,7 @@ Default: false
 #flag:translate!:4
 _Description: Write the changes to disks and configure LVM?
  Before the Logical Volume Manager can be configured, the current
- partitioning scheme has to be written to disk.  These changes cannot
+ partitioning scheme has to be written to disk. These changes cannot
  be undone.
  .
  After the Logical Volume Manager is configured, no additional changes
@@ -222,7 +222,7 @@ _Description: Volume group name overlaps with device name
 Template: partman-lvm/vgcreate_error
 Type: error
 # :sl3:
-_Description: Error while reducing volume group
+_Description: Error while creating volume group
  The volume group ${VG} could not be created.
  .
  Check /var/log/syslog or see virtual console 4 for the details.
@@ -360,7 +360,7 @@ Template: partman-lvm/lvcreate_nonamegiven
 Type: error
 # :sl3:
 _Description: No logical volume name entered
- No name for the logical volume has been entered.  Please enter a
+ No name for the logical volume has been entered. Please enter a
  name.
 
 Template: partman-lvm/lvcreate_exists
@@ -391,7 +391,7 @@ Template: partman-lvm/lvdelete_nolv
 Type: error
 # :sl3:
 _Description: No logical volume found
- No logical volume has been found.  Please create a logical volume first.
+ No logical volume has been found. Please create a logical volume first.
 
 Template: partman-lvm/lvdelete_lvnames
 Type: select
@@ -409,7 +409,7 @@ Template: partman-lvm/lvdelete_error
 Type: error
 # :sl3:
 _Description: Error while deleting the logical volume
- The logical volume (${LV}) on ${VG} could not be deleted.
+ The logical volume ${LV} on ${VG} could not be deleted.
  .
  Check /var/log/syslog or see virtual console 4 for the details.
 
@@ -441,9 +441,9 @@ Type: error
 # :sl3:
 _Description: Invalid logical volume or volume group name
  Logical volume or volume group names may only contain alphanumeric
- characters, hyphen, plus, period and underscore. They must be 128
+ characters, hyphen, plus, period, and underscore. They must be 128
  characters or less and may not begin with a hyphen. The names "." and
- ".." are not allowed. In addition, logical volume names may not begin
+ ".." are not allowed. In addition, logical volume names cannot begin
  with "snapshot".
  .
  Please choose a different name.

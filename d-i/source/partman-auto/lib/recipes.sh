@@ -121,7 +121,7 @@ decode_recipe () {
 				max=$min
 			fi
 			case "$4" in # allow only valid file systems
-			    ext2|ext3|ext4|xfs|reiserfs|jfs|linux-swap|fat16|fat32|hfs|ufs)
+			    ext2|ext3|ext4|xfs|jfs|linux-swap|fat16|fat32|hfs|ufs)
 				fs="$4"
 				;;
 			    \$default_filesystem)
@@ -341,6 +341,21 @@ get_recipedir () {
 	done
 }
 
+filter_reused () {
+	scheme_reused=$(
+	    foreach_partition '
+		if echo "$*" | grep -q '\''\$reuse{'\''; then
+			echo "$*"
+		fi'
+	)
+	scheme=$(
+	    foreach_partition '
+		if ! echo "$*" | grep -q '\''\$reuse{'\''; then
+			echo "$*"
+		fi'
+	)
+}
+
 choose_recipe () {
 	local recipes recipedir free_size choices min_size type target
 
@@ -358,11 +373,21 @@ choose_recipe () {
 	if [ ! -z "$RET" ] && [ -e "$RET" ]; then
 		recipe="$RET"
 		decode_recipe $recipe $type
-		if [ $(min_size) -le $free_size ]; then
+		filter_reused
+		min_size=$(min_size)
+		if [ $min_size -le $free_size ]; then
 			return 0
 		else
 			logger -t partman-auto \
-			"Available disk space ($free_size) too small for expert recipe ($(min_size)); skipping"
+			"Available disk space ($free_size) too small for expert recipe ($min_size); skipping"
+			hookdir=/lib/partman/not-enough-space.d
+			if [ -d $hookdir ] ; then
+				for h in $hookdir/* ; do
+					if [ -x $h ] ; then
+						$h $recipe $free_size $min_size
+					fi
+				done
+			fi
 		fi
 	fi
 
@@ -375,6 +400,7 @@ choose_recipe () {
 	for recipe in $recipedir/*; do
 		[ -f "$recipe" ] || continue
 		decode_recipe $recipe $type
+		filter_reused
 		if [ $(min_size) -le $free_size ]; then
 			choices="${choices}${recipe}${TAB}${name}${NL}"
 			if [ "$default_recipe" = no ]; then
@@ -410,18 +436,7 @@ choose_recipe () {
 expand_scheme() {
 	# Filter out reused partitions first, as we don't want to take
 	# account of their size.
-	scheme_reused=$(
-	    foreach_partition '
-		if echo "$*" | grep -q '\''\$reuse{'\''; then
-			echo "$*"
-		fi'
-	)
-	scheme=$(
-	    foreach_partition '
-		if ! echo "$*" | grep -q '\''\$reuse{'\''; then
-			echo "$*"
-		fi'
-	)
+	filter_reused
 
 	# Make factors small numbers so we can multiply on them.
 	# Also ensure that fact, max and fs are valid

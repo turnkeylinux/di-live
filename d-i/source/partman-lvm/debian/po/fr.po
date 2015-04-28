@@ -7,20 +7,31 @@
 # Copyright (C) 2004-2009 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
+#
+# Translations from iso-codes:
 # Christian Perrier <bubulle@debian.org>, 2002-2004.
 # Pierre Machard <pmachard@debian.org>, 2002-2004.
 # Denis Barbier <barbier@debian.org>, 2002-2004.
 # Philippe Batailler <philippe.batailler@free.fr>, 2002-2004.
 # Michel Grentzinger <mic.grentz@online.fr>, 2003-2004.
-# Christian Perrier <bubulle@debian.org>, 2005, 2006, 2007, 2008, 2009.
+# Christian Perrier <bubulle@debian.org>, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Cedric De Wilde <daique@tiscalinet.be>, 2001.
+#   Christian Perrier <bubulle@debian.org>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2013, 2014.
+#   Christophe Fergeau <christophe.fergeau@ensimag.imag.fr>, 2000-2001.
+#   Christophe Merlet (RedFox) <redfox@eikonex.org>, 2001.
+#   Free Software Foundation, Inc., 2000-2001, 2004, 2005, 2006.
+#   Grégoire Colbert <gregus@linux-mandrake.com>, 2001.
+#   Tobias Quathamer <toddy@debian.org>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-07-27 23:05+0200\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2014-09-16 06:53+0200\n"
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -188,12 +199,12 @@ msgstr "Écrire les modifications sur les disques et configurer LVM ?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Avant que le gestionnaire de volumes logiques (LVM : « Logical Volume "
 "Manager ») puisse être configuré, le schéma actuel de partitionnement doit "
-"être appliqué aux disques. Ces changements seront irréversibles."
+"être appliqué au disque. Ces changements seront irréversibles."
 
 #. Type: boolean
 #. Description
@@ -431,12 +442,9 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Erreur lors de la réduction du groupe de volumes"
+#: ../partman-lvm.templates:32001
+msgid "Error while creating volume group"
+msgstr "Erreur lors de la création du groupe de volumes"
 
 #. Type: error
 #. Description
@@ -669,6 +677,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Erreur lors de la réduction du groupe de volumes"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -734,7 +749,7 @@ msgstr "Volume logique sans nom"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr ""
 "Aucun nom n'a été choisi pour le volume logique. Veuillez choisir un nom."
 
@@ -801,8 +816,7 @@ msgstr "Aucun volume logique trouvé"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "Aucun volume logique n'a été trouvé. Veuillez d'abord en créer un."
 
 #. Type: select
@@ -837,8 +851,8 @@ msgstr "Erreur lors de la suppression du volume logique"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Le volume logique (${LV}) sur ${VG} ne peut pas être supprimé."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Le volume logique ${LV} sur ${VG} ne peut pas être supprimé."
 
 #. Type: error
 #. Description
@@ -906,16 +920,17 @@ msgstr "Nom de volume logique ou de groupe de volumes non valable"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Les noms de volumes logiques ou de groupes de volumes ne peuvent contenir "
 "que les caractères suivants : caractères alphanumériques, tiret, signe "
-"« plus », point et caractère de soulignement (« underscore »). Ils ne doivent "
-"ni comporter plus de 128 caractères, ni commencer par un tiret. Les noms "
-"« . » et « .. » ne sont pas autorisés et, enfin, les noms de volumes logiques "
-"ne peuvent pas commencer par « snapshot »."
+"« plus », point et caractère de soulignement (« underscore »). Ils ne "
+"doivent ni comporter plus de 128 caractères, ni commencer par un tiret. Les "
+"noms « . » et « .. » ne sont pas autorisés et, enfin, les noms de volumes "
+"logiques ne peuvent pas commencer par « snapshot »."
 
 #. Type: error
 #. Description
@@ -1032,12 +1047,12 @@ msgid ""
 "amount of unallocated space in the volume group."
 msgstr ""
 "LVM permet de combiner vos les disques ou les partitions (« volumes "
-"physiques ») en disques virtuels (« groupe de volumes ») qui peut être divisé "
-"en partitions virtuelles (« volumes logiques »). Les groupes de volumes et "
-"les volumes logiques peuvent s'étendre sur plusieurs disques physiques. Des "
-"volumes physiques peuvent être ajoutés à tout moment à un groupe de volumes "
-"et les volumes logiques peuvent être retaillés dans les limites de l'espace "
-"non alloué du groupe de volume."
+"physiques ») en disques virtuels (« groupe de volumes ») qui peut être "
+"divisé en partitions virtuelles (« volumes logiques »). Les groupes de "
+"volumes et les volumes logiques peuvent s'étendre sur plusieurs disques "
+"physiques. Des volumes physiques peuvent être ajoutés à tout moment à un "
+"groupe de volumes et les volumes logiques peuvent être retaillés dans les "
+"limites de l'espace non alloué du groupe de volume."
 
 #. Type: note
 #. Description

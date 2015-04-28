@@ -12,15 +12,21 @@
 # in doc/i18n/i18n.txt
 #
 #
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Priti Patil <prithisd@gmail.com>, 2007.
+#   Sampada Nakhare, 2007.
+#   Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-01-11 20:50+0530\n"
-"Last-Translator: Sampada <sampadanakhare@gmail.com>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2011-11-07 15:45+0530\n"
+"Last-Translator: sampada <sampadanakhare@gmail.com>\n"
 "Language-Team: Marathi, janabhaaratii, C-DAC, Mumbai, India "
 "<janabhaaratii@cdacmumbai.in>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -187,7 +193,7 @@ msgstr "डिस्कस् वर बदल लिहायचे व ता�
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "तार्किक खंड व्यवस्थापक संरचित करण्यापूर्वी डिस्कवर सध्याची विभाजन योजना लिहिणे आवश्यक "
@@ -415,12 +421,11 @@ msgstr "निवडलेले खंड गटाचे नाव अस्�
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "खंड गट कमी करताना त्रुटी"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "खंड गट काढून टाकताना त्रूटी"
 
 #. Type: error
 #. Description
@@ -640,6 +645,13 @@ msgstr "कोणतेही भौतिक खंड निवडले न�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "खंड गट कमी करताना त्रुटी"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -698,8 +710,8 @@ msgstr "तार्किक खंडाला कोणतेही नाव
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "तार्किक खंडाला कोणतेही नाव दिलेले नाही. कृपया नाव द्या."
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr "तार्किक खंडासाठी कोणतेही नाव दिलेले नाही. कृपया नाव द्या."
 
 #. Type: error
 #. Description
@@ -760,8 +772,7 @@ msgstr "कोणताही तार्किक खंड सापडला
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "कोणताही तार्किक खंड सापडलेला नाही. प्रथम एखादा तार्किक खंड बनवा."
 
 #. Type: select
@@ -796,7 +807,7 @@ msgstr "तार्किक खंड काढून टाकताना �
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
 msgstr "${VG} वरील ${LV} हा तार्किक खंड काढून टाकता आला नाही."
 
 #. Type: error
@@ -864,9 +875,10 @@ msgstr "तार्किक खंड वा खंड गटाचे ना�
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "तार्किक खंड वा खंड गट यांच्या नावात फक्त अंकअक्षर चिन्हे, संयोगचिन्ह, अधिकचिन्ह, पूर्णविराम "
 "आणी अधोरेखा असू शकतात. ती १२८ वा त्यापेक्षा कमी चिन्हांनी बनलेली असणे आवश्यक आहे, व "
@@ -955,10 +967,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
-msgstr "तार्किक खंडाचे नाव:"
+msgstr "तार्किक खंड व्यवस्थापन"
 
 #. Type: note
 #. Description
@@ -970,6 +980,9 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"प्रणाली प्रशासकाला सामान्यतः आढळून येणारी परिस्थिती म्हणजे डिस्कच्या काही (बहुतांशी "
+"सर्वात महत्त्वाच्या) विभाजनांवर जागा कमी असण4, तर अन्य विभाजनांवर खूपच मोकली जागा "
+"असणे. अशा वेळी तार्किक खंड व्यस्थापक (LVM ताखंव्य) याची मदत होते."
 
 #. Type: note
 #. Description
@@ -983,6 +996,11 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"ताखंव्य वापरून डिस्क किंवा विभाजन उपकरणे (\"भौतिक खंड\") एकत्रित करून एक आभासी डिस्क "
+"(\"खंड गट\") बनवता येतो, ज्यात नंतर आभासी विभाजने (\"तार्किक खंड\") बनवता येतात. खंड "
+"गट आणि  तार्किक खंड अनेक भौतिक डिस्क्सवर पसरलेले असू शकतात. खंड गटात नवीन भौतिक खंड "
+"कधीही जोडता येतात, आणि खंड गटात वाटप न झालेली जेव्हडी जागा असेल तिथपर्यंत तार्किक खंड "
+"पुनराकारित करता येतात."
 
 #. Type: note
 #. Description
@@ -994,3 +1012,6 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"ताखंव्य संरचना मेन्यूमधील घटक खंड गट आणि तार्किक खंड संपादित करण्यासाठी वापरता येतात. "
+"तुम्ही मुख्य विभाजन व्यवस्थापक पडद्यावर परत आल्यावर तार्किक खंड सामान्य विभाजनांप्रमाणेच "
+"दर्शवले जातील, आणि त्यांना तशीच वागणूक द्यावी."

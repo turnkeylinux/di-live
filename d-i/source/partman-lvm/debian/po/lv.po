@@ -3,26 +3,40 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_lv.po to Latvian
-# Aigars Mahinovs <aigarius@debian.org>, 2006.
-# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
-# Peteris Krisjanis <pecisk@gmail.com>, 2008.
+# translation of lv.po to Latvian
 # Latvian messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
+#
+# Translations from iso-codes:
+# Copyright (C) Free Software Foundation, Inc., 2001,2003.
+# Translations from KDE:
+# Andris Maziks <andzha@latnet.lv>
+#
+# Aigars Mahinovs <aigarius@debian.org>, 2006, 2008.
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
+# Aigars Mahinovs <aigarius@debian.org>, 2006.
+# Alastair McKinstry <mckinstry@computer.org>, 2001, 2002.
+# Free Software Foundation, Inc., 2002,2004.
+# Juris Kudiņš <cooker@inbox.lv>, 2001.
+# Rihards Priedītis <rprieditis@gmail.com>, 2009, 2010.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012.
+# Peteris Krisjanis <pecisk@gmail.com>, 2008, 2012.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_lv\n"
+"Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2008-09-19 00:00+0300\n"
-"Last-Translator: Peteris Krisjanis <pecisk@gmail.com>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-05-27 12:29+0300\n"
+"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latviešu <locale-l10n@googlegroups.com>\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2)\n"
 
 #. Type: text
 #. Description
@@ -99,7 +113,7 @@ msgstr "FS"
 #. What is "in use" is a partition
 #: ../partman-lvm.templates:9001
 msgid "In use by LVM volume group ${VG}"
-msgstr "Tiek lietota LVM sējumu grupā ${VG}"
+msgstr "Lieto LVM sējumu grupa ${VG}"
 
 #. Type: text
 #. Description
@@ -108,7 +122,7 @@ msgstr "Tiek lietota LVM sējumu grupā ${VG}"
 #. Use infinitive form
 #: ../partman-lvm.templates:10001
 msgid "Display configuration details"
-msgstr "Parādīt informāciju par konfigurāciju"
+msgstr "Parādīt sīkāku informāciju par konfigurāciju"
 
 #. Type: text
 #. Description
@@ -144,7 +158,7 @@ msgstr "Paplašināt sējumu grupu"
 #. Use infinitive form
 #: ../partman-lvm.templates:14001
 msgid "Reduce volume group"
-msgstr "Sašaurināt sējumu grupu"
+msgstr "Samazināt sējumu grupu"
 
 #. Type: text
 #. Description
@@ -153,7 +167,7 @@ msgstr "Sašaurināt sējumu grupu"
 #. Use infinitive form
 #: ../partman-lvm.templates:15001
 msgid "Create logical volume"
-msgstr "Veidot loģisko sējumu"
+msgstr "Izveidot loģisko sējumu"
 
 #. Type: text
 #. Description
@@ -178,7 +192,7 @@ msgstr "Beigt"
 #. :sl3:
 #: ../partman-lvm.templates:18001
 msgid "Write the changes to disks and configure LVM?"
-msgstr "Saglabāt izmaiņas diskā un konfigurēt LVM?"
+msgstr "Ierakstīt izmaiņas diskos un konfigurēt LVM?"
 
 #. Type: boolean
 #. Description
@@ -186,11 +200,11 @@ msgstr "Saglabāt izmaiņas diskā un konfigurēt LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Lai konfigurētu Logical Volume Manager, pašreziējā informācija par sadaļām "
-"ir jāieraksta diskā. Šīs izmaiņas nevarēs atcelt."
+"Lai konfigurētu Logical Volume Manager, pašreizējā dalīšanas shēma ir "
+"jāieraksta diskā. Šīs izmaiņas nevarēs atcelt."
 
 #. Type: boolean
 #. Description
@@ -212,7 +226,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:19001
 msgid "Keep current partition layout and configure LVM?"
-msgstr "Vai saglabāt pašreizējo sadaļu izkārtojumu un konfigurēt LVM?"
+msgstr "Vai saglabāt pašreizējo nodalījumu izkārtojumu un konfigurēt LVM?"
 
 #. Type: boolean
 #. Description
@@ -224,9 +238,9 @@ msgid ""
 "decide if you are satisfied with the current partitioning scheme in these "
 "disks before continuing."
 msgstr ""
-"Papildu izmaiņas cietā diska sadaļās pēc Logical Volume Manager "
-"konfigurēšanas vairs nevarēs veikt. Pirms turpināt, pārliecinieties, ka jūs "
-"apmierina pašreizējais sadaļu izkārtojums."
+"Papildu izmaiņas disku nodalījumos pēc Logical Volume Manager konfigurēšanas "
+"vairs nevarēs veikt. Pirms turpināt, pārliecinieties, ka jūs apmierina "
+"pašreizējais nodalījumu izkārtojums šajos diskos."
 
 #. Type: error
 #. Description
@@ -269,7 +283,7 @@ msgstr "lvm"
 #. :sl3:
 #: ../partman-lvm.templates:24001
 msgid "LVM configuration action:"
-msgstr "LVM konfigurēšanas darbības:"
+msgstr "LVM konfigurēšanas darbība:"
 
 #. Type: select
 #. Description
@@ -305,7 +319,7 @@ msgstr "Pašreizējā LVM konfigurācija:"
 #. :sl3:
 #: ../partman-lvm.templates:26001
 msgid "Devices for the new volume group:"
-msgstr "Ierīces jaunai sējumu grupai:"
+msgstr "Ierīces jaunajai sējumu grupai:"
 
 #. Type: multiselect
 #. Description
@@ -354,7 +368,7 @@ msgstr "Lūdzu, ievadiet jaunās sējumu grupas nosaukumu."
 #: ../partman-lvm.templates:28001 ../partman-lvm.templates:40001
 #: ../partman-lvm.templates:45001
 msgid "No physical volumes selected"
-msgstr "Neviens fiziskais sējums netika izvēlēts"
+msgstr "Nav izvēlēts neviens fiziskais sējums"
 
 #. Type: error
 #. Description
@@ -372,7 +386,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:29001
 msgid "No volume group name entered"
-msgstr "Sējumu grupas nosaukums nav ievadīts"
+msgstr "Nav ievadīts sējumu grupas nosaukums"
 
 #. Type: error
 #. Description
@@ -420,12 +434,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Kļūda, sašaurinot sējumu grupu"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Kļūda, dzēšot sējumu grupu"
 
 #. Type: error
 #. Description
@@ -507,7 +520,7 @@ msgstr "Neviena sējumu grupa nav atrasta."
 #. :sl3:
 #: ../partman-lvm.templates:34001
 msgid "The volume group may have already been deleted."
-msgstr "Šī sējumu grupa jau ir izdzēsta."
+msgstr "Iespējams, šī sējumu grupa jau ir izdzēsta."
 
 #. Type: boolean
 #. Description
@@ -538,8 +551,8 @@ msgid ""
 "The selected volume group could not be deleted. One or more logical volumes "
 "may currently be in use."
 msgstr ""
-"Izvēlēto sējumu grupu nevar izdzēst. Iespējams, viens vai vairāki tās "
-"loģiskie sējumi pašlaik ir piemontēti."
+"Izvēlēto sējumu grupu neizdevās izdzēst. Iespējams, viens vai vairāki tās "
+"loģiskie sējumi pašlaik tiek lietoti."
 
 #. Type: error
 #. Description
@@ -553,7 +566,7 @@ msgstr "Nav sējumu grupu, ko varētu izdzēst."
 #. :sl3:
 #: ../partman-lvm.templates:38001
 msgid "Volume group to extend:"
-msgstr "Paplašināt sējumu grupu:"
+msgstr "Paplašināmā sējumu grupa:"
 
 #. Type: select
 #. Description
@@ -574,7 +587,7 @@ msgstr "Ierīces, ko pievienot sējumu grupai:"
 #. :sl3:
 #: ../partman-lvm.templates:39001
 msgid "Please select the devices you wish to add to the volume group."
-msgstr "Lūdzu, izvēlieties ierīces, ko jūs gribat pievienot sējumu grupai."
+msgstr "Lūdzu, izvēlieties ierīces, kuras jūs gribat pievienot sējumu grupai."
 
 #. Type: error
 #. Description
@@ -602,29 +615,28 @@ msgid ""
 "The physical volume ${PARTITION} could not be added to the selected volume "
 "group."
 msgstr ""
-"Fiziskais sējums ${PARTITION} nevar tikt pievienots izvēlētajai sējumu "
-"grupai."
+"Neizdevās pievienot fizisko sējumu ${PARTITION} izvēlētajai sējumu grupai."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:42001
 msgid "No volume group can be reduced."
-msgstr "Neviena sējumu grupa nevar tikt sašaurināta."
+msgstr "Neviena sējumu grupa nevar tikt samazināta."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:43001
 msgid "Volume group to reduce:"
-msgstr "Sašaurināt sējumu grupu:"
+msgstr "Samazināmā sējumu grupa:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:43001
 msgid "Please select the volume group you wish to reduce."
-msgstr "Lūdzu, izvēlieties, kuru sējumu grupu jūs vēlaties sašaurināt."
+msgstr "Lūdzu, izvēlieties, kuru sējumu grupu jūs vēlaties samazināt."
 
 #. Type: multiselect
 #. Description
@@ -638,7 +650,8 @@ msgstr "Ierīces, ko izņemt no sējumu grupas:"
 #. :sl3:
 #: ../partman-lvm.templates:44001
 msgid "Please select the devices you wish to remove from the volume group."
-msgstr "Lūdzu, izvēlieties ierīci, kuru jūs vēlaties izņemt no sējumu grupas."
+msgstr ""
+"Lūdzu, izvēlieties ierīces, kuras jūs vēlaties izņemt no sējumu grupas."
 
 #. Type: error
 #. Description
@@ -647,8 +660,15 @@ msgstr "Lūdzu, izvēlieties ierīci, kuru jūs vēlaties izņemt no sējumu gru
 msgid ""
 "No physical volumes were selected. Reduction of the volume group was aborted."
 msgstr ""
-"Neviens fiziskais sējums netika izvēlēts. Sējumu grupas sašaurināšana tika "
+"Neviens fiziskais sējums netika izvēlēts. Sējumu grupas samazināšana tika "
 "pārtraukta."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Kļūda, samazinot sējumu grupu"
 
 #. Type: error
 #. Description
@@ -658,8 +678,7 @@ msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
 msgstr ""
-"Fiziskais sējums ${PARTITION} nevar tikt pievienots izvēlētajai sējumu "
-"grupai."
+"Fizisko sējumu ${PARTITION} neizdevās pievienot izvēlētajai sējumu grupai."
 
 #. Type: error
 #. Description
@@ -671,7 +690,7 @@ msgid ""
 "group."
 msgstr ""
 "Brīvas sējumu grupas nav atrastas. Lūdzu, izveidojiet papildu fiziskos "
-"sējumus un sējumu grupas, vai arī sašauriniet kādu esošo sējumu grupu."
+"sējumus un sējumu grupas, vai arī samaziniet kādu esošo sējumu grupu."
 
 #. Type: string
 #. Description
@@ -685,14 +704,14 @@ msgstr "Loģiskā sējuma nosaukums:"
 #. :sl3:
 #: ../partman-lvm.templates:48001
 msgid "Please enter the name you would like to use for the new logical volume."
-msgstr "Ievadiet nosaukumu, ko dot jaunajam loģiskajam sējumam"
+msgstr "Ievadiet nosaukumu, ko dot jaunajam loģiskajam sējumam."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:49001
 msgid "Volume group:"
-msgstr "Sējuma grupa:"
+msgstr "Sējumu grupa:"
 
 #. Type: select
 #. Description
@@ -708,13 +727,13 @@ msgstr "Lūdzu, izvēlieties sējumu grupu, kurā izveidot jauno loģisko sējum
 #. :sl3:
 #: ../partman-lvm.templates:50001
 msgid "No logical volume name entered"
-msgstr "Loģiskā sējuma nosaukums nav ievadīts"
+msgstr "Nav ievadīts loģiskā sējuma nosaukums"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr "Loģiskajam sējumam netika norādīts nosaukums. Lūdzu, ievadiet to."
 
 #. Type: error
@@ -764,7 +783,7 @@ msgid ""
 "Unable to create a new logical volume (${LV}) on ${VG} with the new size "
 "${SIZE}."
 msgstr ""
-"Nevaru izveidot jaunu loģisko sējumu (${LV}) uz ${VG} ar izmēru ${SIZE}."
+"Nevar izveidot jaunu loģisko sējumu (${LV}) grupā ${VG} ar izmēru ${SIZE}."
 
 #. Type: error
 #. Description
@@ -777,9 +796,9 @@ msgstr "Loģiskie sējumi nav atrasti"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
-msgstr "Te nav loģisko sējumu. Lūdzu, vispirms izveidojiet tos."
+msgid "No logical volume has been found. Please create a logical volume first."
+msgstr ""
+"Nav atrasts neviens loģiskais sējums. Lūdzu, vispirms izveidojiet kādu."
 
 #. Type: select
 #. Description
@@ -800,7 +819,7 @@ msgstr "Lūdzu, izvēlieties, kuru loģisko sējumu dzēst."
 #. :sl3:
 #: ../partman-lvm.templates:56001
 msgid "in VG ${VG}"
-msgstr "Sējumu grupā ${VG}"
+msgstr "sējumu grupā ${VG}"
 
 #. Type: error
 #. Description
@@ -813,8 +832,8 @@ msgstr "Kļūda, dzēšot loģisko sējumu"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Loģisko sējumu (${LV}) uz ${VG} neizdevās dzēst."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Loģisko sējumu ${LV} grupā ${VG} neizdevās dzēst."
 
 #. Type: error
 #. Description
@@ -832,9 +851,9 @@ msgid ""
 "physical volumes may already be in use. You may also need to load some "
 "required kernel modules or re-partition the hard drives."
 msgstr ""
-"Jūsu sistēmā netika atrasti fiziskie sējumi (t.i. sadaļas). Iespējams, visi "
-"fiziskie sējumi jau tiek lietoti, vai arī jāielādē papildu kodola moduļi, "
-"vai jāpārdala cietie diski."
+"Jūsu sistēmā netika atrasti fiziskie sējumi (t.i., nodalījumi). Iespējams, "
+"visi fiziskie sējumi jau tiek lietoti. Varbūt arī jāielādē papildu kodola "
+"moduļi vai jāpārdala cietie diski."
 
 #. Type: error
 #. Description
@@ -881,15 +900,15 @@ msgstr "Nederīgs loģiskā sējuma vai sējumu grupas nosaukums"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Loģisko sējumu un sējumu grupu nosaukumi var saturēt tikai latīņu burtus, "
-"ciparus, mīnusa un plusa zīmes, punktus un pasvītrojuma zīmes. Vārdiem jābūt "
-"īsākiem par 128 zīmēm un tie nevar sākties ar mīnusa zīmi. Vārdi \".\" un "
-"\"..\" nav atļauti. Tāpat arī vārdi, kas sākas ar \"snapshot\", nav "
-"pieļaujami."
+"ciparus, mīnusa un plusa zīmes, punktus un pasvītrojuma zīmes. Tiem jābūt "
+"īsākiem par 128 zīmēm, un tie nevar sākties ar mīnusa zīmi. Nosaukumi \".\" "
+"un \"..\", kā arī nosaukumi, kas sākas ar \"snapshot\", nav atļauti."
 
 #. Type: error
 #. Description
@@ -914,28 +933,28 @@ msgid ""
 "volume groups and physical volumes which are about to be removed:"
 msgstr ""
 "Izvēlētā ierīce jau satur šādus LVM loģiskos sējumus, sējumu grupas un "
-"fiziskos sējumus, kas tiks aizvākti:"
+"fiziskos sējumus, kas tiks likvidēti:"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Logical volume(s) to be removed: ${LVTARGETS}"
-msgstr "Aizvācamie loģiskie sējumi: ${LVTARGETS}"
+msgstr "Likvidējamie loģiskie sējumi: ${LVTARGETS}"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Volume group(s) to be removed: ${VGTARGETS}"
-msgstr "Aizvācamās sējumu grupas: ${VGTARGETS}"
+msgstr "Likvidējamās sējumu grupas: ${VGTARGETS}"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Physical volume(s) to be removed: ${PVTARGETS}"
-msgstr "Aizvācamie fiziskie sējumi: ${PVTARGETS}"
+msgstr "Likvidējamie fiziskie sējumi: ${PVTARGETS}"
 
 #. Type: boolean
 #. Description
@@ -973,10 +992,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
-msgstr "Loģiskā sējuma nosaukums:"
+msgstr "Logical Volume Management (loģisko sējumu vadība, LVM)"
 
 #. Type: note
 #. Description
@@ -988,6 +1005,9 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"Sistēmu administrēšanā gadās, ka viens no diska nodalījumiem (parasti tas "
+"svarīgākais) ir pārpildīts, kamēr citi ir tukši. LVM var palīdzēt risināt šo "
+"problēmu."
 
 #. Type: note
 #. Description
@@ -1001,6 +1021,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"LVM atļauj apvienot diskus vai to nodalījumus (\"fiziskos sējumus\") vienā "
+"virtuālā diskā (\"sējumu grupā\"), kuru var sadalīt vairākos virtuālos "
+"nodalījumus (\"loģiskos sējumos\"). Sējumu grupas un loģiskie sējumi var "
+"atrasties uz vairākiem fiziskajiem diskiem. Jebkurā brīdī var pievienot "
+"jaunus fiziskos sējumus grupām un palielināt loģisko sējumu izmēru, "
+"izmantojot brīvo vietu sējumu grupā."
 
 #. Type: note
 #. Description
@@ -1012,3 +1038,6 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"LVM konfigurācijas izvēlnes ļauj rediģēt sējumu grupas un loģiskos sējumus. "
+"Pēc atgriešanās galvenajā nodalījumu veidošanas izvēlnē loģiskie sējumi "
+"parādīsies kā parasti nodalījumi, un tos varēs atbilstoši izmantot."

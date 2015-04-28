@@ -8,6 +8,10 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
+#
+# Translations from iso-codes:
+#     Translations taken from ICU SVN on 2007-09-09
+#   Panayotis Pakos <aeikineton@yahoo.com>
 # George Papamichelakis <george@step.gr>, 2004.
 # Emmanuel Galatoulas <galas@tee.gr>, 2004.
 # Konstantinos Margaritis <markos@debian.org>, 2004, 2006.
@@ -15,16 +19,24 @@
 # quad-nrg.net <galaxico@quad-nrg.net>, 2005, 2006, 2007.
 # quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
 # QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
-# galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009.
-# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009.
+# galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009, 2011.
+# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#   Free Software Foundation, Inc., 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   QUAD-nrg.net <yodesy@quad-nrg.net>, 2006, 2010.
+#   Simos Xenitellis <simos@hellug.gr>, 2001.
+#   Konstantinos Margaritis <markos@debian.org>, 2004.
+#   Athanasios Lefteris <alefteris@gmail.com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-11-25 19:51+0200\n"
-"Last-Translator: \n"
-"Language-Team:  <en@li.org>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-01-23 15:57+0200\n"
+"Last-Translator: galaxico <galaxico@quad-nrg.net>\n"
+"Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -192,12 +204,12 @@ msgstr "Να αποθηκευθούν οι αλλαγές και να γίνει
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Προτού γίνει η ρύθμιση του Διαχειριστή Λογικών Τόμων (Logical Volume "
-"Manager), θα πρέπει πρώτα να αποθηκευτεί το τρέχον σχήμα διαμέρισης στους "
-"δίσκους.  Αυτές οι αλλαγές δε μπορούν να ακυρωθούν."
+"Πριν γίνει η ρύθμιση του Διαχειριστή Λογικών Τόμων (Logical Volume Manager), "
+"θα πρέπει πρώτα να αποθηκευτεί στον δίσκο το τρέχον σχήμα διαμέρισης. Αυτές "
+"οι αλλαγές δε μπορούν να αναιρεθούν."
 
 #. Type: boolean
 #. Description
@@ -430,12 +442,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Σφάλμα κατά της σμίκρυνσης της Ομάδας Τόμων"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Σφάλμα κατά τη διαγραφή της Ομάδας Τόμων"
 
 #. Type: error
 #. Description
@@ -666,6 +677,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Σφάλμα κατά της σμίκρυνσης της Ομάδας Τόμων"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -728,8 +746,9 @@ msgstr "Δε δόθηκε όνομα του Λογικού Τόμου"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "Δε δόθηκε κάποιο όνομα για το Λογικό Τόμο.  Παρακαλώ δώστε ένα όνομα."
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr ""
+"Δεν δώθηκε κάποιο όνομα για το λογικό τόμο. Παρακαλώ εισάγετε ένα όνομα."
 
 #. Type: error
 #. Description
@@ -794,11 +813,10 @@ msgstr "Δε βρέθηκαν Λογικοί Τόμοι"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
-"Δε βρέθηκε κάποιος Λογικός Τόμος.  Θα πρέπει να δημιουργήσετε πρώτα ένα "
-"Λογικό Τόμο."
+"Δεν βρέθηκε κάποιος λογικός τόμος. Παρακαλώ δημιουργήστε πρώτα ένανλογικό "
+"τόμο."
 
 #. Type: select
 #. Description
@@ -832,8 +850,8 @@ msgstr "Σφάλμα κατά τη διαγραφή του Λογικού Τόμ
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Δεν ήταν δυνατή η διαγραφή του Λογικού Τόμου (${LV}) στην Ομάδα ${VG}."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Δεν ήταν δυνατή η διαγραφή του λογικού τόμου (${LV}) στην ομάδα ${VG}."
 
 #. Type: error
 #. Description
@@ -903,9 +921,10 @@ msgstr "Μη έγκυρο όνομα λογικού τόμου ή ομάδας �
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Τα ονόματα των λογικών τόμων ή της ομάδας τόμων μπορούν να περιέχουν μόνο "
 "αλφαριθμητικούς χαρακτήρες, παύλες, συν, τελείες και υποδείκτες. Πρέπει να "

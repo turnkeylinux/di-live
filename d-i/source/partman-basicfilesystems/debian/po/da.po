@@ -6,6 +6,7 @@
 # translation of debian-installer_packages_po_sublevel1_da.po to
 # Danish messages for debian-installer.
 # This file is distributed under the same license as debian-installer.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2010.
 # Mads Bille Lundby <lundbymads@gmail.com, 2009.
 # Henrik Christian Grove <debian@3001.dk>, 2008.
@@ -16,13 +17,30 @@
 #
 # Volume er oversat til diskenhed. Ret hvis Dansk-gruppen finder en anbefaling.
 #
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@computer.org>, 2001.
+# Claus Hindsgaul <claus.hindsgaul@gmail.com>, 2006.
+# Claus Hindsgaul <claus_h@image.dk>, 2004, 2005, 2006.
+# Computeroversættelse Tobias Toedter <t.toedter@gmx.net>, 2007.
+# Copyright (C) Free Software Foundation, Inc., 2006.
+# Frederik 'Freso' S. Olesen <freso.dk@gmail.com>, 2008.
+# Free Software Foundation, Inc., 2000, 2004, 2005.
+# Joe Hansen <joedalton2@yahoo.dk>, 2009, 2010, 2011.
+# Keld Simonsen <keld@dkuug.dk>, 2000, 2001.
+# Kenneth Christiansen <kenneth@gnu.org>, 2000.
+# Ole Laursen <olau@hardworking.dk>, 2001.
+#
+# vedrørende russisk:
+# (bogstavet й bliver normalt til j på dansk og y på engelsk.  Der er
+# også nogle forskelle med de mange s/sh-agtige lyde)
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_da\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2010-08-20 22:02+0200\n"
-"PO-Revision-Date: 2010-10-29 00:05+0200\n"
-"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
+"POT-Creation-Date: 2014-08-31 22:00+0000\n"
+"PO-Revision-Date: 2014-10-18 20:20+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -400,8 +418,7 @@ msgstr "Det monteringspunkt, du angav, er ugyldigt."
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "Mount points must start with \"/\". They cannot contain spaces."
-msgstr ""
-"Monteringspunkter skal starte med \"/\". De må ikke indeholde mellemrum."
+msgstr "Monteringspunkter skal starte med »/«. De må ikke indeholde mellemrum."
 
 #. Type: string
 #. Description
@@ -576,10 +593,25 @@ msgstr "fat32"
 #. Type: text
 #. Description
 #. :sl2:
+#: ../partman-basicfilesystems.templates:36001
+msgid "NTFS journaling file system"
+msgstr "NTFS-journalfilsystem"
+
 #. Type: text
 #. Description
-#: ../partman-basicfilesystems.templates:36001
+#. :sl1:
+#. Short file system name (untranslatable in many languages)
+#: ../partman-basicfilesystems.templates:37001
+msgid "ntfs"
+msgstr "ntfs"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Type: text
+#. Description
 #: ../partman-basicfilesystems.templates:38001
+#: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
 msgstr "swapområde"
 
@@ -591,8 +623,8 @@ msgstr "swapområde"
 #. Description
 #. :sl1:
 #. Short variant of `swap space'
-#: ../partman-basicfilesystems.templates:37001
 #: ../partman-basicfilesystems.templates:39001
+#: ../partman-basicfilesystems.templates:41001
 msgid "swap"
 msgstr "swap"
 
@@ -601,15 +633,15 @@ msgstr "swap"
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:40001
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options:"
 msgstr "Monteringsvalg:"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
 msgstr "Monteringsvalg kan justere filsystemets opførsel."
 
@@ -618,25 +650,34 @@ msgstr "Monteringsvalg kan justere filsystemets opførsel."
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:42001
-msgid "noatime - do not update inode access times at each access"
-msgstr "noatime - opdatér ikke inode-tilgangstider ved hver tilgang"
-
-#. Type: text
-#. Description
-#. :sl2:
-#. Note to translators: Please keep your translations of this string below
-#. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:43001
-msgid "relatime - update inode access times relative to modify time"
-msgstr "relatime - opdatér inode-tilgangstider relativt til ændringstider"
-
-#. Type: text
-#. Description
-#. :sl2:
-#. Note to translators: Please keep your translations of this string below
-#. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:44001
+msgid "noatime - do not update inode access times at each access"
+msgstr "noatime - opdater ikke inode-tilgangstider ved hver tilgang"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:45001
+msgid "nodiratime - do not update directory inode access times"
+msgstr "nodiratime - opdater ikke tilgangstider for mappe-inode"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:46001
+msgid "relatime - update inode access times relative to modify time"
+msgstr "relatime - opdater inode-tilgangstider relativt til ændringstider"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
 msgstr "nodev - understøt ikke specielle tegn- eller blok-enhedsfiler"
 
@@ -645,17 +686,17 @@ msgstr "nodev - understøt ikke specielle tegn- eller blok-enhedsfiler"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:45001
+#: ../partman-basicfilesystems.templates:48001
 msgid "nosuid - ignore set-user-identifier or set-group-identifier bits"
 msgstr ""
-"nosuid - ignorér bittene set-user-identifier eller set-group-identifier"
+"nosuid - ignorer bittene set-user-identifier eller set-group-identifier"
 
 #. Type: text
 #. Description
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:46001
+#: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
 msgstr "noexec - tillad ikke eksekvering af programfiler"
 
@@ -664,7 +705,7 @@ msgstr "noexec - tillad ikke eksekvering af programfiler"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:47001
+#: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
 msgstr "ro - montér filsystemet skrivebeskyttet"
 
@@ -673,7 +714,7 @@ msgstr "ro - montér filsystemet skrivebeskyttet"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:48001
+#: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
 msgstr "sync - alle ind- og uddata-handlinger udføres synkront"
 
@@ -682,7 +723,7 @@ msgstr "sync - alle ind- og uddata-handlinger udføres synkront"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:49001
+#: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
 msgstr "usrquota - brugerdiskkvoter aktiveret"
 
@@ -691,7 +732,7 @@ msgstr "usrquota - brugerdiskkvoter aktiveret"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:50001
+#: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
 msgstr "grpquota - gruppediskkvoter aktiveret"
 
@@ -700,7 +741,7 @@ msgstr "grpquota - gruppediskkvoter aktiveret"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:51001
+#: ../partman-basicfilesystems.templates:54001
 msgid "user_xattr - support user extended attributes"
 msgstr "user_xattr - understøt brugerudvidede egenskaber"
 
@@ -709,7 +750,7 @@ msgstr "user_xattr - understøt brugerudvidede egenskaber"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:52001
+#: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
 msgstr "quiet - ændring af ejer og filrettigheder giver ikke fejlbeskeder"
 
@@ -718,16 +759,25 @@ msgstr "quiet - ændring af ejer og filrettigheder giver ikke fejlbeskeder"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:53001
+#: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
 msgstr "notail - undlad at mase filer ind i filsystemtræet"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:57001
+msgid "discard - trim freed blocks from underlying block device"
+msgstr "discard - trim frigjorte blokke fra underliggende blokenhed"
 
 #. Type: text
 #. Description
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:54001
+#: ../partman-basicfilesystems.templates:58001
 msgid "acls - support POSIX.1e Access Control List"
 msgstr "acls - understøttelse for POSIX.1e Access Control List"
 
@@ -736,6 +786,60 @@ msgstr "acls - understøttelse for POSIX.1e Access Control List"
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:55001
+#: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
 msgstr "shortnames - brug filnavne med 8.3 tegnmaksimum i stil med MS-DOS."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid "Go back to the menu and correct this problem?"
+msgstr "Gå tilbage til menuen for at ordne dette problem?"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+msgid ""
+"Your boot partition has not been configured with the ext2 file system. This "
+"is needed by your machine in order to boot. Please go back and use the ext2 "
+"file system."
+msgstr ""
+"Din opstartspartition er ikke blevet sat op med et ext2-filsystem. Dette er "
+"nødvendigt for at din maskine skal kunne startes op. Gå tilbage og brug ext2-"
+"filsystemet."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid ""
+"If you do not go back to the partitioning menu and correct this error, the "
+"partition will be used as is. This means that you may not be able to boot "
+"from your hard disk."
+msgstr ""
+"Hvis du ikke går tilbage til partitioneringsmenuen og ordner disse "
+"problemer, vil partitionen blive brugt som den er. Det vil betyde at du "
+"muligvis ikke vil kunne starte op fra din harddisk."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:61001
+msgid ""
+"Your boot partition is not located on the first partition of your hard disk. "
+"This is needed by your machine in order to boot.  Please go back and use "
+"your first partition as a boot partition."
+msgstr ""
+"Din opstartspartition ligger ikke på den første partition på din harddisk. "
+"Dette er nødvendigt for, at din maskine skal kunne startes op. Gå tilbage og "
+"brug den første primære partition som opstartspartition."

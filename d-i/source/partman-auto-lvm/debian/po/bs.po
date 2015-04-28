@@ -10,18 +10,30 @@
 #
 # Safir Secerovic <sapphire@linux.org.ba>, 2006.
 # Armin Besirovic <armin@linux.org.ba>, 2008.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Free Software Foundation, Inc., 2001,2002,2003,2004
+#   Safir Šećerović <sapphire@linux.org.ba>, 2004,2006.
+#   Vedran Ljubovic <vljubovic@smartnet.ba>, 2001
+#   (translations from drakfw).
+#   Translations from KDE:
+#   Nesiren Armin <bianchi@lugbih.org>, 2002
+#   Vedran Ljubovic <vljubovic@smartnet.ba>, 2002
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_bs\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-09-19 19:17+0200\n"
-"Last-Translator: Armin Besirovic <armin@linux.org.ba>\n"
+"PO-Revision-Date: 2013-11-29 19:21+0100\n"
+"Last-Translator: Amila Valjevčić <valjevcic.amila@gmail.com>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
+"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: 3\n"
+"Plural-Forms: 3;\n"
 
 #. Type: text
 #. Description
@@ -29,7 +41,7 @@ msgstr ""
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto-lvm.templates:1001
 msgid "Guided - use entire disk and set up LVM"
-msgstr "Vođeno - koristi cijeli disk i podesi LVM"
+msgstr "Vođeno - koristite cijeli disk i podesite LVM"
 
 #. Type: string
 #. Description
@@ -55,7 +67,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:4001
 msgid "Failed to partition the selected disk"
-msgstr "Nemogu particionisati odabrani disk"
+msgstr "Neuspješno particionisanje odabranog diska"
 
 #. Type: error
 #. Description
@@ -142,7 +154,7 @@ msgstr ""
 #: ../partman-auto-lvm.templates:7001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
 msgstr ""
-"Provjerite /var/log/messages ili pogledajte virtuelnu konzolu 4 za detalje."
+"Provjerite /var/log/syslog ili pogledajte virtualnu konzolu 4 za detalje."
 
 #. Type: text
 #. Description
@@ -210,6 +222,7 @@ msgstr "Molim pogledajte recept automatskog particionisanja"
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
 msgstr ""
+"Količina grupe volumena koju treba koristite za navođeno particionisanje:"
 
 #. Type: string
 #. Description
@@ -221,6 +234,11 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
+"Za navođeno particionisanje možete da koristite cijelu grupu volumena ili "
+"samo jedan njen dio. Ako koristite samo jedan dio, ili ako kasnije dodate "
+"još diskova, onda ćete kasnije uz pomoć LVM alata moći da proširujete "
+"logičke volumene, tako da korišćenje manjeg dela grupe volumena u toku "
+"instalacije može da pruži više fleksibilnosti."
 
 #. Type: string
 #. Description
@@ -231,6 +249,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"Najmanja veličina izabranog recepta za particionisanje je ${MINSIZE} (ili "
+"${PERCENT}); molim da obratite pažnju da je moguće da paketi koje ste "
+"izabrali zahtevju više prostora od toga. Najveća veličina je ${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -274,6 +295,8 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
+"Htjeli ste da koristite ${SIZE} za navođeno particionisanje, ali raspoloživ "
+"prostor je samo ${MAXSIZE}."
 
 #. Type: error
 #. Description
@@ -290,3 +313,5 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
+"Htjeli ste da koristite ${SIZE} za navođeno particionisanje, ali izabrani "
+"recept za particionisanje zahteva bar ${MINSIZE}."

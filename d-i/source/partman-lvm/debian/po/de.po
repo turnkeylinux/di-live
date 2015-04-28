@@ -3,15 +3,11 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# German messages for debian-installer.
+# German messages for debian-installer (sublevel1).
 # Copyright (C) 2003 Software in the Public Interest, Inc.
-# Console-setup strings translations:
-# (identified by "./console-setup.templates")
-# Copyright (C) 2006, the console-setup package'c copyright holder
-# Copyright (C) 2006, Matthias Julius
-# Copyright (C) 2007-2009 Helge Kreutzmann
+#
 # This file is distributed under the same license as debian-installer.
-# Holger Wansing <linux@wansing-online.de>, 2008, 2009, 2010.
+# Holger Wansing <linux@wansing-online.de>, 2008 - 2014.
 # Jens Seidel <jensseidel@users.sf.net>, 2005, 2006, 2007, 2008.
 # Dennis Stampfer <seppy@debian.org>, 2003, 2004, 2005.
 # Alwin Meschede <ameschede@gmx.de>, 2003, 2004.
@@ -19,18 +15,38 @@
 # Jan Luebbe <jluebbe@lasnet.de>, 2003.
 # Thorsten Sauter <tsauter@gmx.net>, 2003.
 #
+# Console-setup strings translations:
+# (identified by "./console-setup.templates")
+# Copyright (C) 2006, the console-setup package'c copyright holder
+# Copyright (C) 2006, Matthias Julius
+# Copyright (C) 2007-2009 Helge Kreutzmann
+# Copyright (C) 2008-2011 Holger Wansing
 #
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@computer.org>, 2001.
+# Björn Ganslandt <bganslan@gmx.net>, 2000, 2001.
+# Bruno Haible <bruno@clisp.org>, 2004, 2007.
+# Christian Stimming <stimming@tuhh.de>, 2006.
+# Dennis Stampfer <seppy@debian.org>, 2004.
+# Karl Eichwalder <ke@suse.de>, 2001.
+# Simon Hürlimann <simon.huerlimann@access.unizh.ch>, 2004.
+# Stefan Siegel <siegel@mandrakesoft.com>, 2001.
+# Tobias Quathamer <toddy@debian.org>, 2006, 2007, 2008, 2009, 2010.
+# Translations taken from ICU SVN on 2007-09-09
+# Wolfgang Rohdewald <wolfgang@rohdewald.de>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2010-01-30 09:24+0100\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2014-09-21 21:21+0200\n"
 "Last-Translator: Holger Wansing <linux@wansing-online.de>\n"
 "Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -194,7 +210,7 @@ msgstr "Änderungen auf die Speichergeräte schreiben und LVM einrichten?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Bevor der Logical Volume Manager konfiguriert werden kann, muss die "
@@ -234,9 +250,9 @@ msgid ""
 "decide if you are satisfied with the current partitioning scheme in these "
 "disks before continuing."
 msgstr ""
-"Ist der Logical Volume Manager konfiguriert, können die Partitionen, die "
-"sich auf derselben Festplatte wie die physikalischen Volumes befinden, nicht "
-"mehr geändert werden. Bitte überzeugen Sie sich, ob die Einteilung der "
+"Ist der Logical Volume Manager konfiguriert, sind keine weiteren Änderungen "
+"an den Partitionen, die sich auf derselben Festplatte wie die physikalischen "
+"Volumes befinden, erlaubt. Bitte überzeugen Sie sich, ob die Einteilung der "
 "Partitionen auf diesen Festplatten richtig ist."
 
 #. Type: error
@@ -252,8 +268,8 @@ msgstr "LVM-Konfiguration fehlgeschlagen"
 #: ../partman-lvm.templates:20001
 msgid "An error occurred while writing the changes to the disks."
 msgstr ""
-"Es trat ein Fehler auf, als die Änderungen auf die Festplatten geschrieben "
-"wurden."
+"Es trat ein Fehler auf, während die Änderungen auf die Festplatten "
+"geschrieben wurden."
 
 #. Type: error
 #. Description
@@ -340,7 +356,7 @@ msgstr ""
 #: ../partman-lvm.templates:26001 ../partman-lvm.templates:39001
 #: ../partman-lvm.templates:44001
 msgid "You can select one or more devices."
-msgstr "Sie können eines oder mehrere Geräte auswählen."
+msgstr "Sie können ein oder mehrere Geräte auswählen."
 
 #. Type: string
 #. Description
@@ -368,7 +384,7 @@ msgstr "Bitte geben Sie einen Namen für die neue Volume-Gruppe ein."
 #: ../partman-lvm.templates:28001 ../partman-lvm.templates:40001
 #: ../partman-lvm.templates:45001
 msgid "No physical volumes selected"
-msgstr "Keine physikalischen Volumes ausgewählt."
+msgstr "Keine physikalischen Volumes ausgewählt"
 
 #. Type: error
 #. Description
@@ -436,12 +452,9 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Beim Verkleinern der Volume-Gruppe ist ein Fehler aufgetreten"
+#: ../partman-lvm.templates:32001
+msgid "Error while creating volume group"
+msgstr "Fehler beim Erstellen einer Volume-Gruppe"
 
 #. Type: error
 #. Description
@@ -470,8 +483,8 @@ msgstr "Die Volume-Gruppe ${VG} konnte nicht erstellt werden."
 #: ../partman-lvm.templates:60001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
 msgstr ""
-"Prüfen Sie /var/log/syslog oder die virtuelle Konsole 4 für genauere "
-"Informationen."
+"Schauen Sie in /var/log/syslog oder auf die vierte virtuelle Konsole "
+"bezüglich detaillierter Informationen."
 
 #. Type: select
 #. Description
@@ -545,7 +558,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:36001
 msgid "Error while deleting volume group"
-msgstr "Beim Löschen der Volume-Gruppe ist ein Fehler aufgetreten"
+msgstr "Fehler beim Löschen einer Volume-Gruppe"
 
 #. Type: error
 #. Description
@@ -610,7 +623,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:41001
 msgid "Error while extending volume group"
-msgstr "Beim Erweitern der Volume-Gruppe ist ein Fehler aufgetreten"
+msgstr "Fehler beim Erweitern einer Volume-Gruppe"
 
 #. Type: error
 #. Description
@@ -628,7 +641,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:42001
 msgid "No volume group can be reduced."
-msgstr "Keine Volume-Gruppe kann verkleinert werden."
+msgstr "Es kann keine Volume-Gruppe verkleinert werden."
 
 #. Type: select
 #. Description
@@ -668,6 +681,13 @@ msgid ""
 msgstr ""
 "Es wurden keine physikalischen Volumes ausgewählt. Die Reduzierung der "
 "Volume-Gruppe wurde abgebrochen."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Fehler beim Verkleinern einer Volume-Gruppe"
 
 #. Type: error
 #. Description
@@ -737,7 +757,7 @@ msgstr "Kein Name für das logische Volume angegeben"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr ""
 "Es wurde kein Name für das logische Volume angegeben. Bitte geben Sie einen "
 "Namen ein."
@@ -750,8 +770,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:51001 ../partman-lvm.templates:53001
 msgid "Error while creating a new logical volume"
-msgstr ""
-"Bei der Erstellung des neuen logischen Volumes ist ein Fehler aufgetreten"
+msgstr "Fehler beim Erstellen eines neuen logischen Volumes"
 
 #. Type: error
 #. Description
@@ -806,8 +825,7 @@ msgstr "Kein logisches Volume gefunden"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
 "Es wurde kein logisches Volume gefunden. Bitte erstellen Sie zuerst ein "
 "logisches Volume."
@@ -838,13 +856,13 @@ msgstr "in VG ${VG}"
 #. :sl3:
 #: ../partman-lvm.templates:57001
 msgid "Error while deleting the logical volume"
-msgstr "Beim Löschen des logischen Volumes ist ein Fehler aufgetreten"
+msgstr "Fehler beim Löschen eines logischen Volumes"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
 msgstr "Das logische Volume ${LV} auf ${VG} konnte nicht gelöscht werden."
 
 #. Type: error
@@ -891,7 +909,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:60001
 msgid "Error while initializing physical volume"
-msgstr "Fehler bei Initialisierung des physikalischen Volumes"
+msgstr "Fehler bei Initialisierung eines physikalischen Volumes"
 
 #. Type: error
 #. Description
@@ -905,7 +923,7 @@ msgstr "Das physikalische Volume ${PV} konnte nicht initialisiert werden."
 #. :sl3:
 #: ../partman-lvm.templates:61001
 msgid "Invalid logical volume or volume group name"
-msgstr "Ungültiger logischer Volume- oder Volume-Gruppen-Name"
+msgstr "Ungültiger logischer Volume-Name oder Volume-Gruppen-Name"
 
 #. Type: error
 #. Description
@@ -913,12 +931,13 @@ msgstr "Ungültiger logischer Volume- oder Volume-Gruppen-Name"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
-"Logische Volume- oder Volume-Gruppen-Namen dürfen nur alphanumerische "
-"Zeichen, Bindestriche, Plus-, Punkt- und Unterstrichzeichen enthalten. Sie "
+"Logische Volume-Namen oder Volume-Gruppen-Namen dürfen nur alphanumerische "
+"Zeichen, Bindestriche, Plus-, Punkt- und Unterstrich-Zeichen enthalten. Sie "
 "dürfen nicht mehr als 128 Zeichen enthalten und nicht mit einem Bindestrich "
 "beginnen. Die Namen ».« und »..« sind nicht erlaubt. Zusätzlich dürfen "
 "logische Volume-Namen nicht mit »snapshot« beginnen."
@@ -1037,8 +1056,8 @@ msgid ""
 "amount of unallocated space in the volume group."
 msgstr ""
 "LVM erlaubt es, Festplatten oder Partitionen (»physikalische Volumes« "
-"genannt) zu einer virtuellen Platte (»Volume-Group«) zu kombinieren, die dann "
-"in virtuelle Partitionen (»logische Volumes«) unterteilt werden können. "
+"genannt) zu einer virtuellen Platte (»Volume-Group«) zu kombinieren, die "
+"dann in virtuelle Partitionen (»logische Volumes«) unterteilt werden können. "
 "Volume-Groups und logische Volumes können sich über mehrere physikalische "
 "Festplatten erstrecken. Es können jederzeit neue physikalische Volumes zu "
 "einer Volume-Group hinzugefügt werden, und logische Volumes können in Ihrer "

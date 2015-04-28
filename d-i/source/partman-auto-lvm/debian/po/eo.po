@@ -4,20 +4,21 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # translation of Debian Installer templates to Esperanto.
-# Copyright (C) 2005-2008 Software in the Public Interest, Inc.
+# Copyright (C) 2005-2011 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
 # Samuel Gimeno <sgimeno@gmail.com>, 2005.
-# Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005-2007.
-# Felipe Castro <fefcas@gmail.com>, 2008.
+# Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005, 2006, 2007.
+# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: eo\n"
+"Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-10-17 08:57-0300\n"
+"PO-Revision-Date: 2011-03-16 20:46-0300\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +29,7 @@ msgstr ""
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto-lvm.templates:1001
 msgid "Guided - use entire disk and set up LVM"
-msgstr "Gvidata - uzu tutan diskon kaj uzu ilon 'LVM'"
+msgstr "Gvidata - uzu tutan diskon kaj uzu ilon LVM"
 
 #. Type: string
 #. Description
@@ -38,7 +39,7 @@ msgstr "Gvidata - uzu tutan diskon kaj uzu ilon 'LVM'"
 #. :sl3:
 #: ../partman-auto-lvm.templates:2001 ../partman-auto-lvm.templates:3001
 msgid "Name of the volume group for the new system:"
-msgstr "Datumportilara nomo por la nova sistemo:"
+msgstr "Nomo de la datumportil-grupo por la nova sistemo:"
 
 #. Type: string
 #. Description
@@ -47,7 +48,7 @@ msgstr "Datumportilara nomo por la nova sistemo:"
 msgid ""
 "The selected volume group name is already in use. Please choose another name."
 msgstr ""
-"La elektita datumportila grupa nomo estas jam azita. Bonvolu elekti alian "
+"La elektita datumportila grupa nomo jam estas uzata. Bonvolu elekti alian "
 "nomon."
 
 #. Type: error
@@ -65,15 +66,15 @@ msgid ""
 "This happened because the selected recipe does not contain any partition "
 "that can be created on LVM volumes."
 msgstr ""
-"La malsukceso verŝajne okazis pro diskpartiga skemo, kiu malhavas kreotan "
-"diskparton sur 'LVM'-datumportiloj."
+"Tio ĉi okazis ĉar la elektita recepto enhavas neniun diskparton kiu povas "
+"esti kreata sur datumportiloj LVM."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:5001
 msgid "Continue installation without /boot partition?"
-msgstr "Daŭrigu instaladon sen '/boot'-diskparto?"
+msgstr "Ĉu daŭrigi la instaladon sen diskparto /boot ?"
 
 #. Type: boolean
 #. Description
@@ -83,8 +84,9 @@ msgid ""
 "The recipe you selected does not contain a separate partition for /boot. "
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
-"La elektita skemo de dispartigado ne enhavas apartan '/boot'-diskparton, "
-"normale bezonatan dum la ekŝargo de 'LVM'-uzanta sistemo."
+"La elektita recepto de diskpartigado ne enhavas apartan diskparton /boot. "
+"Tio ĉi estas ordinare bezonata por ebligi al vi ekŝargi je la sistemo uzante "
+"LVM."
 
 #. Type: boolean
 #. Description
@@ -94,8 +96,8 @@ msgid ""
 "You can choose to ignore this warning, but that may result in a failure to "
 "reboot the system after the installation is completed."
 msgstr ""
-"Vi povas ignori ĉi tiu averton, sed tio eble ne ebligos la ekŝargon de la "
-"sistemon post la plenuma instalado."
+"Vi povas ignori tiun ĉi averton, sed tio povos fiaskigi la ekŝargon je la "
+"sistemo post plenumo de la instalado."
 
 #. Type: error
 #. Description
@@ -113,16 +115,16 @@ msgid ""
 "in use. Lowering the priority for configuration questions will allow you to "
 "specify an alternative name."
 msgstr ""
-"La datumportila grupa nomo uzata por aŭtomate diskpartigi per logika "
-"datumportila admninistranto ('LVM') estas jam uzata. Malpliigante la agordan "
-"elecktitan prioritaton vi povos mem elekti alian nomon."
+"La datumportila grup-nomo uzata por aŭtomate diskpartigi per LVM jam estas "
+"uzata. Malpliigo de la prioritato por agordaj demandoj ebligos al vi indiki "
+"alternativan nomon."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:7001
 msgid "Unexpected error while creating volume group"
-msgstr "Neatendita eraro dum la datumportilara kreado"
+msgstr "Ne atendata eraro dum la kreado de datumportil-grupo"
 
 #. Type: error
 #. Description
@@ -132,8 +134,8 @@ msgid ""
 "Autopartitioning using LVM failed because an error occurred while creating "
 "the volume group."
 msgstr ""
-"Aŭtomatdiskpartigilo uzanta logikan datumportilan administranton ('LVM') "
-"fiaskis ĉar eraro okazis dum la datumportilara kreado."
+"Aŭtomata diskpartigo uzanta LVM fiaskis ĉar eraro okazis dum la kreado de "
+"datumportil-grupo."
 
 #. Type: error
 #. Description
@@ -150,14 +152,14 @@ msgstr ""
 #: ../partman-auto-lvm.templates:8001
 #, no-c-format
 msgid "Multiple disks (%s)"
-msgstr "Multoblaj diskoj (%s)"
+msgstr "Multopaj diskoj (%s)"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:9001
 msgid "Non-existing physical volume"
-msgstr "Ne-ekzistanta fizika volumo:"
+msgstr "Ne-ekzistanta konkreta datumportilo:"
 
 #. Type: error
 #. Description
@@ -167,7 +169,8 @@ msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
 msgstr ""
-"Difino de voluma grupo enhavas referencon al ne-ekzistanta fizika volumo."
+"Difino de datumportil-grupo enhavas referencon al ne-ekzistanta konkreta "
+"datumportilo."
 
 #. Type: error
 #. Description
@@ -177,15 +180,15 @@ msgid ""
 "Please check that all devices are properly connected. Alternatively, please "
 "check the automatic partitioning recipe."
 msgstr ""
-"Bonvolu certigi, ke ĉiuj aparatoj estas ĝuste konektitaj. Alternative, "
-"bonvolu kontroli la aŭtomatigan diskpartigan recepton."
+"Bonvolu certigi, ke ĉiuj aparatoj estas ĝuste konektataj. Alternative, "
+"bonvolu kontroli la aŭtomatan diskpartigan recepton."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "No physical volume defined in volume group"
-msgstr "Neniu fizika volumo estas difinita en la voluma grupo"
+msgstr "Neniu konkreta datumportilo estas difinita en la datumportil-grupo"
 
 #. Type: error
 #. Description
@@ -195,15 +198,15 @@ msgid ""
 "The automatic partitioning recipe contains the definition of a volume group "
 "that does not contain any physical volume."
 msgstr ""
-"La aŭtomatiga diskpartiga recepto enhavas difinon de voluma grupo, kiu ne "
-"enhavas iun ajn fizikan volumon."
+"La aŭtomata diskpartiga recepto enhavas difinon de datumportil-grupo, kiu "
+"enhavas neniun konkretan datumportilon."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "Please check the automatic partitioning recipe."
-msgstr "Bonvolu kontroli la aŭtomatigan diskpartigan recepton."
+msgstr "Bonvolu kontroli la aŭtomatan diskpartigan recepton."
 
 #. Type: string
 #. Description

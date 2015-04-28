@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[ -f /var/lib/partman/lvm ] || exit 0
+
 . /lib/partman/lib/lvm-base.sh
 
 dev=$1

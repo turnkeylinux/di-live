@@ -1,3 +1,429 @@
+partman-partitioning (106ubuntu1) vivid; urgency=medium
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Add PATH, RAWMINSIZE, RAWPREFSIZE, and RAWMAXSIZE substitutions to
+      partman-partitioning/new_size in support of ubiquity's resize widget.
+    - Check that minimum filesystem sizes reported by tune2fs and ntfsresize
+      are between the minimum partition size and the current partition size;
+      if not, refuse to resize the partition at all.
+    - Save the swap size for ubiquity.
+    - On systems with only GPT disks, check that an EFI System Partition or
+      a BIOS Boot Partition exists, as appropriate.
+    - Detect "fsl" subarch for powerpc and set partition map to GPT.
+  * Dropped changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Use mac as the default disk label on ppc64.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 17 Nov 2014 13:52:43 +0000
+
+partman-partitioning (106) unstable; urgency=low
+
+  [ Updated translations ]
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 20 Sep 2014 14:27:01 +0200
+
+partman-partitioning (105) unstable; urgency=medium
+
+  [ Steven Chamberlain ]
+  * On kfreebsd, drop unsatisified dependency on ntfs-3g-udeb;
+    ntfs will remain unsupported in the installer for now.
+    (Closes: #760499)
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 05 Sep 2014 22:28:56 +0200
+
+partman-partitioning (104) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * Restore sensible architecture sorting in default_disk_label.
+  * Depend on ntfs-3g-udeb rather than ntfsprogs-udeb.
+  * Cache calls to tune2fs and ntfsresize, to make navigating through the
+    resize UI a little faster.
+
+  [ Updated translations ]
+  * Estonian (et.po) by Mattias Põldaru
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 04 Sep 2014 07:46:37 +0200
+
+partman-partitioning (103) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Danish (da.po) by Joe Hansen.
+
+  [ Frederic Bonnard ]
+  * Add ppc64el support.  Closes: #752444.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 17 Aug 2014 23:48:02 +0200
+
+partman-partitioning (102) unstable; urgency=medium
+
+  * Group Loongson 3A and 3B in the same loongson-3 subarchitecture.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 12 Jul 2014 17:08:15 +0200
+
+partman-partitioning (101ubuntu1) utopic; urgency=medium
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add PATH, RAWMINSIZE, RAWPREFSIZE, and RAWMAXSIZE substitutions to
+      partman-partitioning/new_size in support of ubiquity's resize widget.
+    - Cache calls to tune2fs and ntfsresize, to make navigating through the
+      resize UI a little faster.
+    - Check that minimum filesystem sizes reported by tune2fs and ntfsresize
+      are between the minimum partition size and the current partition size;
+      if not, refuse to resize the partition at all.
+    - Use mac as the default disk label on ppc64.
+    - Save the swap size for ubiquity.
+    - On systems with only GPT disks, check that an EFI System Partition or
+      a BIOS Boot Partition exists, as appropriate.
+    - Detect "fsl" subarch for powerpc and set partition map to GPT.
+    - Use GPT as the default disk label on ppc64el.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 07 Jul 2014 11:14:42 +0100
+
+partman-partitioning (101) unstable; urgency=low
+
+  [ Phillip Susi ]
+  * Remove partition copy operation for libparted 3 transition (closes:
+    #738864).
+
+  [ Updated translations ]
+  * Amharic (am.po) by Tegegne Tefera
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bosnian (bs.po) by Amila Valjevčić
+  * Danish (da.po) by Joe Hansen
+  * German (de.po) by Holger Wansing
+  * Greek, Modern (1453-) (el.po) by galaxico
+  * French (fr.po) by Christian Perrier
+  * Croatian (hr.po) by Tomislav Krznar
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Bokmål, Norwegian (nb.po) by Hans Fredrik Nordhaug
+  * Polish (pl.po) by Michał Kułach
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Thai (th.po) by Theppitak Karoonboonyananv
+  * Turkish (tr.po) by Mert Diriki
+  * Ukrainian (uk.po) by Anton Gladky
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 06 Jul 2014 23:18:28 +0100
+
+partman-partitioning (100) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Judit Gyimesi
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 14 Mar 2014 18:48:35 +0100
+
+partman-partitioning (99ubuntu1) trusty; urgency=medium
+
+  * Resynchronise with Debian (LP: #1263756).  Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add PATH, RAWMINSIZE, RAWPREFSIZE, and RAWMAXSIZE substitutions to
+      partman-partitioning/new_size in support of ubiquity's resize widget.
+    - Cache calls to tune2fs and ntfsresize, to make navigating through the
+      resize UI a little faster.
+    - Check that minimum filesystem sizes reported by tune2fs and ntfsresize
+      are between the minimum partition size and the current partition size;
+      if not, refuse to resize the partition at all.
+    - Use mac as the default disk label on ppc64.
+    - Save the swap size for ubiquity.
+    - On systems with only GPT disks, check that an EFI System Partition or
+      a BIOS Boot Partition exists, as appropriate.
+    - Detect "fsl" subarch for powerpc and set partition map to GPT.
+  * Use GPT as the default disk label on ppc64el.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 27 Jan 2014 16:16:10 +0000
+
+partman-partitioning (99) unstable; urgency=low
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 05 Jan 2014 15:33:40 +0100
+
+partman-partitioning (98) unstable; urgency=medium
+
+  * mips: Drop support for non-supported anymore architectures.
+  * mips: Add support for octeon sub-architecture.
+  * mipsel: Drop support for non-supported anymore architectures.
+  * mipsel: Add support for loongson-3a sub-architecture.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri, 27 Dec 2013 11:12:27 +0100
+
+partman-partitioning (97) unstable; urgency=low
+
+  * Use GPT partitions on arm64.
+
+ -- dann frazier <dannf@debian.org>  Mon, 23 Dec 2013 13:12:17 -0700
+
+partman-partitioning (96) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bosnian (bs.po) by Amila Valjevčić
+  * Hungarian (hu.po) by Judit Gyimesi
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 13 Dec 2013 06:49:21 +0100
+
+partman-partitioning (95) unstable; urgency=low
+
+  [ Updated translations ]
+  * Ukrainian (uk.po) by Yuri Chornoivan
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 09 Nov 2013 22:57:01 +0100
+
+partman-partitioning (94) unstable; urgency=low
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 08 Sep 2013 16:52:40 +0200
+
+partman-partitioning (93) unstable; urgency=low
+
+  [ Dmitrijs Ledkovs ]
+  * Set debian source format to '3.0 (native)'.
+  * Bump debhelper compat level to 9.
+  * Set Vcs-* to canonical format.
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 13 Jul 2013 13:28:48 +0200
+
+partman-partitioning (92) unstable; urgency=low
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Tomislav Krznar
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 19 May 2013 18:10:38 +0200
+
+partman-partitioning (91) unstable; urgency=low
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Tomislav Krznar
+    This is an important fix as it fixes encoding issues in a string.
+  * Romanian (ro.po) by Ioan Eugen Stan
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 30 Mar 2013 17:54:37 +0100
+
+partman-partitioning (90) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Merge from Ubuntu:
+    - Support archdetect being anywhere on PATH.
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 26 Dec 2012 07:56:50 +0100
+
+partman-partitioning (89ubuntu2) raring; urgency=low
+
+  * Detect "fsl" subarch for powerpc and set partion map to gpt
+
+ -- Ben Collins <ben.c@servergy.com>  Thu, 17 Jan 2013 14:23:43 -0500
+
+partman-partitioning (89ubuntu1) raring; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add PATH, RAWMINSIZE, RAWPREFSIZE, and RAWMAXSIZE substitutions to
+      partman-partitioning/new_size in support of ubiquity's resize widget.
+    - Cache calls to tune2fs and ntfsresize, to make navigating through the
+      resize UI a little faster.
+    - Check that minimum filesystem sizes reported by tune2fs and ntfsresize
+      are between the minimum partition size and the current partition size;
+      if not, refuse to resize the partition at all.
+    - Support archdetect being anywhere on PATH.
+    - Use mac as the default disk label on ppc64.
+    - Save the swap size for ubiquity.
+    - On systems with only GPT disks, check that an EFI System Partition or
+      a BIOS Boot Partition exists, as appropriate.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 04 Dec 2012 00:25:13 +0000
+
+partman-partitioning (89) unstable; urgency=low
+
+  * Add myself to Uploaders and remove Anton Zinoviev (now inactive)
+
+  [ Updated translations ]
+  * Asturian (ast.po) by ivarela
+  * Galician (gl.po) by Jorge Barreiro
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 16 Oct 2012 13:18:02 +0200
+
+partman-partitioning (88) unstable; urgency=low
+
+  [ Steve McIntyre ]
+  * On x86 machines booted in EFI mode, use gpt disk label by default.
+
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 20 Sep 2012 14:33:48 +0200
+
+partman-partitioning (87ubuntu1) quantal; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add PATH, RAWMINSIZE, RAWPREFSIZE, and RAWMAXSIZE substitutions to
+      partman-partitioning/new_size in support of ubiquity's resize widget.
+    - Cache calls to tune2fs and ntfsresize, to make navigating through the
+      resize UI a little faster.
+    - Check that minimum filesystem sizes reported by tune2fs and ntfsresize
+      are between the minimum partition size and the current partition size;
+      if not, refuse to resize the partition at all.
+    - Use the GPT disk label by default on *i386/efi and *amd64/efi
+      subarchitectures.
+    - Support archdetect being anywhere on PATH.
+    - Use mac as the default disk label on ppc64.
+    - Save the swap size for ubiquity.
+    - On systems with only GPT disks, check that an EFI System Partition or
+      a BIOS Boot Partition exists, as appropriate.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 10 Aug 2012 15:24:57 +0100
+
+partman-partitioning (87) unstable; urgency=low
+
+  * Team upload
+  * Replace XC-Package-Type by Package-Type
+
+  [ Updated translations ]
+  * Amharic (am.po) by Tegegne Tefera
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 18 Jun 2012 07:08:12 +0200
+
+partman-partitioning (86) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Tibetan (bo.po) by Tennom
+  * Welsh (cy.po) by Dafydd Tomos
+  * Basque (eu.po) by Piarres Beobide
+  * Galician (gl.po) by Jorge Barreiro
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Latvian (lv.po) by Rūdolfs Mazurs
+  * Macedonian (mk.po) by Arangel Angov
+  * Panjabi (pa.po) by A S Alam
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Traditional Chinese (zh_TW.po) by Yao Wei (魏銘廷)
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 15 Jun 2012 12:50:04 +0200
+
+partman-partitioning (85ubuntu2) precise; urgency=low
+
+  * Update Ubuntu-specific translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 11 Apr 2012 16:07:03 +0100
+
+partman-partitioning (85ubuntu1) precise; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add PATH, RAWMINSIZE, RAWPREFSIZE, and RAWMAXSIZE substitutions to
+      partman-partitioning/new_size in support of ubiquity's resize widget.
+    - Cache calls to tune2fs and ntfsresize, to make navigating through the
+      resize UI a little faster.
+    - Check that minimum filesystem sizes reported by tune2fs and ntfsresize
+      are between the minimum partition size and the current partition size;
+      if not, refuse to resize the partition at all.
+    - Use the GPT disk label by default on *i386/efi and *amd64/efi
+      subarchitectures.
+    - Support archdetect being anywhere on PATH.
+    - Use mac as the default disk label on ppc64.
+    - Save the swap size for ubiquity.
+    - On systems with only GPT disks, check that an EFI System Partition or
+      a BIOS Boot Partition exists, as appropriate.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 30 Mar 2012 15:20:01 +0100
+
+partman-partitioning (85) unstable; urgency=low
+
+  * Allow overriding the default disk label selection by preseeding
+    partman-partitioning/default_label.  This is particularly useful if you
+    want to force GPT on a sub-2TB disk on x86
+    (partman-partitioning/default_label=gpt), but may come in handy in other
+    situations too.
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Timo Jyrinki
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 30 Mar 2012 15:03:30 +0100
+
+partman-partitioning (84) unstable; urgency=low
+
+  [ Updated translations ]
+  * Asturian (ast.po) by Mikel González
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Danish (da.po) by Joe Hansen
+  * Estonian (et.po) by Mattias Põldaru
+  * Hebrew (he.po) by Lior Kaplan
+  * Indonesian (id.po) by Mahyuddin Susanto
+  * Icelandic (is.po) by Sveinn í Felli
+  * Kannada (kn.po) by Prabodh C P
+  * Dutch (nl.po) by Jeroen Schot
+  * Polish (pl.po) by Marcin Owsiany
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 15 Mar 2012 15:10:16 -0300
+
+partman-partitioning (83ubuntu2) precise; urgency=low
+
+  * On systems with only GPT disks, check that an EFI System Partition or a
+    BIOS Boot Partition exists, as appropriate (LP: #855871).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 20 Mar 2012 18:17:34 +0000
+
+partman-partitioning (83ubuntu1) precise; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Make sure to wipe disk label on Sun disks before creating a new one.
+    - Depend on ntfs-3g-udeb as well as ntfsprogs-udeb.
+    - Add PATH, RAWMINSIZE, RAWPREFSIZE, and RAWMAXSIZE substitutions to
+      partman-partitioning/new_size in support of ubiquity's resize widget.
+    - Cache calls to tune2fs and ntfsresize, to make navigating through the
+      resize UI a little faster.
+    - Check that minimum filesystem sizes reported by tune2fs and ntfsresize
+      are between the minimum partition size and the current partition size;
+      if not, refuse to resize the partition at all.
+    - Use the GPT disk label by default on *i386/efi and *amd64/efi
+      subarchitectures.
+    - Support archdetect being anywhere on PATH.
+    - Use mac as the default disk label on ppc64.
+    - Save the swap size for ubiquity.
+
+ -- Evan Dandrea <ev@ubuntu.com>  Wed, 19 Oct 2011 11:07:37 +0100
+
+partman-partitioning (83) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Don't force GPT on disks between 2TB (decimal) and 2TiB (binary)
+    inclusive.
+
+  [ Philipp Kern ]
+  * Use msdos disk label on s390x.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Viktar Siarheichyk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * German (de.po) by Holger Wansing
+  * Hebrew (he.po) by Lior Kaplan
+  * Hindi (hi.po) by Kumar Appaiah
+  * Italian (it.po) by Milo Casagrande
+  * Macedonian (mk.po) by Arangel Angov
+  * Polish (pl.po) by Marcin Owsiany
+  * Romanian (ro.po) by Ioan Eugen Stan
+  * Sinhala (si.po) by Danishka Navin
+  * Turkish (tr.po) by Mert Dirik
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Philipp Kern <pkern@debian.org>  Thu, 06 Oct 2011 18:42:25 +0200
+
+partman-partitioning (82) unstable; urgency=low
+
+  * Use msdos disk label on mipsel/loongson-2e and mipsel/loongson-2f.
+
+ -- Colin Watson <cjwatson@debian.org>  Thu, 02 Jun 2011 11:04:36 +0100
+
 partman-partitioning (81ubuntu3) oneiric; urgency=low
 
   * Save the swap size for ubiquity (LP: #769350).

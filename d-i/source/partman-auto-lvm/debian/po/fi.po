@@ -6,23 +6,25 @@
 # Finnish messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Tommi Vainikainen <thv+debian@iki.fi>, 2003 - 2004
-# Tapio Lehtonen <tale@debian.org>, 2004 - 2006
-# Esko Arajärvi <edu@iki.fi>, 2007 - 2008
 # Thanks to laatu@lokalisointi.org.
 #
 #
+# Tommi Vainikainen <thv+debian@iki.fi>, 2003 - 2004.
+# Tapio Lehtonen <tale@debian.org>, 2004 - 2006.
+# Esko Arajärvi <edu@iki.fi>, 2007 - 2008, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-08-29 10:07+0200\n"
+"PO-Revision-Date: 2010-08-22 12:24+0300\n"
 "Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -40,7 +42,7 @@ msgstr "Ohjattu - käytä koko levyä ja tee LVM:n asetukset"
 #. :sl3:
 #: ../partman-auto-lvm.templates:2001 ../partman-auto-lvm.templates:3001
 msgid "Name of the volume group for the new system:"
-msgstr "Uuden järjestelmän levynideryhmän nimi:"
+msgstr "Uuden järjestelmän taltioryhmän nimi:"
 
 #. Type: string
 #. Description
@@ -48,7 +50,7 @@ msgstr "Uuden järjestelmän levynideryhmän nimi:"
 #: ../partman-auto-lvm.templates:3001
 msgid ""
 "The selected volume group name is already in use. Please choose another name."
-msgstr "Valittu levynideryhmän nimi on jo käytössä. Valitse jokin muu nimi."
+msgstr "Valittu taltioryhmän nimi on jo käytössä. Valitse jokin muu nimi."
 
 #. Type: error
 #. Description
@@ -65,8 +67,8 @@ msgid ""
 "This happened because the selected recipe does not contain any partition "
 "that can be created on LVM volumes."
 msgstr ""
-"Näin kävi koska valittu malline ei sisällä yhtään osiota, joka voidaan luoda "
-"LVM-levyniteelle."
+"Näin kävi koska valittu malline ei sisällä yhtään osiota, joka voitaisiin "
+"luoda LVM-taltiolle."
 
 #. Type: boolean
 #. Description
@@ -84,8 +86,8 @@ msgid ""
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
 "Valittu malline ei sisällä erillistä osiota hakemistolle /boot. Tavallisesti "
-"tätä tarvitaan järjestelmän käynnistämiseen käytettäessä levyniteiden "
-"hallintaohjelmaa."
+"tätä tarvitaan järjestelmän käynnistämiseen käytettäessä loogista "
+"taltiohallintaa."
 
 #. Type: boolean
 #. Description
@@ -103,7 +105,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:6001
 msgid "Volume group name already in use"
-msgstr "Levynideryhmän nimi on jo käytössä"
+msgstr "Taltioryhmän nimi on jo käytössä"
 
 #. Type: error
 #. Description
@@ -114,16 +116,16 @@ msgid ""
 "in use. Lowering the priority for configuration questions will allow you to "
 "specify an alternative name."
 msgstr ""
-"Automaattisen osioinnin levyniteiden hallintaohjelmalla käyttämä "
-"levynideryhmän nimi on jo käytössä. Asetuskysymysten tärkeyden alentaminen "
-"sallii muun nimen käyttämisen."
+"Nimi, jota käytetään LVM:n automaattisessa osioinnissa, on jo käytössä. "
+"Nimen muuttaminen onnistuu valitsemmalla myös vähemmän tärkeät "
+"asetuskysymykset kysyttäviksi."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:7001
 msgid "Unexpected error while creating volume group"
-msgstr "Tapahtui odottamaton virhe luotaessa levynideryhmää"
+msgstr "Odottamaton virhe luotaessa taltioryhmää"
 
 #. Type: error
 #. Description
@@ -133,8 +135,8 @@ msgid ""
 "Autopartitioning using LVM failed because an error occurred while creating "
 "the volume group."
 msgstr ""
-"Osioiden teko automaattisesti levyniteiden hallintaohjelmaa käyttäen "
-"epäonnistui koska tapahtui virhe luotaessa levynideryhmää."
+"Automaattinen osiointi loogisen taltiohallinnan avulla epäonnistui koska "
+"luotaessa taltioryhmää tapahtui virhe."
 
 #. Type: error
 #. Description
@@ -158,7 +160,7 @@ msgstr "Useita levyjä (%s)"
 #. :sl3:
 #: ../partman-auto-lvm.templates:9001
 msgid "Non-existing physical volume"
-msgstr "Levynide, jota ei ole olemassa"
+msgstr "Olematon fyysinen taltio"
 
 #. Type: error
 #. Description
@@ -168,7 +170,7 @@ msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
 msgstr ""
-"Levynideryhmän määrittely sisältää viitteen levyniteeseen, jota ei ole "
+"Taltioryhmän määrittely sisältää viitteen fyysiseen taltioon, jota ei ole "
 "olemassa."
 
 #. Type: error
@@ -187,7 +189,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "No physical volume defined in volume group"
-msgstr "Levynideryhmään ei ole määritelty yhtään levynidettä"
+msgstr "Taltioryhmään ei ole määritelty yhtään fyysistä taltiota"
 
 #. Type: error
 #. Description
@@ -197,8 +199,8 @@ msgid ""
 "The automatic partitioning recipe contains the definition of a volume group "
 "that does not contain any physical volume."
 msgstr ""
-"Automaattisessa osiointisuunnitelmassa on määritelty levynideryhmä, jossa ei "
-"ole yhtään levynidettä."
+"Automaattisessa osiointisuunnitelmassa on määritelty taltioryhmän, jossa ei "
+"ole yhtään fyysistä taltiota."
 
 #. Type: error
 #. Description

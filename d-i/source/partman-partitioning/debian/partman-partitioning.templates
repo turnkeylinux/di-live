@@ -3,42 +3,10 @@ Type: text
 # :sl2:
 _Description: Resizing partition...
 
-Template: partman-partitioning/progress_copying
-Type: text
-# :sl2:
-_Description: Copying partition...
-
 Template: partman-partitioning/new_state
 Type: text
 # :sl1:
 _Description: Computing the new state of the partition table...
-
-Template: partman-partitioning/confirm_copy
-Type: boolean
-# :sl2:
-_Description: Write previous changes to disk and continue?
- Before you can select a partition to copy, any previous changes have to be
- written to disk.
- .
- You cannot undo this operation.
- .
- Please note that the copy operation may take a long time.
-
-Template: partman-partitioning/source_partition
-Type: select
-Choices-C: ${CHOICES}
-Choices: ${DESCRIPTIONS}
-# :sl2:
-_Description: Source partition:
- Please choose the partition which contains the data you want to copy.
-
-Template: partman-partitioning/copy_commit_failed
-Type: error
-# :sl2:
-_Description: Copy operation failure
- An error occurred while writing the changes to the storage devices.
- .
- The copy operation has been aborted.
 
 Template: partman-partitioning/impossible_resize
 Type: error
@@ -166,6 +134,14 @@ _Description: Continue with partitioning?
  If you can, please help to add support for your partition table type
  to libparted.
 
+Template: partman-partitioning/default_label
+Type: string
+Description: for internal use; can be preseeded
+ You may preseed this template to override the partitioner's
+ platform-specific default choice of disk label.  For example, on x86
+ architectures it may be useful to set this to "gpt" to cause new partition
+ tables to be created using GPT.
+
 Template: partman-partitioning/choose_label
 Type: select
 Choices: ${CHOICES}
@@ -243,11 +219,6 @@ Type: text
 # :sl2:
 _Description: Resize the partition (currently ${SIZE})
 
-Template: partman-partitioning/text/copy
-Type: text
-# :sl2:
-_Description: Copy data from another partition
-
 Template: partman-partitioning/text/delete
 Type: text
 # :sl2:
@@ -276,4 +247,30 @@ Type: text
 # short variant of 'Reserved BIOS boot area'
 # Up to 10 character positions
 _Description: biosgrub
+
+Template: partman-partitioning/no_bootable_gpt_efi
+Type: boolean
+# :sl5:
+_Description: Go back to the menu and correct this problem?
+ The partition table format in use on your disks normally requires you to
+ create a separate partition for boot loader code. This partition should be
+ marked for use as an "EFI boot partition" and should be at least 35 MB in
+ size. Note that this is not the same as a partition mounted on /boot.
+ .
+ If you do not go back to the partitioning menu and correct this error, boot
+ loader installation may fail later, although it may still be possible to
+ install the boot loader to a partition.
+
+Template: partman-partitioning/no_bootable_gpt_biosgrub
+Type: boolean
+# :sl5:
+_Description: Go back to the menu and correct this problem?
+ The partition table format in use on your disks normally requires you to
+ create a separate partition for boot loader code. This partition should be
+ marked for use as a "Reserved BIOS boot area" and should be at least 1 MB
+ in size. Note that this is not the same as a partition mounted on /boot.
+ .
+ If you do not go back to the partitioning menu and correct this error, boot
+ loader installation may fail later, although it may still be possible to
+ install the boot loader to a partition.
 

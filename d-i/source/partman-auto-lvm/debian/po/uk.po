@@ -9,20 +9,27 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Eugeniy Meshcheryakov <eugen@debian.org>, 2005, 2006, 2007.
+#
+# Translations from iso-codes:
+# Eugeniy Meshcheryakov <eugen@debian.org>, 2005, 2006, 2007, 2010.
+# Євгеній Мещеряков <eugen@debian.org>, 2008.
+# Borys Yanovych <borys@yanovy.ch>, 2010, 2011.
+# Maxim V. Dziumanenko <dziumanenko@gmail.com>, 2010.
+# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-02-12 22:40+0100\n"
-"Last-Translator: eugen@debian.org\n"
-"Language-Team: Ukrainian\n"
+"PO-Revision-Date: 2011-09-19 07:23+0300\n"
+"Last-Translator: Borys Yanovych <borys@yanovy.ch>\n"
+"Language-Team: Ukrainian <>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Type: text
 #. Description
@@ -148,15 +155,14 @@ msgstr "Подробиці дивіться в /var/log/syslog або на ві�
 #: ../partman-auto-lvm.templates:8001
 #, no-c-format
 msgid "Multiple disks (%s)"
-msgstr ""
+msgstr "Декілька дисків (%s)"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:9001
-#, fuzzy
 msgid "Non-existing physical volume"
-msgstr "Використовує фізичний том:"
+msgstr "Неіснуючий фізичний том"
 
 #. Type: error
 #. Description
@@ -165,7 +171,7 @@ msgstr "Використовує фізичний том:"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr ""
+msgstr "Означення групи томів містить посилання на неіснуючий фізичний том."
 
 #. Type: error
 #. Description
@@ -175,14 +181,15 @@ msgid ""
 "Please check that all devices are properly connected. Alternatively, please "
 "check the automatic partitioning recipe."
 msgstr ""
+"Будь ласка, перевірте, що всі пристрої під'єднано правильно. Або ж перевірте "
+"сценарій автоматичного розбиття на розділи."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
-#, fuzzy
 msgid "No physical volume defined in volume group"
-msgstr "Помилка при вилученні групи томів"
+msgstr "До групи томів не включено жодного фізичного тому"
 
 #. Type: error
 #. Description
@@ -192,14 +199,15 @@ msgid ""
 "The automatic partitioning recipe contains the definition of a volume group "
 "that does not contain any physical volume."
 msgstr ""
+"Сценарій автоматичного розбиття на розділи містить означення групи томів, до "
+"якої не включено жодного фізичного тому."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
-#, fuzzy
 msgid "Please check the automatic partitioning recipe."
-msgstr "Провести розбивку диска автоматично?"
+msgstr "Будь ласка, перевірте сценарій автоматичного розбиття."
 
 #. Type: string
 #. Description

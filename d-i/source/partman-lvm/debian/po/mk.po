@@ -9,18 +9,29 @@
 #
 # Georgi Stanojevski, <glisha@gmail.com>, 2004, 2005, 2006.
 # Georgi Stanojevski <georgis@unet.com.mk>, 2005, 2006.
-# Arangel Angov <ufo@linux.net.mk>, 2008.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2002
+#   Arangel Angov <ufo@linux.net.mk>, 2008.
+#   Free Software Foundation, Inc., 2002,2004
+#   Georgi Stanojevski <glisha@gmail.com>, 2004, 2006.
+# Translations from KDE:
+#   Danko Ilik <danko@mindless.com>
+# Arangel Angov <arangel@linux.net.mk>, 2008, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_mk\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2008-09-17 19:03+0200\n"
-"Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
-"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-04-11 15:54+0200\n"
+"Last-Translator: Arangel Angov <arangel@linux.net.mk>\n"
+"Language-Team: Macedonian <>\n"
+"Language: mk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n!=1);\n"
 
 #. Type: text
 #. Description
@@ -81,8 +92,7 @@ msgstr "нема"
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
-msgstr ""
-"Конфигурирај го Logical Volume Manager (Управувачот со логички простори)"
+msgstr "Конфигурирај го Logical Volume Manager"
 
 #. Type: text
 #. Description
@@ -185,7 +195,7 @@ msgstr "Запиши ги измените на диск и конфигурур
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Пред да може да се конфигурира Управувачот со логички простори, моменталната "
@@ -421,12 +431,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Грешка при намалување на просторната група"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Грешка при бришењето на просторната група"
 
 #. Type: error
 #. Description
@@ -656,6 +665,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Грешка при намалување на просторната група"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -720,7 +736,7 @@ msgstr "Нема внесено име за логичкиот простор"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr "Не беше внесено име за логичкиот простор. Те молам внеси име."
 
 #. Type: error
@@ -786,8 +802,7 @@ msgstr "Нема најдено логички простор"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "Не беше најден логички простор. Те молам прво создади логички простор."
 
 #. Type: select
@@ -822,7 +837,7 @@ msgstr "Грешка при бришење на логичкиот просто�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
 msgstr "Логичкиот простор (${LV}) од ${VG} не може да биде избришан."
 
 #. Type: error
@@ -890,9 +905,10 @@ msgstr "Невалиден логички простор или име на пр
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Имињата на логичките простори или просторните групи може да содржат "
 "единствено алфанумерички знаци, тире, плус, запирка и долна црта. Тие мора "
@@ -983,8 +999,6 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
 msgstr "Име на логичкиот простор:"
 
@@ -998,6 +1012,10 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"Вообичаена ситуација за систем администратори е да откријат дека на некоја "
+"партиција на дискот (обично на некоја важна) и недостасува простор, додека "
+"некои други партиции се премалку искористени. Logical Volume Manager (LVM) "
+"може да помогне околу ова."
 
 #. Type: note
 #. Description
@@ -1011,6 +1029,13 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"LVM дозволува комбинирање на дискови и партиции („физички простори“) за "
+"формирање на виртуелен диск („просторна група“), која што потоа може да се "
+"подели на виртуелни партиции („логички простори“). Просторните групи и "
+"логичките простори можат да се простираат на повеќе физички дискови. Нов "
+"физички простор може да биде додаден на одредена група во било кое време а "
+"на логичките простори може да им се менува големината во склоп на "
+"просторната група."
 
 #. Type: note
 #. Description
@@ -1022,3 +1047,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"Предметите во конфигурациското мени за LVM можат да се користат за уредување "
+"на просторна група или логички простори. Откако ќе се вратите во главниот "
+"менаџер за партиционирање, логичките простори ќе бидат прикажан на истиот "
+"начин како и обичните партиции, и треба да се третираат како такви."

@@ -6,21 +6,34 @@
 # Slovak messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-#
 # Peter Mann <peter.mann@tuke.sk>
-# Ivan Masár <helix84@centrum.sk>, 2007, 2008, 2009.
-#
+# Ivan Masár <helix84@centrum.sk>, 2007, 2008, 2009, 2010, 2011, 2013, 2014.
+# Translations from iso-codes:
+# (translations from drakfw)
+# Alastair McKinstry <mckinstry@computer.org>, 2001, 2002.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Free Software Foundation, Inc., 2004
+# Ivan Masár <helix84@centrum.sk>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Translations taken from sk.wikipedia.org on 2008-06-17
+# Pavol Cvengros <orpheus@hq.alert.sk>, 2001.
+# Peter Mann <Peter.Mann@tuke.sk>, 2004, 2006.
+# bronto, 2007.
+# source:
+# http://www.geodesy.gov.sk
+# http://www.fao.org/ (historic names)
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-01-26 07:32+0000\n"
-"PO-Revision-Date: 2009-04-10 11:52+0100\n"
+"Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
+"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"PO-Revision-Date: 2014-09-16 09:57+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language-Team: Slovak <debian-l10n-slovak@lists.debian.org>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #. Type: text
 #. Description
@@ -198,30 +211,12 @@ msgstr ""
 "Uvedomte si, že všetky údaje na zvolenom disku sa odstránia, ale až po "
 "potvrdení, že naozaj chcete vykonať tieto zmeny."
 
-#. Type: multiselect
-#. Description
-#. :sl1:
-#: ../partman-auto.templates:17001
-msgid "Select disk(s) to partition:"
-msgstr "Zvoľte disk(y) na rozdelenie:"
-
-#. Type: multiselect
-#. Description
-#. :sl1:
-#: ../partman-auto.templates:17001
-msgid ""
-"Note that all data on the disk(s) you select will be erased, but not before "
-"you have confirmed that you really want to make the changes."
-msgstr ""
-"Uvedomte si, že všetky údaje na zvolených diskoch sa odstránia, ale až po "
-"potvrdení, že naozaj chcete vykonať tieto zmeny."
-
 #. Type: text
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #. This is a method for partioning - as in guided (automatic) versus manual
-#: ../partman-auto.templates:18001
+#: ../partman-auto.templates:17001
 msgid "Manual"
 msgstr "Manuálne"
 
@@ -229,7 +224,7 @@ msgstr "Manuálne"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:19001
+#: ../partman-auto.templates:18001
 msgid "Automatically partition the free space"
 msgstr "Automaticky rozdeliť voľné miesto"
 
@@ -237,7 +232,7 @@ msgstr "Automaticky rozdeliť voľné miesto"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:20001
+#: ../partman-auto.templates:19001
 msgid "All files in one partition (recommended for new users)"
 msgstr "Všetky súbory na jednej oblasti (pre začiatočníkov)"
 
@@ -245,7 +240,7 @@ msgstr "Všetky súbory na jednej oblasti (pre začiatočníkov)"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:21001
+#: ../partman-auto.templates:20001
 msgid "Separate /home partition"
 msgstr "Samostatná oblasť /home"
 
@@ -253,7 +248,7 @@ msgstr "Samostatná oblasť /home"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:22001
+#: ../partman-auto.templates:21001
 msgid "Separate /home, /usr, /var, and /tmp partitions"
 msgstr "Samostatné oblasti /home, /usr, /var a /tmp"
 
@@ -261,28 +256,37 @@ msgstr "Samostatné oblasti /home, /usr, /var a /tmp"
 #. Description
 #. :sl2:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:23001
+#: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Schéma rozdeľovania pre malé disky (< 1 GB)"
 
 #. Type: text
 #. Description
-#: ../partman-auto.templates:167
+#: ../partman-auto.templates:24001
 msgid "Guided - resize ${PARTITION} and use freed space"
 msgstr "Zmeniť veľkosť oblasti ${PARTITION} a použiť voľné miesto"
 
-#. Type: error
+#. Type: text
 #. Description
-#: ../partman-auto.templates:171
-msgid "Failed to create enough space for installation"
-msgstr "Nepodarilo sa uvoľniť dostatok voľného miesta na inštaláciu."
+#: ../partman-auto.templates:25001
+msgid "Guided - use entire partition, ${PARTITION}"
+msgstr "Sprievodza - použiť celú oblasť, ${PARTITION}"
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:171
+#: ../partman-auto.templates:26001
+msgid "Failed to create enough space for installation"
+msgstr "Nepodarilo sa uvoľniť dostatok voľného miesta na inštaláciu"
+
+#. Type: error
+#. Description
+#: ../partman-auto.templates:26001
 msgid ""
 "The resize operation did not create enough free space for the installation. "
 "Resizing may have failed. You will have to set up partitions manually."
 msgstr ""
 "Zmenou veľkosti oblasti sa nepodarilo uvoľniť dostatok voľného miesta na "
 "inštaláciu. Budete musieť nastaviť oblasti manuálne."
+
+#~ msgid "Separate /home, /var, and /tmp partitions"
+#~ msgstr "Samostatné oblasti /home, /var a /tmp"

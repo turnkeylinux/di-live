@@ -7,14 +7,22 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Free Software Foundation, 2002,2004 
+#   Miroslav Kure <kurem@debian.cz>, 2004--2010.
+#   Petr Cech <cech@debian.org> (Petr Čech), 2000.
+#   Stanislav Brabec <utx@penguin.cz>, 2001.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-08-18 11:53+0200\n"
+"PO-Revision-Date: 2011-08-02 18:41+0200\n"
 "Last-Translator:  Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team:  Czech <provoz@debian.cz>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,7 +52,7 @@ msgstr "Název skupiny svazků pro nový systém:"
 msgid ""
 "The selected volume group name is already in use. Please choose another name."
 msgstr ""
-"Jméno vybrané skupiny svazků je již používáno. Vyberte, prosím, jiné jméno."
+"Zadané jméno skupiny svazků je již používáno. Vyberte prosím jiné jméno."
 
 #. Type: error
 #. Description

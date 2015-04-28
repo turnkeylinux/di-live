@@ -4,8 +4,21 @@
 # checks for mounted partitions at startup, but it may still serve as
 # insurance against partitions being mounted while the partitioner is
 # running.
+#
+# This has saved us a few times when different Desktop Environments
+# envent a new way to auto-mount partitions.
+#
+# But maybe this should skip "locked" partitions in partmans view,
+# e.g. the installation media on /dev/sda1 as it can handle those
+# cases.
+#
 
 . /lib/partman/lib/base.sh
+
+db_get ubiquity/partman-skip-unmount
+if [ "$RET" = true ]; then
+    exit 0
+fi
 
 if [ -f /etc/mtab ]; then
     MTAB=/etc/mtab
@@ -95,11 +108,11 @@ while :; do
 	break
     fi
 
-    db_reset di-live/partman-failed-unmount
-    db_subst di-live/partman-failed-unmount MOUNTED "$failed_mountpoints"
-    db_input critical di-live/partman-failed-unmount || $noninteractive
+    db_reset ubiquity/partman-failed-unmount
+    db_subst ubiquity/partman-failed-unmount MOUNTED "$failed_mountpoints"
+    db_input critical ubiquity/partman-failed-unmount || $noninteractive
     db_go || exit 1
-    db_get di-live/partman-failed-unmount
+    db_get ubiquity/partman-failed-unmount
     [ "$RET" = true ] || exit 1
     noninteractive='exit 1'
 done

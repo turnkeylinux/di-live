@@ -15,15 +15,20 @@
 # Alexander Didebulidze <didebuli@in.tum.de>, Vladimer Sichinava <vlsichinava@gmail.com>
 # Taya Kharitonashvili <taya13@gmail.com>, Gia Shervashidze - www.gia.ge
 #
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Aiet Kolkhi <aietkolkhi@gmail.com>, 2008.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer.2006071\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2010-08-20 22:02+0200\n"
+"POT-Creation-Date: 2014-08-31 22:00+0000\n"
 "PO-Revision-Date: 2011-03-01 12:49+0400\n"
 "Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
 "Language-Team: Georgian\n"
-"Language: \n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -590,10 +595,26 @@ msgstr "fat32"
 #. Type: text
 #. Description
 #. :sl2:
+#: ../partman-basicfilesystems.templates:36001
+#, fuzzy
+msgid "NTFS journaling file system"
+msgstr "JFS ჟურნალებში აღწერადი ფაილური სისტემა"
+
 #. Type: text
 #. Description
-#: ../partman-basicfilesystems.templates:36001
+#. :sl1:
+#. Short file system name (untranslatable in many languages)
+#: ../partman-basicfilesystems.templates:37001
+msgid "ntfs"
+msgstr ""
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Type: text
+#. Description
 #: ../partman-basicfilesystems.templates:38001
+#: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
 msgstr "swap-სივრე"
 
@@ -605,8 +626,8 @@ msgstr "swap-სივრე"
 #. Description
 #. :sl1:
 #. Short variant of `swap space'
-#: ../partman-basicfilesystems.templates:37001
 #: ../partman-basicfilesystems.templates:39001
+#: ../partman-basicfilesystems.templates:41001
 msgid "swap"
 msgstr "Swap"
 
@@ -615,15 +636,15 @@ msgstr "Swap"
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:40001
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options:"
 msgstr "მონტაჟის  პარამეტრები:"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
 msgstr "მონტაჟის  პარამეტრები გავლენას ახდენენ ფაილური სისტემის თვისებებზე."
 
@@ -632,7 +653,7 @@ msgstr "მონტაჟის  პარამეტრები გავლ
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
 msgstr "noatime - არ განახლდეს inode access time ყოველ მიმართვაზე"
 
@@ -641,7 +662,17 @@ msgstr "noatime - არ განახლდეს inode access time ყოვ
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:43001
+#: ../partman-basicfilesystems.templates:45001
+#, fuzzy
+msgid "nodiratime - do not update directory inode access times"
+msgstr "noatime - არ განახლდეს inode access time ყოველ მიმართვაზე"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:46001
 msgid "relatime - update inode access times relative to modify time"
 msgstr "relatime - update inode access times relative to modify time"
 
@@ -650,7 +681,7 @@ msgstr "relatime - update inode access times relative to modify time"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:44001
+#: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
 msgstr "nodev - სიმბოლური და ბლოკური მოწყობილობების მხარდაჭერის მოხსნა"
 
@@ -659,7 +690,7 @@ msgstr "nodev - სიმბოლური და ბლოკური მო�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:45001
+#: ../partman-basicfilesystems.templates:48001
 msgid "nosuid - ignore set-user-identifier or set-group-identifier bits"
 msgstr "nosuid - SUID და SGID ბიტების იგნორირება"
 
@@ -668,7 +699,7 @@ msgstr "nosuid - SUID და SGID ბიტების იგნორირე
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:46001
+#: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
 msgstr "noexec - პროგრამების გაშვების აკრძალვა"
 
@@ -686,7 +717,7 @@ msgstr "noexec - პროგრამების გაშვების ა�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:47001
+#: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
 msgstr "ro - ფაილური სისტემის მონტაჟი \"მხოლოდ კითხვის\" რეჟიმში"
 
@@ -704,7 +735,7 @@ msgstr "ro - ფაილური სისტემის მონტაჟ�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:48001
+#: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
 msgstr ""
 "sync - ფაილური სისტემის ყველა შემავალი-გამომავალი პროცესი განხორციელდება "
@@ -715,7 +746,7 @@ msgstr ""
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:49001
+#: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
 msgstr "usrquota - მომხმარებელთა დისკური ქვოთების მეთვალყურეობა"
 
@@ -724,7 +755,7 @@ msgstr "usrquota - მომხმარებელთა დისკური
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:50001
+#: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
 msgstr "grpquota - ჯგუფთა დისკური ქვოთების მეთვალყურეობა"
 
@@ -733,7 +764,7 @@ msgstr "grpquota - ჯგუფთა დისკური ქვოთებ�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:51001
+#: ../partman-basicfilesystems.templates:54001
 msgid "user_xattr - support user extended attributes"
 msgstr "user_xattr - დამატებითი სამომხმარებლო ატრიბუტების მხარდაჭერა"
 
@@ -742,7 +773,7 @@ msgstr "user_xattr - დამატებითი სამომხმარ�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:52001
+#: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
 msgstr "quiet - მფლობელისა და უფლებების შეცვლისას შეცდომების გარეშე"
 
@@ -751,16 +782,25 @@ msgstr "quiet - მფლობელისა და უფლებები�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:53001
+#: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
 msgstr "notail - ფაილური სისტემის ხეში ფაილების ჩაწყობის აკრძალვა"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:57001
+msgid "discard - trim freed blocks from underlying block device"
+msgstr ""
 
 #. Type: text
 #. Description
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:54001
+#: ../partman-basicfilesystems.templates:58001
 msgid "acls - support POSIX.1e Access Control List"
 msgstr "acls - POSIX.1e Access Control List-ის მხარდაჭერა"
 
@@ -769,6 +809,62 @@ msgstr "acls - POSIX.1e Access Control List-ის მხარდაჭერ�
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:55001
+#: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
 msgstr "shortnames - MS-DOS 8.3 ძველი სტილის ფაილის მოკლე სახელები"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid "Go back to the menu and correct this problem?"
+msgstr "დავბრუნდეთ მენუში და გავასწოროთ შეცდომები?"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#, fuzzy
+msgid ""
+"Your boot partition has not been configured with the ext2 file system. This "
+"is needed by your machine in order to boot. Please go back and use the ext2 "
+"file system."
+msgstr ""
+"თქვენ ჩატვირთვადი პარტიცია ext2 ან ext3 სისტემით არის კონფიგურირებული. ეს "
+"აუცილებელია თქვენი სისტემის ჩატვირთვისათვის. გთხოვთ დაბრუნდეთ და გამოიყენოთ "
+"ext2 ან ext3 ფაილური სისტემა."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid ""
+"If you do not go back to the partitioning menu and correct this error, the "
+"partition will be used as is. This means that you may not be able to boot "
+"from your hard disk."
+msgstr ""
+"თუკი თქვენ არ დაბრუნდებით დაყოფის მენუში და არ გაასწორებთ ამ შეცდომებს, "
+"დანაყოფი იქნება გამოყენებული არსებული სახით. ეს კი ნიშნავს, რომ შესაძლოა "
+"მყარი დისკიდან ჩატვირთვა ვერ მოხერხდეს."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:61001
+#, fuzzy
+msgid ""
+"Your boot partition is not located on the first partition of your hard disk. "
+"This is needed by your machine in order to boot.  Please go back and use "
+"your first partition as a boot partition."
+msgstr ""
+"თქვენი boot დანაყოფი თქვენი მყარი დისკის პირველ primary დანაყოფზე არ არის.  "
+"ეს კი თქვენს სისტემას ჩასატვირთად ჭირდება.  გთხოვთ დაბრუნდეთ და ჩატვირთვად "
+"დანაყოფიდ თქვენი პირველი primary დანაყოფი ამოირჩიეთ."

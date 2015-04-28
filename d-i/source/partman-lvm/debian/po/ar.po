@@ -5,15 +5,28 @@
 #
 # translation of ar.po to Arabic
 # Arabic messages for debian-installer. Copyright (C) 2003 Software in the Public Interest, Inc. This file is distributed under the same license as debian-installer. Ossama M. Khayat <okhayat@yahoo.com>, 2005.
-# Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2007, 2008, 2009.
+#
+# Translations from iso-codes:
+#     Translations taken from ICU SVN on 2007-09-09
+#   Translations from kde-i18n/desktop.po:
+#
+# Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2007, 2008, 2009, 2010.
+#   Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2002.
+#   Free Software Foundation, Inc., 2002, 2004.
+#   Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2008, 2010.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#   Mohammad Gamal <f2c2001@yahoo.com>, 2001.
+# Ossama Khayat <okhayat@yahoo.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-11-25 00:45+0300\n"
-"Last-Translator: Ossama M. Khayat <okhayat@yahoo.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-01-14 21:38+0300\n"
+"Last-Translator: Ossama Khayat <okhayat@yahoo.com>\n"
+"Language-Team: American English <support@arabeyes.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,7 +59,7 @@ msgstr "تستخدم الكتل المادية:"
 #. :sl3:
 #: ../partman-lvm.templates:4001
 msgid "Provides logical volume:"
-msgstr "توفر الكتلة المنطقية:"
+msgstr "توفر الكتلة الافتراضية:"
 
 #. Type: text
 #. Description
@@ -149,7 +162,7 @@ msgstr "تقليص مجموعة كتل"
 #. Use infinitive form
 #: ../partman-lvm.templates:15001
 msgid "Create logical volume"
-msgstr "إنشاء كتلة منطقيّة"
+msgstr "إنشاء كتلة افتراضية"
 
 #. Type: text
 #. Description
@@ -158,7 +171,7 @@ msgstr "إنشاء كتلة منطقيّة"
 #. Use infinitive form
 #: ../partman-lvm.templates:16001
 msgid "Delete logical volume"
-msgstr "حذف كتلة منطقيّة"
+msgstr "حذف كتلة افتراضيّة"
 
 #. Type: text
 #. Description
@@ -182,11 +195,11 @@ msgstr "كتابة التغييرات إلى الأقراص و تهيئة LVM؟"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"قبل أن يكون تهيئة مدير الكتل المنطقيّة ممكناً يجب كتابة خطّة التجزئة الحاليّة "
-"للقرص. هذه التّغييرات لا يمكن التّراجع عنها."
+"قبل أن يُمكن تهيئة مدير الكتل الافتراضية، يجب كتابة مُخطّط التجزئة الحالي إلى "
+"القرص. انتبه إلى أنه لا يمكن التراجع عن هذه العمليّة."
 
 #. Type: boolean
 #. Description
@@ -198,7 +211,7 @@ msgid ""
 "the installation. Please decide if you are satisfied with the current "
 "partitioning scheme before continuing."
 msgstr ""
-"بعد تهيئة مدير الكتل المنطقيّة لن يسمح بالمزيد من التّغييرات على خطة التجزئة "
+"بعد تهيئة مدير الكتل الافتراضيّة لن يسمح بالمزيد من التّغييرات على خطة التجزئة "
 "في أجزاء الأقراص المحتوية على كتلٍ مادّيّة أثناء التثبيت. رجاءً اتخاذ القرار ما "
 "إذا كنت راضياً بخطّة التجزئة في هذه الأقراص قبل المتابعة."
 
@@ -219,7 +232,7 @@ msgid ""
 "decide if you are satisfied with the current partitioning scheme in these "
 "disks before continuing."
 msgstr ""
-"بعد تهيئة مدير الكتل المنطقيّة لن يسمح بالمزيد من التّغييرات في الجزئات في "
+"بعد تهيئة مدير الكتل الافتراضيّة لن يسمح بالمزيد من التّغييرات في الجزئات في "
 "الأقراص المحتوية على كتلٍ مادّيّة. رجاءً قرّر ما إذا كنت راضياً بخطّة التجزئة في "
 "هذه الأقراص قبل المتابعة."
 
@@ -242,7 +255,7 @@ msgstr "حدث خطأٌ أثناء كتابة التّغييرات للأقرا�
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "Logical Volume Manager configuration has been aborted."
-msgstr "تم إلغاء تهيئة مدير الكتل المنطقية."
+msgstr "تم إلغاء تهيئة مدير الكتل الافتراضية."
 
 #. Type: text
 #. Description
@@ -283,10 +296,10 @@ msgid ""
 " Volume Groups:          ${VGS}\n"
 " Logical Volumes:        ${LVS}"
 msgstr ""
-" الكتل المنطقية الشاغرة:  ${FREE_PVS}\n"
-" الكتل المنطقية المستخدمة:  ${USED_PVS}\n"
+" الكتل الافتراضية الشاغرة:  ${FREE_PVS}\n"
+" الكتل الافتراضية المستخدمة:  ${USED_PVS}\n"
 " مجموعات الكتل:          ${VGS}\n"
-" الكتل المنطقية:        ${LVS}"
+" الكتل الافتراضية:        ${LVS}"
 
 #. Type: note
 #. Description
@@ -411,12 +424,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "خطأ أثناء تقليص مجموعة الكتل"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "خطأ أثناء حذف مجموعة الكتل"
 
 #. Type: error
 #. Description
@@ -637,6 +649,13 @@ msgstr "لم يتم تحديد أية كتل مادية. لذا تم تجاهل 
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "خطأ أثناء تقليص مجموعة الكتل"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -651,7 +670,7 @@ msgid ""
 "create more physical volumes and volume groups, or reduce an existing volume "
 "group."
 msgstr ""
-"لم يعثر على أيّة مجموعات كتلٍ متوفّرة لإنشاء كتلةٍ منطقيّة جديدة. رجاءً إنشاء "
+"لم يعثر على أيّة مجموعات كتلٍ متوفّرة لإنشاء كتلةٍ افتراضيّة جديدة. رجاءً إنشاء "
 "المزيد من المتل المادّيّة و مجموعات الكتل أو قلّص إحدى مجموعات الكتل الموجودة."
 
 #. Type: string
@@ -659,14 +678,14 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:48001
 msgid "Logical volume name:"
-msgstr "اسم الكتلة المنطقيّة:"
+msgstr "اسم الكتلة الافتراضية:"
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:48001
 msgid "Please enter the name you would like to use for the new logical volume."
-msgstr "الرجاء إدخال الاسم الذي تود استخدامه للكتلة المنطقيّة الجديدة."
+msgstr "الرجاء إدخال الاسم الذي تود استخدامه للكتلة الافتراضيّة الجديدة."
 
 #. Type: select
 #. Description
@@ -682,21 +701,21 @@ msgstr "مجموعة الكتل:"
 msgid ""
 "Please select the volume group where the new logical volume should be "
 "created."
-msgstr "الرجاء اختيار مجموعة الكتل حيث يجب إنشاء الكتلة المنطقيّة الجديدة."
+msgstr "الرجاء اختيار مجموعة الكتل حيث يجب إنشاء الكتلة الافتراضيّة الجديدة."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
 msgid "No logical volume name entered"
-msgstr "لم يدخل اسم كتلةٍ منطقيّة"
+msgstr "لم يدخل اسم كتلةٍ افتراضيّة"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "لم يتم إدخال اسمٍ للكتلة المنطقيّة. الرجاء إدخال اسم."
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr "لم تُدخل أي اسم للكتلة الافتراضية. رجاءً اكتب اسماً."
 
 #. Type: error
 #. Description
@@ -706,7 +725,7 @@ msgstr "لم يتم إدخال اسمٍ للكتلة المنطقيّة. الر�
 #. :sl3:
 #: ../partman-lvm.templates:51001 ../partman-lvm.templates:53001
 msgid "Error while creating a new logical volume"
-msgstr "خطأ أثناء إنشاء كتلةٍ منطقيّة جديدة"
+msgstr "خطأ أثناء إنشاء كتلةٍ افتراضيّة جديدة"
 
 #. Type: error
 #. Description
@@ -716,7 +735,7 @@ msgid ""
 "The name ${LV} is already in use by another logical volume on the same "
 "volume group (${VG})."
 msgstr ""
-"الاسم ${LV} مستخدمٌ مسبقاً من قبل كتلةٍ منطقيّة أخرى على مجموعة الكتل ذاتها "
+"الاسم ${LV} مستخدمٌ مسبقاً من قبل كتلةٍ افتراضيّة أخرى على مجموعة الكتل ذاتها "
 "(${VG})."
 
 #. Type: string
@@ -724,7 +743,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:52001
 msgid "Logical volume size:"
-msgstr "حجم الكتلة المنطقيّة:"
+msgstr "حجم الكتلة الافتراضيّة:"
 
 #. Type: string
 #. Description
@@ -735,7 +754,7 @@ msgid ""
 "the following formats: 10K (Kilobytes), 10M (Megabytes), 10G (Gigabytes), "
 "10T (Terabytes). The default unit is Megabytes."
 msgstr ""
-"الرجاء إدخال حجم الكتلة المنطقيّة الجديدة. يمكنك إدخال الحجم حسب الأنساق "
+"الرجاء إدخال حجم الكتلة الافتراضيّة الجديدة. يمكنك إدخال الحجم حسب الأنساق "
 "التّالية:  10K (كيلوبايت)، 10M (ميجابايت)، 10G (جيجابايت)، 10T (تيرابايت). "
 "الوحدة الافتراضيّة هي الميجابايت."
 
@@ -747,36 +766,35 @@ msgid ""
 "Unable to create a new logical volume (${LV}) on ${VG} with the new size "
 "${SIZE}."
 msgstr ""
-"تعذّر إنشاء الكتلة المنطقيّة الجديدة (${LV}) على ${VG} بالحجم الجديد ${SIZE}."
+"تعذّر إنشاء الكتلة الافتراضيّة الجديدة (${LV}) على ${VG} بالحجم الجديد ${SIZE}."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
 msgid "No logical volume found"
-msgstr "لم يعثر على أيّة كتلةٍ منطقيّة"
+msgstr "لم يعثر على أيّة كتلةٍ افتراضيّة"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
-msgstr "لم يعثر على أيّة كتلةٍ منطقيّة. رجاءً إنشاء كتلةً منطقيّة أوّلاً."
+msgid "No logical volume has been found. Please create a logical volume first."
+msgstr "ليست هناك أية كتل افتراضية. رجاءً أنشئ كتلة افتراضية أولاً."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:55001
 msgid "Logical volume:"
-msgstr "الكتلة المنطقيّة:"
+msgstr "الكتلة الافتراضيّة:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:55001
 msgid "Please select the logical volume to delete."
-msgstr "الرجاء اختيار الكتلة المنطقية المطلوب حذفها."
+msgstr "الرجاء اختيار الكتلة الافتراضية المطلوب حذفها."
 
 #. Type: text
 #. Description
@@ -790,21 +808,21 @@ msgstr "في مجموعة الكتل ${VG}"
 #. :sl3:
 #: ../partman-lvm.templates:57001
 msgid "Error while deleting the logical volume"
-msgstr "خطأ أثناء حذف الكتلة المنطقيّة"
+msgstr "خطأ أثناء حذف الكتلة الافتراضيّة"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "تعذّر حذف الكتلة المنطقيّة (${LV}) على (${VG})."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "تعذر حذف الكتلة الافتراضية ${LV} على ${VG}."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:58001
 msgid "No usable physical volumes found"
-msgstr "لم يعثر على كتلٍ منطقيّة يمكن استخدامها"
+msgstr "لم يعثر على كتلٍ افتراضيّة يمكن استخدامها"
 
 #. Type: error
 #. Description
@@ -815,16 +833,16 @@ msgid ""
 "physical volumes may already be in use. You may also need to load some "
 "required kernel modules or re-partition the hard drives."
 msgstr ""
-"لم يعثر على كتلٍ منطقيّة (أي أجزاء) على نظامك. قد تكون كل الكتل المنطقيّة قيد "
-"الاستخدام. قد تحتاج أيضاً إلى تحميل بعض وحدات النّواة المطلوبة أو إعادة تجزئة "
-"الأقراص الصّلبة."
+"لم يعثر على كتلٍ افتراضيّة (أي أجزاء) على نظامك. قد تكون كل الكتل الافتراضيّة "
+"قيد الاستخدام. قد تحتاج أيضاً إلى تحميل بعض وحدات النّواة المطلوبة أو إعادة "
+"تجزئة الأقراص الصّلبة."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:59001
 msgid "Logical Volume Manager not available"
-msgstr "مدير الكتل المنطقيّة غير متوفّر"
+msgstr "مدير الكتل الافتراضيّة غير متوفّر"
 
 #. Type: error
 #. Description
@@ -834,8 +852,8 @@ msgid ""
 "The current kernel doesn't support the Logical Volume Manager. You may need "
 "to load the lvm-mod module."
 msgstr ""
-"النّواة الحاليّة لا تدعم استخدام مدير الكتل المنطقيّة. قد تحتاج إلى تحميل وحدة "
-"lvm-mod."
+"النّواة الحاليّة لا تدعم استخدام مدير الكتل الافتراضيّة. قد تحتاج إلى تحميل "
+"وحدة lvm-mod."
 
 #. Type: error
 #. Description
@@ -856,7 +874,7 @@ msgstr "تعذرت تهيئة الكتلة المادية ${PV}."
 #. :sl3:
 #: ../partman-lvm.templates:61001
 msgid "Invalid logical volume or volume group name"
-msgstr "اسم الكتلة أو مجموعة الكتل المنطقية غير صالح"
+msgstr "اسم الكتلة أو مجموعة الكتل الافتراضية غير صالح"
 
 #. Type: error
 #. Description
@@ -864,14 +882,15 @@ msgstr "اسم الكتلة أو مجموعة الكتل المنطقية غير
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
-"يمكن أن تحتوي أسماء الكتل المنطقية أو مجموعات الكتل فقط على الأحرف والأرقام، "
-"والشرطات، وعلامة +، والشركة السفلية. كما يجب أن تكون 128 حرفاً كحد أقصى ولا "
-"يمكن أن تبدأ بعلامة شَرطة. كما لا يسمح باستخدام الاسم \".\" و\"..\" ولا يمكن "
-"أن تبدأ كذلك بكلمة \"snapshot\"."
+"أسماء الكتل الافتراضية أو مجموعات الكتل يمكن أن تتكون فقط من أحرف وأرقام "
+"وشَرطة (-) وشرطة سفلية (_) ونقطة وعلامة +. كما يجب أن تتكون من 128 حرف أو "
+"أقل، ولا يمكن أن تبدأ بشَرطة. ولا يُسمح بأن يكون الإسم \".\" أو \"..\". علاوة "
+"على ذلك، لا يمكن أن تبدأ أسماء الكتل الافتراضية بكلمة \"snapshot\"."
 
 #. Type: error
 #. Description
@@ -885,7 +904,7 @@ msgstr "الرجاء اختيار اسم آخر."
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Remove existing logical volume data?"
-msgstr "إزالة جميع بيانات الكتلة المنطقية؟"
+msgstr "إزالة جميع بيانات الكتلة الافتراضية؟"
 
 #. Type: boolean
 #. Description
@@ -895,15 +914,15 @@ msgid ""
 "The selected device already contains the following LVM logical volumes, "
 "volume groups and physical volumes which are about to be removed:"
 msgstr ""
-"الجهاز المستخدم يحتوي كتل LVM المنطقية التالية. مجموعات الكتل والكتل المادية "
-"التي سيتم إزالتها هي:"
+"الجهاز المستخدم يحتوي كتل LVM الافتراضية التالية. مجموعات الكتل والكتل "
+"المادية التي سيتم إزالتها هي:"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Logical volume(s) to be removed: ${LVTARGETS}"
-msgstr "الكتل المنطقية المراد إزالتها: ${LVTARGETS}"
+msgstr "الكتل الافتراضية المراد إزالتها: ${LVTARGETS}"
 
 #. Type: boolean
 #. Description
@@ -927,7 +946,7 @@ msgid ""
 "Note that this will also permanently erase any data currently on the logical "
 "volumes."
 msgstr ""
-"لاحظ أن هذا سيقوم أيضاً بإزالة أية بيانات موجودة حالياً على الكتل المنطقية."
+"لاحظ أن هذا سيقوم أيضاً بإزالة أية بيانات موجودة حالياً على الكتل الافتراضية."
 
 #. Type: error
 #. Description
@@ -955,7 +974,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:64001
 msgid "Logical Volume Management"
-msgstr "إدارة الكتل المنطقيّة"
+msgstr "إدارة الكتل الافتراضيّة"
 
 #. Type: note
 #. Description
@@ -969,7 +988,7 @@ msgid ""
 msgstr ""
 "إحدى الحالات الشائعة أن يجد مدراء الأنظمة أن جزءً من قرص ما (عادة القرص الجزء "
 "الأهم) ينقصه بعض المساحة، بينا توجد مساحة شاغرة وغير مستخدمة في جزء آخر. هنا "
-"تأتي فائدة مدير الكتل المنطقية (LVM)."
+"تأتي فائدة مدير الكتل الافتراضية (LVM)."
 
 #. Type: note
 #. Description
@@ -983,12 +1002,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
-"يسمح لك مدير الكتل المنطقية بجمع أجهزة الأقراص أو الأجزاء (\"الكتل المادية"
+"يسمح لك مدير الكتل الافتراضية بجمع أجهزة الأقراص أو الأجزاء (\"الكتل المادية"
 "\") كي تشكل قرصاً افتراضيا (\"مجموعة كتل\")، والتي يمكن تقسيمها لاحقاً "
-"إلىأجزاء افتراضية (\"كتل منطقية\"). تستطيع مجموعات الكتل والكتل "
-"المنطقيةالامتداد على عدة أقراص مادية. ويمكن إضافة كتل مادية جديدة إلى مجموعة "
-"الكتل في أي وقت، كما يمكن تغيير حجم الكتل المنطقية حتى تصل إلى حجم المساحة "
-"الغير مُعيّنة في مجموعة الكتل."
+"إلىأجزاء افتراضية (\"كتل افتراضية\"). تستطيع مجموعات الكتل والكتل "
+"الافتراضيةالامتداد على عدة أقراص مادية. ويمكن إضافة كتل مادية جديدة إلى "
+"مجموعة الكتل في أي وقت، كما يمكن تغيير حجم الكتل الافتراضية حتى تصل إلى حجم "
+"المساحة الغير مُعيّنة في مجموعة الكتل."
 
 #. Type: note
 #. Description
@@ -1000,7 +1019,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
-"يمكن استخدام العناصر المتوفرة في قائمة تهيئة مدير الكتل المنطقية لتعديل "
-"مجموعات الكتل والكتل المنطقية. بعد أن ترجع إلى شاشة إدارة الجزء الرئيسي، "
-"ستعرض لك الكتل المنطقية بنفس شكل الأجزاء الاعتيادية، ويمكنك التعامل معها "
+"يمكن استخدام العناصر المتوفرة في قائمة تهيئة مدير الكتل الافتراضية لتعديل "
+"مجموعات الكتل والكتل الافتراضية. بعد أن ترجع إلى شاشة إدارة الجزء الرئيسي، "
+"ستعرض لك الكتل الافتراضية بنفس شكل الأجزاء الاعتيادية، ويمكنك التعامل معها "
 "بنفس الطريقة."

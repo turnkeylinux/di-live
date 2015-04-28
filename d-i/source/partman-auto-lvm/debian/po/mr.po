@@ -3,24 +3,25 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-#
-#
+# 
+# 
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
-#
+# 
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-#
-#
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2009-01-11 20:50+0530\n"
+"PO-Revision-Date: 2010-03-12 21:00+0530\n"
 "Last-Translator: Sampada <sampadanakhare@gmail.com>\n"
 "Language-Team: Marathi, janabhaaratii, C-DAC, Mumbai, India "
 "<janabhaaratii@cdacmumbai.in>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -192,7 +193,7 @@ msgid ""
 "that does not contain any physical volume."
 msgstr ""
 "आपोआप विभाजनीकरण कृतीमध्ये कोणत्याही भौतिक खंडाचा समावेश नसलेल्या एका खंड गटाच्या "
-"व्याखेचा समावेश आहे. "
+"व्याखेचा समावेश आहे."
 
 #. Type: error
 #. Description

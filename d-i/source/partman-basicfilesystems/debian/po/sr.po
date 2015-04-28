@@ -4,24 +4,31 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Serbian/Cyrillic messages for debian-installer.
-# Copyright (C) 2010 Software in the Public Interest, Inc.
+# Copyright (C) 2010-2012 Software in the Public Interest, Inc.
 # Copyright (C) 2008 THE cp6Linux'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the debian-installer package.
-# Karolina Kalic <karolina@janos.in.rs>, 2010.
-# Janos Guljas <janos@janos.in.rs>, 2010.
+# Karolina Kalic <karolina@resenje.org>, 2010-2012.
+# Janos Guljas <janos@resenje.org>, 2010-2012.
 # Veselin Mijušković <veselin.mijuskovic@gmail.com>, 2008.
-# , fuzzy
+# Milan Kostic <kosticmilan77@open.telekom.rs>, 2012.
 #
+# Translations from iso-codes:
+#   Aleksandar Jelenak <aleksandar.jelenak@gmail.com>, 2010.
+#   Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+#   Danilo Segan <dsegan@gmx.net>, 2003, 2004, 2005.
+#   Milos Komarcevic <kmilos@gmail.com>, Caslav Ilic <caslav.ilic@gmx.net>, 2009.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2010-08-20 22:02+0200\n"
-"PO-Revision-Date: 2010-08-25 17:41+0100\n"
-"Last-Translator: Janos Guljas <janos@janos.in.rs>\n"
-"Language-Team: Serbian/Cyrillic\n"
-"Language: \n"
+"POT-Creation-Date: 2014-08-31 22:00+0000\n"
+"PO-Revision-Date: 2012-10-19 22:10+0100\n"
+"Last-Translator: Karolina Kalic <karolina@resenje.org>\n"
+"Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -577,10 +584,26 @@ msgstr "fat32"
 #. Type: text
 #. Description
 #. :sl2:
+#: ../partman-basicfilesystems.templates:36001
+#, fuzzy
+msgid "NTFS journaling file system"
+msgstr "JFS журналски фајл систем"
+
 #. Type: text
 #. Description
-#: ../partman-basicfilesystems.templates:36001
+#. :sl1:
+#. Short file system name (untranslatable in many languages)
+#: ../partman-basicfilesystems.templates:37001
+msgid "ntfs"
+msgstr ""
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Type: text
+#. Description
 #: ../partman-basicfilesystems.templates:38001
+#: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
 msgstr "простор за додатну меморију"
 
@@ -592,8 +615,8 @@ msgstr "простор за додатну меморију"
 #. Description
 #. :sl1:
 #. Short variant of `swap space'
-#: ../partman-basicfilesystems.templates:37001
 #: ../partman-basicfilesystems.templates:39001
+#: ../partman-basicfilesystems.templates:41001
 msgid "swap"
 msgstr "помоћна меморија"
 
@@ -602,15 +625,15 @@ msgstr "помоћна меморија"
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:40001
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options:"
 msgstr "Опције монирања:"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
 msgstr "Опције монтирања могу подесити понашање фајл система."
 
@@ -619,7 +642,7 @@ msgstr "Опције монтирања могу подесити понашањ
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
 msgstr "noatime - не ажурирај време приступа и-нода при сваком приступу"
 
@@ -628,7 +651,17 @@ msgstr "noatime - не ажурирај време приступа и-нода 
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:43001
+#: ../partman-basicfilesystems.templates:45001
+#, fuzzy
+msgid "nodiratime - do not update directory inode access times"
+msgstr "noatime - не ажурирај време приступа и-нода при сваком приступу"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:46001
 msgid "relatime - update inode access times relative to modify time"
 msgstr "relatime - ажурирај atime и-нода релативно у односу на mtime"
 
@@ -637,7 +670,7 @@ msgstr "relatime - ажурирај atime и-нода релативно у од
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:44001
+#: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
 msgstr "nodev - не подржавај карактер или блок специјалне уређаје"
 
@@ -646,7 +679,7 @@ msgstr "nodev - не подржавај карактер или блок спе�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:45001
+#: ../partman-basicfilesystems.templates:48001
 msgid "nosuid - ignore set-user-identifier or set-group-identifier bits"
 msgstr "nosuid - игнориши suid и sgid битове"
 
@@ -655,7 +688,7 @@ msgstr "nosuid - игнориши suid и sgid битове"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:46001
+#: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
 msgstr "noexec - не дозвољавај извршавање програма"
 
@@ -664,7 +697,7 @@ msgstr "noexec - не дозвољавај извршавање програма
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:47001
+#: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
 msgstr "ro - монтирај фајл систем само за читање"
 
@@ -673,7 +706,7 @@ msgstr "ro - монтирај фајл систем само за читање"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:48001
+#: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
 msgstr "sync - све активности улаза/излаза се дешавају синхроно"
 
@@ -682,7 +715,7 @@ msgstr "sync - све активности улаза/излаза се деша
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:49001
+#: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
 msgstr "usrquota - укључи рачунање корисничких квота"
 
@@ -691,7 +724,7 @@ msgstr "usrquota - укључи рачунање корисничких квот
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:50001
+#: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
 msgstr "grpquota - укључи рачунање групних квота"
 
@@ -700,7 +733,7 @@ msgstr "grpquota - укључи рачунање групних квота"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:51001
+#: ../partman-basicfilesystems.templates:54001
 msgid "user_xattr - support user extended attributes"
 msgstr "user_xattr - подржи корисничке проширене атрибуте"
 
@@ -709,7 +742,7 @@ msgstr "user_xattr - подржи корисничке проширене атр
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:52001
+#: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
 msgstr "quiet - промена власника и права не враћа грешке"
 
@@ -718,16 +751,25 @@ msgstr "quiet - промена власника и права не враћа г
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:53001
+#: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
 msgstr "notail - онемогући паковање фајлова у стабло фајл система"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:57001
+msgid "discard - trim freed blocks from underlying block device"
+msgstr ""
 
 #. Type: text
 #. Description
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:54001
+#: ../partman-basicfilesystems.templates:58001
 msgid "acls - support POSIX.1e Access Control List"
 msgstr "acls - подршка за POSIX.1e Access Control List"
 
@@ -736,6 +778,62 @@ msgstr "acls - подршка за POSIX.1e Access Control List"
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:55001
+#: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
 msgstr "кратки називи - користити старе MS-DOS 8.3 називе фајлова"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid "Go back to the menu and correct this problem?"
+msgstr "Вратити се назад у мени и исправити проблем?"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#, fuzzy
+msgid ""
+"Your boot partition has not been configured with the ext2 file system. This "
+"is needed by your machine in order to boot. Please go back and use the ext2 "
+"file system."
+msgstr ""
+"Ваша бут партиција није конфигурисана са ext2 или ext3 фајл системом. Ово је "
+"потребно да би ваша машина могла да се покрене. Вратите се назад и "
+"употребите ext2 или ext3 фајл систем."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid ""
+"If you do not go back to the partitioning menu and correct this error, the "
+"partition will be used as is. This means that you may not be able to boot "
+"from your hard disk."
+msgstr ""
+"Ако се не вратите назад на мени за партиционисање и исправите ове грешке "
+"партиција ће бити употребљена таква каква је. То значи да можда нећете моћи "
+"да покренете систем са вашег диска."
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:61001
+#, fuzzy
+msgid ""
+"Your boot partition is not located on the first partition of your hard disk. "
+"This is needed by your machine in order to boot.  Please go back and use "
+"your first partition as a boot partition."
+msgstr ""
+"Ваша покретачка партиција није на првој примарној партицији вашег хард "
+"диска.  Ово је потребно да би ваша машина могла да се покрене.  Вратите се "
+"назад и употребите вашу прву примарну партицију као покретачку партицију."

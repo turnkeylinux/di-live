@@ -18,14 +18,17 @@
 # Jure Cuhalev <gandalf@owca.info>, 2006.
 # Matej Kovačič <matej.kovacic@owca.info>, 2006.
 # Jožko Škrablin <jozko.skrablni@gmail.com>, 2006.
+# Vanja Cvelbar <cvelbar@gmail.com>, 2008
+# Vanja Cvelbar <cvelbar@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: sl\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-09-17 16:21+0100\n"
+"PO-Revision-Date: 2010-11-16 15:21+0100\n"
 "Last-Translator: Vanja Cvelbar <cvelbar@gmail.com>\n"
-"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +41,7 @@ msgstr ""
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto-lvm.templates:1001
 msgid "Guided - use entire disk and set up LVM"
-msgstr "Vodena namestitev - izbriši celoten pogon in uporabi LVM"
+msgstr "Vodeno - uporabi celoten disk in nastavi LVM"
 
 #. Type: string
 #. Description
@@ -65,7 +68,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:4001
 msgid "Failed to partition the selected disk"
-msgstr "Nisem uspel razdeliti izbranega diska"
+msgstr "Ni bilo mogoče razdeliti izbranega diska"
 
 #. Type: error
 #. Description
@@ -76,14 +79,14 @@ msgid ""
 "that can be created on LVM volumes."
 msgstr ""
 "Do tega je prišlo, ker izbran recept ne vsebuje nobenega razdelka, ki je "
-"lahko ustvarjen na LVM nosilcih."
+"lahko ustvarjen na nosilcih LVM."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:5001
 msgid "Continue installation without /boot partition?"
-msgstr "Nadaljujem namestitev brez /boot razdelka?"
+msgstr "Nadaljujem namestitev brez razdelka  /boot?"
 
 #. Type: boolean
 #. Description
@@ -231,9 +234,9 @@ msgid ""
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
 "Za vodeno razdelitev lahko uporabite celotno skupino nosilcev ali pa njen "
-"del. Če uporabite samo njen del ali pa dodate več diskov kasneje, lahko "
-"kasneje za povečanje logičnih nosilcev uporabite orodja LVM. Pri namestitvi "
-"lahko uporaba manjšega dela skupine nosilcev doprinese večjo prilagodljivost."
+"del. Če uporabite samo njen del ali pa  kasneje dodate več diskov, lahko za "
+"povečanje logičnih nosilcev uporabite orodja LVM. Pri namestitvi lahko "
+"uporaba manjšega dela skupine nosilcev ponuja večjo prilagodljivost."
 
 #. Type: string
 #. Description
@@ -244,9 +247,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"Najmanjša velikost izbranega načrta za razdelitev je ${MINSIZE} (oziroma "
-"${PERCENT}); prosim upoštevajte, da paketi, ki ste jih izbrali, morda "
-"zahtevajo večjo količino prostora. Največja mogoča velikost je ${MAXSIZE}."
+"Najmanjša velikost izbranega recepta za razdelitev je ${MINSIZE} (oziroma "
+"${PERCENT}); upoštevajte, da izbrani paketi morda zahtevajo večjo količino "
+"prostora. Največja možna velikost je ${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -257,9 +260,8 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
-"Namig:\"max\" lahko uporabimo kot bljižnico za največjo možno velikost. "
-"Lahko pa vnesete odstotek (npr. \"20%\"), da uporabite tak odstotek največje "
-"velikosti."
+"Namig:\"max\" je mogoče uporabiti kot bljižnico za največjo mogočo velikost. "
+"Lahko pa vnesete tudi odstotek največje velikosti (na primer 20 )"
 
 #. Type: error
 #. Description
@@ -290,15 +292,15 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
-"Zahtevali ste, da se ${SIZE}uporabi za vodeno razdelitev, vendar je na voljo "
-"le ${MAXSIZE} prostora."
+"Zahtevali ste, da se za vodeno razdelitev uporabi ${SIZE}, vendar je na "
+"voljo le ${MAXSIZE} prostora."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
 msgid "${SIZE} is too small"
-msgstr "${SIZE} je premalo."
+msgstr "${SIZE} je premalo"
 
 #. Type: error
 #. Description
@@ -308,5 +310,5 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
-"Zahtevali ste, da se ${SIZE} uporabi za vodeno razdelitev, vendar izbran "
-"načrt za razdelitev zahteva vsaj ${MINSIZE} prostora."
+"Zahtevali ste, da se za vodeno razdelitev uporabi ${SIZE}, vendar izbran "
+"recept za razdelitev zahteva vsaj ${MINSIZE} prostora."

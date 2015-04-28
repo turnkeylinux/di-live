@@ -16,15 +16,27 @@
 # * I Gede Wijaya S (gwijayas@yahoo.com), 2004.
 # * Arief S F (arief@gurame.fisika.ui.ac.id), 2004-2007.
 # * Setyo Nugroho (setyo@gmx.net), 2004.
-# Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008.
+# Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2002.
+#   Andhika Padmawan <andhika.padmawan@gmail.com>, 2010,2011.
+#   Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2004-2006.
+#   Erwid M Jadied <jadied@gmail.com>, 2008.
+#   Free Software Foundation, Inc., 2002,2004
+#   Translations from KDE:
+#   Ahmad Sofyan <fade@2bl.ac>, 2001.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer (level1)\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2008-06-16 16:11+0700\n"
-"Last-Translator: Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>\n"
-"Language-Team: Bahasa Indonesia <debian-l10n-id@gurame.fisika.ui.ac.id>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-02-13 03:15+0700\n"
+"Last-Translator: Mahyuddin Susanto <udienz@ubuntu.com>\n"
+"Language-Team: Debian Indonesia Translators <debian-l10n-indonesian@lists."
+"debian.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,7 +101,7 @@ msgstr "tidak ada"
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
-msgstr "Mengonfigurasi Logical Volume Manager"
+msgstr "Mengatur Logical Volume Manager"
 
 #. Type: text
 #. Description
@@ -105,7 +117,7 @@ msgstr "Volume Fisik"
 #. What is "in use" is a partition
 #: ../partman-lvm.templates:9001
 msgid "In use by LVM volume group ${VG}"
-msgstr "Sedang digunakan oleh volume grup LVM ${VG}"
+msgstr "Sedang digunakan oleh volume grup LVM: ${VG}"
 
 #. Type: text
 #. Description
@@ -114,7 +126,7 @@ msgstr "Sedang digunakan oleh volume grup LVM ${VG}"
 #. Use infinitive form
 #: ../partman-lvm.templates:10001
 msgid "Display configuration details"
-msgstr "Tampilkan rincian konfigurasi"
+msgstr "Tampilkan rincian pengaturan"
 
 #. Type: text
 #. Description
@@ -159,7 +171,7 @@ msgstr "Perkecil Grup Volume"
 #. Use infinitive form
 #: ../partman-lvm.templates:15001
 msgid "Create logical volume"
-msgstr "Buat Volume Logikal: "
+msgstr "Buat Volum Logikal: "
 
 #. Type: text
 #. Description
@@ -168,7 +180,7 @@ msgstr "Buat Volume Logikal: "
 #. Use infinitive form
 #: ../partman-lvm.templates:16001
 msgid "Delete logical volume"
-msgstr "Hapus Volume Logikal"
+msgstr "Hapus Volum Logikal"
 
 #. Type: text
 #. Description
@@ -184,7 +196,7 @@ msgstr "Selesai"
 #. :sl3:
 #: ../partman-lvm.templates:18001
 msgid "Write the changes to disks and configure LVM?"
-msgstr "Tulis perubahan ke hard disk dan konfigurasikan LVM?"
+msgstr "Tulis perubahan ke harddisk dan pengaturan LVM?"
 
 #. Type: boolean
 #. Description
@@ -192,11 +204,11 @@ msgstr "Tulis perubahan ke hard disk dan konfigurasikan LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Sebelum Logical Volume Manager dapat dikonfigurasikan, pola partisi saat ini "
-"harus dituliskan ke hard disk. Perubahan ini tidak dapat dikembalikan."
+"Sebelum Logical Volume Manager dapat diatur, pola partisi saat ini harus "
+"dituliskan ke harddisk. Perubahan ini tidak dapat dikembalikan."
 
 #. Type: boolean
 #. Description
@@ -208,17 +220,17 @@ msgid ""
 "the installation. Please decide if you are satisfied with the current "
 "partitioning scheme before continuing."
 msgstr ""
-"Setelah Logical Volume Manager dikonfigurasi, tidak diperbolehkan adanya "
-"perubahan tambahan pada partisi yang berisikan volume fisik selama "
-"pemasangan. Sebelum melanjutkan ke langkah berikutnya, pastikan Anda puas "
-"dengan pola partisi saat ini."
+"Setelah Pengelola Volum Logikal diatur, tidak diperbolehkan adanya perubahan "
+"tambahan pada partisi yang berisikan volum fisik selama pemasangan. Sebelum "
+"melanjutkan ke langkah berikutnya, pastikan Anda puas dengan pola partisi "
+"saat ini."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:19001
 msgid "Keep current partition layout and configure LVM?"
-msgstr "Gunakan layout partisi yang ada dan konfigurasikan LVM?"
+msgstr "Gunakan pola partisi yang ada dan pengaturan LVM?"
 
 #. Type: boolean
 #. Description
@@ -230,17 +242,17 @@ msgid ""
 "decide if you are satisfied with the current partitioning scheme in these "
 "disks before continuing."
 msgstr ""
-"Setelah Logical Volume Manager dikonfigurasi, tidak diperbolehkan adanya "
-"perubahan tambahan pada partisi yang berisikan volume fisik. Sebelum "
-"melanjutkan ke langkah berikutnya, harap putuskan jika Anda puas dengan pola "
-"partisi di hard disk saat ini."
+"Setelah Pengelola Volum Logikal diatur, tidak diperbolehkan adanya perubahan "
+"tambahan pada partisi yang berisikan volum fisik. Sebelum melanjutkan ke "
+"langkah berikutnya, pastikan Anda puas dengan pola partisi di harddisk saat "
+"ini."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "LVM configuration failure"
-msgstr "Pengonfigurasian LVM gagal"
+msgstr "Pengaturan LVM gagal"
 
 #. Type: error
 #. Description
@@ -254,7 +266,7 @@ msgstr "Terjadi kesalahan saat menuliskan perubahan ke hard disk."
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "Logical Volume Manager configuration has been aborted."
-msgstr "Proses konfigurasi Logical Volume Manager telah dibatalkan."
+msgstr "Proses pengaturan Pengelola Volum Logikal telah dibatalkan."
 
 #. Type: text
 #. Description
@@ -276,14 +288,14 @@ msgstr "lvm"
 #. :sl3:
 #: ../partman-lvm.templates:24001
 msgid "LVM configuration action:"
-msgstr "Tindakan untuk konfigurasi LVM:"
+msgstr "Tindakan untuk pengaturan LVM:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:24001
 msgid "Summary of current LVM configuration:"
-msgstr "Ringkasan konfigurasi LVM saat ini:"
+msgstr "Ringkasan pengaturan LVM saat ini:"
 
 #. Type: select
 #. Description
@@ -305,7 +317,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:25001
 msgid "Current LVM configuration:"
-msgstr "Konfigurasi LVM saat ini:"
+msgstr "Pengaturan LVM saat ini:"
 
 #. Type: multiselect
 #. Description
@@ -425,12 +437,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Terjadi kesalahan saat memperkecil Grup Volum"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Terjadi kesalahan saat menghapus Grup Volum"
 
 #. Type: error
 #. Description
@@ -654,6 +665,13 @@ msgstr "Belum ada Volum Fisik yang dipilih. Pengecilan Grup Volum dibatalkan."
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Terjadi kesalahan saat memperkecil Grup Volum"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -715,8 +733,9 @@ msgstr "Nama Volum Logikal tidak dimasukkan"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "Nama Volum Logikal tidak dimasukkan. Silakan masukkan sebuah nama."
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr ""
+"Tidak ada masukan nama untuk volum logikal. Silakan masukkan sebuah nama."
 
 #. Type: error
 #. Description
@@ -767,7 +786,7 @@ msgid ""
 "Unable to create a new logical volume (${LV}) on ${VG} with the new size "
 "${SIZE}."
 msgstr ""
-"Tidak dapat membuat Volum Logikal baru (${LV}) pada ${VG} dengan ukuran "
+"Tidak dapat membuat Volum Logikal baru (${LV}) di ${VG} dengan ukuran "
 "${SIZE}."
 
 #. Type: error
@@ -781,9 +800,9 @@ msgstr "Volum Logikal tidak ditemukan"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
-msgstr "Volum Logikal tidak ditemukan. Silakan buat sebuah Volum Logikal dulu."
+msgid "No logical volume has been found. Please create a logical volume first."
+msgstr ""
+"Volum Logikal tidak ditemukan. Silakan membuat sebuah Volum Logikal dulu."
 
 #. Type: select
 #. Description
@@ -804,7 +823,7 @@ msgstr "Silakan pilih volum logikal yang ingin dihapus."
 #. :sl3:
 #: ../partman-lvm.templates:56001
 msgid "in VG ${VG}"
-msgstr "dalam Grup Volum ${VG}"
+msgstr "di Grup Volum ${VG}"
 
 #. Type: error
 #. Description
@@ -817,8 +836,8 @@ msgstr "Terjadi kesalahan saat menghapus Volum Logikal"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Volum Logikal (${LV}) pada ${VG} tidak dapat dihapus."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Volum Logikal (${LV}) di ${VG} tidak dapat dihapus."
 
 #. Type: error
 #. Description
@@ -838,14 +857,14 @@ msgid ""
 msgstr ""
 "Tidak ditemukan Volum Fisik (mis. partisi) pada sistem Anda. Semua Volum "
 "Fisik mungkin telah dipakai. Anda mungkin perlu juga memuat modul kernel "
-"yang diperlukan atau mempartisi lagi hard disk Anda."
+"yang diperlukan atau memartisi-ulang harddisk Anda."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:59001
 msgid "Logical Volume Manager not available"
-msgstr "Logical Volume Manager tidak tersedia"
+msgstr "Pengelola Volum Logikal (LVM) tidak tersedia"
 
 #. Type: error
 #. Description
@@ -855,15 +874,15 @@ msgid ""
 "The current kernel doesn't support the Logical Volume Manager. You may need "
 "to load the lvm-mod module."
 msgstr ""
-"Kernel yang dipakai tidak mendukung Logical Volume Manager. Anda mungkin "
-"perlu memuat modul lvm-mod."
+"Kernel yang dipakai tidak mendukung Pengelola Volum Logikal (LVM). Anda "
+"mungkin perlu memuat modul lvm-mod."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:60001
 msgid "Error while initializing physical volume"
-msgstr "Terjadi kesalahan saat menformat volume fisik "
+msgstr "Terjadi kesalahan saat menformat volum fisik "
 
 #. Type: error
 #. Description
@@ -885,15 +904,16 @@ msgstr "Nama grup volum atau volum logikal tidak sah. "
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Nama grup volum atau volum logikal hanya dapat berisi karekter angka, huruf, "
 "tanda hubung, tambah, titik, dan garis bawah. Nama harus kurang dari 128 "
-"karakter dan tidak boleh didahului tanda-hubung. Nama dengan \".\" dan \".."
-"\" tidak boleh. Khusus nama volum logikal tidak boleh diawali dengan "
-"\"snapshot\"."
+"karakter atau kurang dan tidak boleh didahului tanda-hubung. Nama dengan \"."
+"\" dan \"..\" tidak boleh. Selain itu, volum logikal tidak boleh diawali "
+"dengan \"snapshot\"."
 
 #. Type: error
 #. Description
@@ -950,7 +970,7 @@ msgid ""
 "volumes."
 msgstr ""
 "Ingat, bahwa hal ini juga akan menghapus semua data yang ada di volum "
-"logikal secara permanen."
+"logikal selamanya."
 
 #. Type: error
 #. Description
@@ -978,10 +998,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
-msgstr "Nama Volum Logikal:"
+msgstr "Pengelolaan Volum Logikal"
 
 #. Type: note
 #. Description
@@ -993,6 +1011,10 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"Situasi umum yang ditemui administrator sistam adalah mendapati bahwa "
+"beberapa partisi (terkadang  partisi yang terpenting) kehabisan ruang, "
+"sedangkan partisi lainnya kelebihan. Pengelola Volum Logikal (LVM) dapat "
+"mengatasi ini."
 
 #. Type: note
 #. Description
@@ -1006,6 +1028,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"LVM memungkinkan harddisk atau partisi (\"volum fisik\") digabung jadi satu "
+"harddisk maya (\"grup volum\"), yang dapat dibagi-bagi menjadi partisi maya "
+"(\"volum logikal\"). Grup volum dan volum logikal dapat berada pada harddisk "
+"yang berbeda. Volum fisika baru dapat ditambahkan ke grup volum kapan saja. "
+"Volum logikal dapat diubah-ubah ukurannya sesuai ruang yang tersedia pada "
+"grup volum."
 
 #. Type: note
 #. Description
@@ -1017,3 +1045,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"Menu pengaturan LVM dapat digunakan untuk menyunting grop volum dan volum "
+"logikal. Setelah Anda kembali ke menu utama pengelolaan partisi, volum "
+"logikal akan ditampilkan dengan cara yang sama seperti partisi biasa dan "
+"diperlakukan sama pula."

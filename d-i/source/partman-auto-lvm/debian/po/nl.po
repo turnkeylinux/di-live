@@ -9,15 +9,17 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Frans Pop <aragorn@tiscali.nl>, 2005.
-# Frans Pop <elendil@planet.nl>, 2007, 2008.
+# Frans Pop <elendil@planet.nl>, 2007, 2008, 2009, 2010.
+# Eric Spreen <erispre@gmail.com>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-08-25 10:42+0200\n"
-"Last-Translator: Frans Pop <elendil@planet.nl>\n"
+"PO-Revision-Date: 2010-10-25 14:06+0200\n"
+"Last-Translator: Eric Spreen <erispre@gmail.com>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -224,7 +226,7 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
-"U kunt de gehele volumegroep gebruiken voor begeleide partitionering of een "
+"U kunt de gehele volumegroep gebruiken voor begeleide partitionering, of een "
 "deel ervan. Als u slechts een deel gebruikt, of wanneer u later meer "
 "schijven toevoegt, kunt u later logische volumes toevoegen door gebruik te "
 "maken van de LVM-hulpmiddelen. Het gebruik van een kleiner deel van de "
@@ -239,9 +241,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"De minimum grootte van de gekozen partitieconfiguratie is ${MINSIZE} (of "
+"De minimumgrootte van de gekozen partitieconfiguratie is ${MINSIZE} (of "
 "${PERCENT}); houd er rekening mee dat softwarepakketten die u wilt "
-"installeren meer schijfruimte nodig hebben dan deze grootte. De maximum "
+"installeren meer schijfruimte nodig hebben dan deze grootte. De maximale "
 "beschikbare grootte is ${MAXSIZE}."
 
 #. Type: string
@@ -253,9 +255,9 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
-"Hint: \"max\" kan worden gebruikt om de maximum grootte te specificeren; "
-"door ingave van een percentage (b.v. \"20%\") zal dat percentage van de "
-"maximum grootte worden benut."
+"Wenk: 'max' kan worden gebruikt om de maximumgrootte te specificeren; door "
+"invoer van een percentage (b.v. '20%') zal dat percentage van de "
+"maximumgrootte worden benut."
 
 #. Type: error
 #. Description
@@ -269,7 +271,7 @@ msgstr "Ongeldige invoer"
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
-msgstr "U heeft \"${INPUT}\" ingevoerd, wat geen geldige grootte is."
+msgstr "U heeft '${INPUT}' ingevoerd, wat geen geldige grootte is."
 
 #. Type: error
 #. Description

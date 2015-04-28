@@ -5,6 +5,9 @@ remove_lvm_find_vgs() {
 	local realdev vg pvs pv disk
 	realdev="$1"
 
+	# Simply exit if there is no lvm support
+	[ -f /var/lib/partman/lvm ] || exit 0
+
 	# Check all VGs to see which PV needs removing
 	# BUGME: the greps in this loop should be properly bounded so they
 	#	 do not match on partial matches!

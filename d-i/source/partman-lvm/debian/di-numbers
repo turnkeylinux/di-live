@@ -3,3 +3,4 @@ choose_partition lib/partman
 init.d lib/partman
 undo.d lib/partman
 update.d lib/partman
+finish.d lib/partman

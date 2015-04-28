@@ -8,19 +8,37 @@
 # This translation is released under the same licence as the debian-installer.
 #
 # Siim Põder <siim@p6drad-teel.net>, 2007.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2009.
+#
+# Thanks to following Ubuntu Translators for review and fixes:
+#     Laur Mõtus
+#     Heiki Nooremäe
+#     tabbernuk
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Free Software Foundation, Inc., 2000, 2004, 2006
+#   Hasso Tepper <hasso@estpak.ee>, 2006.
+#   Margus Väli <mvali@hot.ee>, 2000.
+#   Siim Põder <windo@p6drad-teel.net>, 2006.
+#   Tõivo Leedjärv <leedjarv@interest.ee>, 2000, 2001, 2008.
+#   Mattias Põldaru <mahfiaz@gmail.com>, 2009-2012, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2009-04-24 07:13+0300\n"
-"Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
-"Language-Team: Eesti\n"
+"PO-Revision-Date: 2014-08-23 09:54+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
+"Language-Team: Estonian <>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #. Type: text
 #. Description
@@ -71,7 +89,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:5001
 msgid "Continue installation without /boot partition?"
-msgstr "Jätkata paigaldamist /boot partitsioonita?"
+msgstr "Kas jätkata paigaldamist /boot partitsioonita?"
 
 #. Type: boolean
 #. Description
@@ -146,15 +164,14 @@ msgstr "Detailid leiad failist /var/log/syslog või 4. virtuaalkonsoolilt."
 #: ../partman-auto-lvm.templates:8001
 #, no-c-format
 msgid "Multiple disks (%s)"
-msgstr ""
+msgstr "Mitu ketast (%s)"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:9001
-#, fuzzy
 msgid "Non-existing physical volume"
-msgstr "Kasutab füüsilist köidet:"
+msgstr "Olematu füüsiline köide"
 
 #. Type: error
 #. Description
@@ -163,7 +180,7 @@ msgstr "Kasutab füüsilist köidet:"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr ""
+msgstr "Köitegrupp sisaldab viidet olematule füüsilisele köitele."
 
 #. Type: error
 #. Description
@@ -173,6 +190,8 @@ msgid ""
 "Please check that all devices are properly connected. Alternatively, please "
 "check the automatic partitioning recipe."
 msgstr ""
+"Kontrolli, kas kõik seadmed on õigesti ühendatud. Lisaks kontrolli "
+"automaatse partitsioneerimise plaani."
 
 #. Type: error
 #. Description
@@ -189,14 +208,15 @@ msgid ""
 "The automatic partitioning recipe contains the definition of a volume group "
 "that does not contain any physical volume."
 msgstr ""
+"Automaatne partitsioneerimisplaan sisaldab ilma ühegi füüsilise köiteta "
+"köitegrupi kirjeldust."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
-#, fuzzy
 msgid "Please check the automatic partitioning recipe."
-msgstr "Kas tõesti kasutada automaatset partitsioneerimistööriista?"
+msgstr "Palun kontrolli automaatse partitsioneerimise plaani"
 
 #. Type: string
 #. Description

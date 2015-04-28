@@ -1,3 +1,503 @@
+partman-auto-lvm (56ubuntu1) vivid; urgency=medium
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Set locale to "C" when calling vgs for available free space.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 19 Nov 2014 09:49:09 +0000
+
+partman-auto-lvm (56) unstable; urgency=low
+
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 25 Sep 2014 07:25:21 +0200
+
+partman-auto-lvm (55) unstable; urgency=low
+
+  [ Updated translations ]
+  * Danish (da.po) by Joe Hansen
+  * Estonian (et.po) by Mattias Põldaru
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 20 Sep 2014 12:44:16 +0200
+
+partman-auto-lvm (54ubuntu1) utopic; urgency=medium
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Set locale to "C" when calling vgs for available free space.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 12 Aug 2014 17:52:42 +0100
+
+partman-auto-lvm (54) unstable; urgency=high
+
+  * Cope with parted 3.2 automatically creating a partition when creating a
+    fresh loop label (closes: #757661).
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 10 Aug 2014 11:23:07 +0100
+
+partman-auto-lvm (53ubuntu1) utopic; urgency=medium
+
+  * Resynchronise with Debian. Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Set locale to "C" when calling vgs for available free space.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 07 Jul 2014 10:57:02 +0100
+
+partman-auto-lvm (53) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Judit Gyimesi
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 14 Mar 2014 17:52:01 +0100
+
+partman-auto-lvm (52) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bosnian (bs.po) by Amila Valjevčić
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 18 Dec 2013 21:13:31 +0100
+
+partman-auto-lvm (51ubuntu1) trusty; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Set locale to "C" when calling vgs for available free space.
+
+ -- Dmitrijs Ledkovs <xnox@ubuntu.com>  Mon, 21 Oct 2013 16:09:27 +0100
+
+partman-auto-lvm (51) unstable; urgency=low
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 08 Sep 2013 16:16:21 +0200
+
+partman-auto-lvm (50ubuntu1) saucy; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Set locale to "C" when calling vgs for available free space.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Fri, 02 Aug 2013 11:37:55 +0100
+
+partman-auto-lvm (50) unstable; urgency=low
+
+  [ Dmitrijs Ledkovs ]
+  * Remove debian/source/format. Any default is ok & no need to specify it.
+  * Set debian source format to '3.0 (native)'.
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 13 Jul 2013 13:38:50 +0200
+
+partman-auto-lvm (49ubuntu1) saucy; urgency=low
+
+  * Resynchronise with Debian. Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Set locale to "C" when calling vgs for available free space.
+  
+  * No longer ubuntu delta, merged in Debian:
+    - After creating partitions, wait for devices to settle and wipe
+      left-over LVM from them. (Closes: #542441) (LP: #154086)
+    - Append "-vg" to VG names derived from hostname. (LP: #1091788)
+    - Ask for a different VG name, if it clashes with a device name. (Closes: #565947)
+  
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Tue, 28 May 2013 15:31:11 +0100
+
+partman-auto-lvm (49) unstable; urgency=low
+
+  * After creating partitions, wait for devices to settle and wipe
+    left-over LVM from them. (Closes: #542441) (LP: #154086)
+  * Append "-vg" to VG names derived from hostname. (LP: #1091788)
+  * Ask for a different VG name, if it clashes with a device name. (Closes: #565947)
+  * Adjust VCS fileds to canonical URLs.
+  * Specify 3.0 (native) source format.
+  * Bump compat to 9 (drops useless pysupport calls).
+  * Add myself to uploaders.
+
+ -- Dmitrijs Ledkovs <dmitrijs.ledkovs@canonical.com>  Thu, 23 May 2013 11:51:04 +0100
+
+partman-auto-lvm (48) unstable; urgency=low
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Tomislav Krznar
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 18 May 2013 12:34:23 +0200
+
+partman-auto-lvm (47) unstable; urgency=low
+
+  [ Updated translations ]
+  * Catalan (ca.po) by Jordi Mallach
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 12 Dec 2012 06:52:03 +0100
+
+partman-auto-lvm (46ubuntu2) raring; urgency=low
+
+  * Append "-vg" to VG names derived from hostname. (LP: #1091788)
+  * Ask for a different VG name, if it clashes with a device name.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Fri, 04 Jan 2013 18:33:47 +0000
+
+partman-auto-lvm (46ubuntu1) raring; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - After creating partitions, wait for devices to settle and wipe
+      left-over LVM from them.
+    - Set locale to "C" when calling vgs for available free space.
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Sun, 21 Oct 2012 00:43:25 +0100
+
+partman-auto-lvm (46) unstable; urgency=low
+
+  * Add myself to Uploaders and remove (now inactive) Anton Zinoviev
+
+  [ Updated translations ]
+  * Asturian (ast.po) by ivarela
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 15 Oct 2012 19:59:30 +0200
+
+partman-auto-lvm (45ubuntu3) quantal; urgency=low
+
+  * After creating partitions, wait for devices to settle and wipe
+    left-over LVM from them. (Closes: #542441) (LP: #154086)
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Mon, 10 Sep 2012 13:05:06 +0100
+
+partman-auto-lvm (45ubuntu2) quantal; urgency=low
+
+  * Set locale to "C" when calling vgs for available free space. (LP: #1045812)
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Tue, 04 Sep 2012 17:07:23 +0100
+
+partman-auto-lvm (45ubuntu1) quantal; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 17 Aug 2012 17:45:39 +0100
+
+partman-auto-lvm (45) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Tomislav Krznar
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 24 Jun 2012 08:27:00 +0200
+
+partman-auto-lvm (44ubuntu1) quantal; urgency=low
+
+  * Resynchronise with Debian (update-dev change in version 43 fixes
+    LP: #964957).  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 21 Jun 2012 11:49:06 +0100
+
+partman-auto-lvm (44) unstable; urgency=low
+
+  * Team upload
+  * Replace XC-Package-Type by Package-Type
+
+  [ Updated translations ]
+  * Welsh (cy.po) by Dafydd Tomos
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Latvian (lv.po) by Rūdolfs Mazurs
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 16 Jun 2012 12:29:52 +0200
+
+partman-auto-lvm (43) unstable; urgency=low
+
+  [ dann frazier ]
+  * Call update-dev --settle between creating lvs and accessing them
+
+  [ Updated translations ]
+  * bo (bo.po) by Tennom
+  * Macedonian (mk.po) by Arangel Angov
+  * Punjabi (Gurmukhi) (pa.po) by A S Alam
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+
+ -- dann frazier <dannf@debian.org>  Wed, 02 May 2012 15:17:23 -0600
+
+partman-auto-lvm (42ubuntu2) precise; urgency=low
+
+  * Update Ubuntu-specific translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 11 Apr 2012 11:49:16 +0100
+
+partman-auto-lvm (42ubuntu1) precise; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 30 Mar 2012 18:13:10 +0100
+
+partman-auto-lvm (42) unstable; urgency=low
+
+  * Allow using a logical volume as /boot when partman-auto-lvm/no_boot=true
+    Closes: #610377.
+
+ -- dann frazier <dannf@debian.org>  Fri, 30 Mar 2012 11:03:16 -0600
+
+partman-auto-lvm (41) unstable; urgency=low
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama Khayat
+  * Asturian (ast.po) by Mikel González
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Holger Wansing
+  * Estonian (et.po) by Mattias Põldaru
+  * Hebrew (he.po) by Lior Kaplan
+  * Hindi (hi.po) by Kumar Appaiah
+  * Indonesian (id.po) by Mahyuddin Susanto
+  * Icelandic (is.po) by Sveinn í Felli
+  * Italian (it.po) by Milo Casagrande
+  * Kannada (kn.po) by Prabodh C P
+  * Korean (ko.po) by Changwoo Ryu
+  * Macedonian (mk.po) by Arangel Angov
+  * Polish (pl.po) by Marcin Owsiany
+  * Romanian (ro.po) by Ioan Eugen Stan
+  * Sinhala (si.po)
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Turkish (tr.po) by Mert Dirik
+  * Ukrainian (uk.po) by Borys Yanovych
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 15 Mar 2012 14:55:21 -0300
+
+partman-auto-lvm (40ubuntu2) precise; urgency=low
+
+  * Update Ubuntu-specific translations from Launchpad.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 07 Mar 2012 23:53:12 +0000
+
+partman-auto-lvm (40ubuntu1) oneiric; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 04 May 2011 00:13:31 +0100
+
+partman-auto-lvm (40) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * Esperanto (eo.po) by Felipe Castro
+  * Spanish (es.po) by Javier Fernández-Sanguino
+  * Korean (ko.po) by Changwoo Ryu
+  * Romanian (ro.po) by Eddy Petrișor
+  * Northern Sami (se.po) by Børre Gaup
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Telugu (te.po) by Arjuna Rao Chavala
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Uyghur (ug.po) by Sahran
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 24 Apr 2011 10:40:09 +0200
+
+partman-auto-lvm (39ubuntu1) natty; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 31 Jan 2011 14:46:48 +0000
+
+partman-auto-lvm (39) unstable; urgency=low
+
+  [ Updated translations ]
+  * Lao (lo.po) by Anousak Souphavanh
+  * Northern Sami (se.po) by Børre Gaup
+  * Telugu (te.po) by Arjuna Rao Chavala
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 24 Dec 2010 20:17:28 -0200
+
+partman-auto-lvm (38ubuntu1) natty; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 24 Dec 2010 17:37:22 +0000
+
+partman-auto-lvm (38) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Ensure that we're in an appropriate subdirectory of $DEVICES when
+    decoding the recipe (LP: #538536; see partman-auto 91).
+
+  [ Updated translations ]
+  * Sinhala (si.po) by Danishka Navin
+
+ -- Otavio Salvador <otavio@debian.org>  Tue, 16 Nov 2010 15:43:02 -0200
+
+partman-auto-lvm (37ubuntu1) natty; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Ensure that we're in an appropriate subdirectory of $DEVICES when
+      decoding the recipe.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 15 Nov 2010 12:56:47 +0000
+
+partman-auto-lvm (37) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bengali (bn.po) by Israt Jahan
+  * Catalan (ca.po) by Jordi Mallach
+  * Icelandic (is.po) by Sveinn í Felli
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 12 Nov 2010 16:19:26 -0200
+
+partman-auto-lvm (36ubuntu1) natty; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Ensure that we're in an appropriate subdirectory of $DEVICES when
+      decoding the recipe.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 13 Oct 2010 15:09:25 +0100
+
+partman-auto-lvm (36) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Use 'dh $@ --options' rather than 'dh --options $@', for
+    forward-compatibility with debhelper v8.
+
+  [ Aurelien Jarno ]
+  * Don't offer auto-lvm if LVM support is not available.
+
+  [ Updated translations ]
+  * Asturian (ast.po) by maacub
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bosnian (bs.po) by Armin Beširović
+  * Danish (da.po) by Jacob Sparre Andersen
+  * Persian (fa.po) by Behrad Eslamifar
+  * Finnish (fi.po) by Esko Arajärvi
+  * Serbian (sr.po) by Karolina Kalic
+  * Telugu (te.po) by Arjuna Rao Chavala
+
+ -- Aurelien Jarno <aurel32@debian.org>  Mon, 23 Aug 2010 16:57:47 +0200
+
+partman-auto-lvm (35) unstable; urgency=low
+
+  [ Updated translations ]
+  * Asturian (ast.po) by astur
+  * Belarusian (be.po) by Viktar Siarheichyk
+  * Danish (da.po) by Jacob Sparre Andersen
+  * German (de.po) by Holger Wansing
+  * Dzongkha (dz.po) by Jurmey Rabgay
+  * Persian (fa.po) by acathur
+  * French (fr.po) by Christian Perrier
+  * Hebrew (he.po) by Lior Kaplan
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Korean (ko.po) by Changwoo Ryu
+  * Kurdish (ku.po) by Erdal Ronahi
+  * Lithuanian (lt.po) by Kęstutis Biliūnas
+  * Macedonian (mk.po) by Arangel Angov
+  * Marathi (mr.po) by Sampada
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Romanian (ro.po) by ioan-eugen stan
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Ukrainian (uk.po) by Borys Yanovych
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 11 Jul 2010 18:41:37 +0200
+
+partman-auto-lvm (34ubuntu1) maverick; urgency=low
+
+  * Resynchronise with Debian.  Remaining changes:
+    - Accept autopartitioning automatically.
+    - Change fallback VG name to Ubuntu.
+    - Ask how much of the VG should be used for logical volumes, rather than
+      unconditionally using it all.
+    - Ensure that we're in an appropriate subdirectory of $DEVICES when
+      decoding the recipe.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 27 May 2010 10:17:17 +0100
+
+partman-auto-lvm (34) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Upgrade to debhelper v7.
+  * Merge from Ubuntu:
+    - Ensure that there is always at least one primary partition after
+      autopartitioning, considering only the non-LVM parts of the recipe.
+    - Strip leading whitespace from output of 'vgs' (LP: #333349).
+  * The automatic LVM envelope partition doesn't necessarily need to be
+    primary.  /boot is probably a better candidate for being primary if
+    nothing's explicitly specified, and ensure_primary will take care of
+    that.
+
+  [ Frans Pop ]
+  * Remove no longer needed Lintian override for missing Standards-Version
+    field.
+
+  [ Updated translations ]
+  * Asturian (ast.po) by Marcos Antonio Alvarez Costales
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bengali (bn.po) by Israt Jahan
+  * Danish (da.po) by Ask Hjorth Larsen
+  * German (de.po) by Holger Wansing
+  * Esperanto (eo.po) by Felipe Castro
+  * Estonian (et.po) by Mattias Põldaru
+  * Basque (eu.po) by Piarres Beobide
+  * Hindi (hi.po)
+  * Italian (it.po) by Milo Casagrande
+  * Korean (ko.po) by Changwoo Ryu
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Simplified Chinese (zh_CN.po) by 苏运强
+
+ -- Frans Pop <fjp@debian.org>  Mon, 22 Feb 2010 04:12:43 +0100
+
 partman-auto-lvm (33ubuntu4) lucid; urgency=low
 
   * Update Ubuntu-specific translations from Launchpad.

@@ -18,26 +18,21 @@ default_disk_label () {
 		else
 			echo msdos
 		fi;;
-	    arm|armeb|armel|armhf)
-		echo msdos;;
-	    amd64|kfreebsd-amd64)
+	    amd64|kfreebsd-amd64|i386|kfreebsd-i386|hurd-i386)
 		case "$sub" in
 		    mac|efi)
 			echo gpt;;
 		    *)
 			echo msdos;;
 		esac;;
+	    arm|armeb|armel|armhf)
+		echo msdos;;
+	    arm64)
+		echo gpt;;
 	    hppa)
 		echo msdos;;
 	    ia64)
 		echo gpt;;
-	    i386|kfreebsd-i386|hurd-i386)
-		case "$sub" in
-		    mac|efi)
-			echo gpt;;
-		    *)
-			echo msdos;;
-		esac;;
 	    m68k)
 		case "$sub" in
 		    amiga)
@@ -58,6 +53,9 @@ default_disk_label () {
 		    4kc-malta | 5kc-malta)
 			# MIPS Malta
 			echo msdos;;
+		    octeon)
+			# Cavium Octeon
+			echo msdos;;
 		    r4k-ip22 | r5k-ip22 | r8k-ip26 | r10k-ip28)
 			# Indy
 			echo dvh;;
@@ -70,8 +68,6 @@ default_disk_label () {
 		    sb1-bcm91250a | sb1a-bcm91480b)
 			# Broadcom SB1 evaluation boards
 			echo msdos;;
-		    qemu-mips32)
-			echo msdos;;
 		    *)
 			echo UNKNOWN;;
 		esac;;
@@ -80,11 +76,6 @@ default_disk_label () {
 		    4kc-malta | 5kc-malta)
 			# MIPS Malta
 			echo msdos;;
-		    # DECstation
-		    r3k-kn02)
-			echo msdos;;
-		    r4k-kn04)
-			echo msdos;;
 		    sb1-bcm91250a | sb1a-bcm91480b)
 			# Broadcom SB1 evaluation boards
 			echo msdos;;
@@ -92,7 +83,7 @@ default_disk_label () {
 			echo msdos;;
 		    bcm947xx)
 			echo msdos;;
-		    qemu-mips32)
+		    loongson-2e | loongson-2f | loongson-3)
 			echo msdos;;
 		    *)
 			echo UNKNOWN;;
@@ -121,12 +112,14 @@ default_disk_label () {
 			echo msdos;;
 		    cell)
 			echo msdos;;
+		    fsl)
+			echo gpt;;
 		    *)
 			echo UNKNOWN;;
 		esac;;
-	    ppc64)
-		echo mac;;
-	    s390)
+	    ppc64el)
+		echo gpt;;
+	    s390|s390x)
 		echo msdos;;
 	    sh4)
 		echo msdos;;
@@ -191,13 +184,18 @@ create_new_label() {
 	db_subst partman-partitioning/choose_label CHOICES "$types"
 	PRIORITY=critical
 
-	default_label=$(default_disk_label)
+	db_get partman-partitioning/default_label
+	if [ "$RET" ]; then
+		default_label="$RET"
+	else
+		default_label=$(default_disk_label)
+	fi
 
-	# Use gpt instead of msdos disklabel for disks larger than 2TB
+	# Use gpt instead of msdos disklabel for disks larger than 2TiB
 	if expr "$types" : ".*gpt.*" >/dev/null; then
 		if [ "$default_label" = msdos ]; then
 			disksize=$(cat size)
-			if $(longint_le $(human2longint 2TB) $disksize); then
+			if ! longint_le $disksize "$(expr 2 \* 1024 \* 1024 \* 1024 \* 1024)"; then
 				default_label=gpt
 			fi
 		fi
@@ -227,10 +225,6 @@ create_new_label() {
 			return 1
 		fi
 		db_reset partman-partitioning/confirm_write_new_label
-		# XXX hack of death. This will make sure that the partition label is
-		# cleared and only on Sun labels otherwise bad things can happen.
-		dddevice=$(cat device)
-		log-output -t auto-shared dd if=/dev/zero of=$dddevice bs=512 count=1
 	fi
 
 	open_dialog NEW_LABEL "$chosen_type"

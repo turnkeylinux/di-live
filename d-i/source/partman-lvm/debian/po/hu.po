@@ -8,15 +8,32 @@
 # This file is distributed under the same license as debian-installer.
 # coor: SZERVÁC Attila - sas 321hu -- 2006-2008
 #
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#   Arpad Biro <biro_arpad@yahoo.com>, 2001.
+#   VERÓK István <vi@fsf.hu>, 2004.
+#   SZERVÁC Attila <sas@321.hu>, 2006.
+#   Kálmán Kéménczy <kkemenczy@novell.com>, 2007, 2008.
+#   Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007.
+#   Kalman Kemenczy <kkemenczy@gmail.com>, 2010.
+#   Andras TIMAR <timar@gnome.hu>, 2000-2001.
+# SZERVÁC Attila <sas@321.hu>, 2012.
+# Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>, 2012.
+# Judit Gyimesi <judit.gyimesi.x@gmail.com>, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2008-04-29 23:36+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2013-11-18 21:15+0100\n"
+"Last-Translator: Judit Gyimesi <judit.gyimesi.x@gmail.com>\n"
 "Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
 "org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -184,11 +201,11 @@ msgstr "Változások lemezre írása és LVM konfigurálása?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"A logikaikötet-kezelő konfigurálása előtt, a jelenlegi particionálást ki "
-"kell írni a lemezre. E változásokat később nem lehet visszavonni."
+"A Logikai kötet kezelő beállítása előtt, e particionálást lemezre kell írni. "
+"E módosításokat nem lehet visszavonni."
 
 #. Type: boolean
 #. Description
@@ -416,12 +433,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Hiba a kötetcsoport csökkentésekor"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Hiba a kötetcsoport törlésekor"
 
 #. Type: error
 #. Description
@@ -430,6 +446,109 @@ msgstr "Hiba a kötetcsoport csökkentésekor"
 msgid "The volume group ${VG} could not be created."
 msgstr "A kötetcsoport ${VG} nem hozható létre."
 
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl2:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: boolean
+# Description
+# :sl2:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+# #-#-#-#-#  templates.pot (partman-zfs)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
 #. Type: error
 #. Description
 #. :sl3:
@@ -449,7 +568,8 @@ msgstr "A kötetcsoport ${VG} nem hozható létre."
 #: ../partman-lvm.templates:53001 ../partman-lvm.templates:57001
 #: ../partman-lvm.templates:60001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "A /var/log/syslog vagy a 4. virtuális konzol adja a részleteket."
+msgstr ""
+"Részletek a /var/log/syslog-ban vagy a 4. virtuális konzolon találhatók."
 
 #. Type: select
 #. Description
@@ -646,6 +766,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Hiba a kötetcsoport csökkentésekor"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -707,8 +834,8 @@ msgstr "Nincs logikai kötet név"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "Nincs logikai kötet név. Adj meg egyet."
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr "Nincs még neve a logikai kötetnek. Kérlek, adj meg egyet."
 
 #. Type: error
 #. Description
@@ -772,9 +899,8 @@ msgstr "Nincs logikai kötet"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
-msgstr "Nincs logikai kötet. Előbb létre kell hozni egyet."
+msgid "No logical volume has been found. Please create a logical volume first."
+msgstr "Nem találtam logikai kötetet. Előbb létre kell hozni egyet."
 
 #. Type: select
 #. Description
@@ -808,8 +934,8 @@ msgstr "Hiba a logikai kötet törlése közben"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Az ${LV} logikai kötet ${VG} kötetcsoportból törlése sikertelen."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "E logikai kötetet: ${LV} itt: ${VG} nem tudtam törölni."
 
 #. Type: error
 #. Description
@@ -876,14 +1002,15 @@ msgstr "Érvénytelen logikai kötet vagy kötetcsoport név"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
-"A logikai kötet vagy kötetcsoport nevek csak alfanumerikus karaktereket, "
-"kötőjelet, pluszt, pontot és aláhúzást tartalmazhatnak. Legfeljebb 128 "
-"karakter hosszúak lehetnek és nem kezdődhetnek kötőjellel. A \".\" és \"..\" "
-"nevek tilosak. A logikai kötet nevek nem kezdődhetnek így: \"snapshot\"."
+"A logikai kötet vagy kötetcsoport nevekben csak alfanumerikus karakterek, "
+"kötőjel, plusz, pont és aláhúzás lehetnek. Legfeljebb 128 karakteresek "
+"lehetnek és nem kezdődhetnek kötőjellel. A \".\" és \"..\" nevek tilosak. A "
+"logikai kötet nevek nem kezdődhetnek így: \"snapshot\"."
 
 #. Type: error
 #. Description
@@ -968,10 +1095,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
-msgstr "Logikai kötet neve:"
+msgstr "Logikai kötetkezelés (LVM)"
 
 #. Type: note
 #. Description
@@ -983,6 +1108,9 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"A rendszergazdák gyakori esete, hogy egy lemez-partíción (persze, mindig a "
+"legfontosabbon) túl kevés hely marad, míg mások kihasználatlanok. A Logikai "
+"kötetkezelő (LVM) megkönnyítheti ezt a helyzetet."
 
 #. Type: note
 #. Description
@@ -996,6 +1124,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"Az LVM segítségével lemez vagy partíció eszközökből (\"fizikai kötetek\") "
+"virtuális lemezek (\"kötetcsoportok\") képezhetők, melyek virtuális "
+"partíciókká oszthatók (\"logikai kötetek\"). A kötetcsoportok és logikai "
+"kötetek több fizikai lemezt átfoghatnak. Új fizikai kötetek is bármikor "
+"adhatók egy kötetcsoporthoz, a logikai kötetek pedig bármikor megnövelhetők "
+"a kötetcsoport kihasználatlan helye erejéig."
 
 #. Type: note
 #. Description
@@ -1007,3 +1141,6 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"Az LVM beállító menü elemeivel szerkeszthetők a kötetcsoportok és logikai "
+"kötetek. A fő partíció kezelő menübe visszatérve a logikai kötetek a normál "
+"partíciókhoz hasonlóan jelennek meg és kezelhetők."

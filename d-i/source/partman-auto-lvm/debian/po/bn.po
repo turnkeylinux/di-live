@@ -15,14 +15,18 @@
 # Mahay Alam Khan (মাহে আলম খান) <makl10n@yahoo.com>, 2007.
 # Tisa Nafisa <tisa_nafisa@yahoo.com>, 2007.
 # Md. Rezwan Shahid <rezwan@ankur.org.bd>, 2009.
+# Sadia Afroz <sadia@ankur.org.bd>, 2010.
+# Israt Jahan <israt@ankur.org.bd>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2009-04-09 18:28+0600\n"
-"Last-Translator: Md. Rezwan Shahid <rezwan@ankur.org.bd>\n"
+"PO-Revision-Date: 2010-11-07 17:52+0600\n"
+"Last-Translator: Israt Jahan <israt@ankur.org.bd>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
+"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,8 +75,8 @@ msgid ""
 "This happened because the selected recipe does not contain any partition "
 "that can be created on LVM volumes."
 msgstr ""
-"এমনটি ঘটেছে কারণ নির্বাচিত তালিকায় (recipe) এমন কোন পার্টিশন নেই যাকে এল.ভি."
-"এম. ভলিউম-এ তৈরি করা যায়।"
+"এমনটি ঘটেছে কারণ নির্বাচিত তালিকায় (recipe) এমন কোন পার্টিশন নেই যাকে LVM "
+"ভলিউম-এ তৈরি করা যায়।"
 
 #. Type: boolean
 #. Description
@@ -90,8 +94,8 @@ msgid ""
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
 "আপনি যে তালিকা (recipe) নির্বাচন করেছেন, তাতে কোন পৃথক /boot পার্টিশন নেই। "
-"স্বাভাবিক অবস্থায় এল.ভি.এম. ব্যবহার করার সময় সিস্টেমকে বুট করার অনুমতি পাওয়ার জন্য "
-"এই পার্টিশনটি প্রয়োজন হয়।"
+"স্বাভাবিক অবস্থায় LVM ব্যবহার করার সময় সিস্টেমকে বুট করার অনুমতি পাওয়ার জন্য এই "
+"পার্টিশনটি প্রয়োজন হয়।"
 
 #. Type: boolean
 #. Description
@@ -121,9 +125,9 @@ msgid ""
 "in use. Lowering the priority for configuration questions will allow you to "
 "specify an alternative name."
 msgstr ""
-"এল.ভি.এম. ব্যবহার করে স্বয়ংক্রিয়ভাবে পার্টিশন করার জন্য ভলিউম গ্রুপের যে নাম ব্যবহার "
-"করা হয়, তা এখনি ব্যবহৃত হচ্ছে। কনফিগারেশন সংক্রান্ত প্রশ্নের অগ্রাধিকার হ্রাস করলে "
-"আপনি বিকল্প একটি নাম উল্লেখ করার সুযোগ পাবেন।"
+"LVM ব্যবহার করে স্বয়ংক্রিয়ভাবে পার্টিশন করার জন্য ভলিউম গ্রুপের যে নাম ব্যবহার করা "
+"হয়, তা এখনি ব্যবহৃত হচ্ছে। কনফিগারেশন সংক্রান্ত প্রশ্নের অগ্রাধিকার হ্রাস করলে আপনি "
+"বিকল্প একটি নাম উল্লেখ করার সুযোগ পাবেন।"
 
 #. Type: error
 #. Description
@@ -140,8 +144,8 @@ msgid ""
 "Autopartitioning using LVM failed because an error occurred while creating "
 "the volume group."
 msgstr ""
-"ভলিউম গ্রুপ তৈরির সময় একটি সমস্যা হওয়ায় এল.ভি.এম. ব্যবহার করে স্বয়ংক্রিয়ভাবে "
-"পার্টিশন তৈরির প্রক্রিয়া ব্যর্থ হয়েছে।"
+"ভলিউম গ্রুপ তৈরির সময় একটি সমস্যা হওয়ায় LVM ব্যবহার করে স্বয়ংক্রিয়ভাবে পার্টিশন "
+"তৈরির প্রক্রিয়া ব্যর্থ হয়েছে।"
 
 #. Type: error
 #. Description
@@ -215,7 +219,7 @@ msgstr "স্বয়ংক্রিয় পার্টিশন তৈরির 
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr ""
+msgstr "guided পার্টিশনিং এর জন্য যে পরিমাণ ভলিউম গ্রুপ ব্যবহার করা হবে:"
 
 #. Type: string
 #. Description
@@ -227,6 +231,11 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
+"guided পার্টিশনিং এর জন্য আপনি পুরো ভলিউম গ্রুপ বা এর কিছু অংশ ব্যবহার করতে পারেন। "
+"আপনি যদি শুধুমাত্র এর কিছু অংশ ব্যবহার করে থাকেন, অথবা পরে আরও ডিস্ক যোগ করে "
+"থাকেন, তবে পরবর্তীতে আপনি LVM টুল ব্যবহার করে লজিক্যাল ভলিউম তৈরি করতে পারবেন, "
+"সুতরাং ইনস্টলেশনের সময় ভলিউম গ্রুপের অপেক্ষাকৃত ছোট অংশ ব্যবহার করে নমনীয়তা বাড়ানো "
+"যায়।"
 
 #. Type: string
 #. Description
@@ -237,6 +246,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"নির্বাচিত পার্টিশনিং এর সর্বনিম্ন আকার ${MINSIZE} (বা ${PERCENT}); অনুগ্রহ করে "
+"লক্ষ্য করুন, আপনি যে প্যাকেজগুলো ইনস্টল করার জন্য নির্বাচন করেছেন তাতে হয়ত আরও "
+"ফাঁকাস্থানের প্রয়োজন হতে পারে। বিদ্যমান সর্বোচ্চ ফাঁকাস্থান ${MAXSIZE}।"
 
 #. Type: string
 #. Description
@@ -255,21 +267,21 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "Invalid input"
-msgstr ""
+msgstr "অকার্যকর ইনপুট"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
-msgstr ""
+msgstr "আপনি \"${INPUT}\" দিয়েছেন, এটি কোন আকার বলে বোধ হচ্ছে না।"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:13001
 msgid "${SIZE} is too big"
-msgstr ""
+msgstr "${SIZE} অত্যন্ত বড়"
 
 #. Type: error
 #. Description
@@ -279,13 +291,15 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
+"আপনি guided পার্টিশনিং এর জন্য ${SIZE} জায়গা ব্যবহার করতে চাচ্ছেন, কিন্তু বর্তমানে "
+"শুধুমাত্র ${MAXSIZE} জায়গাই ফাঁকা আছে।"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
 msgid "${SIZE} is too small"
-msgstr ""
+msgstr "${SIZE} অত্যন্ত ছোট"
 
 #. Type: error
 #. Description
@@ -295,3 +309,5 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
+"আপনি guided পার্টিশনিং এর জন্য ${SIZE} জায়গা ব্যবহার করতে চাচ্ছেন, কিন্তু নির্বাচিত "
+"পার্টিশনিং এর জন্য অন্তত ${MINSIZE} প্রয়োজন।"

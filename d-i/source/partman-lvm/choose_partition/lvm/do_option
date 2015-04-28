@@ -10,13 +10,6 @@
 #####################################
 
 do_initial_setup() {
-	# make sure that lvm is available
-	if ! grep -q "[0-9] device-mapper$" /proc/misc ; then
-		db_input critical partman-lvm/nolvm
-		db_go
-		exit 0
-	fi
-
 	# Commit the changes
 	confirm_changes partman-lvm || exit 0
 	commit_changes partman-lvm/commit_failed || exit $?

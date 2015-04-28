@@ -8,19 +8,37 @@
 # This translation is released under the same licence as the debian-installer.
 #
 # Siim Põder <siim@p6drad-teel.net>, 2007.
-# Mattias Põldaru <mahfiaz gmail com>, 2009.
+#
+# Thanks to following Ubuntu Translators for review and fixes:
+#     Laur Mõtus
+#     Heiki Nooremäe
+#     tabbernuk
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Free Software Foundation, Inc., 2000, 2004, 2006
+#   Hasso Tepper <hasso@estpak.ee>, 2006.
+#   Margus Väli <mvali@hot.ee>, 2000.
+#   Siim Põder <windo@p6drad-teel.net>, 2006.
+#   Tõivo Leedjärv <leedjarv@interest.ee>, 2000, 2001, 2008.
+#   Mattias Põldaru <mahfiaz@gmail.com>, 2009-2012, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-10-25 03:30+0300\n"
-"Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
-"Language-Team: Eesti\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2014-08-23 09:54+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
+"Language-Team: Estonian <>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #. Type: text
 #. Description
@@ -184,12 +202,12 @@ msgstr "Kas kirjutada muudatused kettale ja seadistada LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Enne kui saab seadistada Loogiliste köidete haldurit, tuleb praegune "
-"paritsioneerimisskeem kettale kirjutada. Neid muudatusi pole võimalik tagasi "
-"võtta."
+"Enne Loogiliste köidete halduri seadistamist tuleb praegune "
+"partitsioneerimisskeem kettale kirjutada. Neid muudatusi pole võimalik "
+"tagasi võtta."
 
 #. Type: boolean
 #. Description
@@ -211,7 +229,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:19001
 msgid "Keep current partition layout and configure LVM?"
-msgstr "Kas jätta praegune partitsioonide paigutus ja seadistada LVM?"
+msgstr "Kas jätta alles praegune partitsioonide paigutus ja seadistada LVM?"
 
 #. Type: boolean
 #. Description
@@ -326,7 +344,7 @@ msgstr "Palun vali uuele köitegrupile seadmed."
 #: ../partman-lvm.templates:26001 ../partman-lvm.templates:39001
 #: ../partman-lvm.templates:44001
 msgid "You can select one or more devices."
-msgstr "Võid valida ühe või enam seadet."
+msgstr "Pead valima vähemalt ühe seadme."
 
 #. Type: string
 #. Description
@@ -416,12 +434,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Köitegrupi vähendamisel ilmnes viga"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Köitegrupi kustutamisel ilmnes viga"
 
 #. Type: error
 #. Description
@@ -649,6 +666,13 @@ msgstr "Ühtki füüsilist köidet ei valitud. Köitegrupi koondamine on peatatu
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Köitegrupi vähendamisel ilmnes viga"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -708,7 +732,7 @@ msgstr "Ei sisestatud loogilise köite nime"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr "Loogilisele köitele ei ole sisestatud nime. Palun sisesta nimi."
 
 #. Type: error
@@ -773,8 +797,7 @@ msgstr "Ei leitud ühtki loogilist köidet"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
 "Ei leitud ühtki loogilist köidet. Palun loo kõigepealt üks loogiline köide."
 
@@ -810,7 +833,7 @@ msgstr "Loogilise köite kustutamisel ilmnes viga"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
 msgstr "Loogilist köidet ${LV} pole võimalik ${VG} pealt kustutada."
 
 #. Type: error
@@ -831,7 +854,7 @@ msgid ""
 msgstr ""
 "Su süsteemist ei leitud ühtki füüsilist köidet (ehk partitsiooni). Kõik "
 "füüsilised köited võivad juba kasutusel olla. Ühtlasi võib olla vajalik "
-"tarvilike tuuma moodulite laadimine või kõvaketta ümber partitsioneerimine."
+"tarvilike kerneli moodulite laadimine või kõvaketta ümberpartitsioneerimine."
 
 #. Type: error
 #. Description
@@ -878,15 +901,15 @@ msgstr "Sobimatu loogilise köite või köitegrupi nimi"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
-"Loogilise köite ja köitegrupi nimed võivad sisaldada vaid alfanumbrilisi "
-"märgendeid, sidekriipsu, plussi, punkti ning alakriipsu. Nad peavad olema "
-"128 või vähem märki pikad ega tohi alata sidekriipsuga. Nimed \".\" ja \".."
-"\" pole lubatud. Lisaks sellele, ei tohi loogiliste köidete nimed alata "
-"tähejadaga \"snapshot\"."
+"Loogilise köite ja köitegrupi nimi võib sisaldada ainult tähti, numbreid, "
+"sidekriipsu, plussi, punkti ja alakriipsu. Nimi ei  tohi olla pikem kui 128 "
+"märki ega tohi alata sidekriipsuga. Nimed \".\" ja \"..\" pole lubatud. "
+"Lisaks sellele ei tohi loogiliste köidete nimed alata sõnaga \"snapshot\"."
 
 #. Type: error
 #. Description

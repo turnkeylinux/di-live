@@ -4,19 +4,27 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Catalan messages for debian-installer.
-# Copyright 2002, 2003, 2004, 2005, 2006, 2007, 2008 Software in the Public Interest, Inc.
+# Copyright 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2012 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Jordi Mallach <jordi@debian.org>, 2002, 2003, 2004, 2006, 2007, 2008.
+# Jordi Mallach <jordi@debian.org>, 2002, 2003, 2004, 2006, 2007, 2008, 2010, 2012.
 # Guillem Jover <guillem@debian.org>, 2005, 2007.
 #
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@computer.org>, 2001.
+# Free Software Foundation, Inc., 2002,2004,2006
+# Orestes Mas i Casals <orestes@tsc.upc.es>, 2004-2006. (orestes: He usat la nomenclatura de http://www.traduim.com/)
+# Softcatalà <info@softcatala.org>, 2000-2001
+# Toni Hermoso Pulido <toniher@softcatala.cat>, 2010.
+# Traductor: Jordi Ferré <jordiferre@catalonia.altranet.fr>
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer lenny\n"
+"Project-Id-Version: debian-installer wheezy\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2008-04-29 20:37+0200\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-10-18 18:34+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -183,7 +191,7 @@ msgstr "Voleu escriure els canvis als discs i configurar LVM?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "Abans de poder configurar el gestor de volums lògics, s'ha d'escriure "
@@ -420,12 +428,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "S'ha produït un error en reduir el grup de volums"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "S'ha produït un error en suprimir el grup de volums"
 
 #. Type: error
 #. Description
@@ -506,7 +513,7 @@ msgstr "No s'ha trobat cap grup de volums."
 #. :sl3:
 #: ../partman-lvm.templates:34001
 msgid "The volume group may have already been deleted."
-msgstr "Pot ser que el grup de volums ja s'haja suprimit."
+msgstr "Potser el grup de volums ja s'haja suprimit."
 
 #. Type: boolean
 #. Description
@@ -654,6 +661,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "S'ha produït un error en reduir el grup de volums"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -715,7 +729,7 @@ msgstr "No s'ha introduït cap nom de volum lògic"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr ""
 "No s'ha introduït cap nom per al volum lògic. Si us plau, introduïu-ne un."
 
@@ -782,8 +796,7 @@ msgstr "No s'ha trobat cap volum lògic"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr "No s'ha trobat cap volum lògic. Creeu-ne un primer."
 
 #. Type: select
@@ -818,8 +831,8 @@ msgstr "S'ha produït un error en suprimir el volum lògic"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "No s'ha pogut suprimir el volum lògic (${LV}) en ${VG}."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "No s'ha pogut suprimir el volum lògic ${LV} en ${VG}."
 
 #. Type: error
 #. Description
@@ -886,9 +899,10 @@ msgstr "El nom del volum lògic o del grup de volums és invàlid"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "Els noms dels volums lògics o grups de volums només poden contindre "
 "caràcters alfanumèrics i els caràcters guió, suma, punt i subratllat. No es "
@@ -978,10 +992,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
-#, fuzzy
-#| msgid "Logical volume name:"
 msgid "Logical Volume Management"
-msgstr "Nom del volum lògic:"
+msgstr "Gestió de volums lògics"
 
 #. Type: note
 #. Description
@@ -993,6 +1005,10 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"Una situació comú per a administradors de sistemes és trobar que una "
+"partició del disc (habitualment la més important) no té massa espai lliure, "
+"i altres particions estan infrautilitzades. El Gestor de Volums Lògics (LVM) "
+"pot ajudar amb això."
 
 #. Type: note
 #. Description
@@ -1006,6 +1022,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"LVM permet combinar discs o dispositius de partició («volums físics») per a "
+"formar un disc virtual («grup de volums»), que es pot dividir en particions "
+"virtuals («volums lògics»). Els grups de volums i volums lògics poden "
+"abastar diversos discs físics. Es poden afegir nou volums físics a un grup "
+"de volums en qualsevol moment, i els volums lògics es poden redimensionar "
+"fins a la quantitat d'espai no assignat al grup de volums."
 
 #. Type: note
 #. Description
@@ -1017,3 +1039,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"Es poden emprar els elements al menú de configuració d'LVM per a editar "
+"grups de volums i volums lògics. Després de tornar a la pantalla principal "
+"del gestor de particions, es mostraran els volums lògics de la mateixa forma "
+"que una partició normal, i es poden emprar com si ho foren."

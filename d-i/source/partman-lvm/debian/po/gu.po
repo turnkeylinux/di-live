@@ -10,16 +10,25 @@
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
 # Contributor:
-# Kartik Mistry <kartik.mistry@gmail.com>, 2006-2009
+# Kartik Mistry <kartik.mistry@gmail.com>, 2006-2011
 #
+#
+# Translations from iso-codes:
+#   - translations from ICU-3.0
+#
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Kartik Mistry <kartik.mistry@gmail.com>, 2006, 2007, 2008.
+#   Ankit Patel <ankit644@yahoo.com>, 2009,2010.
+#   Sweta Kothari <swkothar@redhat.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: d-i\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
 "PO-Revision-Date: 2008-08-07 11:42+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
+"Language: gu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -186,11 +195,11 @@ msgstr "ડિસ્કમાં ફેરફારો લખશો અને LV
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
 "તાર્કિક કદ વ્યવસ્થાપક રુપરેખાંકિત કરી શકાય તે પહેલાં, હાલની પાર્ટિશન પધ્ધતિ ડિસ્કમાં "
-"લખાવી જોઇએ.  આ ફેરફારો પાછા ફેરવી શકાશે નહી."
+"લખાવી જોઇએ. આ ફેરફારો પાછા ફેરવી શકાશે નહી."
 
 #. Type: boolean
 #. Description
@@ -415,12 +424,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "કદ સમૂહને ઓછા કરતી વખતે ક્ષતિ આવી"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "કદ સમૂહ દૂર કરતી વખતે ક્ષતિ આવી"
 
 #. Type: error
 #. Description
@@ -640,6 +648,13 @@ msgstr "કોઇ ભૌતિક કદો પસંદ કરેલા નહ�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "કદ સમૂહને ઓછા કરતી વખતે ક્ષતિ આવી"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -698,7 +713,7 @@ msgstr "કોઇ તાર્કિક કદ નામ દાખલ થયે�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
+msgid "No name for the logical volume has been entered. Please enter a name."
 msgstr "તાર્કિક કદ માટે કોઇ નામ દાખલ કરાયેલ નથી. મહેરબાની કરી નામ દાખલ કરો."
 
 #. Type: error
@@ -761,9 +776,8 @@ msgstr "કોઇ તાર્કિક કદ મળ્યાં નહી"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
-msgstr "કોઇ તાર્કિક કદ મળ્યું નહી.  મહેરબાની કરી પ્રથમ તાર્કિક કદ બનાવો."
+msgid "No logical volume has been found. Please create a logical volume first."
+msgstr "કોઇ તાર્કિક કદ મળ્યું નહી. મહેરબાની કરી પ્રથમ તાર્કિક કદ બનાવો."
 
 #. Type: select
 #. Description
@@ -797,8 +811,8 @@ msgstr "તાર્કિક કદ દૂર કરતી વખતે ક્�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "${VG} પર તાર્કિક કદ (${LV}) દૂર કરી શકાતું નથી."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "${VG} પર તાર્કિક કદ ${LV} દૂર કરી શકાતું નથી."
 
 #. Type: error
 #. Description
@@ -864,14 +878,15 @@ msgstr "અયોગ્ય તાર્કિક કદ અથવા કદ સ�
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
 "તાર્કિક કદ અથવા કદ સમૂહ નામો ફક્ત આંકડાઓ અને અંગ્રેજી અક્ષરો, આડી લીટી, પૂર્ણવિરામ અને "
 "અન્ડરસ્કોર જ ધરાવી શકે છે. તે ૧૨૮ કે તેથી ઓછા અક્ષરોનાં જ હોવા જોઇએ અને આડી લીટી થી શરુ "
 "ન થવા જોઇએ. નામો જેવાં કે \".\" અને \"..\" માન્ય નથી. વધુમાં, તાર્કિક કદ નામો "
-"\"સ્નેપશોટ\" થી શરુ ન થવા જોઇએ."
+"\"snapshot\" થી શરુ ન થવા જોઇએ."
 
 #. Type: error
 #. Description
@@ -967,6 +982,9 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
+"સિસ્ટમ સંચાલકો માટે ખૂબ જ સામાન્ય પરિસ્થિતિ એ હોય છે કે કેટલાંક ડિસ્ક પાર્ટિશનમાં "
+"(મોટાભાગે જે ખૂબ મહત્વનાં હોય) જગ્યાનો અભાવ હોય છે, જ્યારે કેટલાંક પાર્ટિશન બિનઉપયોગી "
+"હોય છે. લોજીકલ વોલ્યુમ મેનેજર (LVM) આમાં મદદરુપ થઈ શકે છે."
 
 #. Type: note
 #. Description
@@ -980,6 +998,10 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
+"LVM ડિસ્ક અથવા પાર્ટિશન ઉપકરણો (\"ભૌતિક કદો\") થી વર્ચ્યુઅલ ડિસ્ક (\"કદ સમૂહ\") નું "
+"જોડાણ કરવા દે છે, જે વર્ચ્યુઅલ પાર્ટિશનો (\"તાર્કિક કદો\") માં વિભાજીત કરી શકાય છે. કદ "
+"સમૂહો અને તાર્કિક કદો ઘણી ભૌતિક ડિસ્ક્સ સુધી વિસ્તૃત થઈ શકે છે. નવાં ભૌતિક કદો કદ સમહમાં "
+"ગમે તે સમયે ઉમેરી શકાય છે, અને કદ સમૂહો બાકી રહેલ જગ્યાઓમાં ફરી વિભાજીત કરી શકાય છે."
 
 #. Type: note
 #. Description
@@ -991,3 +1013,6 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
+"LVM રુપરેખાંકન મેનુ કદ સમૂહો અને તાર્કિક કદોમાં ફેરફાર કરવા માટે ઉપયોગ કરી શકાય છે. તમે "
+"પાર્ટિશન સંચાલનની મુખ્ય સ્ક્રિન પર આવો પછી, તાર્કિક કદો સામાન્ય પાર્ટિશનોની જેમ જ દેખાય "
+"છે અને એ જ રીતે વર્તવું જોઈએ."

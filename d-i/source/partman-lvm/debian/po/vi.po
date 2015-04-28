@@ -4,21 +4,28 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Vietnamese translation for Debian Installer Level 1.
-# Copyright © 2008 Software in the Public Interest, Inc.
+# Copyright © 2010 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Jean Christophe André <progfou@gmail.com>
 # Vũ Quang Trung <vu.quang.trung@auf.org>
 # Trịnh Minh Thành <tmthanh@yahoo.com>
-# Clytie Siddall <clytie@riverland.net.au>, 2005-2008
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2010
+# Hai-Nam Nguyen <hainam@jcisio.com>, 2012
+#
+# Translations from iso-codes:
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
+# Copyright © 2009 Free Software Foundation, Inc.
+# Nguyễn Hùng Vũ <vuhung16@bigfoot.com>, 2001.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer Level 1\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2009-07-24 12:28+0000\n"
-"PO-Revision-Date: 2009-09-22 00:37+0930\n"
-"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"POT-Creation-Date: 2014-09-15 22:01+0000\n"
+"PO-Revision-Date: 2012-04-11 00:58+0100\n"
+"Last-Translator: Hai-Nam Nguyen <hainam@jcisio.com>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -186,10 +193,10 @@ msgstr "Ghi các thay đổi vào đĩa và cấu hình LVM không?"
 #: ../partman-lvm.templates:18001
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
-"partitioning scheme has to be written to disk.  These changes cannot be "
+"partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Trước khi có thể cấu hình bộ quản lý khối tin hợp lý (LVM), lược đồ phân "
+"Trước khi có thể cấu hình bộ quản lí khối tin luận lí (LVM), lược đồ phân "
 "vùng hiện thời phải được ghi vào đĩa. Không thể hoàn tác những thay đổi này."
 
 #. Type: boolean
@@ -419,12 +426,11 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl3:
-#. Type: error
-#. Description
-#. :sl3:
-#: ../partman-lvm.templates:32001 ../partman-lvm.templates:46001
-msgid "Error while reducing volume group"
-msgstr "Gặp lỗi khi giảm nhóm khối tin"
+#: ../partman-lvm.templates:32001
+#, fuzzy
+#| msgid "Error while deleting volume group"
+msgid "Error while creating volume group"
+msgstr "Gặp lỗi khi xóa nhóm khối tin"
 
 #. Type: error
 #. Description
@@ -649,6 +655,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
+msgid "Error while reducing volume group"
+msgstr "Gặp lỗi khi giảm nhóm khối tin"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-lvm.templates:46001
 msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
@@ -708,8 +721,8 @@ msgstr "Chưa nhập tên khối tin hợp lý"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-msgid "No name for the logical volume has been entered.  Please enter a name."
-msgstr "Chưa nhập tên cho khối tin hợp lý. Hãy nhập một tên."
+msgid "No name for the logical volume has been entered. Please enter a name."
+msgstr "Chưa nhập tên cho khối tin luận lí. Hãy nhập một tên."
 
 #. Type: error
 #. Description
@@ -778,10 +791,9 @@ msgstr "Không tìm thấy khối tin hợp lý"
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-msgid ""
-"No logical volume has been found.  Please create a logical volume first."
+msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
-"Không tìm thấy khối tin hợp lý. Hãy tạo một khối tin hợp lý trước tiên."
+"Không tìm thấy khối tin luận lí. Hãy tạo một khối tin luận lí trước tiên."
 
 #. Type: select
 #. Description
@@ -815,8 +827,8 @@ msgstr "Gặp lỗi khi xóa khối tin hợp lý."
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-msgid "The logical volume (${LV}) on ${VG} could not be deleted."
-msgstr "Không thể xóa khối tin hợp lý ${LV} trên ${VG}."
+msgid "The logical volume ${LV} on ${VG} could not be deleted."
+msgstr "Không thể xóa khối tin luận lí ${LV} trên ${VG}."
 
 #. Type: error
 #. Description
@@ -883,14 +895,15 @@ msgstr "Khối tin hợp lý hoặc nhóm khối tin có tên không hợp lệ"
 #: ../partman-lvm.templates:61001
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
-"characters, hyphen, plus, period and underscore. They must be 128 characters "
-"or less and may not begin with a hyphen. The names \".\" and \"..\" are not "
-"allowed. In addition, logical volume names may not begin with \"snapshot\"."
+"characters, hyphen, plus, period, and underscore. They must be 128 "
+"characters or less and may not begin with a hyphen. The names \".\" and \".."
+"\" are not allowed. In addition, logical volume names cannot begin with "
+"\"snapshot\"."
 msgstr ""
-"Khối tin hợp lý hoặc nhóm khối tin có tên phải chứa chỉ các ký tự chữ số, "
+"Khối tin luận lí hoặc nhóm khối tin có tên phải chứa chỉ các ký tự chữ số, "
 "dấu trừ, dấu cộng, dấu chấm và/hay dấu gạch chân. Độ dài tên tối đa là 128 "
 "ký tự, và ký tự đầu không thể là dấu trừ. Không cho phép tên « . » (một dấu "
-"chấm) hay « .. » (hai dấu chấm). Hơn nữa, tên khối tin hợp lý không thể bắt "
+"chấm) hay « .. » (hai dấu chấm). Hơn nữa, tên khối tin luận lí không thể bắt "
 "đầu với từ « snapshot » (ảnh chụp)."
 
 #. Type: error
@@ -1006,12 +1019,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
-"LVM cho phép tổ hợp các thiết bị kiểu đĩa hay phân vùng (« khối tin vật lý ») "
-"để tạo một đĩa ảo (« nhóm khối tin »), thì có thể chia đĩa ảo này ra nhiều "
-"phân vùng ảo (« khối tin hợp lý »). Mỗi nhóm khối tin và khối tin hợp lý có "
-"khả năng chiếm giữ vài đĩa vật lý. Lúc nào vẫn có thể thêm khối tin vật lý "
-"bổ sung vào nhóm khối tin, và khối tin hợp lý cũng có kích cỡ thay đổi được "
-"đến sức chứa chưa gán trong nhóm khối tin."
+"LVM cho phép tổ hợp các thiết bị kiểu đĩa hay phân vùng (« khối tin vật lý "
+"») để tạo một đĩa ảo (« nhóm khối tin »), thì có thể chia đĩa ảo này ra "
+"nhiều phân vùng ảo (« khối tin hợp lý »). Mỗi nhóm khối tin và khối tin hợp "
+"lý có khả năng chiếm giữ vài đĩa vật lý. Lúc nào vẫn có thể thêm khối tin "
+"vật lý bổ sung vào nhóm khối tin, và khối tin hợp lý cũng có kích cỡ thay "
+"đổi được đến sức chứa chưa gán trong nhóm khối tin."
 
 #. Type: note
 #. Description

@@ -673,7 +673,7 @@ is_multipath_part () {
 	[ "$type" = linear ] || return 1
 	name=$(dmsetup info --noheadings -c -oname "$1")
 
-	mp=${name%-part*}
+	mp=${name%p[0-9]*}
 	if [ $(multipath -l $mp | wc -l) -gt  0 ]; then
 		return 0
 	fi
@@ -930,12 +930,12 @@ humandev () {
 	        printf "$RET" $mapping
 	    elif [ "$type" = multipath ]; then
 		device=${1#/dev/mapper/}
-		wwid=$(multipath -l ${device} | head -n 1 | sed "s/^${device} \+(\([a-f0-9]\+\)).*/\1/")
+		wwid=$(multipath -l ${device} | head -n 1 | sed "s/^${device} \+(\([^)]\+\)).*/\1/")
 		db_metaget partman/text/multipath description
-		printf "$RET" ${device} ${wwid}
+		printf "$RET" ${device} "${wwid}"
 	    elif is_multipath_part $1; then
-		part=$(echo "$1" | sed 's%.*-part\([0-9]\+\)$%\1%')
-		device=$(echo "$1" | sed 's%/dev/mapper/\(.*\)-part[0-9]\+$%\1%')
+		part=$(echo "$1" | sed 's%.*p\([0-9]\+\)$%\1%')
+		device=$(echo "$1" | sed 's%/dev/mapper/\(.*\)p[0-9]\+$%\1%')
 		db_metaget partman/text/multipath_partition description
 		printf "$RET" ${device} ${part}
 	    else
@@ -951,6 +951,15 @@ humandev () {
 	        db_metaget partman/text/lvm_lv description
 	        printf "$RET" $vg $lv
 	    fi
+	    ;;
+	/dev/linux_lvm/*)
+	      # On GNU/kFreeBSD, LVM devices are found as /dev/linux_lvm/<vg>-<lv>.
+	      vglv=${1#/dev/linux_lvm/}
+	      vglv=`echo "$vglv" | sed 's/\([^-]\)-\([^-]\)/\1 \2/; s/--/-/g'`
+	      vg=`echo "$vglv" | cut -d" " -f1`
+	      lv=`echo "$vglv" | cut -d" " -f2`
+	      db_metaget partman/text/lvm_lv description
+	      printf "$RET" $vg $lv
 	    ;;
 	/dev/loop/*|/dev/loop*)
 	    n=${1#/dev/loop}

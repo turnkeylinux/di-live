@@ -8,19 +8,24 @@
 # tegegne tefera <tefera@mekuria.com>, 2006.
 #
 #
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Data taken from ICU-2.8; contributed by:
+#   - Daniel Yacob <yacob@geez.org>, Ge'ez Frontier Foundation
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2010-08-20 22:02+0200\n"
-"PO-Revision-Date: 2010-08-19 16:50+0800\n"
-"Last-Translator: ተገኝ ተፈራ <tefera@mekuria.com>\n"
-"Language-Team: Amharic\n"
-"Language: \n"
+"POT-Creation-Date: 2014-08-31 22:00+0000\n"
+"PO-Revision-Date: 2014-04-04 22:07+0100\n"
+"Last-Translator: Tegegne Tefera <tefera@mekuria.com>\n"
+"Language-Team: Amharic <linux-ethiopia@googlegroups.com>\n"
+"Language: am\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: n>1\n"
+"Plural-Forms: n>1;\n"
 
 #. Type: text
 #. Description
@@ -554,10 +559,26 @@ msgstr "FAT32"
 #. Type: text
 #. Description
 #. :sl2:
+#: ../partman-basicfilesystems.templates:36001
+#, fuzzy
+msgid "NTFS journaling file system"
+msgstr "JFS journaling ፋይል ስርዓት"
+
 #. Type: text
 #. Description
-#: ../partman-basicfilesystems.templates:36001
+#. :sl1:
+#. Short file system name (untranslatable in many languages)
+#: ../partman-basicfilesystems.templates:37001
+msgid "ntfs"
+msgstr ""
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Type: text
+#. Description
 #: ../partman-basicfilesystems.templates:38001
+#: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
 msgstr "መለወጫ ክፋይ"
 
@@ -569,8 +590,8 @@ msgstr "መለወጫ ክፋይ"
 #. Description
 #. :sl1:
 #. Short variant of `swap space'
-#: ../partman-basicfilesystems.templates:37001
 #: ../partman-basicfilesystems.templates:39001
+#: ../partman-basicfilesystems.templates:41001
 msgid "swap"
 msgstr "መለወጫ ክፋይ"
 
@@ -579,15 +600,15 @@ msgstr "መለወጫ ክፋይ"
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:40001
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options:"
 msgstr "የመጫኛ ምርጫዎች"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
-#: ../partman-basicfilesystems.templates:41001
+#: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
 msgstr "የMount ምርጫዎች የፋይል ስርዓቱን ባህሪዎች መቃኘት ይችላሉ።"
 
@@ -596,7 +617,7 @@ msgstr "የMount ምርጫዎች የፋይል ስርዓቱን ባህሪዎች �
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:42001
+#: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
 msgstr "noatime -  የinode access ጊዜዎችን በተነሳበት ጊዜ ሁሉ አያሻሻሽል"
 
@@ -605,16 +626,26 @@ msgstr "noatime -  የinode access ጊዜዎችን በተነሳበት ጊዜ ሁ
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:43001
-msgid "relatime - update inode access times relative to modify time"
-msgstr "relatime - update inode access times relative to modify time"
+#: ../partman-basicfilesystems.templates:45001
+#, fuzzy
+msgid "nodiratime - do not update directory inode access times"
+msgstr "noatime -  የinode access ጊዜዎችን በተነሳበት ጊዜ ሁሉ አያሻሻሽል"
 
 #. Type: text
 #. Description
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:44001
+#: ../partman-basicfilesystems.templates:46001
+msgid "relatime - update inode access times relative to modify time"
+msgstr ""
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
 msgstr "nodev - character ወይም block special devicesን አትደግፍ"
 
@@ -623,7 +654,7 @@ msgstr "nodev - character ወይም block special devicesን አትደግፍ"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:45001
+#: ../partman-basicfilesystems.templates:48001
 msgid "nosuid - ignore set-user-identifier or set-group-identifier bits"
 msgstr "nosuid - set-user-identifier ወይም set-group-identifier አትመልከት"
 
@@ -632,7 +663,7 @@ msgstr "nosuid - set-user-identifier ወይም set-group-identifier አትመል
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:46001
+#: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
 msgstr "noexec - ምንም አይነት የባይነሪ ማስኬድን አትፍቀድ"
 
@@ -641,7 +672,7 @@ msgstr "noexec - ምንም አይነት የባይነሪ ማስኬድን አት�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:47001
+#: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
 msgstr "ro - የፋይል ስርዓቱን ተነባቢ-ብቻ አድርገህ ጫን"
 
@@ -650,7 +681,7 @@ msgstr "ro - የፋይል ስርዓቱን ተነባቢ-ብቻ አድርገህ �
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:48001
+#: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
 msgstr "sync - ሁሉም የገቢ/ወጪ ተግባራት በጣምራነት ይከናወናሉ፡፡"
 
@@ -659,7 +690,7 @@ msgstr "sync - ሁሉም የገቢ/ወጪ ተግባራት በጣምራነት ይ
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:49001
+#: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
 msgstr "የተጠቃሚ ድርሻ - የተጠቃሚ ዲስክ ድርሻ መዝገብ ተግባራዊ ሆኗል፡፡"
 
@@ -668,7 +699,7 @@ msgstr "የተጠቃሚ ድርሻ - የተጠቃሚ ዲስክ ድርሻ መዝ�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:50001
+#: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
 msgstr "ግሩፕ-ኮታ - የግሩፕ ዲስክ ኮታ ተግባራዊ ሆኗል"
 
@@ -677,7 +708,7 @@ msgstr "ግሩፕ-ኮታ - የግሩፕ ዲስክ ኮታ ተግባራዊ ሆኗ�
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:51001
+#: ../partman-basicfilesystems.templates:54001
 msgid "user_xattr - support user extended attributes"
 msgstr "user_xattr - በተጠቃሚ የተሰየመ ባህሪን ደግፍ"
 
@@ -686,7 +717,7 @@ msgstr "user_xattr - በተጠቃሚ የተሰየመ ባህሪን ደግፍ"
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:52001
+#: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
 msgstr "ውጣ- ባለቤትንና ፈቃድን መቀየር የስህተት መልዕክት አይሰጥም"
 
@@ -695,16 +726,25 @@ msgstr "ውጣ- ባለቤትንና ፈቃድን መቀየር የስህተት መ
 #. :sl2:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:53001
+#: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
 msgstr "notail - በስርዓት ዛፍ ውስጥ ጥቅሎችን መስራትን ከልክል"
+
+#. Type: text
+#. Description
+#. :sl2:
+#. Note to translators: Please keep your translations of this string below
+#. a 65 columns limit (which means 65 characters in single-byte languages)
+#: ../partman-basicfilesystems.templates:57001
+msgid "discard - trim freed blocks from underlying block device"
+msgstr ""
 
 #. Type: text
 #. Description
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:54001
+#: ../partman-basicfilesystems.templates:58001
 msgid "acls - support POSIX.1e Access Control List"
 msgstr ""
 
@@ -713,6 +753,57 @@ msgstr ""
 #. :sl4:
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
-#: ../partman-basicfilesystems.templates:55001
+#: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
 msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid "Go back to the menu and correct this problem?"
+msgstr "ወደ ምናሌው ልመለስና ስህተቱ ይታረም?"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#, fuzzy
+msgid ""
+"Your boot partition has not been configured with the ext2 file system. This "
+"is needed by your machine in order to boot. Please go back and use the ext2 "
+"file system."
+msgstr ""
+"ማስነሻ ክፋይ በext2 ወይም ext3 ፋይል ስርዓት አልተስተካከለም፡፡ አስሊ መኪናዎ ለመነሳት ይህንን የፋይል ስርዓት "
+"ይፈልጋል፡፡ እባክዎ ወደኋላ ይመለሱና ext2 ወይም ext3 ን ይጠቀሙ፡፡"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:60001
+#: ../partman-basicfilesystems.templates:61001
+msgid ""
+"If you do not go back to the partitioning menu and correct this error, the "
+"partition will be used as is. This means that you may not be able to boot "
+"from your hard disk."
+msgstr "ወደ መክፈያው ምናሌ ተመልሰው ስህተቱን ካላረሙ ክፋዩ እንዳለ በጥቅም ላይ ይውላል፡፡"
+
+#. Type: boolean
+#. Description
+#. :sl5:
+#: ../partman-basicfilesystems.templates:61001
+#, fuzzy
+msgid ""
+"Your boot partition is not located on the first partition of your hard disk. "
+"This is needed by your machine in order to boot.  Please go back and use "
+"your first partition as a boot partition."
+msgstr ""
+"የማስነሻ ክፋዩ በመጀመሪያ በዲስክዎ ዋና ክፋይ ላይ አይደለም። አስሊዎ እንዲነሳ ይህን ማድረግ ያስፈልጋል። እባክዎ ወደ "
+"ኋላ ይመለሱና የመጀመሪያ ዋና ክፋይን አንደ ማስነሻ ክፋይ ይሰይሙ"

@@ -3,19 +3,30 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of Debian Installer templates to Brazilian Portuguese.
+# Translation of Debian Installer templates to Brazilian Portuguese.
 # This file is distributed under the same license as debian-installer.
 #
-# Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2010.
+# Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
+#   Free Software Foundation, Inc., 2000
+#   Juan Carlos Castro y Castro <jcastro@vialink.com.br>, 2000-2005.
+#   Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2006-2009.
+#   Lisiane Sztoltz <lisiane@conectiva.com.br>
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2008-01-26 07:32+0000\n"
-"PO-Revision-Date: 2010-07-12 04:52-0300\n"
+"Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
+"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"PO-Revision-Date: 2012-06-27 01:39-0300\n"
 "Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -141,7 +152,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-auto.templates:10001
 msgid "Unusable free space"
-msgstr "Espaço livre não utilizável"
+msgstr "Espaço livre não usável"
 
 #. Type: error
 #. Description
@@ -194,34 +205,15 @@ msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
 msgstr ""
-"Note que todos os dados no disco que você selecionou serão apagados, mas não "
-"antes que você tenha confirmado que você realmente deseja fazer as mudanças."
-
-#. Type: multiselect
-#. Description
-#. :sl1:
-#: ../partman-auto.templates:17001
-msgid "Select disk(s) to partition:"
-msgstr "Selecione o(s) disco(s) a ser(em) particionado(s):"
-
-#. Type: multiselect
-#. Description
-#. :sl1:
-#: ../partman-auto.templates:17001
-msgid ""
-"Note that all data on the disk(s) you select will be erased, but not before "
-"you have confirmed that you really want to make the changes."
-msgstr ""
-"Note que todos os dados no(s) disco(s) que você selecionou serão apagados, "
-"mas não antes que você tenha confirmado que você realmente deseja fazer as "
-"mudanças."
+"Note que todos os dados no disco que você selecionar serão apagados, mas não "
+"antes que você tenha confirmado que realmente deseja fazer as mudanças."
 
 #. Type: text
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #. This is a method for partioning - as in guided (automatic) versus manual
-#: ../partman-auto.templates:18001
+#: ../partman-auto.templates:17001
 msgid "Manual"
 msgstr "Manual"
 
@@ -229,7 +221,7 @@ msgstr "Manual"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:19001
+#: ../partman-auto.templates:18001
 msgid "Automatically partition the free space"
 msgstr "Particionar automaticamente o espaço livre"
 
@@ -237,7 +229,7 @@ msgstr "Particionar automaticamente o espaço livre"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:20001
+#: ../partman-auto.templates:19001
 msgid "All files in one partition (recommended for new users)"
 msgstr "Todos os arquivos em uma partição (para iniciantes)"
 
@@ -245,7 +237,7 @@ msgstr "Todos os arquivos em uma partição (para iniciantes)"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:21001
+#: ../partman-auto.templates:20001
 msgid "Separate /home partition"
 msgstr "Partição /home separada"
 
@@ -253,7 +245,7 @@ msgstr "Partição /home separada"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:22001
+#: ../partman-auto.templates:21001
 msgid "Separate /home, /usr, /var, and /tmp partitions"
 msgstr "Partições /home, /usr, /var e /tmp separadas"
 
@@ -261,25 +253,31 @@ msgstr "Partições /home, /usr, /var e /tmp separadas"
 #. Description
 #. :sl2:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:23001
+#: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Esquema de particionamento para disco pequeno (< 1GB)"
 
 #. Type: text
 #. Description
-#: ../partman-auto.templates:167
+#: ../partman-auto.templates:24001
 msgid "Guided - resize ${PARTITION} and use freed space"
 msgstr "Guiado - redimensionar ${PARTITION} e utilizar o espaço liberado"
 
+#. Type: text
+#. Description
+#: ../partman-auto.templates:25001
+msgid "Guided - use entire partition, ${PARTITION}"
+msgstr "Assistido - usa toda a partição,  ${PARTITION}"
+
 #. Type: error
 #. Description
-#: ../partman-auto.templates:171
+#: ../partman-auto.templates:26001
 msgid "Failed to create enough space for installation"
 msgstr "Falhou em criar espaço suficiente para a instalação"
 
 #. Type: error
 #. Description
-#: ../partman-auto.templates:171
+#: ../partman-auto.templates:26001
 msgid ""
 "The resize operation did not create enough free space for the installation. "
 "Resizing may have failed. You will have to set up partitions manually."
@@ -287,3 +285,6 @@ msgstr ""
 "A operação de redimensionamento não criou espaço livre suficiente para a "
 "instalação. O redimensionamento deve ter falhado. Você terá que definir as "
 "partições manualmente."
+
+#~ msgid "Separate /home, /var, and /tmp partitions"
+#~ msgstr "Partições /home, /var e /tmp separadas"

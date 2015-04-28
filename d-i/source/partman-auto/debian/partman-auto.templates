@@ -122,14 +122,6 @@ _Description: Select disk to partition:
  Note that all data on the disk you select will be erased, but not before
  you have confirmed that you really want to make the changes.
 
-Template: partman-auto/select_disks
-Type: multiselect
-Choices: ${CHOICES}
-# :sl1:
-_Description: Select disk(s) to partition:
- Note that all data on the disk(s) you select will be erased, but not before
- you have confirmed that you really want to make the changes.
-
 Template: partman-auto/text/custom_partitioning
 Type: text
 # :sl1:
@@ -159,7 +151,7 @@ Template: partman-auto/text/multi_scheme
 Type: text
 # :sl1:
 # TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-_Description: Separate /home, /usr, /var, and /tmp partitions
+_Description: Separate /home, /var, and /tmp partitions
 
 Template: partman-auto/text/small_disk
 Type: text

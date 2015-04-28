@@ -8,7 +8,7 @@ export LVM_SUPPRESS_FD_WARNINGS=1
 db_register partman-lvm/confirm partman-lvm/confirm_nooverwrite
 
 # Load modules and scan volume groups if it was not done before
-if [ ! -f /var/cache/partman-lvm/first ]; then
+if [ ! -f /var/lib/partman/lvm ] && [ "$(udpkg --print-os)" = linux ] ; then
 	# load required kernel modules
 	depmod -a >/dev/null 2>&1
 	modprobe dm-mod >/dev/null 2>&1
@@ -28,5 +28,5 @@ if [ ! -f /var/cache/partman-lvm/first ]; then
 	# activate volume groups
 	log-output -t partman-lvm vgchange -a y
 
-	mkdir -p /var/cache/partman-lvm && touch /var/cache/partman-lvm/first
+	touch /var/lib/partman/lvm
 fi
