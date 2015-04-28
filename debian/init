@@ -40,11 +40,10 @@ case "$1" in
   start)
         grep -qs di-live /proc/cmdline || exit 0
         which openvt >/dev/null || exit 0
-        dpkg -s console-tools >/dev/null 2>&1 && OPENVT_EXTRA_OPTS="-b"
 
         log_begin_msg "Starting $NAME"
         setterm -blank 0
-        FGVT=$(fgconsole) openvt -c 8 -s -w $OPENVT_EXTRA_OPTS -- di-live
+        FGVT=$(fgconsole) openvt -c 8 -s -w -- di-live
         log_action_end_msg $?
         ;;
 
