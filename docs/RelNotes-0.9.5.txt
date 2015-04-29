@@ -1,0 +1,17 @@
+====================
+v0.9.5 Release Notes
+====================
+
+- upgraded d-i/source/part* from ubiquity 2.21.25
+
+- re-applied bugfixes and patches to updated code:
+
+    - guided partitioning loops endlessly
+    - partman di-live templates
+    - removed partman early_command
+    - removed partman alignment tags
+
+- updated build dependencies
+- replaced dependency on console-tools|console-utilities with kbd
+- removed partman-auto/select_disks from template reset
+
