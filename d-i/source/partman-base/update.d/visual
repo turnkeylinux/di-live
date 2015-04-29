@@ -17,5 +17,5 @@ mkdir -p $id
 for v in /lib/partman/visual.d/*; do
 	[ -x "$v" ] || continue
 	$v $dev $num $id $size $type $fs $path $name
-	printf '${!TAB}'
+	printf ' '
 done >$id/view
