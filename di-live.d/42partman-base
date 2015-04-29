@@ -25,7 +25,6 @@ def main():
     templates = ['partman-auto/init_automatically_partition',
                  'partman-auto/automatically_partition',
                  'partman-auto/select_disk',
-                 'partman-auto/select_disks',
                  'partman-auto/text/use_device',
                  'partman-auto/text/resize_use_free',
                  'partman-auto/text/custom_partitioning',
