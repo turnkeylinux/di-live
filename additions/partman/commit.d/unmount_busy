@@ -15,11 +15,6 @@
 
 . /lib/partman/lib/base.sh
 
-db_get ubiquity/partman-skip-unmount
-if [ "$RET" = true ]; then
-    exit 0
-fi
-
 if [ -f /etc/mtab ]; then
     MTAB=/etc/mtab
 else
@@ -108,11 +103,11 @@ while :; do
 	break
     fi
 
-    db_reset ubiquity/partman-failed-unmount
-    db_subst ubiquity/partman-failed-unmount MOUNTED "$failed_mountpoints"
-    db_input critical ubiquity/partman-failed-unmount || $noninteractive
+    db_reset di-live/partman-failed-unmount
+    db_subst di-live/partman-failed-unmount MOUNTED "$failed_mountpoints"
+    db_input critical di-live/partman-failed-unmount || $noninteractive
     db_go || exit 1
-    db_get ubiquity/partman-failed-unmount
+    db_get di-live/partman-failed-unmount
     [ "$RET" = true ] || exit 1
     noninteractive='exit 1'
 done
