@@ -39,11 +39,11 @@ cache_path() {
 case "$1" in
   start)
         grep -qs di-live /proc/cmdline || exit 0
-        which openvt >/dev/null || exit 0
 
         log_begin_msg "Starting $NAME"
-        setterm -blank 0
-        FGVT=$(fgconsole) openvt -c 8 -s -w -- di-live
+        FGCONSOLE=$(fgconsole)
+        FGVT=$FGCONSOLE openvt -f -c 8 -s -w -- di-live
+        chvt $FGCONSOLE
         log_action_end_msg $?
         ;;
 

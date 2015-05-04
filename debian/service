@@ -1,0 +1,17 @@
+[Unit]
+Description=di-live: TurnKey Linux installer
+After=getty@tty8.service
+ConditionKernelCommandLine=di-live
+
+[Service]
+Type=forked
+StandardInput=tty
+TTYPath=/dev/tty8
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+ExecStart=/etc/init.d/di-live start
+ExecStop=/etc/init.d/di-live stop
+
+[Install]
+WantedBy=basic.target
