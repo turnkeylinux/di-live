@@ -15,7 +15,10 @@ def deep_umount(target):
 
     paths.sort(reverse=True)
     for path in paths:
-        system("umount -f %s" % path)
+        try:
+            system("umount -f %s" % path)
+        except:
+            pass
 
 def reboot():
     template = 'di-live/reboot_now'
