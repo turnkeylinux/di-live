@@ -45,3 +45,5 @@ d-i/source/live-installer/live-installer lib/live-installer
 # base-installer
 d-i/source/base-installer/library.sh usr/lib/base-installer
 
+# CD ejecting script
+system-shutdown/eject /lib/systemd/system-shutdown/eject

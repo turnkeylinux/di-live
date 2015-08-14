@@ -1,0 +1,14 @@
+#!/bin/sh
+
+EJECT_FLAG=/tmp/.di-live-finalize
+[ -e $EJECT_FLAG ] || exit 0
+
+chvt 8
+
+MSG="Please remove the disc (if any) within 10 seconds."
+echo $MSG > /dev/tty8
+
+eject -pm /mnt/cdrom
+
+sleep 10
+
