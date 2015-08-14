@@ -635,6 +635,11 @@ if [ "$frdev" ] && [ "$frtype" != "sataraid" ]; then
 	fi
 fi
 
+# Workaround for Debian #782998
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=782998
+
+rm /dev/disk/by-id/lvm-pv-*
+
 # Try to avoid using (hd0) as a boot device name.  Something which can be
 # turned into a stable by-id name is better.
 default_bootdev_os="$($chroot $ROOT grub-mkdevicemap --no-floppy -m - | head -n1 | cut -f2)"
