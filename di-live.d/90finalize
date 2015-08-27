@@ -37,7 +37,7 @@ def reboot():
         cmd.append("chvt %s" % fgvt)
 
     if db.getBoolean(template):
-        cmd.append("shutdown -r now")
+        cmd.append("systemctl reboot")
 
     if cmd:
         system("; ".join(cmd))
