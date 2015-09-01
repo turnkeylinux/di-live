@@ -638,7 +638,7 @@ fi
 # Workaround for Debian #782998
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=782998
 
-rm /dev/disk/by-id/lvm-pv-*
+rm -f /dev/disk/by-id/lvm-pv-*
 
 # Try to avoid using (hd0) as a boot device name.  Something which can be
 # turned into a stable by-id name is better.
