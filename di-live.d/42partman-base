@@ -37,7 +37,7 @@ def main():
                  'partman-partitioning/new_partition_size',
                  'partman-partitioning/new_partition_type',
                  'partman-partitioning/new_partition_place',
-                 'partman/choose_partition',
+                 #'partman/choose_partition',
                  'partman/confirm',
                  'partman/free_space',
                  'partman/active_partition',
@@ -49,7 +49,7 @@ def main():
                 ('partman-auto-lvm/guided_size', '90%')]
 
     # hack: if not seen the default value will be max size
-    seen = [('partman-auto-lvm/guided_size', True)]
+    seen = [('partman-auto-lvm/guided_size', true)]
 
     # kill and cleanup after 'old' parted_server
     kill_server('/var/run/parted_server.pid')
