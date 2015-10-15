@@ -3,6 +3,7 @@
 
 import os
 import debconf
+import shutil
 
 from common import system
 
@@ -26,10 +27,14 @@ def reboot():
     debconf.runFrontEnd()
     db = debconf.Debconf()
 
-    db.capb('backup')
-    db.reset(template)
-    db.input(debconf.HIGH, template)
-    db.go()
+    try:
+        db.capb('backup')
+        db.input(debconf.HIGH, template)
+        db.go()
+    except debconf.DebconfError as exc:
+        status, msg = exc
+        if status != 30:
+            raise
 
     cmd = []
     fgvt = os.environ.get("FGVT")
@@ -38,6 +43,8 @@ def reboot():
 
     if db.getBoolean(template):
         cmd.append("systemctl reboot")
+
+    db.reset(template)
 
     if cmd:
         system("; ".join(cmd))
