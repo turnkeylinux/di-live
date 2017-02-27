@@ -7,6 +7,7 @@ partman-auto/text/atomic_scheme ::
 
 128 512 256 ext2
 	$defaultignore{ }
+	$lvmok{ }
 	method{ format }
 	format{ }
 	use_filesystem{ }
