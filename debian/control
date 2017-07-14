@@ -14,7 +14,7 @@ Build-Depends:
  libparted-dev (>= 2.2),
  pkg-config,
  po-debconf (>= 1.0),
-Standards-Version: 3.6.1
+Standards-Version: 4.0.0
 
 Package: di-live
 Architecture: any
