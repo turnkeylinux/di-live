@@ -32,5 +32,4 @@ Recommends:
  kbd,
  lvm2,
  whiptail,
-Section: admin
 Description: Debian Installer for Live systems
