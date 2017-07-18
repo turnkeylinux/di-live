@@ -1,39 +1,25 @@
 #! /usr/bin/make -f
 
-bootloader-depends := grub-pc
+BOOTLOADER_DEPENDS := grub-pc
 
-clean:
-	dh_clean
-	$(MAKE) -C d-i clean
+%:
+	dh $@
 
-build:
-	dh_testdir
+override_dh_auto_build:
 	$(MAKE) -C d-i build
 
-install: 
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-
-binary-indep: install
-	dh_testdir
-	dh_testroot
+override_dh_auto_install:
 	$(MAKE) -C d-i install
 	cat d-i/templates >> debian/templates
+
+override_dh_link:
 	dh_link usr/lib/di-live/di-live.py usr/bin/di-live
-	dh_install
-	dh_systemd_enable
+
+override_dh_installinit:
 	dh_installinit -r --no-start -- start 99 S . start 89 0 6 .
+
+override_dh_installdocs:
 	dh_installdocs docs/
-	dh_installdebconf
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol -- -V'bootloader-depends=$(bootloader-depends)'
-	dh_md5sums 
-	dh_builddeb
 
-binary-arch: install
-
-binary: binary-indep binary-arch
-.PHONY: clean binary-indep binary-arch binary install
-
+override_dh_gencontrol:
+	dh_gencontrol -- -V'bootloader-depends=$(BOOTLOADER_DEPENDS)'
