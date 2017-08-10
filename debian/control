@@ -3,6 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Alon Swartz <alon@turnkeylinux.org>
 Build-Depends:
+ cdbs,
  debconf (>= 0.5.0),
  debhelper (>= 10),
  dh-autoreconf,
