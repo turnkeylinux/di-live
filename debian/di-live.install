@@ -1,38 +1,52 @@
-# base-installer
-# compat
-# debian-installer-utils
+### !IMPORTANT! DO NOT change the order of this file!    ###
+### =================================================    ###
+### the layout and order of this file is important - see ###
+### https://github.com/turnkeylinux/tracker/issues/1042  ###
+
 # di-live
-# grub-installer
-# hw-detect
-# live-installer
-# partconf
-# partman
-additions/partman/check.d/* lib/partman/check.d
-additions/partman/commit.d/* lib/partman/commit.d
+di-live.py /usr/lib/di-live
+di-live.d /usr/lib
+
+# compat
 compat/anna-install usr/lib/di-live/compat
 compat/apt-install usr/lib/di-live/compat
 compat/udpkg usr/lib/di-live/compat
-d-i/source/base-installer/library.sh usr/lib/base-installer
+
+# debian-installer-utils
 d-i/source/debian-installer-utils/block-attr bin
 d-i/source/debian-installer-utils/debconf-get bin
 d-i/source/debian-installer-utils/debian/di-utils/bin/list-devices bin
 d-i/source/debian-installer-utils/log-output bin
 d-i/source/debian-installer-utils/mapdevfs bin
-d-i/source/debian-installer-utils/post-base-installer.d usr/lib/di-live/debian-installer-utils
 d-i/source/debian-installer-utils/register-module bin
+d-i/source/debian-installer-utils/post-base-installer.d usr/lib/di-live/debian-installer-utils
 d-i/source/debian-installer-utils/search-path bin
 d-i/source/debian-installer-utils/update-dev bin
 d-i/source/debian-installer-utils/user-params bin
+
+# grub-installer
 d-i/source/grub-installer/functions.sh usr/share/grub-installer
 d-i/source/grub-installer/grub-installer usr/share/grub-installer
 d-i/source/grub-installer/otheros.sh usr/share/grub-installer
+
+# hw-detect
 d-i/source/hw-detect/archdetect bin
 d-i/source/hw-detect/debian/hw-detect/bin/hw-detect bin
 d-i/source/hw-detect/debian/hw-detect/bin/sysfs-update-devnames bin
-d-i/source/live-installer/live-installer lib/live-installer
+
+# partman
+d-i/source/partman-*/debian/partman-*/* .
+additions/partman/check.d/* lib/partman/check.d
+additions/partman/commit.d/* lib/partman/commit.d
+
+# partconf
+d-i/source/partconf/debian/partconf-*/* .
+
+# live-installer
 d-i/source/live-installer/src/print-inodes bin
 d-i/source/live-installer/support/rofs lib/live-installer/support
-d-i/source/partconf/debian/partconf-*/* .
-d-i/source/partman-*/debian/partman-*/* .
-di-live.d /usr/lib
-di-live.py /usr/lib/di-live
+d-i/source/live-installer/live-installer lib/live-installer
+
+# base-installer
+d-i/source/base-installer/library.sh usr/lib/base-installer
+
