@@ -21,8 +21,10 @@ class TargetMounts:
             system("mount -o bind /proc %s" % self.targetproc)
 
     def umount(self):
-        system("umount -f %s" % self.targetdev)
-        system("umount -f %s" % self.targetproc)
+        if is_mounted(self.targetdev):
+            system("umount -f %s" % self.targetdev)
+        if is_mounted(self.targetproc):
+            system("umount -f %s" % self.targetproc)
 
     def __del__(self):
         self.umount()
