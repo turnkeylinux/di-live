@@ -1,0 +1,11 @@
+locfg.pl
+
+*.debhelper*
+*.substvars
+files
+file-preseed
+env-preseed
+preseed-common
+initrd-preseed
+network-preseed
+

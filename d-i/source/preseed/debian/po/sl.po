@@ -1,0 +1,199 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# translation of sl.po to Slovenian
+#
+#
+# Slovenian messages for debian-installer.
+# Copyright (C) 2003 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Jure Čuhalev <gandalf@owca.info>, 2005.
+# Jure Cuhalev <gandalf@owca.info>, 2006.
+# Matej Kovačič <matej.kovacic@owca.info>, 2006.
+# Jožko Škrablin <jozko.skrablni@gmail.com>, 2006.
+# Vanja Cvelbar <cvelbar@gmail.com>, 2008
+# Vanja Cvelbar <cvelbar@gmail.com>, 2009, 2010.
+#
+# Translations from iso-codes:
+#   Tobias Toedter <t.toedter@gmx.net>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Primož Peterlin <primozz.peterlin@gmail.com>, 2005, 2007, 2008, 2009, 2010.
+# Copyright (C) 2000, 2002, 2003, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
+# Alastair McKinstry <mckinstry@computer.org>, 2002.
+# Translations from KDE:
+# Roman Maurer <roman.maurer@amis.net>, 2002.
+# Primož Peterlin <primozz.peterlin@gmail.com>, 2003, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
+#
+# Andraz Tori <andraz.tori1@@guest.arnes.si> 2000.
+# Alastair McKinstry, <mckinstry@@computer.org>, 2001.
+msgid ""
+msgstr ""
+"Project-Id-Version: sl\n"
+"Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
+"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"PO-Revision-Date: 2017-10-13 10:42+0100\n"
+"Last-Translator: Vanja Cvelbar <cvelbar@gmail.com>\n"
+"Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+#. Type: error
+#. Description
+#. Translators : DO NOT TRANSLATE variable names : ALGORITHM, LOCATION
+#. and CHECKSUM
+#. :sl2:
+#: ../preseed-common.templates:1001
+msgid "Checksum error"
+msgstr "Napaka pri nadzorni vsoti"
+
+#. Type: error
+#. Description
+#. Translators : DO NOT TRANSLATE variable names : ALGORITHM, LOCATION
+#. and CHECKSUM
+#. :sl2:
+#: ../preseed-common.templates:1001
+msgid ""
+"The ${ALGORITHM} checksum of the file retrieved from <${LOCATION}> fails to "
+"match the expected value of \"${CHECKSUM}\".  The file may be corrupt, or "
+"the provided checksums may be out of date."
+msgstr ""
+"Nadzorna vsota ${ALGORITHM} datoteke iz <${LOCATION}> ne odgovarja "
+"pričakovani vrednosti \"${CHECKSUM}\".  Datoteka je lahko pokvarjena ali pa "
+"nadzorna vsota ni posodobljena."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:2001
+msgid "Failed to retrieve the preconfiguration file"
+msgstr "Prenos prednastavljene datoteke ni uspel"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:2001
+msgid ""
+"The file needed for preconfiguration could not be retrieved from "
+"${LOCATION}. The installation will proceed in non-automated mode."
+msgstr ""
+"Datoteke, potrebne za prednastavitev, ni mogoče prenesti iz ${LOCATION}. "
+"Namestitev se bo nadaljevala v ne-samodejnem načinu."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:3001
+msgid "Failed to process the preconfiguration file"
+msgstr "Nalaganje prednastavljene konfiguracijske datoteke ni uspelo"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:3001
+msgid ""
+"The installer failed to process the preconfiguration file from ${LOCATION}. "
+"The file may be corrupt."
+msgstr ""
+"Namestitveni program ni uspel naložiti prednastavitvene konfiguracijske "
+"datoteke iz ${LOCATION}. Datoteka je morda pokvarjena."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:12001
+msgid "Failed to run preseeded command"
+msgstr "Zagon predpripravljenega ukaza ni uspel"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:12001
+msgid ""
+"Execution of preseeded command \"${COMMAND}\" failed with exit code ${CODE}."
+msgstr ""
+"Izvajanje predpripravljenega ukaza \"${COMMAND}\" ni uspelo, koda napake je "
+"${CODE}."
+
+#. Type: text
+#. Description
+#. Main menu item
+#: ../network-preseed.templates:1001
+msgid "Download debconf preconfiguration file"
+msgstr "Prenos prednastavljene konfiguracijske datoteko debconf"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid "Location of initial preconfiguration file:"
+msgstr "Mesto prednastavljene konfiguracijske datoteke:"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"In order to perform an automated install, you need to supply a "
+"preconfiguration file (which can in turn pull in other files). To do that, "
+"you need to provide a (perhaps partial) URL."
+msgstr ""
+"Za avtomatsko namestitev potrebujete prednastavljeno konfiguracijsko "
+"datoteko (ta lahko potem naloži druge datoteke). Za to morate nuditi "
+"(verjetno delni) URL."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"This can be as simple as the machine name where your preseed files reside up "
+"to a full URL. Any of these could be made to work:\n"
+"  intra\t\t[for example.com, these three are equivalent]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
+msgstr ""
+"To je lahko enostavno ime stroja kjer so vaše prednastavljene "
+"konfiguracijske datoteke ali pa celoten naslov URL. Vsak od teh lahko "
+"deluje:\n"
+"  intra\t\t[za example.com, so ti trije enakovredni]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"For fully automated installs, preseed/url should itself be preseeded (via "
+"kernel command line, DHCP, or syslinux.cfg on customised media)"
+msgstr ""
+"Za popolnoma avtomatsko nastavitev mora biti že sama prednastavljene "
+"konfiguracijska datoteka/url prednastavljena (z ukazne vrstice jedra, DHCP "
+"ali v datoteki syslinux.cfg na prilagojenem mediju)"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid "See http://wiki.debian.org/DebianInstaller/Preseed for inspiration."
+msgstr "Za navdih si oglejte http://wiki.debian.org/DebianInstaller/Preseed."
+
+#. Type: text
+#. Description
+#. Main menu item
+#: ../file-preseed.templates:1001
+msgid "Load debconf preconfiguration file"
+msgstr "Naloži prednastavljeno konfiguracijsko datoteko debconf"
