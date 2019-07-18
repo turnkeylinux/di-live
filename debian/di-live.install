@@ -7,11 +7,13 @@
 # live-installer
 # partconf
 # partman
+# preseed
 additions/partman/check.d/* lib/partman/check.d
 additions/partman/commit.d/* lib/partman/commit.d
 compat/anna-install usr/lib/di-live/compat
 compat/apt-install usr/lib/di-live/compat
 compat/udpkg usr/lib/di-live/compat
+d-i/source/preseed/preseed_command bin
 d-i/source/base-installer/library.sh usr/lib/base-installer
 d-i/source/debian-installer-utils/block-attr bin
 d-i/source/debian-installer-utils/debconf-get bin
