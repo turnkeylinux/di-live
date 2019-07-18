@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 """
@@ -27,7 +27,8 @@ from os.path import *
 
 LOGFILE = '/var/log/di-live.log'
 def log(s):
-    file(LOGFILE, 'a').write(s + "\n")
+    with open(LOGFILE, 'a') as fob:
+        fob.write(s + "\n")
 
 class Error(Exception):
     pass
@@ -90,8 +91,8 @@ class Menu:
             try:
                 template = 'debian-installer/%s/title' % name
                 title = self.db.metaget(template, 'description')
-            except debconf.DebconfError, e:
-                if not e[0] == 10:
+            except debconf.DebconfError as e:
+                if not e.args[0] == 10:
                     raise Error('DebconfError', e)
 
             titles.append(title)
@@ -102,13 +103,13 @@ class Menu:
         self.db.input(self.priority, self.template)
         try:
             self.db.go()
-        except debconf.DebconfError, e:
-            if not e[0] == 30 and not e[1] == "backup":
+        except debconf.DebconfError as e:
+            if not e.args[0] == 30 and not e.args[1] == "backup":
                 raise Error('debconf error', e)
 
     def get_choice(self):
         ret = self.db.get(self.template)
-        if self.choices.has_key(ret):
+        if ret in self.choices:
             return self.choices[ret]
         return ret
 
@@ -143,14 +144,14 @@ class Components(dict):
 
     def __iter__(self):
         """return component in alpha-numeric ordering according to name"""
-        keys = self.keys()
+        keys = list(self.keys())
         keys.sort()
         for key in keys:
             yield self[key]
 
     @staticmethod
     def _is_executable(path):
-        if os.stat(path).st_mode & 0111 == 0:
+        if os.stat(path).st_mode & 0o111 == 0:
             return False
         return True
 
@@ -204,15 +205,15 @@ class Components_Menu:
 
 def usage(s=None):
     if s:
-        print >> sys.stderr, "Error:", s 
-    print >> sys.stderr, "Syntax: %s [options]" % sys.argv[0]
-    print >> sys.stderr, __doc__
+        print("Error:", s, file=sys.stderr)
+    print("Syntax: %s [options]" % sys.argv[0], file=sys.stderr)
+    print(__doc__, file=sys.stderr)
     sys.exit(1)
 
 def main():
     try:
         opts, args = getopt.gnu_getopt(sys.argv[1:], "hd", ['help', 'debug'])
-    except getopt.GetoptError, e:
+    except getopt.GetoptError as e:
         usage(e)
 
     debug = False

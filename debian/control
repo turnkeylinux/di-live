@@ -21,10 +21,11 @@ Package: di-live
 Architecture: any
 Depends:
  debconf,
+ python3-debconf,
  grub-pc,
  libdebconfclient0,
  os-prober,
- python (>= 2.4),
+ python3 (>= 3.5),
  ${misc:Depends},
  ${shlibs:Depends},
 Recommends:

@@ -3,13 +3,29 @@
 import os
 import sys
 import debconf
-import commands
 
-mkarg = commands.mkarg
+def _mkarg(self, string):
+    """
+    Converts string to a shell command argument
+
+    Note:
+        Removed from python commands library, implementation found at
+        https://hg.python.org/cpython/file/67318d3fa6dc/Lib/commands.py
+    """
+    if '\'' not in x:
+       return ' \'' + x + '\''
+    s = ' "'
+    for c in x:
+        if c in '\\$"`':
+            s = s + '\\'
+        s = s + c
+    s = s + '"'
+    return s
 
 LOGFILE = '/var/log/di-live.log'
 def log(s):
-    file(LOGFILE, 'a').write(s + "\n")
+    with open(LOGFILE, 'a') as fob:
+        fob.write(s + "\n")
 
 class Chroot:
     def __init__(self, newroot, environ={}):
@@ -22,7 +38,7 @@ class Chroot:
 
     def _prepare_command(self, *command):
         env = ['env', '-i' ] + [ name + "=" + val
-                                 for name, val in self.environ.items() ]
+                                 for name, val in list(self.environ.items()) ]
 
         command = fmt_command(*command)
         return ("chroot", self.path, 'sh', '-c', " ".join(env) + " " + command)
@@ -46,7 +62,7 @@ class Debconf:
         self.db.input(debconf.HIGH, template)
         try:
             self.db.go()
-        except debconf.DebconfError, e:
+        except debconf.DebconfError as e:
             self.db.stop()
             sys.exit(e[0])
 
@@ -92,7 +108,7 @@ def prepend_path(path):
     os.environ['PATH'] = path + ":" + os.environ.get('PATH')
 
 def fmt_command(command, *args):
-    return command + " ".join([mkarg(arg) for arg in args])
+    return command + " ".join([_mkarg(arg) for arg in args])
 
 def system(command, *args):
     """Executes <command> with <*args> -> None
@@ -116,7 +132,7 @@ def dilive_system(command, *args):
     prepend_path('/usr/lib/di-live/compat')
     try:
         system(command, *args)
-    except ExecError, e:
+    except ExecError as e:
         log(str(e))
         sys.exit(e.exitcode)
 
@@ -137,10 +153,11 @@ def preset_debconf(resets=None, preseeds=None, seen=None):
             db.fset(template, 'seen', value)
 
 def is_mounted(dir):
-    mounts = file("/proc/mounts").read()
-    if mounts.find(dir) != -1:
-        return True
-    return False
+    with open("/proc/mounts", 'r') as fob:
+        mounts = fob.read()
+        if mounts.find(dir) != -1:
+            return True
+        return False
 
 def target_mounted(target='/target'):
     if not os.path.exists(target) or not is_mounted(target):

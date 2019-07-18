@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 import os
@@ -8,10 +8,11 @@ from common import system
 
 def deep_umount(target):
     paths = []
-    for mount in file("/proc/mounts", 'r').readlines():
-        path = mount.split()[1]
-        if path.startswith(target):
-            paths.append(path)
+    with open("/proc/mounts", 'r') as fob:
+        for mount in fob.readlines():
+            path = mount.split()[1]
+            if path.startswith(target):
+                paths.append(path)
 
     paths.sort(reverse=True)
     for path in paths:
@@ -44,7 +45,8 @@ def reboot():
 
 def main():
     deep_umount('/target')
-    file('/tmp/.di-live-finalize', 'w').write('')
+    with open('/tmp/.di-live-finalize', 'w') as fob:
+        fob.write('')
     reboot()
 
 
