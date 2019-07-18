@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PLACES="$PLACES /rofs"
+
+rofs_prepare() {
+	cd /rofs
+}
+
+rofs_count() {
+    echo `print-inodes /rofs`
+}

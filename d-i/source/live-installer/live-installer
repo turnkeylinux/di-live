@@ -1,0 +1,138 @@
+#! /bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+db_capb backup
+
+. /usr/lib/base-installer/library.sh
+
+NEWLINE="
+"
+
+db_input low live-installer/mode || true
+db_go || exit 10 # back to menu
+db_get live-installer/mode
+mode="$RET"
+
+install_live_system () {
+	# Look at
+	PLACES=""
+	PLACE_FOUND=0
+
+	# Load filesystem support
+	for script in $(ls /lib/live-installer/support/*); do
+		. $script
+	done
+
+	for place in $PLACES; do
+		[ ! -e $place ] && continue
+
+		SUPPORT=$(echo $place | sed 's,.*\.\(.*\)$,\1,g')
+		SUPPORT=$(basename $SUPPORT)
+		info "Using $SUPPORT support for $place"
+
+		PLACE_FOUND=1
+
+		eval ${SUPPORT}_prepare
+		STEPS=$(eval ${SUPPORT}_count)
+
+		db_progress INFO live-installer/progress/copying
+
+		COUNT=0
+		OLD_IFS=$IFS
+		mkdir -p /target
+
+        # backup fstab if it exists, to be restored after the copy
+        if [ -f /target/etc/fstab ] ; then
+            mv /target/etc/fstab /target/etc/fstab.orig
+            echo "# UNCONFIGURED FSTAB FOR BASE SYSTEM" > /target/etc/fstab
+        fi
+
+		# use tar from inside the live filesystem to create
+		# the tarball, because busybox tar in d-i does not 
+		# support creating tarballs.
+		# 
+		# The --exclude is a paranoia measure, in case this program
+		# is running from the toplevel of a live filesystem,
+		# which is not normally the case.
+		exec 4>&0
+		chroot . tar c . --exclude=target | \
+		(chdir /target && tar xv) | \
+		(
+			while read line; do
+				COUNT=$(($COUNT + 1))
+				CURRENT=$(($COUNT * 100 / $STEPS))
+
+				[ x$CURRENT = x$LAST_UPDATE ] && continue
+
+				LAST_UPDATE=$CURRENT
+				db_progress STEP 1 <&4
+			done
+		)
+		exec 0>&4
+		IFS=$OLD_IFS
+
+        if [ -e /target/etc/fstab.orig ] ; then
+            mv /target/etc/fstab.orig /target/etc/fstab
+        fi
+	done
+
+	if [ ${PLACE_FOUND} -eq 0 ]; then
+		error "Could not find any live images"
+		exit 1
+	fi
+
+	# if we're dumping it, we need to set boot=live
+	if [ "$mode" = live ]; then
+		# set the init script to use
+		if [ -d /cdrom/casper ]; then
+			db_set debian-installer/add-kernel-opts "boot=casper"
+		else
+			db_set debian-installer/add-kernel-opts "boot=live"
+		fi
+
+		# skip the hooks
+		return
+	fi
+
+	# run the scripts found in hook directory after copying the system
+	partsdir="/usr/lib/live-installer.d"
+	if [ -d "$partsdir" ]; then
+		for script in $(ls "$partsdir"/*); do
+			base=$(basename $script | sed 's/[0-9]*//')
+			if ! db_progress INFO live-installer/progress/$base; then
+				db_subst live-installer/progress/fallback SCRIPT "$base"
+				db_progress INFO live-installer/progress/fallback
+			fi
+
+			if [ -x "$script" ] ; then
+				# be careful to preserve exit code
+				if ! log-output -t live-installer chroot /target "$script"; then
+					warning "$script returned error code $?"
+				fi
+			else
+				error "Unable to execute $script"
+			fi
+		done
+	fi
+}
+
+if [ -e /lib/live-installer/waypoints ]; then
+    . /lib/live-installer/waypoints
+else
+    waypoint 1  check_target
+    waypoint 100    install_live_system
+fi
+
+run_waypoints live-installer/progress/installing
+
+# mount /dev and /proc on target otherwise grub-installer will fail
+if ! grep -q /target/dev /proc/mounts; then
+    mount -o bind /dev /target/dev
+fi
+
+if ! grep -q /target/proc /proc/mounts; then
+	mount -o bind /proc /target/proc
+fi
+
+exit 0
