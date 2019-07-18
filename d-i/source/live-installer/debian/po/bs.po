@@ -3,22 +3,24 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of bs.po to Bosnian
+# translation of debian-installer_packages_po_sublevel1_bs.po to Bosnian
 # Bosnian messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Safir Secerovic <sapphire@linux.org.ba>, 2006.
 #
+# Safir Secerovic <sapphire@linux.org.ba>, 2006.
+# Armin Besirovic <armin@linux.org.ba>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: bs\n"
+"Project-Id-Version: debian-installer_packages_po_sublevel1_bs\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2007-01-20 12:23+0100\n"
-"Last-Translator: Safir Secerovic <sapphire@linux.org.ba>\n"
+"PO-Revision-Date: 2010-07-27 18:25+0100\n"
+"Last-Translator: Armin Beširović <armin@linux.org.ba>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
+"Language: bs\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: 3\n"
 
@@ -26,25 +28,22 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../live-installer.templates:1001
-#, fuzzy
 msgid "Install the system"
-msgstr "Instaliraj osnovni sistem"
+msgstr "Instaliraj sistem"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:2001
-#, fuzzy
 msgid "Installing the system..."
-msgstr "Instaliram osnovni sistem"
+msgstr "Instaliram sistem..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:3001
-#, fuzzy
 msgid "Copying data to disk..."
-msgstr "Kopiram particiju..."
+msgstr "Kopiram podatke na disk..."
 
 #. Type: text
 #. Description
@@ -53,25 +52,22 @@ msgstr "Kopiram particiju..."
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "Spremam mrežne postavke ..."
+msgstr "Čistim mrežne postavke ..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "Spremam mrežne postavke ..."
+msgstr "Brišem pakete specifične za live sistem..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "Podešavam mrežu..."
+msgstr "Rekonfigurišem X.org..."
 
 #. Type: text
 #. Description
@@ -84,24 +80,22 @@ msgstr "Pokrećem ${SCRIPT}..."
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "formatiraj"
+msgstr "normalna"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "live"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "Odaberite instalacijski korak:"
+msgstr "Vrsta instalacije:"
 
 #. Type: select
 #. Description
@@ -111,6 +105,8 @@ msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
 msgstr ""
+"Live sistem možet biti instaliran na hard disk pomoću jedne od sljedećih "
+"opcija."
 
 #. Type: select
 #. Description
@@ -121,3 +117,6 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"Ako izaberete 'normalno', sistem će biti instaliran kao obični sistem. Ako "
+"izaberete 'live', instalirani sistem će nastaviti raditi kao live sistem ali "
+"će se moći pokrenuti direktno sa hard diska."

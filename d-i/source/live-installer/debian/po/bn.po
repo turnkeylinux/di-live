@@ -6,7 +6,6 @@
 # Bangla translation of Debian-Installer.
 # Copyright (C) 2005, 2006, Debian Foundation.
 # This file is distributed under the same license as the Debian-Installer package.
-#
 # Anubadok, the en2bn auto-translator by Golam Mortuza Hossain <golam@imsc.res.in>, 2005.
 # Baishampayan Ghose <b.ghose@gnu.org.in>, 2005-2006.
 # Quazi Ashfaq-ur Rahman <quazi.ashfaq@gmail.com>, 2005.
@@ -15,18 +14,23 @@
 # Jamil Ahmed <jamil@bengalinux.org>, 2006-2007.
 # Mahay Alam Khan (মাহে আলম খান) <makl10n@yahoo.com>, 2007.
 # Tisa Nafisa <tisa_nafisa@yahoo.com>, 2007.
+# Md. Rezwan Shahid <rezwan@ankur.org.bd>, 2009.
+# Sadia Afroz <sadia@ankur.org.bd>, 2010.
+# Israt Jahan <israt@ankur.org.bd>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2007-07-29 23:15+0600\n"
-"Last-Translator: Jamil Ahmed <jamil@bengalinux.org>\n"
-"Language-Team: Bangla <core@BengaLinux.Org>\n"
+"PO-Revision-Date: 2010-11-07 17:52+0600\n"
+"Last-Translator: Israt Jahan <israt@ankur.org.bd>\n"
+"Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
+"Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -56,25 +60,22 @@ msgstr "ডিস্কে ডাটা কপি করা হচ্ছে..."
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "নেটওয়ার্কের বৈশিষ্ট্য সংরক্ষণ করা হচ্ছে ..."
+msgstr "নেটওয়ার্কের সেটিংস পরিস্কার করা হচ্ছে ..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "নেটওয়ার্কের বৈশিষ্ট্য সংরক্ষণ করা হচ্ছে ..."
+msgstr "লাইভ সিস্টেম সংশ্লিষ্ট প্যাকেজসমূহ অপসারণ করা হচ্ছে ..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "নেটওয়ার্ক কনফিগার করা হচ্ছে..."
+msgstr "X.org পুনরায় কনফিগার করা হচ্ছে..."
 
 #. Type: text
 #. Description
@@ -87,24 +88,22 @@ msgstr "${SCRIPT} চলছে..."
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "ফরম্যাট করো"
+msgstr "সাধারণ"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "লাইভ"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "ইনস্টলেশনের কোন একটি ধাপ বেছে নিন:"
+msgstr "ইনস্টলেশনের ধরণ:"
 
 #. Type: select
 #. Description
@@ -113,8 +112,9 @@ msgstr "ইনস্টলেশনের কোন একটি ধাপ ব�
 msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
-msgstr ""
+msgstr "নিম্নোক্ত কোন একটি অপশন ব্যবহার করে হার্ডডিস্কে লাইভ সিস্টেম ইনস্টল করা যাব।"
 
+# need to cathc the lenny string freeze, Fixme - mak
 #. Type: select
 #. Description
 #. :sl3:
@@ -124,3 +124,6 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"আপনি যদি 'সাধারণ' (normal) পছন্দ করেন, তাহলে সাধারণ সিস্টেম ইনস্টল হবে। আর আপনি "
+"যদি 'লাইভ' পছন্দ করেন তাহলে ইনস্টলকৃত সিস্টেমটি একটি লাইভ সিস্টেম হিসাবে কাজ "
+"করবে, কিন্তু এটি পরে হার্ডডিস্ক হতে সরাসরি আরম্ভ করা যাবে।"

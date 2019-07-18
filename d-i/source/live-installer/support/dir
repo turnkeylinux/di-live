@@ -1,10 +1,16 @@
-#!/bin/sh
+#!/bin/sh -e
 
+# Debian (live-boot)
 PLACES="$PLACES /cdrom/live/filesystem.dir"
-PLACES="$PLACES /cdrom/casper/filesystem.dir" # Etch support
+# Ubuntu (casper)
+PLACES="$PLACES /cdrom/casper/filesystem.dir"
 
 dir_prepare() {
 	cd $place
+}
+
+dir_teardown() {
+	:
 }
 
 dir_count() {

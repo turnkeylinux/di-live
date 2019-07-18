@@ -3,45 +3,48 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of wo.po to Wolof
 #
+# Debian Installer master translation file template
+# Don't forget to properly fill-in the header of PO files
 #
-# Mouhamadou Mamoune Mbacke <mouhamadoumamoune@gmail.com>, 2005, 2006, 2007, 2008.
+# Debian Installer translators, please read the D-I i18n documentation
+# in doc/i18n/i18n.txt
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: wo\n"
+"Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2008-02-13 10:13+0100\n"
-"Last-Translator: Mouhamadou Mamoune Mbacke <mouhamadoumamoune@gmail.com>\n"
-"Language-Team: Wolof\n"
+"PO-Revision-Date: 2013-08-20 00:10+0500\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
+"Language: Tajik\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:1001
-#, fuzzy
 msgid "Install the system"
-msgstr "Istale sistem u baas bi"
+msgstr "Насб кардани система"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:2001
-#, fuzzy
 msgid "Installing the system..."
-msgstr "Mi ngi istale sistem u baas bi"
+msgstr "Система насб шуда истодааст..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:3001
-#, fuzzy
 msgid "Copying data to disk..."
-msgstr "Mi ngiy kopiye partisoŋ bi..."
+msgstr "Иттилоот ба диск нусхабардорӣ шуда истодааст..."
 
 #. Type: text
 #. Description
@@ -50,55 +53,50 @@ msgstr "Mi ngiy kopiye partisoŋ bi..."
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "mingi deenc parameetar yu resóo bi ..."
+msgstr "Поксозии танзимоти шабака..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "mingi deenc parameetar yu resóo bi ..."
+msgstr "Тозакунии қуттиҳои махсус аз системаи зинда..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "Mi ngi komfigure resóo bi..."
+msgstr "X.org аз нав танзим шуда истодааст..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:7001
 msgid "Running ${SCRIPT}..."
-msgstr "Mi ngi doxal ${SCRIPT}..."
+msgstr "Иҷрокунии ${SCRIPT}..."
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "formaate"
+msgstr "муқаррарӣ"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "зинда"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "Tannal ab etaap bu istalaasioŋ:"
+msgstr "Навъи насб:"
 
 #. Type: select
 #. Description
@@ -108,6 +106,8 @@ msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
 msgstr ""
+"Системаи зинда метавонад ба диски компютерӣ тавассути яке аз имконоти зерин "
+"насб карда шавад."
 
 #. Type: select
 #. Description
@@ -118,3 +118,7 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"Агар \"муқаррарӣ\"-ро интихоб кунед, система ба таври муқаррарӣ насб карда "
+"мешавад. Агар \"зинда\"-ро интихоб кунед, система ҳамчун системаи зинда амал "
+"мекунад, вале шумо метавонед онро дар оянда аз диски компютерӣ бевосита оғоз "
+"кунед."

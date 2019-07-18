@@ -1,9 +1,17 @@
 #!/bin/sh -e
 
+# Debian (live-boot)
 PLACES="$PLACES /cdrom/live/filesystem.squashfs"
-PLACES="$PLACES /cdrom/casper/filesystem.squashfs" # Etch support
+# Ubuntu (casper)
+PLACES="$PLACES /cdrom/casper/filesystem.squashfs"
 
 squashfs_prepare() {
+	ANNA_QUIET=1 anna-install squashfs-modules || true
+
+	if [ -x /sbin/depmod ]; then
+		depmod -a > /dev/null 2>&1 || true
+	fi
+
 	modprobe squashfs || true
 	modprobe loop || true
 
@@ -15,6 +23,10 @@ squashfs_prepare() {
 	fi
 
 	cd /mnt
+}
+
+squashfs_teardown() {
+	umount -d /mnt > /dev/null 2>&1 || true
 }
 
 squashfs_count() {

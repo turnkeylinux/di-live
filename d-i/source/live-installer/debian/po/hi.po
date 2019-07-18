@@ -3,23 +3,38 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of hi.po to Tamil
+# translation of debian-installer_packages_po_sublevel1_hi.po to Hindi
+# translation of debian-installer_packages_po_sublevel1_hi.po to
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
 #
 #
+#
+# Translations from iso-codes:
+#   Data taken from ICU-2.8; originally from:
+#   - Shehnaz Nagpurwala and Anwar Nagpurwala [first version]
+#   - IBM NLTC:  http://w3.torolab.ibm.com/gcoc/documents/india/hi-nlsgg.htm
+#   - Arundhati Bhowmick [IBM Cupertino]
+#
+#
 # Nishant Sharma <me@nishants.net>, 2005, 2006.
 # Kumar Appaiah <akumar@ee.iitm.ac.in>, 2008.
+# Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008, 2009, 2010.
+# Kumar Appaiah <kumar.appaiah@gmail.com>, 2009.
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+# Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008.
+# Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: hi\n"
+"Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2008-02-10 11:44+0530\n"
-"Last-Translator: Kumar Appaiah <akumar@ee.iitm.ac.in>\n"
-"Language-Team: Tamil\n"
+"PO-Revision-Date: 2011-09-17 09:17-0500\n"
+"Last-Translator: Kumar Appaiah\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,25 +68,22 @@ msgstr "डिस्क पर डेटा की नक़ल की जा �
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "नेटवर्क सेटिंग को सुरक्षित कर रहे है..."
+msgstr "नेटवर्क सेटिंग साफ किए जा रहे है..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "नेटवर्क सेटिंग को सुरक्षित कर रहे है..."
+msgstr "लाइव सिस्टम के विशेष पैकेजस निकाले जा रहे हैं..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "नेटवर्क कॉन्फ़िगर किया जा रहा है..."
+msgstr "एक्स डॉट ऑर्ग (X.Org) पुनः व्यवस्थित किया जा रहा है..."
 
 #. Type: text
 #. Description
@@ -84,24 +96,22 @@ msgstr "${SCRIPT} प्रक्रिया में है..."
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "फॉर्मेट"
+msgstr "साधारण"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "लाइव"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "संस्थापना का कोई चरण चुनें:"
+msgstr "संस्थापना का प्रकार:"
 
 #. Type: select
 #. Description
@@ -111,6 +121,7 @@ msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
 msgstr ""
+"लाइव सिस्टम का संस्थापन इनमें से किसी एक प्रकार से हार्ड डिस्क पर किया जा सकता है."
 
 #. Type: select
 #. Description
@@ -121,3 +132,6 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"अगर आप 'साधारण' चुनते हैं तो तंत्र नियत रूप ते स्थापित किया जाएगा. अगर आप लाइव चुनते हैं "
+"तो तंत्र लाइव सिस्टम के तौर पर जारी रहेगा, पर उसे हार्ड डिस्क से सीधा शुरू किया जा सकता "
+"है."

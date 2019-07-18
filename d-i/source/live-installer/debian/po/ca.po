@@ -4,19 +4,27 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Catalan messages for debian-installer.
-# Copyright 2002, 2003, 2004, 2005, 2006, 2007, 2008 Software in the Public Interest, Inc.
+# Copyright 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2012 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Jordi Mallach <jordi@debian.org>, 2002, 2003, 2004, 2006, 2007, 2008.
+# Jordi Mallach <jordi@debian.org>, 2002, 2003, 2004, 2006, 2007, 2008, 2010, 2012.
 # Guillem Jover <guillem@debian.org>, 2005, 2007.
 #
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@computer.org>, 2001.
+# Free Software Foundation, Inc., 2002,2004,2006
+# Orestes Mas i Casals <orestes@tsc.upc.es>, 2004-2006. (orestes: He usat la nomenclatura de http://www.traduim.com/)
+# Softcatalà <info@softcatala.org>, 2000-2001
+# Toni Hermoso Pulido <toniher@softcatala.cat>, 2010.
+# Traductor: Jordi Ferré <jordiferre@catalonia.altranet.fr>
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer etch\n"
+"Project-Id-Version: debian-installer wheezy\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2008-02-12 17:22+0100\n"
+"PO-Revision-Date: 2012-10-18 18:34+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,25 +57,22 @@ msgstr "S'estan copiant dades al disc..."
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "S'estan emmagatzemant els paràmetres de xarxa..."
+msgstr "S'estan netejant els paràmetres de xarxa..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "S'estan emmagatzemant els paràmetres de xarxa..."
+msgstr "S'estan suprimint els paquets específics del sistema autònom..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "S'està configurant la xarxa..."
+msgstr "S'està reconfigurant X.org..."
 
 #. Type: text
 #. Description
@@ -80,24 +85,22 @@ msgstr "S'està executant ${SCRIPT}..."
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "formata"
+msgstr "normal"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "autònoma"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "Seleccioneu un pas de la instal·lació:"
+msgstr "Tipus d'instal·lació:"
 
 #. Type: select
 #. Description
@@ -107,6 +110,8 @@ msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
 msgstr ""
+"El sistema autònom es pot instal·lar al disc dur emprant una de les següents "
+"opcions."
 
 #. Type: select
 #. Description
@@ -117,3 +122,6 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"Si seleccioneu «normal», el sistema s'instal·larà com un sistema normal. Si "
+"seleccioneu «autònoma», el sistema instal·lat continuarà comportant-se com "
+"un sistema autònom, però es podrà arrencar directament des del disc dur."
