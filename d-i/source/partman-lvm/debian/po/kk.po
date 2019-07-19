@@ -8,7 +8,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Talgat Daniyarov
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008-2011
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008-2017
 # Dauren Sarsenov <daur88@inbox.ru>, 2008, 2009
 #
 # Translations from iso-codes:
@@ -23,9 +23,9 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2011-09-21 14:41+0600\n"
+"PO-Revision-Date: 2018-12-02 20:16+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
-"Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language-Team: Kazakh\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -311,7 +311,7 @@ msgstr "Ағымдық LVM конфигурациясы:"
 #. :sl3:
 #: ../partman-lvm.templates:26001
 msgid "Devices for the new volume group:"
-msgstr "Томдар тобын жою кезінде қателік орын алды"
+msgstr "Жаңа томдар тобы үшін құрылғылар:"
 
 #. Type: multiselect
 #. Description
@@ -424,10 +424,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
-#, fuzzy
-#| msgid "Error while deleting volume group"
 msgid "Error while creating volume group"
-msgstr "Томдар тобын жою кезінде қате кетті"
+msgstr "Томдар тобын жасау кезінде қате кетті"
 
 #. Type: error
 #. Description
@@ -487,7 +485,7 @@ msgstr "Жойылатын томдар тобын таңдаңыз."
 #: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
 #: ../partman-lvm.templates:42001 ../partman-lvm.templates:47001
 msgid "No volume group found"
-msgstr "Ешбір томдар тобы табылған жоқ."
+msgstr "Ешбір томдар тобы табылмады"
 
 #. Type: error
 #. Description
@@ -508,7 +506,7 @@ msgstr "Ешбір тодар тобы табылған жоқ."
 #. :sl3:
 #: ../partman-lvm.templates:34001
 msgid "The volume group may have already been deleted."
-msgstr "Томдардың тобының мұндай атауы бар"
+msgstr "Томдардың тобы өшірілген болуы мүмкін."
 
 #. Type: boolean
 #. Description
@@ -956,7 +954,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:63001
 msgid "Unable to automatically remove LVM data"
-msgstr "LVM деректерін өздігінен жою мүмкін болмады."
+msgstr "LVM деректерін автожою мүмкін болмады"
 
 #. Type: error
 #. Description

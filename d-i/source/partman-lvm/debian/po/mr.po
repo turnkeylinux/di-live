@@ -22,11 +22,11 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2011-11-07 15:45+0530\n"
+"PO-Revision-Date: 2015-05-03 15:13+0530\n"
 "Last-Translator: sampada <sampadanakhare@gmail.com>\n"
 "Language-Team: Marathi, janabhaaratii, C-DAC, Mumbai, India "
 "<janabhaaratii@cdacmumbai.in>\n"
-"Language: \n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -422,10 +422,8 @@ msgstr "निवडलेले खंड गटाचे नाव अस्�
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
-#, fuzzy
-#| msgid "Error while deleting volume group"
 msgid "Error while creating volume group"
-msgstr "खंड गट काढून टाकताना त्रूटी"
+msgstr "खंड गट बनवताना त्रूटी"
 
 #. Type: error
 #. Description
