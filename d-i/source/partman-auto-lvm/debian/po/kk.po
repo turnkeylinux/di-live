@@ -8,17 +8,24 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Talgat Daniyarov
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008, 2009
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008-2017
 # Dauren Sarsenov <daur88@inbox.ru>, 2008, 2009
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Sairan Kikkarin <sairan@sci.kz>, 2006
+#   KDE Kazakh l10n team, 2006
+#   Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008, 2009, 2010
+#   Dauren Sarsenov <daur88@inbox.ru>, 2009
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2009-03-24 15:02+0600\n"
-"Last-Translator: Dauren Sarsenov <daur88@inbox.ru>\n"
-"Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2018-12-02 20:16+0500\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -164,7 +171,7 @@ msgstr "Жоқ физикалық том"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr "Томдар тобы өзінде жоқ физикалық томға сілтеме жасайды"
+msgstr "Томдар тобының сипаттамасы өзінде жоқ физикалық томға сілтеме жасайды."
 
 #. Type: error
 #. Description
@@ -249,9 +256,8 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
-"Кеңес: максималды өлшемді көрсету үшін \"max\" енгізуіңізге болады, сонымен "
-"қатар пайыз түрінде де беріге болады (мысалы, \"20%\"), ол кезде пайыздар "
-"максималды мүмкін өлшем шамасынан есептеледі."
+"Кеңес: максимал көлемді көрсету үшін \"max\" не пайыз (мысалы, \"20%\") "
+"енгізуіңізге болады. Пайыз максимал көлемнен есептеледі."
 
 #. Type: error
 #. Description

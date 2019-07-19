@@ -5,14 +5,26 @@
 #
 # Portuguese messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
+# Console-setup strings translations:
+# (identified by "./console-setup.templates")
+# Copyright (C) 2003-2016 Miguel Figueiredo <elmig@debianpt.org>
 # This file is distributed under the same license as debian-installer.
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Free Software Foundation, Inc., 2001,2004
+#   Filipe Maia <fmaia@gmx.net>, 2001.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2017
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-08-06 19:04+0100\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2017-10-26 18:39+0100\n"
 "Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team:  Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"

@@ -10,13 +10,21 @@
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
 # Contributor:
-# Kartik Mistry <kartik.mistry@gmail.com>, 2006-2007.
+# Kartik Mistry <kartik.mistry@gmail.com>, 2006-2013
 #
+#
+# Translations from iso-codes:
+#   - translations from ICU-3.0
+#
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Kartik Mistry <kartik.mistry@gmail.com>, 2006, 2007, 2008.
+#   Ankit Patel <ankit644@yahoo.com>, 2009,2010.
+#   Sweta Kothari <swkothar@redhat.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: d-i\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2008-08-07 11:42+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -224,11 +232,14 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
+#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"આ પાર્ટિશન માટે ન્યુનતમ માપ ${MINSIZE} (અથવા ${PERCENT}) છે અને તેનું મહત્તમ માપ "
+"${MAXSIZE} છે."
 
 #. Type: string
 #. Description
@@ -246,8 +257,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
+#, fuzzy
 msgid "Invalid input"
-msgstr ""
+msgstr "અયોગ્ય માપ"
 
 #. Type: error
 #. Description
@@ -276,8 +288,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
+#, fuzzy
 msgid "${SIZE} is too small"
-msgstr ""
+msgstr "EFI પાર્ટિશન બહુ નાનું છે"
 
 #. Type: error
 #. Description

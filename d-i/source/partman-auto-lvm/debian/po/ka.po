@@ -15,15 +15,20 @@
 # Alexander Didebulidze <didebuli@in.tum.de>, Vladimer Sichinava <vlsichinava@gmail.com>
 # Taya Kharitonashvili <taya13@gmail.com>, Gia Shervashidze - www.gia.ge
 #
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Aiet Kolkhi <aietkolkhi@gmail.com>, 2008.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer.2006071\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2008-09-09 00:29+0400\n"
-"Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"Last-Translator: Taya <taya13@gmail.com>\n"
 "Language-Team: Georgian\n"
-"Language: \n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -233,11 +238,14 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
+#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"ამ პარტიციის მინიმალური ზომაა ${MINSIZE} (ან ${PERCENT}), ხოლო მაქსიმალური "
+"ზომაა ${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -256,8 +264,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
+#, fuzzy
 msgid "Invalid input"
-msgstr ""
+msgstr "დაუშვებელი ზომა"
 
 #. Type: error
 #. Description
@@ -286,8 +295,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
+#, fuzzy
 msgid "${SIZE} is too small"
-msgstr ""
+msgstr "დანაყოფები ასემბლირებისათვის:"
 
 #. Type: error
 #. Description

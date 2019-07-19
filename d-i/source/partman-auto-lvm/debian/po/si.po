@@ -12,14 +12,14 @@
 # in doc/i18n/i18n.txt
 #
 #
-# Danishka Navin <danishka@gmail.com>, 2009, 2011.
+# Danishka Navin <danishka@gmail.com>, 2009, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2011-09-15 07:01+0530\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2012-02-28 10:16+0530\n"
+"Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
@@ -224,11 +224,14 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
+#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"මෙම කොටසට අදාල අවම ප්‍රමාණය වනුයේ ${MINSIZE} (හෝ ${PERCENT}) වන අතර එහි උපරිම "
+"ප්‍රමාණය වනුයේ ${MAXSIZE} යි."
 
 #. Type: string
 #. Description
@@ -246,8 +249,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
+#, fuzzy
 msgid "Invalid input"
-msgstr ""
+msgstr "වලංගු නොවන ප්‍රමාණයක්"
 
 #. Type: error
 #. Description
@@ -276,8 +280,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
+#, fuzzy
 msgid "${SIZE} is too small"
-msgstr ""
+msgstr "EFI කොටස ඉතා කුඩායි"
 
 #. Type: error
 #. Description

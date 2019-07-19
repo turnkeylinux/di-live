@@ -9,17 +9,17 @@
 #
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2014-01-05 13:26+0500\n"
+"PO-Revision-Date: 2018-03-05 11:00+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
-"Language: Tajik\n"
+"Language: tg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,7 +31,7 @@ msgstr ""
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto-lvm.templates:1001
 msgid "Guided - use entire disk and set up LVM"
-msgstr "Идорашаванда - тамоми дискро истифода баред ва LVM-ро танзим кунед"
+msgstr "Идорашаванда - тамоми дискро истифода баред ва LVM-ро танзим намоед"
 
 #. Type: string
 #. Description
@@ -41,7 +41,7 @@ msgstr "Идорашаванда - тамоми дискро истифода б
 #. :sl3:
 #: ../partman-auto-lvm.templates:2001 ../partman-auto-lvm.templates:3001
 msgid "Name of the volume group for the new system:"
-msgstr "Номи гурӯҳи ҳаҷмҳо барои системаи нав:"
+msgstr "Номи гурӯҳи ҳаҷмҳо барои низоми нав:"
 
 #. Type: string
 #. Description
@@ -51,7 +51,7 @@ msgid ""
 "The selected volume group name is already in use. Please choose another name."
 msgstr ""
 "Номи интихобшудаи гурӯҳи ҳаҷмҳо аллакай истифода мешавад. Лутфан, номи "
-"дигареро интихоб кунед."
+"дигареро интихоб намоед."
 
 #. Type: error
 #. Description
@@ -87,8 +87,8 @@ msgid ""
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
 "Нақшае, ки шумо интихоб кардед, қисмбандии алоҳидаро барои /boot дар бар "
-"намегирад. Одатан, ин барои он лозим аст, ки шумо системаро ҳангоми "
-"истифодаи LVM роҳандозӣ кунед."
+"намегирад. Одатан, ин барои он лозим аст, ки шумо низомро ҳангоми истифодаи "
+"LVM роҳандозӣ намоед."
 
 #. Type: boolean
 #. Description
@@ -98,8 +98,8 @@ msgid ""
 "You can choose to ignore this warning, but that may result in a failure to "
 "reboot the system after the installation is completed."
 msgstr ""
-"Шумо метавонед интихоб кунед, ки ин огоҳиро нодида гузаронед, аммо ин "
-"метавонад сабаби он гардад, ки баъд аз ба анҷом расидани насбкунӣ система "
+"Шумо метавонед интихоб намоед, ки ин огоҳиро нодида гузаронед, аммо ин "
+"метавонад сабаби он гардад, ки баъд аз ба анҷом расидани насбкунӣ низом "
 "бозоғозӣ намешавад."
 
 #. Type: error
@@ -120,7 +120,7 @@ msgid ""
 msgstr ""
 "Номи гурӯҳи ҳаҷмҳое, ки барои қисмгузории худкор тавассути LVM истифода "
 "шудааст, аллакай истифода мешавад. Паст кардани аввалият барои саволҳои "
-"конфигуратсия ба шумо иҷозат медиҳад, ки номи дигарро муайян кунед."
+"танзим ба шумо иҷозат медиҳад, ки номи дигарро муайян намоед."
 
 #. Type: error
 #. Description
@@ -138,7 +138,7 @@ msgid ""
 "the volume group."
 msgstr ""
 "Қисмбандии худкор тавассути LVM бо нокомӣ дучор шуд, чунки ҳангоми эҷодкунии "
-"гурӯҳи ҳаҷм хатогӣ дучор шуд."
+"гурӯҳи ҳаҷм хато дучор шуд."
 
 #. Type: error
 #. Description
@@ -209,3 +209,95 @@ msgstr ""
 #: ../partman-auto-lvm.templates:10001
 msgid "Please check the automatic partitioning recipe."
 msgstr "Лутфан, дастури қисмбандии худкорро санҷед."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:11001
+msgid "Amount of volume group to use for guided partitioning:"
+msgstr ""
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:11001
+msgid ""
+"You may use the whole volume group for guided partitioning, or part of it. "
+"If you use only part of it, or if you add more disks later, then you will be "
+"able to grow logical volumes later using the LVM tools, so using a smaller "
+"part of the volume group at installation time may offer more flexibility."
+msgstr ""
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:11001
+#, fuzzy
+msgid ""
+"The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
+"${PERCENT}); please note that the packages you choose to install may require "
+"more space than this. The maximum available size is ${MAXSIZE}."
+msgstr ""
+"Андозаи хурдтарин барои ин қисми диск: ${MINSIZE} (ё ${PERCENT}) ва андозаи "
+"зиёдтарин: ${MAXSIZE}."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:11001
+#, no-c-format
+msgid ""
+"Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
+"enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
+msgstr ""
+"Маслиҳат: Шумо метавонед қимати \"max\" -ро ҳамчун миёнбуре барои муайян "
+"кардани андозаи зиёдтарин истифода баред ё дарсадеро (масалан \"20%\") барои "
+"истифодаи дарсади андозаи зиёдтарин ворид намоед."
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:12001
+#, fuzzy
+msgid "Invalid input"
+msgstr "Андозаи нодуруст"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:12001
+msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
+msgstr ""
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:13001
+msgid "${SIZE} is too big"
+msgstr ""
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:13001
+msgid ""
+"You asked for ${SIZE} to be used for guided partitioning, but the available "
+"space is only ${MAXSIZE}."
+msgstr ""
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:14001
+#, fuzzy
+msgid "${SIZE} is too small"
+msgstr "Қисми диски EFI хеле хурд аст"
+
+#. Type: error
+#. Description
+#. :sl3:
+#: ../partman-auto-lvm.templates:14001
+msgid ""
+"You asked for ${SIZE} to be used for guided partitioning, but the selected "
+"partitioning recipe requires at least ${MINSIZE}."
+msgstr ""

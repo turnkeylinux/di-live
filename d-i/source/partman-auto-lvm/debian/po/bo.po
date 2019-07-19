@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2012-04-14 22:12+0600\n"
 "Last-Translator: Tennom <tankola@ymail.com, tennomyathog@gmail.com>\n"
 "Language-Team: bo <translation-team-bo@lists.sourceforge.net>\n"
@@ -206,11 +206,13 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
+#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"གསོག་སྡེར་ཁག་འདི་ཆུང་ཤོས་ལ ${MINSIZE} (ཡང་ན ${PERCENT}) དང་ཆེ་ཤོས་ལ ${MAXSIZE} ཡིན་པ།"
 
 #. Type: string
 #. Description
@@ -221,13 +223,16 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
+"གསལ་འདེབས: \"max\" བཀའ་བརྡ་སྤྱད་ནས་ཆེ་ཤོས་གཏན་འབེབས་བྱེད་པ་དང་ཡང་ན་བརྒྱ་ཆའི་ཚད་ཞིག་(དཔེར་ན "
+"\"20%\") འཇུག་ནས་ཆེ་ཤོས་ཀྱི་ནང་ནས་བརྒྱ་ཆ་དེ་ཙམ་སྤྱོད་པ"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
+#, fuzzy
 msgid "Invalid input"
-msgstr ""
+msgstr "ཕན་ནུས་མེད་པའི་ཆེ་ཆུང་ཚད"
 
 #. Type: error
 #. Description

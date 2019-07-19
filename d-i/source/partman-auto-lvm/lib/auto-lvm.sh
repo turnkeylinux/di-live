@@ -289,7 +289,7 @@ auto_lvm_perform() {
 		if [ "$defvgname" ]; then
 			db_set partman-auto-lvm/new_vg_name $defvgname-vg
 		else
-			db_set partman-auto-lvm/new_vg_name Ubuntu
+			db_set partman-auto-lvm/new_vg_name Debian
 		fi
 	fi
 
@@ -302,7 +302,7 @@ auto_lvm_perform() {
 		defvgname="$RET"
 
 		# Check that the volume group name is not in use
-		if ! vg_get_info "$defvgname" && ! stat "/dev/$defvgname"; then
+		if ! vg_get_info "$defvgname" && [ ! -e "/dev/$defvgname" ]; then
 			break
 		fi
 		noninteractive="bail_out vg_exists"

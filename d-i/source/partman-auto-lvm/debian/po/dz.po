@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dDz.po\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2012-02-29 04:41-0500\n"
 "Last-Translator: Jurmey Rabgay <jrabgay@dit.gov.bt>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -229,11 +229,14 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
+#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"བར་བཅད་འདི་གི་ཚད་ ཉུང་མཐའ་ ${MINSIZE} (ཡང་ན་ ${PERCENT}) དང་ མང་མཐའ་ ${MAXSIZE} "
+"ཨིན།"
 
 #. Type: string
 #. Description
@@ -251,8 +254,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
+#, fuzzy
 msgid "Invalid input"
-msgstr ""
+msgstr "ཚད་ནུས་མེད་།"
 
 #. Type: error
 #. Description
@@ -281,8 +285,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
+#, fuzzy
 msgid "${SIZE} is too small"
-msgstr ""
+msgstr "མཉམ་སྒྲིག་འབད་ནིའི་བར་བཅད་:"
 
 #. Type: error
 #. Description

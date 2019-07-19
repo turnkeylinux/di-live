@@ -7,6 +7,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+# Adriano Rafael Gomes <adrianorg@debian.org>, 2010-2018.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
@@ -22,8 +23,8 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2012-06-23 22:23-0300\n"
-"Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
+"PO-Revision-Date: 2018-08-25 14:32-0300\n"
+"Last-Translator: Adriano Rafael Gomes <adrianorg@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
 "Language: pt_BR\n"
@@ -222,7 +223,7 @@ msgstr "Por favor, verifique a receita de particionamento automático."
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr "Tamanho da partição a ser usar no particionamente guiado:"
+msgstr "Quantidade do grupo de volumes para usar no particionamento guiado:"
 
 #. Type: string
 #. Description
@@ -234,11 +235,11 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
-"Você pode usar o disco por inteiro ou parte dele no particionamento guiado. "
-"Se você usar apenas parte dele, ou adicionar mais discos depois, então você "
-"será capaz de aumentar o tamanho do disco posteriormente usando as "
-"ferramentas LVM, assim, usando uma pequena parte do disco na hora da "
-"instalação pode oferecer mais flexibilidade."
+"Você pode usar todo o grupo de volumes, ou apenas parte dele, no "
+"particionamento guiado. Se você usar apenas parte dele, ou adicionar mais "
+"discos depois, então você será capaz de aumentar os volumes lógicos "
+"posteriormente usando as ferramentas LVM, assim, usar uma pequena parte do "
+"grupo de volumes na hora da instalação pode oferecer mais flexibilidade."
 
 #. Type: string
 #. Description
@@ -249,9 +250,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"O tamanho mínimo da instrução de particionamento selecionado é ${MINSIZE} "
-"(ou ${PERCENT}); Por favor, note que os pacotes que você escolheu para "
-"instalar por requerer mais espaço que isso. O tamanho máximo disponível é "
+"O tamanho mínimo para a receita de particionamento selecionada é ${MINSIZE} "
+"(ou ${PERCENT}). Por favor, note que os pacotes que você escolheu para "
+"instalar podem requerer mais espaço que isso. O tamanho máximo disponível é "
 "${MAXSIZE}."
 
 #. Type: string
@@ -280,7 +281,7 @@ msgstr "Entrada inválida"
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
 msgstr ""
-"Você inseriu \"${INPUT}\", que não foi reconhecido como um tamanho válido."
+"Você informou \"${INPUT}\", que não foi reconhecido como um tamanho válido."
 
 #. Type: error
 #. Description
@@ -316,4 +317,4 @@ msgid ""
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
 "Você pediu para ${SIZE} serem usados no particionamento guiado, mas a "
-"instrução de particionamento selecionada requer no mínimo ${MINSIZE}."
+"receita de particionamento selecionada requer no mínimo ${MINSIZE}."
