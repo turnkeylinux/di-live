@@ -8,17 +8,24 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Talgat Daniyarov
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008, 2009
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008-2017
 # Dauren Sarsenov <daur88@inbox.ru>, 2008, 2009
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Sairan Kikkarin <sairan@sci.kz>, 2006
+#   KDE Kazakh l10n team, 2006
+#   Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008, 2009, 2010
+#   Dauren Sarsenov <daur88@inbox.ru>, 2009
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2010-09-30 13:44+0600\n"
+"PO-Revision-Date: 2018-12-02 20:16+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
-"Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language-Team: Kazakh\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -198,7 +205,7 @@ msgstr "Тіркеу нүктелерін дұрыстап жіберіңіз."
 #. :sl2:
 #: ../partman-target.templates:6001
 msgid "No root file system"
-msgstr "Түпкі файлдық жүйе (root file system) жоқ."
+msgstr "Түбірлік файлдық жүйе жоқ"
 
 #. Type: error
 #. Description
@@ -273,54 +280,3 @@ msgstr "Осы бөлімнің қолдануы:"
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "Пайдалану мақсаты:"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr "Өзара жанжал файлдарын өшіргенде қате кетті."
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-"Орнатылатын дискі бөлімінде операциялық жүйенің файлдарын өшіргенде қате "
-"кетті. Орнату әрі қарай жалғастырылмайды."
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr "Операциялық жүйенің өзара жанжал файлдарын өшіру..."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-#, fuzzy
-msgid "Do you want to return to the partitioner?"
-msgstr "Бөлуді жалғастыру керек пе?"
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-"${MOUNTPOINT} тіркеу нүктесіне тіркелген ${PARTITION} бөлімінің файлдық "
-"жүйесі пішімдеу үшін белгіленбеген. Ішінде жүйелік файлдар бар бумалар (/"
-"etc, /lib, /usr, /var, ...) кез-келген тіркеу нүктесінде, орнату кезінде "
-"өшіріледі."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""
-"Орнатудың алдында, сізде маңызды файлдардың көшірмесі барына көз жеткізіңіз."

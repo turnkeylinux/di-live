@@ -20,15 +20,15 @@
 # Amanpreet Singh Brar <aalam@users.sf.net>, 2008.
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
-# A S Alam <aalam@users.sf.net>, 2009, 2012.
+# A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2012-05-06 12:14+0530\n"
-"Last-Translator: A S Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -191,7 +191,8 @@ msgid ""
 "Two file systems are assigned the same mount point (${MOUNTPOINT}): ${PART1} "
 "and ${PART2}."
 msgstr ""
-"ਦੋਨੋਂ ਫਾਇਲ ਸਿਸਟਮਾਂ ਨੂੰ ਇੱਕੋ ਮਾਊਂਟ ਥਾਂ (${MOUNTPOINT}) ਸੈੱਟ ਕੀਤਾ ਹੈ: ${PART1} ਅਤੇ ${PART2}"
+"ਦੋਵਾਂ ਫਾਇਲ ਸਿਸਟਮਾਂ ਨੂੰ ਇੱਕੋ ਮਾਊਂਟ ਥਾਂ (${MOUNTPOINT}) ਦਿੱਤਾ ਗਿਆ ਹੈ: ${PART1} ਅਤੇ "
+"${PART2}।"
 
 #. Type: error
 #. Description
@@ -279,46 +280,3 @@ msgstr "ਇਸ ਪਾਰਟੀਸ਼ਨ ਨੂੰ ਕਿਵੇਂ ਵਰਤਣ�
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "ਇੰਝ ਵਰਤੋਂ:"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr "ਅਪਵਾਦ ਫਾਇਲਾਂ ਹਟਾਉਣ ਲਈ ਫੇਲ੍ਹ"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr "ਕੀ ਤੁਸੀਂ ਪਾਰਟੀਸ਼ਨਰ ਉੱਤੇ ਵਾਪਸ ਜਾਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr "ਯਕੀਨੀ ਬਣਾਉ ਕਿ ਤੁਸੀਂ ਇੰਸਟਾਲ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਕੋਈ ਵੀ ਲਾਜ਼ਮੀ ਡਾਟਾ ਬੈਕਅੱਪ ਕਰ ਲਿਆ ਹੈ।"

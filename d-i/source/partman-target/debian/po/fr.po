@@ -7,19 +7,30 @@
 # Copyright (C) 2004-2009 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
+#
+# Translations from iso-codes:
 # Christian Perrier <bubulle@debian.org>, 2002-2004.
 # Pierre Machard <pmachard@debian.org>, 2002-2004.
 # Denis Barbier <barbier@debian.org>, 2002-2004.
 # Philippe Batailler <philippe.batailler@free.fr>, 2002-2004.
 # Michel Grentzinger <mic.grentz@online.fr>, 2003-2004.
-# Christian Perrier <bubulle@debian.org>, 2005, 2006, 2007, 2008, 2009, 2010.
+# Christian Perrier <bubulle@debian.org>, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Cedric De Wilde <daique@tiscalinet.be>, 2001.
+#   Christian Perrier <bubulle@debian.org>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2017.
+#   Christophe Fergeau <christophe.fergeau@ensimag.imag.fr>, 2000-2001.
+#   Christophe Merlet (RedFox) <redfox@eikonex.org>, 2001.
+#   Free Software Foundation, Inc., 2000-2001, 2004, 2005, 2006.
+#   Grégoire Colbert <gregus@linux-mandrake.com>, 2001.
+#   Tobias Quathamer <toddy@debian.org>, 2007, 2008.
+# Alban Vidal <alban.vidal@zordhak.fr>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2010-03-18 12:08+0200\n"
-"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"PO-Revision-Date: 2018-08-28 07:19+0100\n"
+"Last-Translator: Alban Vidal <alban.vidal@zordhak.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -46,10 +57,9 @@ msgid ""
 "to install your new system.  You need to choose which partition(s) will be "
 "used for the installation."
 msgstr ""
-"Le partitionnement d'un disque dur est une opération qui permet de le "
-"découper logiquement pour créer l'espace nécessaire à l'installation du "
-"nouveau système. Vous devez choisir quelle(s) partition(s) seront utilisées "
-"pour l'installation."
+"Le partitionnement d'un disque dur permet de le découper logiquement pour "
+"créer de l'espace pour le nouveau système. Vous devez choisir quelles "
+"partitions seront utilisées pour l'installation."
 
 #. Type: note
 #. Description
@@ -81,11 +91,11 @@ msgid ""
 "system, which allows the system to use disk storage as \"virtual memory\"."
 msgstr ""
 "Vous pouvez enfin choisir une partition à supprimer ou indiquer comment une "
-"partition existante sera utilisée. Au minimum, une partition est "
-"indispensable pour la racine du système, dont le point de montage est « / ». "
-"La plupart des administrateurs préféreront également utiliser un espace "
-"d'échange distinct. L'espace d'échange (« swap ») permet au système de se "
-"servir d'une partie du disque comme mémoire virtuelle."
+"partition existante sera utilisée. Au moins une partition est indispensable "
+"pour la racine du système, dont le point de montage est « / ». Beaucoup "
+"préféreront également utiliser un espace d'échange (« swap ») distinct. "
+"Celui-ci permet au système de se servir d'une partie du disque comme mémoire "
+"virtuelle."
 
 #. Type: note
 #. Description
@@ -281,54 +291,3 @@ msgstr "Méthode d'utilisation de cette partition :"
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "Utiliser comme :"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr "La suppression des fichiers en conflit a échoué"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-"L'installation nécessite la suppression de fichiers système, mais cette "
-"opération est impossible. L'installation ne peut pas continuer."
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr "Suppression des fichiers système en conflit..."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr "Voulez-vous revenir à l'outil de partitionnement ?"
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-"Le système de fichier sur ${PARTITION} assigné à ${MOUNTPOINT} n'a pas été "
-"marqué pour être formaté. Les dossiers contenant les fichiers systèmes (/"
-"etc, /lib, /usr, /var, ...) qui existent déjà sous tous les points de "
-"montages seront supprimés durant l'installation."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""
-"Veuillez vous assurer que vos données importantes ont été sauvegardées avant "
-"l'installation."

@@ -17,16 +17,6 @@ addfstab () {
 		"$(escape "$1")" "$(escape "$2")" \
 		"$(escape "$3")" "$(escape "$4")" \
 		"$5" "$6"
-	if [ "$OS" = hurd ] ;
-	then
-		if [ -x /target/hurd/"$3" ]
-		then
-			settrans -pk "/target/$2" /hurd/"$3" "$1"
-		elif [ -x /target/hurd/"$3fs" ]
-		then
-			settrans -pk "/target/$2" /hurd/"$3fs" "$1"
-		fi
-	fi
 }
 
 db_get partman/mount_style
@@ -48,32 +38,22 @@ fstab=$(
 			;;
 		    (/*)
 			dev="/var/lib/partman/devices/$(echo "$fs" | sed 's:/:=:g')"
-			if [ -f "$dev/loop" ]; then
-				loop="$(cat "$dev/loop")"
-				if [ "$options" = defaults ]; then
-					options=loop
-				else
-					options="loop,$options"
-				fi
-				addfstab "$loop" "$mp" "$type" "$options" "$dump" "$pass"
+			case "$mp" in
+			    (/*)	desc="$mp" ;;
+			    (*)		desc="$type" ;;
+			esac
+			if [ "$style" = label ] && \
+			   label="$(block-attr --label $fs)" && \
+			   [ "$label" ]; then
+				printf "# %s was on %s during installation\n" "$desc" "$(mapdevfs $fs)"
+				addfstab "LABEL=$label" "$mp" "$type" "$options" "$dump" "$pass"
+			elif ([ "$style" = label ] || [ "$style" = uuid ]) && \
+			     uuid="$(block-attr --uuid $fs)" && \
+			     [ "$uuid" ]; then
+				printf "# %s was on %s during installation\n" "$desc" "$(mapdevfs $fs)"
+				addfstab "UUID=$uuid" "$mp" "$type" "$options" "$dump" "$pass"
 			else
-				case "$mp" in
-				    (/*)	desc="$mp" ;;
-				    (*)		desc="$type" ;;
-				esac
-				if [ "$style" = label ] && \
-				   label="$(block-attr --label $fs)" && \
-				   [ "$label" ]; then
-					printf "# %s was on %s during installation\n" "$desc" "$(mapdevfs $fs)"
-					addfstab "LABEL=$label" "$mp" "$type" "$options" "$dump" "$pass"
-				elif ([ "$style" = label ] || [ "$style" = uuid ]) && \
-				     uuid="$(block-attr --uuid $fs)" && \
-				     [ "$uuid" ]; then
-					printf "# %s was on %s during installation\n" "$desc" "$(mapdevfs $fs)"
-					addfstab "UUID=$uuid" "$mp" "$type" "$options" "$dump" "$pass"
-				else
-					addfstab "$(mapdevfs $fs)" "$mp" "$type" "$options" "$dump" "$pass"
-				fi
+				addfstab "$(mapdevfs $fs)" "$mp" "$type" "$options" "$dump" "$pass"
 			fi
 			;;
 		    ([a-zA-Z]*/ROOT/*)

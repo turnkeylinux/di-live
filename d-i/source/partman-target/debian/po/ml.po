@@ -9,21 +9,25 @@
 # Santhosh Thottingal <santhosh00@gmail.com>, 2006.
 # Sreejith :: ശ്രീജിത്ത് കെ <sreejithk2000@gmail.com>, 2006.
 # Credits:  V Sasi Kumar, Sreejith N, Seena N, Anivar Aravind, Hiran Venugopalan and Suresh P
-#
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt#
-#
+# Translations from iso-codes:
+# Tobias Quathamer <toddy@debian.org>, 2007.
+# Translations taken from ICU SVN on 2007-09-09
+# Praveen A <pravi.a@gmail.com>, 2006, 2008.
+# Ani Peter <peter.ani@gmail.com>, 2009
+# Anish Sheela <aneesh.nl@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian Installer Level 1\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2010-06-27 13:04+0530\n"
-"Last-Translator: Praveen Arimbrathodiyil <pravi.a@gmail.com>\n"
-"Language-Team: Debian Malayalam <debian-l10n-malayalam@lists.debian.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"Last-Translator: Anish Sheela <aneesh.nl@gmail.com>\n"
+"Language-Team: Swatantra Malayalam Computing <discuss@lists.smc.org.in>\n"
+"Language: ml\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,7 +53,7 @@ msgid ""
 "used for the installation."
 msgstr ""
 "ഒരു ഹാര്‍ഡ് ഡിസ്കിന്റെ വിഭജനം നിങ്ങളുടെ പുതിയ സിസ്റ്റം ഇന്‍സ്റ്റോള്‍ ചെയ്യുന്നതിനാവശ്യമായ സ്പേയ്സ് "
-"സൃഷ്ടിക്കാനായി അതിനെ മുറിക്കുന്നതുള്‍​ക്കൊള്ളുന്നു. ഏതെല്ലാം ഭാഗങ്ങളാണു്  ഇന്‍സ്റ്റലേഷനുപയോഗിക്കാന്‍ "
+"സൃഷ്ടിക്കാനായി അതിനെ മുറിക്കുന്നതുള്‍ക്കൊള്ളുന്നു. ഏതെല്ലാം ഭാഗങ്ങളാണു്  ഇന്‍സ്റ്റലേഷനുപയോഗിക്കാന്‍ "
 "പോകുന്നതു് എന്നു് നിങ്ങള്‍ തെരഞ്ഞെടുക്കേണ്ടതുണ്ടു്."
 
 #. Type: note
@@ -82,7 +86,7 @@ msgid ""
 "system, which allows the system to use disk storage as \"virtual memory\"."
 msgstr ""
 "ഒഴിവാക്കാനോ അല്ലെങ്കില്‍ എങ്ങനെ ഉപയോഗിക്കണം എന്നു് വ്യക്തമാക്കാനോ ഒരു ഭാഗം തെരഞ്ഞെടുക്കുക. "
-"ഏറ്റവും ചുരുങ്ങിയത് റൂട്ട് ഫയല്‍ സിസ്റ്റം (അതിന്റെ മൌണ്ട് പോയിന്റ് / ആണു്) ഉള്‍​ക്കൊള്ളുന്നതിന് ഒരു ഭാഗം "
+"ഏറ്റവും ചുരുങ്ങിയത് റൂട്ട് ഫയല്‍ സിസ്റ്റം (അതിന്റെ മൌണ്ട് പോയിന്റ് / ആണു്) ഉള്‍ക്കൊള്ളുന്നതിന് ഒരു ഭാഗം "
 "നിങ്ങള്‍ക്കു് വേണ്ടി വരും. കൂടുതല്‍ ആളുകളും വേറൊരു സ്വാപ് ഭാഗം അത്യാവശ്യമാണെന്ന് കരുതുന്നു. \"സ്വാപ്\" "
 "എന്നതു്  \"വിര്‍ച്വല്‍ മെമറി\" ആയി ഡിസ്ക് സ്റ്റോറേജ് ഉപയോഗിയ്ക്കാന്‍ സിസ്റ്റത്തിനെ അനുവദിക്കുന്ന ഒരു "
 "ഓപറേറ്റിങ്ങ് സിസ്റ്റത്തിനു വേണ്ട സ്ക്രാച് സ്പേയ്സ് ആണു്."
@@ -280,46 +284,3 @@ msgstr "ഈ ഭാഗം എങ്ങനെ ഉപയോഗിക്കണം:"
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "ഇതു പോലെ ഉപയോഗിയ്ക്കുക:"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""

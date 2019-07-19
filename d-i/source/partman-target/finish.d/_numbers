@@ -1,4 +1,3 @@
-10 clear_partitions
 20 mount_partitions
 39 create_fstab_header
 40 fstab_hd_entries

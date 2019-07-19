@@ -3,28 +3,30 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-#
-#
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
-#
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-#
-#
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@debian.org>, 2004.
+# Priti Patil <prithisd@gmail.com>, 2007.
+# Sampada Nakhare, 2007.
+# Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2010.
+# localuser <sampadanakhare@gmail.com>, 2015.
+# Nayan Nakhare <nayannakhare@rediffmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2009-03-29 20:42+0530\n"
-"Last-Translator: Sampada <sampadanakhare@gmail.com>\n"
-"Language-Team: Marathi, janabhaaratii, C-DAC, Mumbai, India "
-"<janabhaaratii@cdacmumbai.in>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-10-07 18:30+0000\n"
+"Last-Translator: Nayan Nakhare <nayannakhare@rediffmail.com>\n"
+"Language-Team: CDAC_DI\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: note
 #. Description
@@ -207,7 +209,7 @@ msgstr "कोणतीही मूल फाइल प्रणाली न�
 #. :sl2:
 #: ../partman-target.templates:6001
 msgid "No root file system is defined."
-msgstr "कोणतीही मूल फाइल प्रणाली निश्चीत केलेली नाही"
+msgstr "कोणतीही मूल फाइल प्रणाली निश्चीत केलेली नाही."
 
 #. Type: error
 #. Description
@@ -224,7 +226,7 @@ msgstr "विभाजन मेनूमधून हा दोष सुध�
 #. :sl2:
 #: ../partman-target.templates:7001
 msgid "Separate file system not allowed here"
-msgstr "येथे वेगळ्या फाईल प्रणालीला अनुमती नाही."
+msgstr "येथे वेगळ्या फाईल प्रणालीला अनुमती नाही"
 
 #. Type: error
 #. Description
@@ -266,54 +268,11 @@ msgstr "तुम्ही विभाजन मेनूमधून विभ
 #. Description
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
-msgstr "हे विभाजन कसे वापरावयाचेः"
+msgstr "हे विभाजन कसे वापरावयाचे:"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-target.templates:10001
 msgid "Use as:"
-msgstr "असे वापराः"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr "परस्पर-विरोधी फाईल्स काढण्यात विफल"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr "परस्पर-विरोधी कार्यप्रणाली फाईल्स काढतो आहे..."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr "तुम्हाला विभाजकात परत जायचे आहे का?"
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""
+msgstr "असे वापरा:"

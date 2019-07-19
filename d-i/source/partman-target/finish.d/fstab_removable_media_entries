@@ -55,6 +55,36 @@ populate_media () {
 	done
 }
 
+CDDEV=$(grep /cdrom /proc/mounts | cut -d ' ' -f 1 | grep -Ev '^/dev/(loop|sd[a-z])')
+if [ -n "$CDDEV" ]; then
+	MAPCDDEV=$(mapdevfs $CDDEV)
+else
+	MAPCDDEV=''
+fi
+
+CDDEVICES=''
+for dev in $(list-devices cd); do
+	mapdev=$(mapdevfs $dev)
+	if [ -n "$mapdev" ] && [ "$mapdev" != "$MAPCDDEV" ]; then
+		CDDEVICES="$CDDEVICES $mapdev"
+	fi
+done
+if [ -n "$MAPCDDEV" ]; then
+	CDDEVICES="$MAPCDDEV $CDDEVICES" # first the mounted cdrom
+fi
+
+case `udpkg --print-os` in
+	linux) 
+		populate_media cdrom udf,iso9660 user,noauto $CDDEVICES
+		;;
+	kfreebsd)
+		populate_media cdrom cd9660 ro,noauto $CDDEVICES
+		;;
+	hurd)
+		populate_media cdrom iso9660 noauto $CDDEVICES
+		;;
+esac
+
 FDDEVICES=''
 for dev in $(list-devices floppy); do
 	mapdev=$(mapdevfs $dev)
@@ -65,7 +95,7 @@ done
 
 case `udpkg --print-os` in
 	linux)
-		populate_media floppy auto rw,user,noauto,exec,utf8 $FDDEVICES
+		populate_media floppy auto rw,user,noauto $FDDEVICES
 		;;
 	kfreebsd)
 		populate_media floppy auto rw,noauto $FDDEVICES
@@ -74,3 +104,4 @@ case `udpkg --print-os` in
 		populate_media floppy auto rw,noauto $FDDEVICES
 		;;
 esac
+
