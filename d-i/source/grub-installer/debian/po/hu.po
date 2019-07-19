@@ -8,19 +8,36 @@
 # This file is distributed under the same license as debian-installer.
 # coor: SZERVÁC Attila - sas 321hu -- 2006-2008
 #
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#   Arpad Biro <biro_arpad@yahoo.com>, 2001.
+#   VERÓK István <vi@fsf.hu>, 2004.
+#   SZERVÁC Attila <sas@321.hu>, 2006.
+#   Kálmán Kéménczy <kkemenczy@novell.com>, 2007, 2008.
+#   Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007.
+#   Kalman Kemenczy <kkemenczy@gmail.com>, 2010.
+#   Andras TIMAR <timar@gnome.hu>, 2000-2001.
+# SZERVÁC Attila <sas@321.hu>, 2012.
+# Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>, 2012.
+# Judit Gyimesi <judit.gyimesi.x@gmail.com>, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2010-03-26 09:46+0000\n"
-"PO-Revision-Date: 2008-09-14 17:52+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2014-12-30 22:01+0000\n"
+"PO-Revision-Date: 2017-11-26 20:32+0000\n"
+"Last-Translator: Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>\n"
 "Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
 "org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: boolean
 #. Description
@@ -30,7 +47,8 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
 msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "A GRUB rendszerbetöltőt a fő boot rekordba telepíted?"
+msgstr ""
+"A GRUB rendszerbetöltőt a partíciós szektorba (master boot record) telepíti?"
 
 #. Type: boolean
 #. Description
@@ -53,8 +71,9 @@ msgid ""
 "operating systems or your new system."
 msgstr ""
 "Ha a gépen lévő összes operációs rendszer a listában van, a boot betöltő "
-"nyugodtan telepíthető az 1. merevlemez MBR-jébe. A gép indulásakor lehet "
-"majd választani az új rendszer vagy netán e régebbiek között."
+"nyugodtan telepíthető az első merevlemez partíciós szektorába (MBR). A gép "
+"indulásakor lehet majd választani az új rendszer vagy netán e régebbiek "
+"között."
 
 #. Type: boolean
 #. Description
@@ -66,8 +85,8 @@ msgid ""
 "master boot record of your first hard drive."
 msgstr ""
 "Úgy tűnik, e gépen a most telepített Debian lesz az egyetlen operációs "
-"rendszer. Ha így van, a GRUB boot betöltő célszerűen telepíthető az első "
-"merevlemez MBR-jébe."
+"rendszer. Ha így van, a GRUB boot betöltő nyugodtan telepíthető az első "
+"merevlemez partíciós szektorába (MBR)."
 
 #. Type: boolean
 #. Description
@@ -79,9 +98,9 @@ msgid ""
 "operating system temporarily unbootable, though GRUB can be manually "
 "configured later to boot it."
 msgstr ""
-"Figyelem: Ha a telepítő nem lelte meg a gépen lévő más operációs rendszert, "
-"az MBR módosításával az átmenetileg nem lesz indítható, de a GRUB-bal ez már "
-"beállítható."
+"Figyelem: Ha a gépen van más operációs rendszer, melyet a telepítő nem "
+"talált meg, a partíciós szektor (MBR) módosításával az átmenetileg nem lesz "
+"indítható. Azonban a GRUB később kézzel beállítható úgy, hogy elindítsa."
 
 #. Type: boolean
 #. Description
@@ -120,6 +139,15 @@ msgstr ""
 msgid "The GRUB root device is: ${GRUBROOT}."
 msgstr "A GRUB gyökér eszköz: ${GRUBROOT}."
 
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl3:
@@ -130,7 +158,7 @@ msgstr "A GRUB gyökér eszköz: ${GRUBROOT}."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
 msgstr "A GRUB konfigurálása meghiúsult"
 
@@ -185,17 +213,40 @@ msgstr ""
 msgid "An error occurred while setting up GRUB for the multipath device."
 msgstr "Hiba történt a GRUB beállításakor a mutipath lemezen."
 
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: string
+# Description
+# :sl2:
+# Type: select
+# Description
+# :sl2:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: select
+# Description
+# :sl4:
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
 msgstr "A rendszerbetöltő erre az eszközre kerül:"
 
+# Type: string
+# Description
+# :sl2:
+# Type: select
+# Description
+# :sl2:
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
@@ -205,24 +256,16 @@ msgid ""
 msgstr ""
 "Az újonnan telepített Debian rendszert a GRUB boot betöltő egy indítható "
 "eszközre telepítésével indíthatóvá kell tenni. Általában az 1. merevlemez "
-"MBR-jébe telepítjük a GRUB-ot, de a meghajtó más helyére vagy más meghajtóra "
+"MBR-jébe telepítjük a GRUB-ot, de a meghajtó más helyére, más meghajtóra "
 "vagy akár flopira is telepíthető."
 
+# Type: string
+# Description
+# :sl2:
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -233,25 +276,35 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Az eszközt a GRUB \"(hdn,m)\" leírásával vagy a /dev-ben lévő eszközként "
-"kell megadni. Alább pár példa:\n"
-" - \"(hd0)\" vagy \"/dev/hda\" az 1. merevlemez MBR-jébe telepít.\n"
-"- \"(hd0,1)\" vagy \"/dev/hda2\" az 1. IDE meghajtó 2. partíciója- "
-"\"(hd2,4)\" vagy \"/dev/sdc5\" a 3. meghajtó (itt SCSI) \n"
-"1. kiterjesztett partícióját fogja használni - \"(fd0)\" or \"/dev/fd0\" a "
-"GRUB-ot egy flopira fogja telepíteni"
+"Az eszközt /dev szerinti eszközként kell megadni. Alább pár példa:\n"
+" - a \"/dev/sda\" az 1. merevlemez MBR-jébe telepít.\n"
+" - a \"/dev/sda2\" az 1. merevlemez 2. partícióját fogja használni;\n"
+" - a \"/dev/sdc5\" az 3. merevlemez 1. kiterjesztett partícióját fogja "
+"használni; - a \"/dev/fd0\" a GRUB-ot egy flopira fogja telepíteni."
 
+#. Type: select
+#. Choices
+#: ../grub-installer.templates:8001
+msgid "Enter device manually"
+msgstr "Eszköz kézi megadása"
+
+# Type: password
+# Description
+# :sl2:
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "GRUB password:"
 msgstr "GRUB jelszó:"
 
+# Type: password
+# Description
+# :sl2:
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid ""
 "The GRUB boot loader offers many powerful interactive features, which could "
 "be used to compromise your system if unauthorized users have access to the "
@@ -265,153 +318,438 @@ msgstr ""
 "szerkesztésekor vagy a GRUB parancs-soros felületébe való belépéskor kért "
 "jelszó megadásával. Alapban ez az indításra nem vonatkozik."
 
+# Type: password
+# Description
+# :sl2:
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
-msgstr "Ha nem akarunk GRUB jelszót adni, hagyjuk üresen e mezőt."
+msgstr "Ha nem akar GRUB jelszót adni, hagyja üresen e mezőt."
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
-msgstr "A jelszó ellenőrző ismétlése:"
+msgstr "Írja be újra a jelszavát megerősítés végett:"
 
+# Type: password
+# Description
+# :sl2:
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
-msgstr "A GRUB jelszó ellenőrzése céljából ismét be kell írni."
+msgstr "A GRUB jelszó ellenőrzése céljából kérem, írja be ismét."
 
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "Password input error"
 msgstr "Jelszóbeviteli hiba"
 
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
-msgstr "A két megadott jelszó eltér. Most próbáld újra."
+msgstr "A két megadott jelszó eltér. Próbálja újra."
 
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
 msgstr "A GRUB telepítése meghiúsult"
 
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
 msgstr ""
-"A '${GRUB}' csomag nem települt a /target/ könyvtárba. A GRUB nélkül, a "
-"telepített rendszer nem indul magától."
+"A '${GRUB}' csomag nem települt a /target/ könyvtárba. A GRUB boot betöltő "
+"nélkül a telepített rendszer nem indul magától."
 
-#. Type: error
-#. Description
-#. :sl2:
-#: ../grub-installer.templates:13001
-msgid "Unable to install GRUB in ${BOOTDEV}"
-msgstr "A GRUB ${BOOTDEV} eszközre telepítése sikertelenül zárult"
-
-#. Type: error
-#. Description
-#. :sl2:
-#: ../grub-installer.templates:13001
-msgid "Executing 'grub-install ${BOOTDEV}' failed."
-msgstr "A 'grub-install ${BOOTDEV}' hibát adott."
-
-#. Type: error
-#. Description
-#. :sl2:
-#. Type: error
-#. Description
-#. :sl2:
-#: ../grub-installer.templates:13001 ../grub-installer.templates:14001
-msgid "This is a fatal error."
-msgstr "Ez egy végzetes hiba."
-
+# Type: error
+# Description
+# :sl2:
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:14001
+msgid "Unable to install GRUB in ${BOOTDEV}"
+msgstr "A GRUB ${BOOTDEV} eszközre telepítése sikertelenül zárult"
+
+# Type: error
+# Description
+# :sl2:
+#. Type: error
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:14001
+msgid "Executing 'grub-install ${BOOTDEV}' failed."
+msgstr "A 'grub-install ${BOOTDEV}' végrehajtása meghiúsult."
+
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+#. Type: error
+#. Description
+#. :sl2:
+#. Type: error
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:14001 ../grub-installer.templates:15001
+msgid "This is a fatal error."
+msgstr "Ez egy végzetes hiba."
+
+# Type: error
+# Description
+# :sl2:
+#. Type: error
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
-msgstr "Az 'update-grub' futtatása meghiúsult"
+msgstr "Az 'update-grub' futtatása meghiúsult."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid "Install GRUB?"
+msgstr "GRUB telepítése?"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+"A GRUB 2 a GNU GRUB következő generációja, a boot betöltő, amit általában "
+"i386/amd64 gépeken használunk. ${ARCH} gépre is elérhető."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
+"Vannak érdekes új képességei, de még kísérleti szoftver ilyen gépre. Ha azt "
+"választod, hogy telepíted, fel kell készülnöd hibákra és legyen ötleted a "
+"rendszer visszaállítására, ha az indíthatatlanná válna. Azt javasoljuk, ne "
+"használd még produktív környezetben."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:17001
+#: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
 msgstr "A GRUB rendszerbetöltő telepítése"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:18001
+#: ../grub-installer.templates:19001
 msgid "Looking for other operating systems..."
 msgstr "Más operációs rendszerek keresése..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:19001
+#: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
 msgstr "'${GRUB}' csomag telepítése..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:20001
+#: ../grub-installer.templates:21001
 msgid "Determining GRUB boot device..."
-msgstr "A GRUB eszköz meghatározása..."
+msgstr "A GRUB boot eszköz meghatározása..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:21001
+#: ../grub-installer.templates:22001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
 msgstr "A \"grub-install ${BOOTDEV}\" futtatása..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:22001
+#: ../grub-installer.templates:23001
 msgid "Running \"update-grub\"..."
 msgstr "Az \"update-grub\" futtatása..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:23001
+#: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
 msgstr "A /etc/kernel-img.conf frissítése..."
 
 #. Type: text
 #. Description
+#. :sl1:
+#: ../grub-installer.templates:25001
+msgid "Checking whether to force usage of the removable media path"
+msgstr "Ellenőrzöm, hogy kell-e használni a \"removable media path\"-ot"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:26001
+msgid "Mounting filesystems"
+msgstr "Fájlrendszerek felcsatolása"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:27001
+msgid "Configuring grub-efi for future usage of the removable media path"
+msgstr ""
+"Beállítom a grub-efi-t, hogy a jövőben használhassa a \"removable media path"
+"\"-ot"
+
+#. Type: text
+#. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "A GRUB rendszerbetöltő merevlemezre telepítése"
+
+# Type: text
+# Description
+# Rescue menu item
+# :sl2:
+#. Type: text
+#. Description
+#. Rescue menu item
+#. :sl2:
+#: ../grub-installer.templates:29001
+msgid "Reinstall GRUB boot loader"
+msgstr "A GRUB boot betöltő újratelepítése"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Failed to mount /target/proc"
+msgstr "/target/proc csatolása sikertelen"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Mounting the proc file system on /target/proc failed."
+msgstr "A proc fájlrendszer csatolása /target/proc-ra nem sikerült."
+
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl2:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: boolean
+# Description
+# :sl2:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# Type: error
+# Description
+# :sl2:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+# #-#-#-#-#  templates.pot (partman-zfs)  #-#-#-#-#
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# Type: error
+# Description
+# :sl4:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# Type: error
+# Description
+# :sl3:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+# #-#-#-#-#  templates.pot (PACKAGE VERSION)  #-#-#-#-#
+# Type: error
+# Description
+# :sl3:
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr ""
+"Részletek a /var/log/syslog-ban vagy a 4. virtuális konzolon találhatók."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Warning: Your system may be unbootable!"
+msgstr "Figyelem: a rendszer talán indíthatatlan!"
 
 #. Type: text
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
-msgid "Reinstall GRUB boot loader"
-msgstr "A GRUB boot betöltő újratelepítése"
+#: ../grub-installer.templates:33001
+msgid "Force GRUB installation to the EFI removable media path"
+msgstr "Kényszerítsd ki a GRUB telepítését az EFI \"removable media path\"-ra"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid "Force GRUB installation to the EFI removable media path?"
+msgstr "Kikényszerítsem a GRUB telepítését az EFI \"removable media path\"-ra?"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"It seems that this computer is configured to boot via EFI, but maybe that "
+"configuration will not work for booting from the hard drive. Some EFI "
+"firmware implementations do not meet the EFI specification (i.e. they are "
+"buggy!) and do not support proper configuration of boot options from system "
+"hard drives."
+msgstr ""
+"Úgy tűnik, ez a számítógép úgy van beállítva, hogy EFI-vel induljon, de "
+"lehet, hogy úgy nem tud merevlemezről indulni. Némelyik EFI firmware "
+"megvalósítás nem követi az EFI leírást (azaz hibás!) és nem támogatja a "
+"megfelelő rendszerindítási beállításokat rendszerlemezről induláshoz."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"A workaround for this problem is to install an extra copy of the EFI version "
+"of the GRUB boot loader to a fallback location, the \"removable media path"
+"\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
+msgstr ""
+"Erre a problémára megoldás, ha a GRUB rendszerindító EFI verzióját "
+"bemásoljuk a tartalék indítási helyre is, az ú. n. \"removable media path\"-"
+"ra. Így szinte bármelyik EFI rendszer, még a nagyon hibásak is, képesek a "
+"GRUB-ot elindítani."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"Warning: If the installer failed to detect another operating system that is "
+"present on your computer that also depends on this fallback, installing GRUB "
+"there will make that operating system temporarily unbootable. GRUB can be "
+"manually configured later to boot it if necessary."
+msgstr ""
+"Figyelmeztetés: Ha a gépen van másik operációs rendszer, melyet a telepítő "
+"nem talált meg és amely szintén erre a tartalék útvonalra számít, a GRUB "
+"telepítése után a másik operációs rendszer átmenetileg nem lesz indítható. A "
+"GRUB később kézzel beállítható úgy, hogy elindítsa."

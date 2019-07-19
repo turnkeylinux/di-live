@@ -1,86 +1,1157 @@
-grub-installer (1.55ubuntu4) maverick; urgency=low
+grub-installer (1.166) UNRELEASED; urgency=medium
 
-  * Install GRUB to the SATA RAID or multipath device when /boot is on such
-    a device, rather than installing to the first hard disk (LP: #603854).
+  [ Cyril Brulebois ]
+  * Remove Christian Perrier from Uploaders, with many thanks for all
+    his contributions over the years! (Closes: #927491)
 
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 05 Oct 2010 21:57:05 +0100
+  [ John Paul Adrian Glaubitz ]
+  * Add ia64 support
+  * Sort architecture list in debian/control
 
-grub-installer (1.55ubuntu3) maverick; urgency=low
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:34:42 +0200
 
-  * Purge grub-efi* when $grub_package is grub or grub-pc, and purge grub,
-    grub-legacy, and grub-pc when $grub_package is grub-efi (LP: #632642).
+grub-installer (1.165) unstable; urgency=medium
 
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 08 Sep 2010 10:29:51 +0100
+  [ Colin Watson ]
+  * On Linux, mount/unmount /run to work around #918590.
 
-grub-installer (1.55ubuntu2) maverick; urgency=low
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 30 Mar 2019 12:21:19 +0100
 
-  [ Soren Hansen ]
-  * Add a preseedable grub-installer/timeout template to adjust the initial
-    GRUB timeout (LP: #628418).
+grub-installer (1.164) unstable; urgency=medium
+  * Team upload
 
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 06 Sep 2010 12:07:05 +0100
+  [ Updated translations ]
+  * Indonesian (id.po) by Muhammad Rifqi Priyo Susanto
+  * Ukrainian (uk.po) by Anton Gladky
 
-grub-installer (1.55ubuntu1) maverick; urgency=low
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 23 Mar 2019 21:38:45 +0100
 
-  * Resynchronise with Debian.  Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed (only for GRUB Legacy right now).
-    - Remove splash boot parameter unless debian-installer/framebuffer=true
-      and debian-installer/splash=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map (for GRUB Legacy only);
-      it also hides the menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add support for writing an GRUB Legacy MBR on each disk in an
-      mdadm-managed RAID providing /boot. (GRUB 2 can handle this already.)
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Go back to using update-grub -y for GRUB Legacy for now; our grub
-      package is a bit old and still requires this.
-    - Default to grub2 for GPT systems.
-    - Allow grub/grub2 choice for ext4, though still default to grub2.
-    - If /boot is on an MD device and we're using GRUB 2, install GRUB there
-      rather than (hd0); GRUB 2 will interpret that as meaning that it needs
-      to install to each of the RAID members.
-    - Mount /target/sys when running update-grub.
-    - If using GRUB 2 and installing to a RAID device any of whose
-      components are partitions, then default to installing to the MBRs of
-      each of the containing disks, since GRUB 2 will refuse to install to
-      the partition devices.
-    - Bind-mount /proc and /sys while running grub-install.
-    - Update grub-installer/bootdev text to avoid GRUB device naming that
-      changed between GRUB Legacy and GRUB 2, and to use libata-style device
-      naming since that is more accurate for most people.
-    - Install grub-efi on i386/efi and amd64/efi subarchitectures.
-  * Don't ask for a boot device on EFI, and don't pass a boot device
-    argument to grub-install.
+grub-installer (1.163) unstable; urgency=medium
+  * Team upload
 
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 03 Sep 2010 10:54:21 +0100
+  [ Updated translations ]
+  * Arabic (ar.po) by Yaron Shahrabani
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Vietnamese (vi.po) by Trần Ngọc Quân
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 03 Mar 2019 12:42:25 +0100
+
+grub-installer (1.162) unstable; urgency=medium
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Juhani Numminen
+  * Hebrew (he.po) by Yaron Shahrabani
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 Feb 2019 11:12:12 +0100
+
+grub-installer (1.161) unstable; urgency=medium
+
+  [ Steve McIntyre ]
+  * Tweak the installation of shim-signed a little. Tell apt-install that
+    it's allowed to remove other packages (e.g. dkms) if necessary.
+
+ -- Steve McIntyre <93sam@debian.org>  Tue, 15 Jan 2019 15:12:13 +0000
+
+grub-installer (1.160) unstable; urgency=medium
+
+  * Team upload
+
+  [ Steve McIntyre ]
+  * Add support for installing/removing shim-signed and
+    grub-efi-amd64-signed when desired. If we're installing on amd64, this
+    will make us install signed packages by default.
+
+  [ Updated translations ]
+  * Gujarati (gu.po) by Kartik Mistry
+  * Persian (fa.po) by Nima Sahraneshin
+
+ -- Steve McIntyre <93sam@debian.org>  Sun, 13 Jan 2019 18:55:48 +0000
+
+grub-installer (1.159) unstable; urgency=medium
+  * Team upload
+
+  [ Colin Watson ]
+  * Use /usr/share/dpkg/default.mk rather than setting DEB_HOST_ARCH
+    directly.
+
+  [ Holger Wansing ]
+  * Remove trailing whitespaces from changelog file, to fix lintian tag.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by ButterflyOfFire
+  * German (de.po) by Holger Wansing
+  * Finnish (fi.po) by Juhani Numminen
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 23 Dec 2018 17:58:18 +0100
+
+grub-installer (1.158) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Asturian (ast.po) by Xuacu Saturio
+  * Galician (gl.po) by mantinan
+  * Hindi (hi.po) by Himanshu Awasthi
+  * Croatian (hr.po) by Valentin Vidic
+  * Latvian (lv.po) by Tranzistors
+  * Marathi (mr.po) by Nayan Nakhare
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 29 Oct 2018 23:08:52 +0100
+
+grub-installer (1.157) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Juhani Numminen
+  * Gujarati (gu.po) by Kartik Mistry
+  * Traditional Chinese (zh_TW.po) by ButterflyOfFire
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 21 Sep 2018 23:23:35 +0200
+
+grub-installer (1.156) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Arto Keiski
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 13 Aug 2018 21:46:22 +0200
+
+grub-installer (1.155) unstable; urgency=medium
+
+  [ Cyril Brulebois ]
+  * Update Vcs-{Browser,Git} to point to salsa (alioth's replacement).
+
+  [ Frank Scheiner ]
+  * Add support for GPT disk labels on sparc/sparc64.
+
+  [ John Paul Adrian Glaubitz ]
+  * Add myself to Uploaders
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Juhani Numminen
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Telugu (te.po) by Praveen Illa
+
+ -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Sat, 28 Jul 2018 18:13:50 +0200
+
+grub-installer (1.154) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Welsh (cy.po) by Huw Waters
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Indonesian (id.po) by Andika Triwidada
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 28 Mar 2018 06:49:45 +0200
+
+grub-installer (1.153) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Arabic (ar.po) by ButterflyOfFire
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Indonesian (id.po) by Al Qalit
+  * Norwegian Nynorsk (nn.po) by Alexander Jansen
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 14 Feb 2018 07:35:38 +0100
+
+grub-installer (1.152) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 21 Jan 2018 16:30:05 +0100
+
+grub-installer (1.151) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Panjabi (pa.po) by Aman ALam
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 12 Jan 2018 15:31:26 +0100
+
+grub-installer (1.150) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Nepali (ne.po) by Jeewal Kunwar
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 30 Dec 2017 09:55:13 +0100
+
+grub-installer (1.149) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Felipe Castro
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 10 Dec 2017 19:00:31 +0100
+
+grub-installer (1.148) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Dr. Nagy Elemér Károly
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Norwegian Nynorsk (nn.po) by Allan Nordhøy
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 30 Nov 2017 06:51:10 +0100
+
+grub-installer (1.147) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Greek (el.po) by Sotirios Vrachas
+  * Estonian (et.po) by Kristjan Räts
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 24 Nov 2017 07:27:06 +0100
+
+grub-installer (1.146) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Panjabi (pa.po) by A S Alam
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 31 Oct 2017 09:44:10 +0100
+
+grub-installer (1.145) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Latvian (lv.po) by Rūdolfs Mazurs
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 14 Oct 2017 08:48:47 +0200
+
+grub-installer (1.144) unstable; urgency=medium
+
+  [ John Paul Adrian Glaubitz ]
+  * Remove installability checks on powerpc and ppc64.
+  * Use hack to wipe and find prep partition on powerpc and ppc64.
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 12 Oct 2017 07:28:24 +0200
+
+grub-installer (1.143) unstable; urgency=medium
+
+  [ John Paul Adrian Glaubitz ]
+  * Add ppc64 support.
+  * Add sparc/sparc64 support.
+  * Fix subarchitecture matching on sparc/sparc64.
+  * Pass "--skip-fs-probe" to grub-install on sparc/sparc64.
+  * Add missing invocation of grub-install on powerpc/* and ppc64/*.
+  * Remove "experimental_arch" flag on powerpc/* and ppc64/*.
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 30 Sep 2017 06:23:20 +0200
+
+grub-installer (1.142) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Greek (el.po) by Sotirios Vrachas
+  * Hebrew (he.po) by Lior Kaplan
+  * Albanian (sq.po) by Silva Arapi
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 17 Sep 2017 08:01:16 +0200
+
+grub-installer (1.141) unstable; urgency=medium
+
+  [ Cyril Brulebois ]
+  * Apply another patch by Hideki Yamane to fix support for systems with a
+    large number of disks, since the regression fix in the previous upload
+    was incomplete (Closes: #839894).
+
+  [ Updated translations ]
+  * Simplified Chinese (zh_CN.po) by Yangfl
+  * Traditional Chinese (zh_TW.po) by Yao Wei (魏銘廷)
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 14 Jun 2017 09:07:51 +0200
+
+grub-installer (1.140) unstable; urgency=medium
+
+  * Fix regression in the last upload, which should have added an extra
+    letter as optional instead of adding it as mandatory (/dev/[hsv]d*
+    case).
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 04 Jun 2017 02:44:04 +0200
+
+grub-installer (1.139) unstable; urgency=medium
+
+  [ Roger Shimizu ]
+  * Fix installation to system that has many disks (>= 27).
+    (Closes: #839894)
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 03 Jun 2017 13:47:22 +0200
+
+grub-installer (1.138) unstable; urgency=medium
+
+  [ Mauricio Faria de Oliveira ]
+  * grub-installer: Use 'p' (not '-part') as multipath disk-partition
+    separator. This fixes the check of whether the boot file system is on
+    multipath (i.e., $disc_offered is a multipath partition).
+  * Better handle PReP partitions on ppc64el:
+    - prep-bootdev: add '-l' option to list all PReP partitions. With this,
+      it's possible to do more things to select a PReP partition.
+    - grub-installer [ppc64el]: bootdev/wipe_bootdev: prefer PReP partition on
+      the same disk as the boot file system partition ($disc_offered).
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 01 Apr 2017 01:57:06 +0200
+
+grub-installer (1.137) unstable; urgency=medium
+
+  * Fix grub-xen installation in Xen environments: the architecture-based
+    match was missing the “/subarch” part. Thanks to Sergio Gelato for the
+    report and the suggested fix (Closes: #854082).
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 04 Feb 2017 23:47:42 +0100
+
+grub-installer (1.136) unstable; urgency=medium
+
+  * Really drop Otavio. Sigh...
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 07 Dec 2016 07:43:28 +0100
+
+grub-installer (1.135) unstable; urgency=medium
+
+  * Drop Otavio Salvador from Uploaders. Thank you for your work
+    within the D-I team. Closes: #847256
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 07 Dec 2016 07:07:21 +0100
+
+grub-installer (1.134) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Danish (da.po) by Joe Hansen
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 22 Sep 2016 07:18:53 +0200
+
+grub-installer (1.133) unstable; urgency=medium
+
+  [ Steve McIntyre ]
+  * Add support for armhf EFI systems
+
+ -- Steve McIntyre <93sam@debian.org>  Wed, 10 Aug 2016 18:30:11 +0100
+
+grub-installer (1.132) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Serbian (sr.po) by Dragan Filipović
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 24 Apr 2016 09:35:06 +0200
+
+grub-installer (1.131) unstable; urgency=medium
+
+  [ Samuel Thibault ]
+  * Fix mounting /proc on hurd.
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 19 Feb 2016 07:01:52 +0100
+
+grub-installer (1.130) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * Install grub-xen when installing in a Xen PV guest.
+  * Use HTTPS for Vcs-* URLs, and link to cgit rather than gitweb.
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 02 Feb 2016 06:55:10 +0100
+
+grub-installer (1.129) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Swedish (sv.po) by Martin Bagge / brother
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 28 Jan 2016 07:22:26 +0100
+
+grub-installer (1.128) unstable; urgency=high
+
+  * Fix buggy /dev/nvme matching in the case statement to determine
+    disc_offered_devfs (Closes: #799119). Thanks, Mario Limonciello!
+
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 03 Dec 2015 00:26:42 +0100
+
+grub-installer (1.127) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Thai (th.po) by Theppitak Karoonboonyanan
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 02 Oct 2015 11:21:43 +0200
+
+grub-installer (1.126) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Lior Kaplan
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 21 Aug 2015 06:17:47 +0200
+
+grub-installer (1.125) unstable; urgency=medium
+
+  [ Ian Campbell ]
+  * Correctly propagate grub-installer/force-efi-extra-removable to installed
+    system. (Closes: #792247).
+
+  [ Updated translations ]
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Ian Campbell <ijc@debian.org>  Sat, 25 Jul 2015 17:15:17 +0100
+
+grub-installer (1.124) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 21 Jun 2015 14:09:40 +0200
+
+grub-installer (1.123) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 18 May 2015 18:59:08 +0200
+
+grub-installer (1.122) unstable; urgency=medium
+
+  [ Cyril Brulebois ]
+  * Add support for /dev/nvme* devices (NVMe SSD Add-in-Card devices),
+    by mimicking what is already done in the /dev/mmcblk* case. Thanks to
+    Steve Rowe for the report and the initial patch! (Closes: #785149)
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 13 May 2015 06:57:05 +0200
+
+grub-installer (1.121) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Tamil (ta.po) by Dr.T.Vasudevan
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 12 May 2015 07:29:58 +0200
+
+grub-installer (1.120) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Marathi (mr.po) by Sampada
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 05 May 2015 08:23:19 +0200
+
+grub-installer (1.119) unstable; urgency=medium
+
+  [ Steven Chamberlain ]
+  * Enable detection of kfreebsd disk types vtbd (virtio) and xbd (Xen).
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 01 May 2015 08:50:59 +0200
+
+grub-installer (1.118) unstable; urgency=low
+
+  [ Updated translations ]
+  * Japanese (ja.po) by Kenshi Muto. Closes: #783367
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 27 Apr 2015 07:08:58 +0200
+
+grub-installer (1.117) unstable; urgency=low
+
+  [ Updated translations ]
+  * Slovenian (sl.po) by Vanja Cvelbar
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 27 Apr 2015 07:05:05 +0200
+
+grub-installer (1.116) unstable; urgency=low
+
+  [ Updated translations ]
+  * Romanian (ro.po) by Ioan Eugen Stan
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 09 Apr 2015 19:50:12 +0200
+
+grub-installer (1.115) unstable; urgency=low
+
+  [ Updated translations ]
+  * Catalan (ca.po) by Jordi Mallach
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 05 Apr 2015 08:55:31 +0200
+
+grub-installer (1.114) unstable; urgency=low
+
+  [ Updated translations ]
+  * Romanian (ro.po) by Bradut Boghita
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 25 Mar 2015 06:56:09 +0100
+
+grub-installer (1.113) unstable; urgency=low
+
+  [ Updated translations ]
+  * Spanish (es.po) by Javier Fernández-Sanguino
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 18 Mar 2015 07:01:16 +0100
+
+grub-installer (1.112) unstable; urgency=low
+
+  [ Updated translations ]
+  * Danish (da.po) by Joe Hansen
+  * Ukrainian (uk.po) by Anton Gladky
+  * Vietnamese (vi.po) by Hai-Nam Nguyen
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 08 Mar 2015 08:00:53 +0100
+
+grub-installer (1.111) unstable; urgency=low
+
+  [ Updated translations ]
+  * Japanese (ja.po) by Kenshi Muto
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 21 Feb 2015 08:30:08 +0100
+
+grub-installer (1.110) unstable; urgency=low
+
+  [ Updated translations ]
+  * Polish (pl.po) by Michał Kułach
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 11 Feb 2015 06:50:00 +0100
+
+grub-installer (1.109) unstable; urgency=low
+
+  [ Updated translations ]
+  * Korean (ko.po) by Changwoo Ryu
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 10 Feb 2015 06:56:31 +0100
+
+grub-installer (1.108) unstable; urgency=low
+
+  [ Updated translations ]
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 05 Feb 2015 07:15:18 +0100
+
+grub-installer (1.107) unstable; urgency=low
+
+  [ Updated translations ]
+  * Galician (gl.po) by Jorge Barreiro
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 31 Jan 2015 08:04:08 +0100
+
+grub-installer (1.106) unstable; urgency=low
+
+  [ Updated translations ]
+  * Russian (ru.po) by Yuri Kozlov
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 26 Jan 2015 08:18:52 +0100
+
+grub-installer (1.105) unstable; urgency=medium
+
+  [ Steve McIntyre ]
+  * Add support for mixed EFI systems: 64-bit Linux running on top of
+    32-bit UEFI.
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Italian (it.po) by Milo Casagrande
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 14 Jan 2015 06:55:38 +0100
+
+grub-installer (1.104) unstable; urgency=low
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Viktar Siarheichyk
+  * German (de.po) by Holger Wansing
+  * French (fr.po) by Christian Perrier
+  * Croatian (hr.po) by Tomislav Krznar
+  * Bokmål, Norwegian (nb.po) by Hans Fredrik Nordhaug
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Slovak (sk.po) by Ivan Masár
+  * Thai (th.po) by Theppitak Karoonboonyanan
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 07 Jan 2015 07:07:28 +0100
+
+grub-installer (1.103) unstable; urgency=medium
+
+  * Apply patch by Andrew Patterson (many thanks!) to support setting
+    grub-installer/bootdev=default so that the default boot device that
+    was determined is used automatically, skipping the prompt
+    (Closes: #759737).
+
+ -- Cyril Brulebois <kibi@debian.org>  Mon, 29 Dec 2014 23:20:16 +0100
+
+grub-installer (1.102) unstable; urgency=medium
+
+  [ Steve McIntyre ]
+  * Add extra support for forcing installation to the EFI
+    removable media path, either during installation (low priority or
+    preseeding), or as an extra rescue-mode option to help people fix
+    their systems post-install once they realise they need to. (#767037)
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 01 Dec 2014 02:49:36 +0000
+
+grub-installer (1.101) unstable; urgency=medium
+
+  [ Steve McIntyre ]
+  * Recognise the new ignore_uefi flag from partman-efi.
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 03 Nov 2014 23:31:39 +0000
+
+grub-installer (1.100) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * On ppc64el, wipe the PReP partition before installing grub-ieee1275,
+    otherwise installations where the PReP partition is not empty and does
+    not contain a previous boot loader installation will fail now that
+    grub-ieee1275.postinst runs grub-install (LP: #1376973).
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 09 Oct 2014 07:26:34 +0200
+
+grub-installer (1.99) unstable; urgency=medium
+
+  * Revert using default_bootdev as the default when bootdev is unset (see
+    1.98 upload) since it brings back the infamous default-to-/dev/sda
+    issue (Closes: #763580). Always asking seems safer until someone does
+    the needed work to improve detection.
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 03 Oct 2014 05:06:47 +0200
+
+grub-installer (1.98) unstable; urgency=medium
+
+  [ Philip Hands ]
+  * use default_bootdev as the default when bootdev is unset,
+    with the side-effect of enabling auto-installs to use the
+    default without prompting.  Probably closes: #712907
+  * move repeated $DEBCONF_DEBUG tests into a debug() function
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 23 Sep 2014 06:45:22 +0200
+
+grub-installer (1.97) unstable; urgency=medium
+
+  [ Debian Install System Team ]
+  [ Steven Chamberlain]
+  * In device_to_disk, recognise /dev/ada[0-9] disk naming on kfreebsd
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 15 Sep 2014 11:32:43 +0200
+
+grub-installer (1.96) unstable; urgency=medium
+
+  * Install grub-arm64-efi on arm64/efi platforms.
+
+ -- Ian Campbell <ijc@debian.org>  Fri, 05 Sep 2014 07:40:00 +0100
+
+grub-installer (1.95) unstable; urgency=medium
+
+  * Add ${shlibs:Depends}, and replace dependency on cdebconf-udeb with
+    ${misc:Depends}.
+  * Use --set=root rather than --set in GRUB 2 configuration emitted by
+    otheros.sh (closes: #650414).
+  * Add ppc64el support (closes: #753718).
+
+ -- Colin Watson <cjwatson@debian.org>  Sat, 12 Jul 2014 09:45:43 +0100
+
+grub-installer (1.94) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 14 Mar 2014 15:19:44 +0100
+
+grub-installer (1.93) unstable; urgency=medium
+
+  * Revert 1.92 changes, as unattended installations which do not preseed
+    grub-installer/bootdev now fail to install unattended. This thus
+    reopens #666974, LP#1012629.
+  * Instead check if grub-installer/bootdev was seen, and only then query
+    for it's value. Also do so, ahead of the loop that processes
+    only_debian and with_other_os, such that grub-installer/bootdev takes
+    precedence. Closes: #666974. LP: #1012629.
+  * Jenkins which regressed with previous upload, are now back to normal.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 28 Feb 2014 13:41:56 +0000
+
+grub-installer (1.92) unstable; urgency=medium
+
+  * Adapt patch from Guilhem Moulin to always honor
+    grub-installer/bootdev, when it was preseeded, instead of insisting on
+    automatic detection which may lead to unpredictable results (e.g. use
+    a different device, or fail unattended installation). Closes:
+    #666974. LP: #1012629.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 25 Feb 2014 14:08:07 +0000
+
+grub-installer (1.91) unstable; urgency=low
+
+  [ Updated translations ]
+  * Bosnian (bs.po) by Amila Valjevčić
+  * Hungarian (hu.po) by Judit Gyimesi
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 14 Dec 2013 18:56:23 +0100
+
+grub-installer (1.90) unstable; urgency=low
+
+  [ Updated translations ]
+  * Turkish (tr.po) by Mert Dirik
+  * Ukrainian (uk.po) by Yuri Chornoivan
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 09 Nov 2013 16:03:05 +0100
+
+grub-installer (1.89) unstable; urgency=low
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 07 Sep 2013 07:35:21 +0200
+
+grub-installer (1.88) unstable; urgency=low
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 16 Aug 2013 12:24:39 +0200
+
+grub-installer (1.87) unstable; urgency=low
+
+  [ Wouter Verhelst ]
+  * Remove $SELF from uploaders
+
+  [ Dmitrijs Ledkovs ]
+  * Set debian source format to '3.0 (native)'.
+  * Bump debhelper compat level to 9.
+  * Set Vcs-* to canonical format.
+  * Remove obsolete DM-Upload-allowed field.
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 13 Jul 2013 12:15:52 +0200
+
+grub-installer (1.86) unstable; urgency=low
+
+  [ Vincent McIntyre ]
+  * Support menu selection of GRUB boot disk. Closes: #706112
+
+ -- Cyril Brulebois <kibi@debian.org>  Mon, 29 Apr 2013 13:53:27 +0200
+
+grub-installer (1.85) unstable; urgency=low
+
+  [ Steven Chamberlain ]
+  * Revert workaround for #681227, which was actually not a valid bug.
+    Closes: #696903, #696942 (regressions introduced by said workaround)
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 31 Jan 2013 19:54:06 +0100
+
+grub-installer (1.84) unstable; urgency=low
+
+  * Add workaround for #681227. Won't mark it as closed, since I didn't
+    find the root cause, but with this at least we can downgrade the
+    severity.
+  * Apply patch from Arno Töll to fix / on ZFS where /boot isn't.
+    Closes: #651720.
+  * Add $SELF to uploaders
+
+  [ Updated translations ]
+  * Catalan (ca.po) by Jordi Mallach
+
+ -- Wouter Verhelst <wouter@debian.org>  Sun, 16 Dec 2012 17:28:47 +0100
+
+grub-installer (1.83) unstable; urgency=low
+
+  [ Milan Kupcevic ]
+  * Allow grub installation on PowerPC machines if /boot/grub partition
+    is present. Closes: #664128
+  * Allow grub installation on IBM Power machines. Closes: #691264
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 27 Oct 2012 08:07:35 +0200
+
+grub-installer (1.82) unstable; urgency=low
+
+  [ Updated translations ]
+  * Malayalam (ml.po) by Hrishikesh K B
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 20 Oct 2012 16:55:53 +0200
+
+grub-installer (1.81) unstable; urgency=low
+
+  [ Updated translations ]
+  * Asturian (ast.po) by ivarela
+  * Galician (gl.po) by Jorge Barreiro
+  * Ukrainian (uk.po) by Yuri Chornoivan
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 17 Oct 2012 18:59:27 +0200
+
+grub-installer (1.80) unstable; urgency=low
+
+  [ Updated translations ]
+  * Translations of the debconf template added in 1.79 copied
+    from nobootloader for all languages.
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 30 Sep 2012 08:35:59 +0200
+
+grub-installer (1.79) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Don't try to use local outside a function.
+
+  [ Steve McIntyre ]
+  * Allow grub for amd64/efi and i386/efi, installing grub-efi instead of
+    grub-pc.
+  * Make sure that we have /sys and /proc mounted in /target in the
+    postinst, so that efibootmgr will work ok.
+  * Add myself to Uploaders
+
+ -- Steve McIntyre <93sam@debian.org>  Fri, 21 Sep 2012 21:10:46 +0100
+
+grub-installer (1.78) unstable; urgency=low
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Tomislav Krznar
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 25 Aug 2012 08:33:09 +0200
+
+grub-installer (1.77) unstable; urgency=low
+
+  [ Cyril Brulebois ]
+  * Apply patch from Mike Miller to fix the syntax error in the
+    linprocfs/kFreeBSD code (Closes: #683867). Many thanks for the
+    tested patch!
+
+  [ Christian Perrier ]
+  * Add myself to Uploaders
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 05 Aug 2012 10:59:40 +0200
+
+grub-installer (1.76) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Fix /proc mounting code to use linprocfs on kFreeBSD. Closes: #613430
+  * Remove code that relies on target fstab containing /proc, which it no
+    longer does. Closes: #637684
+
+  [ Updated translations ]
+  * Irish (ga.po) by Kevin Patrick Scannell
+
+ -- Julien Cristau <jcristau@debian.org>  Fri, 03 Aug 2012 09:43:34 +0200
+
+grub-installer (1.75) unstable; urgency=high
+
+  * Team upload.
+  * Make sure /proc is mounted in $ROOT (usually: /target) so that grub
+    can find all needed bits, like RAID and LVM stuff through /proc/devices
+    (Closes: #662086).
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 11 Jul 2012 15:28:45 +0200
+
+grub-installer (1.74) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Tomislav Krznar
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 20 Jun 2012 00:41:26 +0200
+
+grub-installer (1.73) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Amharic (am.po) by Tegegne Tefera
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 18 Jun 2012 18:45:34 +0200
+
+grub-installer (1.72) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Galician (gl.po) by Jorge Barreiro
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 17 Jun 2012 11:25:29 +0200
+
+grub-installer (1.71) unstable; urgency=low
+
+  * Team upload
+  * Replace XC-package-Type by Package-Type
+
+  [ Jeremie Koenig ]
+  * Work around the unavailability of /proc/mounts on Hurd.
+
+  [ Updated translations ]
+  * Tibetan (bo.po) by Tennom
+  * Welsh (cy.po) by Dafydd Tomos
+  * Danish (da.po) by Joe Hansen
+  * Basque (eu.po) by Piarres Beobide
+  * Finnish (fi.po) by Timo Jyrinki
+  * Galician (gl.po) by Jorge Barreiro
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Icelandic (is.po) by Sveinn í Felli
+  * Lao (lo.po) by Anousak Souphavanh
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Latvian (lv.po) by Rūdolfs Mazurs
+  * Macedonian (mk.po) by Arangel Angov
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Panjabi (pa.po) by A S Alam
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
+  * Slovenian (sl.po) by Vanja Cvelbar
+  * Vietnamese (vi.po) by Hai-Nam Nguyen
+  * Traditional Chinese (zh_TW.po) by Yao Wei (魏銘廷)
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 15 Jun 2012 19:04:26 +0200
+
+grub-installer (1.70) unstable; urgency=low
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama Khayat
+  * Asturian (ast.po) by Mikel González
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bengali (bn.po) by Ayesha Akhtar
+  * Catalan (ca.po) by Jordi Mallach
+  * Danish (da.po) by Joe Hansen
+  * Greek (el.po) by galaxico
+  * Estonian (et.po) by Mattias Põldaru
+  * Indonesian (id.po) by Mahyuddin Susanto
+  * Icelandic (is.po) by Sveinn í Felli
+  * Italian (it.po) by Milo Casagrande
+  * Khmer (km.po) by Khoem Sokhem
+  * Kannada (kn.po) by Prabodh C P
+  * Norwegian Bokmal (nb.po) by Hans Fredrik Nordhaug
+  * Polish (pl.po) by Marcin Owsiany
+  * Romanian (ro.po) by Ioan Eugen Stan
+  * Serbian (sr.po) by Karolina Kalic
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 15 Mar 2012 14:44:37 -0300
+
+grub-installer (1.69) unstable; urgency=low
+
+  [ Joey Hess ]
+  * Simplify grub package selection code.
+  * Don't allow using GRUB legacy when booting from btrfs.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Ossama Khayat
+  * Bosnian (bs.po) by Armin Besirovic
+  * Dzongkha (dz.po) by Jurmey Rabgay
+  * Persian (fa.po) by Behrad Eslamifar
+  * Hebrew (he.po) by Lior Kaplan
+  * Hindi (hi.po) by Kumar Appaiah
+  * Khmer (km.po) by Chan Sambathratanak
+  * Kannada (kn.po) by vignesh prabhu
+  * Marathi (mr.po) by sampada
+  * Polish (pl.po) by Marcin Owsiany
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Martin Bagge / brother
+  * Telugu (te.po) by Arjuna Rao Chavala
+
+ -- Otavio Salvador <otavio@debian.org>  Sat, 19 Nov 2011 16:33:12 -0200
+
+grub-installer (1.68) unstable; urgency=low
+
+  [ Matt Kraai ]
+  * Write boot.cfg to /boot if using a separate /boot partition (closes:
+    #637792).
+
+  [ Colin Watson ]
+  * Restore the ability to choose to install GRUB Legacy by preseeding
+    (grub-installer/grub2_instead_of_grub_legacy=false), removed in 1.60 as
+    a side-effect of removing a warning message.  This is still useful e.g.
+    when installing inside Xen.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Viktar Siarheichyk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Bosnian (bs.po) by Armin Besirovic
+  * German (de.po) by Holger Wansing
+  * Esperanto (eo.po) by Felipe Castro
+  * Spanish (es.po) by Javier Fernández-Sanguino
+  * Hindi (hi.po) by Kumar Appaiah
+  * Italian (it.po) by Milo Casagrande
+  * Japanese (ja.po) by Kenshi Muto
+  * Korean (ko.po) by Changwoo Ryu
+  * Dutch (nl.po) by Jeroen Schot
+  * Panjabi (pa.po) by A S Alam
+  * Polish (pl.po) by Marcin Owsiany
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Romanian (ro.po) by Ioan Eugen Stan
+  * Russian (ru.po) by Yuri Kozlov
+  * Sinhala (si.po) by Danishka Navin
+  * Tamil (ta.po) by Dr.T.Vasudevan
+  * Thai (th.po) by Theppitak Karoonboonyanan
+  * Turkish (tr.po) by Mert Dirik
+  * Ukrainian (uk.po) by Borys Yanovych
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 23 Sep 2011 10:19:09 +0100
+
+grub-installer (1.67) unstable; urgency=low
+
+  * Team upload
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Basque (eu.po)
+  * French (fr.po) by Christian Perrier
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 05 Aug 2011 09:49:45 +0200
+
+grub-installer (1.66) unstable; urgency=low
+
+  [ Colin Watson ]
+  * Update grub-installer/bootdev text to avoid GRUB device naming that
+    changed between GRUB Legacy and GRUB 2, and to use libata-style device
+    naming since that is more accurate for most people (closes: #576309).
+  * Unless grub-installer/make_active is preseeded to false, mark the
+    partition to which GRUB is being installed as bootable, or failing that
+    the first available primary partition on the disk to which GRUB is being
+    installed (closes: #635968).
+
+  [ Otavio Salvador ]
+  * debian/control: build-depends on libparted-dev
+
+  [ Updated translations ]
+  * Basque (eu.po)
+  * Hebrew (he.po) by Lior Kaplan
+  * Macedonian (mk.po) by Arangel Angov
+  * Sinhala (si.po) by Danishka Navin
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 31 Jul 2011 01:42:48 +0200
+
+grub-installer (1.65) unstable; urgency=low
+
+  * Add mipsel/loongson-2f support, covering the Lemote YeeLoong (closes:
+    #622704).
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 03 Jun 2011 23:13:40 +0100
+
+grub-installer (1.64) unstable; urgency=low
+
+  * Ensure that /boot/zfs exists in the target before copying zpool.cache to
+    it.
+  * Purge grub-pc-bin as well as grub-pc if GRUB Legacy is to be used,
+    anticipating changes to the grub2 source package.
+
+  [ Updated translations ]
+  * Asturian (ast.po) by MAAC
+  * Italian (it.po) by Milo Casagrande
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 16 May 2011 23:53:15 +0100
+
+grub-installer (1.63) unstable; urgency=low
+
+  * Team Upload
+
+  [ Samuel Thibault ]
+  * grub-installer: Handle Mach serial device name.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Pavel Piatruk
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Holger Wansing
+  * Esperanto (eo.po) by Felipe Castro
+  * Estonian (et.po) by Mattias Põldaru
+  * Georgian (ka.po) by Aiet Kolkhi
+  * Korean (ko.po) by Changwoo Ryu
+  * Marathi (mr.po) by sampada
+  * Nepali (ne.po)
+  * Romanian (ro.po) by Eddy Petrișor
+  * Russian (ru.po) by Yuri Kozlov
+  * Slovak (sk.po) by Ivan Masár
+  * Swedish (sv.po) by Daniel Nylander
+  * Uyghur (ug.po) by Sahran
+  * Simplified Chinese (zh_CN.po) by YunQiang Su
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 24 Apr 2011 09:26:39 +0200
+
+grub-installer (1.62) unstable; urgency=low
+
+  * Team upload
+  * Upload to resync translations
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 17 Feb 2011 20:24:57 +0100
+
+grub-installer (1.61) unstable; urgency=low
+
+  [ Jeremie Koenig ]
+  * Add the Hurd hard disk devices to the $disc_offered_devfs regexp and
+    switch cases.
+  * Add grub_package="grub-pc" on Hurd, and add a default case for the
+    sake of future porters.
+
+  [ Christian Perrier ]
+  * Make "grub-installer/grub_not_mature_on_this_platform" translatable
+
+  [ Colin Watson ]
+  * If the first disk has neither a partition table nor a filesystem, don't
+    try to install to it as grub-setup will refuse (LP: #711830).
+
+  [ Otavio Salvador ]
+  * Set debconf title to avoid reusing a previous one.
+
+  [ Updated translations ]
+  * Telugu (te.po) by Arjuna Rao Chavala
+
+ -- Otavio Salvador <otavio@debian.org>  Mon, 14 Feb 2011 09:51:11 -0200
+
+grub-installer (1.60) unstable; urgency=low
+
+  * Drop warning about GRUB 2 being experimental. Closes: #610365.
+
+ -- Otavio Salvador <otavio@debian.org>  Mon, 17 Jan 2011 21:41:47 -0200
+
+grub-installer (1.59) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * Amend changes from 1.57: call device_to_disk on the device mounted as
+    cdrom.  Booting from a disk or usb device, that may end up being
+    /dev/sda1 instead of /dev/sda, defeating the "we shouldn't install GRUB to
+    the installation media" test.  In addition, avoid installing GRUB to the
+    device mounted on /hd-media.  Closes: #605562.
+
+  [ Updated translations ]
+  * Northern Sami (se.po) by Børre Gaup
+
+ -- Otavio Salvador <otavio@ossystems.com.br>  Sat, 15 Jan 2011 16:49:51 -0200
+
+grub-installer (1.58) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Change text of examples in debconf templates to fit the new
+    partition numbering scheme in GRUB 2. Closes: #581687
+
+  [ Updated translations ]
+  * Hindi (hi.po) by Kumar Appaiah
+  * Kazakh (kk.po) by Baurzhan Muftakhidinov
+  * Central Khmer (km.po) by Khoem Sokhem
+  * Lao (lo.po) by Anousak Souphavanh
+  * Malayalam (ml.po) by Praveen Arimbrathodiyil
+  * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel
+  * Northern Sami (se.po) by Børre Gaup
+  * Slovak (sk.po) by Ivan Masár
+  * Telugu (te.po) by Arjuna Rao Chavala
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 24 Dec 2010 19:01:42 -0200
+
+grub-installer (1.57) unstable; urgency=low
+
+  * Merge changes from Ubuntu by Evan Dandrea and myself:
+    - Set a sensible default boot device, so that we aren't installing GRUB
+      to installation media which may be removed later.  The disk containing
+      /cdrom is very unlikely to be a sensible default.  If we had to fall
+      back to (hd0), then we can't tell exactly which disk that is, but if
+      /cdrom seems to be a USB stick then (hd0) may not be safe.  If we hit
+      either of those checks, then try the disk containing /boot instead
+      (closes: #568529).
+
+  [ Updated translations ]
+  * Sinhala (si.po) by Danishka Navin
+  * Slovenian (sl.po) by Vanja Cvelbar
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 19 Nov 2010 15:27:33 +0000
+
+grub-installer (1.56) unstable; urgency=low
+
+  [ Otavio Salvador ]
+  * Use '$grub_version' instead of '$grub_package' to choose the chain
+    writting code.
+
+  [ Colin Watson ]
+  * Run update-grub within in-target so that /target/proc and /target/sys
+    are mounted, fixing OS detection (closes: #560027, #567980, #593460).
+
+  [ Robert Millan ]
+  * ZFS support (Closes: #595152).
+
+  [ Updated translations ]
+  * Catalan (ca.po) by Jordi Mallach
+  * Danish (da.po) by Anders Jenbo
+  * Persian (fa.po) by Behrad Eslamifar
+  * Icelandic (is.po) by Sveinn í Felli
+
+ -- Robert Millan <rmh@debian.org>  Wed, 10 Nov 2010 01:04:15 +0100
 
 grub-installer (1.55) unstable; urgency=low
 
   [ Aurelien Jarno ]
-  * Allow booting on ext2fs or xfs partition using grub-pc (for 
+  * Allow booting on ext2fs or xfs partition using grub-pc (for
     GNU/kFreeBSD).
- 
+
   [ Updated translations ]
   * Asturian (ast.po) by maacub
   * Bulgarian (bg.po) by Damyan Ivanov
@@ -180,158 +1251,6 @@ grub-installer (1.50) unstable; urgency=low
 
  -- Otavio Salvador <otavio@debian.org>  Mon, 22 Feb 2010 00:04:48 -0300
 
-grub-installer (1.49ubuntu12) maverick; urgency=low
-
-  * Install grub-efi on i386/efi and amd64/efi subarchitectures.
-  * Resolve symlinks in default boot device (LP: #602758).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Thu, 08 Jul 2010 13:03:01 +0100
-
-grub-installer (1.49ubuntu11) lucid; urgency=low
-
-  * 'nosplash' doesn't work because it isn't passed through by user-params.
-    Use debian-installer/splash=false for this behaviour instead
-    (LP: #548954).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 06 Apr 2010 13:26:16 +0100
-
-grub-installer (1.49ubuntu10) lucid; urgency=low
-
-  * Historically, Ubuntu's default behaviour in the absence of command-line
-    arguments to the installer has been to pass 'splash' to the installed
-    system so that it gets a splash screen (and similarly 'quiet').  There's
-    some argument that this behaviour should require passing 'splash' to the
-    installer as well, but it's too late in the Lucid cycle for this change.
-    Nevertheless, we need a way to configure images such that they don't get
-    'splash' in the installed system, so introduce a 'nosplash' argument
-    which inhibits this, for use by the server CD (LP: #548954).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Thu, 01 Apr 2010 23:44:48 +0100
-
-grub-installer (1.49ubuntu9) lucid; urgency=low
-
-  * Ask grub-installer/only_debian at high priority again (LP: #47135).
-    Originally, in Warty, we ensured that this question wouldn't be visible
-    by default to support simple installations of Ubuntu with as few
-    questions as possible.  However, since then, we wrote Ubiquity, which
-    has taken over responsibility for the simple installation case, and it's
-    become clear that automatically installing GRUB to the first disk's MBR
-    is inadequate for many more complex situations.  Ironically, Ubiquity
-    makes this option easily accessible from the "Advanced" dialog box, but
-    Ubuntu's d-i required a special boot parameter to display it.
-  * Update grub-installer/bootdev text to avoid GRUB device naming that
-    changed between GRUB Legacy and GRUB 2, and to use libata-style device
-    naming since that is more accurate for most people (LP: #391775)
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 26 Mar 2010 11:34:43 +0000
-
-grub-installer (1.49ubuntu8) lucid; urgency=low
-
-  * Bind-mount /proc and /sys while running grub-install (LP: #527210).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 22 Mar 2010 21:33:27 +0000
-
-grub-installer (1.49ubuntu7) lucid; urgency=low
-
-  * Fix GPT detection to account for changed fdisk output (LP: #538100).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 15 Mar 2010 10:00:46 +0000
-
-grub-installer (1.49ubuntu6) lucid; urgency=low
-
-  * Fix partition offset handling for GRUB Legacy.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 09 Mar 2010 11:29:05 +0000
-
-grub-installer (1.49ubuntu5) lucid; urgency=low
-
-  [ Joel Ebel ]
-  * Add missing $serial to get proper detection of serial console options
-    working.
-
- -- Evan Dandrea <evand@ubuntu.com>  Fri, 19 Feb 2010 17:41:03 -0500
-
-grub-installer (1.49ubuntu4) lucid; urgency=low
-
-  * Preseed grub-pc/install_devices_empty while installing grub-pc, since we
-    deliberately defer calling grub-install until a later point.  Thanks to
-    Dustin Kirkland for debugging assistance.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Thu, 04 Feb 2010 12:24:22 -0800
-
-grub-installer (1.49ubuntu3) lucid; urgency=low
-
-  * Add $partition_offset to $bootpart when deciding which partition to make
-    active based on GRUB-style device names (found while testing fix for LP
-    #185878).
-  * Use grub-probe to convert device names rather than relying on
-    device.map.
-  * Only add removable devices to device.map if using GRUB Legacy.
-  * Use an appropriate OS device name rather than (hd0) if possible.
-  * When installing from a non-CD medium, we only need to reset the default
-    boot device if we would otherwise end up installing GRUB to the
-    installation medium.
-  * Convert device names to by-id form before preseeding
-    grub-pc/install_devices.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 03 Feb 2010 17:08:02 -0800
-
-grub-installer (1.49ubuntu2) lucid; urgency=low
-
-  * Don't check for LVM when we've already worked out that we're installing
-    on SATA RAID.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 20 Jan 2010 19:04:14 +0000
-
-grub-installer (1.49ubuntu1) lucid; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed (only for GRUB Legacy right now).
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map (for GRUB Legacy only);
-      it also hides the menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add support for writing an GRUB Legacy MBR on each disk in an
-      mdadm-managed RAID providing /boot. (GRUB 2 can handle this already.)
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Go back to using update-grub -y for GRUB Legacy for now; our grub
-      package is a bit old and still requires this.
-    - Default to grub2 for GPT systems.
-    - Allow grub/grub2 choice for ext4, though still default to grub2.
-    - If /boot is on an MD device and we're using GRUB 2, install GRUB there
-      rather than (hd0); GRUB 2 will interpret that as meaning that it needs
-      to install to each of the RAID members.
-    - Mount /target/sys when running update-grub.
-    - If using GRUB 2 and installing to a RAID device any of whose
-      components are partitions, then default to installing to the MBRs of
-      each of the containing disks, since GRUB 2 will refuse to install to
-      the partition devices.
-  * GRUB 2 now supports installation on SATA RAID and multipath.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 04 Jan 2010 15:58:21 +0000
-
 grub-installer (1.49) unstable; urgency=low
 
   * Merge from Ubuntu:
@@ -358,56 +1277,6 @@ grub-installer (1.48) unstable; urgency=low
   * Galician (gl.po) by Marce Villarino
 
  -- Colin Watson <cjwatson@debian.org>  Mon, 23 Nov 2009 21:12:00 +0000
-
-grub-installer (1.47ubuntu1) lucid; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed (only for GRUB Legacy right now).
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map (for GRUB Legacy only);
-      it also hides the menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add support for writing an GRUB Legacy MBR on each disk in an
-      mdadm-managed RAID providing /boot. (GRUB 2 can handle this already.)
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Go back to using update-grub -y for GRUB Legacy for now; our grub
-      package is a bit old and still requires this.
-    - Default to grub2 for GPT systems.
-    - Allow grub/grub2 choice for ext4, though still default to grub2.
-    - Preseed grub-pc/install_devices based on grub-installer/bootdev.
-    - If /boot is on an MD device and we're using GRUB 2, install GRUB there
-      rather than (hd0); GRUB 2 will interpret that as meaning that it needs
-      to install to each of the RAID members.
-    - Always use GRUB Legacy when /boot is on a multipath device.
-    - Mount /target/sys when running update-grub.
-    - If using GRUB 2 and installing to a RAID device any of whose
-      components are partitions, then default to installing to the MBRs of
-      each of the containing disks, since GRUB 2 will refuse to install to
-      the partition devices.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 11 Nov 2009 16:49:33 +0000
 
 grub-installer (1.47) unstable; urgency=low
 
@@ -450,104 +1319,6 @@ grub-installer (1.44) unstable; urgency=low
 
  -- Felix Zielcke <fzielcke@z-51.de>  Mon, 21 Sep 2009 11:20:05 +0200
 
-grub-installer (1.43ubuntu8) karmic; urgency=low
-
-  * If using GRUB 2 and installing to a RAID device any of whose components
-    are partitions, then default to installing to the MBRs of each of the
-    containing disks, since GRUB 2 will refuse to install to the partition
-    devices (LP: #457687).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 23 Oct 2009 22:02:19 +0100
-
-grub-installer (1.43ubuntu7) karmic; urgency=low
-
-  * Mount /target/sys when running update-grub (LP: #456776).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 21 Oct 2009 14:08:00 +0100
-
-grub-installer (1.43ubuntu6) karmic; urgency=low
-
-  * Always use GRUB Legacy when /boot is on a multipath device.
-  * If /boot is on SATA RAID or multipath, don't ask a question to which
-    there's only one acceptable answer and the other causes grub-installer
-    to fall over (LP: #452118).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Thu, 15 Oct 2009 15:14:54 +0100
-
-grub-installer (1.43ubuntu5) karmic; urgency=low
-
-  * Fix mishandling of loop variable that caused the semi-manual
-    dmraid/multipath/mdadm handling to fire even for disks that don't need
-    it (LP: #444583).
-  * Never use the semi-manual GRUB setup code for GRUB 2, since it won't
-    work anyway.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 06 Oct 2009 16:13:02 +0100
-
-grub-installer (1.43ubuntu4) karmic; urgency=low
-
-  * Fix typo in fallback case when computing $disc_offered_devfs.
-  * If /boot is on an MD device and we're using GRUB 2, install GRUB there
-    rather than (hd0); GRUB 2 will interpret that as meaning that it needs
-    to install to each of the RAID members (LP: #427048).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 02 Oct 2009 15:22:33 +0100
-
-grub-installer (1.43ubuntu3) karmic; urgency=low
-
-  * Fix some hardcoded uses of /target.
-  * grub_write_divider is specific to GRUB Legacy; don't call it for GRUB 2.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 23 Sep 2009 15:15:33 +0100
-
-grub-installer (1.43ubuntu2) karmic; urgency=low
-
-  * Explicitly install os-prober when using GRUB 2, since it does a better
-    job than the otheros script (LP: #433259).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 21 Sep 2009 12:28:32 +0100
-
-grub-installer (1.43ubuntu1) karmic; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed (only for GRUB Legacy right now).
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map (for GRUB Legacy only);
-      it also hides the menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add support for writing an GRUB Legacy MBR on each disk in an
-      mdadm-managed RAID providing /boot. (GRUB 2 can handle this already.)
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Go back to using update-grub -y for GRUB Legacy for now; our grub
-      package is a bit old and still requires this.
-    - Default to grub2 for GPT systems.
-    - Allow grub/grub2 choice for ext4, though still default to grub2.
-    - Preseed grub-pc/install_devices based on grub-installer/bootdev.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 15 Sep 2009 06:56:30 +0100
-
 grub-installer (1.43) unstable; urgency=low
 
   [ Felix Zielcke ]
@@ -560,56 +1331,6 @@ grub-installer (1.43) unstable; urgency=low
   * Estonian (et.po) by Mattias Põldaru
 
  -- Colin Watson <cjwatson@debian.org>  Mon, 14 Sep 2009 14:02:40 +0100
-
-grub-installer (1.42ubuntu2) karmic; urgency=low
-
-  * Preseed grub-pc/install_devices based on grub-installer/bootdev (LP:
-    #420604).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 02 Sep 2009 13:56:22 +0100
-
-grub-installer (1.42ubuntu1) karmic; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed (only for GRUB Legacy right now).
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map; it also hides the
-      menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add support for writing an GRUB Legacy MBR on each disk in an
-      mdadm-managed RAID providing /boot. (GRUB 2 can handle this already.)
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Go back to using update-grub -y for GRUB Legacy for now; our grub
-      package is a bit old and still requires this.
-    - Default to grub2 for GPT systems.
-    - Allow grub/grub2 choice for ext4, though still default to grub2.
-  * Restrict code to generate device.map for loop installations to GRUB
-    Legacy (LP: #421873).
-  * Fix said code to run grub chrooted into /target.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 01 Sep 2009 13:50:59 +0100
 
 grub-installer (1.42) unstable; urgency=low
 
@@ -639,7 +1360,7 @@ grub-installer (1.41) unstable; urgency=low
   * Add support for /dev/rs/c[0-9]d[0-9] style devices.
 
   [ Luca Favatella ]
-  * Add support for /dev/ad[0-9] and /dev/da[0-9] style devices (for 
+  * Add support for /dev/ad[0-9] and /dev/da[0-9] style devices (for
     GNU/kFreeBSD).
   * Use grub-pc on GNU/kFreeBSD.
 
@@ -656,104 +1377,12 @@ grub-installer (1.41) unstable; urgency=low
 
  -- Aurelien Jarno <aurel32@debian.org>  Sat, 22 Aug 2009 22:32:20 +0200
 
-grub-installer (1.40ubuntu2) karmic; urgency=low
-
-  * Handle showing the menu and raising the timeout for grub2 if other
-    operating systems are installed, since grub2 now hides the menu by
-    default.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 10 Aug 2009 13:13:34 +0100
-
-grub-installer (1.40ubuntu1) karmic; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed (only for GRUB Legacy right now).
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map; it also hides the
-      menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add support for writing an GRUB Legacy MBR on each disk in an
-      mdadm-managed RAID providing /boot. (GRUB 2 can handle this already.)
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Add support for lpia.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Go back to using update-grub -y for GRUB Legacy for now; our grub
-      package is a bit old and still requires this.
-    - Default to grub2 for GPT systems.
-    - Allow grub/grub2 choice for ext4, though still default to grub2.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Sat, 25 Jul 2009 09:20:12 +0100
-
 grub-installer (1.40) unstable; urgency=low
 
   * Don't add map/drivemap commands for Windows Vista/7. It breaks
     Windows 7 (LP: #402154).
 
  -- Felix Zielcke <fzielcke@z-51.de>  Fri, 24 Jul 2009 17:40:08 +0200
-
-grub-installer (1.39ubuntu1) karmic; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed (only for GRUB Legacy right now).
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map; it also hides the
-      menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add support for writing an MBR on each disk in an mdadm-managed RAID
-      providing /boot.
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Add support for lpia.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Go back to using update-grub -y for GRUB Legacy for now; our grub
-      package is a bit old and still requires this.
-    - Default to grub2 for GPT systems.
-    - Allow grub/grub2 choice for ext4, though still default to grub2.
-  * If using grub2, then use ordinary grub-install for mdadm-managed RAID
-    /boot rather than trying to implement it ourselves.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 13 Jul 2009 12:09:43 +0100
 
 grub-installer (1.39) unstable; urgency=low
 
@@ -769,51 +1398,6 @@ grub-installer (1.39) unstable; urgency=low
   * Use search --fs-uuid rather than --fs_uuid in otheros.sh (LP: #396587).
 
  -- Colin Watson <cjwatson@debian.org>  Wed, 08 Jul 2009 15:30:14 +0100
-
-grub-installer (1.38ubuntu1) karmic; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed (only for GRUB Legacy right now).
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map; it also hides the
-      menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add support for writing an MBR on each disk in an mdadm-managed RAID
-      providing /boot.
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Add support for lpia.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Use rootnoverify rather than root when chain-loading Microsoft
-      operating systems.
-  * Go back to using update-grub -y for GRUB Legacy for now; our grub
-    package is a bit old and still requires this.
-  * Default to grub2 for GPT systems.
-  * Allow grub/grub2 choice for ext4, though still default to grub2.
-  * Drop code to handle error messages in dmraid's output, which is no
-    longer needed.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 16 Jun 2009 02:46:23 +0100
 
 grub-installer (1.38) unstable; urgency=low
 
@@ -841,71 +1425,6 @@ grub-installer (1.38) unstable; urgency=low
     allow him to upload.
 
  -- Otavio Salvador <otavio@debian.org>  Fri, 12 Jun 2009 16:04:27 -0300
-
-grub-installer (1.37ubuntu3) karmic; urgency=low
-
-  * If using GRUB 2, don't try to edit menu.lst to change the timeout (LP:
-    #385995). We need to do something with the GRUB 2 timeout, but this is
-    blocked on settling on a way for grub-installer to adjust GRUB 2
-    configuration in general.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 12 Jun 2009 13:35:20 +0100
-
-grub-installer (1.37ubuntu2) karmic; urgency=low
-
-  * If sfdisk fails to set the first primary partition we try as active, try
-    the other primary partitions rather than failing. Don't fail even if
-    none of them can be set as active, since the BIOS may not mind anyway
-    (LP: #285716).
-  * Use GRUB 2 by default.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 08 Jun 2009 22:05:42 +0100
-
-grub-installer (1.37ubuntu1) karmic; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed.
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map; it also hides the
-      menu.
-    - Handle cases where /boot is bind-mounted.
-    - Add another guard against calling 'udevadm info' with an empty device
-      name.
-    - Add support for writing an MBR on each disk in an mdadm-managed RAID
-      providing /boot.
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Add support for lpia.
-    - Handle /boot being on a virtio device.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Use rootnoverify rather than root when chain-loading Microsoft
-      operating systems.
-    - 'dmraid -c -s' changed its output format; cope with both old and new.
-    - Clarify why we cannot always default to the device that contains the
-      boot partition for grub-installer/bootdev.
-    - Handle /dev/mmcblk* in split_device (LP: #348411).
-
- -- Steve Langasek <steve.langasek@ubuntu.com>  Mon, 04 May 2009 07:40:22 -0700
 
 grub-installer (1.37) unstable; urgency=low
 
@@ -939,158 +1458,12 @@ grub-installer (1.37) unstable; urgency=low
 
  -- Colin Watson <cjwatson@debian.org>  Wed, 29 Apr 2009 13:22:34 +0100
 
-grub-installer (1.36ubuntu5) jaunty; urgency=low
-
-  * Handle /dev/mmcblk* in split_device (LP: #348411).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 27 Mar 2009 11:49:58 +0000
-
-grub-installer (1.36ubuntu4) jaunty; urgency=low
-
-  * cciss and ida logical drive numbers may go up to 15, not just 9.
-  * Only check for the boot partition being on dmraid if the user allowed us
-    to activate dmraid, to cope with cases where dmraid is misdetected
-    (LP: #346001).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 20 Mar 2009 18:26:39 +0000
-
-grub-installer (1.36ubuntu3) jaunty; urgency=low
-
-  [ Evan Dandrea ]
-  * Clarify why we cannot always default to the device that contains the
-    boot partition for grub-installer/bootdev.
-
-  [ Steve Langasek ]
-  * Make grub2 available as an option in expert mode again, restoring the
-    Debian behavior.
-
- -- Steve Langasek <steve.langasek@ubuntu.com>  Mon, 16 Mar 2009 00:13:02 -0700
-
-grub-installer (1.36ubuntu2) jaunty; urgency=low
-
-  * Check dmraid's exit code as well as parsing its output, the latter for
-    backward compatibility with dmraid << 1.0.0.rc15-1~exp4 only
-    (LP: #325947).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Thu, 12 Feb 2009 12:42:05 +0000
-
-grub-installer (1.36ubuntu1) jaunty; urgency=low
-
-  * Resynchronise with Debian (XFS change fixes LP: #8058). Remaining
-    changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed.
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for Wubi. Setting this disables normal grub
-      installation, but still generates a device.map; it also hides the
-      menu.
-    - Only support grub-installer/grub2_instead_of_grub_legacy by preseeding
-      for now.
-    - Handle cases where /boot is bind-mounted.
-    - Add another guard against calling 'udevadm info' with an empty device
-      name.
-    - Add support for writing an MBR on each disk in an mdadm-managed RAID
-      providing /boot.
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Add support for lpia.
-    - Handle /boot being on a virtio device.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-    - Use rootnoverify rather than root when chain-loading Microsoft
-      operating systems.
-    - 'dmraid -c -s' changed its output format; cope with both old and new.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 23 Jan 2009 13:19:18 +0000
-
 grub-installer (1.36) unstable; urgency=low
 
   * Allow to install grub when /boot is on XFS. Since version 0.97-47lenny2
     grub supports XFS so it can be installed without hanging grub-installer.
 
  -- Frans Pop <fjp@debian.org>  Fri, 23 Jan 2009 02:59:03 +0100
-
-grub-installer (1.35ubuntu4) jaunty; urgency=low
-
-  * Fix syntax error in otheros.sh.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 21 Nov 2008 23:52:52 +0000
-
-grub-installer (1.35ubuntu3) jaunty; urgency=low
-
-  * Nail another instance of dmraid output-checking.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 21 Nov 2008 21:08:56 +0000
-
-grub-installer (1.35ubuntu2) jaunty; urgency=low
-
-  * Hide GRUB menu if grub-installer/bootdev_directory is preseeded; this is
-    used in the Wubi case where GRUB is used as a secondary boot loader, and
-    so the user already had a chance to boot from another operating system
-    (thanks, Agostino Russo; LP: #289791).
-  * Use rootnoverify rather than root when chain-loading Microsoft operating
-    systems (LP: #10661).
-  * 'dmraid -c -s' changed its output format; cope with both old and new.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 21 Nov 2008 21:00:39 +0000
-
-grub-installer (1.35ubuntu1) jaunty; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed.
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for installation-from-windows. Setting this disables
-      normal grub installation, but still generates a device.map.
-    - Only support grub-installer/grub2_instead_of_grub_legacy by preseeding
-      for now.
-    - Handle cases where /boot is bind-mounted.
-    - Add another guard against calling 'udevadm info' with an empty device
-      name.
-    - Add support for writing an MBR on each disk in an mdadm-managed RAID
-      providing /boot.
-    - Properly make use of output from os-prober to configure the booting of
-      other operating systems on dmraid arrays. Attempt to guess where in
-      the device map the array belongs, by substituting the first drive in
-      the dmraid array for the dmraid array device node itself, and removing
-      any reference to other member disks of the array.
-    - Add support for lpia.
-    - Handle /boot being on a virtio device.
-    - Set a sensible default boot device when /cdrom is not iso9660, as this
-      is probably a USB install and (hd0) does not make sense when
-      installing from a removable disk.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 10 Nov 2008 00:39:33 +0000
 
 grub-installer (1.35) unstable; urgency=low
 
@@ -1140,106 +1513,6 @@ grub-installer (1.34) unstable; urgency=low
   * Traditional Chinese (zh_TW.po) by Tetralet
 
  -- Otavio Salvador <otavio@debian.org>  Sun, 21 Sep 2008 21:47:51 -0300
-
-grub-installer (1.32ubuntu10) intrepid; urgency=low
-
-  [ Evan Dandrea ]
-  * Set a sensible default boot device when /cdrom is not iso9660, as this
-    is probably a USB install and (hd0) does not make sense when installing
-    from a removable disk (LP: #282037).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 20 Oct 2008 23:08:21 +0100
-
-grub-installer (1.32ubuntu9) intrepid; urgency=low
-
-  * grub4dos can't handle UUIDs, so tweak previous change to continue using
-    groot=()/ubuntu/disks in that case (LP: #283520).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 15 Oct 2008 11:17:06 +0100
-
-grub-installer (1.32ubuntu8) intrepid; urgency=low
-
-  * Cope with new UUID-style groot when handling
-    grub-installer/bootdev_directory (LP: #283520).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 15 Oct 2008 09:20:51 +0100
-
-grub-installer (1.32ubuntu7) intrepid; urgency=low
-
-  * grub-installer: if the boot filesystem is on a virtio device, we need to
-    null out the $frdisk variable (LP: #281492)
-
- -- Dustin Kirkland <kirkland@ubuntu.com>  Tue, 14 Oct 2008 17:31:47 -0500
-
-grub-installer (1.32ubuntu6) intrepid; urgency=low
-
-  * Add support for lpia (LP: #274781)
-
- -- Emmet Hikory <persia@ubuntu.com>  Fri, 26 Sep 2008 22:38:21 +0900
-
-grub-installer (1.32ubuntu5) intrepid; urgency=low
-
-  * grub-installer: Properly make use of output from os-prober to configure
-    the booting of other operating systems on dmraid arrays. Attempt to
-    guess where in the device map the array belongs, by substituting
-    the first drive in the dmraid array for the dmraid array device node
-    itself, and removing any reference to other member disks of the array.
-
- -- Luke Yelavich <themuso@ubuntu.com>  Thu, 25 Sep 2008 23:14:10 +1000
-
-grub-installer (1.32ubuntu4) intrepid; urgency=low
-
-  [ Dustin Kirkland ]
-  * grub-installer: fix faulty logic (assumed mutual exclusion of dmraid,
-    multipath, and md), (LP: #270758).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 16 Sep 2008 10:31:53 +0100
-
-grub-installer (1.32ubuntu3) intrepid; urgency=low
-
-  [ Dustin Kirkland ]
-  * grub-installer: fix broken md device determination (LP: #264533).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Sat, 06 Sep 2008 10:44:21 +0100
-
-grub-installer (1.32ubuntu2) intrepid; urgency=low
-
-  [ Colin Watson ]
-  * Add another guard against calling 'udevadm info' with an empty device
-    name (LP: #30772).
-
-  [ Dustin Kirkland ]
-  * grub-installer: add support for writing an MBR on each disk in an
-    mdadm-managed RAID providing /boot (LP: #33649)
-
- -- Colin Watson <cjwatson@ubuntu.com>  Thu, 07 Aug 2008 19:02:15 +0100
-
-grub-installer (1.32ubuntu1) intrepid; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed.
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Unless grub-installer/make_active is preseeded to false, mark the
-      partition to which GRUB is being installed as bootable, or failing
-      that the first available primary partition on the disk to which GRUB
-      is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for installation-from-windows. Setting this disables
-      normal grub installation, but still generates a device.map.
-    - Only support grub-installer/grub2_instead_of_grub_legacy by preseeding
-      for now.
-    - Handle cases where /boot is bind-mounted.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 16 Jun 2008 16:45:11 +0100
 
 grub-installer (1.32) unstable; urgency=low
 
@@ -1410,87 +1683,6 @@ grub-installer (1.28) unstable; urgency=low
 
  -- Robert Millan <rmh@aybabtu.com>  Mon,  4 Feb 2008 15:31:06 +0100
 
-grub-installer (1.27ubuntu7) hardy; urgency=low
-
-  [ Colin Watson ]
-  * Backport from trunk:
-    - Run grub in the chroot for password encryption.
-
-  [ James Westby ]
-  * Confirm the GRUB password after entry (LP: #42019). Note that
-    grub-installer/password-again must now be preseeded in addition to
-    grub-installer/password, and that grub-installer/password-crypted now
-    takes an MD5-crypted password rather than a boolean.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 15 Apr 2008 01:55:07 +0100
-
-grub-installer (1.27ubuntu6) hardy; urgency=low
-
-  * Added the grub-installer/make_active debconf question.  When
-    preseeded false, this will skip the code that marks a partition as
-    bootable.
-
- -- Evan Dandrea <evand@ubuntu.com>  Thu, 13 Mar 2008 09:56:02 -0400
-
-grub-installer (1.27ubuntu5) hardy; urgency=low
-
-  * grub-installer: Pass the correct number of arguments to db_input for
-    grub-installer/sataraid-error.
-
- -- Luke Yelavich <luke.yelavich@canonical.com>  Wed, 13 Feb 2008 23:15:50 +1100
-
-grub-installer (1.27ubuntu4) hardy; urgency=low
-
-  * Teach grub-installer about virtio devices (/dev/vd*).
-
- -- Soren Hansen <soren@ubuntu.com>  Wed, 13 Feb 2008 00:38:04 +0100
-
-grub-installer (1.27ubuntu3) hardy; urgency=low
-
-  * Generate a device.map when bootdev_directory is set (loop
-    installations) (LP: #188460).  Thanks Agostino Russo.
-
- -- Evan Dandrea <evand@ubuntu.com>  Wed, 06 Feb 2008 12:22:56 -0500
-
-grub-installer (1.27ubuntu2) hardy; urgency=low
-
-  [ Colin Watson ]
-  * udev 117 merged all udev tools into a single binary called udevadm.
-    Check for this and use it instead of udevinfo if available.
-
-  [ Evan Dandrea ]
-  * Handle cases where /boot is bindmounted (LP: #181658).
-
- -- Evan Dandrea <evand@ubuntu.com>  Fri, 18 Jan 2008 15:41:36 -0500
-
-grub-installer (1.27ubuntu1) hardy; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed.
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Add user parameters to defoptions rather than kopt, so that they
-      aren't used in the recovery mode option.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-    - Mark the partition to which GRUB is being installed as bootable, or
-      failing that the first available primary partition on the disk to
-      which GRUB is being installed.
-    - Support grub-installer/bootdev_directory preseeding to make use of the
-      relative path feature of grub4dos, so that we can point grub4dos at
-      part of a disk for installation-from-windows. Setting this disables
-      normal grub installation.
-    - Only support grub-installer/grub2_instead_of_grub_legacy by preseeding
-      for now.
-  * Adjust Vcs-* headers for Ubuntu.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 26 Nov 2007 14:45:05 +0000
-
 grub-installer (1.27) unstable; urgency=low
 
   [ Romain Perier ]
@@ -1626,51 +1818,6 @@ grub-installer (1.25) unstable; urgency=low
 
  -- Frans Pop <fjp@debian.org>  Fri, 06 Jul 2007 00:08:48 +0200
 
-grub-installer (1.24ubuntu4) gutsy; urgency=low
-
-  * Only support grub-installer/grub2_instead_of_grub_legacy by preseeding
-    for now, to avoid a prompt (albeit only in expert mode) that won't work
-    on our CDs (LP: #138035).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 07 Sep 2007 19:27:20 +0100
-
-grub-installer (1.24ubuntu3) gutsy; urgency=low
-
-  * Support grub-installer/bootdev_directory preseeding to make use of the
-    relative path feature of grub4dos, so that we can point grub4dos at part
-    of a disk for installation-from-windows. Setting this disables normal
-    grub installation.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 07 Sep 2007 15:57:47 +0100
-
-grub-installer (1.24ubuntu2) gutsy; urgency=low
-
-  * Mark the partition to which GRUB is being installed as bootable, or
-    failing that the first available primary partition on the disk to which
-    GRUB is being installed (LP: #14244).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 24 Aug 2007 12:05:09 +0100
-
-grub-installer (1.24ubuntu1) gutsy; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed.
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Add user parameters to defoptions rather than kopt, so that they
-      aren't used in the recovery mode option.
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-  * Only purge the package from grub and grub2 that we aren't using, not
-    both.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 27 Apr 2007 11:21:09 +0100
-
 grub-installer (1.24) unstable; urgency=low
 
   * Fix syntax error in grub-installer script.
@@ -1728,37 +1875,6 @@ grub-installer (1.21) unstable; urgency=low
 
  -- Frans Pop <fjp@debian.org>  Wed, 31 Jan 2007 17:43:58 +0100
 
-grub-installer (1.20ubuntu3) feisty; urgency=low
-
-  * Set Maintainer to ubuntu-installer@lists.ubuntu.com.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Thu, 15 Mar 2007 00:34:41 +0000
-
-grub-installer (1.20ubuntu2) feisty; urgency=low
-
-  * Drop dependency on dmidecode-udeb and rely on new archdetect support for
-    Intel Macs. Requires libdebian-installer4-udeb 0.47ubuntu1.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 17 Jan 2007 13:13:40 +0000
-
-grub-installer (1.20ubuntu1) feisty; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed.
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Add user parameters to defoptions rather than kopt, so that they
-      aren't used in the recovery mode option (closes: Malone #31905).
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 19 Dec 2006 14:03:41 +0000
-
 grub-installer (1.20) unstable; urgency=low
 
   * Fix serial console support in the grub configuration. Closes: #224641.
@@ -1780,24 +1896,6 @@ grub-installer (1.20) unstable; urgency=low
   * Ukrainian (uk.po) by Eugeniy Meshcheryakov
 
  -- Frans Pop <fjp@debian.org>  Thu, 30 Nov 2006 15:21:33 +0100
-
-grub-installer (1.19ubuntu1) feisty; urgency=low
-
-  * Resynchronise with Debian. Remaining changes:
-    - Show the grub menu and raise the menu timeout if other operating
-      systems are installed.
-    - Ask grub-installer/only_debian at medium priority.
-    - Remove splash boot parameter unless debian-installer/framebuffer=true.
-    - If / or /boot are on a removable device, install GRUB there by
-      default.
-    - Only mount /target/proc if it isn't already mounted.
-    - Add user parameters to defoptions rather than kopt, so that they
-      aren't used in the recovery mode option (closes: Malone #31905).
-    - Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-      grub-installer to use its default MBR selection method despite there
-      being unsupported operating systems on the disk.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 21 Nov 2006 04:55:45 +0000
 
 grub-installer (1.19) unstable; urgency=low
 
@@ -1894,12 +1992,6 @@ grub-installer (1.18) unstable; urgency=low
 
  -- Otavio Salvador <otavio@debian.org>  Thu, 31 Aug 2006 19:10:57 -0300
 
-grub-installer (1.17ubuntu1) edgy; urgency=low
-
-  * Resynchronise with Debian.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Fri, 30 Jun 2006 09:53:03 +0100
-
 grub-installer (1.17) unstable; urgency=low
 
   [ Otavio Salvador ]
@@ -1942,45 +2034,6 @@ grub-installer (1.15) unstable; urgency=low
 
  -- Joey Hess <joeyh@debian.org>  Fri, 19 May 2006 13:31:58 -0400
 
-grub-installer (1.14ubuntu5) dapper; urgency=low
-
-  * Don't fall over if installing to an XFS root filesystem in
-    noninteractive mode (closes: Malone #46764).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Sun, 28 May 2006 14:43:00 +0100
-
-grub-installer (1.14ubuntu4) dapper; urgency=low
-
-  * Return early from is_removable if the argument isn't a mount point
-    (closes: Malone #40100).
-  * Support setting OVERRIDE_UNSUPPORTED_OS in the environment to force
-    grub-installer to use its default MBR selection method despite there
-    being unsupported operating systems on the disk (part of Malone #40131).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 19 Apr 2006 11:26:18 +0100
-
-grub-installer (1.14ubuntu3) dapper; urgency=low
-
-  * Remove espresso-grub package, moved into espresso proper.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed,  5 Apr 2006 17:46:49 +0100
-
-grub-installer (1.14ubuntu2) dapper; urgency=low
-
-  * Modify defoptions now in the no-framebuffer case, not nonaltoptions.
-  * Add user parameters to defoptions rather than kopt, so that they aren't
-    used in the recovery mode option (closes: Malone #31905).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 27 Mar 2006 10:02:29 +0100
-
-grub-installer (1.14ubuntu1) dapper; urgency=low
-
-  * Resynchronise with Debian.
-  * Backport from trunk:
-    - Disable grub-installer on Intel-based Macs.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 22 Mar 2006 11:27:37 +0000
-
 grub-installer (1.14) unstable; urgency=low
 
   * Make sure no .svn directories get included in the package.
@@ -2006,56 +2059,6 @@ grub-installer (1.13) unstable; urgency=low
   * Traditional Chinese (zh_TW.po) by Tetralet
 
  -- Frans Pop <fjp@debian.org>  Wed, 25 Jan 2006 12:38:06 +0100
-
-grub-installer (1.12ubuntu6) dapper; urgency=low
-
-  * Only mount /proc if it isn't already mounted.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 13 Feb 2006 12:18:02 +0000
-
-grub-installer (1.12ubuntu5) dapper; urgency=low
-
-  * Make espresso-grub depend on espresso (yes, this means a circular
-    dependency, sorry; closes: Malone #30045).
-  * Force grub-installer/bootdev to (hd0) in the event that not all
-    installed operating systems are recognised. By definition, you can
-    always repair the situation with the live CD you're installing from.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue,  7 Feb 2006 17:44:39 +0000
-
-grub-installer (1.12ubuntu4) dapper; urgency=low
-
-  * Fix support for putting / on a removable device
-    - Make sure to mount /proc before possibly running findfs, since it will
-      fail if not
-    - Use udevinfo as well as the removable flag file to detect if a device
-      is removable or not.  Anything on USB or IEEE1394 is defined as
-      removable.
-    - Override device.map if installing onto a removable device, since we
-      know/hope that it will be BIOS drive 0x80
-
- -- Tollef Fog Heen <tfheen@ubuntu.com>  Fri,  3 Feb 2006 18:27:18 +0100
-
-grub-installer (1.12ubuntu3) dapper; urgency=low
-
-  * espresso/grubinstaller.py: Define prepare() instead of overriding
-    run_command(). Breaks espresso (<< 0.99.7).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Thu,  2 Feb 2006 22:39:30 +0000
-
-grub-installer (1.12ubuntu2) dapper; urgency=low
-
-  * Fix espresso-grub error handling.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed,  1 Feb 2006 10:54:42 +0000
-
-grub-installer (1.12ubuntu1) dapper; urgency=low
-
-  * Resynchronise with Debian.
-  * Add an espresso-grub package, providing grub-installer as an Espresso
-    module.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 23 Jan 2006 14:42:48 +0000
 
 grub-installer (1.12) unstable; urgency=low
 
@@ -2116,28 +2119,6 @@ grub-installer (1.12) unstable; urgency=low
 
  -- Colin Watson <cjwatson@debian.org>  Wed, 18 Jan 2006 10:10:07 +0000
 
-grub-installer (1.11ubuntu3) dapper; urgency=low
-
-  * Use -f in readlink.
-
- -- Fabio M. Di Nitto <fabbione@ubuntu.com>  Fri, 13 Jan 2006 09:39:38 +0100
-
-grub-installer (1.11ubuntu2) dapper; urgency=low
-
-  * Detect if / or /boot are on a removable device and if so, install grub MBR
-    on such device instead of bios (hd0).
-    This change will allow users to install for example on a USB stick and
-    be able to boot the entire system from it assuming the device doesn't
-    change name. This latter issue will be addressed later.
-
- -- Fabio M. Di Nitto <fabbione@ubuntu.com>  Mon, 09 Jan 2006 09:52:04 +0100
-
-grub-installer (1.11ubuntu1) dapper; urgency=low
-
-  * Resynchronise with Debian.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Tue, 25 Oct 2005 12:55:15 +0100
-
 grub-installer (1.11) unstable; urgency=low
 
   * Use grub-setup -y option. This is present in sarge, but not woody so we
@@ -2176,7 +2157,7 @@ grub-installer (1.10) unstable; urgency=low
   * Matt Kraai
     - Fix the spelling of "boot loader".
 
-  * Updated translations: 
+  * Updated translations:
     - Bulgarian (bg.po) by Ognyan Kulev
     - Catalan (ca.po) by Guillem Jover
     - Czech (cs.po) by Miroslav Kure
@@ -2205,19 +2186,6 @@ grub-installer (1.10) unstable; urgency=low
     - Simplified Chinese (zh_CN.po) by Carlos Z.F. Liu
 
  -- Joey Hess <joeyh@debian.org>  Fri, 15 Jul 2005 17:13:09 +0300
-
-grub-installer (1.09ubuntu2) breezy; urgency=low
-
-  * Remove splash boot parameter unless debian-installer/framebuffer=true
-    (Ubuntu #13977).
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon,  5 Sep 2005 14:08:09 +0100
-
-grub-installer (1.09ubuntu1) breezy; urgency=low
-
-  * Resynchronise with Debian.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon,  6 Jun 2005 12:09:13 +0100
 
 grub-installer (1.09) unstable; urgency=low
 
@@ -2250,12 +2218,6 @@ grub-installer (1.09) unstable; urgency=low
     - Simplified Chinese (zh_CN.po) by Carlos Z.F. Liu
 
  -- Colin Watson <cjwatson@debian.org>  Wed,  1 Jun 2005 01:16:10 +0000
-
-grub-installer (1.08ubuntu1) breezy; urgency=low
-
-  * Resynchronise with Debian.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Mon, 23 May 2005 14:15:19 +0100
 
 grub-installer (1.08) unstable; urgency=low
 
@@ -2295,16 +2257,10 @@ grub-installer (1.08) unstable; urgency=low
 
  -- Colin Watson <cjwatson@debian.org>  Fri, 20 May 2005 11:31:43 +0000
 
-grub-installer (1.07.1ubuntu1) breezy; urgency=low
-
-  * Resynchronise with Debian.
-
- -- Colin Watson <cjwatson@ubuntu.com>  Wed, 20 Apr 2005 19:14:26 +1000
-
 grub-installer (1.07.1) unstable; urgency=low
 
   * Includes substitution variable fixes in translated templates.
-  * Updated translations: 
+  * Updated translations:
     - Bosnian (bs.po) by Safir Šećerović
     - German (de.po) by Dennis Stampfer
     - Lithuanian (lt.po) by Kęstutis Biliūnas
@@ -2314,26 +2270,12 @@ grub-installer (1.07.1) unstable; urgency=low
 
  -- Joey Hess <joeyh@debian.org>  Wed,  2 Feb 2005 18:06:47 -0500
 
-grub-installer (1.07ubuntu2) hoary; urgency=low
-
-  * Drop priorities of grub-installer/with_other_os and
-    grub-installer/only_debian questions to high (matching Debian) and
-    medium respectively.
-
- -- Colin Watson <cjwatson@canonical.com>  Sat,  1 Jan 2005 23:52:05 +0000
-
-grub-installer (1.07ubuntu1) hoary; urgency=low
-
-  * Resynchronise with Debian.
-
- -- Colin Watson <cjwatson@canonical.com>  Tue,  9 Nov 2004 23:10:20 +0000
-
 grub-installer (1.07) unstable; urgency=low
 
   * Frans Pop
     - Use proper quoting in get_serial_console function in postinst
       Closes: #279134
-  * Updated translations: 
+  * Updated translations:
     - Bulgarian (bg.po) by Ognyan Kulev
     - Greek, Modern (1453-) (el.po) by Greek Translation Team
     - Finnish (fi.po) by Tapio Lehtonen
@@ -2347,22 +2289,9 @@ grub-installer (1.07) unstable; urgency=low
 
  -- Joey Hess <joeyh@debian.org>  Tue,  2 Nov 2004 10:00:50 -0500
 
-grub-installer (1.06ubuntu2) hoary; urgency=low
-
-  * Make sure grub-installer.isinstallable is executable.
-
- -- Colin Watson <cjwatson@canonical.com>  Thu,  4 Nov 2004 11:42:28 +0000
-
-grub-installer (1.06ubuntu1) hoary; urgency=low
-
-  * Resynchronise with Debian (thanks, Scott James Remnant).
-  * Update Ubuntu branding.
-
- -- Colin Watson <cjwatson@canonical.com>  Fri, 29 Oct 2004 12:02:35 +0100
-
 grub-installer (1.06) unstable; urgency=low
 
-  * Updated translations: 
+  * Updated translations:
     - Welsh (cy.po) by Dafydd Harries
     - Hebrew (he.po) by Lior Kaplan
     - Hungarian (hu.po) by VEROK Istvan
@@ -2381,7 +2310,7 @@ grub-installer (1.05) unstable; urgency=low
       floppy this time. Closes: #265949
     - Support device notation for floppy drive, not just grub notation.
       Closes: #224636, #252562, #260486
-  * Updated translations: 
+  * Updated translations:
     - Czech (cs.po) by Miroslav Kure
     - Greek, Modern (1453-) (el.po) by Greek Translation Team
     - Hebrew (he.po) by Lior Kaplan
@@ -2408,7 +2337,7 @@ grub-installer (1.04) unstable; urgency=low
       use of lilo-installer.
   * Christian Perrier
     - reworded the warning about installing GRUB on XFS
-  * Updated translations: 
+  * Updated translations:
     - Arabic (ar.po) by Ossama M. Khayat
     - Bulgarian (bg.po) by Ognyan Kulev
     - Catalan (ca.po) by Jordi Mallach
@@ -2450,7 +2379,7 @@ grub-installer (1.03) unstable; urgency=low
       displayed, then it is left on the menu for experts to choose.
       Closes: #251526
     - Add a warning message about xfs to let the experts know it may not work.
-  * Updated translations: 
+  * Updated translations:
     - Arabic (ar.po) by Ossama M. Khayat
     - Bulgarian (bg.po) by Ognyan Kulev
     - Bosnian (bs.po) by Safir Šećerović
@@ -2489,23 +2418,23 @@ grub-installer (1.02) unstable; urgency=low
     - rename templates file to grub-installer.templates
     - typo fixed in French translation. Closes: #266307
   * Joey Hess
-    - Use the user-params command to get parameters the user manually 
+    - Use the user-params command to get parameters the user manually
       entered on the command line, and add these into the grub config file.
     - Add an isinstallable script that checks whether /boot is on lvm.
       If so, grub will not be installed, and the installer can skip on to
       lilo.
-  * Updated translations: 
+  * Updated translations:
     - Arabic (ar.po) by Christian Perrier
     - Bulgarian (bg.po) by Ognyan Kulev
     - Catalan (ca.po) by Jordi Mallach
     - Danish (da.po) by Claus Hindsgaul
     - Greek, Modern (1453-) (el.po) by Greek Translation Team
-    - Basque (eu.po) by 
+    - Basque (eu.po) by
     - French (fr.po) by French Team
     - Hebrew (he.po) by Lior Kaplan
     - Japanese (ja.po) by Kenshi Muto
     - Lithuanian (lt.po) by Kęstutis Biliūnas
-    - Latvian (lv.po) by 
+    - Latvian (lv.po) by
     - Bøkmal, Norwegian (nb.po) by Debian L10n Norwegian Bokml
     - Norwegian Nynorsk (nn.po) by Håvard Korsvoll
     - Polish (pl.po) by Bartosz Fenski
@@ -2517,14 +2446,14 @@ grub-installer (1.02) unstable; urgency=low
 
 grub-installer (1.01) unstable; urgency=low
 
-  * Updated translations: 
+  * Updated translations:
     - Persian (fa.po) by Arash Bijanzadeh
 
  -- Joey Hess <joeyh@debian.org>  Mon, 26 Jul 2004 13:31:21 -0400
 
 grub-installer (1.00) unstable; urgency=low
 
-  * Updated translations: 
+  * Updated translations:
     - Arabic (ar.po) by Abdulaziz Al-Arfaj
     - German (de.po) by Dennis Stampfer
     - Spanish (Castilian) (es.po) by Javier Fernández-Sanguino
@@ -2551,7 +2480,7 @@ grub-installer (0.51) unstable; urgency=low
   * Christian Perrier
     - Rewite the template which was recently rewritten inan attempt to make
       it less messy. Uses and enumeration.
-  * Updated translations: 
+  * Updated translations:
     - Arabic (ar.po) by Ossama M. Khayat
     - Bulgarian (bg.po) by Ognyan Kulev
     - Bosnian (bs.po) by Safir Šećerović
@@ -2586,55 +2515,6 @@ grub-installer (0.51) unstable; urgency=low
 
  -- Joey Hess <joeyh@debian.org>  Sat, 17 Jul 2004 14:24:42 -0400
 
-grub-installer (0.50ubuntu6) warty; urgency=low
-
-  * Updated translations:
-    - Greek (el.po) by Logiotatidis George
-
- -- Colin Watson <cjwatson@canonical.com>  Tue, 12 Oct 2004 14:34:57 +0100
-
-grub-installer (0.50ubuntu5) warty; urgency=low
-
-  * Show the grub menu and raise the menu timeout if other operating systems
-    are installed (closes: Ubuntu #993).
-
- -- Colin Watson <cjwatson@canonical.com>  Mon, 11 Oct 2004 17:55:28 +0100
-
-grub-installer (0.50ubuntu4) warty; urgency=low
-
-  * Backport from Debian (Joey Hess) for Warty #1337:
-    - Use the user-params command to get parameters the user manually
-      entered on the command line, and add these into the grub config file.
-
- -- Colin Watson <cjwatson@canonical.com>  Mon, 20 Sep 2004 17:48:40 +0100
-
-grub-installer (0.50ubuntu3) warty; urgency=low
-
-  * Tollef Fog Heen
-    - Ubuntu branding.
-  * Colin Watson
-    - Update most translations.
-
- -- Colin Watson <cjwatson@flatline.org.uk>  Mon, 16 Aug 2004 17:34:35 +0100
-
-grub-installer (0.50ubuntu2) warty; urgency=low
-
-  * Colin Watson
-    - grub-installer/bootdev must be asked (i.e. critical priority) on the
-      code path where unsupported operating systems were found, otherwise
-      bootdev ends up empty and grub-installer fails.
-
- -- Colin Watson <cjwatson@flatline.org.uk>  Mon,  2 Aug 2004 20:33:55 +0100
-
-grub-installer (0.50ubuntu1) warty; urgency=low
-
-  * Colin Watson
-    - Ask grub-installer/with_other_os at critical priority, since it can
-      render a previously working system unbootable if Linux doesn't boot
-      and os-prober failed to detect your other operating systems.
-
- -- Colin Watson <cjwatson@flatline.org.uk>  Wed, 21 Jul 2004 15:56:16 +0100
-
 grub-installer (0.50) unstable; urgency=low
 
   * Re-upload sans changes.
@@ -2645,7 +2525,7 @@ grub-installer (0.49) unstable; urgency=low
 
   * Christian Perrier
     - Corrected typo in templates. Unfuzzied translations
-  * Updated translations: 
+  * Updated translations:
     - Bulgarian (bg.po) by Ognyan Kulev
     - Catalan (ca.po) by Jordi Mallach
     - German (de.po) by Dennis Stampfer
@@ -2709,7 +2589,7 @@ grub-installer (0.46) unstable; urgency=low
     - If grub is not installed to the MBR, do not use the makeactive
       command for chain-loaded OSes, as that would likely make grub
       inaccessible. Closes: #248509
-  * Updated translations: 
+  * Updated translations:
     - Spanish (Castilian) (es.po) by Carlos Alberto Martín Edo
     - Basque (eu.po) by Piarres Beobide Egaña
     - Norwegian Nynorsk (nn.po) by Håvard Korsvoll
@@ -2719,7 +2599,7 @@ grub-installer (0.46) unstable; urgency=low
 
 grub-installer (0.45) unstable; urgency=low
 
-  * Updated translations: 
+  * Updated translations:
     - Bulgarian (bg.po) by Ognyan Kulev
     - Spanish (Castilian) (es.po) by Carlos Alberto Martín Edo
     - Japanese (ja.po) by Kenshi Muto
@@ -2738,7 +2618,7 @@ grub-installer (0.44) unstable; urgency=low
 
 grub-installer (0.43) unstable; urgency=low
 
-  * Updated translations: 
+  * Updated translations:
     - Gallegan (gl.po) by Héctor Fernández López
     - Hebrew (he.po) by Lior Kaplan
     - Indonesian (id.po) by Parlin Imanuel Toh
@@ -2767,7 +2647,7 @@ grub-installer (0.41) unstable; urgency=low
     - Do linux-os-probe and menu.lst addition creation in a single pass
       before the list is shown to the user Simplifies code and does not
       offer what will not be delivered. Closes: #243765
-  * Updated translations: 
+  * Updated translations:
     - Catalan (ca.po) by Jordi Mallach
     - Greek, Modern (1453-) (el.po) by Konstantinos Margaritis
     - Basque (eu.po) by Piarres Beobide Egaña
@@ -2797,7 +2677,7 @@ grub-installer (0.40) unstable; urgency=low
     - Allow /dev device names to be specified along with grub style names.
       Devfs or non-devfs, it's all converted.
     - Add sanity check for a bad boot device.
-  * Updated translations: 
+  * Updated translations:
     - Czech (cs.po) by Miroslav Kure
     - Danish (da.po) by Claus Hindsgaul
     - German (de.po) by Dennis Stampfer
@@ -2837,7 +2717,7 @@ grub-installer (0.39) unstable; urgency=low
       installs, and add them as well.
     - Add a divider in the menu before other linux and other OS entries.
     - Fix a bad grep call in is_floppy.
-  * Updated translations: 
+  * Updated translations:
     - Catalan (ca.po) by Jordi Mallach
     - Czech (cs.po) by Miroslav Kure
     - Danish (da.po) by Claus Hindsgaul
@@ -2871,7 +2751,7 @@ grub-installer (0.38) unstable; urgency=low
   * Joey Hess
     - Test to make sure grub-install supports --no-floppy before using it.
       It does not in stable or Skolelinux.
-  * Updated translations: 
+  * Updated translations:
     - Hebrew (he.po) by Lior Kaplan
     - Ukrainian (uk.po) by Eugeniy Meshcheryakov
     - Albanian (sq.po) by Elian Myftiu
@@ -2886,7 +2766,7 @@ grub-installer (0.37) unstable; urgency=low
       Closes: #220130, #238449, #239019
     - Add a is_floppy check, which turns off the --no-floppy, in case someone
       types (fd0).
-  * Updated translations: 
+  * Updated translations:
     - Bosnian (bs.po) by Safir Šećerović
     - German (de.po) by Dennis Stampfer
     - Indonesian (id.po) by Parlin Imanuel Toh
@@ -2922,7 +2802,7 @@ grub-installer (0.35) unstable; urgency=low
     - Dafydd Harries : Added Welsh translation (cy.po)
     - Jordi Mallach
       - Updated Catalan translation (ca.po)
-    
+
  -- Joey Hess <joeyh@debian.org>  Sat, 13 Mar 2004 00:03:50 -0500
 
 grub-installer (0.34) unstable; urgency=low
@@ -3162,7 +3042,7 @@ grub-installer (0.25) unstable; urgency=low
     - Improve French translation.
   * Jordi Mallach
     - Update Catalan translation.
-  * Kęstutis Biliūnas 
+  * Kęstutis Biliūnas
     - Update Lithuanian translation.
   * Joey Hess
     - minor template polish
@@ -3450,6 +3330,6 @@ grub-installer (0.0.1) unstable; urgency=low
   * First release
   * THIS IS PRETTY UNTESTED!!!!!!!!!!!!
     DON'T use it unless you are interested in helping me debug.
-    Thank you for your consideration 
+    Thank you for your consideration
 
  -- Moshe Zadka <moshez@debian.org>  Fri,  9 Aug 2002 09:17:55 +0300

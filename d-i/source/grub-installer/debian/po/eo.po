@@ -4,23 +4,32 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # translation of Debian Installer templates to Esperanto.
-# Copyright (C) 2005-2008 Software in the Public Interest, Inc.
+# Copyright (C) 2005-2013 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
 # Samuel Gimeno <sgimeno@gmail.com>, 2005.
-# Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005-2007.
-# Felipe Castro <fefcas@gmail.com>, 2008-2009.
+# Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005, 2006, 2007.
+# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2017.
+#
+# Translations from iso-codes:
+# Alastair McKInstry <mckinstry@computer.org>, 2001,2002.
+# Copyright (C) 2001,2002,2003,2004 Free Software Foundation, Inc.
+# D. Dale Gulledge <dsplat@rochester.rr.com> (translations from drakfw), 2001.
+# Edmund GRIMLEY EVANS <edmundo@rano.org>, 2004-2011
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eo\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2010-03-26 09:46+0000\n"
-"PO-Revision-Date: 2009-08-02 13:22-0300\n"
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2014-12-30 22:01+0000\n"
+"PO-Revision-Date: 2017-12-01 00:46+0000\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: boolean
 #. Description
@@ -133,7 +142,7 @@ msgstr "La GRUB-a radik-aparato estas: ${GRUBROOT}."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
 msgstr "Ne eblas akomodi 'GRUB'"
 
@@ -191,14 +200,20 @@ msgstr "Eraro okazis dum la instalado de GRUB por la plurvoja aparato."
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
 msgstr "Aparato por instalado de la ekŝargilo:"
 
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
@@ -215,17 +230,6 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -236,28 +240,31 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"La aparato povas esti indikita per la skribformo \"(hdn,m)\" de 'GRUB' aŭ "
-"per la nomo de aparato en '/dev'. Ekzemple:\n"
-" - \"(hd0)\" aŭ \"/dev/hda\" instalos 'GRUB'-on en la ĉefa ekŝargrikordo de\n"
-"   via unua fiksa 'IDE'-disko;\n"
-" - \"(hd0,1)\" aŭ \"/dev/hda2\" instalos 'GRUB'-on en la dua diskparto de\n"
-"   via unua 'IDE'-disko;\n"
-" - \"(hd2,4)\" aŭ \"/dev/sdc5\" instalos 'GRUB'-on en la unua etendita "
-"diskparto\n"
-"   de via tria disko (tie ĉi SCSI)\n"
-" - \"(fd0)\" aŭ \"/dev/fd0\" instalos 'GRUB'-on en disketo."
+"La aparato estu specifata aparato en '/dev'. Jen estas kelkaj ekzemploj:\n"
+" - \"/dev/sda\" instalos 'GRUB'-on en la ĉefa ekŝargrikordo de\n"
+"   via unua fiksa disko;\n"
+" - \"/dev/sda2\" uzos la duan diskparton de via unua disko;\n"
+" - \"/dev/sdc5\" uzos la unuan etenditan diskparton de via\n"
+"   tria fiksa disko;\n"
+" - \"/dev/fd0\" instalos 'GRUB'-on en disketo."
+
+#. Type: select
+#. Choices
+#: ../grub-installer.templates:8001
+msgid "Enter device manually"
+msgstr "Mem tajpi la aparaton"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "GRUB password:"
 msgstr "'GRUB'-pasvorto:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid ""
 "The GRUB boot loader offers many powerful interactive features, which could "
 "be used to compromise your system if unauthorized users have access to the "
@@ -276,21 +283,21 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
 msgstr "Se vi ne volas 'GRUB'-an pasvorton, lasu tiun ĉi kampon malplena."
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
 msgstr "Retajpu la pasvorton por konfirmi:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
@@ -299,28 +306,28 @@ msgstr "Bonvolu retajpi la saman 'GRUB'-pasvorton por kontroli ĝian ĝustecon."
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "Password input error"
 msgstr "Mistajpita pasvorto"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr "La du tajpitaj pasvortoj malsamas. Bonvolu reprovi."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
 msgstr "La instalado de 'GRUB' malsukcesis"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
@@ -331,14 +338,14 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Unable to install GRUB in ${BOOTDEV}"
 msgstr "Ne eblas instali 'GRUB'-on en ${BOOTDEV}"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
 msgstr "Plenumado de 'grub-install ${BOOTDEV}' malsukcesis."
 
@@ -348,71 +355,128 @@ msgstr "Plenumado de 'grub-install ${BOOTDEV}' malsukcesis."
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001 ../grub-installer.templates:14001
+#: ../grub-installer.templates:14001 ../grub-installer.templates:15001
 msgid "This is a fatal error."
 msgstr "Tio estas katastrofa eraro."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
 msgstr "Plenumado de la komando 'update-grub' malsukcesis."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid "Install GRUB?"
+msgstr "Ĉu instali GRUB?"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+"GRUB 2 estas la nova generacio de GNU GRUB, la ekŝargilo kiu estas plej "
+"kutime uzata kun komputiloj i386/amd64. Ĝi estas disponebla ankaŭ por "
+"${ARCH}."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
+"Ĝi havas interesajn novajn apartaĵojn sed ankoraŭ estas eksperimenta "
+"programaro por tiu ĉi arkitekturo. Se vi elektas instali ĝin, vi devos esti "
+"preparita por rompiĝo, kaj vi devas koni ion pri kiel restarigi vian "
+"sistemon se ĝi iĝos ne-ŝargebla. Vi estas admonata ne provi tion ĉi en "
+"produktantaj medioj."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:17001
+#: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
 msgstr "Instalado de la ekŝargilo 'GRUB'"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:18001
+#: ../grub-installer.templates:19001
 msgid "Looking for other operating systems..."
 msgstr "Serĉado de aliaj operaciumoj..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:19001
+#: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
 msgstr "Instalado de la pako '${GRUB}'..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:20001
+#: ../grub-installer.templates:21001
 msgid "Determining GRUB boot device..."
 msgstr "Esplorado de la ekŝarg-aparaton 'GRUB'..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:21001
+#: ../grub-installer.templates:22001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
 msgstr "Plenumado de \"grub-install ${BOOTDEV}\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:22001
+#: ../grub-installer.templates:23001
 msgid "Running \"update-grub\"..."
 msgstr "Plenumado de \"update-grub\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:23001
+#: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
 msgstr "Ĝisdatigo de /etc/kernel-img.conf..."
 
 #. Type: text
 #. Description
+#. :sl1:
+#: ../grub-installer.templates:25001
+msgid "Checking whether to force usage of the removable media path"
+msgstr "Kontrolo ĉu perforti uzon de la vojo de demovebla datumarujo"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:26001
+msgid "Mounting filesystems"
+msgstr "Muntado de la dosiersistemoj"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:27001
+msgid "Configuring grub-efi for future usage of the removable media path"
+msgstr ""
+"Agordo de grub-efi por estonta uzado de la vojo de demovebla datumarujo"
+
+#. Type: text
+#. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "Instali la ekŝargilon 'GRUB' sur fiksita disko"
 
@@ -420,6 +484,96 @@ msgstr "Instali la ekŝargilon 'GRUB' sur fiksita disko"
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
+#: ../grub-installer.templates:29001
 msgid "Reinstall GRUB boot loader"
 msgstr "Reinstali la ekŝargilon 'GRUB'"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Failed to mount /target/proc"
+msgstr "Malsukcesis munti /target/proc"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Mounting the proc file system on /target/proc failed."
+msgstr "Muntado de dosiersistemo proc sur /target/proc malsukcesis."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr ""
+"Kontrolu '/var/log/syslog' aŭ rigardu la virtualan konzolon 4 por havi "
+"detalojn."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Warning: Your system may be unbootable!"
+msgstr "Averto: Via sistemo eble ne estos ekŝargebla!"
+
+#. Type: text
+#. Description
+#. Rescue menu item
+#. :sl2:
+#: ../grub-installer.templates:33001
+msgid "Force GRUB installation to the EFI removable media path"
+msgstr "Perforti instaladon de GRUB al la vojo de demovebla aparato EFI"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid "Force GRUB installation to the EFI removable media path?"
+msgstr "Ĉu perforti instalon de GRUB al la vojo de demovebla datumarujo EFI?"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"It seems that this computer is configured to boot via EFI, but maybe that "
+"configuration will not work for booting from the hard drive. Some EFI "
+"firmware implementations do not meet the EFI specification (i.e. they are "
+"buggy!) and do not support proper configuration of boot options from system "
+"hard drives."
+msgstr ""
+"Ŝajne tiu ĉi komputilo estas agordita por ekŝargi per EFI, tamen eble tiu "
+"agordo ne sukcesos ekŝargi el la diskaparato. Kelkaj mikroprogramaroj EFI ne "
+"akordas kun la normo EFI (t.e. ili estas fuŝaj!) kaj ne subtenas taŭgan "
+"agordon por ekŝargaj opcioj de sistemaj diskaparatoj."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"A workaround for this problem is to install an extra copy of the EFI version "
+"of the GRUB boot loader to a fallback location, the \"removable media path"
+"\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
+msgstr ""
+"Provizora solvo por tiu ĉi problemo estas instali kroman kopion de la versio "
+"EFI de GRUB-ekŝargilo al retropaŝa loko, la \"vojo de demovebla datumarujo"
+"\". Preskaŭ ĉiuj sistemoj EFI, ne gravas kiom fuŝaj, ekŝargos je GRUB per "
+"tiu maniero."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"Warning: If the installer failed to detect another operating system that is "
+"present on your computer that also depends on this fallback, installing GRUB "
+"there will make that operating system temporarily unbootable. GRUB can be "
+"manually configured later to boot it if necessary."
+msgstr ""
+"Atentu: se la instalilo ne detektis alian ĉeestantan operaciumon en tiu ĉi "
+"komputilo, kiu ankaŭ dependas de tiu ĉi retropaŝa loko, instalo de GRUB tie "
+"povos igi tiun operaciumon dumtempe neŝargebla. GRUB povas esti permane "
+"agordita poste por ekârgi je ĝi se bezonate."

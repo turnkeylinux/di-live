@@ -9,19 +9,29 @@
 #
 # Georgi Stanojevski, <glisha@gmail.com>, 2004, 2005, 2006.
 # Georgi Stanojevski <georgis@unet.com.mk>, 2005, 2006.
-# Arangel Angov <ufo@linux.net.mk>, 2008.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2002
+#   Arangel Angov <ufo@linux.net.mk>, 2008.
+#   Free Software Foundation, Inc., 2002,2004
+#   Georgi Stanojevski <glisha@gmail.com>, 2004, 2006.
+# Translations from KDE:
+#   Danko Ilik <danko@mindless.com>
+# Arangel Angov <arangel@linux.net.mk>, 2008, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_mk\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-01-23 07:29+0000\n"
-"PO-Revision-Date: 2010-07-07 09:44+0100\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2014-12-30 22:01+0000\n"
+"PO-Revision-Date: 2012-09-23 01:33+0200\n"
 "Last-Translator: Arangel Angov <arangel@linux.net.mk>\n"
-"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
+"Language-Team: Macedonian <>\n"
+"Language: mk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: mk\n"
+"Plural-Forms: nplurals=3; plural=(n!=1);\n"
 
 #. Type: boolean
 #. Description
@@ -133,7 +143,7 @@ msgstr "Кореновиот уред за GRUB е: ${GRUBROOT}."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
 msgstr "Не успеа конфигурирањето на GRUB"
 
@@ -192,14 +202,20 @@ msgstr "Настана грешка при поставувањето на GRUB 
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
 msgstr "Уред на кој ќе се инсталира подигнувачот:"
 
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
@@ -217,17 +233,6 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -238,27 +243,32 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Уредот може да биде специфициран користејќи ги GRUB ознаките „(hdn,m)“, или "
-"како уред во /dev. Долу се неколку примери:\n"
-"  - „(hd0)“ or „/dev/hda“ ќе го инсталира GRUB во главниот бут запис(MBR)\n"
-"   од твојот прв тврд диск (IDE);\n"
-" - „(hd0,1)“ or „/dev/hda2“ ќе ја користи втората партиција од твојот прв\n"
-"   IDE уред;\n"
-" - „(hd2,4)“ or „/dev/sdc5“ ќе ја користи првата extended партиција\n"
-" од твојот трет уред (SCSI тука);\n"
-" - „(fd0)“ or „/dev/fd0“ ќе го инсталира GRUB на дискета."
+"Уредот може да биде одреден како уред во /dev. Долу се неколку примери:\n"
+"  - \"/dev/sda\" ќе го инсталира GRUB во master boot record (MBR)\n"
+"   од твојот прв тврд диск;\n"
+" -  \"/dev/sda2\" ќе ја користи втората партиција од твојот прв\n"
+"   тврд диск;\n"
+" - \"/dev/sdc5\" ќе ја користи првата extended партиција\n"
+" од твојот трет уред;\n"
+" - \"/dev/fd0\" ќе го инсталира GRUB на дискета."
+
+#. Type: select
+#. Choices
+#: ../grub-installer.templates:8001
+msgid "Enter device manually"
+msgstr "Внеси уред рачно"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "GRUB password:"
 msgstr "Лозинка за GRUB:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid ""
 "The GRUB boot loader offers many powerful interactive features, which could "
 "be used to compromise your system if unauthorized users have access to the "
@@ -278,7 +288,7 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
 msgstr ""
 "Ако не сакате да поставите лозинка за GRUB, оставете го ова поле празно."
@@ -286,14 +296,14 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
-msgstr "Поторно внеси ја лозинката да се потврди:"
+msgstr "Повторно внеси ја лозинката за потврда:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
@@ -304,28 +314,28 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "Password input error"
 msgstr "Грешка при внесувањето на лозинка"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr "Двете лозинки кои ги внесе не се исти. Те молам пробај повторно."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
 msgstr "Инсталацијата на GRUB не успеа"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
@@ -336,14 +346,14 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Unable to install GRUB in ${BOOTDEV}"
 msgstr "Не можам да го инсталирам GRUB во ${BOOTDEV}"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
 msgstr "Извршувањето на „grub-install ${BOOTDEV}“ не успеа."
 
@@ -353,71 +363,121 @@ msgstr "Извршувањето на „grub-install ${BOOTDEV}“ не усп�
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001 ../grub-installer.templates:14001
+#: ../grub-installer.templates:14001 ../grub-installer.templates:15001
 msgid "This is a fatal error."
 msgstr "Ова е фатална грешка."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
 msgstr "Извршувањето на „update-grub“ не успеа."
 
-#. Type: text
+#. Type: boolean
 #. Description
-#. :sl1:
+#. :sl4:
 #: ../grub-installer.templates:17001
-msgid "Installing GRUB boot loader"
+#, fuzzy
+msgid "Install GRUB?"
 msgstr "Инсталирање на подигнувачот GRUB"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:18001
+msgid "Installing GRUB boot loader"
+msgstr "Го инсталирам подигнувачот GRUB"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:19001
 msgid "Looking for other operating systems..."
 msgstr "Барам останати оперативни системи..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:19001
+#: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
 msgstr "Го инсталирам пакетот '${GRUB}'..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:20001
+#: ../grub-installer.templates:21001
 msgid "Determining GRUB boot device..."
 msgstr "Го одредувам уредот за подигнување за GRUB..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:21001
-msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "Извршување „grub-install ${BOOTDEV}“..."
-
-#. Type: text
-#. Description
-#. :sl1:
 #: ../grub-installer.templates:22001
-msgid "Running \"update-grub\"..."
-msgstr "Извршување „update-grub“..."
+msgid "Running \"grub-install ${BOOTDEV}\"..."
+msgstr "Извршувам „grub-install ${BOOTDEV}“..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:23001
+msgid "Running \"update-grub\"..."
+msgstr "Извршувам „update-grub“..."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "Ажурирање на /etc/kernel-img.conf..."
+msgstr "Го ажурирам /etc/kernel-img.conf..."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:25001
+msgid "Checking whether to force usage of the removable media path"
+msgstr ""
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:26001
+#, fuzzy
+msgid "Mounting filesystems"
+msgstr "Демонтирам датотечните системи..."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:27001
+msgid "Configuring grub-efi for future usage of the removable media path"
+msgstr ""
 
 #. Type: text
 #. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "Инсталирај го GRUB подигнувачот на тврд диск"
 
@@ -425,6 +485,88 @@ msgstr "Инсталирај го GRUB подигнувачот на тврд д
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
+#: ../grub-installer.templates:29001
 msgid "Reinstall GRUB boot loader"
 msgstr "Преинсталирај го ГРУБ бут вчитувачот"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Failed to mount /target/proc"
+msgstr "Не успеав да монтирам /target/proc"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Mounting the proc file system on /target/proc failed."
+msgstr "Монтирањето на proc датотечниот систем на /target/proc не успеа."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr ""
+"Провери во /var/log/syslog или види ја виртуелната конзола 4 за детали."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Warning: Your system may be unbootable!"
+msgstr "Внимание: Твојот систем може да е небутабилен!"
+
+#. Type: text
+#. Description
+#. Rescue menu item
+#. :sl2:
+#: ../grub-installer.templates:33001
+msgid "Force GRUB installation to the EFI removable media path"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid "Force GRUB installation to the EFI removable media path?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"It seems that this computer is configured to boot via EFI, but maybe that "
+"configuration will not work for booting from the hard drive. Some EFI "
+"firmware implementations do not meet the EFI specification (i.e. they are "
+"buggy!) and do not support proper configuration of boot options from system "
+"hard drives."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"A workaround for this problem is to install an extra copy of the EFI version "
+"of the GRUB boot loader to a fallback location, the \"removable media path"
+"\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+#, fuzzy
+msgid ""
+"Warning: If the installer failed to detect another operating system that is "
+"present on your computer that also depends on this fallback, installing GRUB "
+"there will make that operating system temporarily unbootable. GRUB can be "
+"manually configured later to boot it if necessary."
+msgstr ""
+"Внимание: Ако инсталерот не успеал да детектира друг оперативен систем "
+"присутен на твојот компјутер, измената на MBR може да го направи тој "
+"оперативен систем привремено небутабилен. Иако подоцна GRUB може рачно да се "
+"конфигурира за да се може да се бутира."

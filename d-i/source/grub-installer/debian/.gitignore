@@ -1,0 +1,4 @@
+*.debhelper*
+*.substvars
+files
+grub-installer

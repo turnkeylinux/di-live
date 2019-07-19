@@ -1,3 +1,11 @@
 #! /usr/bin/make -f
+
+include /usr/share/dpkg/default.mk
+
 %:
 	dh $@
+
+ifeq ($(DEB_HOST_ARCH),mipsel)
+override_dh_gencontrol:
+	dh_gencontrol -- -Vsubarch=loongson-2f
+endif
