@@ -1,0 +1,10 @@
+subarch octeon
+cpuinfo octeon.cpuinfo
+majors 2.6
+flavour octeon
+kernel-2.6 linux-image-octeon
+usable \
+  linux-image-octeon
+unusable \
+  linux-image-5kc-malta \
+  linux-image-loongson-3

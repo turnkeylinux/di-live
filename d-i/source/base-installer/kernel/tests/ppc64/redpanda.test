@@ -1,0 +1,9 @@
+subarch chrp_ibm
+cpuinfo redpanda.cpuinfo
+majors 2.6
+flavour powerpc64
+kernel-2.6 \
+  linux-image-powerpc64
+usable \
+  linux-image-powerpc64 \
+  linux-image-4.12.0-1-powerpc64

@@ -3,27 +3,30 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# 
-# 
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
-# 
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-# 
-# 
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@debian.org>, 2004.
+# Priti Patil <prithisd@gmail.com>, 2007.
+# Sampada Nakhare, 2007.
+# Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2010.
+# localuser <sampadanakhare@gmail.com>, 2015.
+# Nayan Nakhare <nayannakhare@rediffmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
 "POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2010-03-12 21:00+0530\n"
-"Last-Translator: Sampada <sampadanakhare@gmail.com>\n"
-"Language-Team: Marathi, janabhaaratii, C-DAC, Mumbai, India "
-"<janabhaaratii@cdacmumbai.in>\n"
+"PO-Revision-Date: 2018-10-07 18:30+0000\n"
+"Last-Translator: Nayan Nakhare <nayannakhare@rediffmail.com>\n"
+"Language-Team: CDAC_DI\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: boolean
 #. Description
@@ -212,7 +215,7 @@ msgstr "डीबूटस्ट्रॅप त्रुटी"
 #. :sl2:
 #: ../bootstrap-base.templates:3001
 msgid "Failed to determine the codename for the release."
-msgstr "या आवृत्तीचे कूटनाम निश्चित करता आले"
+msgstr "या आवृत्तीचे कूटनाम निश्चित करता आले नाही."
 
 #. Type: error
 #. Description
@@ -301,7 +304,7 @@ msgid ""
 msgstr ""
 "उपलब्ध साधनांची यादी दर्शवली आहे. त्यापैकी कोणते निवडायचे याची खात्री नसल्यास, तुम्ही "
 "मूलनिर्धारित (डिफॉल्ट) पर्याय निवडा. जर तुमचा संगणक सुरु होऊ शकला नाही तर तुम्ही अन्य "
-"पर्याय वापरुन अधिष्ठापनेचा प्रयत्न पुन्हा करू शकता.  "
+"पर्याय वापरुन अधिष्ठापनेचा प्रयत्न पुन्हा करू शकता."
 
 #. Type: error
 #. Description
@@ -407,7 +410,7 @@ msgstr "कोणताही नको"
 #. :sl2:
 #: ../bootstrap-base.templates:12002
 msgid "Kernel to install:"
-msgstr "अधिष्ठापित करण्याचा गाभाः"
+msgstr "अधिष्ठापित करण्याचा गाभा:"
 
 #. Type: select
 #. Description
@@ -445,7 +448,7 @@ msgid ""
 msgstr ""
 "तुम्ही गाभा अधिष्ठापित न करता पुढे जाण्याचा प्रयत्न करू शकता, आणि नंतर गाभा स्वहस्ते "
 "अधिष्ठापित करू शकता. हा पर्याय फक्त तज्ञ व्यक्तींनीच वापरावा, नाहीतर बहूदा तुमचा संगणक "
-"सुरु होऊ शकणार नाही"
+"सुरु होऊ शकणार नाही."
 
 #. Type: error
 #. Description

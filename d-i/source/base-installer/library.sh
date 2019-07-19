@@ -16,10 +16,11 @@ DISTRIBUTION=
 # used by kernel installation code
 KERNEL=
 KERNEL_LIST=/tmp/available_kernels.txt
-case `udpkg --print-os` in
-	linux)		KERNEL_MAJOR="$(uname -r | cut -d . -f 1,2)" ;;
+KERNEL_NAME=`udpkg --print-os`
+case $KERNEL_NAME in
+	linux)		KERNEL_MAJOR="$(uname -r | cut -d - -f 1 | cut -d . -f 1,2)" ;;
 	kfreebsd)	KERNEL_MAJOR="$(uname -r | cut -d . -f 1)" ;;
-	hurd)		KERNEL_MAJOR="$(uname -v | cut -d ' ' -f 2 | cut -d . -f 1)" ;;
+	hurd)		KERNEL_NAME=gnumach ; KERNEL_MAJOR="$(uname -v | cut -d ' ' -f 2 | cut -d . -f 1)" ;;
 esac
 KERNEL_VERSION="$(uname -r | cut -d - -f 1)"
 KERNEL_ABI="$(uname -r | cut -d - -f 1,2)"
@@ -27,6 +28,7 @@ KERNEL_FLAVOUR=$(uname -r | cut -d - -f 3-)
 MACHINE="$(uname -m)"
 NUMCPUS=$(cat /var/numcpus 2>/dev/null) || true
 CPUINFO=/proc/cpuinfo
+OFCPUS=/proc/device-tree/cpus/
 
 # files and directories
 APT_SOURCES=/target/etc/apt/sources.list
@@ -172,6 +174,16 @@ Aptitude::CmdLine::Ignore-Trust-Violations "true";
 EOT
 	fi
 
+	if [ "$PROTOCOL" = https ] && db_get debian-installer/allow_unauthenticated_ssl && [ "$RET" = true ]; then
+		# This file will be left in place on the installed system.
+		cat > $APT_CONFDIR/00AllowUnauthenticatedSSL << EOT
+Acquire::https::Verify-Host "false";
+Acquire::https::Verify-Peer "false";
+EOT
+	fi
+
+	[ ! -d "$DPKG_CONFDIR" ] && mkdir -p "$DPKG_CONFDIR"
+
 	# Disable all syncing; it's unnecessary in an installation context,
 	# and can slow things down quite a bit.
 	# This file will be left in place until the end of the install.
@@ -295,11 +307,7 @@ get_mirror_info () {
 		MIRROR=""
 		DIRECTORY="/cdrom/"
 		if [ -s /cdrom/.disk/base_components ]; then
-			if db_get apt-setup/restricted && [ "$RET" = false ]; then
-				COMPONENTS=`grep -v '^#' /cdrom/.disk/base_components | egrep -v '^(restricted|multiverse)$' | tr '\n' , | sed 's/,$//'`
-			else
-				COMPONENTS=`grep -v '^#' /cdrom/.disk/base_components | tr '\n' , | sed 's/,$//'`
-			fi
+			COMPONENTS=`grep -v '^#' /cdrom/.disk/base_components | tr '\n' , | sed 's/,$//'`
 		else
 			COMPONENTS="*"
 		fi
@@ -327,11 +335,7 @@ get_mirror_info () {
 		db_get mirror/$PROTOCOL/directory || mirror_error=1
 		DIRECTORY="$RET"
 
-		if db_get apt-setup/restricted && [ "$RET" = false ]; then
-			COMPONENTS="main"
-		else
-			COMPONENTS="main,restricted"
-		fi
+		COMPONENTS="main"
 
 		if [ "$mirror_error" = 1 ] || [ -z "$PROTOCOL" ] || [ -z "$MIRROR" ]; then
 			exit_error base-installer/cannot_install
@@ -341,16 +345,9 @@ get_mirror_info () {
 
 kernel_update_list () {
 	# Use 'uniq' to avoid listing the same kernel more then once
-	(set +e;
-	# Hack to get the metapackages in the right order; should be
-	# replaced by something better at some point.
-	chroot /target apt-cache search ^linux- | grep '^linux-\(amd64\|686\|k7\|generic\|server\|virtual\|preempt\|rt\|xen\|power\|cell\|ia64\|sparc\|hppa\|imx51\|dove\|omap\|omap4\)';
-	chroot /target apt-cache search ^linux-image- | grep -v '^linux-image-[2-9]\.';
-	chroot /target apt-cache search '^linux-image-[2-9]\.' | sort -r;
-	chroot /target apt-cache search ^kfreebsd-image;
-	chroot /target apt-cache search ^gnumach-image) | \
-	cut -d" " -f1 | uniq > "$KERNEL_LIST.unfiltered"
-	kernels=`< "$KERNEL_LIST.unfiltered" tr '\n' ' ' | sed -e 's/ $//'`
+	chroot /target apt-cache search "^(kernel|$KERNEL_NAME)-image" | \
+	cut -d" " -f1 | grep -v "linux-image-2.6" | uniq > "$KERNEL_LIST.unfiltered"
+	kernels=`sort -r "$KERNEL_LIST.unfiltered" | tr '\n' ' ' | sed -e 's/ $//'`
 	for candidate in $kernels; do
 		if [ -n "$FLAVOUR" ]; then
 			if arch_check_usable_kernel "$candidate" "$FLAVOUR"; then
@@ -375,23 +372,11 @@ pick_kernel () {
 	
 	db_settitle debian-installer/bootstrap-base/title
 
-	# Check for overrides
-	if db_get base-installer/kernel/override-image && [ "$RET" ]; then
-		if kernel_present "$RET"; then
-			KERNEL="$RET"
-			info "Using kernel '$KERNEL'"
-			db_set base-installer/kernel/image "$KERNEL"
-			return
-		else
-			warning "Kernel override '$RET' not present"
-		fi
-	fi
-
 	# For now, only present kernels we believe to be usable. We may have
 	# to rethink this later, but if there are no usable kernels it
 	# should be accompanied by an error message. The default must still
 	# be usable if possible.
-	kernels=`< "$KERNEL_LIST" tr '\n' ',' | sed -e 's/,$//'`
+	kernels=$(sort "$KERNEL_LIST" | tr '\n' ',' | sed -e 's/,$//')
 
 	info "Found kernels '$kernels'"
 
@@ -457,10 +442,18 @@ pick_kernel () {
 		# No recommendations available; try to guess.
 		kernels="$(echo "$kernels" | sed 's/,/\n/g')"
 
-		# Take the first on the list. kernel_update_list orders the
-		# list in such a way that the metapackages always come
-		# first, in the right order.
-		KERNEL=$(echo "$kernels" | head -n 1)
+		# Try to default to running kernel version.
+		KVERS=$(uname -r | cut -d'-' -f 1)
+		KERNEL="$(echo "$kernels" | grep -- "-$KVERS" | head -n 1)"
+		if [ -z "$KERNEL" ]; then
+			# If possible, find one with at least the same major number
+			# as the currently running kernel.
+			KERNEL="$(echo "$kernels" | grep -- "-$KERNEL_MAJOR" | head -n 1)"
+			if [ -z "$KERNEL" ]; then
+				# Take the first on the list.
+				KERNEL=$(echo "$kernels" | head -n 1)
+			fi
+		fi
 	fi
 
 	if [ "$KERNEL" ]; then
@@ -545,25 +538,15 @@ do_initrd = $do_initrd
 link_in_boot = $link_in_boot
 EOF
 
-	# TODO This should probably be restructured to better support
-	#      differences between initrd generators
 	rd_generator=""
 	if [ "$do_initrd" = yes ]; then
-		if generators="$(available_initramfs_generators)"; then
-			if echo "$generators" | grep -q " "; then
-				rd_generator="$(select_initramfs_generator "$generators")"
-			else
-				rd_generator="$generators"
-			fi
-		fi
+		rd_generator=initramfs-tools
 
-		# initramfs-tools needs busybox-initramfs pre-installed (and
-		# only recommends it)
-		if [ "$rd_generator" = initramfs-tools ]; then
-			if ! log-output -t base-installer apt-install busybox-initramfs; then
-				db_subst base-installer/kernel/failed-package-install PACKAGE busybox-initramfs
-				exit_error base-installer/kernel/failed-package-install
-			fi
+		# initramfs-tools needs busybox pre-installed (and only
+		# recommends it)
+		if ! log-output -t base-installer apt-install busybox; then
+			db_subst base-installer/kernel/failed-package-install PACKAGE busybox
+			exit_error base-installer/kernel/failed-package-install
 		fi
 
 		# Make sure the ramdisk creation tool is installed before we
@@ -575,52 +558,38 @@ EOF
 			exit_error base-installer/kernel/failed-package-install
 		fi
 
-		# Figure out how to configure the ramdisk creation tool
-		# FJP 20070306: Possibly this can go completely
-		case "$rd_generator" in
-		    initramfs-tools|yaird)
-			: ;;
-		    *)
-			db_subst base-installer/initramfs/unsupported GENERATOR "$rd_generator"
-			exit_error base-installer/initramfs/unsupported
-			;;
-		esac
-
 		# Add modules that have been queued for inclusion in the initrd
 		FIRSTMODULE=1
 		for QUEUEFILE in /var/lib/register-module/*.initrd; do
 			[ ! -e $QUEUEFILE ] && break
 			MODULE=$(basename $QUEUEFILE ".initrd")
 			addmodule_initramfs_tools "$MODULE" $FIRSTMODULE
-			addmodule_yaird "$MODULE" $FIRSTMODULE
 			rm $QUEUEFILE
 			FIRSTMODULE=0
 		done
 
 		# Select and set driver inclusion policy for initramfs-tools
-		if [ "$rd_generator" = initramfs-tools ]; then
-			if db_get base-installer/initramfs-tools/driver-policy && \
-			   [ -z "$RET" ]; then
-				# Get default for architecture
-				db_get base-installer/kernel/linux/initramfs-tools/driver-policy
-				db_set base-installer/initramfs-tools/driver-policy "$RET"
-			fi
-			db_settitle debian-installer/bootstrap-base/title
-			db_input medium base-installer/initramfs-tools/driver-policy || true
-			if ! db_go; then
-				db_progress stop
-				exit 10
-			fi
+		if db_get base-installer/initramfs-tools/driver-policy && \
+		   [ -z "$RET" ]; then
+			# Get default for architecture
+			db_get base-installer/kernel/linux/initramfs-tools/driver-policy
+			db_set base-installer/initramfs-tools/driver-policy "$RET"
+		fi
+		db_settitle debian-installer/bootstrap-base/title
+		db_input medium base-installer/initramfs-tools/driver-policy || true
+		if ! db_go; then
+			db_progress stop
+			exit 10
+		fi
 
-			db_get base-installer/initramfs-tools/driver-policy
-			if [ "$RET" != most ]; then
-				cat > $IT_CONFDIR/driver-policy <<EOF
+		db_get base-installer/initramfs-tools/driver-policy
+		if [ "$RET" != most ]; then
+			cat > $IT_CONFDIR/driver-policy <<EOF
 # Driver inclusion policy selected during installation
 # Note: this setting overrides the value set in the file
 # /etc/initramfs-tools/initramfs.conf
 MODULES=$RET
 EOF
-			fi
 		fi
 	else
 		info "Not installing an initrd generator."
@@ -653,18 +622,18 @@ EOF
 			;;
 		esac
 		resume_devfs="$(get_resume_partition)" || resume_devfs=
-		if [ "$resume_devfs" ] && [ -e "$resume_devfs" ]; then
-			resume="$(mapdevfs "$resume_devfs")" || resume=
-		else
-			resume=
-		fi
-		if [ "$resume" ] && ! echo "$resume" | grep -q "^/dev/mapper/"; then
-			resume_uuid="$(block-attr --uuid "$resume" || true)"
-			if [ "$resume_uuid" ]; then
-				resume="UUID=$resume_uuid"
+		if [ "$resume_devfs" ] && [ -e "$resume_devfs" ] && \
+		   resume="$(mapdevfs "$resume_devfs")"; then
+			if ! echo "$resume" | grep -q "^/dev/mapper/"; then
+				resume_uuid="$(block-attr --uuid "$resume" || true)"
+				if [ "$resume_uuid" ]; then
+					resume="UUID=$resume_uuid"
+				fi
 			fi
+		else
+			resume=none
 		fi
-		if [ -n "$resumeconf" ] && [ "$resume" ]; then
+		if [ -n "$resumeconf" ]; then
 			if [ -f $resumeconf ] ; then
 				sed -e "s@^#* *RESUME=.*@RESUME=$resume@" < $resumeconf > $resumeconf.new &&
 					mv $resumeconf.new $resumeconf
@@ -691,40 +660,20 @@ EOF
 	# Advance progress bar to 30% of allocated space for install_kernel_linux
 	update_progress 30 100
 
+	# We really should install Recommends by default here (see #929667)
+	db_get base-installer/install-recommends
+	if [ "$RET" = true ]; then
+		KERNEL_INSTALL_OPTS=--with-recommends
+	else
+		KERNEL_INSTALL_OPTS=
+	fi
+
 	# Install the kernel
 	db_subst base-installer/section/install_kernel_package SUBST0 "$KERNEL"
 	db_progress INFO base-installer/section/install_kernel_package
-	log-output -t base-installer apt-install "$KERNEL" || kernel_install_failed=$?
+	log-output -t base-installer apt-install $KERNEL_INSTALL_OPTS "$KERNEL" || kernel_install_failed=$?
 
-	db_get base-installer/kernel/headers
-	if [ "$RET" = true ]; then
-		# Advance progress bar to 80% of allocated space for install_kernel_linux
-		update_progress 80 100
-
-		# Install kernel headers if possible
-		HEADERS="$(echo "$KERNEL" | sed 's/linux\(-image\|\)/linux-headers/')"
-		db_subst base-installer/section/install_kernel_package SUBST0 "$HEADERS"
-		db_progress INFO base-installer/section/install_kernel_package
-		log-output -t base-installer apt-install "$HEADERS" || true
-	fi
-
-	db_get base-installer/kernel/backports-modules
-	if [ "$RET" ]; then
-		BACKPORTS_MODULES="$RET"
-
-		# Advance progress bar to 85% of allocated space for install_kernel_linux
-		update_progress 85 100
-
-		# Install kernel backports modules if possible
-		for backports_module in $BACKPORTS_MODULES; do
-			LBM="$(echo "$KERNEL" | sed "s/linux\\(-image\\|\\)/linux-backports-modules-$backports_module-$DISTRIBUTION/")"
-			db_subst base-installer/section/install_kernel_package SUBST0 "$LBM"
-			db_progress INFO base-installer/section/install_kernel_package
-			log-output -t base-installer apt-install "$LBM" || true
-		done
-	fi
-
-	# Advance progress bar to 90% of allocated space for install_linux
+	# Advance progress bar to 90% of allocated space for install_kernel_linux
 	update_progress 90 100
 
 	if [ -f /target/etc/kernel-img.conf.$$ ]; then
@@ -759,43 +708,6 @@ get_resume_partition () {
 	echo "$biggest_partition"
 }
 
-available_initramfs_generators () {
-	irf_list=""
-	db_get base-installer/kernel/linux/initramfs-generators || return 1
-
-	for irf in $RET; do
-		if LANG=C chroot /target apt-cache policy $irf 2>&1 | \
-			grep "Candidate:" | grep -v "(none)" >/dev/null 2>&1; then
-			if [ "$irf_list" ]; then
-				irf_list="$irf_list $irf"
-			else
-				irf_list="$irf"
-			fi
-		fi
-	done
-	info "Available initramfs generator(s): '$irf_list'"
-
-	[ "$irf_list" ] || return 1
-	echo "$irf_list"
-	return 0
-}
-
-select_initramfs_generator () {
-	irf_choices="$(echo "$1" | sed "s/ \+/, /g")"
-	irf_default="${1%% *}"
-	db_subst base-installer/initramfs/generator GENERATORS "$irf_choices"
-	db_set base-installer/initramfs/generator "$irf_default"
-
-	db_input low base-installer/initramfs/generator || [ $? -eq 30 ]
-	if ! db_go; then
-		db_progress stop
-		exit 10
-	fi
-
-	db_get base-installer/initramfs/generator
-	echo $RET
-}
-
 addmodule_easy () {
 	if [ -f "$CFILE" ]; then
 		if [ "$2" = 1 ]; then
@@ -808,16 +720,6 @@ addmodule_easy () {
 addmodule_initramfs_tools () {
 	CFILE='/target/etc/initramfs-tools/modules'
 	addmodule_easy "$1" "$2"
-}
-
-addmodule_yaird () {
-	CFILE='/target/etc/yaird/Default.cfg'
-	if [ -f "$CFILE" ]; then
-		if [ "$2" = 1 ]; then
-			sed -i "/END GOALS/s/^/\n\t\t#\n\t\t# Added by Debian Installer\n/" $CFILE
-		fi
-		sed -i "/END GOALS/s/^/\t\tMODULE $1\n/" $CFILE
-	fi
 }
 
 install_kernel_kfreebsd() {
@@ -934,7 +836,7 @@ configure_apt () {
 			fi
 			;;
 			hurd)
-			if ! mount -t firmlink $DIRECTORY $tdir ; then
+			if ! mount -t firmlink $DIRECTORY $tdir > /dev/null 2>&1 ; then
 				warning "failed to bind mount $tdir"
 			fi
 			;;
@@ -947,7 +849,7 @@ configure_apt () {
 		cat > $APT_CONFDIR/00CDMountPoint << EOT
 Acquire::cdrom {
   mount "/media/cdrom";
-}
+};
 Dir::Media::MountPath "/media/cdrom";
 EOT
 		# Make apt-cdrom and apt not unmount/mount CD-ROMs;
@@ -973,30 +875,12 @@ EOT
 		     chroot /target apt-cdrom add </dev/null; then
 			error "error while running apt-cdrom"
 		fi
-		if db_get apt-setup/restricted && [ "$RET" = false ]; then
-			sed -i 's/ \(restricted\|multiverse\)//g' $APT_SOURCES
-		fi
 	else
 		# sources.list uses space to separate the components, not comma
 		COMPONENTS=$(echo $COMPONENTS | tr , " ")
 		APTSOURCE="$PROTOCOL://$MIRROR$DIRECTORY"
 
 		echo "deb $APTSOURCE $DISTRIBUTION $COMPONENTS" > $APT_SOURCES
-		echo "deb $APTSOURCE $DISTRIBUTION-updates $COMPONENTS" >> $APT_SOURCES
-		if db_get apt-setup/security_host; then
-			SECMIRROR="$RET"
-		else
-			SECMIRROR="$MIRROR"
-		fi
-		if db_get apt-setup/security_path; then
-			SECDIRECTORY="$RET"
-		else
-			SECDIRECTORY=/ubuntu
-		fi
-		echo "deb $PROTOCOL://$SECMIRROR$SECDIRECTORY $DISTRIBUTION-security $COMPONENTS" >> $APT_SOURCES
-		if db_get apt-setup/proposed && [ "$RET" = true ]; then
-			echo "deb $APTSOURCE $DISTRIBUTION-proposed $COMPONENTS" >> $APT_SOURCES
-		fi
 	fi
 }
 

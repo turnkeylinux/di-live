@@ -1,14 +1,19 @@
 cpuinfo pentium.cpuinfo
 machine i586
 majors 2.6
-flavour 486
-kernel-2.6
+flavour 586
+kernel-2.6 \
+  linux-image-586
+usable \
+  linux-image-586 \
+  linux-image-3.16-4-586
 unusable \
-  linux-generic \
-  linux-generic-pae \
-  linux-image-generic \
-  linux-image-generic-pae \
-  linux-image-2.6.36-1-generic \
-  linux-image-2.6.36-1-generic-pae
-env KERNEL_FLAVOUR generic
-env RAM_END 0x4000000
+  linux-image-686-pae \
+  linux-image-686 \
+  linux-image-amd64 \
+  linux-image-2.6.38-1-686-pae \
+  linux-image-2.6.18-1-686 \
+  linux-image-2.6.18-1-amd64 \
+  linux-image-686-pae-dbg \
+  linux-image-3.16-4-686-pae-dbg
+env KERNEL_FLAVOUR 586

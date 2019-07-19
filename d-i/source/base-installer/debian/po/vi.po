@@ -9,20 +9,23 @@
 # Jean Christophe André <progfou@gmail.com>
 # Vũ Quang Trung <vu.quang.trung@auf.org>
 # Trịnh Minh Thành <tmthanh@yahoo.com>
+# Nguyễn Hùng Vũ <vuhung16@bigfoot.com>, 2001.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2010
+# Hai-Nam Nguyen <hainam@jcisio.com>, 2012
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2018, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer Level 1\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
 "POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2010-09-28 18:01+0930\n"
-"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"PO-Revision-Date: 2019-02-27 14:34+0700\n"
+"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
+"Language-Team: Vietnamese <debian-l10n-vietnamese@lists.debian.org>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: boolean
@@ -50,7 +53,7 @@ msgstr ""
 #. :sl2:
 #: ../base-installer.templates:2001
 msgid "No file system mounted on /target"
-msgstr "Không có hệ thống tập tin được lắp vào « /target »"
+msgstr "Không có hệ thống tập tin được gắn vào “/target”"
 
 #. Type: error
 #. Description
@@ -61,8 +64,8 @@ msgid ""
 "target. The partitioner and formatter should have done this for you."
 msgstr ""
 "Trước khi tiến trình cài đặt có khả năng tiếp tục lại, một hệ thống tập tin "
-"gốc phải được lắp vào « /target » (đích). Bộ phân vùng và định dạng nên đã "
-"làm công việc này cho bạn."
+"gốc phải được gắn vào “/target” (đích). Bộ phân vùng và định dạng nên đã làm "
+"công việc này cho bạn."
 
 #. Type: error
 #. Description
@@ -88,7 +91,7 @@ msgstr ""
 #. :sl1:
 #: ../base-installer.templates:4001
 msgid "Preparing to install the base system..."
-msgstr "Đang chuẩn bị cài đặt hệ thống cơ bản..."
+msgstr "Đang chuẩn bị cài đặt hệ thống cơ bản…"
 
 #. Type: text
 #. Description
@@ -102,35 +105,35 @@ msgstr "Đang cài đặt hệ thống cơ bản"
 #. :sl1:
 #: ../base-installer.templates:6001
 msgid "Running ${SCRIPT}..."
-msgstr "Đang chạy ${SCRIPT}..."
+msgstr "Đang chạy ${SCRIPT}…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:7001
 msgid "Setting up the base system..."
-msgstr "Đang thiết lập hệ thống cơ bản..."
+msgstr "Đang cài đặt hệ thống cơ bản…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:8001 ../bootstrap-base.templates:59001
 msgid "Configuring APT sources..."
-msgstr "Đang cấu hình các nguồn APT..."
+msgstr "Đang cấu hình các nguồn APT…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:9001
 msgid "Updating the list of available packages..."
-msgstr "Đang cập nhật danh sách các gói có sẵn..."
+msgstr "Đang cập nhật danh sách các gói có sẵn…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:10001
 msgid "Installing extra packages..."
-msgstr "Đang cài đặt các gói thêm..."
+msgstr "Đang cài đặt các gói mở rộng…"
 
 #. Type: text
 #. Description
@@ -138,7 +141,7 @@ msgstr "Đang cài đặt các gói thêm..."
 #. :sl1:
 #: ../base-installer.templates:11001
 msgid "Installing extra packages - retrieving and installing ${SUBST0}..."
-msgstr "Đang cài đặt các gói thêm: đang lấy và cài đặt ${SUBST0}..."
+msgstr "Đang cài đặt các gói mở rộng - đang lấy và cài đặt ${SUBST0}…"
 
 #. Type: text
 #. Description
@@ -169,7 +172,7 @@ msgid ""
 "installable CD-ROM was found and no valid mirror was configured."
 msgstr ""
 "Bộ cài đặt không thể quyết định cách cài đặt hệ thống cơ bản. Chưa tìm thấy "
-"địa CD-ROM có khả năng cài đặt, cũng chưa cấu hình máy nhân bản hợp lệ."
+"địa CD-ROM có khả năng cài đặt, cũng chưa cấu hình máy bản sao hợp lệ."
 
 #. Type: error
 #. Description
@@ -213,21 +216,21 @@ msgstr "Lỗi Debootstrap"
 #. :sl2:
 #: ../bootstrap-base.templates:3001
 msgid "Failed to determine the codename for the release."
-msgstr "Lỗi quyết định tên mã cho bản phát hành này."
+msgstr "Gặp lỗi khi phân giải tên mã cho bản phát hành này."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "Failed to install the base system"
-msgstr "Lỗi cài đặt hệ thống cơ bản"
+msgstr "Gặp lỗi khi cài đặt hệ thống cơ bản"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "The base system installation into /target/ failed."
-msgstr "Việc cài đặt hệ thống cơ bản vào « /target/ » bị lỗi."
+msgstr "Việc cài đặt hệ thống cơ bản vào “/target/” bị lỗi."
 
 #. Type: error
 #. Description
@@ -252,7 +255,7 @@ msgstr "Việc cài đặt hệ thống cơ bản vào « /target/ » bị lỗi
 #: ../bootstrap-base.templates:11001 ../bootstrap-base.templates:16001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
 msgstr ""
-"Xem bản ghi hệ thống « /var/log/syslog » hoặc bàn giao tiếp ảo 4 để tìm chi "
+"Xem bản ghi hệ thống “/var/log/syslog” hoặc bàn giao tiếp ảo 4 để tìm chi "
 "tiết."
 
 #. Type: error
@@ -286,7 +289,7 @@ msgstr "Chương trình debootstrap đã thoát bất thường."
 #. :sl2:
 #: ../bootstrap-base.templates:7001
 msgid "The following error occurred:"
-msgstr "Gặp lỗi theo đây:"
+msgstr "Gặp lỗi sau đây:"
 
 #. Type: select
 #. Description
@@ -303,8 +306,8 @@ msgid ""
 "installation using the other options."
 msgstr ""
 "Danh sách này hiển thị các công cụ có sẵn. Nếu bạn chưa chắc cần chọn gì, "
-"bạn nên chọn điều mặc định. Nếu hệ thống bạn không khởi động được, bạn có "
-"thể thử lại tiến trình cài đặt, dùng những tùy chọn khác."
+"bạn nên chọn cái mặc định. Nếu hệ thống bạn không khởi động được, bạn có thể "
+"thử cài đặt dùng những tùy chọn khác."
 
 #. Type: error
 #. Description
@@ -393,7 +396,7 @@ msgstr "Gặp lỗi trong khi cố gắng cài đặt hạt nhân vào hệ th�
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Kernel package: '${KERNEL}'."
-msgstr "Gói hạt nhân: « ${KERNEL} »."
+msgstr "Gói hạt nhân: “${KERNEL}”."
 
 #. Type: select
 #. Choices
@@ -488,7 +491,7 @@ msgstr "Gặp lỗi trong khi thử cài đặt gói ${PACKAGE} vào hệ thốn
 #. SUBST0 is a Release file name.
 #: ../bootstrap-base.templates:17001
 msgid "Failed getting Release file ${SUBST0}."
-msgstr "Lỗi lấy tập tin Release ${SUBST0}."
+msgstr "Gặp lỗi khi lấy tập tin Release ${SUBST0}."
 
 #. Type: error
 #. Description
@@ -496,7 +499,7 @@ msgstr "Lỗi lấy tập tin Release ${SUBST0}."
 #. SUBST0 is a Release.gpg file name
 #: ../bootstrap-base.templates:18001
 msgid "Failed getting Release signature file ${SUBST0}."
-msgstr "Lỗi lấy tập tin chữ ký Release ${SUBST0}."
+msgstr "Gặp lỗi khi lấy tập tin chữ ký Release ${SUBST0}."
 
 #. Type: error
 #. Description
@@ -504,7 +507,7 @@ msgstr "Lỗi lấy tập tin chữ ký Release ${SUBST0}."
 #. SUBST0 is a gpg key ID
 #: ../bootstrap-base.templates:19001
 msgid "Release file signed by unknown key (key id ${SUBST0})"
-msgstr "Tập tin Release được ký bởi khoá lạ (mã nhận diện khoá là ${SUBST0})"
+msgstr "Tập tin Release được ký bởi khóa lạ (mã nhận diện khóa là ${SUBST0})"
 
 #. Type: error
 #. Description
@@ -519,7 +522,7 @@ msgstr "Tập tin Release  không hợp lệ: không có thành phần hợp l�
 #. SUBST0 is a filename
 #: ../bootstrap-base.templates:21001
 msgid "Invalid Release file: no entry for ${SUBST0}."
-msgstr "Tập tin Release không hợp lệ: không có mục nhập cho ${SUBST0}."
+msgstr "Tập tin Release không hợp lệ: không có mục tin cho ${SUBST0}."
 
 #. Type: error
 #. Description
@@ -569,7 +572,7 @@ msgstr "Đang lấy chữ ký tập tin Release"
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:25001
 msgid "Finding package sizes"
-msgstr "Đang tìm các kích cỡ gói"
+msgstr "Đang tìm kích cỡ gói"
 
 #. Type: text
 #. Description
@@ -593,7 +596,7 @@ msgstr "Đang lấy tập tin Packages"
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:28001
 msgid "Retrieving packages"
-msgstr "Đang lấy các gói"
+msgstr "Đang nhận các gói"
 
 #. Type: text
 #. Description
@@ -656,7 +659,7 @@ msgstr "Đang cấu hình hệ thống cơ bản"
 #. :sl1:
 #: ../bootstrap-base.templates:36001
 msgid "${SECTION}: ${INFO}..."
-msgstr "${SECTION}: ${INFO}..."
+msgstr "${SECTION}: ${INFO}…"
 
 #. Type: text
 #. Description
@@ -664,7 +667,7 @@ msgstr "${SECTION}: ${INFO}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:37001
 msgid "Validating ${SUBST0}..."
-msgstr "Đang hợp lệ hóa ${SUBST0}..."
+msgstr "Đang hợp lệ hóa ${SUBST0}…"
 
 #. Type: text
 #. Description
@@ -672,7 +675,7 @@ msgstr "Đang hợp lệ hóa ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:38001
 msgid "Retrieving ${SUBST0}..."
-msgstr "Đang lấy ${SUBST0}..."
+msgstr "Đang lấy về ${SUBST0}…"
 
 #. Type: text
 #. Description
@@ -680,7 +683,7 @@ msgstr "Đang lấy ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:39001
 msgid "Extracting ${SUBST0}..."
-msgstr "Đang giải nén ${SUBST0}..."
+msgstr "Đang giải nén ${SUBST0}…"
 
 #. Type: text
 #. Description
@@ -688,7 +691,7 @@ msgstr "Đang giải nén ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:40001
 msgid "Unpacking ${SUBST0}..."
-msgstr "Đang mở gói ${SUBST0}..."
+msgstr "Đang mở gói ${SUBST0}…"
 
 #. Type: text
 #. Description
@@ -696,7 +699,7 @@ msgstr "Đang mở gói ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:41001
 msgid "Configuring ${SUBST0}..."
-msgstr "Đang cấu hình ${SUBST0}..."
+msgstr "Đang cấu hình ${SUBST0}…"
 
 #. Type: text
 #. Description
@@ -712,14 +715,14 @@ msgstr "Đang kiểm tra chữ ký Release"
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:43001
 msgid "Valid Release signature (key id ${SUBST0})"
-msgstr "Chữ ký Release hợp lệ (mã nhân diện khoá là ${SUBST0})"
+msgstr "Chữ ký Release hợp lệ (mã nhân diện khóa là ${SUBST0})"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:44001
 msgid "Resolving dependencies of base packages..."
-msgstr "Đang tháo gỡ điều kiện phụ thuộc của các gói cơ bản..."
+msgstr "Đang phân giải điều kiện phụ thuộc của các gói cơ bản…"
 
 #. Type: text
 #. Description
@@ -735,7 +738,7 @@ msgstr "Tìm thấy một số điều kiện phụ thuộc cơ bản thêm: ${S
 #. SUBST0 is a list of packages
 #: ../bootstrap-base.templates:46001
 msgid "Found additional required dependencies: ${SUBST0}"
-msgstr "Tìm thấy một số điều kiện phụ thuộc cần thiết thêm: ${SUBST0}"
+msgstr "Tìm thấy một số phần phụ thuộc cần thiết thêm: ${SUBST0}"
 
 #. Type: text
 #. Description
@@ -751,7 +754,7 @@ msgstr ""
 #. :sl1:
 #: ../bootstrap-base.templates:48001
 msgid "Resolving dependencies of required packages..."
-msgstr "Đang tháo gỡ điều kiện phụ thuộc của các gói cần thiết..."
+msgstr "Đang phân giải các phần phụ thuộc của các gói cần thiết…"
 
 #. Type: text
 #. Description
@@ -760,7 +763,7 @@ msgstr "Đang tháo gỡ điều kiện phụ thuộc của các gói cần thi�
 #. SUBST1 is a mirror
 #: ../bootstrap-base.templates:49001
 msgid "Checking component ${SUBST0} on ${SUBST1}..."
-msgstr "Đang kiểm tra thành phần ${SUBST0} trên ${SUBST1}..."
+msgstr "Đang kiểm tra thành phần ${SUBST0} trên ${SUBST1}…"
 
 #. Type: text
 #. Description
@@ -771,7 +774,7 @@ msgstr "Đang kiểm tra thành phần ${SUBST0} trên ${SUBST1}..."
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:50001
 msgid "Installing core packages..."
-msgstr "Đang cài đặt các gói lõi..."
+msgstr "Đang cài đặt các gói lõi…"
 
 #. Type: text
 #. Description
@@ -782,7 +785,7 @@ msgstr "Đang cài đặt các gói lõi..."
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:51001
 msgid "Unpacking required packages..."
-msgstr "Đang mở gói các gói cần thiết..."
+msgstr "Đang mở gói các gói cần thiết…"
 
 #. Type: text
 #. Description
@@ -793,28 +796,28 @@ msgstr "Đang mở gói các gói cần thiết..."
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:52001
 msgid "Configuring required packages..."
-msgstr "Đang cấu hình các gói cần thiết..."
+msgstr "Đang cấu hình các gói cần thiết…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:53001
 msgid "Installing base packages..."
-msgstr "Đang cài đặt các gói cơ bản..."
+msgstr "Đang cài đặt các gói cơ bản…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:54001
 msgid "Unpacking the base system..."
-msgstr "Đang mở gói hệ thống cơ bản..."
+msgstr "Đang mở gói hệ thống cơ bản…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:55001
 msgid "Configuring the base system..."
-msgstr "Đang cấu hình hệ thống cơ bản..."
+msgstr "Đang cấu hình hệ thống cơ bản…"
 
 #. Type: text
 #. Description
@@ -852,14 +855,14 @@ msgstr "Đang thử lại việc tải xuống ${SUBST0} bị lỗi"
 #. :sl1:
 #: ../bootstrap-base.templates:60001
 msgid "Selecting the kernel to install..."
-msgstr "Đang chọn hạt nhân cần cài đặt..."
+msgstr "Đang chọn hạt nhân cần cài đặt…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:61001
 msgid "Installing the kernel..."
-msgstr "Đang cài đặt hạt nhân..."
+msgstr "Đang cài đặt hạt nhân…"
 
 #. Type: text
 #. Description
@@ -867,4 +870,4 @@ msgstr "Đang cài đặt hạt nhân..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:62001
 msgid "Installing the kernel - retrieving and installing ${SUBST0}..."
-msgstr "Đang cài đặt hạt nhân: đang lấy và cài đặt ${SUBST0}..."
+msgstr "Đang cài đặt hạt nhân - đang lấy và cài đặt ${SUBST0}…"

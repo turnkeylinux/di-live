@@ -1,7 +1,7 @@
 arch_get_kernel_flavour () {
 	CPU=`grep '^cpu[[:space:]]*:' "$CPUINFO" | head -n1 | cut -d: -f2 | sed 's/^ *//; s/[, ].*//' | tr A-Z a-z`
 	case "$CPU" in
-	    power3|power4|power4+|ppc970*|power5|power5+|power6|power6x)
+	    ppc970*|power3|power4*|power5*|power6*|power7*|power8*)
 		family=powerpc64 ;;
 	    cell|i-star|s-star|pa6t|rs64-*)
 		family=powerpc64 ;;
@@ -9,10 +9,10 @@ arch_get_kernel_flavour () {
 		family=powerpc ;;
 	esac
 	case "$SUBARCH" in
-	    powermac*|prep|chrp*|pasemi)
+	    powermac*|chrp*|pasemi|ps3)
 		echo "$family" ;;
-	    ps3|cell)
-		echo powerpc64 ;;
+	    prep)
+		echo prep ;;
 	    amiga)
 		echo apus ;;
 	    *)
@@ -29,19 +29,19 @@ arch_check_usable_kernel () {
 }
 
 arch_get_kernel () {
-	if [ "$1" = "powerpc64" ]; then
+	CPUS="$(ls "$OFCPUS" 2>/dev/null | grep -ci @[0-9])" || CPUS=1
+	if [ "$CPUS" ] && [ "$CPUS" -gt 1 ] && \
+	   [ "$1" != "powerpc64" ] && [ "$1" != "prep" ] ; then
 		SMP=-smp
 	else
 		SMP=
 	fi
 
 	case "$KERNEL_MAJOR" in
-	    2.6)
+	    2.6|3.*|4.*)
 		if [ "$SMP" ]; then
-			echo "linux-$1$SMP"
 			echo "linux-image-$1$SMP"
 		fi
-		echo "linux-$1"
 		echo "linux-image-$1"
 		;;
 	    *)

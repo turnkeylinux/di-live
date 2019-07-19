@@ -5,32 +5,48 @@
 #
 # German messages for debian-installer (sublevel1).
 # Copyright (C) 2003 Software in the Public Interest, Inc.
+# #
+# This file is distributed under the same license as debian-installer.
+# #
 # Console-setup strings translations:
 # (identified by "./console-setup.templates")
 # Copyright (C) 2006, the console-setup package'c copyright holder
 # Copyright (C) 2006, Matthias Julius
 # Copyright (C) 2007-2009 Helge Kreutzmann
-# This file is distributed under the same license as debian-installer.
-# Holger Wansing <linux@wansing-online.de>, 2008, 2009, 2010.
+# Copyright (C) 2008-2011 Holger Wansing
+# #
+# Translations from iso-codes:
+# Translations taken from ICU SVN on 2007-09-09
+# Holger Wansing <linux@wansing-online.de>, 2008 - 2017, 2018.
 # Jens Seidel <jensseidel@users.sf.net>, 2005, 2006, 2007, 2008.
 # Dennis Stampfer <seppy@debian.org>, 2003, 2004, 2005.
 # Alwin Meschede <ameschede@gmx.de>, 2003, 2004.
 # Bastian Blank <waldi@debian.org>, 2003.
 # Jan Luebbe <jluebbe@lasnet.de>, 2003.
 # Thorsten Sauter <tsauter@gmx.net>, 2003.
-#
-#
+# Alastair McKinstry <mckinstry@computer.org>, 2001.
+# Björn Ganslandt <bganslan@gmx.net>, 2000, 2001.
+# Bruno Haible <bruno@clisp.org>, 2004, 2007.
+# Christian Stimming <stimming@tuhh.de>, 2006.
+# Dennis Stampfer <seppy@debian.org>, 2004.
+# Karl Eichwalder <ke@suse.de>, 2001.
+# Simon Hürlimann <simon.huerlimann@access.unizh.ch>, 2004.
+# Stefan Siegel <siegel@mandrakesoft.com>, 2001.
+# Tobias Quathamer <toddy@debian.org>, 2006, 2007, 2008, 2009, 2010.
+# Wolfgang Rohdewald <wolfgang@rohdewald.de>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
 "POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2010-10-02 22:33+0200\n"
+"PO-Revision-Date: 2018-10-23 15:29+0200\n"
 "Last-Translator: Holger Wansing <linux@wansing-online.de>\n"
-"Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: boolean
 #. Description
@@ -97,14 +113,14 @@ msgstr ""
 #. :sl1:
 #: ../base-installer.templates:4001
 msgid "Preparing to install the base system..."
-msgstr "Die Installation des Grundsystems wird vorbereitet ..."
+msgstr "Die Installation des Basissystems wird vorbereitet ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:5001 ../bootstrap-base.templates:30001
 msgid "Installing the base system"
-msgstr "Installieren des Grundsystems"
+msgstr "Installieren des Basissystems"
 
 #. Type: text
 #. Description
@@ -118,7 +134,7 @@ msgstr "Ausführen von ${SCRIPT} ..."
 #. :sl1:
 #: ../base-installer.templates:7001
 msgid "Setting up the base system..."
-msgstr "Einrichten des Grundsystems ..."
+msgstr "Einrichten des Basissystems ..."
 
 #. Type: text
 #. Description
@@ -157,7 +173,7 @@ msgstr ""
 #. :sl1:
 #: ../bootstrap-base.templates:1001
 msgid "Install the base system"
-msgstr "Grundsystem installieren"
+msgstr "Basissystem installieren"
 
 #. Type: error
 #. Description
@@ -166,7 +182,7 @@ msgstr "Grundsystem installieren"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid "Cannot install base system"
-msgstr "Grundsystem kann nicht installiert werden"
+msgstr "Basissystem kann nicht installiert werden"
 
 #. Type: error
 #. Description
@@ -178,7 +194,7 @@ msgid ""
 "The installer cannot figure out how to install the base system. No "
 "installable CD-ROM was found and no valid mirror was configured."
 msgstr ""
-"Der Installer kann das Grundsystem nicht installieren. Es wurde keine "
+"Der Installer kann das Basissystem nicht installieren. Es wurde keine "
 "Installations-CD-ROM gefunden und es wurde kein gültiger Spiegel "
 "eingerichtet."
 
@@ -231,14 +247,14 @@ msgstr "Der Codename der Veröffentlichung konnte nicht bestimmen werden."
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "Failed to install the base system"
-msgstr "Installation des Grundsystems fehlgeschlagen"
+msgstr "Installation des Basissystems fehlgeschlagen"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "The base system installation into /target/ failed."
-msgstr "Die Installation des Grundsystems nach /target/ ist fehlgeschlagen."
+msgstr "Die Installation des Basissystems nach /target/ ist fehlgeschlagen."
 
 #. Type: error
 #. Description
@@ -274,7 +290,7 @@ msgstr ""
 #. :sl2:
 #: ../bootstrap-base.templates:5001 ../bootstrap-base.templates:6001
 msgid "Base system installation error"
-msgstr "Fehler bei Installation des Grundsystems"
+msgstr "Fehler bei Installation des Basissystems"
 
 #. Type: error
 #. Description
@@ -635,7 +651,7 @@ msgstr "Entpacken der Pakete"
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:31001
 msgid "Installing core packages"
-msgstr "Installieren der Kern-Pakete"
+msgstr "Installieren der Basispakete"
 
 #. Type: text
 #. Description
@@ -662,7 +678,7 @@ msgstr "Konfigurieren der benötigten Pakete"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #: ../bootstrap-base.templates:34001
 msgid "Unpacking the base system"
-msgstr "Entpacken des Grundsystems"
+msgstr "Entpacken des Basissystems"
 
 #. Type: text
 #. Description
@@ -671,7 +687,7 @@ msgstr "Entpacken des Grundsystems"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #: ../bootstrap-base.templates:35001
 msgid "Configuring the base system"
-msgstr "Konfigurieren des Grundsystems"
+msgstr "Konfigurieren des Basissystems"
 
 #. Type: text
 #. Description
@@ -741,7 +757,7 @@ msgstr "Gültige Signatur für Release-Datei (Schlüssel-Nr. ${SUBST0})"
 #. :sl1:
 #: ../bootstrap-base.templates:44001
 msgid "Resolving dependencies of base packages..."
-msgstr "Abhängigkeiten der Grundpakete werden aufgelöst ..."
+msgstr "Abhängigkeiten der Basispakete werden aufgelöst ..."
 
 #. Type: text
 #. Description
@@ -792,7 +808,7 @@ msgstr "Prüfen der Komponente ${SUBST0} auf ${SUBST1} ..."
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:50001
 msgid "Installing core packages..."
-msgstr "Installieren der Kern-Pakete ..."
+msgstr "Installieren der Basispakete ..."
 
 #. Type: text
 #. Description
@@ -821,28 +837,28 @@ msgstr "Konfigurieren der benötigten Pakete ..."
 #. :sl1:
 #: ../bootstrap-base.templates:53001
 msgid "Installing base packages..."
-msgstr "Installieren der Basis-Pakete ..."
+msgstr "Installieren der Basispakete ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:54001
 msgid "Unpacking the base system..."
-msgstr "Entpacken des Grundsystems ..."
+msgstr "Entpacken des Basissystems ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:55001
 msgid "Configuring the base system..."
-msgstr "Konfigurieren des Grundsystems ..."
+msgstr "Konfigurieren des Basissystems ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:56001
 msgid "Base system installed successfully."
-msgstr "Grundsystem erfolgreich installiert."
+msgstr "Basissystem erfolgreich installiert."
 
 #. Type: error
 #. Description

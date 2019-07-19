@@ -1,16 +1,19 @@
 subarch amiga
 cpuinfo crest.cpuinfo
 majors 2.6
-flavour amiga
-kernel-2.6 linux-image-2.6-amiga
+flavour m68k
+kernel-2.6 \
+  linux-image-m68k
 usable \
-  linux-image-2.6-amiga
+  linux-image-m68k
 unusable \
-  linux-image-2.6-atari \
-  linux-image-2.6-bvme6000 \
-  linux-image-2.6-hp \
-  linux-image-2.6-mac \
-  linux-image-2.6-mvme147 \
-  linux-image-2.6-mvme16x \
-  linux-image-2.6-q40 \
-  linux-image-2.6-sun3
+  linux-image-amiga \
+  linux-image-atari \
+  linux-image-bvme6000 \
+  linux-image-hp \
+  linux-image-mac \
+  linux-image-mvme147 \
+  linux-image-mvme16x \
+  linux-image-q40 \
+  linux-image-sun3
+  linux-image-m68k-dbg

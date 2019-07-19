@@ -10,21 +10,27 @@
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt#
 #
+#
+# Translations from iso-codes:
 # Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
 # Amanpreet Singh Alam <apreet.alam@gmail.com>, 2006.
-# A S Alam <apreet.alam@gmail.com>, 2006, 2007.
+# A S Alam <aalam@users.sf.net>, 2006, 2007.
 # A S Alam <aalam@users.sf.net>, 2007, 2010.
 # Amanpreet Singh Alam <apreet.alam@gmail.com>, 2008.
 # Amanpreet Singh Brar <aalam@users.sf.net>, 2008.
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
+# Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
+# A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
+# Aman ALam <alam.yellow@gmail.com>, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
 "POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2010-07-18 19:41+0530\n"
-"Last-Translator: A S Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2019-02-11 10:09+0000\n"
+"Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -216,7 +222,7 @@ msgstr "Debootstrap ਗਲਤੀ"
 #. :sl2:
 #: ../bootstrap-base.templates:3001
 msgid "Failed to determine the codename for the release."
-msgstr "ਰੀਲਿਜ਼ ਲਈ ਕੋਡ-ਨਾਂ ਲੱਭਣ ਲਈ ਫੇਲ੍ਹ"
+msgstr "ਰੀਲਿਜ਼ ਲਈ ਕੋਡ-ਨਾਂ ਲੱਭਣ ਲਈ ਅਸਫ਼ਲ ਹੈ।"
 
 #. Type: error
 #. Description
@@ -392,7 +398,7 @@ msgstr "ਇੱਕ ਗਲਤੀ ਹੋਈ ਹੈ ਜਦੋਂ ਨਿਸ਼ਾਨਾ 
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Kernel package: '${KERNEL}'."
-msgstr "ਕਰਨਲ ਪੈਕੇਜ: '${KERNEL}'"
+msgstr "ਕਰਨਲ ਪੈਕੇਜ: '${KERNEL}'।"
 
 #. Type: select
 #. Choices
@@ -607,7 +613,7 @@ msgstr "ਪੈਕੇਜ ਖੋਲ੍ਹਿਆ ਜਾ ਰਿਹਾ ਹੈ"
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:31001
 msgid "Installing core packages"
-msgstr "ਕੋਰ ਪੈਕੇਜ ਇੰਸਟਾਲ ਹੋ ਰਹੇ ਹਨ..."
+msgstr "ਕੋਰ ਪੈਕੇਜ ਇੰਸਟਾਲ ਹੋ ਰਹੇ ਹਨ"
 
 #. Type: text
 #. Description
@@ -618,14 +624,14 @@ msgstr "ਕੋਰ ਪੈਕੇਜ ਇੰਸਟਾਲ ਹੋ ਰਹੇ ਹਨ..."
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:32001
 msgid "Unpacking required packages"
-msgstr "ਲੋੜੀਂਦੇ ਪੈਕੇਜਾਂ ਨੂੰ ਖੋਲ੍ਹ ਰਿਹਾ ਹੈ..."
+msgstr "ਲੋੜੀਂਦੇ ਪੈਕੇਜਾਂ ਨੂੰ ਖੋਲ੍ਹੇ ਜਾ ਰਹੇ ਹਨ"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:33001
 msgid "Configuring required packages"
-msgstr "ਲੋੜੀਂਦੇ ਪੈਕੇਜਾਂ ਦੀ ਸੰਰਚਨਾ ਹੋ ਰਹੀ ਹੈ..."
+msgstr "ਲੋੜੀਂਦੇ ਪੈਕੇਜਾਂ ਦੀ ਸੰਰਚਨਾ ਹੋ ਰਹੀ ਹੈ"
 
 #. Type: text
 #. Description
@@ -706,7 +712,7 @@ msgstr "ਜਾਰੀ ਦਸਤਖਤ ਚੈੱਕ ਕੀਤੇ ਜਾ ਰਹੇ 
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:43001
 msgid "Valid Release signature (key id ${SUBST0})"
-msgstr "ਗਲਤ ਜਾਰੀ ਦਸਤਖਤ (ਕੁੰਜੀ id ${SUBST0})ਨਹੀਂ।"
+msgstr "ਗਲਤ ਰੀਲਿਜ਼ ਦਸਤਖਤ (ਕੁੰਜੀ id ${SUBST0})"
 
 #. Type: text
 #. Description

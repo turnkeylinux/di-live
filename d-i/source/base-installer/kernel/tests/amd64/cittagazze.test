@@ -1,23 +1,11 @@
 cpuinfo cittagazze.cpuinfo
 majors 2.6
-flavour amd64-k8
+flavour amd64
 kernel-2.6 \
-  linux-generic \
-  linux-image-generic \
-  linux-server \
-  linux-image-server \
-  linux-virtual \
-  linux-image-virtual \
-  linux-xen \
-  linux-image-xen \
-  linux-preempt \
-  linux-image-preempt \
-  linux-rt \
-  linux-image-rt
+  linux-image-amd64
 usable \
-  linux-generic \
-  linux-server \
-  linux-image-generic \
-  linux-image-server \
-  linux-image-2.6.20-15-generic \
-  linux-image-2.6.20-15-server
+  linux-image-amd64 \
+  linux-image-2.6.18-4-amd64
+unusable \
+  linux-image-amd64-dbg \
+  linux-image-3.16-4-amd64-dbg

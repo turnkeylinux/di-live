@@ -1,20 +1,19 @@
 cpuinfo via-c3-nehemiah.cpuinfo
 majors 2.6
-flavour 686 486
+flavour 686 586
 kernel-2.6 \
-  linux-generic \
-  linux-image-generic \
-  linux-virtual \
-  linux-image-virtual \
-  linux-rt \
-  linux-image-rt
+  linux-image-686 \
+  linux-image-586
 usable \
-  linux-generic \
-  linux-image-generic \
-  linux-image-2.6.36-1-generic
+  linux-image-586 \
+  linux-image-686 \
+  linux-image-3.16-4-586 \
+  linux-image-2.6.18-1-686
 unusable \
-  linux-generic-pae \
-  linux-image-generic-pae \
-  linux-image-2.6.36-1-generic-pae
-env KERNEL_FLAVOUR generic
-env RAM_END 0x4000000
+  linux-image-686-pae \
+  linux-image-amd64 \
+  linux-image-2.6.38-1-686-pae \
+  linux-image-2.6.18-1-amd64 \
+  linux-image-686-pae-dbg \
+  linux-image-3.16-4-686-pae-dbg
+env KERNEL_FLAVOUR 686

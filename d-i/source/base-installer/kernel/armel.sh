@@ -1,12 +1,10 @@
 arch_get_kernel_flavour () {
 	case "$SUBARCH" in
-	    dove|imx51|omap|omap4|iop32x|iop33x|ixp4xx|kirkwood|orion5x|versatile)
-		echo "$SUBARCH"
+	    kirkwood|orion5x)
+		echo "marvell"
 		return 0 ;;
-	    ads)
-		# NOTE: this kernel is not in Debian, but makes it
-		# easier to offer unofficial support from a private apt-archive
-		echo "ads"
+	    versatile)
+		echo "$SUBARCH"
 		return 0 ;;
 	    *)
 		warning "Unknown $ARCH subarchitecture '$SUBARCH'."
@@ -15,12 +13,25 @@ arch_get_kernel_flavour () {
 }
 
 arch_check_usable_kernel () {
-	# Subarchitecture must match exactly
-	if echo "$1" | grep -Eq -- "-$2(-.*)?$"; then return 0; fi
-	return 1
+	case "$1" in
+	    *-dbg)
+		return 1
+		;;
+	    *-$2|*-$2-*)
+		return 0
+		;;
+	    *)
+		return 1
+		;;
+	esac
 }
 
 arch_get_kernel () {
-	echo "linux-$1"
-	echo "linux-image-$1"
+	case "$KERNEL_MAJOR" in
+	    2.6|3.*|4.*)
+		echo "linux-image-$1"
+		;;
+	    *)	warning "Unsupported kernel major '$KERNEL_MAJOR'."
+		;;
+	esac
 }
