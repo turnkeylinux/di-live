@@ -12,19 +12,24 @@
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@debian.org>, 2004
 #   Elian Myftiu <elian.myftiu@gmail.com>, 2004,2006.
+#
+# Eva Vranici <evavranici@gmail.com>, 2017.
+# Silva Arapi <silva.arapi@gmail.com>, 2017.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
-"PO-Revision-Date: 2010-02-21 18:30+0100\n"
-"Last-Translator:  Elian Myftiu <elian.myftiu@gmail.com>\n"
-"Language-Team: Albanian \n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"PO-Revision-Date: 2017-09-04 19:14+0200\n"
+"Last-Translator: Silva Arapi <silva.arapi@gmail.com>\n"
+"Language-Team: Albanian <debian-l10n-albanian@lists.debian.org>\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4;\n"
 
 #. Type: text
 #. Description
@@ -239,8 +244,8 @@ msgstr "Veço ndarjen /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Ndaj /home, /usr, /var. dhe /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Particione /home, /var. dhe /tmp të ndara"
 
 #. Type: text
 #. Description
@@ -249,35 +254,3 @@ msgstr "Ndaj /home, /usr, /var. dhe /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Skema e ndarjes së diskut të vogël (< 1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Me udhëzim - ripërmaso ${PARTITION} dhe përdor hapësirën e lirë"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "I Udhëzuar - përdor të gjithë particionin, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Dështuam në krijimin e një hapësire të mjaftueshme për instalimin"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Operacioni i ripërmasimit nuk krijoi hapësirë të lirë sa duhet për "
-"instalimin. Ripërmasimi mund të ketë dështuar. Do t'iu duhet t'i vendosni "
-"particionet në mënyrë manuale."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Ndaj /home, /var. dhe /tmp"

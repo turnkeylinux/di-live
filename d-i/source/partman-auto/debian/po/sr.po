@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-10-19 22:10+0100\n"
 "Last-Translator: Karolina Kalic <karolina@resenje.org>\n"
 "Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
@@ -248,8 +248,8 @@ msgstr "Засебна /home партиција"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Засебне /home, /usr, /var и /tmp партиције"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Засебне /home, /var и /tmp партиције"
 
 #. Type: text
 #. Description
@@ -258,36 +258,3 @@ msgstr "Засебне /home, /usr, /var и /tmp партиције"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Шема партиционисања за мали диск (< 1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"Навођено — промени величину „${PARTITION}“ и користи ослобођени простор"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Није успело стварање довољно простора за инсталацију"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Операцијом промене величине није створено довољно слободног простора за "
-"инсталацију. Промена величине можда није успела. Мораћете ручно да подесите "
-"партиције."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Засебне /home, /var и /tmp партиције"

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-09-21 21:21+0200\n"
 "Last-Translator: Holger Wansing <linux@wansing-online.de>\n"
 "Language-Team: Debian German <debian-l10n-german@lists.debian.org>\n"
@@ -264,8 +264,8 @@ msgstr "Separate /home-Partition"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Separate /home-, /usr-, /var- und /tmp-Partitionen"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Separate /home-, /var- und /tmp-Partitionen"
 
 #. Type: text
 #. Description
@@ -274,37 +274,3 @@ msgstr "Separate /home-, /usr-, /var- und /tmp-Partitionen"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Partitionsschema für kleine Platten (< 1GB):"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"${PARTITION} verkleinern und den freigewordenen Platz zur Installation nutzen"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Geführt – gesamte Partition verwenden, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Es konnte nicht ausreichend Platz für die Installation erzeugt werden"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Durch die Verkleinerung der Partition konnte nicht ausreichend Platz für "
-"eine Installation verfügbar gemacht werden. Möglicherweise ist die "
-"Verkleinerung ganz gescheitert. Sie müssen die Festplatte manuell "
-"partitionieren."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Separate /home-, /var- und /tmp-Partitionen"

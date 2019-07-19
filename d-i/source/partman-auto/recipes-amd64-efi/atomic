@@ -1,6 +1,6 @@
 partman-auto/text/atomic_scheme ::
 
-538 538 1075 fat32
+538 538 1075 free
 	$iflabel{ gpt }
 	$reusemethod{ }
 	method{ efi }
@@ -14,7 +14,7 @@ partman-auto/text/atomic_scheme ::
 	filesystem{ ext2 }
 	mountpoint{ /boot } .
 
-500 10000 -1 $default_filesystem
+900 10000 -1 $default_filesystem
 	$lvmok{ }
 	method{ format }
 	format{ }

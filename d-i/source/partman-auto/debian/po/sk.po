@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-09-16 09:57+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <debian-l10n-slovak@lists.debian.org>\n"
@@ -249,8 +249,8 @@ msgstr "Samostatná oblasť /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Samostatné oblasti /home, /usr, /var a /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Samostatné oblasti /home, /var a /tmp"
 
 #. Type: text
 #. Description
@@ -259,34 +259,3 @@ msgstr "Samostatné oblasti /home, /usr, /var a /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Schéma rozdeľovania pre malé disky (< 1 GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Zmeniť veľkosť oblasti ${PARTITION} a použiť voľné miesto"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Sprievodza - použiť celú oblasť, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Nepodarilo sa uvoľniť dostatok voľného miesta na inštaláciu"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Zmenou veľkosti oblasti sa nepodarilo uvoľniť dostatok voľného miesta na "
-"inštaláciu. Budete musieť nastaviť oblasti manuálne."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Samostatné oblasti /home, /var a /tmp"

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-08-23 09:54+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -254,8 +254,8 @@ msgstr "Eraldi /home partitsioon"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Eraldi /home, /usr, /var, ja /tmp partitsioonid"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Eraldi /home, /var, ja /tmp partitsioonid"
 
 #. Type: text
 #. Description
@@ -264,34 +264,3 @@ msgstr "Eraldi /home, /usr, /var, ja /tmp partitsioonid"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Väikse ketta (< 1GB) partitsioneerimis-skeem"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Juhitud - muuda ${PARTITION} suurust ning kasuta vabanenud ruumi"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Saatjaga paigaldus - kasutatakse tervet kettajagu ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Paigaldamiseks ei suudetud piisavalt vaba ruumi tekitada"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Suuruse muutmise toiming ei tekitanud paigalduse jaoks piisavalt vaba ruumi. "
-"Suuruse muutmine võis ebaõnnestuda. Pead partitsioonid käsitsi seadistama."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Eraldi /home, /var, ja /tmp partitsioonid"

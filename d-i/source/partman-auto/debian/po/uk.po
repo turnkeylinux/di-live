@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-09-20 23:02+0100\n"
 "Last-Translator: Anton Gladky <gladk@debian.org>\n"
 "Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
@@ -247,8 +247,8 @@ msgstr "Окремий розділ для  /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Окремі розділи для /home, /usr, /var та /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Окремі розділи для /home, /var та /tmp"
 
 #. Type: text
 #. Description
@@ -257,35 +257,3 @@ msgstr "Окремі розділи для /home, /usr, /var та /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Схема розбивки для малих дисків (< 1ГБ)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Змінити розмір ${PARTITION} та використати вивільнене місце"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Автоматично - використати вільний простір, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Не вдалось вивільнити достатньо місця до встановлення системи"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Зміною розміру поділу були вивільнено недостатньо вільного місця для "
-"встановлення системи. Можливо процес завершився невдало. Вам доведеться "
-"вручну поділити дисковий простір."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Окремі розділи для /home, /var та /tmp"

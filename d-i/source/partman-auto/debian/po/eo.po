@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2013-10-02 09:37-0300\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
@@ -243,8 +243,8 @@ msgstr "Aparta diskparto por '/home'"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Apartaj diskpartoj '/home', '/usr', '/var' kaj '/tmp'"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Apartaj diskpartoj '/home', '/var' kaj '/tmp'"
 
 #. Type: text
 #. Description
@@ -253,34 +253,3 @@ msgstr "Apartaj diskpartoj '/home', '/usr', '/var' kaj '/tmp'"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Diskpartiga skemo por malgranda disko (< 1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Gvidate - Regrandigi ${PARTITION} kaj uzi liberigitan lokon"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Gvidata - uzi tutan subdiskon, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Malsukcesis krei sufiĉan spacon por instalado"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"La regrandigo ne kreis sufiĉe da libera loko por la instalo. Regrandigo eble "
-"fiaskis. Vi devos mane agordi la subdiskojn."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Apartaj diskpartoj '/home', '/var' kaj '/tmp'"

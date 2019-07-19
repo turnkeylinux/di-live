@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_bs\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-05-21 11:20+0100\n"
 "Last-Translator: Amila Valjevčić <valjevcic.amila@gmail.com>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
@@ -250,8 +250,8 @@ msgstr "Zasebna /home particija"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Zasebne /home, /usr, /var, i /tmp particije"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Zasebne /home, /var, i /tmp particije"
 
 #. Type: text
 #. Description
@@ -260,34 +260,3 @@ msgstr "Zasebne /home, /usr, /var, i /tmp particije"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Particiona shema za male diskove (< 1GB):"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Vođeno - promijeni veličinu ${PARTITION} i koristi oslobođeni prostor"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Vođeno - koristi cijelu particiju, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Neuspjeh pri izradi slobodnog prostora za instalaciju"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Promjena veličine particije nije uspjela napraviti dovoljno slobodnog "
-"prostora za instalaciju. Morati ćete postaviti particije ručno."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Zasebne /home, /var, i /tmp particije"

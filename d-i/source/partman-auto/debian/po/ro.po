@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2013-01-19 12:07+0200\n"
 "Last-Translator: Ioan Eugen Stan <stan.ieugen@gmail.com>\n"
 "Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
@@ -260,8 +260,8 @@ msgstr "Partiție /home separată"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Partiții /home, /usr, /var și /tmp separate"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Partiții /home, /var și /tmp separate"
 
 #. Type: text
 #. Description
@@ -270,35 +270,3 @@ msgstr "Partiții /home, /usr, /var și /tmp separate"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Schema de partiționare pentru discuri mici (< 1GO)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Asistat - redimensionează ${PARTITION} și folosește spațiul eliberat"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Ghidată - se utilizează toată partiția, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "S-a eșuat în creerea de suficient spațiu liber necesar instalării"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Această operație de redimensionare nu a creeat suficient spațiu liber pentru "
-"instalare. Redimenionarea s-ar putea să fi eșuat. Va trebui să setezi "
-"partițiile manual."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Partiții /home, /var și /tmp separate"

@@ -9,17 +9,17 @@
 #
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
-"PO-Revision-Date: 2014-01-05 13:26+0500\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"PO-Revision-Date: 2018-02-08 14:24+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
-"Language: Tajik\n"
+"Language: tg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,9 +91,9 @@ msgid ""
 "partitioning you will still have a chance later to review and customise the "
 "results."
 msgstr ""
-"Насбкунанда метавонад ба шумо ҳангоми қисмбандии диск (тавассути схемаҳои "
+"Насбкунанда метавонад ба шумо ҳангоми қисмбандии диск (тавассути нақшаҳои "
 "стандартии гуногун) ёрӣ расонад, ё ки, агар шумо хоҳед, шумо метавонед инро "
-"ба таври дастӣ иҷро кунед. Бо қисмгузории ёрирасон шумо имкони "
+"ба таври дастӣ иҷро намоед. Бо қисмбандии ёрирасон шумо имкони "
 "азназаргузаронӣ ва фармоиш додани натиҷаҳоро мегиред."
 
 #. Type: select
@@ -107,7 +107,7 @@ msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
 msgstr ""
-"Агар шумо қисмбандии идорашавандаро барои тамоми диск интихоб кунед, дар "
+"Агар шумо қисмбандии идорашавандаро барои тамоми диск интихоб намоед, дар "
 "қадами навбатӣ аз шумо пурсида мешавад, ки кадом диск бояд истифода шавад."
 
 #. Type: select
@@ -138,8 +138,8 @@ msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
 msgstr ""
-"Диск метавонад тавассути яке аз якчанд схемаи гуногун қисмбандӣ карда шавад. "
-"Агар шумо мутмаин набошед, схемаи якумро интихоб кунед."
+"Диск метавонад тавассути яке аз якчанд нақшаи гуногун қисмбандӣ карда шавад. "
+"Агар шумо мутмаин набошед, нақшаи якумро интихоб намоед."
 
 #. Type: error
 #. Description
@@ -189,7 +189,7 @@ msgstr "Идорашаванда - тамоми дискро истифода б
 #. :sl1:
 #: ../partman-auto.templates:16001
 msgid "Select disk to partition:"
-msgstr "Дискро барои қисмбандӣ интихоб кунед:"
+msgstr "Дискро барои қисмбандӣ интихоб намоед:"
 
 #. Type: select
 #. Description
@@ -240,8 +240,8 @@ msgstr "Ҷудо кардани қисми диски /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Ҷудо кардани қисмҳои диски /home, /usr, /var, ва /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Ҷудо кардани қисмҳои диски /home, /var ва /tmp"
 
 #. Type: text
 #. Description
@@ -250,33 +250,3 @@ msgstr "Ҷудо кардани қисмҳои диски /home, /usr, /var, в�
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Диски хурд (< 1ГБ) нақшаи қисмбандӣ"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-#, fuzzy
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Идорашаванда - тамоми дискро истифода баред"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Ҷудо кардани қисмҳои диски /home, /var, ва /tmp"

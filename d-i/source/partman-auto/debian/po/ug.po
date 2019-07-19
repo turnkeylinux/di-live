@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-03-03 14:41+0600\n"
 "Last-Translator: Abduqadir Abliz <sahran.ug@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -243,8 +243,8 @@ msgstr "/home  نى ئايرىم رايونغا قويۇش"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "/home، /usr، /var ۋە /tmp لارنى ئايرىم-ئايرىم رايونغا قويۇش"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "/home، /var ۋە /tmp لارنى ئايرىم-ئايرىم رايونغا قويۇش"
 
 #. Type: text
 #. Description
@@ -253,37 +253,3 @@ msgstr "/home، /usr، /var ۋە /tmp لارنى ئايرىم-ئايرىم را�
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "كىچىك دىسكا (< 1GB)رايونغا ئايرىش لايىھىسى"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"يېتەكچى - ${PARTITION} رايوننىڭ چوڭلۇقىنى تەڭشەپ بوشاتقان ئەركىن رايوننى "
-"ئىشلەت."
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "يېتەكچى - پۈتكۈل رايوننى ئىشلەت ، ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "ئورنىتىشقا يېتەرلىك دىسكا بوشلۇقى قۇرۇش مەغلۇپ بولدى"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"رايون چوڭلۇقىنى تەڭشەش مەشغۇلاتى ئورنىتىشقا يېتەرلىك دىسكا بوشلۇقى "
-"قۇرالمىدى. رايون چوڭلۇقىنى تەڭشەش مەغلۇپ بولۇشى مۇمكىن، سىز قولدا "
-"تەڭشىمىسىڭىز بولمايدۇ."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "/home، /var ۋە /tmp لارنى ئايرىم-ئايرىم رايونغا قويۇش"

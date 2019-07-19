@@ -5,7 +5,15 @@ partman-auto/text/multi_scheme ::
 	$reusemethod{ }
 	method{ biosgrub } .
 
-800 3000 9000 $default_filesystem
+128 512 256 ext2
+	$defaultignore{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext2 }
+	mountpoint{ /boot } .
+
+2000 3500 25000 $default_filesystem
 	$lvmok{ }
 	method{ format }
 	format{ }
@@ -13,7 +21,7 @@ partman-auto/text/multi_scheme ::
 	$default_filesystem{ }
 	mountpoint{ / } .
 
-300 1500 3000 $default_filesystem
+1000 1500 10000 $default_filesystem
 	$lvmok{ }
 	method{ format }
 	format{ }
@@ -21,13 +29,13 @@ partman-auto/text/multi_scheme ::
 	$default_filesystem{ }
 	mountpoint{ /var } .
 
-96 512 200% linux-swap
+100% 512 200% linux-swap
 	$lvmok{ }
 	$reusemethod{ }
 	method{ swap }
 	format{ } .
 
-20 300 400 $default_filesystem
+256 400 2000 $default_filesystem
 	$lvmok{ }
 	method{ format }
 	format{ }
@@ -35,7 +43,7 @@ partman-auto/text/multi_scheme ::
 	$default_filesystem{ }
 	mountpoint{ /tmp } .
 
-300 3000 -1 $default_filesystem
+4000 10000 -1 $default_filesystem
 	$lvmok{ }
 	method{ format }
 	format{ }

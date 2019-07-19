@@ -27,15 +27,16 @@
 #
 #   Mai Hao Hui <mhh@126.com>, 2001 (translations from galeon)
 # YunQiang Su <wzssyqa@gmail.com>, 2010, 2011, 2012, 2013.
+# Yangfl <mmyangfl@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
-"PO-Revision-Date: 2014-03-05 14:59+0800\n"
-"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
-"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"PO-Revision-Date: 2017-06-11 18:20+0800\n"
+"Last-Translator: Yangfl <mmyangfl@gmail.com>\n"
+"Language-Team:  <debian-l10n-chinese@lists.debian.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,7 +55,7 @@ msgstr "请稍候..."
 #. :sl1:
 #: ../partman-auto.templates:2001
 msgid "Computing the new partitions..."
-msgstr "正在估算新分区..."
+msgstr "正在计算新分区..."
 
 #. Type: error
 #. Description
@@ -104,7 +105,7 @@ msgid ""
 "partitioning you will still have a chance later to review and customise the "
 "results."
 msgstr ""
-"安装程序能够指导您采用各种标准方案进行磁盘分区。如果您喜欢，您也可以手动操"
+"安装程序能够指导您采用各种标准方案进行磁盘分区。如果您喜欢，也可以进行手动操"
 "作。如果选择了分区向导，稍后您还是有机会检查和修改分区设置结果。"
 
 #. Type: select
@@ -138,7 +139,7 @@ msgstr "分区方案："
 #. at the end of the sentence. Please keep it.
 #: ../partman-auto.templates:9001
 msgid "Selected for partitioning:"
-msgstr "已选择要分区："
+msgstr "选定要分区："
 
 #. Type: select
 #. Description
@@ -147,8 +148,7 @@ msgstr "已选择要分区："
 msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
-msgstr ""
-"对此磁盘可以使用多种不同的方案进行分区。如果您不太确定，请选择第一方案。"
+msgstr "该磁盘可以使用以下数种不同方式来进行分区。如果您不确定，请选择第一个。"
 
 #. Type: error
 #. Description
@@ -206,8 +206,8 @@ msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
 msgstr ""
-"注意您所选择的磁盘上的全部数据都将会被删除，但是您还有确认是真的要做这些改动"
-"的机会。"
+"注意，所选磁盘上的全部数据都将被删除，但是您还是有确认是否真的要这么做的机"
+"会。"
 
 #. Type: text
 #. Description
@@ -247,8 +247,8 @@ msgstr "将 /home 放在单独的分区"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "将 /home、/usr、/var 和 /tmp 都分别放在单独的分区"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "将 /home、/var 和 /tmp 都分别放在单独的分区"
 
 #. Type: text
 #. Description
@@ -257,34 +257,3 @@ msgstr "将 /home、/usr、/var 和 /tmp 都分别放在单独的分区"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "小磁盘 (< 1GB) 分区方案"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Guided - 调整${PARTITION}分区的大小并使用空闲出的空间。"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "向导 - 使用整个分区，${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "无法为安装创建足够的磁盘空间"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"调整分区大小的操作没有为安装创建足够的磁盘空间.分区大小调整可能失败了。你将不"
-"得不手工设置分区。"
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "将 /home、/var 和 /tmp 都分别放在单独的分区"

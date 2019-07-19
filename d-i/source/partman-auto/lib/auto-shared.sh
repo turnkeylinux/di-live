@@ -258,9 +258,6 @@ get_auto_disks() {
 
 		device=$(cat $dev/device)
 		
-		# Skip devices containing the installation medium
-		[ -e "$dev/installation_medium" ] && continue
-
 		# Skip software RAID (mdadm) devices (/dev/md/X and /dev/mdX)
 		# unless it's a whole-disk partitionable array
 		if echo "$device" | grep -Eq "/dev/md/?[0-9]*$"; then
@@ -289,7 +286,7 @@ select_auto_disk() {
 
 	DEVS=$(get_auto_disks)
 	[ -n "$DEVS" ] || return 1
-	debconf_select critical partman-auto/select_disk "$DEVS" ""
+	debconf_select critical partman-auto/select_disk "$DEVS" "" || return 1
 	echo "$RET"
 	return 0
 }

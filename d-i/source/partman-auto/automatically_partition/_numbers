@@ -1,6 +1,3 @@
-10 resize_use_free
-15 reuse
-20 some_device
-25 replace
-50 biggest_free
+20 biggest_free
+50 some_device
 80 custom

@@ -19,21 +19,21 @@
 # Gediminas Paulauskas <menesis@delfi.lt>, 2000-2001.
 # Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
 # Kęstutis Biliūnas <kebil@kaunas.init.lt>, 2004, 2006, 2008, 2009, 2010.
-# Rimas Kudelis <rq@akl.lt>, 2012.
+# Rimas Kudelis <rq@akl.lt>, 2012, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
-"PO-Revision-Date: 2012-08-26 02:00+0300\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"PO-Revision-Date: 2017-11-26 20:23+0000\n"
 "Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
 
 #. Type: text
 #. Description
@@ -47,7 +47,7 @@ msgstr "Luktelėkite..."
 #. :sl1:
 #: ../partman-auto.templates:2001
 msgid "Computing the new partitions..."
-msgstr "Apskaičiuojami nauji disko skirsniai..."
+msgstr "Apskaičiuojami nauji disko skaidiniai..."
 
 #. Type: error
 #. Description
@@ -117,7 +117,7 @@ msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
 msgstr ""
-"Jei pasirinksite automatinį viso disko dalijimą skirsniais, vėliau Jūsų "
+"Jei pasirinksite automatinį viso disko dalijimą skaidiniais, vėliau Jūsų "
 "paklaus kurį diską naudoti."
 
 #. Type: select
@@ -138,7 +138,7 @@ msgstr "Disko dalijimo schema:"
 #. at the end of the sentence. Please keep it.
 #: ../partman-auto.templates:9001
 msgid "Selected for partitioning:"
-msgstr "Pasirinkta disko dalijimui skirsniais:"
+msgstr "Pasirinkta disko dalijimui skaidiniais:"
 
 #. Type: select
 #. Description
@@ -183,7 +183,7 @@ msgstr "Vadovaujantis disko dalijimas"
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:14001
 msgid "Guided - use the largest continuous free space"
-msgstr "Auto - naudoti didžiausią ištisinę laisvą vietą"
+msgstr "Auto – naudoti didžiausią ištisinę laisvą vietą"
 
 #. Type: text
 #. Description
@@ -191,14 +191,14 @@ msgstr "Auto - naudoti didžiausią ištisinę laisvą vietą"
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:15001
 msgid "Guided - use entire disk"
-msgstr "Auto - naudoti visą diską"
+msgstr "Auto – naudoti visą diską"
 
 #. Type: select
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:16001
 msgid "Select disk to partition:"
-msgstr "Pasirinkite diską dalijimui skirsniais:"
+msgstr "Pasirinkite diską dalijimui skaidiniais:"
 
 #. Type: select
 #. Description
@@ -235,7 +235,7 @@ msgstr "Automatiškai sudalinti laisvą disko vietą"
 #: ../partman-auto.templates:19001
 msgid "All files in one partition (recommended for new users)"
 msgstr ""
-"Visi failai viename disko skirsnyje (rekomenduojama naujiems naudotojams)"
+"Visi failai viename disko skaidinyje (rekomenduojama naujiems naudotojams)"
 
 #. Type: text
 #. Description
@@ -243,15 +243,15 @@ msgstr ""
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:20001
 msgid "Separate /home partition"
-msgstr "Atskiras /home disko skirsnis"
+msgstr "Atskiras /home disko skaidinys"
 
 #. Type: text
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Atskiri /home, /usr, /var, ir /tmp disko skirsniai"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Atskiri /home, /var, ir /tmp disko skaidiniai"
 
 #. Type: text
 #. Description
@@ -260,35 +260,3 @@ msgstr "Atskiri /home, /usr, /var, ir /tmp disko skirsniai"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Mažo disko (< 1GB) dalijimo schema"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Automatiškai: pakeisti ${PARTITION} dydį ir naudoti atlaisvintą vietą"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Valdomas - naudoti visą skirsnį, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Nepavyko sukurti įdiegimui pakankamai vietos"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Dydžio keitimo operacijos metu nebuvo sukurta įdiegimui pakankamai laisvos "
-"vietos. Dydžio keitimas galėjo nepavykti. Turėsite sutvarkyti skirsnius "
-"rankiniu būdu."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Atskiri /home, /var, ir /tmp disko skirsniai"

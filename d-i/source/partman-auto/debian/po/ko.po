@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-09-21 03:26+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team:  Korean <debian-l10n-korean@lists.debian.org>\n"
@@ -248,8 +248,8 @@ msgstr "/home 파티션 분리"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "/home, /usr/, /var, /tmp 파티션 분리"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "/home, /var, /tmp 파티션 분리"
 
 #. Type: text
 #. Description
@@ -258,34 +258,3 @@ msgstr "/home, /usr/, /var, /tmp 파티션 분리"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "소용량 디스크 (1GB보다 작은) 파티션하기"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "자동 - ${PARTITION} 크기 재조정 및 남은 공간 사용"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "제안 - ${PARTITION} 전체를 사용하기"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "설치에 필요한 충분한 공간을 만들지 못했습니다."
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"크기 조절 동작이 설치를 위한 충분한 여유 공간을 생성하지 못했습니다. 크기 조"
-"절을 실패한 것 같습니다. 수동으로 파티션을 설정해야만 합니다."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "/home, /var, /tmp 파티션 분리"

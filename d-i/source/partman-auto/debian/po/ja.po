@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-09-20 22:20+0900\n"
 "Last-Translator:  Kenshi Muto <kmuto@debian.org>\n"
 "Language-Team: Debian L10n Japanese <debian-japanese@lists.debian.org>\n"
@@ -249,8 +249,8 @@ msgstr "/home パーティションの分割"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "/home, /usr, /var, /tmp パーティションを分割"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "/home, /var, /tmp パーティションを分割"
 
 #. Type: text
 #. Description
@@ -259,35 +259,3 @@ msgstr "/home, /usr, /var, /tmp パーティションを分割"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "小さなディスク (< 1GB) のパーティショニング機構"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "ガイド - ${PARTITION}をリサイズして空き領域を使う"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "インストールに必要な容量を確保できませんでした"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"リサイズを試みましたが、インストールのための十分な空き容量を確保できませんで"
-"した。リサイズは失敗したかもしれません。パーティションを手動で作成する必要が"
-"あります。"
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "/home, /var, /tmp パーティションを分割"

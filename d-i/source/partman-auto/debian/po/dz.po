@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dDz.po\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-02-29 04:41-0500\n"
 "Last-Translator: Jurmey Rabgay <jrabgay@dit.gov.bt>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -241,8 +241,8 @@ msgstr "སོ་སོ་འཕྱལ་ནི་/ཁྱིམ་གྱི་�
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Separate /home, /usr, /var, and /tmp བར་བཅད་སོ་སོ་ཚུ།"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Separate /home, /var, and /tmp བར་བཅད་སོ་སོ་ཚུ།"
 
 #. Type: text
 #. Description
@@ -251,32 +251,3 @@ msgstr "Separate /home, /usr, /var, and /tmp བར་བཅད་སོ་ས�
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "ཆུང་ཀུ་-ཌིཀསི་(< 1GB)བར་བཅད་འབད་ནིའི་འཆར་ལས།"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Separate /home, /var, and /tmp བར་བཅད་སོ་སོ་ཚུ།"
