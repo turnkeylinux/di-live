@@ -6,41 +6,37 @@
 # Turkish messages for debian-installer.
 # Copyright (C) 2003, 2004 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-#
 # Recai Oktaş <roktas@omu.edu.tr>, 2004, 2005, 2008.
 # Osman Yüksel <yuxel@sonsuzdongu.com>, 2004.
 # Özgür Murat Homurlu <ozgurmurat@gmx.net>, 2004.
 # Halil Demirezen <halild@bilmuh.ege.edu.tr>, 2004.
 # Murat Demirten <murat@debian.org>, 2004.
-#
-# Mert Dirik <mertdirik@gmail.com>, 2008-2012.
-#
+# Mert Dirik <mertdirik@gmail.com>, 2008-2012, 2014.
 # Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   (translations from drakfw)
-#   Fatih Demir <kabalak@gmx.net>, 2000.
-#   Free Software Foundation, Inc., 2000,2004
-#   Kemal Yilmaz <kyilmaz@uekae.tubitak.gov.tr>, 2001.
-#   Mert Dirik <mertdirik@gmail.com>, 2008.
-#   Nilgün Belma Bugüner <nilgun@fide.org>, 2001.
-#   Recai Oktaş <roktas@omu.edu.tr>, 2004.
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#   Ömer Fadıl USTA <omer_fad@hotmail.com>, 1999.
-#
+# Alastair McKinstry <mckinstry@computer.org>, 2001.
+# (translations from drakfw)
+# Fatih Demir <kabalak@gmx.net>, 2000.
+# Free Software Foundation, Inc., 2000,2004
+# Kemal Yilmaz <kyilmaz@uekae.tubitak.gov.tr>, 2001.
+# Mert Dirik <mertdirik@gmail.com>, 2008, 2014.
+# Nilgün Belma Bugüner <nilgun@fide.org>, 2001.
+# Recai Oktaş <roktas@omu.edu.tr>, 2004.
+# Tobias Quathamer <toddy@debian.org>, 2007.
+# Translations taken from ICU SVN on 2007-09-09
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 1999.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2013-10-13 18:05-0000\n"
+"PO-Revision-Date: 2015-07-19 15:37+0200\n"
 "Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
-"Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
+"Language-Team: Debian L10N Turkish\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -325,7 +321,7 @@ msgstr "Bölüm ayarlandı"
 #. :sl1:
 #: ../partman-base.templates:31001
 msgid "Finish partitioning and write changes to disk"
-msgstr "Bölümlendirmeyi bitir ve değişiklikleri diske kaydet"
+msgstr "Bölümlemeyi bitir ve değişiklikleri diske kaydet"
 
 #. Type: text
 #. Description
@@ -632,45 +628,3 @@ msgstr "Bu menüyü iptal et"
 #: ../partman-base.templates:67001
 msgid "Partition disks"
 msgstr "Diskleri bölümle"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid "Unmount partitions that are in use?"
-msgstr "Kullanımda olan bölümler ayrılsın mı?"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid ""
-"The installer has detected that the following disks have mounted partitions:"
-msgstr "Yükleyici, şu disklerin bağlı bölümleri olduğunu algıladı:"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid ""
-"Do you want the installer to try to unmount the partitions on these disks "
-"before continuing?  If you leave them mounted, you will not be able to "
-"create, delete, or resize partitions on these disks, but you may be able to "
-"install to existing partitions there."
-msgstr ""
-"Devam etmeden önce yükleyicinin bu diskler üzerindeki bölümleri ayırmasını "
-"istiyor musunuz? Eğer bunları bağlı bırakırsanız, bu diskler üzerinde "
-"oluşturma, silme ya da bölümleri yeniden boyutlandırma yapamayabilirsiniz, "
-"ancak mevcut bölümleri buraya kurabilirsiniz."
-
-#. Type: note
-#. Description
-#: ../partman-base.templates:66001
-msgid "Installation medium on ${PARTITION}"
-msgstr ""
-
-#. Type: note
-#. Description
-#: ../partman-base.templates:66001
-msgid ""
-"Your installation medium is on ${PARTITION}. You will not be able to create, "
-"delete, or resize partitions on this disk, but you may be able to install to "
-"existing partitions there."
-msgstr ""

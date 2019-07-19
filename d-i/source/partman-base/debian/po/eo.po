@@ -4,12 +4,12 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # translation of Debian Installer templates to Esperanto.
-# Copyright (C) 2005-2011 Software in the Public Interest, Inc.
+# Copyright (C) 2005-2013 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
 # Samuel Gimeno <sgimeno@gmail.com>, 2005.
 # Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005, 2006, 2007.
-# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011.
+# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2017.
 #
 # Translations from iso-codes:
 # Alastair McKInstry <mckinstry@computer.org>, 2001,2002.
@@ -22,13 +22,14 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2011-09-12 21:53-0300\n"
+"PO-Revision-Date: 2018-02-28 14:35+0000\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
@@ -388,7 +389,7 @@ msgstr "#%s"
 #: ../partman-base.templates:41001
 #, no-c-format
 msgid "ATA%s (%s)"
-msgstr "ATA%s (%s)"
+msgstr "'ATA%s' (%s)"
 
 #. Type: text
 #. Description
@@ -441,7 +442,7 @@ msgstr "IDE%s sklavo, diskparto #%s (%s)"
 #: ../partman-base.templates:47001
 #, no-c-format
 msgid "SCSI%s (%s,%s,%s) (%s)"
-msgstr "SCSI%s (%s,%s,%s) (%s)"
+msgstr "'SCSI%s' (%s,%s,%s) (%s)"
 
 #. Type: text
 #. Description
@@ -457,7 +458,7 @@ msgstr "SCSI%s (%s,%s,%s), diskparto #%s (%s)"
 #: ../partman-base.templates:49001
 #, no-c-format
 msgid "SCSI%s (%s)"
-msgstr "SCSI%s (%s)"
+msgstr "'SCSI%s' (%s)"
 
 #. Type: text
 #. Description
@@ -552,7 +553,7 @@ msgstr "Plurvojo %s (diskparto #%s)"
 #: ../partman-base.templates:59001
 #, no-c-format
 msgid "LVM VG %s, LV %s"
-msgstr "LVM VG %s, LV %s"
+msgstr "LVM VG: %s, LV: %s"
 
 #. Type: text
 #. Description
@@ -576,7 +577,7 @@ msgstr "Buklaĵo (loop%s)"
 #: ../partman-base.templates:62001
 #, no-c-format
 msgid "DASD %s (%s)"
-msgstr "DASD %s (%s)"
+msgstr "'DASD' %s (%s)"
 
 #. Type: text
 #. Description
@@ -618,46 +619,3 @@ msgstr "Malvalidigi tiun ĉi menuon"
 #: ../partman-base.templates:67001
 msgid "Partition disks"
 msgstr "Diskpartigi diskojn"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid "Unmount partitions that are in use?"
-msgstr "Ĉu demeti aktivajn subdiskojn?"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid ""
-"The installer has detected that the following disks have mounted partitions:"
-msgstr ""
-"La instalilo detektis ke la sekvaj diskoj havas surmetitajn subdiskojn:"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid ""
-"Do you want the installer to try to unmount the partitions on these disks "
-"before continuing?  If you leave them mounted, you will not be able to "
-"create, delete, or resize partitions on these disks, but you may be able to "
-"install to existing partitions there."
-msgstr ""
-"Ĉu vi volas ke la instalilo provu demeti la subdiskojn sur ĉi tiuj diskoj "
-"antaŭ ol daŭrigi? Se vi lasas ilin metitaj, vi ne povos krei, viŝi aŭ "
-"regrandigi subdiskojn sur ĉi tiuj diskoj. Tamen vi eble povos instali al "
-"ekzistantaj subdiskoj tie."
-
-#. Type: note
-#. Description
-#: ../partman-base.templates:66001
-msgid "Installation medium on ${PARTITION}"
-msgstr ""
-
-#. Type: note
-#. Description
-#: ../partman-base.templates:66001
-msgid ""
-"Your installation medium is on ${PARTITION}. You will not be able to create, "
-"delete, or resize partitions on this disk, but you may be able to install to "
-"existing partitions there."
-msgstr ""

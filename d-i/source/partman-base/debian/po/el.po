@@ -20,27 +20,27 @@
 # quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
 # QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
 # galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009, 2011.
-# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010.
+# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014.
 #   Tobias Quathamer <toddy@debian.org>, 2007.
 #   Free Software Foundation, Inc., 2004.
 #   Alastair McKinstry <mckinstry@computer.org>, 2001.
 #   QUAD-nrg.net <yodesy@quad-nrg.net>, 2006, 2010.
 #   Simos Xenitellis <simos@hellug.gr>, 2001.
 #   Konstantinos Margaritis <markos@debian.org>, 2004.
-#   Athanasios Lefteris <alefteris@gmail.com>, 2008.
+#   Athanasios Lefteris <alefteris@gmail.com>, 2008, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2012-01-23 15:57+0200\n"
-"Last-Translator: galaxico <galaxico@quad-nrg.net>\n"
-"Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
+"PO-Revision-Date: 2018-12-23 14:08+0000\n"
+"Last-Translator: Vangelis Skarmoutsos <skarmoutsosv@gmail.com>\n"
+"Language-Team: el <debian-l10n-greek@lists.debian.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
@@ -490,7 +490,7 @@ msgstr "SCSI%s, κατάτμηση #%s (%s)"
 #: ../partman-base.templates:51001
 #, no-c-format
 msgid "MMC/SD card #%s (%s)"
-msgstr "MMC/SD card #%s (%s)"
+msgstr "MMC/SD κάρτα #%s (%s)"
 
 #. Type: text
 #. Description
@@ -634,48 +634,3 @@ msgstr "Ακύρωση αυτού του μενού"
 #: ../partman-base.templates:67001
 msgid "Partition disks"
 msgstr "Διαμέριση δίσκων"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid "Unmount partitions that are in use?"
-msgstr "Αποπροσάρτηση κατατμήσεων που είναι σε χρήση;"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid ""
-"The installer has detected that the following disks have mounted partitions:"
-msgstr ""
-"Το πρόγραμμα εγκατάστασης εντόπισε ότι οι ακόλουθοι δίσκοι έχουν "
-"προσαρτημένες κατατμήσεις:"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid ""
-"Do you want the installer to try to unmount the partitions on these disks "
-"before continuing?  If you leave them mounted, you will not be able to "
-"create, delete, or resize partitions on these disks, but you may be able to "
-"install to existing partitions there."
-msgstr ""
-"Θα θέλατε να γίνει προσπάθεια αποπροσάρτησης των κατατμήσεων σε αυτούς τους "
-"δίσκους πριν συνεχίσετε; Αν παραμείνουν προσαρτημένοι, δεν θα είναι δυνατή η "
-"δημιουργία, διαγραφή ή η αλλαγή μεγέθους των κατατμήσεων σε αυτόν το δίσκο, "
-"αλλά ίσως να μπορείτε να κάνετε εγκατάσταση σε υπάρχουσες κατατμήσεις που "
-"βρίσκονται εκεί."
-
-#. Type: note
-#. Description
-#: ../partman-base.templates:66001
-msgid "Installation medium on ${PARTITION}"
-msgstr ""
-
-#. Type: note
-#. Description
-#: ../partman-base.templates:66001
-msgid ""
-"Your installation medium is on ${PARTITION}. You will not be able to create, "
-"delete, or resize partitions on this disk, but you may be able to install to "
-"existing partitions there."
-msgstr ""

@@ -8,7 +8,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Talgat Daniyarov
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008-2011
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2008-2017
 # Dauren Sarsenov <daur88@inbox.ru>, 2008, 2009
 #
 # Translations from iso-codes:
@@ -23,9 +23,9 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2011-12-24 17:53+0600\n"
+"PO-Revision-Date: 2018-12-02 20:16+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
-"Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language-Team: Kazakh\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,7 +67,7 @@ msgstr "Файлдық жүйелерді анықтау..."
 #. :sl2:
 #: ../partman-base.templates:5001
 msgid "Device in use"
-msgstr "Құрылғы:"
+msgstr "Құрылғы қолданылуда"
 
 #. Type: error
 #. Description
@@ -615,46 +615,3 @@ msgstr "Бұл мәзірден бас тарту"
 #: ../partman-base.templates:67001
 msgid "Partition disks"
 msgstr "Дисктерді бөлу"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid "Unmount partitions that are in use?"
-msgstr "Қазір қолданыстағы диск бөлімдерін босатайын ба?"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid ""
-"The installer has detected that the following disks have mounted partitions:"
-msgstr "Орнатушы бағдарлама келесі косылған диск бөлімдерді байқады:"
-
-#. Type: boolean
-#. Description
-#: ../partman-base.templates:65001
-msgid ""
-"Do you want the installer to try to unmount the partitions on these disks "
-"before continuing?  If you leave them mounted, you will not be able to "
-"create, delete, or resize partitions on these disks, but you may be able to "
-"install to existing partitions there."
-msgstr ""
-"Әрі қарай жалғастыру кезінде, орнатушы бағдарламасы қосылған диск бөлімдерін "
-"босату амалын орындасын ба? Егер де сіз оларды қосылған түрінде сақтап, әрі "
-"қарай жалғастырамын десеңіз, онда сіз бұл дискілерде диск бөлімдерін құру, "
-"жою және өзгерту амалдарынан айырыласыз. Сонда да сіз операциялық жүйені бар "
-"диск бөлімдеріне орната аласыз."
-
-#. Type: note
-#. Description
-#: ../partman-base.templates:66001
-msgid "Installation medium on ${PARTITION}"
-msgstr ""
-
-#. Type: note
-#. Description
-#: ../partman-base.templates:66001
-msgid ""
-"Your installation medium is on ${PARTITION}. You will not be able to create, "
-"delete, or resize partitions on this disk, but you may be able to install to "
-"existing partitions there."
-msgstr ""

@@ -51,11 +51,6 @@ old_debconf_select () {
 	default=''
 	# Debconf ignores spaces so we have to remove them from $choices
 	newchoices=''
-	case $PARTMAN_SNOOP in
-		?*)
-			> /var/lib/partman/snoop
-			;;
-	esac
 	IFS="$NL"
 	for x in $choices; do
 		local key option
@@ -66,11 +61,6 @@ old_debconf_select () {
 		if [ "$key" = "$default_choice" ]; then
 			default="$option"
 		fi
-		case $PARTMAN_SNOOP in
-			?*)
-				echo "$key$TAB$option" >> /var/lib/partman/snoop
-				;;
-		esac
 	done
 	choices="$newchoices"
 	u=''
@@ -121,11 +111,6 @@ debconf_select () {
 	template="$2"
 	choices="$3"
 	default="$4"
-	case $PARTMAN_SNOOP in
-		?*)
-			> /var/lib/partman/snoop
-			;;
-	esac
 
 	if ! db_metaget $template choices-c; then
 		logger -t partman "warning: $template is not using Choices-C"
@@ -138,11 +123,6 @@ debconf_select () {
 	fi
 	keys=""
 	descriptions=""
-	case $PARTMAN_SNOOP in
-		?*)
-			echo "$choices" | sed "h; s/.*$TAB//; s/ *\$//g; s/^ /$debconf_select_lead/g; x; s/$TAB.*//; G; s/\\n/$TAB/; s/^$TAB\$//" >> /var/lib/partman/snoop
-			;;
-	esac
 	# Use the hold space carefully here to allow us to make some
 	# substitutions on only the RHS (description).
 	choices="$(echo "$choices" | sed "h; s/.*$TAB//; s/ *\$//g; s/^ /$debconf_select_lead/g; s/,/\\\\,/g; s/^ /\\\\ /; x; s/$TAB.*//; G; s/\\n/$TAB/; s/^$TAB\$//")"
@@ -193,10 +173,6 @@ ask_user () {
 		default=""
 	fi
 	choices=$(
-		if [ -e $dir/no_show_choices ]; then
-			printf "dummy__________dummy$TAB\n"
-			exit 0
-		fi
 		local skip_divider=1
 		for plugin in $dir/*; do
 			[ -d $plugin ] || continue
@@ -673,7 +649,7 @@ is_multipath_part () {
 	[ "$type" = linear ] || return 1
 	name=$(dmsetup info --noheadings -c -oname "$1")
 
-	mp=${name%p[0-9]*}
+	mp=${name%-part*}
 	if [ $(multipath -l $mp | wc -l) -gt  0 ]; then
 		return 0
 	fi
@@ -934,8 +910,8 @@ humandev () {
 		db_metaget partman/text/multipath description
 		printf "$RET" ${device} "${wwid}"
 	    elif is_multipath_part $1; then
-		part=$(echo "$1" | sed 's%.*p\([0-9]\+\)$%\1%')
-		device=$(echo "$1" | sed 's%/dev/mapper/\(.*\)p[0-9]\+$%\1%')
+		part=$(echo "$1" | sed 's%.*-part\([0-9]\+\)$%\1%')
+		device=$(echo "$1" | sed 's%/dev/mapper/\(.*\)-part[0-9]\+$%\1%')
 		db_metaget partman/text/multipath_partition description
 		printf "$RET" ${device} ${part}
 	    else
