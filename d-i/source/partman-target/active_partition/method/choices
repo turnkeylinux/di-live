@@ -23,4 +23,4 @@ else
 fi
 
 db_metaget partman-target/text/method description
-printf "method\t%s\${!TAB}%s\n" "${RET}" "$description"
+printf "method\t%s %s\n" "${RET}" "$description"
