@@ -9,17 +9,17 @@
 #
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-ext3@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-23 22:48+0000\n"
-"PO-Revision-Date: 2013-12-03 12:47+0500\n"
+"PO-Revision-Date: 2018-02-07 12:45+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
-"Language: Tajik\n"
+"Language: tg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +43,7 @@ msgstr "ext3"
 #. File system name
 #: ../partman-ext3.templates:2001
 msgid "Ext3 journaling file system"
-msgstr "Системаи файлии Ext3 journaling"
+msgstr "Низоми файлии Ext3 journaling"
 
 #. Type: text
 #. Description
@@ -63,7 +63,7 @@ msgstr "ext4"
 #. File system name
 #: ../partman-ext3.templates:5001
 msgid "Ext4 journaling file system"
-msgstr "Системаи файлии Ext4 journaling"
+msgstr "Низоми файлии Ext4 journaling"
 
 #. Type: boolean
 #. Description
@@ -84,9 +84,9 @@ msgid ""
 "system. This is needed by your machine in order to boot. Please go back and "
 "use either the ext2 or ext3 file system."
 msgstr ""
-"Қисми диски роҳандозии шумо бо системаи файлии ext2 ё ext3 конфигуратсия "
-"нашудааст. Ин ба компютери шумо барои роҳандозӣ лозим аст. Лутфан, ба қафо "
-"баргардед, ва системаи файлии ext2 ё ext3-ро истифода баред."
+"Қисми диски роҳандозии шумо бо низоми файлии ext2 ё ext3 танзим нашудааст. "
+"Ин ба компютери шумо барои роҳандозӣ лозим аст. Лутфан, ба қафо гузаред ва "
+"низоми файлии ext2 ё ext3-ро истифода баред."
 
 #. Type: boolean
 #. Description
@@ -100,7 +100,7 @@ msgid ""
 "partition will be used as is. This means that you may not be able to boot "
 "from your hard disk."
 msgstr ""
-"Агар шумо ба менюи қисмбандӣ бар нагардед, ва ин хатогиро ислоҳ накунед, ин "
+"Агар шумо ба менюи қисмбандӣ бар нагардед ва ин хаторо ислоҳ накунед, ин "
 "қисми диск чӣ хеле ки ҳаст, истифода мешавад. Ин маънои онро дорад, ки "
 "эҳтимолан шумо аз диски сахти худ роҳандозӣ намекунед."
 
@@ -115,7 +115,7 @@ msgid ""
 msgstr ""
 "Қисми диски роҳандозии шумо дар қисмбандии аввалини асосии диски сахти шумо "
 "ҷойгир намебошад. Ин ба компютери шумо барои роҳандозӣ лозим аст.  Лутфан, "
-"ба қафо баргардед, ва қисми диски аввалини асосии худро ҳамчун қисми диски "
+"ба қафо гузаред ва қисми диски аввалини асосии худро ҳамчун қисми диски "
 "роҳандозӣ истифода баред."
 
 #. Type: boolean
@@ -136,8 +136,8 @@ msgid ""
 msgstr ""
 "Қисми диски роҳандозӣ ҳамчун қисми диски роҳандозишаванда қайд нашудааст, "
 "гарчанде ки ин барои роҳандозии компютери шумо лозим аст. Шумо бояд ба қафо "
-"баргашта, байрақчаи роҳандозишавандаро барои қисми диски роҳандозӣ таъин "
-"кунед."
+"гузашта, байрақчаи роҳандозишавандаро барои қисми диски роҳандозӣ таъин "
+"намоед."
 
 #. Type: boolean
 #. Description
@@ -147,7 +147,7 @@ msgid ""
 "If you don't correct this, the partition will be used as is and it is likely "
 "that the machine cannot boot from its hard disk."
 msgstr ""
-"Агар шумо инро ислоҳ накунед, қисми диск чӣ хеле ки ҳаст, истифода мешавад, "
+"Агар шумо инро ислоҳ накунед, қисми диск чӣ хеле ки ҳаст, истифода мешавад "
 "ва эҳтимол аст, ки компютер аз диски сахти худ роҳандозӣ шуда наметавонад."
 
 #. Type: boolean
@@ -181,9 +181,9 @@ msgid ""
 "recreate it in the same position with the same settings. This will cause the "
 "partition to start at a point best suited for this disk."
 msgstr ""
-"Азбаски шумо ин қисми дискро формат карда истодаед, шумо бояд ин мушкилиро "
-"бо москунии дубораи қисмбандӣ ҳал кунед, чунки тағйирдиҳии баъдина душвортар "
-"мебошад. Барои иҷрои ин амал, ба менюи асосии қисмбандӣ баргардед, қисми "
-"дискро нест кунед, ва онро дар ҳамон ҷойгиршавӣ бо танзимоти якхела аз нав "
-"эҷод кунед. Ин сабаби он мегардад, ки қисми диск дар нуқтаи беҳтарин барои "
-"ин диск оғоз меёбад."
+"Азбаски шумо ин қисми дискро шаклбандӣ карда истодаед, шумо бояд ин "
+"мушкилиро бо москунии дубораи қисмбандӣ ҳал намоед, чунки тағйирдиҳии "
+"баъдина душвортар мебошад. Барои иҷрои ин амал, ба менюи асосии қисмбандӣ "
+"баргардед, қисми дискро нест намоед ва онро дар ҳамон ҷойгиршавӣ бо "
+"танзимоти якхела аз нав эҷод намоед. Ин сабаби он мегардад, ки қисми диск "
+"дар нуқтаи беҳтарин барои ин диск оғоз меёбад."

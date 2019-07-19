@@ -12,15 +12,16 @@
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@debian.org>, 2004
 #   Elian Myftiu <elian.myftiu@gmail.com>, 2004,2006.
+#   Eva Vranici <evavranici@gmail.com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-ext3@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-23 22:48+0000\n"
-"PO-Revision-Date: 2010-02-21 18:30+0100\n"
-"Last-Translator:  Elian Myftiu <elian.myftiu@gmail.com>\n"
+"PO-Revision-Date: 2017-09-04 19:01+0300\n"
+"Last-Translator: Redon Skikuli <rskikuli@gmail.com>\n"
 "Language-Team: Albanian \n"
-"Language: \n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -165,6 +166,9 @@ msgid ""
 "${OFFSET} bytes from the minimum alignment for this disk, which may lead to "
 "very poor performance."
 msgstr ""
+"Particioni ${PARTITION} i lidhur te ${MOUNTPOINT} fillon si një offset i "
+"${OFFSET} bajteve nga lidhja minimale me këtë disk, gjë që mund të shkatojë "
+"një performancë shumë të dobët"
 
 #. Type: boolean
 #. Description
@@ -177,3 +181,9 @@ msgid ""
 "recreate it in the same position with the same settings. This will cause the "
 "partition to start at a point best suited for this disk."
 msgstr ""
+"Meqë po e formaton këtë particion, duhet ta korrigjosh këtë problem tani "
+"duke e rilidhur particionin sepse do të jetë e vështirë ta bësh këtë më vonë "
+"Për ta bërë këtë gjë, shkoni prapa te menuja kryesore e particioneve, "
+"fshijeni këtë particion dhe rikrijojeni atë në të njëjtin pozicion dhe me të "
+"njëjtat konfigurime. Kjo do ta bëjë particionin të filloj në pikën më të "
+"përshtatshme për diskun"
