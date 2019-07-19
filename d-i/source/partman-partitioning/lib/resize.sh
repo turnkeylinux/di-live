@@ -1,6 +1,5 @@
 . /lib/partman/lib/base.sh
 . /lib/partman/lib/commit.sh
-. /lib/partman/lib/recipes.sh
 
 # Sets $virtual; used by other functions here.
 check_virtual () {
@@ -19,14 +18,11 @@ get_real_device () {
 		num=$(sed 's/^[^0-9]*\([0-9]*\)[^0-9].*/\1/' $backupdev/$oldid/view)
 		bdev=$(cat $backupdev/device)
 		case $bdev in
-		    */disc)
-			bdev=${bdev%/disc}/part$num
-			;;
-		    /dev/[hsv]d[a-z]|/dev/xvd[a-z])
-			bdev=$bdev$num
-			;;
-		    /dev/cciss/c[0-9]d[0-9]|/dev/cciss/c[0-9]d[0-9][0-9]|/dev/ida/c[0-9]d[0-9]|/dev/ida/c[0-9]d[0-9][0-9]|/dev/mmcblk[0-9])
+		    /dev/*[0-9])
 			bdev=${bdev}p$num
+			;;
+		    /dev/*)
+			bdev=$bdev$num
 			;;
 		    *)
 			log "get_real_device: strange device name $bdev"
@@ -53,7 +49,6 @@ get_ntfs_resize_range () {
 	open_dialog GET_VIRTUAL_RESIZE_RANGE $oldid
 	read_line minsize cursize maxsize
 	close_dialog
-	prefsize=$cursize
 	get_real_device
 	if [ "$bdev" ]; then
 		if ! do_ntfsresize -f -i $bdev; then
@@ -65,27 +60,16 @@ get_ntfs_resize_range () {
 			sed 's/^You might resize at \([0-9]*\) bytes.*/\1/' | \
 			grep '^[0-9]*$')
 		if [ "$size" ]; then
-			if ! longint_le "$size" "$cursize"; then
-				logger -t partman "ntfsresize reported minimum size $size, but current partition size is $cursize"
-				unset minsize cursize maxsize prefsize
-				return 1
-			elif ! longint_le "$minsize" "$size"; then
-				logger -t partman "ntfsresize reported minimum size $size, but minimum partition size is $minsize"
-				unset minsize cursize maxsize prefsize
-				return 1
-			else
-				minsize=$size
-			fi
+			minsize=$size
 		fi
 	fi
 }
 
 get_ext2_resize_range () {
-	local bdev tune2fs block_size block_count free_blocks real_minsize
+	local bdev tune2fs block_size block_count free_blocks
 	open_dialog GET_VIRTUAL_RESIZE_RANGE $oldid
 	read_line minsize cursize maxsize
 	close_dialog
-	prefsize=$cursize
 	get_real_device
 	if [ "$bdev" ]; then
 		if ! tune2fs="$(tune2fs -l $bdev)"; then
@@ -101,18 +85,7 @@ get_ext2_resize_range () {
 		if expr "$block_size" : '[0-9][0-9]*$' >/dev/null && \
 		   expr "$block_count" : '[0-9][0-9]*$' >/dev/null && \
 		   expr "$free_blocks" : '[0-9][0-9]*$' >/dev/null; then
-			real_minsize="$(expr \( "$block_count" - "$free_blocks" \) \* "$block_size")"
-			if ! longint_le "$real_minsize" "$cursize"; then
-				logger -t partman "tune2fs reported minimum size $real_minsize, but current partition size is $cursize"
-				unset minsize cursize maxsize prefsize
-				return 1
-			elif ! longint_le "$minsize" "$real_minsize"; then
-				logger -t partman "tune2fs reported minimum size $real_minsize, but minimum partition size is $minsize"
-				unset minsize cursize maxsize prefsize
-				return 1
-			else
-				minsize="$real_minsize"
-			fi
+			minsize="$(expr \( "$block_count" - "$free_blocks" \) \* "$block_size")"
 		fi
 	fi
 	return 0
@@ -122,7 +95,6 @@ get_resize_range () {
 	open_dialog GET_RESIZE_RANGE $oldid
 	read_line minsize cursize maxsize
 	close_dialog
-	prefsize=$cursize
 }
 
 # This function works only on non-virtual (i.e. committed) filesystems.  It
@@ -160,31 +132,9 @@ human_resize_range () {
 	minpercent="$(expr 100 \* "$minsize" / "$maxsize")"
 }
 
-decode_swap_size () {
-	if [ "$4" = linux-swap ]; then
-		echo "$1"
-	fi
-}
-
-find_swap_size_val=
-find_swap_size () {
-	if [ -z "$find_swap_size_val" ]; then
-		decode_recipe $(get_recipedir)/[0-9][0-9]atomic linux-swap
-		find_swap_size_val=$(foreach_partition 'decode_swap_size $*')
-	fi
-	echo "$find_swap_size_val"
-}
-
 ask_for_size () {
 	local noninteractive digits minmb minsize_rounded maxsize_rounded
-
-	# Get the original size of the partition being resized.
-	open_dialog PARTITION_INFO $oldid
-	read_line x1 x2 origsize x4 x5 path x7
-	close_dialog
-
 	noninteractive=true
-	swap_size="$(find_swap_size)"
 	minsize_rounded="$(human2longint "$hminsize")"
 	maxsize_rounded="$(human2longint "$hmaxsize")"
 	while true; do
@@ -194,12 +144,6 @@ ask_for_size () {
 			db_subst partman-partitioning/new_size MINSIZE "$hminsize"
 			db_subst partman-partitioning/new_size MAXSIZE "$hmaxsize"
 			db_subst partman-partitioning/new_size PERCENT "$minpercent%"
-			# Used by ubiquity to set accurate bounds on resize widgets.
-			db_subst partman-partitioning/new_size RAWMINSIZE "$minsize"
-			db_subst partman-partitioning/new_size RAWPREFSIZE "$prefsize"
-			db_subst partman-partitioning/new_size RAWMAXSIZE "$maxsize"
-			db_subst partman-partitioning/new_size PATH "$path"
-			db_subst partman-partitioning/new_size SWAPSIZE "$swap_size"
 			db_input critical partman-partitioning/new_size || $noninteractive
 			noninteractive="return 1"
 			db_go || return 1
