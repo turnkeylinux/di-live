@@ -62,14 +62,10 @@ apt_opts="-q -y"
 if [ -z "$ALLOW_REMOVE" ]; then
 	apt_opts="$apt_opts --no-remove"
 fi
-if db_get base-installer/install-recommends && [ "$RET" = false ]; then
-	if [ "$WITH_RECOMMENDS" ]; then
-		apt_opts="$apt_opts -o APT::Install-Recommends=true"
-	fi
-else
-	if [ "$NO_RECOMMENDS" ]; then
-		apt_opts="$apt_opts -o APT::Install-Recommends=false"
-	fi
+if [ "$WITH_RECOMMENDS" ]; then
+	apt_opts="$apt_opts -o APT::Install-Recommends=true"
+elif [ "$NO_RECOMMENDS" ]; then
+	apt_opts="$apt_opts -o APT::Install-Recommends=false"
 fi
 
 ERRCODE=0

@@ -25,6 +25,15 @@ update_mtab() {
 	done ) > $mtab
 }
 
+divert () {
+	chroot /target dpkg-divert --quiet --add --divert "$1.REAL" --rename "$1"
+}
+
+undivert () {
+	rm -f "/target$1"
+	chroot /target dpkg-divert --quiet --remove --rename "$1"
+}
+
 chroot_setup () {
 	# Bail out if directories we need are not there
 	if [ ! -d /target/sbin ] || [ ! -d /target/usr/sbin ] || \
@@ -55,7 +64,7 @@ EOF
 	chmod a+rx /target/usr/sbin/policy-rc.d
 	
 	if [ -e /target/sbin/start-stop-daemon ]; then
-		mv /target/sbin/start-stop-daemon /target/sbin/start-stop-daemon.REAL
+		divert /sbin/start-stop-daemon
 	fi
 	cat > /target/sbin/start-stop-daemon <<EOF
 #!/bin/sh
@@ -67,9 +76,10 @@ EOF
 	
 	# If Upstart is in use, add a dummy initctl to stop it starting jobs.
 	if [ -x /target/sbin/initctl ]; then
-		mv /target/sbin/initctl /target/sbin/initctl.REAL
+		divert /sbin/initctl
 		cat > /target/sbin/initctl <<EOF
 #!/bin/sh
+if [ "\$1" = version ]; then exec /sbin/initctl.REAL "\$@"; fi
 echo 1>&2
 echo 'Warning: Fake initctl called, doing nothing.' 1>&2
 exit 0
@@ -101,7 +111,7 @@ EOF
 					/target/dev/pts
 			fi
 
-			if [ -d /target/run ] && [ ! -d /target/run/lock ]; then
+			if ! mountpoints | grep -q '^/target/run$'; then
 				mount --bind /run /target/run
 			fi
 		;;
@@ -109,7 +119,7 @@ EOF
 			# Some packages (eg. the kernel-image package) require a mounted
 			# /proc/. Only mount it if not mounted already
 			if [ ! -f /target/proc/cmdline ]; then
-				mount -t procfs proc /target/proc
+				mount -t linprocfs proc /target/proc
 			fi
 			# Some package might need sysfs mounted
 			# Only mount it if not mounted already
@@ -154,15 +164,20 @@ EOF
 	# Avoid apt-listchanges doing anything.
 	APT_LISTCHANGES_FRONTEND=none
 	export APT_LISTCHANGES_FRONTEND
+	# Sometimes sudo may need to be removed (e.g. when installing
+	# sudo-ldap).  There's no situation in which doing this during d-i
+	# is a problem, so unconditionally override the guard in sudo.prerm.
+	SUDO_FORCE_REMOVE=yes
+	export SUDO_FORCE_REMOVE
 
 	return 0
 }
 
 chroot_cleanup () {
 	rm -f /target/usr/sbin/policy-rc.d
-	mv /target/sbin/start-stop-daemon.REAL /target/sbin/start-stop-daemon
+	undivert /sbin/start-stop-daemon
 	if [ -x /target/sbin/initctl.REAL ]; then
-		mv /target/sbin/initctl.REAL /target/sbin/initctl
+		undivert /sbin/initctl
 	fi
 
 	# Undo the mounts done by the packages during installation.
@@ -183,9 +198,9 @@ chroot_cleanup () {
 # Variant of chroot_cleanup that only cleans up chroot_setup's mounts.
 chroot_cleanup_localmounts () {
 	rm -f /target/usr/sbin/policy-rc.d
-	mv /target/sbin/start-stop-daemon.REAL /target/sbin/start-stop-daemon
+	undivert /sbin/start-stop-daemon
 	if [ -x /target/sbin/initctl.REAL ]; then
-		mv /target/sbin/initctl.REAL /target/sbin/initctl
+		undivert /sbin/initctl
 	fi
 
 	# Undo the mounts done by the packages during installation.

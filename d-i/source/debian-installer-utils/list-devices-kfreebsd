@@ -1,4 +1,5 @@
-#! /bin/sh -e
+#! /bin/sh
+set -e
 TYPE="$1"
 
 case $TYPE in
@@ -15,12 +16,8 @@ case $TYPE in
     usb-partition)
         TYPE=usb_partition
         ;;
-    mmc-partition)
-        # MMC is not supported on kFreeBSD
-        exit 0
-        ;;
     *)
-	echo "Usage: $0 cd|disk|partition|floppy|maybe-usb-floppy|usb-partition|mmc-partition" >&2
+	echo "Usage: $0 cd|disk|partition|floppy|maybe-usb-floppy|usb-partition" >&2
 	exit 2
         ;;
 esac

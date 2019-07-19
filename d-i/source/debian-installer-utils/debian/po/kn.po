@@ -3,44 +3,31 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of id.po to Bahasa Indonesia
-# Indonesian messages for debian-installer.
+# Kannada Translations
+# Vikram Vincent <vincentvikram@gmail.com>, 2007, 2010, 2011.
+# Raghavendra S <raghuarr@gmail.com>, 2010.
 #
-#
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
 # Translators:
+# shashi kiran <shashi859@gmail.com>, 2010, 2011.
+# Prabodh CP <prabodhcp@gmail.com>, 2011.
 #
-# Debian Indonesian L10N Team <debian-l10n-id@gurame.fisika.ui.ac.id>, 2004.
-# * Parlin Imanuel Toh (parlin_i@yahoo.com), 2004-2005.
-# * I Gede Wijaya S (gwijayas@yahoo.com), 2004.
-# * Arief S F (arief@gurame.fisika.ui.ac.id), 2004-2007.
-# * Setyo Nugroho (setyo@gmx.net), 2004.
-# Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
+# Credits: Thanks to contributions from Free Software Movement Karnataka (FSMK), 2011.
 #
 # Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@computer.org>, 2002.
-#   Andhika Padmawan <andhika.padmawan@gmail.com>, 2010,2011.
-#   Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2004-2006.
-#   Erwid M Jadied <jadied@gmail.com>, 2008.
-#   Free Software Foundation, Inc., 2002,2004
-#   Translations from KDE:
-#   Ahmad Sofyan <fade@2bl.ac>, 2001.
-#
+#   Shankar Prasad <svenkate@redhat.com>, 2009.
+#   Vikram Vincent <vincentvikram@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer (level1)\n"
+"Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: debian-installer-utils@packages.debian.org\n"
 "POT-Creation-Date: 2009-07-02 20:15+0000\n"
-"PO-Revision-Date: 2012-02-13 03:15+0700\n"
-"Last-Translator: Mahyuddin Susanto <udienz@ubuntu.com>\n"
-"Language-Team: Debian Indonesia Translators <debian-l10n-indonesian@lists."
-"debian.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2011-12-17 11:35+0530\n"
+"Last-Translator: Prabodh C P <prabodh@fsmk.org>\n"
+"Language-Team: Kannada <debian-l10n-kannada@lists.debian.org>\n"
+"Language: kn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
 
 #. Type: note
 #. Description
@@ -50,15 +37,14 @@ msgstr ""
 #. :sl2:
 #: ../di-utils-shell.templates:1001 ../di-utils.templates:5001
 msgid "Interactive shell"
-msgstr "Shell interaktif"
+msgstr "ಸಕ್ರಿಯವಾದ ಶೆಲ್"
 
 #. Type: note
 #. Description
 #. :sl2:
 #: ../di-utils-shell.templates:1001
 msgid "After this message, you will be running \"ash\", a Bourne-shell clone."
-msgstr ""
-"Setelah pesan ini, Anda akan menjalankan \"ash\", klon dari Bourne-Shell."
+msgstr "ಈ ಸಂದೇಶದ ನಂತರ, ಬೋರ್ನ್ ಶೆಲ್ ಅವಳಿಯಾದ \"ash\"ಅನ್ನು ನಡೆಸಲಾಗುವುದು."
 
 #. Type: note
 #. Description
@@ -70,17 +56,17 @@ msgid ""
 "easy to figure out. To get an idea of what Unix utilities are available to "
 "you, use the \"help\" command."
 msgstr ""
-"Sistem berkas root adalah sebuah disk RAM. Sistem berkas hard disk dikaitkan "
-"pada \"/target\". Editor yang tersedia adalah nano. Nano sangat kecil dan "
-"mudah digunakan. Untuk mengetahui utilitas Unix apa saja yang tersedia, "
-"gunakan perintah \"help\"."
+"ಮೂಲ ಕಡತ ವ್ಯವಸ್ಥೆಯು ಒಂದು RAM ಡಿಸ್ಕ್ ಆಗಿದೆ. ಹಾರ್ಡ್ ಡಿಸ್ಕಿನ ಕಡತ ವ್ಯವಸ್ಥೆಗಳು \"/target\" "
+"ಮೇಲೆ ಪೇರಿಸಲ್ಪಟ್ಟಿದೆ. ನಿಮಗೆ ಲಭ್ಯವಿರುವ ಎಡಿಟರ್ nano. ಇದು ತುಂಬಾ ಸಣ್ಣದು ಮತ್ತು ಅರ್ಥೈಸಲು "
+"ತುಂಬಾ ಸುಲಭವಾದದ್ದು. Unixನಲ್ಲಿ ನಿಮಗೆ ಯಾವ ಸೌಲಭ್ಯಗಳು ಲಭ್ಯವಿವೆ ಎಂದು ತಿಳಿಯಲು \"help\" "
+"ಆಜ್ಞೆಯನ್ನು ಬಳಸಿ."
 
 #. Type: note
 #. Description
 #. :sl2:
 #: ../di-utils-shell.templates:1001
 msgid "Use the \"exit\" command to return to the installation menu."
-msgstr "Gunakan perintah \"exit\" untuk kembali ke menu instalasi."
+msgstr "ಅನುಸ್ಧಾಪನ ಪರಿವಿಡಿಗೆ ಹಿಂತಿರುಗಲು \"exit\" ಎ೦ಬ ಆದೇಶವನ್ನು ಉಪಯೋಗಿಸಿರಿ."
 
 #. Type: text
 #. Description
@@ -90,7 +76,7 @@ msgstr "Gunakan perintah \"exit\" untuk kembali ke menu instalasi."
 #. :sl1:
 #: ../di-utils-shell.templates:2001
 msgid "Execute a shell"
-msgstr "Menjalankan shell"
+msgstr "shellಅನ್ನು ಚಲಾಯಿಸಿ"
 
 #. Type: text
 #. Description
@@ -100,14 +86,14 @@ msgstr "Menjalankan shell"
 #. :sl2:
 #: ../di-utils-exit-installer.templates:1001
 msgid "Exit installer"
-msgstr "Keluar dari instalasi"
+msgstr "ಅನುಸ್ಥಾಪನಾ ವ್ಯವಸ್ಥೆಯಿಂದ ನಿರ್ಗಮಿಸಿ"
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../di-utils-reboot.templates:1001
 msgid "Are you sure you want to exit now?"
-msgstr "Anda yakin ingin keluar sekarang?"
+msgstr "ನೀವು ಖಚಿತವಾಗಿಯು ಈಗ ನಿರ್ಗಮಿಸಬೇಕೆ?"
 
 #. Type: boolean
 #. Description
@@ -117,8 +103,8 @@ msgid ""
 "If you have not finished the install, your system may be left in an unusable "
 "state."
 msgstr ""
-"Bila Anda tidak menyelesaikan instalasi, sistem Anda bisa jadi tidak dapat "
-"digunakan."
+"ನೀವು ಅನುಸ್ಥಾಪನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿಲ್ಲದಿದ್ದರೆ, ನಿಮ್ಮ ಗಣಕ ವ್ಯವಸ್ಥೆಯು ನಿರುಪಯೋಗಕ "
+"ಸ್ಧಿತಿಯಲ್ಲಿರಬಹುದು."
 
 #. Type: text
 #. Description
@@ -128,7 +114,7 @@ msgstr ""
 #. :sl1:
 #: ../di-utils-reboot.templates:2001
 msgid "Abort the installation"
-msgstr "Batalkan instalasi"
+msgstr "ಅನುಸ್ಧಾಪನ ಪ್ರಕ್ರಿಯೆಯನ್ನು ನಿಲ್ಲಿಸು"
 
 #. Type: text
 #. Description
@@ -136,14 +122,14 @@ msgstr "Batalkan instalasi"
 #. :sl1:
 #: ../di-utils.templates:1001
 msgid "Registering modules..."
-msgstr "Mendaftarkan modul-modul ..."
+msgstr "\"ಮಾಡ್ಯೂಲ್\"ಗಳನ್ನು ನೋಂದಾಯಿಸಲಾಗುತ್ತಿದೆ"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../di-utils.templates:6001
 msgid "Terminal plugin not available"
-msgstr "Plugin terminal tidak tersedia"
+msgstr "ಟರ್ಮಿನಲ್ ಪ್ಲಗಿನ್ ಲಭ್ಯವಿಲ್ಲ"
 
 #. Type: error
 #. Description
@@ -153,8 +139,8 @@ msgid ""
 "This build of the debian-installer requires the terminal plugin in order to "
 "display a shell. Unfortunately, this plugin is currently unavailable."
 msgstr ""
-"Program debian-installer ini membutuhkan plugin terminal untuk menjalankan "
-"shell. Sayangnya, plugin ini belum tersedia."
+"ಈ ಡೆಬಿಯನ್ ಸಂಸ್ಥಾಪಕ ವ್ಯವಸ್ಥೆಗೆ ಶೆಲ್ ಅನ್ನು ತೋರಿಸಲು ಟರ್ಮಿನಲ್ ಪ್ಲಗಿನ್ ಬೇಕಾಗಿದೆ. "
+"ದುರದೃಷ್ಟವಶಾತ್ ಈ ಪ್ಲಗಿನ್ ಸದ್ಯಕ್ಕೆ ಲಭ್ಯವಿಲ್ಲ."
 
 #. Type: error
 #. Description
@@ -164,8 +150,8 @@ msgid ""
 "It should be available after reaching the \"Loading additional components\" "
 "installation step."
 msgstr ""
-"Plugin tersebut biasanya tersedia setelah proses instalasi sampai pada "
-"langkah \"Memuat komponen tambahan\"."
+"ಸಂಸ್ಥಾಪನಾ ಹಂತ \"Loading additional components\" ಅನ್ನು ತಲುಪಿದ ನಂತರ ಅದು "
+"ದೊರೆಯಲಿದೆ."
 
 #. Type: text
 #. Description
@@ -175,5 +161,5 @@ msgid ""
 "Alternatively, you can open a shell by pressing Ctrl+Alt+F2. Use Alt+F5 to "
 "get back to the installer."
 msgstr ""
-"Sebagai pilihan, Anda dapat membuka shell dengan menekan tombol Ctrl+Alt+F2. "
-"Tekan Alt+F5 untuk kembali pada program instalasi."
+"ಪರ್ಯಾಯವಾಗಿ, ನೀವು ಶೆಲ್ ಅನ್ನು Ctrl+Alt+F2 ಒತ್ತಿ ತೆರೆಯಬಹುದು. ಅನುಸ್ಥಾಪಕ ವ್ಯವಸ್ಥೆಗೆ "
+"ಹಿಂತಿರುಗಲು Alt+F5 ಅನ್ನು ಬಳಸಿ"

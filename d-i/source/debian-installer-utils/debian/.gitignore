@@ -1,0 +1,11 @@
+di-utils-shell
+di-utils-reboot
+di-utils-exit-installer
+di-utils-terminfo
+di-utils
+di-utils-fake-*
+di-utils-mapdevfs
+files
+*.debhelper*
+*.substvars
+

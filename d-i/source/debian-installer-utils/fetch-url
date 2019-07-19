@@ -1,7 +1,6 @@
-#!/bin/sh
+#!/bin/sh -e
 
 . /usr/share/debconf/confmodule
-. /lib/preseed/preseed.sh
 
 TRY_CONTINUE=
 TRY_REPEAT=
@@ -27,9 +26,22 @@ done
 
 url="$1"
 dst="$2"
+checksum="$3" # optional parameter
+
+tmpdst=$(dirname "$dst")/_fetch-url_$(basename "$dst").$$
 
 proto=${url%%://*}
 
 . /usr/lib/fetch-url/$proto
 
-protocol_fetch "$url" "$dst"
+protocol_fetch "$url" "$tmpdst" || exit $?
+
+if [ "$checksum" ]; then
+	filesum=$(md5sum "$tmpdst" | cut -d' ' -f1)
+	if [ "$filesum" != "$checksum" ]; then
+		echo "ERROR: checksum mismatch on '$url' (sum is '$filesum', rather than the expected '$checksum')" >&2
+		exit 2
+	fi
+fi
+
+mv -f "$tmpdst" "$dst"
