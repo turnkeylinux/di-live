@@ -4,34 +4,39 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # translation of ar.po to Arabic
-# Arabic messages for debian-installer. Copyright (C) 2003 Software in the Public Interest, Inc. This file is distributed under the same license as debian-installer. Ossama M. Khayat <okhayat@yahoo.com>, 2005.
+# Arabic messages for debian-installer. Copyright (C) 2003 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Ossama Khayat <okhayat@yahoo.com>, 2005 - 2013.
+# Abdelhak Bougouffa, 2017.
+# najib LAARIBI <supnano@gmail.com>, 2018.
+# ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
+# Osama <osama.ibrahim.89@gmail.com>, 2019.
 #
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
 #   Translations from kde-i18n/desktop.po:
 #
-# Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2007, 2008, 2009, 2010.
 #   Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
 #   Alastair McKinstry <mckinstry@computer.org>, 2002.
 #   Free Software Foundation, Inc., 2002, 2004.
 #   Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2008, 2010.
 #   Tobias Quathamer <toddy@debian.org>, 2007.
 #   Mohammad Gamal <f2c2001@yahoo.com>, 2001.
-# Ossama Khayat <okhayat@yahoo.com>, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2013-09-30 11:24+0300\n"
-"Last-Translator: Ossama Khayat <okhayat@gmail.com>\n"
-"Language-Team: American English <okhayat@gmail.com>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2019-06-10 10:55+0000\n"
+"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
+"Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n⇐10 ? "
-"3 : n>=11 && n⇐99 ? 4 : 5\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
 #. Type: text
 #. Description
@@ -250,7 +255,7 @@ msgstr "/ - نظام الملفّات الجذر"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/boot - static files of the boot loader"
-msgstr "/boot - ملفّات محمّل الإقلاع السّاكنة"
+msgstr "‎/boot - ملفّات محمّل الإقلاع السّاكنة"
 
 #. Type: select
 #. Choices
@@ -260,7 +265,7 @@ msgstr "/boot - ملفّات محمّل الإقلاع السّاكنة"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/home - user home directories"
-msgstr "/home - أدلة المستخدمين المنزليّة"
+msgstr "‎/home - أدلة المستخدمين المنزليّة"
 
 #. Type: select
 #. Choices
@@ -270,7 +275,7 @@ msgstr "/home - أدلة المستخدمين المنزليّة"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/tmp - temporary files"
-msgstr "/tmp - ملفّات مؤقّتة"
+msgstr "‎/tmp - ملفّات مؤقّتة"
 
 #. Type: select
 #. Choices
@@ -280,7 +285,7 @@ msgstr "/tmp - ملفّات مؤقّتة"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/usr - static data"
-msgstr "/usr - بيانات ساكنة"
+msgstr "‎/usr - بيانات ساكنة"
 
 #. Type: select
 #. Choices
@@ -290,7 +295,7 @@ msgstr "/usr - بيانات ساكنة"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/var - variable data"
-msgstr "/var - بيانات متغيّرة"
+msgstr "‎/var - بيانات متغيّرة"
 
 #. Type: select
 #. Choices
@@ -300,7 +305,7 @@ msgstr "/var - بيانات متغيّرة"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/srv - data for services provided by this system"
-msgstr "/srv - بيانات للخدمات التي يوفّرها هذا النظام"
+msgstr "‎/srv - بيانات للخدمات التي يوفّرها هذا النظام"
 
 #. Type: select
 #. Choices
@@ -310,7 +315,7 @@ msgstr "/srv - بيانات للخدمات التي يوفّرها هذا الن
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/opt - add-on application software packages"
-msgstr "/opt - حزم برامج تطبيقات إضافيّة"
+msgstr "‎/opt - حزم برامج تطبيقات إضافيّة"
 
 #. Type: select
 #. Choices
@@ -320,7 +325,7 @@ msgstr "/opt - حزم برامج تطبيقات إضافيّة"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/usr/local - local hierarchy"
-msgstr "/usr/local - هرميّة محليّة"
+msgstr "‎/usr/local - هرميّة محليّة"
 
 #. Type: select
 #. Choices
@@ -368,14 +373,14 @@ msgstr "موضع التركيب لهذا الجزء:"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:14001
 msgid "/dos"
-msgstr "/dos"
+msgstr "‎/dos"
 
 #. Type: select
 #. Choices
 #. :sl2:
 #: ../partman-basicfilesystems.templates:14001
 msgid "/windows"
-msgstr "/windows"
+msgstr "‎/windows"
 
 #. Type: error
 #. Description
@@ -480,12 +485,20 @@ msgstr "قياسي"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "الاستخدام المعتاد لهذا الجزء:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -496,13 +509,17 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"قياسي = معطيات قياسيّة، news = inode واحدة لكل قالب من 4 ك.ب.، ملف كبير = "
-"inode واحدة لكل ميجابايت، ملف كبير4 = inode واحدة لكل 4 ميجابايت."
+"قياسي = معطيات قياسيّة، news = inode واحدة لكل قالب من 4 ك.ب.، largefile = "
+"inode واحدة لكل ميجابايت، largefile4 = inode واحدة لكل 4 ميجابايت."
 
 #. Type: text
 #. Description
@@ -572,9 +589,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "نظام ملفّات سجلّي JFS"
+msgstr "نظام ملفّات سجلّي NTFS"
 
 #. Type: text
 #. Description
@@ -582,7 +598,7 @@ msgstr "نظام ملفّات سجلّي JFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "نظام الملفات NTFS"
 
 #. Type: text
 #. Description
@@ -641,7 +657,7 @@ msgstr "noatime - عدم تحديث أزمان الوصول إلى الـinode �
 #: ../partman-basicfilesystems.templates:45001
 #, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - عدم تحديث أزمان الوصول إلى الـinode عند كل وصول"
+msgstr "nodiratime - عدم تحديث أزمان مجلد الوصول إلى الـinode"
 
 #. Type: text
 #. Description

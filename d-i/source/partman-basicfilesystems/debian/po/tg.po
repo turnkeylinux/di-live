@@ -9,17 +9,17 @@
 #
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2014-01-05 13:26+0500\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-02-08 14:24+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
-"Language: Tajik\n"
+"Language: tg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,7 +32,7 @@ msgstr ""
 msgid ""
 "Checking the ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Санҷиши системаи файлии ${TYPE} дар қисми диски #${PARTITION} дар ${DEVICE} "
+"Санҷиши низоми файлии ${TYPE} дар қисми диски #${PARTITION} дар ${DEVICE} "
 "иҷро шуда истодааст..."
 
 #. Type: text
@@ -50,7 +50,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:3001
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Эҷодкунии системаи файлии ${TYPE} дар қисми диски #${PARTITION} дар дастгоҳи "
+"Эҷодкунии низоми файлии ${TYPE} дар қисми диски #${PARTITION} дар дастгоҳи "
 "${DEVICE}..."
 
 #. Type: text
@@ -61,7 +61,7 @@ msgid ""
 "Creating ${TYPE} file system for ${MOUNT_POINT} in partition #${PARTITION} "
 "of ${DEVICE}..."
 msgstr ""
-"Эҷодкунии системаи файлии ${TYPE} барои ${MOUNT_POINT} дар қисми диски #"
+"Эҷодкунии низоми файлии ${TYPE} барои ${MOUNT_POINT} дар қисми диски #"
 "${PARTITION} дар дастгоҳи ${DEVICE}..."
 
 #. Type: text
@@ -70,7 +70,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:5001
 msgid "Formatting swap space in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Форматкунии фазои мубодилакунӣ дар қисми диски #${PARTITION} дар ${DEVICE}..."
+"Шаклбандии фазои мубодилакунӣ дар қисми диски #${PARTITION} дар ${DEVICE}..."
 
 #. Type: boolean
 #. Description
@@ -91,8 +91,8 @@ msgid ""
 "The test of the file system with type ${TYPE} in partition #${PARTITION} of "
 "${DEVICE} found uncorrected errors."
 msgstr ""
-"Санҷиши системаи файлии намуди ${TYPE} дар қисми диски #${PARTITION} дар "
-"${DEVICE} хатогиҳои ислоҳнашударо пайдо кард."
+"Санҷиши низоми файлии намуди ${TYPE} дар қисми диски #${PARTITION} дар "
+"${DEVICE} хатоҳои ислоҳнашударо пайдо кард."
 
 #. Type: boolean
 #. Description
@@ -106,8 +106,8 @@ msgid ""
 "If you do not go back to the partitioning menu and correct these errors, the "
 "partition will be used as is."
 msgstr ""
-"Агар шумо ба менюи қисмбандӣ бар нагардед, ва ин хатогиҳоро ислоҳ накунед, "
-"ин қисми диск чӣ хеле ки ҳаст, истифода мешавад."
+"Агар шумо ба менюи қисмбандӣ бар нагардед ва ин хатоҳоро ислоҳ накунед, ин "
+"қисми диск чӣ хеле ки ҳаст, истифода мешавад."
 
 #. Type: boolean
 #. Description
@@ -118,7 +118,7 @@ msgid ""
 "uncorrected errors."
 msgstr ""
 "Санҷиши фазои мубодилакунӣ дар қисми диски #${PARTITION} дар ${DEVICE} "
-"хатогиҳои ислоҳнашударо пайдо кард."
+"хатоҳои ислоҳнашударо пайдо кард."
 
 #. Type: boolean
 #. Description
@@ -143,8 +143,8 @@ msgid ""
 "physical memory."
 msgstr ""
 "Шумо ягон қисми дискро барои истифода ҳамчун фазои мубодилакунӣ интихоб "
-"накардед. Фаъолкунии фазои мубодилакунӣ тавсия мешавад, то ин ки система "
-"ҳофизаи дастраси физикиро хубтар истифода барад, ва ҳангоми кам шудани "
+"накардед. Фаъолкунии фазои мубодилакунӣ тавсия мешавад, то ин ки низом "
+"ҳофизаи дастраси физикиро хубтар истифода барад ва ҳангоми кам шудани "
 "ҳофизаи дастрас рафтори он беҳтар гардад. Агар миқдори ҳофизаи физикии шумо "
 "кофӣ набошад, шумо метавонед ҳангоми насбкунӣ бо мушкилиҳо дучор шавед."
 
@@ -156,7 +156,7 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a swap partition, "
 "the installation will continue without swap space."
 msgstr ""
-"Агар шумо ба менюи қисмбандӣ бар нагардед, ва қисми диски мубодилакуниро "
+"Агар шумо ба менюи қисмбандӣ бар нагардед ва қисми диски мубодилакуниро "
 "таъин накунед, насбкунӣ бе фазои мубодилакунӣ идома медиҳад."
 
 #. Type: error
@@ -164,7 +164,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:9001
 msgid "Failed to create a file system"
-msgstr "Эҷодкунии системаи файлӣ қатъ карда шуд"
+msgstr "Эҷодкунии низоми файлӣ қатъ карда шуд"
 
 #. Type: error
 #. Description
@@ -174,8 +174,8 @@ msgid ""
 "The ${TYPE} file system creation in partition #${PARTITION} of ${DEVICE} "
 "failed."
 msgstr ""
-"Эҷодкунии системаи файлии ${TYPE} дар қисми диски #${PARTITION} дар "
-"${DEVICE} ба анҷом нарасид."
+"Эҷодкунии низоми файлии ${TYPE} дар қисми диски #${PARTITION} дар ${DEVICE} "
+"ба анҷом нарасид."
 
 #. Type: error
 #. Description
@@ -202,7 +202,7 @@ msgid ""
 "No mount point is assigned for the ${FILESYSTEM} file system in partition #"
 "${PARTITION} of ${DEVICE}."
 msgstr ""
-"Барои системаи файлии ${FILESYSTEM} дар қисми диски #${PARTITION} дар "
+"Барои низоми файлии ${FILESYSTEM} дар қисми диски #${PARTITION} дар "
 "${DEVICE} ягон нуқтаи васлкунӣ таъин нашудааст."
 
 #. Type: boolean
@@ -213,7 +213,7 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a mount point from "
 "there, this partition will not be used at all."
 msgstr ""
-"Агар шумо ба менюи қисмбандӣ бар нагардед, ва аз он ҷо нуқтаи васлкуниро "
+"Агар шумо ба менюи қисмбандӣ бар нагардед ва аз он ҷо нуқтаи васлкуниро "
 "таъин накунед, ин қисми диск тамоман истифода намешавад."
 
 #. Type: error
@@ -221,7 +221,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:12001
 msgid "Invalid file system for this mount point"
-msgstr "Системаи файлии нодуруст барои ин нуқтаи васл"
+msgstr "Низоми файлии нодуруст барои ин нуқтаи васл"
 
 #. Type: error
 #. Description
@@ -232,9 +232,9 @@ msgid ""
 "because it is not a fully-functional Unix file system. Please choose a "
 "different file system, such as ${EXT2}."
 msgstr ""
-"Намуди системаи файлии ${FILESYSTEM} наметавонад дар ${MOUNTPOINT} васл "
-"карда шавад, чунки он системаи файлии пуриқтидори Unix намебошад. Лутфан, "
-"системаи файлии дигарро интихоб кунед, ба монанди ${EXT2}."
+"Намуди низоми файлии ${FILESYSTEM} наметавонад дар ${MOUNTPOINT} васл карда "
+"шавад, чунки он низоми файлии пуриқтидори Unix намебошад. Лутфан, низоми "
+"файлии дигарро интихоб намоед, ба монанди ${EXT2}."
 
 #. Type: select
 #. Choices
@@ -244,7 +244,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/ - the root file system"
-msgstr "/ - системаи файлии root"
+msgstr "/ - низоми файлии root"
 
 #. Type: select
 #. Choices
@@ -304,7 +304,7 @@ msgstr "/var - иттилооти тағйирёбанда"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/srv - data for services provided by this system"
-msgstr "/srv - иттилооти хидматҳои таъминшуда аз ҷониби система"
+msgstr "/srv - иттилооти хидматҳои таъминшуда аз ҷониби низом"
 
 #. Type: select
 #. Choices
@@ -409,14 +409,14 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:17001
 msgid "Label for the file system in this partition:"
-msgstr "Барчасп барои системаи файлӣ дар ин қисми диск:"
+msgstr "Барчасп барои низоми файлӣ дар ин қисми диск:"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:18001
 msgid "Format the swap area:"
-msgstr "Формат кардани ноҳияи мубодила:"
+msgstr "Шаклбандӣ кардани ноҳияи мубодила:"
 
 #. Type: text
 #. Description
@@ -467,7 +467,7 @@ msgstr "Блокҳои истифодашуда:"
 #: ../partman-basicfilesystems.templates:24001
 msgid "Percentage of the file system blocks reserved for the super-user:"
 msgstr ""
-"Фоизҳои блокҳои системаи файлӣ, ки барои super-user нигоҳ дошта шудааст:"
+"Дарсадҳои блокҳои низоми файлӣ, ки барои super-user нигоҳ дошта шудааст:"
 
 #. Type: text
 #. Description
@@ -487,22 +487,34 @@ msgstr "стандартӣ"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Истифодабарии намунавӣ барои ин қисми диск:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
 "system parameters can be chosen for that use."
 msgstr ""
-"Лутфан, муайян кунед, ки системаи файлӣ чӣ тавр истифода мешавад, то ин ки "
-"параметрҳои беҳтарини системаи файлӣ барои он истифода интихоб карда шаванд."
+"Лутфан, муайян намоед, ки низоми файлӣ чӣ тавр истифода мешавад, то ки "
+"параметрҳои беҳтарини низоми файлӣ барои истифода интихоб карда шаванд."
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -510,7 +522,7 @@ msgid ""
 msgstr ""
 "standard = параметрҳои стандартӣ, news = як гиреҳи индекс барои ҳар як блоки "
 "4 КБ, largefile = як гиреҳи индекс барои ҳар як мегабайт, largefile4 = як "
-"барои ҳар 4 мегабайт."
+"гиреҳи индекс барои ҳар 4 мегабайт."
 
 #. Type: text
 #. Description
@@ -536,7 +548,7 @@ msgstr "ҳеҷ"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:30001
 msgid "Ext2 file system"
-msgstr "Системаи файлии Ext2"
+msgstr "Низоми файлии Ext2"
 
 #. Type: text
 #. Description
@@ -551,7 +563,7 @@ msgstr "ext2"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:32001
 msgid "FAT16 file system"
-msgstr "Системаи файлии FAT16"
+msgstr "Низоми файлии FAT16"
 
 #. Type: text
 #. Description
@@ -566,7 +578,7 @@ msgstr "fat16"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:34001
 msgid "FAT32 file system"
-msgstr "Системаи файлии FAT32"
+msgstr "Низоми файлии FAT32"
 
 #. Type: text
 #. Description
@@ -580,9 +592,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "Системаи файлии JFS journaling"
+msgstr "Низоми файлии JFS journaling"
 
 #. Type: text
 #. Description
@@ -590,7 +601,7 @@ msgstr "Системаи файлии JFS journaling"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -630,7 +641,7 @@ msgstr "Имконоти васлкунӣ:"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
-msgstr "Имконоти васлкунӣ метавонанд рафтори системаи файлиро танзим кунанд."
+msgstr "Имконоти васлкунӣ метавонанд рафтори низоми файлиро танзим кунанд."
 
 #. Type: text
 #. Description
@@ -697,7 +708,7 @@ msgstr "noexec - иҷрошавии ягон файлҳои дуиҳоро иҷ�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
-msgstr "ro - васл кардани системаи файлӣ танҳо барои хондан"
+msgstr "ro - васл кардани низоми файлӣ танҳо барои хондан"
 
 #. Type: text
 #. Description
@@ -743,7 +754,7 @@ msgstr "user_xattr - дастгирии сифатҳои васеъшудаи к
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
-msgstr "quiet - ивазкунии соҳиб ва иҷозатҳо хаотгиҳоро бар намегардонад"
+msgstr "quiet - ивазкунии соҳиб ва иҷозатҳо хатоҳоро нишон намедиҳад"
 
 #. Type: text
 #. Description
@@ -752,7 +763,7 @@ msgstr "quiet - ивазкунии соҳиб ва иҷозатҳо хаотги
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
-msgstr "notail - файлҳоро ба дарахти система дар бастаҳо нагузоред"
+msgstr "notail - файлҳоро ба дарахти низом дар бастаҳо нагузоред"
 
 #. Type: text
 #. Description
@@ -802,9 +813,9 @@ msgid ""
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Қисми диски роҳандозии шумо бо системаи файлии ext2 конфигуратсия нашудааст. "
-"Ин барои роҳандозии компютери шумо лозим аст. Лутфан, баргардед ва системаи "
-"файлии ext2 истифода баред."
+"Қисми диски роҳандозии шумо бо низоми файлии ext2 танзим нашудааст. Ин барои "
+"роҳандозии компютери шумо лозим аст. Лутфан, ба қафо гузаред ва низоми "
+"файлии ext2-ро истифода баред."
 
 #. Type: boolean
 #. Description
@@ -819,7 +830,7 @@ msgid ""
 "partition will be used as is. This means that you may not be able to boot "
 "from your hard disk."
 msgstr ""
-"Агар шумо ба менюи қисмбандӣ бар нагардед, ва ин хатогиро ислоҳ накунед, ин "
+"Агар шумо ба менюи қисмбандӣ бар нагардед ва ин хаторо ислоҳ накунед, ин "
 "қисми диск чӣ хеле ки ҳаст, истифода мешавад. Ин маънои онро дорад, ки "
 "эҳтимолан шумо аз диски сахти худ роҳандозӣ намекунед."
 
@@ -833,5 +844,5 @@ msgid ""
 "your first partition as a boot partition."
 msgstr ""
 "Қисми диски роҳандозии шумо дар қисми диски аввалини диски компютерии шумо "
-"ҷойгир нашудааст. Ин барои роҳандозии компютери шумо лозим аст. Лутфан, "
-"баргардед ва системаи файлии ext2 истифода баред."
+"ҷойгир нашудааст. Ин барои роҳандозии компютери шумо лозим аст. Лутфан, қафо "
+"гузаред ва низоми файлии ext2-ро истифода баред."

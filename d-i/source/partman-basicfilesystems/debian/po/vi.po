@@ -9,21 +9,18 @@
 # Jean Christophe André <progfou@gmail.com>
 # Vũ Quang Trung <vu.quang.trung@auf.org>
 # Trịnh Minh Thành <tmthanh@yahoo.com>
+# Nguyễn Hùng Vũ <vuhung16@bigfoot.com>, 2001.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2010
 # Hai-Nam Nguyen <hainam@jcisio.com>, 2012
-#
-# Translations from iso-codes:
-# Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
-# Copyright © 2009 Free Software Foundation, Inc.
-# Nguyễn Hùng Vũ <vuhung16@bigfoot.com>, 2001.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2018, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer Level 1\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2013-05-22 09:21+0100\n"
-"Last-Translator: Hai-Nam Nguyen <hainam@jcisio.com>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2019-02-27 14:34+0700\n"
+"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <debian-l10n-vietnamese@lists.debian.org>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -39,15 +36,14 @@ msgid ""
 "Checking the ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
 "Đang kiểm tra hệ thống tập tin kiểu ${TYPE} trên phân vùng #${PARTITION} của "
-"${DEVICE}..."
+"${DEVICE}…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-basicfilesystems.templates:2001
 msgid "Checking the swap space in partition #${PARTITION} of ${DEVICE}..."
-msgstr ""
-"Đang kiểm tra chỗ trao đổi trên phân vùng #${PARTITION} của ${DEVICE}..."
+msgstr "Đang kiểm tra chỗ trao đổi trên phân vùng #${PARTITION} của ${DEVICE}…"
 
 #. Type: text
 #. Description
@@ -56,7 +52,7 @@ msgstr ""
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
 "Đang tạo hệ thống tập tin kiểu ${TYPE} trên phân vùng #${PARTITION} của "
-"${DEVICE}..."
+"${DEVICE}…"
 
 #. Type: text
 #. Description
@@ -67,7 +63,7 @@ msgid ""
 "of ${DEVICE}..."
 msgstr ""
 "Đang tạo hệ thống tập tin kiểu ${TYPE} cho ${MOUNT_POINT} trong phân vùng #"
-"${PARTITION} của ${DEVICE}..."
+"${PARTITION} của ${DEVICE}…"
 
 #. Type: text
 #. Description
@@ -75,7 +71,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:5001
 msgid "Formatting swap space in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Đang định dạng chỗ trao đổi trong phân vùng #${PARTITION} của ${DEVICE}..."
+"Đang định dạng chỗ trao đổi trong phân vùng #${PARTITION} của ${DEVICE}…"
 
 #. Type: boolean
 #. Description
@@ -186,7 +182,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:10001
 msgid "Failed to create a swap space"
-msgstr "Lỗi tạo chỗ trao đổi"
+msgstr "Gặp lỗi khi chỗ tráo đổi"
 
 #. Type: error
 #. Description
@@ -195,7 +191,7 @@ msgstr "Lỗi tạo chỗ trao đổi"
 msgid ""
 "The creation of swap space in partition #${PARTITION} of ${DEVICE} failed."
 msgstr ""
-"Việc tạo chỗ trao đổi trong phân vùng #${PARTITION} của ${DEVICE} bị lỗi."
+"Việc tạo chỗ tráo đổi trong phân vùng #${PARTITION} của ${DEVICE} bị lỗi."
 
 #. Type: boolean
 #. Description
@@ -205,7 +201,7 @@ msgid ""
 "No mount point is assigned for the ${FILESYSTEM} file system in partition #"
 "${PARTITION} of ${DEVICE}."
 msgstr ""
-"Chưa gán điểm lắp cho hệ thống tập tin ${FILESYSTEM} trong phân vùng #"
+"Chưa gán điểm gắn cho hệ thống tập tin ${FILESYSTEM} trong phân vùng #"
 "${PARTITION} của ${DEVICE}."
 
 #. Type: boolean
@@ -216,7 +212,7 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a mount point from "
 "there, this partition will not be used at all."
 msgstr ""
-"Nếu bạn không trở về trình đơn phân vùng để gán điểm lắp từ đó, phân vùng "
+"Nếu bạn không trở về trình đơn phân vùng để gán điểm gắn từ đó, phân vùng "
 "này sẽ không được dùng cả."
 
 #. Type: error
@@ -224,7 +220,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:12001
 msgid "Invalid file system for this mount point"
-msgstr "Hệ thống tập tin không hợp lệ cho điểm lắp này"
+msgstr "Hệ thống tập tin không hợp lệ cho điểm gắn này"
 
 #. Type: error
 #. Description
@@ -235,7 +231,7 @@ msgid ""
 "because it is not a fully-functional Unix file system. Please choose a "
 "different file system, such as ${EXT2}."
 msgstr ""
-"Kiểu hệ thống tập tin ${FILESYSTEM} không thể được lắp vào ${MOUNTPOINT}, vì "
+"Kiểu hệ thống tập tin ${FILESYSTEM} không thể được gắn vào ${MOUNTPOINT}, vì "
 "nó không phải là hệ thống tập tin UNIX có khả năng đầy đủ. Bạn hãy chọn một "
 "hệ thống tập tin khác, như ${EXT2}."
 
@@ -247,7 +243,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/ - the root file system"
-msgstr "/ — hệ thống tập tin gốc"
+msgstr "/ — gốc hệ thống tập tin"
 
 #. Type: select
 #. Choices
@@ -257,7 +253,7 @@ msgstr "/ — hệ thống tập tin gốc"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/boot - static files of the boot loader"
-msgstr "/boot — các tập tin tĩnh của bộ nạp khởi động"
+msgstr "/boot — các tập tin cố định của bộ tải khởi động"
 
 #. Type: select
 #. Choices
@@ -267,7 +263,7 @@ msgstr "/boot — các tập tin tĩnh của bộ nạp khởi động"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/home - user home directories"
-msgstr "/home — thư mục chính của người dùng"
+msgstr "/home — thư mục cá nhân của người dùng"
 
 #. Type: select
 #. Choices
@@ -297,7 +293,7 @@ msgstr "/usr — dữ liệu tĩnh"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/var - variable data"
-msgstr "/var — dữ liêu thay đổi"
+msgstr "/var — dữ liệu thay đổi"
 
 #. Type: select
 #. Choices
@@ -355,7 +351,7 @@ msgstr "Nhập bằng tay"
 #: ../partman-basicfilesystems.templates:13001
 #: ../partman-basicfilesystems.templates:14001
 msgid "Do not mount it"
-msgstr "Không lắp nó"
+msgstr "Không gắn nó"
 
 #. Type: select
 #. Description
@@ -368,7 +364,7 @@ msgstr "Không lắp nó"
 #: ../partman-basicfilesystems.templates:14002
 #: ../partman-basicfilesystems.templates:15001
 msgid "Mount point for this partition:"
-msgstr "Điểm lắp cho phân vùng này:"
+msgstr "Điểm gắn cho phân vùng này:"
 
 #. Type: select
 #. Choices
@@ -389,21 +385,21 @@ msgstr "/windows"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "Invalid mount point"
-msgstr "Điểm lắp không hợp lệ"
+msgstr "Điểm gắn không hợp lệ"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "The mount point you entered is invalid."
-msgstr "Bạn đã nhập một điểm lắp không hợp lệ."
+msgstr "Bạn đã nhập một điểm gắn không hợp lệ."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "Mount points must start with \"/\". They cannot contain spaces."
-msgstr "Mọi điểm lắp phải bắt đầu bằng « / ». Không cho phẹp dấu cách."
+msgstr "Mọi điểm gắn phải bắt đầu bằng “/”. Không cho phép chứa dấu cách."
 
 #. Type: string
 #. Description
@@ -487,29 +483,41 @@ msgstr "chuẩn"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Cách dùng điển hình của phân vùng này:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
 "system parameters can be chosen for that use."
 msgstr ""
-"Hãy ghi ro hệ thống tập tin này sẽ được sử dụng như thế nào, để có khả năng "
-"chọn các tham số hệ thống tập tin tốt nhất cho cách sử dụng đó."
+"Hãy chỉ định hệ thống tập tin này sẽ được sử dụng như thế nào, để có khả "
+"năng chọn các tham số hệ thống tập tin tốt nhất cho cách sử dụng đó."
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
 "standard\t\ttham số _chuẩn_\n"
-"news\t\tmột nút thông tin trong mỗi khối 4KB (_tín tức_)\n"
+"news\t\tmột nút thông tin trong mỗi khối 4KB (_mới_)\n"
 "largefile\t\tmột nút thông tin trong mỗi MB (_tập tin lớn_)\n"
 "largefile4\t\tmột nút thông tin trong mỗi 4MB"
 
@@ -519,7 +527,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:28001
 msgid "Mount point:"
-msgstr "Điểm lắp:"
+msgstr "Điểm gắn:"
 
 #. Type: text
 #. Description
@@ -581,9 +589,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "Hệ thống tập tin ghi nhật ký JFS"
+msgstr "Hệ thống tập tin ghi nhật ký NTFS"
 
 #. Type: text
 #. Description
@@ -591,7 +598,7 @@ msgstr "Hệ thống tập tin ghi nhật ký JFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -601,7 +608,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:38001
 #: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
-msgstr "vùng trao đổi"
+msgstr "vùng tráo đổi"
 
 #. Type: text
 #. Description
@@ -614,7 +621,7 @@ msgstr "vùng trao đổi"
 #: ../partman-basicfilesystems.templates:39001
 #: ../partman-basicfilesystems.templates:41001
 msgid "swap"
-msgstr "trao đổi"
+msgstr "tráo đổi"
 
 #. Type: text
 #. Description
@@ -624,14 +631,14 @@ msgstr "trao đổi"
 #: ../partman-basicfilesystems.templates:42001
 #: ../partman-basicfilesystems.templates:43001
 msgid "Mount options:"
-msgstr "Tùy chọn lắp:"
+msgstr "Tùy chọn gắn:"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
-msgstr "Các tùy chọn lắp có thể điều chỉnh ứng xử của hệ thống tập tin."
+msgstr "Các tùy chọn gắn có thể điều chỉnh ứng xử của hệ thống tập tin."
 
 #. Type: text
 #. Description
@@ -648,9 +655,8 @@ msgstr "noatime — không cập nhật giờ truy cập inode mỗi khi truy c�
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime — không cập nhật giờ truy cập inode mỗi khi truy cập"
+msgstr "nodiratime — không cập nhật giờ truy cập thư mục mỗi khi truy cập"
 
 #. Type: text
 #. Description
@@ -688,7 +694,7 @@ msgstr "nosuid — bỏ qua bit set-user-identifier hay set-group-identifier"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
-msgstr "noexec — không cho phép thực hiện tập tin nhị phân"
+msgstr "noexec — không cho phép thực thi bất kỳ tin nhị phân nào"
 
 #. Type: text
 #. Description
@@ -697,7 +703,7 @@ msgstr "noexec — không cho phép thực hiện tập tin nhị phân"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
-msgstr "ro — lắp hệ thống tập tin là chỉ đọc"
+msgstr "ro — gắn hệ thống tập tin chỉ cho phép đọc"
 
 #. Type: text
 #. Description
@@ -715,7 +721,7 @@ msgstr "sync — mọi hành động nhập/xuất xảy ra đồng bộ"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
-msgstr "usrquota — kế toán chỉ tiêu đĩa người dùng đã bật"
+msgstr "usrquota — tính toán hạn ngạch đĩa cho người dùng đã bật"
 
 #. Type: text
 #. Description
@@ -724,7 +730,7 @@ msgstr "usrquota — kế toán chỉ tiêu đĩa người dùng đã bật"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
-msgstr "grpquota — kế toán chỉ tiêu đĩa nhóm đã bật"
+msgstr "grpquota — tính toán hạn ngạch đĩa cho nhóm đã bật"
 
 #. Type: text
 #. Description
@@ -733,7 +739,7 @@ msgstr "grpquota — kế toán chỉ tiêu đĩa nhóm đã bật"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:54001
 msgid "user_xattr - support user extended attributes"
-msgstr "user_xattr — hỗ trợ thuộc tính kéo dài bởi người dùng"
+msgstr "user_xattr — hỗ trợ thuộc tính người dùng mở rộng"
 
 #. Type: text
 #. Description
@@ -742,7 +748,7 @@ msgstr "user_xattr — hỗ trợ thuộc tính kéo dài bởi người dùng"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
-msgstr "quiet — việc thay đổi người chủ và quyền hạn không trả về lỗi"
+msgstr "quiet — việc thay đổi chủ sở hữu và quyền hạn không trả về lỗi"
 
 #. Type: text
 #. Description
@@ -751,7 +757,7 @@ msgstr "quiet — việc thay đổi người chủ và quyền hạn không tr�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
-msgstr "notail — tắt đóng gói tâp tin vào cây hệ thống tập tin"
+msgstr "notail — tắt đóng gói tập tin vào cây hệ thống tập tin"
 
 #. Type: text
 #. Description
@@ -760,7 +766,7 @@ msgstr "notail — tắt đóng gói tâp tin vào cây hệ thống tập tin"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - các khối trim freed từ thiết bị khối cấp dưới"
 
 #. Type: text
 #. Description
@@ -779,7 +785,7 @@ msgstr ""
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
-msgstr "shortnames — chỉ sử dụng tên tập tin kiểu MS-DOS 8.3 cũ (tên ngắn)"
+msgstr "shortnames — chỉ sử dụng tên tập tin ngắn kiểu MS-DOS 8.3 cũ"
 
 #. Type: boolean
 #. Description
@@ -796,15 +802,14 @@ msgstr "Trở về trình đơn để sửa chữa lỗi này chứ ?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Phân vùng khởi động của bạn chưa được cấu hình bằng hệ thống tập tin ext2 "
-"hay ext3. Trường hợp này cần thiết để khởi động máy này. Hãy quay lại và sử "
-"dụng hệ thống tập tin kiểu hoặc ext2 hoặc ext3."
+"Phân vùng khởi động của bạn chưa được cấu hình bằng hệ thống tập tin ext2. "
+"Việc này là cần thiết để có thể khởi động máy. Hãy quay lại và sử dụng hệ "
+"thống tập tin kiểu ext2."
 
 #. Type: boolean
 #. Description
@@ -826,12 +831,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
 "Phân vùng khởi động của bạn không nằm trên phân vùng chính thứ nhất của đĩa "
-"cứng. Trường hợp này cần thiết để khởi động máy này. Hãy trở về và sử dụng "
-"phân vùng chính thứ nhất như là phân vùng khởi động."
+"cứng. Việc này là cần thiết để khởi động máy. Hãy trở về và sử dụng phân "
+"vùng chính thứ nhất như là phân vùng khởi động."

@@ -28,16 +28,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2014-01-08 11:31:26 GMT+0100\n"
-"Last-Translator: Judit Gyimesi <judit.gyimesi.x@gmail.com>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2017-11-26 20:32+0000\n"
+"Last-Translator: Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>\n"
 "Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
 "org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
@@ -734,12 +734,20 @@ msgstr "szokásos"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "E partíció jellemző használata:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -750,6 +758,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -847,9 +859,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "JFS naplózó fájlrendszer"
+msgstr "NTFS naplózó fájlrendszer"
 
 #. Type: text
 #. Description
@@ -857,7 +868,7 @@ msgstr "JFS naplózó fájlrendszer"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 # Type: text
 # Description
@@ -1173,15 +1184,14 @@ msgstr "Visszalép a menübe és javítja e hibát?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"A rendszerindító partíciót nem a ext2 vagy ext3 fájlrendszerrel "
-"konfiguráltad. Ez szükséges az indításhoz. Lépj vissza és válaszd a régi "
-"ext2 vagy ext3 fájlrendszert."
+"A rendszerindító partíciód nem ext2 fájlrendszerrel konfiguráltad. Ez "
+"szükséges a géped elindításához. Kérlek lépj vissza és válaszd az ext2 "
+"fájlrendszert."
 
 # #-#-#-#-#  templates.pot (partman-basicfilesystems)  #-#-#-#-#
 # Type: boolean
@@ -1217,12 +1227,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"A rendszerindító partíció nem a merevlemez legelső elsődleges partícióján "
-"található. Ez szükséges az indításhoz. Lépj vissza és rendszerindító "
-"partíciónak válaszd a legelső elsődleges partíciót."
+"A rendszerindító partíciód nem a merevlemez első partícióján található. Ez "
+"szükséges a géped indításához. Kérlek lépj vissza és rendszerindító "
+"partíciónak válaszd az első partíciót."

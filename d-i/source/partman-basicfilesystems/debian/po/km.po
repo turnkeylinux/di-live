@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: km\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
 "PO-Revision-Date: 2012-01-18 15:40+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -467,12 +467,20 @@ msgstr "ខ្នាត​គំរូ"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "ការ​ប្រើប្រាស់​ទូទៅ​នៃ​ភាគថាស​នេះ ៖"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -483,13 +491,17 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"ខ្នាតគំរូ = ប៉ារ៉ាម៉ែត្រ​ខ្នាត​គំរូ, ព័ត៌មាន = មួយ​អាយណូត/៤គីឡូបៃ, ឯកសារ​ធំ = មួយ​អាយណូត/១មេកាបៃ​, "
-"ឯកសារ​ធំ៤ = មួយ​អាណូត/៤មេកាបៃ ។"
+"ខ្នាតគំរូ = ប៉ារ៉ាម៉ែត្រ​ខ្នាត​គំរូ, news = មួយ​អាយណូត/៤គីឡូបៃ, largefile = មួយ​អាយណូត/១មេកាបៃ​, "
+"largefile4 = មួយ​អាណូត/៤មេកាបៃ ។"
 
 #. Type: text
 #. Description

@@ -35,8 +35,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2013-01-19 12:07+0200\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2015-04-08 22:04+0300\n"
 "Last-Translator: Ioan Eugen Stan <stan.ieugen@gmail.com>\n"
 "Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
 "Language: ro\n"
@@ -506,12 +506,20 @@ msgstr "standard"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
-msgstr "Utilizare tipică pentru acestă partiție:"
+msgstr "Utilizare tipică pentru această partiție:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -522,6 +530,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -598,9 +610,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "sistem de fișiere JFS cu jurnalizare"
+msgstr "sistem de fișiere NTFS cu jurnalizare"
 
 #. Type: text
 #. Description
@@ -608,7 +619,7 @@ msgstr "sistem de fișiere JFS cu jurnalizare"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -665,9 +676,8 @@ msgstr "noatime - nu actualiza timpii de acces (în inod) la fiecare acces"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - nu actualiza timpii de acces (în inod) la fiecare acces"
+msgstr "nodiratime - nu actualiza timpii de acces ai directorului"
 
 #. Type: text
 #. Description
@@ -776,7 +786,7 @@ msgstr "notail - fără împachetarea fișierelor în sistemul de fișiere"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - curăță blocurile libere de pe dispozitiv"
 
 #. Type: text
 #. Description
@@ -811,16 +821,14 @@ msgstr "Înapoi la meniu pentru a corecta această problemă?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
 "Partiția dumneavoastră de pornire nu a fost configurată cu sistemul de "
-"fișiere ext2 sau ext3. Acest lucru este necesar sistemului dumneavoastră "
-"pentru a putea porni. Vă rugăm folosiți unul din sistemele de fișiere ext2 "
-"sau ext3."
+"fișiere ext2. Acest lucru este necesar sistemului dumneavoastră pentru a "
+"putea porni. Vă rugăm folosiți sistemul de fișiere ext2."
 
 #. Type: boolean
 #. Description
@@ -843,13 +851,12 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"Partiția dumneavoastră de pornire nu se află pe prima partiție primară a "
-"discului fix. Acest lucru este necesar pentru ca sistemul dumneavoastră să "
-"pornească. Vă rugăm să vă întoarceți și să utilizați prima partiție primară "
-"ca partiție de pornire."
+"Partiția dumneavoastră de pornire nu se află pe prima partiție a discului "
+"fix. Acest lucru este necesar pentru ca sistemul dumneavoastră să pornească. "
+"Vă rugăm să vă întoarceți și să utilizați prima partiție ca partiție de "
+"pornire."

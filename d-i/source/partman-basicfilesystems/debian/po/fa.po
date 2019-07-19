@@ -6,7 +6,7 @@
 # Persian messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# , 2005.
+# Nima Sahraneshin <unix.nima@gmail.com>, 2018.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry - further translations from ICU-3.0
@@ -23,14 +23,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fa\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2012-10-20 19:56+0330\n"
-"Last-Translator: Behrad Eslamifar <behrad_es@yahoo.com>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2019-01-01 17:49+0000\n"
+"Last-Translator: nima sahraneshin <unix.nima@gmail.com>\n"
 "Language-Team: Debian-l10n-persian <debian-l10n-persian@lists.debian.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: text
 #. Description
@@ -483,12 +484,20 @@ msgstr "استاندارد"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "استفاده معمول از این پارتیشن:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -499,6 +508,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -539,7 +552,7 @@ msgstr "فایل سیستم Ext2"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:31001
 msgid "ext2"
-msgstr "ext2"
+msgstr "ای‌اکس‌تی۲"
 
 #. Type: text
 #. Description
@@ -554,7 +567,7 @@ msgstr "فایل سیستم FAT16"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:33001
 msgid "fat16"
-msgstr "fat16"
+msgstr "فت۱۶"
 
 #. Type: text
 #. Description
@@ -569,15 +582,14 @@ msgstr "فایل سیستم FAT32"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:35001
 msgid "fat32"
-msgstr "fat32"
+msgstr "فت۳۲"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "فایل‌سیستم ... JFS"
+msgstr "فایل سیستم ژورنالی NTFS"
 
 #. Type: text
 #. Description
@@ -585,7 +597,7 @@ msgstr "فایل‌سیستم ... JFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ان‌تی‌اف‌اس"
 
 #. Type: text
 #. Description
@@ -642,9 +654,8 @@ msgstr "noatime - دفعات دسترسی‌های inode را برای هر دس
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - دفعات دسترسی‌های inode را برای هر دسترسی به روز نکن"
+msgstr "nodiratime - زمان‌های دسترسی‌ برای inode دایرکتوری را روز نکن"
 
 #. Type: text
 #. Description

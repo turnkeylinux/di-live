@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
 "PO-Revision-Date: 2012-03-13 19:06+0600\n"
 "Last-Translator: Robin Mehdee (রবিন মেহদী) <robin@ankur.org.bd>\n"
 "Language-Team: Bengali \n"
@@ -492,12 +492,20 @@ msgstr "প্রমিত"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "এই পার্টিশনের প্রচলিত ব্যবহার:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -508,13 +516,17 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"স্ট্যান্ডার্ড = স্ট্যান্ডার্ড প্যারামিটার, নতুন = প্রতিটি ৪ কিলোবাইট ব্লকের জন্য একটি আই-"
-"নোড, বড়-ফাইল = প্রতি মেগাবাইটের জন্য একটি আই-নোড, বড়-ফাইল-৪ = প্রতি ৮ "
+"স্ট্যান্ডার্ড = স্ট্যান্ডার্ড প্যারামিটার, news = প্রতিটি ৪ কিলোবাইট ব্লকের জন্য একটি আই-"
+"নোড, largefile = প্রতি মেগাবাইটের জন্য একটি আই-নোড, largefile4 = প্রতি ৮ "
 "মেগাবাইটের জন্য একটি আই-নোড।"
 
 #. Type: text

@@ -65,9 +65,6 @@ for dev in $DEVICES/*; do
 			else
 				echo "$path" "$mountpoint" ext2 $options 0 $pass
 			fi
-			if [ "$os" = hurd ] ; then
-				settrans -pk "/target/$mountpoint" /hurd/ext2fs.static -T device "${path#/dev/}"
-			fi
 			;;
 		    fat16|fat32)
 			[ -f "$id/mountpoint" ] || continue
@@ -88,14 +85,7 @@ for dev in $DEVICES/*; do
 						options="$options,utf8"
 					fi
 				fi
-				# base-passwd defines gid 46 as group plugdev
-				if [ "$method" != efi ]; then
-					options="$options,umask=007,gid=46"
-				fi
-				echo "$path" "$mountpoint" vfat $options 0 1
-			fi
-			if [ "$os" = hurd ] ; then
-				settrans -pk "/target/$mountpoint" /hurd/fatfs "$path"
+				echo "$path" "$mountpoint" vfat $options 0 0
 			fi
 			;;
 		    ntfs)
@@ -105,8 +95,7 @@ for dev in $DEVICES/*; do
 			if [ "$utf8" ] && [ ! -f /var/lib/partman/ntfs-3g ]; then
 				options="$options,nls=utf8"
 			fi
-			# base-passwd defines gid 46 as group plugdev
-			echo "$path" "$mountpoint" ntfs $options,umask=007,gid=46 0 0
+			echo "$path" "$mountpoint" ntfs $options 0 0
 			;;
 		esac
 	done
