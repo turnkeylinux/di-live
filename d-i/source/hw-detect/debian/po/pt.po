@@ -18,6 +18,7 @@ msgstr ""
 "PO-Revision-Date: 2010-06-03 11:57+0100\n"
 "Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team:  Portuguese <traduz@debianpt.org>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -164,28 +165,6 @@ msgstr "Não foi encontrada media particionável."
 #: ../disk-detect.templates:4001
 msgid "Please check that a hard disk is attached to this machine."
 msgstr "Por favor verifique se um disco rígido está ligado a esta máquina."
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid "Activate Serial ATA RAID devices?"
-msgstr "Activar dispositivos ATA RAID de série?"
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid ""
-"One or more drives containing Serial ATA RAID configurations have been "
-"found. Do you wish to activate these RAID devices?"
-msgstr ""
-"Encontraram-se um ou mais discos contendo configurações ATA RAID de série. "
-"Deseja activar estes dispositivos RAID?"
-
-#. Type: text
-#. Description
-#: ../disk-detect.templates:8001
-msgid "login to iSCSI targets"
-msgstr "entrar nos alvos iSCSI"
 
 #. Type: text
 #. Description

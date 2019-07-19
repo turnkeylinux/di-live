@@ -2,7 +2,7 @@
 set -e
 . /usr/share/debconf/confmodule
 
-MISSING=/dev/.udev/firmware-missing
+MISSING='/dev/.udev/firmware-missing /run/udev/firmware-missing'
 DENIED=/tmp/missing-firmware-denied
 
 if [ "x$1" = "x-n" ]; then
@@ -10,6 +10,8 @@ if [ "x$1" = "x-n" ]; then
 else
 	NONINTERACTIVE=""
 fi
+
+IFACES="$@"
 
 log () {
 	logger -t check-missing-firmware "$@"
@@ -21,9 +23,9 @@ get_module () {
 	local devpath=$1
 
 	if [ -d $devpath/driver ]; then
-		# The realpath of the destination of the driver/module
+		# The real path of the destination of the driver/module
 		# symlink should be something like "/sys/module/e100"
-		basename $(realpath $devpath/driver/module) || true
+		basename $(readlink -f $devpath/driver/module) || true
 	elif [ -e $devpath/modalias ]; then
 		modalias="$(cat $devpath/modalias)"
 		# Take the last module returned by modprobe
@@ -32,14 +34,107 @@ get_module () {
 	fi
 }
 
+# Some modules only try to load firmware once brought up. So bring up and
+# then down any interfaces specified by ethdetect.
+upnics() {
+	for iface in $IFACES; do
+		log "taking network interface $iface up/down"
+		ip link set "$iface" up || true
+		ip link set "$iface" down || true
+	done
+}
+
+# Checks if a given module is a nic module and has an interface that
+# is up and has an IP address. Such modules should not be reloaded,
+# to avoid taking down the network after it's been configured.
+nic_is_configured() {
+	module="$1"
+
+	for iface in $(ip -o link show up | cut -d : -f 2); do
+		dir="/sys/class/net/$iface/device/driver"
+		if [ -e "$dir" ] && [ "$(basename "$(readlink "$dir")")" = "$module" ]; then
+			if ip address show scope global dev "$iface" | grep -q 'scope global'; then
+				return 0
+			fi
+		fi
+	done
+
+	return 1
+}
+
+get_fresh_dmesg() {
+	dmesg_file=/tmp/dmesg.txt
+	dmesg_ts=/tmp/dmesg-ts.txt
+
+	# Get current dmesg:
+	dmesg > $dmesg_file
+
+	# Truncate if needed:
+	if [ -f $dmesg_ts ]; then
+		# Transform [foo] into \[foo\] to make it possible to search for
+		# "^$tspattern" (-F for fixed string doesn't play well with ^ to
+		# anchor the pattern on the left):
+		tspattern=$(cat $dmesg_ts | sed 's,\[,\\[,;s,\],\\],')
+		log "looking at dmesg again, restarting from $tspattern"
+
+		# Find the line number for the first match, empty if not found:
+		ln=$(grep -n "^$tspattern" $dmesg_file |sed 's/:.*//'|head -n 1)
+		if [ ! -z "$ln" ]; then
+			log "timestamp found, truncating dmesg accordingly"
+			sed -i "1,$ln d" $dmesg_file
+		else
+			log "timestamp not found, using whole dmesg"
+		fi
+	else
+		log "looking at dmesg for the first time"
+	fi
+
+	# Save the last timestamp:
+	grep -o '^\[ *[0-9.]\+\]' $dmesg_file | tail -n 1 > $dmesg_ts
+	log "saving timestamp for a later use: $(cat $dmesg_ts)"
+
+	# Write and clean-up:
+	cat $dmesg_file
+	rm $dmesg_file
+}
+
 check_missing () {
+	upnics
+
 	# Give modules some time to request firmware.
 	sleep 1
 	
 	modules=""
 	files=""
-	if [ -d "$MISSING" ]; then
-		for file in $(find $MISSING -type l); do
+
+	# The linux kernel and udev no longer let us know via
+	# /dev/.udev/firmware-missing and /run/udev/firmware-missing
+	# which firmware files the kernel drivers look for.  Check
+	# dmesg instead.  See also bug #725714.
+	fwlist=/tmp/check-missing-firmware-dmesg.list
+	get_fresh_dmesg | sed -rn 's/^(\[[^]]*\] )?([^ ]+) [^ ]+: firmware: failed to load ([^ ]+) .*/\2 \3/p' > $fwlist
+	while read module fwfile ; do
+	    log "looking for firmware file $fwfile requested by $module"
+	    if [ ! -e /lib/firmware/$fwfile ] ; then
+		if grep -q "^$fwfile$" $DENIED 2>/dev/null; then
+		    log "listed in $DENIED"
+		    continue
+		fi
+		files="${files:+$files }$fwfile"
+		modules="$module${modules:+ $modules}"
+	    fi
+	done < $fwlist
+
+	# This block looking in $MISSING should be removed when
+	# hw-detect no longer should support installing using older
+	# udev and kernel versions.
+	for missing_dir in $MISSING
+	do
+		if [ ! -d "$missing_dir" ]; then
+			log "$missing_dir does not exist, skipping"
+			continue
+		fi
+		for file in $(find $missing_dir -type l); do
 			# decode firmware filename as encoded by
 			# udev firmware.agent
 			fwfile="$(basename $file | sed -e 's#\\x2f#/#g')"
@@ -62,17 +157,30 @@ check_missing () {
 			if grep -q "^$fwfile$" $DENIED 2>/dev/null; then
 				continue
 			fi
-
-			modules="$module${modules:+ $modules}"
+			
 			files="$fwfile${files:+ $files}"
+
+			if [ "$module" = usbcore ]; then
+				# Special case for USB bus, which puts the
+				# real module information in a subdir of
+				# the devpath.
+				for dir in $(find "$devpath" -maxdepth 1 -mindepth 1 -type d); do
+					module=$(get_module "$dir")
+					if [ -n "$module" ]; then
+						modules="$module${modules:+ $modules}"
+					fi
+				done
+			else
+				modules="$module${modules:+ $modules}"
+			fi
 		done
-	fi
+	done
 
 	if [ -n "$modules" ]; then
 		log "missing firmware files ($files) for $modules"
 		return 0
 	else
-		log "no missing firmware in $MISSING"
+		log "no missing firmware in loaded kernel modules"
 		return 1
 	fi
 }
@@ -135,14 +243,14 @@ ask_load_firmware () {
 }
 
 list_deb_firmware () {
-	ar p "$1" data.tar.gz | tar zt \
+	udpkg -c "$1" \
 		| grep '^\./lib/firmware/' \
 		| sed -e 's!^\./lib/firmware/!!' \
 		| grep -v '^$'
 }
 
 check_deb_arch () {
-	arch=$(ar p "$1" control.tar.gz | tar zxO ./control | grep '^Architecture:' | sed -e 's/Architecture: *//')
+	arch=$(udpkg -f "$1" | grep '^Architecture:' | sed -e 's/Architecture: *//')
 	[ "$arch" = all ] || [ "$arch" = "$(udpkg --print-architecture)" ]
 }
 
@@ -221,10 +329,13 @@ while check_missing && ask_load_firmware; do
 	fi
 
 	# remove and reload modules so they see the new firmware
-	# Sort to only reload a given module once if it ask for more
+	# Sort to only reload a given module once if it asks for more
 	# than one firmware file (example iwlagn)
 	for module in $(echo $modules | tr " " "\n" | sort -u); do
-		modprobe -r $module || true
-		modprobe $module || true
+		if ! nic_is_configured $module; then
+			log "removing and loading kernel module $module"
+			modprobe -r $module || true
+			modprobe $module || true
+		fi
 	done
 done

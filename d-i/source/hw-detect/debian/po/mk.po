@@ -9,19 +9,29 @@
 #
 # Georgi Stanojevski, <glisha@gmail.com>, 2004, 2005, 2006.
 # Georgi Stanojevski <georgis@unet.com.mk>, 2005, 2006.
-# Arangel Angov <ufo@linux.net.mk>, 2008.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2002
+#   Arangel Angov <ufo@linux.net.mk>, 2008.
+#   Free Software Foundation, Inc., 2002,2004
+#   Georgi Stanojevski <glisha@gmail.com>, 2004, 2006.
+# Translations from KDE:
+#   Danko Ilik <danko@mindless.com>
+# Arangel Angov <arangel@linux.net.mk>, 2008, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_mk\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
 "POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2010-07-07 09:44+0100\n"
+"PO-Revision-Date: 2012-04-11 15:54+0200\n"
 "Last-Translator: Arangel Angov <arangel@linux.net.mk>\n"
-"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
+"Language-Team: Macedonian <>\n"
+"Language: mk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: mk\n"
+"Plural-Forms: nplurals=3; plural=(n!=1);\n"
 
 #. Type: select
 #. Choices
@@ -164,27 +174,7 @@ msgstr "Нема медиум кој може да се партиционира
 #. :sl2:
 #: ../disk-detect.templates:4001
 msgid "Please check that a hard disk is attached to this machine."
-msgstr "Провери дали хард-дискот е поврзан со компјутерот."
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid "Activate Serial ATA RAID devices?"
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid ""
-"One or more drives containing Serial ATA RAID configurations have been "
-"found. Do you wish to activate these RAID devices?"
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../disk-detect.templates:8001
-msgid "login to iSCSI targets"
-msgstr ""
+msgstr "Провери дали хард дискот е поврзан со компјутерот."
 
 #. Type: text
 #. Description
@@ -219,7 +209,7 @@ msgstr "Чекам иницијализација на хардверот..."
 #. :sl2:
 #: ../hw-detect.templates:5001
 msgid "Modules to load:"
-msgstr "Модули да се вчитаат:"
+msgstr "Модули за вчитување:"
 
 #. Type: multiselect
 #. Description
@@ -276,9 +266,9 @@ msgid ""
 msgstr ""
 "На некој PCMCIA хардвер  му требаат специјални параметри за тој да работи и "
 "може да предизвика компјутерот да се закочи ако не се конфигурираат. На "
-"пример за некои Dell лаптопи потребно е тука да се внесе „exclude port 0x800-"
-"0x8ff“. Овие параметри ќе бидат додадени во /etc/pcmcia/config.opts. Види го "
-"инстлациониот прирачник или PCMCIA HOWTO за повеќе информации."
+"пример за некои Dell лаптопи потребно е тука да се внесе „exclude port "
+"0x800-0x8ff“. Овие параметри ќе бидат додадени во /etc/pcmcia/config.opts. "
+"Види го инстлациониот прирачник или PCMCIA HOWTO за повеќе информации."
 
 #. Type: string
 #. Description
@@ -388,7 +378,7 @@ msgstr "Датотеките за фирмверот кои што недост�
 #. :sl1:
 #: ../hw-detect.templates:12001
 msgid "Checking for firmware..."
-msgstr "Проверувам фирмвер..."
+msgstr "Проверувам firmware..."
 
 #. Type: text
 #. Description
@@ -397,14 +387,14 @@ msgstr "Проверувам фирмвер..."
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"
 msgstr ""
+"Детектирај ги виртуелните дискови со драјвери од произведувачот на хардвер"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:2001
-#, fuzzy
 msgid "Load drivers from internal virtual driver disk?"
-msgstr "Да ги вчитам драјверите за додатен пренослив уред?"
+msgstr "Да ги вчитам драјверите од интерниот виртуелен диск со драјвери?"
 
 #. Type: boolean
 #. Description
@@ -414,3 +404,5 @@ msgid ""
 "Installing on this hardware may require some drivers provided by the "
 "manufacturer to be loaded from the built-in driver injection disk."
 msgstr ""
+"Инсталирањето на овој хардвер може да побара да бидат вчитани драјвери "
+"достапни преку вградениот диск со драјвери добиен од произведувачот."

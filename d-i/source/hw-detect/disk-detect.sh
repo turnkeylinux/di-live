@@ -2,13 +2,17 @@
 
 set -e
 . /usr/share/debconf/confmodule
-if [ -e /lib/partman/lib/iscsi-base.sh ]; then
-	. /lib/partman/lib/iscsi-base.sh
-fi
 #set -x
 
 if [ "$(uname)" != Linux ]; then
 	exit 0
+fi
+
+# Install mmc modules if no other disks are found
+# (ex: embedded device with µSD storage)
+# TODO: more checks?
+if [ -z "$(list-devices disk)" ]; then
+	anna-install mmc-modules || true
 fi
 
 log () { 
@@ -37,7 +41,7 @@ list_disk_modules() {
 }
 
 disk_found() {
-	for try in 1 2 3; do
+	for try in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
 		if search-path parted_devices; then
 			# Use partman's parted_devices if available.
 			if [ -n "$(parted_devices)" ]; then
@@ -52,7 +56,7 @@ disk_found() {
 		fi
 
 		# Wait for disk to be activated.
-		if [ "$try" != 3 ]; then
+		if [ "$try" != 15 ]; then
 			sleep 2
 		fi
 	done
@@ -109,7 +113,7 @@ EOF
 	fi
 	log-output -t disk-detect /sbin/multipath -v$MP_VERBOSE
 
-	if multipath -l 2>/dev/null | grep -q '^mpath[0-9]\+ '; then
+	if multipath -l 2>/dev/null | grep -q '^mpath[a-z]\+ '; then
 		return 0
 	else
 		return 1
@@ -120,44 +124,14 @@ if ! hw-detect disk-detect/detect_progress_title; then
 	log "hw-detect exited nonzero"
 fi
 
-# Compatibility with old iSCSI preseeding
-db_get open-iscsi/targets || RET=
-if [ "$RET" ]; then
-	if ! pidof iscsid >/dev/null; then
-		iscsi-start
-	fi
-	for portal in $RET; do
-		iscsi_discovery "$portal" -l
-	done
-fi
-
-# New-style preseeding
-if db_fget partman-iscsi/login/address seen && [ "$RET" = true ] && \
-   db_get partman-iscsi/login/address && [ "$RET" ]; then
-	if ! pidof iscsid >/dev/null; then
-		iscsi-start
-	fi
-	db_capb backup
-	iscsi_login
-	db_capb
-fi
-
 while ! disk_found; do
-	CHOICES_C=""
 	CHOICES=""
-	if type iscsi_login >/dev/null 2>&1; then
-		CHOICES_C="${CHOICES_C:+$CHOICES_C, }iscsi"
-		db_metaget disk-detect/iscsi_choice description
-		CHOICES="${CHOICES:+$CHOICES, }$RET"
-	fi
-	for mod in $(list_disk_modules | grep -v iscsi | sort); do
-		CHOICES_C="${CHOICES_C:+$CHOICES_C, }$mod"
+	for mod in $(list_disk_modules | sort); do
 		CHOICES="${CHOICES:+$CHOICES, }$mod"
 	done
 
 	if [ -n "$CHOICES" ]; then
 		db_capb backup
-		db_subst disk-detect/module_select CHOICES-C "$CHOICES_C"
 		db_subst disk-detect/module_select CHOICES "$CHOICES"
 		db_input high disk-detect/module_select || [ $? -eq 30 ]
 		if ! db_go; then
@@ -166,17 +140,9 @@ while ! disk_found; do
 		db_capb
 
 		db_get disk-detect/module_select
-		if [ "$RET" = continue ]; then
+		if [ "$RET" = "continue with no disk drive" ]; then
 			exit 0
-		elif [ "$RET" = iscsi ]; then
-			if ! pidof iscsid >/dev/null; then
-				iscsi-start
-			fi
-			db_capb backup
-			iscsi_login
-			db_capb
-			continue
-		elif [ "$RET" != none ]; then
+		elif [ "$RET" != "none of the above" ]; then
 			module="$RET"
 			if [ -n "$module" ] && is_not_loaded "$module" ; then
 				register-module "$module"
@@ -210,33 +176,25 @@ while ! disk_found; do
 done
 
 # Activate support for Serial ATA RAID
-if anna-install dmraid-udeb; then
-	# Device mapper support is required to run dmraid
-	if ! dmsetup version >/dev/null 2>&1; then
-		module_probe dm-mod || true
-	fi
+db_get disk-detect/dmraid/enable
+if [ "$RET" = true ]; then
+	if anna-install dmraid-udeb; then
+		# Device mapper support is required to run dmraid
+		if is_not_loaded dm-mod; then
+			module_probe dm-mod || true
+		fi
 
-	if dmraid -c -s >/dev/null 2>&1; then
-		logger -t disk-detect "Serial ATA RAID disk(s) detected."
-		# Ask the user whether they want to activate dmraid devices.
-		db_input high disk-detect/activate_dmraid || true
-		db_go
-		db_get disk-detect/activate_dmraid
-		activate_dmraid=$RET
-
-		if [ "$activate_dmraid" = true ]; then
-			mkdir -p /var/lib/disk-detect
-			touch /var/lib/disk-detect/activate_dmraid
-			logger -t disk-detect "Enabling dmraid support."
+		if dmraid -c -s >/dev/null 2>&1; then
+			logger -t disk-detect "Serial ATA RAID disk(s) detected; enabling dmraid support"
 			# Activate only those arrays which have all disks
 			# present.
 			for dev in $(dmraid -r -c); do
 				[ -e "$dev" ] || continue
 				log-output -t disk-detect dmraid-activate "$(basename "$dev")"
 			done
+		else
+			logger -t disk-detect "No Serial ATA RAID disks detected"
 		fi
-	else
-		logger -t disk-detect "No Serial ATA RAID disks detected"
 	fi
 fi
 
@@ -244,16 +202,18 @@ fi
 db_get disk-detect/multipath/enable
 if [ "$RET" = true ]; then
 	if anna-install multipath-udeb; then
+		MODULES="dm-mod dm-multipath dm-round-robin"
 		# We need some dm modules...
 		depmod -a >/dev/null 2>&1 || true
-		if ! dmsetup version >/dev/null 2>&1; then
-			module_probe dm-mod || true
-		fi
-		if ! dmsetup targets | cut -d' ' -f1 | grep -q '^multipath$'; then
-			module_probe dm-multipath || true
-		fi
-		# No way to check whether this is loaded already?
-		log-output -t disk-detect modprobe -v dm-round-robin || true
+		for MODULE in $MODULES; do
+			if is_not_loaded $MODULE; then
+				module_probe $MODULE || true
+			fi
+		done
+
+		# ensure multipath and sg3 udev rules are run before we probe
+                # to see if there are new devices.
+		update-dev >/dev/null
 
 		# Look for multipaths...
 		if multipath_probe; then

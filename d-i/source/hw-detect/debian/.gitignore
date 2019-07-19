@@ -1,0 +1,10 @@
+archdetect
+archdetect-deb
+ethdetect
+hw-detect
+disk-detect
+driver-injection-disk-detect
+*.debhelper*
+*.substvars
+files
+
