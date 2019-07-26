@@ -224,7 +224,7 @@ def main():
             debug = True
 
     if debug:
-        os.environ['DEBCONF_DEVELOPER'] = 'developer'
+        os.environ['DEBCONF_DEBUG'] = 'developer'
         os.environ['DEBIAN_FRONTEND'] = 'readline'
 
     components_dir = '/usr/lib/di-live.d'
