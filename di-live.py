@@ -226,6 +226,8 @@ def main():
     if debug:
         os.environ['DEBCONF_DEBUG'] = 'developer'
         os.environ['DEBIAN_FRONTEND'] = 'readline'
+    else:
+        os.environ['DEBIAN_FRONTEND'] = 'dialog'
 
     components_dir = '/usr/lib/di-live.d'
     menu_template = 'di-live/main_menu'
