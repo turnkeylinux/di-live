@@ -229,6 +229,9 @@ def main():
     else:
         os.environ['DEBIAN_FRONTEND'] = 'dialog'
 
+    # suppress creation of __pycache__ dir; otherwise d-i thinks it's an option...
+    os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
+
     components_dir = '/usr/lib/di-live.d'
     menu_template = 'di-live/main_menu'
     menu_title = 'Debian Installer Live'
