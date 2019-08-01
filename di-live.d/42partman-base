@@ -26,7 +26,6 @@ def main():
                  'partman-auto/automatically_partition',
                  'partman-auto/select_disk',
                  'partman-auto/text/use_device',
-                 'partman-auto/text/resize_use_free',
                  'partman-auto/text/custom_partitioning',
                  'partman-basicfilesystems/fat_mountpoint',
                  'partman-basicfilesystems/mountpoint',
