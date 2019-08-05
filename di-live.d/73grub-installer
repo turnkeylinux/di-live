@@ -10,21 +10,31 @@ class TargetMounts:
     def __init__(self, target='/target'):
         self.targetdev = os.path.join(target, 'dev')
         self.targetproc = os.path.join(target, 'proc')
+        self.targetsys = os.path.join(target, 'sys')
 
         self.mount()
 
     def mount(self):
-        if not is_mounted(self.targetdev):
-            system("mount -o bind /dev %s" % self.targetdev)
+        def _mount(primary_dir, secondary_dir):
+            system("mount", "-o", "bind", primary_dir, secondary_dir)
 
+        if not is_mounted(self.targetdev):
+            _mount("/dev", self.targetdev)
         if not is_mounted(self.targetproc):
-            system("mount -o bind /proc %s" % self.targetproc)
+            _mount("/proc", self.targetproc)
+        if not is_mounted(self.targetsys):
+            _mount("/sys", self.targetsys)
 
     def umount(self):
+        def _umount(mounted_dir):
+            system("umount", "-f", mounted_dir)
+
         if is_mounted(self.targetdev):
-            system("umount -f %s" % self.targetdev)
+            _umount(self.targetdev)
         if is_mounted(self.targetproc):
-            system("umount -f %s" % self.targetproc)
+            _umount(self.targetproc)
+        if is_mounted(self.targetsys):
+            _umount(self.targetsys)
 
     def __del__(self):
         self.umount()

@@ -4,23 +4,7 @@ import os
 import sys
 import debconf
 
-def _mkarg(self, string):
-    """
-    Converts string to a shell command argument
-
-    Note:
-        Removed from python commands library, implementation found at
-        https://hg.python.org/cpython/file/67318d3fa6dc/Lib/commands.py
-    """
-    if '\'' not in x:
-       return ' \'' + x + '\''
-    s = ' "'
-    for c in x:
-        if c in '\\$"`':
-            s = s + '\\'
-        s = s + c
-    s = s + '"'
-    return s
+from subprocess import run, PIPE
 
 LOGFILE = '/var/log/di-live.log'
 def log(s):
@@ -39,9 +23,7 @@ class Chroot:
     def _prepare_command(self, *command):
         env = ['env', '-i' ] + [ name + "=" + val
                                  for name, val in list(self.environ.items()) ]
-
-        command = fmt_command(*command)
-        return ("chroot", self.path, 'sh', '-c', " ".join(env) + " " + command)
+        return ["chroot", self.path, 'sh', '-c'] + env + list(command)
 
     def system(self, *command):
         """execute system command in chroot -> None"""
@@ -107,21 +89,18 @@ class ExecError(Exception):
 def prepend_path(path):
     os.environ['PATH'] = path + ":" + os.environ.get('PATH')
 
-def fmt_command(command, *args):
-    return command + " ".join([_mkarg(arg) for arg in args])
-
 def system(command, *args):
     """Executes <command> with <*args> -> None
     If command returns non-zero exitcode raises ExecError"""
+    command = [command]
+    if args:
+        command.extend(args)
+    run_command = run(command, stdout=PIPE, stderr=PIPE)
+    log(run_command.stdout.decode())
+    if run_command.returncode != 0:
+        log(run_command.stderr.decode())
+        raise ExecError(command, run_command.stderr.decode(), run_command.returncode)
 
-    sys.stdout.flush()
-    sys.stderr.flush()
-
-    command = fmt_command(command, *args)
-    error = os.system(command + " 2>>%s" % LOGFILE)
-    if error:
-        exitcode = os.WEXITSTATUS(error)
-        raise ExecError(command, exitcode)
 
 def dilive_system(command, *args):
     """convenience function for di-live debconf related command execution
@@ -152,12 +131,13 @@ def preset_debconf(resets=None, preseeds=None, seen=None):
         for template, value in seen:
             db.fset(template, 'seen', value)
 
-def is_mounted(dir):
+def is_mounted(directory):
     with open("/proc/mounts", 'r') as fob:
-        mounts = fob.read()
-        if mounts.find(dir) != -1:
-            return True
-        return False
+        for line in fob.readlines():
+            host, guest, *others = line.split(' ')
+            if guest == directory:
+                return True
+    return False
 
 def target_mounted(target='/target'):
     if not os.path.exists(target) or not is_mounted(target):
@@ -170,5 +150,3 @@ def target_mounted(target='/target'):
         return False
 
     return True
-
-

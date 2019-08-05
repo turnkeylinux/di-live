@@ -17,7 +17,7 @@ def deep_umount(target):
     paths.sort(reverse=True)
     for path in paths:
         try:
-            system("umount -f %s" % path)
+            system("umount", "-f", path)
         except:
             pass
 
