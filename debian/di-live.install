@@ -27,6 +27,7 @@ d-i/source/debian-installer-utils/update-dev bin
 d-i/source/debian-installer-utils/user-params bin
 d-i/source/grub-installer/functions.sh usr/share/grub-installer
 d-i/source/grub-installer/grub-installer usr/share/grub-installer
+d-i/source/grub-installer/ensure-active usr/lib/grub-installer
 d-i/source/grub-installer/otheros.sh usr/share/grub-installer
 d-i/source/hw-detect/archdetect bin
 d-i/source/hw-detect/debian/hw-detect/bin/hw-detect bin
