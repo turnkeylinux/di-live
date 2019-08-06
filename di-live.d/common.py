@@ -93,13 +93,14 @@ def system(command, *args):
     """Executes <command> with <*args> -> None
     If command returns non-zero exitcode raises ExecError"""
     command = [command]
+    log('Running command: {} args: {}'.format(command, args))
     if args:
         command.extend(args)
-    run_command = run(command, stdout=PIPE, stderr=PIPE)
-    log(run_command.stdout.decode())
+    run_command = run(command, stderr=PIPE)
     if run_command.returncode != 0:
-        log(run_command.stderr.decode())
-        raise ExecError(command, run_command.stderr.decode(), run_command.returncode)
+        log('Command {}: Exit code {}\nSTDERR: {}'.format(
+            run_command.args, run_command.returncode, run_command.stderr.decode()))
+        raise ExecError(command, run_command.returncode)
 
 
 def dilive_system(command, *args):
