@@ -96,14 +96,17 @@ def prepend_path(path):
     os.environ['PATH'] = path + ":" + os.environ.get('PATH')
 
 
-def system(command, *args):
+def system(command, *args, shell=False):
     """Executes <command> with <*args> -> None
     If command returns non-zero exitcode raises ExecError"""
-    command = [command]
-    log('Running command: {} args: {}'.format(command, args))
+    if isinstance(command, str):
+        command = [command]
+    else: # handle if it's a tuple (or list)
+        comand = list(command)
     if args:
         command.extend(args)
-    run_command = run(command, stderr=PIPE)
+    log('Running command: {}'.format(command))
+    run_command = run(command, stderr=PIPE, shell=shell)
     if run_command.returncode != 0:
         log('Command {}: Exit code {}\nSTDERR: {}'.format(
             run_command.args,

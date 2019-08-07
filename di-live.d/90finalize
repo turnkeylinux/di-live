@@ -43,7 +43,7 @@ def reboot():
         cmd.append("systemctl reboot")
 
     if cmd:
-        system("; ".join(cmd))
+        system("; ".join(cmd), shell=True)
 
 
 def main():
