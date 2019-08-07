@@ -16,8 +16,10 @@ compat/udpkg usr/lib/di-live/compat
 d-i/source/preseed/preseed_command bin
 d-i/source/base-installer/library.sh usr/lib/base-installer
 d-i/source/debian-installer-utils/block-attr bin
+d-i/source/debian-installer-utils/chroot-setup.sh lib
 d-i/source/debian-installer-utils/debconf-get bin
 d-i/source/debian-installer-utils/debian/di-utils/bin/list-devices bin
+d-i/source/debian-installer-utils/in-target bin
 d-i/source/debian-installer-utils/log-output bin
 d-i/source/debian-installer-utils/mapdevfs bin
 d-i/source/debian-installer-utils/post-base-installer.d usr/lib/di-live/debian-installer-utils
