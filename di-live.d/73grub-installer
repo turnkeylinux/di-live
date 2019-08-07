@@ -12,7 +12,7 @@ class TargetMounts:
         self.targetdev = os.path.join(target, 'dev')
         self.targetproc = os.path.join(target, 'proc')
         self.targetsys = os.path.join(target, 'sys')
-
+        self.targetrun = os.path.join(target, 'run')
         self.mount()
 
     def mount(self):
@@ -30,12 +30,20 @@ class TargetMounts:
         def _umount(mounted_dir):
             system("umount", "-f", mounted_dir)
 
+        if is_mounted(self.targetsys):
+            with open("/proc/mounts", 'r') as fob:
+                for line in fob.readlines():
+                    host, guest, *others = line.split(' ')
+                    if (guest.startswith(self.targetsys)
+                            and not guest == self.targetsys):
+                        _umount(guest)
+            _umount(self.targetsys)
         if is_mounted(self.targetdev):
             _umount(self.targetdev)
         if is_mounted(self.targetproc):
             _umount(self.targetproc)
-        if is_mounted(self.targetsys):
-            _umount(self.targetsys)
+        if is_mounted(self.targetrun):
+            _umount(self.targetrun)
 
     def __del__(self):
         self.umount()
