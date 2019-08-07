@@ -7,6 +7,7 @@ from common import dilive_system, is_mounted
 sys_paths = {'dev': 0o755, 'proc': 0o555, 'sys': 0o555, 'run': 0o755,
              'tmp': 0o1777}
 
+
 def _chkdirs(path='/target'):
     """Check that /target dir is mounted; then check that important sys dirs
        (e.g. dev, proc, etc) exist - if not create them, with correct
@@ -19,6 +20,7 @@ def _chkdirs(path='/target'):
         return True
 
     return False
+
 
 def main():
     _chkdirs('/target')

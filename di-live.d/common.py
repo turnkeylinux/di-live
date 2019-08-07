@@ -7,27 +7,32 @@ import debconf
 from subprocess import run, PIPE
 
 LOGFILE = '/var/log/di-live.log'
+
+
 def log(s):
     with open(LOGFILE, 'a') as fob:
         fob.write(s + "\n")
 
+
 class Chroot:
     def __init__(self, newroot, environ={}):
-        self.environ = { 'HOME': '/root',
-                         'TERM': os.environ['TERM'],
-                         'LC_ALL': 'C',
-                         'PATH': "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/bin:/usr/sbin" }
+        PATH = "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/bin:/usr/sbin"
+        self.environ = {'HOME': '/root',
+                        'TERM': os.environ['TERM'],
+                        'LC_ALL': 'C',
+                        'PATH': PATH}
         self.environ.update(environ)
         self.path = os.path.realpath(newroot)
 
     def _prepare_command(self, *command):
-        env = ['env', '-i' ] + [ name + "=" + val
-                                 for name, val in list(self.environ.items()) ]
+        env = ['env', '-i'] + [name + "=" + val
+                               for name, val in list(self.environ.items())]
         return ["chroot", self.path, 'sh', '-c'] + env + list(command)
 
     def system(self, *command):
         """execute system command in chroot -> None"""
         system(*self._prepare_command(*command))
+
 
 class Debconf:
     def __init__(self):
@@ -63,7 +68,7 @@ class Debconf:
                 if not password and not allow_empty:
                     self._db_input('di-live/password_empty')
                     continue
-                
+
                 break
 
             self._db_input('di-live/password_mismatch')
@@ -86,8 +91,10 @@ class ExecError(Exception):
                                                           self.command)
         return str
 
+
 def prepend_path(path):
     os.environ['PATH'] = path + ":" + os.environ.get('PATH')
+
 
 def system(command, *args):
     """Executes <command> with <*args> -> None
@@ -99,7 +106,9 @@ def system(command, *args):
     run_command = run(command, stderr=PIPE)
     if run_command.returncode != 0:
         log('Command {}: Exit code {}\nSTDERR: {}'.format(
-            run_command.args, run_command.returncode, run_command.stderr.decode()))
+            run_command.args,
+            run_command.returncode,
+            run_command.stderr.decode()))
         raise ExecError(command, run_command.returncode)
 
 
@@ -115,6 +124,7 @@ def dilive_system(command, *args):
     except ExecError as e:
         log(str(e))
         sys.exit(e.exitcode)
+
 
 def preset_debconf(resets=None, preseeds=None, seen=None):
     debconf.runFrontEnd()
@@ -132,6 +142,7 @@ def preset_debconf(resets=None, preseeds=None, seen=None):
         for template, value in seen:
             db.fset(template, 'seen', value)
 
+
 def is_mounted(directory):
     with open("/proc/mounts", 'r') as fob:
         for line in fob.readlines():
@@ -139,6 +150,7 @@ def is_mounted(directory):
             if guest == directory:
                 return True
     return False
+
 
 def target_mounted(target='/target'):
     if not os.path.exists(target) or not is_mounted(target):

@@ -6,6 +6,7 @@ import debconf
 
 from common import system
 
+
 def deep_umount(target):
     paths = []
     with open("/proc/mounts", 'r') as fob:
@@ -20,6 +21,7 @@ def deep_umount(target):
             system("umount", "-f", path)
         except:
             pass
+
 
 def reboot():
     template = 'di-live/reboot_now'
@@ -43,6 +45,7 @@ def reboot():
     if cmd:
         system("; ".join(cmd))
 
+
 def main():
     deep_umount('/target')
     with open('/tmp/.di-live-finalize', 'w') as fob:
@@ -52,4 +55,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -26,12 +26,16 @@ import debconf
 from os.path import *
 
 LOGFILE = '/var/log/di-live.log'
+
+
 def log(s):
     with open(LOGFILE, 'a') as fob:
         fob.write(s + "\n")
 
+
 class Error(Exception):
     pass
+
 
 class Debian_Priority:
     """class for controlling DEBIAN_PRIORITY"""
@@ -67,6 +71,7 @@ class Debian_Priority:
             self.set('low')
         else:
             self.set('medium')
+
 
 class Menu:
     """class for controlling a debconf menu with choices"""
@@ -113,6 +118,7 @@ class Menu:
             return self.choices[ret]
         return ret
 
+
 class Component:
     """class for managing a component"""
 
@@ -129,6 +135,7 @@ class Component:
 
         self.exitcode = 0
         return True
+
 
 class Components(dict):
     """class for holding components"""
@@ -161,9 +168,10 @@ class Components(dict):
 
         name = basename(path)
         self[name] = Component(path)
-    
+
     def remove(self, name):
         del self[name]
+
 
 class Components_Menu:
     """class to mimic d-i main-menu"""
@@ -176,7 +184,7 @@ class Components_Menu:
 
     def _get_next_component(self):
         if self.priority.get() in ('low', 'medium'):
-            self.menu.display([ c.name for c in self.components ])
+            self.menu.display([c.name for c in self.components])
             choice = self.menu.get_choice()
 
             for c in self.components:
@@ -203,12 +211,14 @@ class Components_Menu:
             else:
                 self.priority.decrease()
 
+
 def usage(s=None):
     if s:
         print("Error:", s, file=sys.stderr)
     print("Syntax: %s [options]" % sys.argv[0], file=sys.stderr)
     print(__doc__, file=sys.stderr)
     sys.exit(1)
+
 
 def main():
     try:
@@ -229,7 +239,7 @@ def main():
     else:
         os.environ['DEBIAN_FRONTEND'] = 'dialog'
 
-    # suppress creation of __pycache__ dir; otherwise d-i thinks it's an option...
+    # suppress creation of __pycache__ dir so it does not show in menu.
     os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
 
     components_dir = '/usr/lib/di-live.d'
@@ -241,4 +251,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
