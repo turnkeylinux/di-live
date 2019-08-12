@@ -10,6 +10,7 @@
 # preseed
 additions/partman/check.d/* lib/partman/check.d
 additions/partman/commit.d/* lib/partman/commit.d
+additions/live-installer/support/squashfs lib/live-installer/support
 compat/anna-install usr/lib/di-live/compat
 compat/apt-install usr/lib/di-live/compat
 compat/udpkg usr/lib/di-live/compat
@@ -36,7 +37,6 @@ d-i/source/hw-detect/debian/hw-detect/bin/hw-detect bin
 d-i/source/hw-detect/debian/hw-detect/bin/sysfs-update-devnames bin
 d-i/source/live-installer/live-installer lib/live-installer
 d-i/source/live-installer/src/print-inodes bin
-d-i/source/live-installer/support/rofs lib/live-installer/support
 d-i/source/partconf/debian/partconf-*/* .
 d-i/source/partman-*/debian/partman-*/* .
 di-live.d /usr/lib
