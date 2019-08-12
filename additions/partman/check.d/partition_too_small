@@ -41,8 +41,8 @@ for part in $parts; do
 	mountpoint="${part%,*}"
 	size="${part#*,}"
 	if [ "$mountpoint" = "/" ]; then
-		if [ -e /cdrom/casper/filesystem.size ]; then
-			rofssize="$(cat /cdrom/casper/filesystem.size)"
+		if [ -e /cdrom/live/filesystem.size ]; then
+			rofssize="$(cat /cdrom/live/filesystem.size)"
 		else
 			rofssize="$(du -s --block-size=1 /rofs | cut -f1)"
 		fi
