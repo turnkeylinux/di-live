@@ -34,6 +34,9 @@ def reboot():
     db.input(debconf.HIGH, template)
     db.go()
 
+    system("/bin/live-medium-cache")
+    system("/bin/live-medium-eject")
+
     cmd = []
     fgvt = os.environ.get("FGVT")
     if fgvt:
@@ -48,8 +51,6 @@ def reboot():
 
 def main():
     deep_umount('/target')
-    with open('/tmp/.di-live-finalize', 'w') as fob:
-        fob.write('')
     reboot()
 
 
