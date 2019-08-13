@@ -8,6 +8,7 @@ from common import system
 
 
 def deep_umount(target):
+    system("swapoff", "-a")
     paths = []
     with open("/proc/mounts", 'r') as fob:
         for mount in fob.readlines():
@@ -24,6 +25,7 @@ def deep_umount(target):
 
 
 def reboot():
+
     template = 'di-live/reboot_now'
 
     debconf.runFrontEnd()
@@ -34,19 +36,21 @@ def reboot():
     db.input(debconf.HIGH, template)
     db.go()
 
-    system("/bin/live-medium-cache")
-    system("/bin/live-medium-eject")
-
-    cmd = []
     fgvt = os.environ.get("FGVT")
     if fgvt:
-        cmd.append("chvt %s" % fgvt)
+        chvt="chvt {}".format(fgvt)
+    else:
+        chvt=False
 
     if db.getBoolean(template):
-        cmd.append("systemctl reboot")
-
-    if cmd:
-        system("; ".join(cmd), shell=True)
+        for command in ["/bin/live-medium-cache",
+                        "/bin/live-medium-eject",
+                        "/usr/bin/systemctl reboot"]:
+            if chvt:
+                command = "; ".join([chvt, command])
+                system(command, shell=True, write_log=False)
+            else:
+                system(command.split(), write_log=False)
 
 
 def main():
