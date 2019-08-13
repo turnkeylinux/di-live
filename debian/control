@@ -26,6 +26,9 @@ Depends:
  libdebconfclient0,
  os-prober,
  python3 (>= 3.5),
+ live-boot-initramfs-tools,
+ live-boot,
+ live-tools,
  ${misc:Depends},
  ${shlibs:Depends},
 Recommends:
