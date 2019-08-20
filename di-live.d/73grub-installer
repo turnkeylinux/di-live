@@ -4,7 +4,7 @@
 import os
 import sys
 
-from common import dilive_system, system, target_mounted, is_mounted
+from common import dilive_system, system, target_mounted, is_mounted, preset_debconf
 
 
 class TargetMounts:
@@ -55,6 +55,9 @@ def main():
 
     # mount bind dev, proc & sys on target otherwise grub-installer will fail
     targetmounts = TargetMounts('/target')
+
+    preseeds = [('grub-installer/only_debian', 'true')]
+    preset_debconf(resets=[], preseeds=preseeds, seen=[])
 
     dilive_system('/usr/share/grub-installer/grub-installer', '/target')
 

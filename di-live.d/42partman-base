@@ -47,7 +47,8 @@ def main():
                  'partman/exception_handler_note']
 
     preseeds = [('partman-auto-lvm/new_vg_name', 'turnkey'),
-                ('partman-auto-lvm/guided_size', '90%')]
+                ('partman-auto-lvm/guided_size', '90%'),
+                ('partman-auto/choose_recipe', 'atomic')]
 
     # hack: if not seen the default value will be max size
     seen = [('partman-auto-lvm/guided_size', True)]
