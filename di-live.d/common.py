@@ -15,24 +15,34 @@ def log(s):
 
 
 class Chroot:
+    """Run commands inside a chroot"""
+
     def __init__(self, newroot, environ={}):
+        # hack to allow exiting the chroot later - see rest in __del__()
+        self.real_root = os.open('/', os.O_RDONLY)
+        self.initial_cwd = os.getcwd()
+
         PATH = "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/bin:/usr/sbin"
         self.environ = {'HOME': '/root',
                         'TERM': os.environ['TERM'],
                         'LC_ALL': 'C',
                         'PATH': PATH}
         self.environ.update(environ)
-        self.path = os.path.realpath(newroot)
 
-    def _prepare_command(self, *command):
-        env = ['env', '-i'] + [name + "=" + val
-                               for name, val in list(self.environ.items())]
-        return ["chroot", self.path, 'sh', '-c'] + env + list(command)
+        # enter chroot and explicitly change to chroot's root; as python cwd
+        # is not auto updated and python cwd may not exist in chroot
+        os.chroot(newroot)
+        os.chdir('/')
 
-    def system(self, *command):
+    def system(self, *command, shell=False):
         """execute system command in chroot -> None"""
-        system(*self._prepare_command(*command))
+        system(command, shell=shell, env=self.environ)
 
+    def __del__(self):
+        # hack to escape python chroot and get back to initial cwd
+        os.fchdir(self.real_root)
+        os.chroot('.')
+        os.chdir(self.initial_cwd)
 
 class Debconf:
     def __init__(self):
@@ -138,7 +148,7 @@ def prepend_path(path):
     os.environ['PATH'] = path + ":" + os.environ.get('PATH')
 
 
-def system(command, *args, shell=False, write_log=True):
+def system(command, *args, shell=False, write_log=True, env=os.environ):
     """Executes <command> with <*args> -> None
     If command returns non-zero exitcode raises ExecError"""
     if isinstance(command, str):
@@ -149,7 +159,7 @@ def system(command, *args, shell=False, write_log=True):
         command.extend(args)
     if write_log:
         log('Running command: {}'.format(command))
-    run_command = run(command, stderr=PIPE, shell=shell)
+    run_command = run(command, stderr=PIPE, shell=shell, env=env)
     if run_command.returncode != 0:
         if write_log:
             log('Command {}: Exit code {}\nSTDERR: {}'.format(

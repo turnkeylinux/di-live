@@ -2,11 +2,12 @@
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 import os
-from common import dilive_system, is_mounted
+from common import dilive_system, is_mounted, TargetMounts, Chroot
 
 sys_paths = {'dev': 0o755, 'proc': 0o555, 'sys': 0o555, 'run': 0o755,
              'tmp': 0o1777}
 
+pkgs_to_clean = ['di-live', 'live-boot', 'live-tools', 'live-boot-initramfs-tools']
 
 def _chkdirs(path='/target'):
     """Check that /target dir is mounted; then check that important sys dirs
@@ -22,9 +23,17 @@ def _chkdirs(path='/target'):
     return False
 
 
+def clean_chroot_pkgs(*pkgs, path='/target'):
+    """Clean up unrequired pkgs from installed system"""
+    targetmounts = TargetMounts(path)
+    chroot = Chroot(path)
+    chroot.system('apt', 'purge', '-y', *pkgs)
+
+
 def main():
     _chkdirs('/target')
     dilive_system('/lib/live-installer/live-installer')
+    clean_chroot_pkgs(*pkgs_to_clean)
 
 
 if __name__ == "__main__":
