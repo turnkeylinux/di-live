@@ -76,6 +76,48 @@ class Debconf:
         return password
 
 
+class TargetMounts:
+    def __init__(self, target='/target'):
+        self.targetdev = os.path.join(target, 'dev')
+        self.targetproc = os.path.join(target, 'proc')
+        self.targetsys = os.path.join(target, 'sys')
+        self.targetrun = os.path.join(target, 'run')
+        self.mount()
+
+    def mount(self):
+        def _mount(primary_dir, secondary_dir):
+            system("mount", "-o", "bind", primary_dir, secondary_dir)
+
+        if not is_mounted(self.targetdev):
+            _mount("/dev", self.targetdev)
+        if not is_mounted(self.targetproc):
+            _mount("/proc", self.targetproc)
+        if not is_mounted(self.targetsys):
+            _mount("/sys", self.targetsys)
+
+    def umount(self):
+        def _umount(mounted_dir):
+            system("umount", "-f", mounted_dir)
+
+        if is_mounted(self.targetsys):
+            with open("/proc/mounts", 'r') as fob:
+                for line in fob.readlines():
+                    host, guest, *others = line.split(' ')
+                    if (guest.startswith(self.targetsys)
+                            and not guest == self.targetsys):
+                        _umount(guest)
+            _umount(self.targetsys)
+        if is_mounted(self.targetdev):
+            _umount(self.targetdev)
+        if is_mounted(self.targetproc):
+            _umount(self.targetproc)
+        if is_mounted(self.targetrun):
+            _umount(self.targetrun)
+
+    def __del__(self):
+        self.umount()
+
+
 class ExecError(Exception):
     """Accessible attributes:
     command     executed command
