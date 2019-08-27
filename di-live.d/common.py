@@ -6,6 +6,8 @@ import debconf
 
 from subprocess import run, PIPE
 
+PIPE = PIPE
+
 LOGFILE = '/var/log/di-live.log'
 
 
@@ -29,20 +31,26 @@ class Chroot:
                         'PATH': PATH}
         self.environ.update(environ)
 
+        self.targetmounts = TargetMounts(newroot)
+
         # enter chroot and explicitly change to chroot's root; as python cwd
         # is not auto updated and python cwd may not exist in chroot
         os.chroot(newroot)
         os.chdir('/')
 
-    def system(self, *command, shell=False):
+    def system(self, *command, shell=False, stdout=None):
         """execute system command in chroot -> None"""
-        system(command, shell=shell, env=self.environ)
+        system(command, shell=shell, stdout=stdout, env=self.environ)
 
-    def __del__(self):
+    def exit(self):
         # hack to escape python chroot and get back to initial cwd
         os.fchdir(self.real_root)
         os.chroot('.')
         os.chdir(self.initial_cwd)
+        self.targetmounts.umount()
+
+    def __del__(self):
+        self.exit()
 
 class Debconf:
     def __init__(self):
@@ -148,7 +156,7 @@ def prepend_path(path):
     os.environ['PATH'] = path + ":" + os.environ.get('PATH')
 
 
-def system(command, *args, shell=False, write_log=True, env=os.environ):
+def system(command, *args, shell=False, stdout=None, write_log=True, env=os.environ):
     """Executes <command> with <*args> -> None
     If command returns non-zero exitcode raises ExecError"""
     if isinstance(command, str):
@@ -159,7 +167,7 @@ def system(command, *args, shell=False, write_log=True, env=os.environ):
         command.extend(args)
     if write_log:
         log('Running command: {}'.format(command))
-    run_command = run(command, stderr=PIPE, shell=shell, env=env)
+    run_command = run(command, stderr=PIPE, stdout=stdout, shell=shell, env=env)
     if run_command.returncode != 0:
         if write_log:
             log('Command {}: Exit code {}\nSTDERR: {}'.format(
