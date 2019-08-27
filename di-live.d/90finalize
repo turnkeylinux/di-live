@@ -4,7 +4,17 @@
 import os
 import debconf
 
-from common import system
+from common import system, Chroot, PIPE
+
+pkgs_to_clean = ['di-live', 'live-boot', 'live-tools',
+                 'live-boot-initramfs-tools']
+
+
+def clean_target_pkgs(*pkgs, path='/target'):
+    """Clean up unrequired pkgs from installed system"""
+    chroot = Chroot(path)
+    chroot.system('apt', 'purge', '-y', *pkgs, stdout=PIPE)
+    chroot.exit()
 
 
 def deep_umount(target):
@@ -38,9 +48,9 @@ def reboot():
 
     fgvt = os.environ.get("FGVT")
     if fgvt:
-        chvt="chvt {}".format(fgvt)
+        chvt = "chvt {}".format(fgvt)
     else:
-        chvt=False
+        chvt = False
 
     if db.getBoolean(template):
         for command in ["/bin/live-medium-cache",
@@ -54,6 +64,7 @@ def reboot():
 
 
 def main():
+    clean_target_pkgs(*pkgs_to_clean)
     deep_umount('/target')
     reboot()
 
