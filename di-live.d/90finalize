@@ -46,26 +46,27 @@ def reboot():
     db.input(debconf.HIGH, template)
     db.go()
 
+    cmd = []
     fgvt = os.environ.get("FGVT")
     if fgvt:
-        chvt = "chvt {}".format(fgvt)
-    else:
-        chvt = False
+        cmd.append("chvt {}".format(fgvt))
 
     if db.getBoolean(template):
-        for command in ["/bin/live-medium-cache",
-                        "/bin/live-medium-eject",
-                        "/usr/bin/systemctl reboot"]:
-            if chvt:
-                command = "; ".join([chvt, command])
-                system(command, shell=True, write_log=False)
-            else:
-                system(command.split(), write_log=False)
+        cmd.append("/usr/bin/systemctl reboot")
+
+    if cmd:
+        if len(cmd) == 1:
+            # just reboot?!
+            system(command.split(), write_log=False)
+        elif len(cmd) == 2:
+            # chvt & reboot
+            system("; ".join(cmd), shell=True, write_log=False)
 
 
 def main():
-    clean_target_pkgs(*pkgs_to_clean)
+    clean_target_pkgs(*pkgs_to_clean, path='/target')
     deep_umount('/target')
+    open('/tmp/.di-live-finalize', 'w').close()
     reboot()
 
 

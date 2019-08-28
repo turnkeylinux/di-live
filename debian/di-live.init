@@ -33,15 +33,11 @@ case "$1" in
 
   stop)
         grep -qs boot=live /proc/cmdline || exit 0
-        #[ -e $EJECT_FLAG ] || exit 0
-        #which file >/dev/null || exit 0
-        #which eject >/dev/null || exit 0
+        [ -e $EJECT_FLAG ] || exit 0
 
-        #for path in $(which stty bash true halt reboot sysctl systemctl systemd) /etc/bash.bashrc /etc/rc?.d /lib/systemd /etc/default; do
-        #    cache_path "$path"
-        #done
-
-        #eject -p -m /dev/cdrom >/dev/null 2>&1
+        # scripts provided by live-tools package
+        /bin/live-medium-cache
+        /bin/live-medium-eject
         exit 0
         ;;
 
