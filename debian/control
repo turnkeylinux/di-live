@@ -1,7 +1,7 @@
 Source: di-live
 Section: admin
 Priority: optional
-Maintainer: Alon Swartz <alon@turnkeylinux.org>
+Maintainer: Jeremy Davis <jeremy@turnkeylinux.org>
 Build-Depends:
  cdbs,
  debconf (>= 0.5.0),
