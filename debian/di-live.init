@@ -19,6 +19,23 @@ EJECT_FLAG=/tmp/.di-live-finalize
 set -e
 . /lib/lsb/init-functions
 
+cache_path() {
+    path="$1"
+
+    if [ -d "$path" ]; then
+        find "$path" -type f | xargs cat > /dev/null 2>&1
+    elif [ -f "$path" ]; then
+        if [ -x "$path" ]; then
+            if file "$path" | grep -q 'dynamically linked'; then
+                for lib in $(ldd "$path" | awk '{ print $3 }'); do
+                    cache_path "$lib"
+                done
+            fi
+        fi
+        cat "$path" >/dev/null 2>&1
+    fi
+}
+
 
 case "$1" in
   start)
@@ -34,10 +51,14 @@ case "$1" in
   stop)
         grep -qs boot=live /proc/cmdline || exit 0
         [ -e $EJECT_FLAG ] || exit 0
+        which file >/dev/null || exit 0
+        which eject >/dev/null || exit 0
 
-        # scripts provided by live-tools package
-        /bin/live-medium-cache
-        /bin/live-medium-eject
+        for path in $(which stty bash true halt reboot sysctl systemctl systemd) /etc/bash.bashrc /etc/rc?.d /lib/systemd /etc/default; do
+            cache_path "$path"
+        done
+
+        eject -p -m /cdrom >/dev/null 2>&1
         exit 0
         ;;
 
