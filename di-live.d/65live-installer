@@ -5,8 +5,8 @@ import os
 
 from common import dilive_system, is_mounted
 
-sys_paths = {'dev': 0o755, 'proc': 0o555, 'sys': 0o555, 'run': 0o755,
-             'tmp': 0o1777}
+sys_paths = {'dev': 0o755, 'proc': 0o555, 'sys': 0o555,
+             'run': 0o755, 'tmp': 0o1777}
 
 
 def _chkdirs(path='/target'):
@@ -22,7 +22,7 @@ def _chkdirs(path='/target'):
 
 def main():
     _chkdirs('/target')
-    dilive_system('/lib/live-installer/live-installer')
+    dilive_system(['/lib/live-installer/live-installer'])
 
 
 if __name__ == "__main__":

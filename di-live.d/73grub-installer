@@ -14,10 +14,14 @@ def main():
     # mount bind dev, proc & sys on target otherwise grub-installer will fail
     targetmounts = TargetMounts('/target')
 
-    preseeds = [('grub-installer/only_debian', 'true')]
-    preset_debconf(resets=[], preseeds=preseeds, seen=[])
+    preseeds = [('grub-installer/only_debian', True),
+                ('grub-installer/with_other_os', True),
+                ('grub-installer/bootdev', 'default'),
+                ('grub-installer/bootdev', '/dev/sda')]
 
-    dilive_system('/usr/share/grub-installer/grub-installer', '/target')
+    preset_debconf(preseeds=preseeds)
+
+    dilive_system(['/usr/share/grub-installer/grub-installer', '/target'])
 
 
 if __name__ == "__main__":

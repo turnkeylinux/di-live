@@ -62,7 +62,7 @@ def main():
     # reset debconf for clean re-runs
     preset_debconf(resets=templates, preseeds=preseeds, seen=seen)
 
-    dilive_system('/bin/partman')
+    dilive_system(['/bin/partman'])
 
 
 if __name__ == "__main__":

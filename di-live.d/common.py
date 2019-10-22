@@ -1,12 +1,12 @@
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
-
+"""Common di-live functions and classes."""
 import os
 import sys
 import debconf
+import subprocess as subproc
+from typing import List
 
-from subprocess import run, PIPE
-
-PIPE = PIPE
+PIPE = subproc.PIPE
 
 LOGFILE = '/var/log/di-live.log'
 
@@ -17,7 +17,7 @@ def log(s):
 
 
 class Chroot:
-    """Run commands inside a chroot"""
+    """Run commands inside a chroot."""
 
     def __init__(self, newroot, environ={}):
         # hack to allow exiting the chroot later - see rest in __del__()
@@ -38,8 +38,8 @@ class Chroot:
         os.chroot(newroot)
         os.chdir('/')
 
-    def system(self, *command, shell=False, stdout=None):
-        """execute system command in chroot -> None"""
+    def system(self, command, shell=False, stdout=None) -> None:
+        """Leverages system function to execute command in chroot."""
         system(command, shell=shell, stdout=stdout, env=self.environ)
 
     def exit(self):
@@ -52,13 +52,19 @@ class Chroot:
     def __del__(self):
         self.exit()
 
-class Debconf:
+
+class DiliveDebconf:
+    """debconf wrapper class to create new debconf dialogs and progress info.
+
+    It can use existing di-live templates, or generate new ones dynamically
+    using generic templates included in the di-live package.
+    """
+
     def __init__(self):
-        debconf.runFrontEnd()
-        self.db = debconf.Debconf()
+        self.db = debconf.Debconf(run_frontend=True)
         self.db.capb('backup')
 
-    def _db_input(self, template, description=None, default=None):
+    def _db_input(self, template, description, default):
         self.db.reset(template)
         if description:
             self.db.subst(template, 'DESCRIPTION', description)
@@ -69,14 +75,14 @@ class Debconf:
             self.db.go()
         except debconf.DebconfError as e:
             self.db.stop()
-            sys.exit(e[0])
+            sys.exit(e.args[0])
 
         ret = self.db.get(template)
         self.db.reset(template)
         return ret
 
-    def get_input(self, description, default=None):
-        template = 'di-live/get-string'
+    def get_input(self, template='di-live/get-string', description=None,
+                  default=None):
         return self._db_input(template, description, default)
 
     def get_password(self, description, allow_empty=False):
@@ -93,8 +99,22 @@ class Debconf:
 
         return password
 
+    def progress_init(self, steps, template='di-live/progress/generic',
+                      description=None):
+        if template == 'di-live/progress/generic' and description:
+            self.db.subst(template, 'DESCRIPTION', description)
+        self.progress_steps = steps
+        self.db.progress('START 0 {} {}'.format(steps, template))
+
+    def progress_step(self, step_no):
+        if step_no > self.progress_steps:
+            return
+        self.db.progress('STEP {}'.format(step_no))
+
 
 class TargetMounts:
+    """Set up and remove required mountpoints for a chroot."""
+
     def __init__(self, target='/target'):
         self.targetdev = os.path.join(target, 'dev')
         self.targetproc = os.path.join(target, 'proc')
@@ -104,7 +124,7 @@ class TargetMounts:
 
     def mount(self):
         def _mount(primary_dir, secondary_dir):
-            system("mount", "-o", "bind", primary_dir, secondary_dir)
+            system(["mount", "-o", "bind", primary_dir, secondary_dir])
 
         if not is_mounted(self.targetdev):
             _mount("/dev", self.targetdev)
@@ -115,7 +135,7 @@ class TargetMounts:
 
     def umount(self):
         def _umount(mounted_dir):
-            system("umount", "-f", mounted_dir)
+            system(["umount", "-f", mounted_dir])
 
         if is_mounted(self.targetsys):
             with open("/proc/mounts", 'r') as fob:
@@ -138,9 +158,11 @@ class TargetMounts:
 
 class ExecError(Exception):
     """Accessible attributes:
+
     command     executed command
     exitcode    non-zero exitcode returned by command
     """
+
     def __init__(self, command, exitcode):
         Exception.__init__(self, command, exitcode)
         self.command = command
@@ -156,18 +178,21 @@ def prepend_path(path):
     os.environ['PATH'] = path + ":" + os.environ.get('PATH')
 
 
-def system(command, *args, shell=False, stdout=None, write_log=True, env=os.environ):
-    """Executes <command> with <*args> -> None
-    If command returns non-zero exitcode raises ExecError"""
-    if isinstance(command, str):
-        command = [command]
-    else: # handle if it's a tuple (or list)
-        comand = list(command)
-    if args:
-        command.extend(args)
+def system(command, shell=False, stdout=None, write_log=True,
+           env=os.environ) -> None:
+    """Execute command.
+
+    If command returns non-zero exitcode raises ExecError
+
+    command may either be:
+     - a list containing individual items/arguments; or
+     - if shell=True, a list containing a single string.
+    """
+    command = list(command)
     if write_log:
         log('Running command: {}'.format(command))
-    run_command = run(command, stderr=PIPE, stdout=stdout, shell=shell, env=env)
+    run_command = subproc.run(command, shell=shell, env=env,
+                              stderr=PIPE, stdout=stdout)
     if run_command.returncode != 0:
         if write_log:
             log('Command {}: Exit code {}\nSTDERR: {}'.format(
@@ -177,23 +202,24 @@ def system(command, *args, shell=False, stdout=None, write_log=True, env=os.envi
         raise ExecError(command, run_command.returncode)
 
 
-def dilive_system(command, *args):
-    """convenience function for di-live debconf related command execution
+def dilive_system(command):
+    """Di-live debconf related command execution.
+
+    - command must be a list - and is passed to system()
     - prepend compat to path
     - catch and log execution exception, exit with exitcode
     - stderr is redirected to the logfile by system()
     """
     prepend_path('/usr/lib/di-live/compat')
     try:
-        system(command, *args)
+        system(command)
     except ExecError as e:
         log(str(e))
         sys.exit(e.exitcode)
 
 
 def preset_debconf(resets=None, preseeds=None, seen=None):
-    debconf.runFrontEnd()
-    db = debconf.Debconf()
+    db = debconf.Debconf(run_frontend=True)
 
     if resets:
         for template in resets:
@@ -218,13 +244,11 @@ def is_mounted(directory):
 
 
 def target_mounted(target='/target'):
-    if not os.path.exists(target) or not is_mounted(target):
-        debconf.runFrontEnd()
-        db = debconf.Debconf()
 
+    if not os.path.exists(target) or not is_mounted(target):
+        db = debconf.Debconf(run_frontend=True)
         db.capb('backup')
         db.input(debconf.CRITICAL, 'base-installer/no_target_mounted')
         db.go()
         return False
-
     return True
