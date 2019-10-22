@@ -41,3 +41,5 @@ d-i/source/partconf/debian/partconf-*/* .
 d-i/source/partman-*/debian/partman-*/* .
 di-live.d /usr/lib
 di-live.py /usr/lib/di-live
+rescue/rescue.service.d/override.conf /etc/systemd/system/rescue.service.d
+rescue/rescue.target.d/override.conf /etc/systemd/system/rescue.target.d
