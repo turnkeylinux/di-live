@@ -105,7 +105,6 @@ def main():
 
     while True:
         response = finalize.ask_eject_reboot()
-        print('response: {}'.format(response), file=sys.stderr)
         if response == 'Eject Live medium':
             finalize.eject()
         elif response == 'Reboot system':
