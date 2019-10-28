@@ -5,10 +5,8 @@ ConditionKernelCommandLine=di-live
 [Service]
 Type=idle
 StandardInput=tty-force
-StandardOutput=tty
+StandardOutput=inherit
 TTYReset=yes
-TTYVHangup=yes
-TTYVTDisallocate=yes
 ExecStartPre=/usr/bin/echo "Starting di-live..."
 ExecStart=/usr/bin/di-live
 # no need to wait when stopping
