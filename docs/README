@@ -26,9 +26,9 @@ compat/     - compatibility scripts as d-i code assumes running in
 cli syntax
 ----------
 
-The init script will execute di-live (on new vt) using dialog frontend
-(unless -d|--debug is used) if the boot param  "di-live" is present on
-/proc/cmdline. di-live may be executed manually in a live system aswell.
+The init script will execute di-live using dialog frontend (unless -d|--debug
+is used) if the boot param  "di-live" is present on /proc/cmdline. di-live
+may be executed manually in a live system as well.
 
 Syntax: di-live [options]
 
