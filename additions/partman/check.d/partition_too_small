@@ -44,7 +44,7 @@ for part in $parts; do
 		if [ -e /cdrom/live/filesystem.size ]; then
 			rofssize="$(cat /cdrom/live/filesystem.size)"
 		else
-			rofssize="$(du -s --block-size=1 /rofs | cut -f1)"
+			rofssize="$(du -s --block-size=1 /run/live/rootfs/10root.squashfs | cut -f1)"
 		fi
 		rootrofssize="$rofssize"
 		rootsize="$size"
