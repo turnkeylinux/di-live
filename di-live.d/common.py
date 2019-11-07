@@ -3,10 +3,9 @@
 import os
 import sys
 import debconf
-import subprocess as subproc
+import subprocess
+from subprocess import PIPE
 from typing import List
-
-PIPE = subproc.PIPE
 
 LOGFILE = '/var/log/di-live.log'
 
@@ -191,7 +190,7 @@ def system(command, shell=False, stdout=None, write_log=True,
     command = list(command)
     if write_log:
         log('Running command: {}'.format(command))
-    run_command = subproc.run(command, shell=shell, env=env,
+    run_command = subprocess.run(command, shell=shell, env=env,
                               stderr=PIPE, stdout=stdout)
     if run_command.returncode != 0:
         if write_log:
