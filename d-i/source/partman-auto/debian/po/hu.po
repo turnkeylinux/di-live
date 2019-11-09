@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-01-08 11:31:26 GMT+0100\n"
 "Last-Translator: Judit Gyimesi <judit.gyimesi.x@gmail.com>\n"
 "Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
@@ -274,8 +274,8 @@ msgstr "/home partíció külön"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Külön /home, /usr, /var és /tmp partíciók"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Külön /home, /var és /tmp partíciók"
 
 # Type: text
 # Description
@@ -288,36 +288,3 @@ msgstr "Külön /home, /usr, /var és /tmp partíciók"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Kis lemezre (<1GB) való particionálás"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"Irányított - ${PARTITION} átméretezése és a felszabadított terület használata"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Nem sikerült elegendő területet létrehozni"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Az átméretezési művelet nem tudott elegendő helyet felszabadítani a "
-"telepítéshez. Lehet, hogy az átméretezés meghiúsult. Saját kezűleg kell "
-"beállítania a partíciókat."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Külön /home, /var és /tmp partíciók"

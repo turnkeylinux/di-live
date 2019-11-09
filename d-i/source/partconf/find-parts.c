@@ -13,6 +13,7 @@
 #ifdef FIND_PARTS_MAIN
 #include <getopt.h>
 #endif
+#include <sys/sysmacros.h>
 
 #include "xasprintf.h"
 #include "partconf.h"

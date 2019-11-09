@@ -21,22 +21,22 @@
 # Free Software Foundation, Inc., 2002,2004.
 # Juris Kudiņš <cooker@inbox.lv>, 2001.
 # Rihards Priedītis <rprieditis@gmail.com>, 2009, 2010.
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012, 2013.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012, 2013, 2017.
 # Peteris Krisjanis <pecisk@gmail.com>, 2008, 2012.
+# Tranzistors <rudolfs.mazurs@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2013-10-06 13:45+0300\n"
-"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-10-17 19:33+0000\n"
+"Last-Translator: Tranzistors <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2)\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
 
 #. Type: text
 #. Description
@@ -207,7 +207,7 @@ msgid ""
 "${PARTITION} of ${DEVICE}."
 msgstr ""
 "Nav norādīts montēšanas punkts datņu sistēmai ${FILESYSTEM}, kas atrodas "
-"ierīces ${DEVICE} nodalījuma #${PARTITION}"
+"ierīces ${DEVICE} nodalījuma #${PARTITION}."
 
 #. Type: boolean
 #. Description
@@ -488,12 +488,20 @@ msgstr "standarta"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Tipisks šī nodalījuma pielietojums:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -504,6 +512,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -581,9 +593,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "JFS datņu sistēma ar žurnālu"
+msgstr "NTFS datņu sistēma ar žurnālu"
 
 #. Type: text
 #. Description
@@ -591,7 +602,7 @@ msgstr "JFS datņu sistēma ar žurnālu"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -648,9 +659,8 @@ msgstr "noatime - piekļūstot inode, neatjaunināt tā pieejas laikus"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - piekļūstot inode, neatjaunināt tā pieejas laikus"
+msgstr "nodiratime - neatjaunināt direktoriju inode pieejas laikus"
 
 #. Type: text
 #. Description
@@ -759,7 +769,7 @@ msgstr "notail - atslēgt datņu pakošanu datņu sistēmas kokā"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - apgriezt atbrīvotos blokus no pamata bloku ierīces"
 
 #. Type: text
 #. Description
@@ -794,16 +804,14 @@ msgstr "Atgriezties uz galveno izvēlni un izlabot kļūdas?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Jūsu palaišanas (boot) nodalījums nav nokonfigurēts ar ext2 vai ext3 datņu "
-"sistēmu. Taču šāda konfigurācija ir nepieciešama, lai jūsu dators varētu "
-"tikt palaists. Lūdzu, atgriezieties un izvēlieties ext2 vai ext3 datņu "
-"sistēmu."
+"Jūsu palaišanas (boot) nodalījums nav nokonfigurēts ar ext2 datņu sistēmu. "
+"Taču šāda konfigurācija ir nepieciešama, lai jūsu dators varētu tikt "
+"palaists. Lūdzu, atgriezieties un izvēlieties ext2 datņu sistēmu."
 
 #. Type: boolean
 #. Description
@@ -826,13 +834,12 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
 "Jūsu palaišanas (boot) nodalījums neatrodas uz jūsu cietā diska pirmā "
-"primārā nodalījuma. Taču tas ir nepieciešams, lai jūsu dators varētu tikt "
-"palaists. Lūdzu, atgriezieties un palaišanas nodalījumam izvēlieties sava "
-"diska pirmo primāro nodalījumu."
+"nodalījuma. Taču tas ir nepieciešams, lai jūsu dators varētu tikt palaists. "
+"Lūdzu, atgriezieties un palaišanas nodalījumam izvēlieties sava diska pirmo "
+"nodalījumu."

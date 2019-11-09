@@ -8,20 +8,39 @@
 # Copyright (C) 2003-2008 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Translated by Yijun Yuan (2004), Carlos Z.F. Liu (2004,2005,2006) and
-# Ming Hua (2005,2006,2007,2008).
+# Translated by Yijun Yuan (2004), Carlos Z.F. Liu (2004,2005,2006),
+# Ming Hua (2005,2006,2007,2008), Xiyue Deng (2008), Kov Chai (2008),
+# Kenlen Lai (2008), WCM (2008), Ren Xiaolei (2008).
+#
+#
+# Translations from iso-codes:
+#   Tobias Toedter <t.toedter@gmx.net>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#   Free Software Foundation, Inc., 2002, 2003, 2007, 2008.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Translations taken from KDE:
+#   - Wang Jian <lark@linux.net.cn>, 2000.
+#   - Carlos Z.F. Liu <carlosliu@users.sourceforge.net>, 2004 - 2006.
+#   LI Daobing <lidaobing@gmail.com>, 2007, 2008, 2009, 2010.
+#   YunQiang Su <wzssyqa@gmail.com>, 2011.
+#
+#   Mai Hao Hui <mhh@126.com>, 2001 (translations from galeon)
+# YunQiang Su <wzssyqa@gmail.com>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2008-01-18 01:46-0600\n"
-"Last-Translator: Ming Hua <minghua-guest@users.alioth.debian.org>\n"
-"Language-Team: Debian Chinese [GB] <debian-chinese-gb@lists.debian.org>\n"
+"PO-Revision-Date: 2011-08-11 11:13+0800\n"
+"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: text
 #. Description
@@ -51,25 +70,22 @@ msgstr "正在将数据复制到磁盘..."
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "正在存储网络设置..."
+msgstr "正在清除网络设置..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "正在存储网络设置..."
+msgstr "正在移除专门用于 live 系统的软件包..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "正在设置网络..."
+msgstr "正在重新设置 X.org..."
 
 #. Type: text
 #. Description
@@ -82,24 +98,22 @@ msgstr "正在运行 ${SCRIPT}..."
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "格式化"
+msgstr "正常"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "live"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "请选择一个安装步骤："
+msgstr "安装类型："
 
 #. Type: select
 #. Description
@@ -108,7 +122,7 @@ msgstr "请选择一个安装步骤："
 msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
-msgstr ""
+msgstr "Live 系统可以通过以下方式安装到硬盘。"
 
 #. Type: select
 #. Description
@@ -119,3 +133,5 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"如果您选择“正常”，系统将作为常规系统来安装。如果您选择“live”，安装系统将继续"
+"作为 live 系统使用但安装系统可以直接从硬盘启动。"

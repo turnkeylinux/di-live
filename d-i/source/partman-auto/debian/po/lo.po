@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lo\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-04-25 09:05+0700\n"
 "Last-Translator: Anousak Souphavanh <anousak@gmail.com>\n"
 "Language-Team: Lao <lo@li.org>\n"
@@ -226,8 +226,8 @@ msgstr "ແຍກພາທິຊັນ /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "ແຍກພາທິຊັນ /home, /usr, /var ແລະ /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "ແຍກພາທິຊັນ /home, /var ແລະ /tmp"
 
 #. Type: text
 #. Description
@@ -236,32 +236,3 @@ msgstr "ແຍກພາທິຊັນ /home, /usr, /var ແລະ /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "ແນວທາງການແບ່ງພາທີຊັ່ນໃນດີສຂະໜາດນ້ອຍ (< 1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "ແຍກພາທິຊັນ /home, /var ແລະ /tmp"

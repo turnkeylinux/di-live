@@ -27,15 +27,16 @@
 #
 #   Mai Hao Hui <mhh@126.com>, 2001 (translations from galeon)
 # YunQiang Su <wzssyqa@gmail.com>, 2010, 2011, 2012, 2013.
+# Yangfl <mmyangfl@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2014-12-01 17:17+0800\n"
-"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
-"Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2017-06-11 18:20+0800\n"
+"Last-Translator: Yangfl <mmyangfl@gmail.com>\n"
+"Language-Team:  <debian-l10n-chinese@lists.debian.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,8 +73,8 @@ msgid ""
 "Creating ${TYPE} file system for ${MOUNT_POINT} in partition #${PARTITION} "
 "of ${DEVICE}..."
 msgstr ""
-"正在 ${DEVICE} 设备的第 ${PARTITION} 分区上创建 ${TYPE} 文件系统，分区将被挂"
-"载到 ${MOUNT_POINT}..."
+"正在 ${DEVICE} 设备的第 ${PARTITION} 分区上创建 ${TYPE} 文件系统，分区将挂载"
+"至 ${MOUNT_POINT}..."
 
 #. Type: text
 #. Description
@@ -483,12 +484,20 @@ msgstr "标准"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "此分区的一般用途："
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -498,13 +507,17 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"标准 = 标准参数, news = 每 4KB block 分配一个 inode, largefile = 每 1M 分配一"
-"个 inode , largefile4 = 每 4M 分配一个 inode。"
+"standard = 标准参数，news = 每 4KB 区块分配一个 inode，largefile = 每 1M 分配"
+"一个 inode，largefile4 = 每 4M 分配一个 inode。"
 
 #. Type: text
 #. Description
@@ -632,7 +645,7 @@ msgstr "挂载选项可以调节文件系统的行为。"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
-msgstr "noatime - 在每次对数据进行存取时不更新 inode 的存取时间"
+msgstr "noatime - 在每次对数据进行访问时不更新 inode 的访问时间"
 
 #. Type: text
 #. Description
@@ -650,7 +663,7 @@ msgstr "nodiratime - 不要更新目录 inode 访问时间"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:46001
 msgid "relatime - update inode access times relative to modify time"
-msgstr "relatime - 更新和 inode 修改时间相关的存取时间"
+msgstr "relatime - 只在更新 inode 修改时间时更新访问时间"
 
 #. Type: text
 #. Description
@@ -677,7 +690,7 @@ msgstr "nosuid - 忽略 set-user-identifier 或 set-group-identifier 位"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
-msgstr "noexec - 禁止执行任何二进制文件。"
+msgstr "noexec - 禁止执行任何二进制文件"
 
 #. Type: text
 #. Description
@@ -713,7 +726,7 @@ msgstr "usrquota - 开启用户磁盘限额功能"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
-msgstr "grpquota - 开启用户组磁盘限额功能"
+msgstr "grpquota - 开启群组磁盘限额功能"
 
 #. Type: text
 #. Description
@@ -789,8 +802,8 @@ msgid ""
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"您的启动分区并未被设置成 ext2 文件系统。为了启动您的计算机这是必须的。请退回"
-"此前的界面并选择使用 ext2 文件系统。"
+"您的启动分区并未设置为使用 ext2 文件系统。为了启动您的计算机必须如此。请返回"
+"并使用 ext2 文件系统。"
 
 #. Type: boolean
 #. Description
@@ -817,5 +830,5 @@ msgid ""
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"您的启动分区并非位于硬盘的第一分区上。这是启动您的机器所需要的。请退回并使用"
-"第一主分区作为启动分区。"
+"您的启动分区并非位于硬盘的第一分区上。为了启动您的计算机必须如此。请返回并使"
+"用第一主分区作为启动分区。"

@@ -1,44 +1,28 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 import os
 import sys
 
-from common import dilive_system, system, target_mounted, is_mounted
+from common import dilive_system, target_mounted, preset_debconf, TargetMounts
 
-class TargetMounts:
-    def __init__(self, target='/target'):
-        self.targetdev = os.path.join(target, 'dev')
-        self.targetproc = os.path.join(target, 'proc')
-
-        self.mount()
-
-    def mount(self):
-        if not is_mounted(self.targetdev):
-            system("mount -o bind /dev %s" % self.targetdev)
-
-        if not is_mounted(self.targetproc):
-            system("mount -o bind /proc %s" % self.targetproc)
-
-    def umount(self):
-        if is_mounted(self.targetdev):
-            system("umount -f %s" % self.targetdev)
-        if is_mounted(self.targetproc):
-            system("umount -f %s" % self.targetproc)
-
-    def __del__(self):
-        self.umount()
 
 def main():
     if not target_mounted('/target'):
-        sys.exit(10) #return to menu
+        sys.exit(10)  # return to menu
 
-    #mount bind /dev and /proc on target otherwise grub-installer will fail
+    # mount bind dev, proc & sys on target otherwise grub-installer will fail
     targetmounts = TargetMounts('/target')
 
-    dilive_system('/usr/share/grub-installer/grub-installer', '/target')
+    preseeds = [('grub-installer/only_debian', True),
+                ('grub-installer/with_other_os', True),
+                ('grub-installer/bootdev', 'default'),
+                ('grub-installer/bootdev', '/dev/sda')]
+
+    preset_debconf(preseeds=preseeds)
+
+    dilive_system(['/usr/share/grub-installer/grub-installer', '/target'])
 
 
 if __name__ == "__main__":
     main()
-

@@ -3,24 +3,21 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_km.po to Khmer
-# translation of km.po to
-#
-# Debian Installer master translation file template
-# Don't forget to properly fill-in the header of PO files#
-# Debian Installer translators, please read the D-I i18n documentation
-# in doc/i18n/i18n.txt#
-#
+# translation of km.po to Khmer
 # Khoem Sokhem <khoemsokhem@khmeros.info>, 2006, 2007, 2008, 2010.
+#   eng vannak <evannak@khmeros.info>, 2006.
+#   auk piseth <piseth_dv@khmeros.info>, 2006.
+#   Khoem Sokhem <khoemsokhem@khmeros.info>, 2006, 2010, 2012.
+# Translations from iso-codes:
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_km\n"
+"Project-Id-Version: km\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2010-06-21 09:08+0700\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2012-01-18 15:40+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
-"Language: \n"
+"Language: km\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -206,7 +203,7 @@ msgstr "សូម​ពិនិត្យ​មើល​បង្កាន់ដ
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr "ចំនួន​ក្រុម​ភាគ​ត្រូវ​ប្រើ​ សម្រាប់​​​ចែក​ភាគ​ថាស​ដែល​​បាន​ផ្ដល់​​មគ្គុទ្ទេសក៍​ ៖"
+msgstr ""
 
 #. Type: string
 #. Description
@@ -218,21 +215,18 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
-"អ្នក​អាច​ប្រើ​ក្រុម​ភាគ​ទាំងមូល​​ សម្រាប់​ចែក​​ភាគ​ថាស​ដែល​បាន​ផ្ដល់​មគ្គុទ្ទេសក៍​ ឬ​ផ្នែក​របស់​វា​ ។​ បើ​អ្នក​ប្រើ​"
-"ផ្នែក​​វា​តែ​មួយ​ ឬ​បើ​អ្នក​បន្ថែម​ថាស​​ពេល​ក្រោយ​​ អ្នក​នឹង​អាច​បង្កើន​ភាគ​ឡូជីខល​​ពេល​ក្រោយ​ ដោយ​ប្រើ​ឧបករណ៍​​ LVM ​"
-"ដូច្នេះ​ប្រើ​ផ្នែក​ដូច​គ្នា​នៃ​ក្រុម​ភាគ​នៅ​ពេល​ដំឡើង​អាច​ផ្លាស់​ប្ដូរ​បាន​ ។"
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
+#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"ទំហំ​អប្បបរមា​នៃ​របៀប​ចែក​ភាគ​ថាស​ដែល​បាន​ជ្រើស​​គឺ​ ${MINSIZE} (ឬ​ ${PERCENT}) ​សូម​ចំណាំ​ថា​​ កញ្ចប់​ដែល​"
-"អ្នក​ជ្រើស​​ ដើម្បី​ដំឡើង​អាច​ទាមទារ​ទំហំ​បន្ថែម​​​ ។​ ទំហំ​អតិបរមា​គឺ ${MAXSIZE} ។"
+"ទំហំ​អប្បបរមា​សម្រាប់​ភាគ​ថាស​នេះ​គឺ ${MINSIZE} (ឬ ${PERCENT}) និង​ទំហំ​អតិបរមា​គឺ ${MAXSIZE} ។"
 
 #. Type: string
 #. Description
@@ -250,22 +244,23 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
+#, fuzzy
 msgid "Invalid input"
-msgstr "ការបញ្ចូលមិនត្រឹមត្រូវ"
+msgstr "ទំហំ​មិន​ត្រឹមត្រូវ"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
-msgstr "អ្នក​បាន​បញ្ចូល​​ \"${INPUT}\" ដែល​មិន​ត្រូវ​បាន​ទទួល​ស្គាល់​ជា​ទំហំ​ត្រឹមត្រូវ​ ។"
+msgstr ""
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:13001
 msgid "${SIZE} is too big"
-msgstr "${SIZE} គឺធំពេក"
+msgstr ""
 
 #. Type: error
 #. Description
@@ -275,15 +270,14 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
-"អ្នក​បាន​ស្នើ​ ${SIZE} ដើម្បី​ប្រើ​សម្រាប់​ចែក​​ភាគ​ថាស​ដែល​បាន​ផ្ដល់​មគ្គុទ្ទេសក៍​ ប៉ុន្តែ​ទំហំ​ដែល​មាន​គឺ​​ "
-"${MAXSIZE} ប៉ុណ្ណោះ​ ។"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
+#, fuzzy
 msgid "${SIZE} is too small"
-msgstr "${SIZE} គឺតូចពេក"
+msgstr "ភាគ​ថាស EFI តូច​ពេក"
 
 #. Type: error
 #. Description
@@ -293,5 +287,3 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
-"អ្នក​បាន​ស្នើ​ ${SIZE} ដើម្បី​ប្រើ​សម្រាប់​ភាគ​ថាស​ដែល​បាន​ផ្ដល់​មគ្គុទ្ទេសក៍​ ​ប៉ុន្តែ​របៀប​ចែក​ភាគ​ថាស​ដែល​បាន​"
-"ជ្រើស​ទាមទារ​យ៉ាង​ហោច​ណាស់​ ${MINSIZE} ។"

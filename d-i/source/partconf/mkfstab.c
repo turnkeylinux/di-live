@@ -85,10 +85,7 @@ void insert_line(const char *line) {
 	if(strlen(typ) > 0)
 		dummy->typ = strdup(typ);
 
-	/* handle reiserfs */
-	if(strstr(dummy->typ, "reiserfs") && strstr(dummy->mountpoint, "/boot")) {
-		dummy->options = strdup("notail");
-	} else if(strstr(dummy->typ, "swap")) {
+	if(strstr(dummy->typ, "swap")) {
 		dummy->options = strdup("sw");
 	} else if(strcmp(options, "rw") != 0) {
 		dummy->options = strdup(options);

@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-09-12 08:45+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -252,8 +252,8 @@ msgstr "Отдельный раздел для /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Отдельные разделы для /home, /usr, /var и /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Отдельные разделы для /home, /var и /tmp"
 
 #. Type: text
 #. Description
@@ -262,35 +262,3 @@ msgstr "Отдельные разделы для /home, /usr, /var и /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Схема разметки для дисков малого объёма ( <1 ГБ)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"Изменить размер раздела ${PARTITION} и использовать освободившееся место"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Авто - использовать весь раздел, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Не удалось создать достаточно места для установки"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Операция изменения размера не смогла выделить достаточно места для "
-"установки. Возможно произошла ошибка. Вам надо настроить разделы вручную."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Отдельные разделы для /home, /var и /tmp"

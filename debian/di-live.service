@@ -1,18 +1,16 @@
 [Unit]
 Description=di-live: TurnKey Linux installer
-After=getty@tty8.service
-Before=rescue.service
 ConditionKernelCommandLine=di-live
 
 [Service]
 Type=idle
 StandardInput=tty-force
-TTYPath=/dev/tty8
+StandardOutput=inherit
 TTYReset=yes
-TTYVHangup=yes
-TTYVTDisallocate=yes
-ExecStart=/etc/init.d/di-live start
-ExecStop=/etc/init.d/di-live stop
+ExecStartPre=/usr/bin/echo "Starting di-live..."
+ExecStart=/usr/bin/di-live
+# no need to wait when stopping
+TimeoutStopSec=0
 
 [Install]
 WantedBy=rescue.target

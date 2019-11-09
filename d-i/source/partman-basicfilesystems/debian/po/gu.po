@@ -24,10 +24,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: d-i\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
 "PO-Revision-Date: 2008-08-07 11:42+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
-"Language-Team: Gujarati <team@utkarsh.org>\n"
+"Language-Team: \n"
 "Language: gu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -480,12 +480,20 @@ msgstr "પ્રમાણભૂત"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "આ પાર્ટિશનનો રૂઢિગત ઉપયોગ:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -496,13 +504,17 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"પ્રમાણભુત = પ્રમાણભુત વિકલ્પો, ન્યુઝ = દરેક ૪ કેબીનાં ચોકઠાંઓ પર એક આઇનોડ, મોટીફાઇલ = "
-"દરેક એમબી પર એક આઇનોડ, મોટીફાઇલ૪ = દરેક ૪ એમબી પર એક આઇનોડ."
+"પ્રમાણભુત = પ્રમાણભુત વિકલ્પો, news = દરેક ૪ કેબીનાં ચોકઠાંઓ પર એક આઇનોડ, largefile = "
+"દરેક એમબી પર એક આઇનોડ, largefile4 = દરેક ૪ એમબી પર એક આઇનોડ."
 
 #. Type: text
 #. Description
@@ -582,7 +594,7 @@ msgstr "JFS જર્નલિંગ ફાઈલ સિસ્ટમ"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description

@@ -6,6 +6,8 @@
 # translation of debian-installer_packages_po_sublevel1_da.po to
 # Danish messages for debian-installer.
 # This file is distributed under the same license as debian-installer.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014, 2015, 2016.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2010.
 # Mads Bille Lundby <lundbymads@gmail.com, 2009.
 # Henrik Christian Grove <debian@3001.dk>, 2008.
 # Jesper Dahl Nyerup <debian@jespernyerup.dk>, 2008.
@@ -15,18 +17,35 @@
 #
 # Volume er oversat til diskenhed. Ret hvis Dansk-gruppen finder en anbefaling.
 #
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@computer.org>, 2001.
+# Claus Hindsgaul <claus.hindsgaul@gmail.com>, 2006.
+# Claus Hindsgaul <claus_h@image.dk>, 2004, 2005, 2006.
+# Computeroversættelse Tobias Toedter <t.toedter@gmx.net>, 2007.
+# Copyright (C) Free Software Foundation, Inc., 2006.
+# Frederik 'Freso' S. Olesen <freso.dk@gmail.com>, 2008.
+# Free Software Foundation, Inc., 2000, 2004, 2005.
+# Joe Hansen <joedalton2@yahoo.dk>, 2009, 2010, 2011.
+# Keld Simonsen <keld@dkuug.dk>, 2000, 2001.
+# Kenneth Christiansen <kenneth@gnu.org>, 2000.
+# Ole Laursen <olau@hardworking.dk>, 2001.
+#
+# vedrørende russisk:
+# (bogstavet й bliver normalt til j på dansk og y på engelsk.  Der er
+# også nogle forskelle med de mange s/sh-agtige lyde)
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_da\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-01-23 07:29+0000\n"
-"PO-Revision-Date: 2010-08-05 10:48+0200\n"
-"Last-Translator: Jacob Sparre Andersen <jacob@jacob-sparre.dk>\n"
-"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2014-12-30 22:01+0000\n"
+"PO-Revision-Date: 2016-09-18 20:20+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: boolean
@@ -96,7 +115,7 @@ msgstr ""
 #. :sl3:
 #: ../grub-installer.templates:3001
 msgid "Install the GRUB boot loader to the Serial ATA RAID disk?"
-msgstr "Installér opstartsindlæseren GRUB på en SATA-RAID-disk?"
+msgstr "Installer opstartsindlæseren GRUB på en SATA-RAID-disk?"
 
 #. Type: boolean
 #. Description
@@ -138,7 +157,7 @@ msgstr "GRUB-rod-enheden er: ${GRUBROOT}."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
 msgstr "Kunne ikke sætte GRUB op"
 
@@ -164,7 +183,7 @@ msgstr "Installationen af GRUB blev afbrudt."
 #. :sl3:
 #: ../grub-installer.templates:5001
 msgid "Install the GRUB boot loader to the multipath device?"
-msgstr "Installér opstartsindlæseren GRUB på multipath-enheden?"
+msgstr "Installer opstartsindlæseren GRUB på multipath-enheden?"
 
 #. Type: boolean
 #. Description
@@ -196,14 +215,20 @@ msgstr "Der opstod en fejl under opsætningen af GRUB til din multipath-enhed."
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
 msgstr "Enhed hvorpå opstartsindlæseren skal installeres:"
 
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
@@ -222,17 +247,6 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -243,28 +257,31 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Enheden kan angives i GRUB's »(hdn,m)«-notation eller som en enhed i »/dev«. "
-"Herunder vises nogle eksempler:\n"
-" - »(hd0)« eller »/dev/hda« installerer GRUB i »master boot record« på\n"
-"   din første harddisk (IDE);\n"
-" - »(hd0,1)« eller »/dev/hda2« benytter den anden partition på dit første\n"
-"   IDE-drev;\n"
-" - »(hd2,4)« eller »/dev/sdc5« benytter den første udvidede partition på "
-"dit\n"
-"   tredje SCSI-drev;\n"
-" - »(fd0)« eller »/dev/fd0« installerer GRUB på en diskette."
+"Enheden skal angives som en enhed i /dev. Herunder vises nogle eksempler:\n"
+" - »/dev/sda« installerer GRUB i master boot record på din første\n"
+"   harddisk;\n"
+" - »/dev/sda2« benytter den anden partition på din første harddisk;\n"
+" - »/dev/sdc5« benytter den første udvidede partition på din tredje\n"
+"   harddisk;\n"
+" - »/dev/fd0« installerer GRUB på en diskette."
+
+#. Type: select
+#. Choices
+#: ../grub-installer.templates:8001
+msgid "Enter device manually"
+msgstr "Angiv enhed manuelt"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "GRUB password:"
 msgstr "GRUB-adgangskode:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid ""
 "The GRUB boot loader offers many powerful interactive features, which could "
 "be used to compromise your system if unauthorized users have access to the "
@@ -284,7 +301,7 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
 msgstr ""
 "Hvis du ikke ønsker at have en GRUB-adgangskode, så undlad at udfylde feltet."
@@ -292,14 +309,14 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
-msgstr "Angiv adgangskoden igen for at tjekke:"
+msgstr "Angiv adgangskoden igen for at verificere:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
@@ -310,46 +327,46 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "Password input error"
 msgstr "Adgangskode-indtastningsfejl"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr "De to adgangskoder, du indtastede, var ikke ens. Prøv igen."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
 msgstr "Installationen af GRUB mislykkedes"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
 msgstr ""
-"Pakken »${GRUB}« kunne ikke installeres på »/target/«. Uden GRUB-"
+"Pakken »${GRUB}« kunne ikke installeres på /target/. Uden GRUB-"
 "opstartsprogrammet, kan det installerede system ikke starte."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Unable to install GRUB in ${BOOTDEV}"
 msgstr "Kunne ikke installere GRUB i ${BOOTDEV}"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
 msgstr "Kørsel af »grub-install ${BOOTDEV}« mislykkedes."
 
@@ -359,78 +376,222 @@ msgstr "Kørsel af »grub-install ${BOOTDEV}« mislykkedes."
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001 ../grub-installer.templates:14001
+#: ../grub-installer.templates:14001 ../grub-installer.templates:15001
 msgid "This is a fatal error."
 msgstr "Dette er en fatal fejl."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
-msgstr "Kørsel af »update-grub« mislykkedes."
+msgstr "Kørsel af 'update-grub' mislykkedes."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid "Install GRUB?"
+msgstr "Installer GRUB?"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+"GRUB 2 er den næste generation for GNU GRUB, opstartsindlæseren som ofte "
+"bruges på i386/amd64 pc'er. Den er nu også tilgængelig for ${ARCH}."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
+"Programmet har nye og interessante funktioner men er stadig et "
+"eksperimentelt program for denne arkitektur. Hvis du vælger at installere "
+"den, så bør du være forberedt på eventuelle nedbrud, og bør have en ide om "
+"hvordan du gendanner dit system, hvis det ikke kan startes op. Du rådes til "
+"ikke at gøre dette i et produktionsmiljø."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:17001
+#: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
 msgstr "Installerer GRUB-opstartsindlæseren"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:18001
-msgid "Looking for other operating systems..."
-msgstr "Leder efter andre styresystemer..."
-
-#. Type: text
-#. Description
-#. :sl1:
 #: ../grub-installer.templates:19001
-msgid "Installing the '${GRUB}' package..."
-msgstr "Installerer \"${GRUB}\"-pakken..."
+msgid "Looking for other operating systems..."
+msgstr "Leder efter andre styresystemer ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:20001
-msgid "Determining GRUB boot device..."
-msgstr "Udpeger GRUB-opstartsenhed..."
+msgid "Installing the '${GRUB}' package..."
+msgstr "Installerer \"${GRUB}\"-pakken ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:21001
-msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "Kører \"grub-install ${BOOTDEV}\"..."
+msgid "Determining GRUB boot device..."
+msgstr "Udpeger GRUB-opstartsenhed ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:22001
-msgid "Running \"update-grub\"..."
-msgstr "Kører \"update-grub\"..."
+msgid "Running \"grub-install ${BOOTDEV}\"..."
+msgstr "Kører \"grub-install ${BOOTDEV}\" ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:23001
+msgid "Running \"update-grub\"..."
+msgstr "Kører \"update-grub\" ..."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "Opdaterer /etc/kernel-img.conf..."
+msgstr "Opdaterer /etc/kernel-img.conf ..."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:25001
+msgid "Checking whether to force usage of the removable media path"
+msgstr "Kontrollerer om tvang skal bruges for den eksterne mediesti"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:26001
+msgid "Mounting filesystems"
+msgstr "Monterer filsystemer"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:27001
+msgid "Configuring grub-efi for future usage of the removable media path"
+msgstr "Konfigurerer grub-efi for fremtidig brug af ekstern mediesti"
 
 #. Type: text
 #. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Installér opstartsindlæseren GRUB på en harddisk"
+msgstr "Installer opstartsindlæseren GRUB på en harddisk"
 
 #. Type: text
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
+#: ../grub-installer.templates:29001
 msgid "Reinstall GRUB boot loader"
-msgstr "Geninstallér GRUB-opstartsindlæseren"
+msgstr "Geninstaller GRUB-opstartsindlæseren"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Failed to mount /target/proc"
+msgstr "Kunne ikke montere /target/proc"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Mounting the proc file system on /target/proc failed."
+msgstr "Montering af proc-filsystemet på /target/proc mislykkedes."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr "Tjek /var/log/syslog eller kig på den virtuelle konsol 4 for detaljer."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Warning: Your system may be unbootable!"
+msgstr "Advarsel: Dit system er måske ude af stand til at starte op!"
+
+#. Type: text
+#. Description
+#. Rescue menu item
+#. :sl2:
+#: ../grub-installer.templates:33001
+msgid "Force GRUB installation to the EFI removable media path"
+msgstr "Fremtving GRUB-installation på EFI'ens eksterne mediesti"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid "Force GRUB installation to the EFI removable media path?"
+msgstr "Fremtving GRUB-installation til EFI'ens eksterne mediesti?"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"It seems that this computer is configured to boot via EFI, but maybe that "
+"configuration will not work for booting from the hard drive. Some EFI "
+"firmware implementations do not meet the EFI specification (i.e. they are "
+"buggy!) and do not support proper configuration of boot options from system "
+"hard drives."
+msgstr ""
+"Det ser ud til, at denne computer er konfigureret til at starte op via EFI, "
+"men måske vil den konfiguration ikke fungere for opstart fra harddisken. "
+"Nogle EFI-firmwareimplementeringer opfylder ikke EFI-specifikationen (dvs. "
+"de er fejlramte!) og understøtter ikke korrekt konfiguration af "
+"opstartsindstillinger fra systemharddiske."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"A workaround for this problem is to install an extra copy of the EFI version "
+"of the GRUB boot loader to a fallback location, the \"removable media path"
+"\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
+msgstr ""
+"En måde at omgå dette problem på er at installere en ekstra kopi af EFI-"
+"versionen for GRUB-opstartsindlæseren til en reserveplacering, »den eksterne "
+"mediesti«. Næsten alle EFI-systemer, uanset hvor fejlramte de er, vil starte "
+"GRUB op på den måde."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"Warning: If the installer failed to detect another operating system that is "
+"present on your computer that also depends on this fallback, installing GRUB "
+"there will make that operating system temporarily unbootable. GRUB can be "
+"manually configured later to boot it if necessary."
+msgstr ""
+"Advarsel: Hvis der er et andet styresystem på din computer, som også "
+"afhænger af denne reserve og som installationsprogrammet ikke opdagede vil "
+"installation af GRUB der medføre at operativsystemet midlertidigt ikke kan "
+"startes op."

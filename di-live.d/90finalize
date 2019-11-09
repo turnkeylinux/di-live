@@ -1,53 +1,117 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 import os
 import debconf
+import sys
+from pathlib import Path
 
-from common import system
+from common import system, DiliveDebconf, Chroot, PIPE
+
 
 def deep_umount(target):
+    system(["swapoff", "-a"])
     paths = []
-    for mount in file("/proc/mounts", 'r').readlines():
-        path = mount.split()[1]
-        if path.startswith(target):
-            paths.append(path)
+    with open("/proc/mounts", 'r') as fob:
+        for mount in fob.readlines():
+            path = mount.split()[1]
+            if path.startswith(target):
+                paths.append(path)
 
     paths.sort(reverse=True)
     for path in paths:
         try:
-            system("umount -f %s" % path)
+            system(["umount", "-f", path])
         except:
             pass
 
-def reboot():
-    template = 'di-live/reboot_now'
 
-    debconf.runFrontEnd()
-    db = debconf.Debconf()
+class DiliveFinish():
+    """Singleton class that contains all the methods and values for a clean
+    finish of di-live"""
 
-    db.capb('backup')
-    db.reset(template)
-    db.input(debconf.HIGH, template)
-    db.go()
+    def __init__(self):
+        deep_umount('/target')
+        self.db = DiliveDebconf(title="Finalize Install")
+        self.is_install = self._is_install()
+        self.live_dev = self._find_live_src()
+        self.cached = False
 
-    cmd = []
-    fgvt = os.environ.get("FGVT")
-    if fgvt:
-        cmd.append("chvt %s" % fgvt)
+    def _is_install(self):
+        """Check if running from "Install" ISO boot option"""
+        with open('/proc/cmdline', 'r') as fob:
+            if 'di-live' in fob.read():
+                    return True
+        return False
 
-    if db.getBoolean(template):
-        cmd.append("systemctl reboot")
+    def _find_live_src(self):
+        """Return the device (i.e. the XXX in /dev/XXX) which live-medium is
+        running on, e.g. sr0"""
+        with open('/proc/mounts', 'r') as fob:
+            for mount in fob.readlines():
+                if 'run/live/medium' in mount and mount.startswith('/dev/'):
+                    return mount.split()[0][5:]
+        return ''
 
-    if cmd:
-        system("; ".join(cmd))
+    def _is_usb(self):
+        """Check to see if the live medium device is a USB (eject will fail on
+        a USB)"""
+        device = str(Path('/sys/block/' + self.live_dev).resolve())
+        if 'usb' in device:
+            return True
+        else:
+            return False
+
+    def _get_template(self):
+        """Decide which template to use when giving user options (only give
+        option to 'Exit' if running live and eject hasn't previously been
+        selected)."""
+        if self.is_install:  # "install" option from ISO menu
+            return 'di-live/finalize_install'
+        else:  # assume running live
+            return 'di-live/finalize_live'
+
+    def cache(self):
+        """Cache files & remount '/' read-only - show debconf progressbar"""
+        self.db.progress_init(2, description=
+                              "Caching files and remounting '/' read-only")
+        self.db.progress_step(1)
+        system(['/usr/bin/live-medium-cache'], stdout=PIPE, write_log=False)
+        self.db.progress_step(2)
+        self.is_install = True
+
+    def eject(self):
+        """Cache files, remount '/' read-only and ask user to eject live
+        medium; wait for OK."""
+        self.cache()
+        if not self._is_usb:
+            system(['eject', '-p', '-m', '/dev/' + self.live_dev],
+                   stdout=PIPE, write_log=False)
+        self.db.get_input('di-live/eject')
+
+    def reboot(self):
+        system(["/usr/bin/systemctl", "reboot"],  write_log=False)
+        exit()
+
+    def ask_eject_reboot(self):
+        """Ask user (via debconf) if they wish to eject or reboot (or exit if
+        running live)"""
+        return self.db.get_input(self._get_template())
+
 
 def main():
-    deep_umount('/target')
-    file('/tmp/.di-live-finalize', 'w').write('')
-    reboot()
+
+    finalize = DiliveFinish()
+
+    while True:
+        response = finalize.ask_eject_reboot()
+        if response == 'Eject Live medium':
+            finalize.eject()
+        elif response == 'Reboot system':
+            finalize.reboot()
+        elif response == 'Exit installer':
+            exit()
 
 
 if __name__ == "__main__":
     main()
-

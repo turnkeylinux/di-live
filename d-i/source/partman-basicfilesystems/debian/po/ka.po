@@ -24,9 +24,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer.2006071\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2011-03-01 12:49+0400\n"
-"Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"Last-Translator: Taya <taya13@gmail.com>\n"
 "Language-Team: Georgian\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
@@ -495,12 +495,20 @@ msgstr "სტანდარტული"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "ამ დანაყოფის ტიპიური გამოყენება:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -511,6 +519,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -859,12 +871,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"თქვენი boot დანაყოფი თქვენი მყარი დისკის პირველ primary დანაყოფზე არ არის.  "
-"ეს კი თქვენს სისტემას ჩასატვირთად ჭირდება.  გთხოვთ დაბრუნდეთ და ჩატვირთვად "
-"დანაყოფიდ თქვენი პირველი primary დანაყოფი ამოირჩიეთ."
+"თქვენი ჩასატვირთი პარტიცია არ არის პირველადი თქვენ მყარ დისკზე. თქვენ "
+"სისტემას სჭირდება ჩასატვირთად რომ იყოს ასეთნაირად. გთხოვთ დაბრუნდით უკან და "
+"აირჩიეთ პირველი პარტიცია როგორც ჩასატვირთი პარტიცია."

@@ -428,32 +428,6 @@ Default: ext3
 Description: for internal use; can be preseeded
  Default filesystem used for new partitions
 
-Template: partman/filter_mounted
-Type: boolean
-Default: true
-Description: for internal use; can be preseeded
- Filter out disks with mounted partitions.
-
-Template: partman/unmount_active
-Type: boolean
-#flag:translate!:3
-_Description: Unmount partitions that are in use?
- The installer has detected that the following disks have mounted partitions:
- .
- ${DISKS}
- .
- Do you want the installer to try to unmount the partitions on these disks
- before continuing?  If you leave them mounted, you will not be able to
- create, delete, or resize partitions on these disks, but you may be able to
- install to existing partitions there.
-
-Template: partman/installation_medium_mounted
-Type: note
-_Description: Installation medium on ${PARTITION}
- Your installation medium is on ${PARTITION}. You will not be able to
- create, delete, or resize partitions on this disk, but you may be able to
- install to existing partitions there.
-
 Template: partman/alignment
 Type: select
 Choices: cylinder, minimal, optimal

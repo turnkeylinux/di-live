@@ -6,7 +6,7 @@
 # translation of debian-installer_packages_po_sublevel1_da.po to
 # Danish messages for debian-installer.
 # This file is distributed under the same license as debian-installer.
-# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014, 2015.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2010.
 # Mads Bille Lundby <lundbymads@gmail.com, 2009.
 # Henrik Christian Grove <debian@3001.dk>, 2008.
@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_da\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
-"PO-Revision-Date: 2014-08-10 20:20+0200\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"PO-Revision-Date: 2015-08-16 20:20+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -53,14 +53,14 @@ msgstr ""
 #. :sl1:
 #: ../partman-auto.templates:1001
 msgid "Please wait..."
-msgstr "Vent venligst..."
+msgstr "Vent venligst ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:2001
 msgid "Computing the new partitions..."
-msgstr "Beregner de nye partitioner..."
+msgstr "Beregner de nye partitioner ..."
 
 #. Type: error
 #. Description
@@ -262,8 +262,8 @@ msgstr "Separat /home-partition"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Separate /home, /usr, /var og /tmp-partitioner"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Separate /home, /var og /tmp-partitioner"
 
 #. Type: text
 #. Description
@@ -272,35 +272,3 @@ msgstr "Separate /home, /usr, /var og /tmp-partitioner"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Partitionsudlægning for lille harddisk (<1 GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Guidet - ændr størrelse af ${PARTITION} og brug den frigjorte plads"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Med vejledning - brug hele partitionen, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Kunne ikke skabe nok plads til installationen"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Operationen til størrelsesændring skabte ikke nok fri plads til "
-"installationen. Størrelsesændring kan være mislykket. Du er nødt til at "
-"indstille partitionerne manuelt."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Separate /home, /var og /tmp-partitioner"

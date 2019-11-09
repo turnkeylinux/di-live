@@ -8,24 +8,38 @@
 # This translation is released under the same licence as the debian-installer.
 #
 # Siim Põder <siim@p6drad-teel.net>, 2007.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2009-2010.
+# Kristjan Räts <kristjanrats@gmail.com>, 2017.
 #
 # Thanks to following Ubuntu Translators for review and fixes:
 #     Laur Mõtus
 #     Heiki Nooremäe
 #     tabbernuk
 #
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Free Software Foundation, Inc., 2000, 2004, 2006
+#   Hasso Tepper <hasso@estpak.ee>, 2006.
+#   Margus Väli <mvali@hot.ee>, 2000.
+#   Siim Põder <windo@p6drad-teel.net>, 2006.
+#   Tõivo Leedjärv <leedjarv@interest.ee>, 2000, 2001, 2008.
+#   Mattias Põldaru <mahfiaz@gmail.com>, 2009-2012, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
 "POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2010-07-07 14:27+0300\n"
-"Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
-"Language-Team: Eesti\n"
+"PO-Revision-Date: 2017-11-19 13:25+0000\n"
+"Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
+"Language-Team: Estonian <>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: select
 #. Choices
@@ -58,7 +72,7 @@ msgid ""
 "your Ethernet card, you can select it from the list."
 msgstr ""
 "Ühtki võrgukaarti ei tuvastatud. Kui sa tead, millist draiverit su "
-"võrgukaart vajab, vali see nimekirjast:"
+"võrgukaart vajab, vali see nimekirjast."
 
 #. Type: boolean
 #. Description
@@ -85,7 +99,7 @@ msgstr ""
 #. :sl2:
 #: ../ethdetect.templates:3001
 msgid "Ethernet card not found"
-msgstr "Võrgukaarti ei leitud."
+msgstr "Võrgukaarti ei leitud"
 
 #. Type: error
 #. Description
@@ -147,7 +161,7 @@ msgid ""
 "your disk drive, you can select it from the list."
 msgstr ""
 "Ühtki kettaseadet ei tuvastatud. Kui sa tead, millist draiverit su "
-"kettaseade vajab, vali see nimekirjast:"
+"kettaseade vajab, vali see nimekirjast."
 
 #. Type: error
 #. Description
@@ -169,28 +183,6 @@ msgstr "Ei leitud ühtki partitsioneeritavat andmekandjat."
 #: ../disk-detect.templates:4001
 msgid "Please check that a hard disk is attached to this machine."
 msgstr "Palun veendu, et arvutis on kõvaketas."
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid "Activate Serial ATA RAID devices?"
-msgstr "Kas aktiveerida Serial ATA RAID-seadmed?"
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid ""
-"One or more drives containing Serial ATA RAID configurations have been "
-"found. Do you wish to activate these RAID devices?"
-msgstr ""
-"Leiti üks või enam ketast, millel on seadistatud Serial ATA RAID. Kas soovid "
-"need RAID-seadmed aktiveerida?"
-
-#. Type: text
-#. Description
-#: ../disk-detect.templates:8001
-msgid "login to iSCSI targets"
-msgstr "iSCSI sihtkohtadesse sisselogimine"
 
 #. Type: text
 #. Description
@@ -218,7 +210,7 @@ msgstr "PC-kaardi teenuste käivitamine..."
 #. :sl1:
 #: ../hw-detect.templates:4001
 msgid "Waiting for hardware initialization..."
-msgstr "Raudvara lähtestamise järel ootamine..."
+msgstr "Riistvara lähtestamise järel ootamine..."
 
 #. Type: multiselect
 #. Description
@@ -378,7 +370,7 @@ msgid ""
 "Some of your hardware needs non-free firmware files to operate. The firmware "
 "can be loaded from removable media, such as a USB stick or floppy."
 msgstr ""
-"Osa sinu raudvarast vajab funktsioneerimiseks mitte-avatud püsivara faile. "
+"Osa sinu riistvarast vajab funktsioneerimiseks mitte-avatud püsivara faile. "
 "Püsivara võib laadida väliselt andmekandjalt, nagu USB pulk või flopi."
 
 #. Type: boolean

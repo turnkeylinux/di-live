@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-10-19 19:41+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: debian-l10n-eu@lists.debian.org\n"
@@ -250,8 +250,8 @@ msgstr "Bereizitako /home partizioa"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Berezitutako /home, /usr, /var, eta /tmp partizioak"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Berezitutako /home, /var, eta /tmp partizioak"
 
 #. Type: text
 #. Description
@@ -260,34 +260,3 @@ msgstr "Berezitutako /home, /usr, /var, eta /tmp partizioak"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Disko-txikiko (< 1G) partizio-eskema"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Gidatua - ${PARTITION} tamainaz aldatu eta libratutako lekua erabili"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Gidatua - erabili partizio osoa, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Ezin izan da nahiko espazio sortu instalaziorako"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Tamaina handitzeko eragiketak ez du nahiko espazio sortu instalaziorado. "
-"Tamaina-handitzeak huts egin du. Partizioak eskuz prestatu beharko dituzu."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Berezitutako /home, /var, eta /tmp partizioak"

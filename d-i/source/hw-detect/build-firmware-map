@@ -1,0 +1,138 @@
+#!/usr/bin/perl
+# © 2016 Cyril Brulebois <kibi@debian.org>
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+use Crypt::GPG;
+use Digest::SHA;
+use IO::Uncompress::Gunzip qw(gunzip $GunzipError);
+use List::MoreUtils qw(uniq);
+use LWP::UserAgent;
+
+# Parameter handling:
+my $mirror     = 'http://ftp.fr.debian.org/debian';
+my $suite      = 'testing';
+my $archs      = 'ANY';
+my $components = 'main,contrib,non-free';
+my $verbose    = 0;
+
+GetOptions (
+    'mirror=s'     => \$mirror,
+    'suite=s'      => \$suite,
+    'archs=s'      => \$archs,
+    'components=s' => \$components,
+    'verbose'      => \$verbose,
+) or die "Error in command line parameters; supported: --mirror,--suite,--archs,--components,--verbose";
+
+# Let's start:
+my $ua = LWP::UserAgent->new;
+$ua->env_proxy;
+
+# Getting Release and Release.gpg files:
+my $response = $ua->get("$mirror/dists/$suite/Release");
+die "failing while fetching dists/$suite/Release"
+    if ! $response->is_success;
+my $release = $response->content;
+
+$response = $ua->get("$mirror/dists/$suite/Release.gpg");
+die "failing while fetching dists/$suite/Release.gpg"
+    if ! $response->is_success;
+my $release_gpg = $response->content;
+
+# Checking GPG:
+# XXX: we're getting debug output from gpg every time.
+my $gpg = new Crypt::GPG;
+$gpg->gpgopts('--no-default-keyring --keyring=/usr/share/keyrings/debian-archive-keyring.gpg');
+my ($plaintext, $sig) = $gpg->verify([$release_gpg], [$release]);
+die "failed to verify signature: Release/Release.gpg"
+    if ! $sig or $sig->validity ne 'GOOD';
+
+# Iterating on all architectures:
+if ($archs eq 'ANY') {
+    foreach my $line (split /\n/, $release) {
+        if ($line =~ /^Architectures: (.+)$/) {
+            # Switch to comma-separated values to make the next bit work:
+            $archs = $1;
+            $archs =~ s/ /,/g;
+        }
+    }
+}
+print STDERR "architectures: $archs\n"
+    if $verbose;
+
+# Extract the SHA256 block (ugly) and remember checksum/size:
+(my $sha256 = $release) =~ s/.*^SHA256:\n((?: .+?\n)+).*/$1/ms;
+my %checksum;
+my %size;
+my @filenames;
+foreach my $line (split /\n/, $sha256) {
+    my @bits = split /\s+/, $line;
+    my $filename = $bits[3];
+    $checksum{ $filename } = $bits[1];
+    $size{ $filename } = $bits[2];
+    push @filenames, $filename;
+}
+
+# Extract interesting filenames from Release files:
+# XXX: this isn't too nice
+my @files;
+(my $c_pattern = $components) =~ s/,/|/g;
+(my $a_pattern = $archs)      =~ s/,/|/g;
+foreach my $filename (@filenames) {
+    # Note: only picking up .gz compressed files (no other compression
+    #       as of 2016-05-22); not looking at Contents-udeb-$arch.gz
+    if ($filename =~ m{^((?:$c_pattern)/Contents-(?:$a_pattern)\.gz)$}) {
+        push @files, $1;
+    }
+}
+@files = uniq sort @files;
+
+# Iterate on all filenames:
+my %map;
+foreach my $file (@files) {
+    # Fetch Contents-$arch.gz file:
+    my $url = "$mirror/dists/$suite/$file";
+    print STDERR "url: $url\n"
+        if $verbose;
+    my $content = $ua->get($url);
+    die "failing while fetching $url"
+        if ! $content->is_success;
+
+    # Check sha256 sum and size:
+    my $compressed = $content->content;
+    if (length $compressed != $size{$file}) {
+        die "size error for $file";
+    }
+    if (Digest::SHA::sha256_hex($compressed) ne $checksum{$file}) {
+        die "checksum error for $file";
+    }
+
+    # Uncompress:
+    my $uncompressed;
+    gunzip \$compressed, \$uncompressed
+      or die "gunzip failed: $GunzipError.\n";
+
+    # Extract firmware files:
+    (my $component = $file) =~ s{^(.+?)/.*}{$1};
+    print STDERR "$file:\n"
+        if $verbose;
+    foreach my $line (split /\n/, $uncompressed) {
+        if ($line =~ m{^(\S+)\s+(.+)/(.+)$}) {
+            my ($filename, $section, $package) = ($1, $2, $3);
+            if ($filename =~ m{^lib/firmware/}) {
+                $map{ $filename } = "$package $component";
+                print STDERR "  $line\n"
+                    if $verbose;
+            }
+        }
+    }
+    print STDERR "\n"
+        if $verbose;
+}
+
+# Output the results:
+foreach my $file (sort keys %map) {
+    printf "%s %s\n", $file, $map{ $file };
+}

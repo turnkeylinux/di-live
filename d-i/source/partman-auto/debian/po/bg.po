@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-04-16 09:34+0300\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -259,8 +259,8 @@ msgstr "Отделен дял за /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Отделни дялове за /home, /usr, /var и /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Отделни дялове за /home, /var и /tmp"
 
 #. Type: text
 #. Description
@@ -269,37 +269,3 @@ msgstr "Отделни дялове за /home, /usr, /var и /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Разпределение на дялове за малък диск (< 1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"Водено - преоразмеряване на ${PARTITION} и ползване на освободеното "
-"пространство"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Грешка при създаването на достатъчно свободно място за инсталацията"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Операцията по преоразмеряване не можа да освободи достатъчно свободно "
-"пространство за инсталацията. Преоразмеряването може и да е било неуспешно. "
-"Ще трябва да настроите дяловете ръчно."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Отделни дялове за /home, /var и /tmp"

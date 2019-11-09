@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 import os
@@ -6,6 +6,7 @@ import signal
 import shutil
 
 from common import dilive_system, preset_debconf
+
 
 def kill_server(pidfile):
     if os.path.exists(pidfile):
@@ -21,12 +22,12 @@ def kill_server(pidfile):
         except OSError:
             pass
 
+
 def main():
     templates = ['partman-auto/init_automatically_partition',
                  'partman-auto/automatically_partition',
                  'partman-auto/select_disk',
                  'partman-auto/text/use_device',
-                 'partman-auto/text/resize_use_free',
                  'partman-auto/text/custom_partitioning',
                  'partman-basicfilesystems/fat_mountpoint',
                  'partman-basicfilesystems/mountpoint',
@@ -46,7 +47,8 @@ def main():
                  'partman/exception_handler_note']
 
     preseeds = [('partman-auto-lvm/new_vg_name', 'turnkey'),
-                ('partman-auto-lvm/guided_size', '90%')]
+                ('partman-auto-lvm/guided_size', '90%'),
+                ('partman-auto/choose_recipe', 'atomic')]
 
     # hack: if not seen the default value will be max size
     seen = [('partman-auto-lvm/guided_size', True)]
@@ -60,9 +62,8 @@ def main():
     # reset debconf for clean re-runs
     preset_debconf(resets=templates, preseeds=preseeds, seen=seen)
 
-    dilive_system('/bin/partman')
+    dilive_system(['/bin/partman'])
 
 
 if __name__ == "__main__":
     main()
-

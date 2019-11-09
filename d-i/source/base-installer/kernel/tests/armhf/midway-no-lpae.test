@@ -1,0 +1,19 @@
+subarch generic
+cpuinfo midway-no-lpae.cpuinfo
+majors 3.10
+flavour armmp
+kernel-3.10 \
+  linux-image-armmp
+usable \
+  linux-image-armmp \
+  linux-image-3.10-3-armmp
+unusable \
+  linux-image-armmp-lpae \
+  linux-image-netwinder \
+  linux-image-orion5x \
+  linux-image-rpc \
+  linux-image-s3c2410 \
+  linux-image-kirkwood \
+  linux-image-mx5 \
+  linux-image-vexpress \
+  linux-image-3.10-3-armmp-dbg

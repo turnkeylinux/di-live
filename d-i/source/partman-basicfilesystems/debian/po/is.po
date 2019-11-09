@@ -9,6 +9,7 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 #
 # Copyright (C) 2010 Free Software Foundation
+# Sveinn í Felli <sv1@fellsnet.is>, 2018.
 #
 # Translations from iso-codes:
 # Copyright (C) 2002,2003, 2010, 2011, 2012 Free Software Foundation, Inc.
@@ -21,18 +22,17 @@
 # Alastair McKinstry <mckinstry@computer.org>, 2002.
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_is\n"
+"Project-Id-Version: Icelandic (Debian Installer)\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2013-10-03 13:25+0000\n"
-"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-">\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
@@ -485,12 +485,20 @@ msgstr "venjuleg"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Dæmigerð notkun á þessari disksneið:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -501,6 +509,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -577,9 +589,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "JFS dagbókarstutt skráakerfi"
+msgstr "NTFS dagbókarstutt skráakerfi"
 
 #. Type: text
 #. Description
@@ -587,7 +598,7 @@ msgstr "JFS dagbókarstutt skráakerfi"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "NTFS"
 
 #. Type: text
 #. Description
@@ -644,9 +655,9 @@ msgstr "noatime- ekki uppfæra aðgangstíma inode við hverja uppflettingu"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime- ekki uppfæra aðgangstíma inode við hverja uppflettingu"
+msgstr ""
+"nodiratime- ekki uppfæra aðgangstíma inode möppu við hverja uppflettingu"
 
 #. Type: text
 #. Description
@@ -755,6 +766,7 @@ msgstr "notail - sleppa pökkun á skrám í kerfistréð"
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
 msgstr ""
+"discard - skera burt (trim) frjálsar blokkir í undirliggjandi blokkartæki"
 
 #. Type: text
 #. Description
@@ -789,15 +801,13 @@ msgstr "Fara aftur í valmyndina og laga vandamálið?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Ræsidisksneiðin er ekki sett upp með ext2 eða ext3 skráakerfunum . Þetta "
-"þarf til að tölvan geti keyrt. Farðu til baka og veldu annað hvort ext2 eða "
-"ext3 skráakerfi."
+"Ræsidisksneiðin er ekki sett upp með ext2 skráakerfi . Þetta þarf til að "
+"tölvan geti keyrt. Farðu til baka og veldu að nota ext2 skráakerfi."
 
 #. Type: boolean
 #. Description
@@ -820,13 +830,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"Ræsidisksneiðin (boot partition) er ekki staðsett á fyrstu aðaldisksneið "
-"(primary partition) harða disksins. Það er nauðsynlegt svo að tölvan geti "
-"ræst sig upp. Farðu til baka og láttu fyrstu aðaldisksneiðina vera "
-"ræsidisksneið."
+"Ræsidisksneiðin (boot partition) er ekki staðsett á fyrstu disksneið "
+"(partition) harða disksins. Það er nauðsynlegt svo að tölvan geti ræst sig "
+"upp. Farðu til baka og láttu fyrstu disksneiðina vera ræsidisksneið."

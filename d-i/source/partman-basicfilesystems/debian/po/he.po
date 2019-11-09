@@ -7,42 +7,35 @@
 # Hebrew messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-#
-#
-#
-#
 # Translations from iso-codes:
-#     Translations taken from ICU SVN on 2007-09-09
-#   Translations from KDE:
-#
-#   Translations taken from KDE:
-#
-#
+# Translations taken from ICU SVN on 2007-09-09
+# Translations taken from KDE:
 # Amit Dovev <debian.translator@gmail.com>, 2007.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Omer Zak <w1@zak.co.il>, 2008, 2010, 2012, 2013.
-# Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011.
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#   Free Software Foundation, Inc., 2002,2004.
-#   Alastair McKinstry <mckinstry@computer.org>, 2002.
-#   Meni Livne <livne@kde.org>, 2000.
-#   Free Software Foundation, Inc., 2002,2003.
-#   - Meni Livne <livne@kde.org>, 2000.
-#   Lior Kaplan <kaplan@debian.org>, 2005,2006, 2007, 2008, 2010.
-#   Meital Bourvine <meitalbourvine@gmail.com>, 2007.
+# Tobias Quathamer <toddy@debian.org>, 2007.
+# Free Software Foundation, Inc., 2002,2004.
+# Alastair McKinstry <mckinstry@computer.org>, 2002.
+# Meni Livne <livne@kde.org>, 2000.
+# Free Software Foundation, Inc., 2002,2003.
+# Meni Livne <livne@kde.org>, 2000.
+# Meital Bourvine <meitalbourvine@gmail.com>, 2007.
+# Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_he\n"
+"Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2013-10-02 11:05+0300\n"
-"Last-Translator: Omer Zak <w1@zak.co.il>\n"
-"Language-Team: Hebrew <debian-hebrew-common@lists.alioth.debian.org>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2019-04-20 07:33+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -50,15 +43,14 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:1001
 msgid ""
 "Checking the ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
-msgstr ""
-"בודק את מערכת הקבצים ${TYPE} במחיצה מספר ${PARTITION} בהתקן ${DEVICE}..."
+msgstr "מערכת הקבצים ${TYPE} במחיצה מס׳ ${PARTITION} בהתקן ${DEVICE} נבדקת…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-basicfilesystems.templates:2001
 msgid "Checking the swap space in partition #${PARTITION} of ${DEVICE}..."
-msgstr "בודק את שטח הדפדוף במחיצה מספר ${PARTITION} בהתקן ${DEVICE} ..."
+msgstr "שטח ההחלפה במחיצה מס׳ ${PARTITION} בהתקן ${DEVICE} נבדק…"
 
 #. Type: text
 #. Description
@@ -66,7 +58,7 @@ msgstr "בודק את שטח הדפדוף במחיצה מספר ${PARTITION} ב�
 #: ../partman-basicfilesystems.templates:3001
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"יוצר מערכת קבצים מסוג ${TYPE} במחיצה מספר ${PARTITION} בהתקן ${DEVICE}..."
+"נוצרת מערכת קבצים מסוג ${TYPE} במחיצה מספר ${PARTITION} בהתקן ${DEVICE}…"
 
 #. Type: text
 #. Description
@@ -76,15 +68,15 @@ msgid ""
 "Creating ${TYPE} file system for ${MOUNT_POINT} in partition #${PARTITION} "
 "of ${DEVICE}..."
 msgstr ""
-"יוצר מערכת קבצים מסוג ${TYPE} לנקודת העיגון ${MOUNT_POINT} במחיצה מספר "
-"${PARTITION} בהתקן ${DEVICE}..."
+"נוצרת מערכת קבצים מסוג ${TYPE} לנקודת העיגון ${MOUNT_POINT} במחיצה מס׳ "
+"${PARTITION} בהתקן ${DEVICE}…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-basicfilesystems.templates:5001
 msgid "Formatting swap space in partition #${PARTITION} of ${DEVICE}..."
-msgstr "מפרמט שטח דפדוף במחיצה מספר ${PARTITION} בהתקן ${DEVICE}..."
+msgstr "שטח ההחלפה במחיצה מס׳ ${PARTITION} בהתקן ${DEVICE} מאותחל…"
 
 #. Type: boolean
 #. Description
@@ -120,8 +112,8 @@ msgid ""
 "If you do not go back to the partitioning menu and correct these errors, the "
 "partition will be used as is."
 msgstr ""
-"אם לא תחזור לתפריט הגדרת המחיצות לתיקון השגיאות, המחיצה תהיה בשימוש כמות "
-"שהיא."
+"בחירה שלא לחזור לתפריט החלוקה למחיצות ולתקן את השגיאות האלו תגרום לכך שייעשה "
+"שימוש במחיצה כמו שהיא."
 
 #. Type: boolean
 #. Description
@@ -131,7 +123,7 @@ msgid ""
 "The test of the swap space in partition #${PARTITION} of ${DEVICE} found "
 "uncorrected errors."
 msgstr ""
-"בבדיקת שטח הדפדוף במחיצה מספר ${PARTITION} בהתקן ${DEVICE} נמצאו שגיאות שלא "
+"בבדיקת שטח ההחלפה במחיצה מס׳ ${PARTITION} בהתקן ${DEVICE} נמצאו שגיאות שלא "
 "תוקנו."
 
 #. Type: boolean
@@ -143,7 +135,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:8001
 #: ../partman-basicfilesystems.templates:11001
 msgid "Do you want to return to the partitioning menu?"
-msgstr "האם ברצונך לחזור לתפריט החלוקה למחיצות?"
+msgstr "לחזור לתפריט החלוקה למחיצות?"
 
 #. Type: boolean
 #. Description
@@ -156,9 +148,9 @@ msgid ""
 "scarce. You may experience installation problems if you do not have enough "
 "physical memory."
 msgstr ""
-"לא בחרת באף מחיצה לשימוש כשטח דפדוף (SWAP). הפעלת שטח דפדוף מומלצת כדי "
-"שהמערכת תוכל לפעול טוב יותר כאשר יש מחסור בזיכרון. יתכן ותתקל בבעיות בהתקנה "
-"אם אין מספיק זיכרון פיזי."
+"לא בחרת מחיצות כלשהן שישמשו כשטח החלפה. מומלץ להפעיל שטח החלפה כדי שהמערכת "
+"תנצל טוב יותר את הזיכרון הפיזי וכדי שהיא תפעל טוב יותר גם כשהזיכרון הולך "
+"ואוזל. עשויות להופיע תקלות בהתקנה אם אין לך מספיק זיכרון פנוי."
 
 #. Type: boolean
 #. Description
@@ -168,15 +160,15 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a swap partition, "
 "the installation will continue without swap space."
 msgstr ""
-"אם לא תחזור לתפריט חלוקת המחיצות ותקצה מחיצה לשטח דפדוף, ההתקנה תמשיך ללא "
-"שטח דפדוף."
+"סירוב מצדך לחזור לתפריט החלוקה למחיצות ולהקצות שטח להחלפה תגרום לכך שתכנית "
+"ההתקנה תמשיך ללא שטח החלפה."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:9001
 msgid "Failed to create a file system"
-msgstr "כישלון ביצירת מערכת קבצים"
+msgstr "יצירת מערכת קבצים נכשלה"
 
 #. Type: error
 #. Description
@@ -194,7 +186,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:10001
 msgid "Failed to create a swap space"
-msgstr "כישלון ביצירת מחיצת החלפה"
+msgstr "יצירת שטח החלפה נכשלה"
 
 #. Type: error
 #. Description
@@ -202,7 +194,7 @@ msgstr "כישלון ביצירת מחיצת החלפה"
 #: ../partman-basicfilesystems.templates:10001
 msgid ""
 "The creation of swap space in partition #${PARTITION} of ${DEVICE} failed."
-msgstr "נכשל נסיון ליצור שטח דפדוף במחיצה מספר ${PARTITION} בהתקן ${DEVICE}."
+msgstr "הניסיון ליצור שטח החלפה במחיצה מס׳ ${PARTITION} בהתקן ${DEVICE} נכשל."
 
 #. Type: boolean
 #. Description
@@ -223,15 +215,15 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a mount point from "
 "there, this partition will not be used at all."
 msgstr ""
-"אם לא תחזור לתפריט חלוקת המחיצות ותייעד נקודת עיגון משם, המחיצה לא תהיה "
-"בשימוש."
+"סירוב מצדך לחזור לתפריט החלוקה למחיצות והקצאת נקודת עיגון משם תוביל לכך "
+"שהמחיצה לא תהיה בשימוש כלל."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:12001
 msgid "Invalid file system for this mount point"
-msgstr "מערכת קבצים לא תקינה בשביל נקודת העגינה הזאת"
+msgstr "מערכת קבצים שגויה לנקודת עגינה זו"
 
 #. Type: error
 #. Description
@@ -242,8 +234,9 @@ msgid ""
 "because it is not a fully-functional Unix file system. Please choose a "
 "different file system, such as ${EXT2}."
 msgstr ""
-"מערכת קבצים מסוג ${FILESYSTEM} לא ניתנת לעגינה על ${MOUNTPOINT} מאחר והיא לא "
-"מערכת קבצים מתפקדת של Unix. בחר מערכת קבצים אחרת, ${EXT2} לדוגמה."
+"מערכת קבצים מסוג ${FILESYSTEM} אינה ניתנת לעגינה על ${MOUNTPOINT} מאחר שאינה "
+"מערכת קבצים לשימוש מלא במערכות Unix. נא לבחור במערכת קבצים אחרת, ${EXT2} "
+"לדוגמה."
 
 #. Type: select
 #. Choices
@@ -263,7 +256,7 @@ msgstr "/ - שורש מערכת הקבצים"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/boot - static files of the boot loader"
-msgstr "‏‎/boot - קבצים סטטיים של מנהל האתחול"
+msgstr "‏‎/boot - קבצים סטטיים של מנהל הטעינה"
 
 #. Type: select
 #. Choices
@@ -313,7 +306,7 @@ msgstr "‏‎/var - מידע משתנה"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/srv - data for services provided by this system"
-msgstr "‏‎/srv - מידע בשביל שירותים המסופקים על ידי מערכת זו"
+msgstr "‏‎/srv - מידע עבור שירותים שמערכת זו מספקת"
 
 #. Type: select
 #. Choices
@@ -323,7 +316,7 @@ msgstr "‏‎/srv - מידע בשביל שירותים המסופקים על י
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/opt - add-on application software packages"
-msgstr "‏‎/opt - תוספות של חבילות תוכנה"
+msgstr "‏‎/opt - תוספות של חבילות תכנה"
 
 #. Type: select
 #. Choices
@@ -347,7 +340,7 @@ msgstr "‏‎/usr/local - היררכיה מקומית"
 #: ../partman-basicfilesystems.templates:13001
 #: ../partman-basicfilesystems.templates:14001
 msgid "Enter manually"
-msgstr "הזנה באופן ידני"
+msgstr "הקלדה באופן ידני"
 
 #. Type: select
 #. Choices
@@ -381,35 +374,35 @@ msgstr "נקודת עגינה למחיצה:"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:14001
 msgid "/dos"
-msgstr "/dos"
+msgstr "‎/dos"
 
 #. Type: select
 #. Choices
 #. :sl2:
 #: ../partman-basicfilesystems.templates:14001
 msgid "/windows"
-msgstr "/windows"
+msgstr "‎/windows"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "Invalid mount point"
-msgstr "נקודת עגינה לא חוקית"
+msgstr "נקודת עגינה שגויה"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "The mount point you entered is invalid."
-msgstr "נקודת העגינה שהוכנסה אינה חוקית."
+msgstr "נקודת העגינה שהוקלדה שגויה."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "Mount points must start with \"/\". They cannot contain spaces."
-msgstr "נקודות עגינה חייבות להתחיל בתו \"/\" ואסור שיכילו רווחים."
+msgstr "נקודות עגינה חייבות להתחיל בתו „/” ואינן יכולות להכיל רווחים."
 
 #. Type: string
 #. Description
@@ -423,7 +416,7 @@ msgstr "תווית למערכת הקבצים במחיצה:"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:18001
 msgid "Format the swap area:"
-msgstr "אתחול אזור ה-SWAP:"
+msgstr "אתחול שטח ההחלפה:"
 
 #. Type: text
 #. Description
@@ -473,7 +466,7 @@ msgstr "בלוקים שמורים:"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:24001
 msgid "Percentage of the file system blocks reserved for the super-user:"
-msgstr "אחוז הבלוקים השמורים בשביל משתמש העל:"
+msgstr "אחוז הבלוקים השמורים לטובת משתמש העל:"
 
 #. Type: text
 #. Description
@@ -493,30 +486,42 @@ msgstr "סטנדרטי"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "שימוש אופייני למחיצה זאת:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
 "system parameters can be chosen for that use."
 msgstr ""
-"ציין איך בכוונתך להשתמש במערכת הקבצים, כדי שהפרמטרים הנבחרים עבורה יהיו "
-"אופטימליים לשימוש זה."
+"נא לציין איך בכוונתך להשתמש במערכת הקבצים, כדי שהמשתנים הנבחרים עבורה יהיו "
+"המיטביים למטרה הזו."
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"סטנדרטי = פרמטרים סטנדרטיים, news = הקצאת inode אחד לכל בלוק של 4K, "
-"largefile =  הקצאת inode אחד לכל מגהבייט, largefile4 = הקצאת inode אחד לכל 4 "
-"מגהבייט."
+"תקניים = משתנים תקניים, news = הקצאת inode אחד לכל בלוק של 4 קילו בתים, "
+"largefile = הקצאת inode אחד לכל מגה בית, largefile4 = הקצאת inode אחד לכל 4 "
+"מגה בתים."
 
 #. Type: text
 #. Description
@@ -542,7 +547,7 @@ msgstr "ללא"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:30001
 msgid "Ext2 file system"
-msgstr "מערכת קבצים מסוג ext2"
+msgstr "מערכת קבצים ext2"
 
 #. Type: text
 #. Description
@@ -586,9 +591,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "מערכת קבצים מבוססת יומן JFS"
+msgstr "מערכת קבצים מבוססת יומן NTFS"
 
 #. Type: text
 #. Description
@@ -596,7 +600,7 @@ msgstr "מערכת קבצים מבוססת יומן JFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -606,7 +610,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:38001
 #: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
-msgstr "אזור דפדוף (SWAP)"
+msgstr "אזור החלפה"
 
 #. Type: text
 #. Description
@@ -619,7 +623,7 @@ msgstr "אזור דפדוף (SWAP)"
 #: ../partman-basicfilesystems.templates:39001
 #: ../partman-basicfilesystems.templates:41001
 msgid "swap"
-msgstr "דפדוף"
+msgstr "החלפה"
 
 #. Type: text
 #. Description
@@ -636,7 +640,7 @@ msgstr "אפשרויות עגינה:"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
-msgstr "אפשרויות עגינה מאפשרות הכוונה של התנהגותה של מערכת הקבצים."
+msgstr "אפשרויות עגינה מאפשרות לכוון את התנהגותה של מערכת הקבצים."
 
 #. Type: text
 #. Description
@@ -645,7 +649,7 @@ msgstr "אפשרויות עגינה מאפשרות הכוונה של התנהג�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
-msgstr "noatime - אל תעדכן את זמני הגישה ל-inode בכל גישה"
+msgstr "noatime - לא לעדכן את זמני הגישה ל־inode בכל גישה"
 
 #. Type: text
 #. Description
@@ -653,9 +657,8 @@ msgstr "noatime - אל תעדכן את זמני הגישה ל-inode בכל גי�
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - אל תעדכן את זמני הגישה ל-inode בכל גישה"
+msgstr "nodiratime - לא לעדכן את זמני הגישה ל־inode של תיקיות"
 
 #. Type: text
 #. Description
@@ -664,7 +667,7 @@ msgstr "noatime - אל תעדכן את זמני הגישה ל-inode בכל גי�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:46001
 msgid "relatime - update inode access times relative to modify time"
-msgstr "relatime - עדכון זמני גישה ל-inode באופן יחסי לזמן השינוי"
+msgstr "relatime - עדכון זמני גישה ל־inode באופן יחסי למועד השינוי"
 
 #. Type: text
 #. Description
@@ -673,7 +676,7 @@ msgstr "relatime - עדכון זמני גישה ל-inode באופן יחסי ל�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
-msgstr "nodev - אל תתמוך בהתקנים מיוחדים מסוג character או block"
+msgstr "nodev - לא לתמוך בהתקנים מיוחדים מסוג character או block"
 
 #. Type: text
 #. Description
@@ -682,7 +685,7 @@ msgstr "nodev - אל תתמוך בהתקנים מיוחדים מסוג character
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:48001
 msgid "nosuid - ignore set-user-identifier or set-group-identifier bits"
-msgstr "nosuid - התעלם מביט set-user-identifier או set-group-identifier"
+msgstr "nosuid - התעלמות מהסיביות set-user-identifier או set-group-identifier"
 
 #. Type: text
 #. Description
@@ -691,7 +694,7 @@ msgstr "nosuid - התעלם מביט set-user-identifier או set-group-identifi
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
-msgstr "noexec - אל תרשה הרצת קבצים בינארים"
+msgstr "noexec - לא להרשות הרצת קבצים בינרים"
 
 #. Type: text
 #. Description
@@ -709,7 +712,7 @@ msgstr "ro - עגינת מערכת הקבצים לקריאה בלבד"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
-msgstr "sync - המתן לסיום כל פעולות הקלט/פלט לפני המשך עבודה"
+msgstr "sync - כל פעולות הקלט/פלט מתרחשות באופן סינכרוני"
 
 #. Type: text
 #. Description
@@ -754,7 +757,7 @@ msgstr "quiet - שינוי בעלות והרשאות לא יחזירו שגיא�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
-msgstr "notail - בטל אריזת קבצים לתוך עץ מערכת הקבצים"
+msgstr "notail - ביטול אריזת קבצים לתוך עץ מערכת הקבצים"
 
 #. Type: text
 #. Description
@@ -763,7 +766,7 @@ msgstr "notail - בטל אריזת קבצים לתוך עץ מערכת הקבצ�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - לגזום בלוקים ששוחררו מהתקן הבלוק שעליו מתבססים"
 
 #. Type: text
 #. Description
@@ -781,7 +784,7 @@ msgstr "acls - תמיכה ברשימות בקרת גישה (Access Control List)
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
-msgstr "shortnames - השתמש בשמות קבצים בסגנון MS-DOS 8.3"
+msgstr "shortnames - שימוש בשמות קבצים בסגנון MS-DOS 8.3 בלבד"
 
 #. Type: boolean
 #. Description
@@ -798,14 +801,13 @@ msgstr "לחזור חזרה לתפריט ולתקן את השגיאה?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"מחיצת האתחול שלך לא הוגדרה עם מערכת קבצים ext2 או ext3. הגדרה זאת נדרשת על "
-"ידי המחשב שלך כדי שיוכל לאתחל. חזור אחורה ובחר במערכת הקבצים ext2 או ext3."
+"מחיצת האתחול שלך לא הוגדרה עם מערכת הקבצים ext2 מערכת קבצים זו נדרשת על ידי "
+"המכונה שלך לטובת אתחול. נא לחזור ולהשתמש במערכת קבצים מסוג ext2."
 
 #. Type: boolean
 #. Description
@@ -820,19 +822,17 @@ msgid ""
 "partition will be used as is. This means that you may not be able to boot "
 "from your hard disk."
 msgstr ""
-"אם לא תחזור לתפריט הגדרת המחיצות ותתקן שגיאה זו, המחיצה תהיה בשימוש כמות "
-"שהיא. כלומר שייתכן שלא תוכל לאתחל מהדיסק הקשיח שלך."
+"בחירה שלא לחזור לתפריט החלוקה למחיצות ולתקן את השגיאה הזאת תוביל לשימוש "
+"במחיצה כמו שהיא. כלומר שלא תהיה לך אפשרות לאתחל מהכונן הקשיח שלך."
 
 #. Type: boolean
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"מחיצת האתחול שלך לא ממוקמת על המחיצה הראשית הראשונה של הדיסק הקשיח שלך. "
-"מיקום זה נדרש על מנת לאתחל את המחשב. חזור אחורה ובחר במחיצה הראשית הראשונה "
-"שלך כמחיצת אתחול."
+"מחיצת האתחול שלך ממוקמת במחיצה הראשונה של הכונן הקשיח שלך. מצב זה נדרש על "
+"ידי המכונה שלך לטובת אתחול. נא לחזור ולהשתמש במחיצה הראשונה שלך כמחיצת אתחול."

@@ -4,21 +4,39 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # translation of ar.po to Arabic
-# Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2007, 2008.
-# Arabic messages for debian-installer. Copyright (C) 2003 Software in the Public Interest, Inc. This file is distributed under the same license as debian-installer. Ossama M. Khayat <okhayat@yahoo.com>, 2005.
+# Arabic messages for debian-installer. Copyright (C) 2003 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Ossama Khayat <okhayat@yahoo.com>, 2005 - 2013.
+# Abdelhak Bougouffa, 2017.
+# najib LAARIBI <supnano@gmail.com>, 2018.
+# ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
+# Osama <osama.ibrahim.89@gmail.com>, 2019.
+#
+# Translations from iso-codes:
+#     Translations taken from ICU SVN on 2007-09-09
+#   Translations from kde-i18n/desktop.po:
+#
+#   Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2002.
+#   Free Software Foundation, Inc., 2002, 2004.
+#   Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2008, 2010.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#   Mohammad Gamal <f2c2001@yahoo.com>, 2001.
 msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2010-03-26 09:46+0000\n"
-"PO-Revision-Date: 2008-08-28 05:46+0300\n"
-"Last-Translator: Ossama M. Khayat <okhayat@yahoo.com>\n"
-"Language-Team: Arabic <support@arabeyes.org>\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2014-12-30 22:01+0000\n"
+"PO-Revision-Date: 2019-06-10 10:55+0000\n"
+"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
+"Language-Team: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n⇐10 ? "
-"3 : n>=11 && n⇐99 ? 4 : 5\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
 #. Type: boolean
 #. Description
@@ -126,7 +144,7 @@ msgstr "جهاز GRUB الجذري هو: ${GRUBROOT}."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
 msgstr "تعذّرت تهيئة GRUB"
 
@@ -184,14 +202,20 @@ msgstr "حدث خطأ أثناء إعداد GRUB لجهاز multipath."
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
 msgstr "جهاز تثبيت محمّل الإقلاع:"
 
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
@@ -208,17 +232,6 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -229,27 +242,32 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"يمكن تحديد الجهاز بعلامة GRUB \"(hdn,m)\"، أو كجهازٍ في /dev. إليك بعض "
-"الأمثلة أدناه:\n"
-" - \"(hd0)\" أو \"/dev/hda\" سيثبّت GRUB على سجلّ الإقلاع الرّئيسي من\n"
-"   قرصك الصّلب الأوّل (IDE)؛\n"
-" - \"(hda0,1)\" أو \"/dev/hda2\" سيستعمل الجزء الثّاني من\n"
-"   قرص IDE الأوّل؛\n"
-" - \"(hd2,4)\" أو \"/dev/sdc5\" سيستعمل الجزء الممدّد الأوّل من\n"
-"   قرصك الثّالث (SCSI هنا)؛\n"
-" - \"(fd0)\" أو \"/dev/fd0\" سيثبّت GRUB على قرصٍ مرن."
+"يجب تحديد الجهاز كجهاز في /dev. إليك بعض الأمثلة أدناه:\n"
+" - \"/dev/sda\" سيثبّت GRUB على سجلّ الإقلاع الرّئيسي من\n"
+"   قرصك الصّلب الأوّل؛\n"
+" - \"/dev/sda2\" سيستعمل الجزء الثّاني من\n"
+"   قرصك الصّلب الأوّل؛\n"
+" - \"/dev/sdc5\" سيستعمل الجزء الممدّد الأوّل من\n"
+"   قرصك الثّالث؛\n"
+" - \"/dev/fd0\" سيثبّت GRUB على قرصٍ مرن."
+
+#. Type: select
+#. Choices
+#: ../grub-installer.templates:8001
+msgid "Enter device manually"
+msgstr "أدخل اسم الجهاز يدوياً"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "GRUB password:"
 msgstr "كلمة مرور GRUB:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid ""
 "The GRUB boot loader offers many powerful interactive features, which could "
 "be used to compromise your system if unauthorized users have access to the "
@@ -267,21 +285,21 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
 msgstr "إن لم تكن ترغب بتعيين كلمة مرور GRUB، اترك هذا الحقل فارغا."
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
 msgstr "إدخال كلمة السّر مجدّداً للتّأكيد:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
@@ -290,28 +308,28 @@ msgstr "رجاء أدخل كلمة مرور GRUB ذاتها مجدداً لتت�
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "Password input error"
 msgstr "خطأ في إدخال كلمة المرور"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr "كلمتا السر اللتان أدخلتهما ليستا متطابقتين. الرجاء المحاولة مجدداً."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
 msgstr "فشل تثبيت GRUB"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
@@ -322,16 +340,16 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Unable to install GRUB in ${BOOTDEV}"
 msgstr "تعذّر تثبيت GRUB في ${BOOTDEV}"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
-msgstr "فشل تنفيذ 'grub-install ${BOOTDEV}'"
+msgstr "فشل تنفيذ 'grub-install ${BOOTDEV}'."
 
 #. Type: error
 #. Description
@@ -339,71 +357,127 @@ msgstr "فشل تنفيذ 'grub-install ${BOOTDEV}'"
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001 ../grub-installer.templates:14001
+#: ../grub-installer.templates:14001 ../grub-installer.templates:15001
 msgid "This is a fatal error."
 msgstr "هذا خطأٌ فادح."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
 msgstr "فشل تنفيذ 'update-grub'."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid "Install GRUB?"
+msgstr "تريد تثبيت GRUB؟"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+"GRUB 2 هو الجيل الجديد من GNU GRUB، مُحمّل الإقلاع شائع الاستخدام على حاسبات "
+"i386/amd64. وهو الآن متوفر لمنصة ${ARCH}."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
+"يشتمل هذا البرنامج على مزايا جديدة لكنها لا زالت قيد الاختبار. ان اخترت "
+"تثبيتها، فكن على استعداد لمواجهة المشاكل، وكيفية إصلاح نظامك في حال عدم "
+"قدرته على الإقلاع. كما ننصحك بعدم تجربة هذه المزايات في أجهزة العمل الفعلي."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:17001
+#: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
 msgstr "تثبيت محمّل الإقلاع GRUB"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:18001
+#: ../grub-installer.templates:19001
 msgid "Looking for other operating systems..."
 msgstr "البحث عن أنظمة تشغيلٍ أخرى..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:19001
+#: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
 msgstr "تثبيت حزمة '${GRUB}'..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:20001
+#: ../grub-installer.templates:21001
 msgid "Determining GRUB boot device..."
 msgstr "تحديد جهاز إقلاع GRUB..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:21001
+#: ../grub-installer.templates:22001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
 msgstr "تشغيل \"grub-install·${BOOTDEV}\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:22001
+#: ../grub-installer.templates:23001
 msgid "Running \"update-grub\"..."
 msgstr "تشغيل \"update-grub\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:23001
+#: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
 msgstr "تحديث /etc/kernel-img.conf..."
 
 #. Type: text
 #. Description
+#. :sl1:
+#: ../grub-installer.templates:25001
+#, fuzzy
+msgid "Checking whether to force usage of the removable media path"
+msgstr ""
+"فحص ما إذا كان من الممكن استخدام القوة لاستعمال مسار الوسائط القابلة للإزالة"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:26001
+msgid "Mounting filesystems"
+msgstr "يتم تركيب أنظمة الملفات"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:27001
+#, fuzzy
+msgid "Configuring grub-efi for future usage of the removable media path"
+msgstr "تهيئة grub-efi للاستخدام المستقبلي لمسار الوسائط القابلة للإزالة"
+
+#. Type: text
+#. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "تثبيت محمّل الإقلاع GRUB على قرصٍ صلب"
 
@@ -411,6 +485,86 @@ msgstr "تثبيت محمّل الإقلاع GRUB على قرصٍ صلب"
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
+#: ../grub-installer.templates:29001
 msgid "Reinstall GRUB boot loader"
 msgstr "تثبيت محمّل الإقلاع GRUB"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Failed to mount /target/proc"
+msgstr "فشل تركيب /target/proc"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Mounting the proc file system on /target/proc failed."
+msgstr "فشل تركيب نظام ملفّات proc عند /target/proc."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr "تفقّد ‎/var/log/syslog أو انظر الطرفية الافتراضية الرابعة للتفاصيل."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Warning: Your system may be unbootable!"
+msgstr "تحذير: قد يكون نظامك غير قابلٍ للإقلاع!"
+
+#. Type: text
+#. Description
+#. Rescue menu item
+#. :sl2:
+#: ../grub-installer.templates:33001
+#, fuzzy
+msgid "Force GRUB installation to the EFI removable media path"
+msgstr "فرض تثبيت GRUB على مسار الوسائط القابلة للازالة EFI"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid "Force GRUB installation to the EFI removable media path?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"It seems that this computer is configured to boot via EFI, but maybe that "
+"configuration will not work for booting from the hard drive. Some EFI "
+"firmware implementations do not meet the EFI specification (i.e. they are "
+"buggy!) and do not support proper configuration of boot options from system "
+"hard drives."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"A workaround for this problem is to install an extra copy of the EFI version "
+"of the GRUB boot loader to a fallback location, the \"removable media path"
+"\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"Warning: If the installer failed to detect another operating system that is "
+"present on your computer that also depends on this fallback, installing GRUB "
+"there will make that operating system temporarily unbootable. GRUB can be "
+"manually configured later to boot it if necessary."
+msgstr ""
+"تحذير: إن كان برنامج التثبيت قد فشل باكتشاف نظام تشغيلٍ آخر موجودٍ على حاسوبك، "
+"فإن تعديل سجلّ الإقلاع الرّئيسي سوف يجعل نظام التّشغيل ذاك غير قابلٍ للإقلاع "
+"مؤقّتاً، إلّا أنّه من الممكن تهيئة GRUB يدويّاً لإقلاعه لاحقاً."

@@ -20,15 +20,16 @@
 # Amanpreet Singh Brar <aalam@users.sf.net>, 2008.
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
-# A S Alam <aalam@users.sf.net>, 2009, 2012.
+# A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
+# Aman ALam <alam.yellow@gmail.com>, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2012-05-06 12:14+0530\n"
-"Last-Translator: A S Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2019-04-20 07:33+0000\n"
+"Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -139,8 +140,7 @@ msgstr "ਵਾਲੀਅਮ ਗਰੁੱਪ ਬਣਾਉਣ ਸਮੇਂ ਅਚ�
 msgid ""
 "Autopartitioning using LVM failed because an error occurred while creating "
 "the volume group."
-msgstr ""
-"LVM ਨਾਲ ਆਟੋ-ਪਾਰਟੀਸ਼ਨਿੰਗ ਫੇਲ੍ਹ ਹੋਈ ਹੈ, ਕਿਉਂਕਿ ਵਾਲੀਅਮ ਗਰੁੱਪ ਬਣਾਉਣ ਦੌਰਾਨ ਇੱਕ ਗਲਤੀ ਆਈ ਹੈ।ਚ"
+msgstr "ਵਾਲੀਅਮ ਗਰੁੱਪ ਬਣਾਉਣ ਦੌਰਾਨ ਗ਼ਲਤੀ ਆਉਣ ਕਰਕੇ LVM ਨਾਲ ਸਵੈ-ਪਾਰਟੀਸ਼ਨ ਬਣਾਉਣਾ ਅਸਫ਼ਲ ਹੈ।"
 
 #. Type: error
 #. Description
@@ -171,7 +171,7 @@ msgstr "ਗ਼ੈਰ-ਮੌਜੂਦ ਫਿਜ਼ੀਕਲ ਵਾਲੀਅਮ"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr "ਇੱਕ ਵਾਲੀਅਮ ਗਰੱਪ ਵਿੱਚ ਇੱਕ ਗ਼ੈਰ-ਮੌਜੂਦ ਫਿਜ਼ੀਕਲ ਵਾਲੀਅਮ ਲਈ ਹਵਾਲਾ ਹੈ"
+msgstr "ਵਾਲੀਅਮ ਗਰੱਪ ਵਿੱਚ ਗ਼ੈਰ-ਮੌਜੂਦ ਫਿਜ਼ੀਕਲ ਵਾਲੀਅਮ ਲਈ ਹਵਾਲਾ ਹੈ।"
 
 #. Type: error
 #. Description
@@ -213,7 +213,7 @@ msgstr "ਆਟੋਮੈਟਿਕ ਪਾਰਟੀਸ਼ਨ ਬਣਾਉਣ ਲਈ
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr ""
+msgstr "ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਪਾਰਟੀਸ਼ਨ ਕਰਨ ਲਈ ਵਰਤਣ ਵਾਸਤੇ ਵਾਲੀਅਮ ਗਰੁੱਪ ਦੀ ਮਾਤਰਾ:"
 
 #. Type: string
 #. Description
@@ -225,6 +225,10 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
+"ਤੁਸੀਂ ਪੂਰੇ ਵਾਲੀਅਮ ਗਰੁੱਪ ਲਈ ਸੇਧ ਦਿੱਤੀ ਪਾਰਟੀਸ਼ਨ ਨੂੰ ਵਰਤ ਸਕਦੇ ਹੋ ਜਾਂ ਇਸ ਦੀ ਹਿੱਸੇ ਲਈਹੀ। ਜੇ ਤੁਸੀਂ "
+"ਸਿਰਫ਼ ਇਸ ਦੇ ਹਿੱਸੇ ਲਈ ਵਰਤਦੇ ਹੋ ਤਾਂ ਜਾਂ ਤੁਸੀਂ ਬਾਅਦ ਵਿੱਚ ਹੋਰ ਡਿਸਕਾਂ ਜੋੜਦੇ ਹੋ ਤਾਂ ਤੁਸੀਂ LVM ਟੂਲ ਵਰਤ "
+"ਕੇ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ ਵਧਾ ਸਕਦੇ ਹੋ, ਇਸ ਤਰ੍ਹਾਂ ਇੰਸਟਾਲੇਸ਼ਨ ਦੇ ਸਮੇਂ ਵਾਲੀਅਮ ਦੇ ਛੋਟੇ ਹਿੱਸੇ ਵਰਤ ਕੇ ਵੱਧ "
+"ਲਚਕੀਲਾ ਮਿਲ ਸਕਦੀ ਹੈ।"
 
 #. Type: string
 #. Description
@@ -235,6 +239,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"ਚੁਣੀ ਗਈ ਪਾਰਟੀਸ਼ਨ ਜੁਗਤ ਲਈ ਘੱਟੋ-ਘੱਟ ਆਕਾਰ ${MINSIZE} (ਜਾਂ ${PERCENT}) ਹੈ; ਯਾਦ ਰੱਖੋ ਕਿ "
+"ਤੁਹਾਡੇ ਵਲੋਂ ਚੁਣੇ ਪੈਕੇਜਾਂ ਨੂੰ ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਇਸ ਤੋਂ ਵੱਧ ਥਾਂ ਚਾਹੀਦੀ ਹੈ। ਵੱਧ-ਤੋਂ-ਵੱਧ ਸਾਈਜ਼ ${MAXSIZE} "
+"ਹੈ।"
 
 #. Type: string
 #. Description
@@ -253,14 +260,14 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "Invalid input"
-msgstr "ਗਲਤ ਇੰਪੁੱਟ"
+msgstr "ਗ਼ਲਤ ਦਰਜ ਕੀਤੀ"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
-msgstr ""
+msgstr "ਤੁਸੀਂ \"${INPUT}\" ਦਿੱਤਾ ਹੈ, ਜੋ ਕਿ ਠੀਕ ਆਕਾਰ ਵਜੋਂ ਪਛਾਣਿਆ ਨਹੀਂ ਗਿਆ ਹੈ।"
 
 #. Type: error
 #. Description
@@ -277,6 +284,8 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
+"ਤੁਸੀਂ ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਪਾਰਟੀਸ਼ਨ ਕਨ ਲਈ ਵਰਤਣ ਵਾਸਤੇ ${SIZE} ਦਿੱਤਾ ਹੈ, ਪਰ ਮੌਜੂਦ ਥਾਂ ਸਿਰਫ਼ "
+"${MAXSIZE} ਹੈ।"
 
 #. Type: error
 #. Description
@@ -293,3 +302,5 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
+"ਤੁਸੀਂ ਸੇਧ ਦਿੱਤੇ ਪਾਰਟੀਸ਼ਨ ਬਣਾਉਣ ਲਈ ${SIZE} ਲਈ ਕਿਹਾ ਸੀ, ਪਰ ਚੁਣੇ ਪਾਰਟੀਸ਼ਨ ਇੰਤਜ਼ਾਮ ਲਈ ਘੱਟੋ-ਘੱਟ "
+"${MINSIZE} ਚਾਹੀਦਾ ਹੈ।"

@@ -19,21 +19,21 @@
 # Gediminas Paulauskas <menesis@delfi.lt>, 2000-2001.
 # Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
 # Kęstutis Biliūnas <kebil@kaunas.init.lt>, 2004, 2006, 2008, 2009, 2010.
-# Rimas Kudelis <rq@akl.lt>, 2012.
+# Rimas Kudelis <rq@akl.lt>, 2012, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2012-08-26 02:00+0300\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2017-11-26 20:23+0000\n"
 "Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
 
 #. Type: text
 #. Description
@@ -42,7 +42,7 @@ msgstr ""
 msgid ""
 "Checking the ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Tikrinimas ${TYPE} failų sistemos įrenginio ${DEVICE} skirsnyje #"
+"Tikrinama ${TYPE} failų sistema įrenginio ${DEVICE} skaidinyje Nr. "
 "${PARTITION}..."
 
 #. Type: text
@@ -51,7 +51,8 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:2001
 msgid "Checking the swap space in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Tikrinimas mainų (swap) vietos įrenginio ${DEVICE} skirsnyje #${PARTITION}..."
+"Tikrinama mainų (swap) sritis įrenginio ${DEVICE} skaidinyje Nr. "
+"${PARTITION}..."
 
 #. Type: text
 #. Description
@@ -59,7 +60,8 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:3001
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Kūrimas ${TYPE} failų sistemos įrenginio ${DEVICE} skirsnyje #${PARTITION}..."
+"Kuriama ${TYPE} failų sistema įrenginio ${DEVICE} skaidinyje Nr. "
+"${PARTITION}..."
 
 #. Type: text
 #. Description
@@ -69,8 +71,8 @@ msgid ""
 "Creating ${TYPE} file system for ${MOUNT_POINT} in partition #${PARTITION} "
 "of ${DEVICE}..."
 msgstr ""
-"Kūrimas ${TYPE} failų sistemos prijungimo taškui ${MOUNT_POINT} įrenginio "
-"${DEVICE} skirsnyje #${PARTITION}..."
+"Kuriama ${TYPE} failų sistema prijungimo taškui ${MOUNT_POINT} įrenginio "
+"${DEVICE} skaidinyje Nr. ${PARTITION}..."
 
 #. Type: text
 #. Description
@@ -78,7 +80,8 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:5001
 msgid "Formatting swap space in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Kūrimas mainų (swap) vietos įrenginio ${DEVICE} skirsnyje #${PARTITION}..."
+"Kuriama mainų (swap) sritis įrenginio ${DEVICE} skaidinyje Nr. "
+"${PARTITION}..."
 
 #. Type: boolean
 #. Description
@@ -494,12 +497,20 @@ msgstr "standartinis"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Šio skaidinio tipinis naudojimas:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -510,13 +521,17 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"standard = įprastiniai parametrai, news = vienas ‚inode‘ 4KB blokui, "
-"largefile = vienas ‚inode‘ megabaitui, largefile4 = vienas ‚inode‘ 4-iems "
+"standard = įprastiniai parametrai, news = vienas „inode“ 4 KB blokui, "
+"largefile = vienas „inode“ megabaitui, largefile4 = vienas „inode“ 4-iems "
 "megabaitams."
 
 #. Type: text
@@ -587,9 +602,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "JFS žurnalinė failų sistema"
+msgstr "NTFS žurnalinė failų sistema"
 
 #. Type: text
 #. Description
@@ -597,7 +611,7 @@ msgstr "JFS žurnalinė failų sistema"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -646,7 +660,7 @@ msgstr "Prijungimo nuostatos gali priderinti failų sistemos elgseną."
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
-msgstr "noatime - neatnaujint kreipimosi laiko kiekvieno kreipimosi metu"
+msgstr "noatime – neatnaujinti kreipimosi laiko kiekvieno kreipimosi metu"
 
 #. Type: text
 #. Description
@@ -654,9 +668,10 @@ msgstr "noatime - neatnaujint kreipimosi laiko kiekvieno kreipimosi metu"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - neatnaujint kreipimosi laiko kiekvieno kreipimosi metu"
+msgstr ""
+"nodiratime – neatnaujinti kreipimosi į katalogus laiko kiekvieno kreipimosi "
+"metu"
 
 #. Type: text
 #. Description
@@ -665,7 +680,7 @@ msgstr "noatime - neatnaujint kreipimosi laiko kiekvieno kreipimosi metu"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:46001
 msgid "relatime - update inode access times relative to modify time"
-msgstr "relatime - atnaujint kreipimosi laiką, esant pakeitimams"
+msgstr "relatime – atnaujinti kreipimosi laiką, esant pakeitimams"
 
 #. Type: text
 #. Description
@@ -674,7 +689,7 @@ msgstr "relatime - atnaujint kreipimosi laiką, esant pakeitimams"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
-msgstr "nodev - neleist kurti specialių simbolinių ar blokinių įrenginių"
+msgstr "nodev – neleisti kurti specialių simbolinių ar blokinių įrenginių"
 
 #. Type: text
 #. Description
@@ -683,7 +698,7 @@ msgstr "nodev - neleist kurti specialių simbolinių ar blokinių įrenginių"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:48001
 msgid "nosuid - ignore set-user-identifier or set-group-identifier bits"
-msgstr "nosuid - ignoruoti SUID ir SGID bitus"
+msgstr "nosuid – ignoruoti SUID ir SGID bitus"
 
 #. Type: text
 #. Description
@@ -692,7 +707,7 @@ msgstr "nosuid - ignoruoti SUID ir SGID bitus"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
-msgstr "noexec - neleisti vykdyti jokių programų"
+msgstr "noexec – neleisti vykdyti jokių programų"
 
 #. Type: text
 #. Description
@@ -701,7 +716,7 @@ msgstr "noexec - neleisti vykdyti jokių programų"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
-msgstr "ro - prijungti failų sistemą tik skaitymui"
+msgstr "ro – prijungti failų sistemą tik skaitymui"
 
 #. Type: text
 #. Description
@@ -710,7 +725,7 @@ msgstr "ro - prijungti failų sistemą tik skaitymui"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
-msgstr "sync - visi įvesties/išvesties veiksmai vyks sinchroniškai"
+msgstr "sync – visi įvesties/išvesties veiksmai vyks sinchroniškai"
 
 #. Type: text
 #. Description
@@ -719,7 +734,7 @@ msgstr "sync - visi įvesties/išvesties veiksmai vyks sinchroniškai"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
-msgstr "usrquota - leisti naudotojų disko kvotų apskaitą"
+msgstr "usrquota – leisti naudotojų disko kvotų apskaitą"
 
 #. Type: text
 #. Description
@@ -728,7 +743,7 @@ msgstr "usrquota - leisti naudotojų disko kvotų apskaitą"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
-msgstr "grpquota - leisti grupių disko kvotų apskaitą"
+msgstr "grpquota – leisti grupių disko kvotų apskaitą"
 
 #. Type: text
 #. Description
@@ -737,7 +752,7 @@ msgstr "grpquota - leisti grupių disko kvotų apskaitą"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:54001
 msgid "user_xattr - support user extended attributes"
-msgstr "user_xattr - išplėstų naudotojo atributų palaikymas"
+msgstr "user_xattr – išplėstų naudotojo atributų palaikymas"
 
 #. Type: text
 #. Description
@@ -746,7 +761,7 @@ msgstr "user_xattr - išplėstų naudotojo atributų palaikymas"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
-msgstr "quiet - failo savininko ir teisų pakeitimas negrąžins klaidų"
+msgstr "quiet – failo savininko ir teisų pakeitimas negrąžins klaidų"
 
 #. Type: text
 #. Description
@@ -755,7 +770,7 @@ msgstr "quiet - failo savininko ir teisų pakeitimas negrąžins klaidų"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
-msgstr "notail - drausti failų pakavimą failų sistemos medyje"
+msgstr "notail – drausti failų pakavimą failų sistemos medyje"
 
 #. Type: text
 #. Description
@@ -764,7 +779,7 @@ msgstr "notail - drausti failų pakavimą failų sistemos medyje"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard – pranešti apie atlaisvinamus blokus blokų įrenginiui (trim)"
 
 #. Type: text
 #. Description
@@ -799,15 +814,14 @@ msgstr "Ar grįžti į meniu ir pataisyti šią problemą?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Paleidimo skaidiniui nebuvo pasirinkta ext2 ar ext3 failų sistema. Tai "
-"būtina, kad Jūsų kompiuteris galėtų paleisti operacinę sistemą. Grįžkite "
-"atgal ir pasirinkite ext2 arba ext3 failų sistemą."
+"Paleidimo skaidiniui nebuvo pasirinkta ext2 failų sistema. Tai būtina, kad "
+"Jūsų kompiuteris galėtų paleisti operacinę sistemą. Grįžkite atgal ir "
+"pasirinkite ext2 failų sistemą."
 
 #. Type: boolean
 #. Description
@@ -830,12 +844,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"Paleidimo skaidinys nėra pirmajame pirminiame Jūsų kietojo disko skaidinyje. "
-"Tai būtina, kad kompiuteris galėtų paleisti operacinę sistemą. Grįžkite "
-"atgal ir kaip paleidimo skaidinį pasirinkite pirmąjį pirminį skaidinį."
+"Paleidimo skaidinys nėra pirmajame Jūsų kietojo disko skaidinyje. Tai "
+"būtina, kad kompiuteris galėtų paleisti operacinę sistemą. Grįžkite atgal ir "
+"kaip paleidimo skaidinį pasirinkite pirmąjį skaidinį."

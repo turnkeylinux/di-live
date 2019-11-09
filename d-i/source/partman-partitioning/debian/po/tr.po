@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2014-09-09 18:44+0200\n"
+"PO-Revision-Date: 2016-07-25 23:45+0300\n"
 "Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
 "Language-Team: Debian L10N Turkish\n"
 "Language: tr\n"
@@ -163,8 +163,8 @@ msgid ""
 "size followed by an optional unit of measure (e.g. \"200 GB\"). The default "
 "unit of measure is the megabyte."
 msgstr ""
-"Girdiğiniz boyut değeri geçerli bir değer değil. Lütfen pozitif bir tamsayı "
-"girin. İsterseniz girdiğiniz tamsayının ardından ölçü birimini de "
+"Girdiğiniz boyut değeri geçerli bir değer değil. Lütfen pozitif bir tam sayı "
+"girin. İsterseniz girdiğiniz tam sayının ardından ölçü birimini de "
 "belirtebilirsiniz (Örneğin \"200 GB\"). Öntanımlı ölçü birimi megabayttır."
 
 #. Type: error
@@ -257,7 +257,7 @@ msgstr "Son"
 #. :sl1:
 #: ../partman-partitioning.templates:12002
 msgid "Location for the new partition:"
-msgstr "Yeni bölüm için yer:"
+msgstr "Yeni bölümün konumu:"
 
 #. Type: select
 #. Description
@@ -267,7 +267,7 @@ msgid ""
 "Please choose whether you want the new partition to be created at the "
 "beginning or at the end of the available space."
 msgstr ""
-"Lütfen yeni bölümün, kullanılabilir alanın başlangıcında mı, sonunda mı "
+"Lütfen yeni bölümün, kullanılabilir alanın başında mı yoksa sonunda mı "
 "oluşturulmasını istediğinizi seçin."
 
 #. Type: select
@@ -563,50 +563,3 @@ msgstr "Ayrılmış BIOS bölgesi"
 #: ../partman-partitioning.templates:33001
 msgid "biosgrub"
 msgstr "biosgrub"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid "Go back to the menu and correct this problem?"
-msgstr "Seçkeye geri dönerek hataları düzeltmek ister misiniz?"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as an \"EFI boot partition\" and should be at least 35 MB in "
-"size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid ""
-"If you do not go back to the partitioning menu and correct this error, boot "
-"loader installation may fail later, although it may still be possible to "
-"install the boot loader to a partition."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:39001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as a \"Reserved BIOS boot area\" and should be at least 1 MB "
-"in size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""

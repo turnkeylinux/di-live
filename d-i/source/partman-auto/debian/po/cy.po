@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-10-18 14:11-0000\n"
 "Last-Translator: Dafydd Tomos <l10n@da.fydd.org>\n"
 "Language-Team: Welsh <>\n"
@@ -243,8 +243,8 @@ msgstr "Rhaniad /home ar wahan"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Rhaniadau /home, /usr, /var a /tmp ar wahan"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Rhaniadau /home, /var a /tmp ar wahan"
 
 #. Type: text
 #. Description
@@ -253,33 +253,3 @@ msgstr "Rhaniadau /home, /usr, /var a /tmp ar wahan"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Cynllun rhaniadu disg bach (< 1GB):"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-#, fuzzy
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Wedi tywys - defnyddio'r holl disg"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Rhaniadau /home, /var a /tmp ar wahan"

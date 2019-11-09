@@ -6,7 +6,7 @@
 # translation of debian-installer_packages_po_sublevel1_da.po to
 # Danish messages for debian-installer.
 # This file is distributed under the same license as debian-installer.
-# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014, 2015, 2016.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2010.
 # Mads Bille Lundby <lundbymads@gmail.com, 2009.
 # Henrik Christian Grove <debian@3001.dk>, 2008.
@@ -38,8 +38,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_da\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2014-10-18 20:20+0200\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2016-11-10 20:24+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -55,14 +55,14 @@ msgstr ""
 msgid ""
 "Checking the ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Tjekker ${TYPE}-filsystemet på partition nr. ${PARTITION} på ${DEVICE}..."
+"Tjekker ${TYPE}-filsystemet på partition nr. ${PARTITION} på ${DEVICE} ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-basicfilesystems.templates:2001
 msgid "Checking the swap space in partition #${PARTITION} of ${DEVICE}..."
-msgstr "Tjekker swap-området på partition nr. ${PARTITION} på ${DEVICE}..."
+msgstr "Tjekker swap-området på partition nr. ${PARTITION} på ${DEVICE} ..."
 
 #. Type: text
 #. Description
@@ -70,7 +70,7 @@ msgstr "Tjekker swap-området på partition nr. ${PARTITION} på ${DEVICE}..."
 #: ../partman-basicfilesystems.templates:3001
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Opretter ${TYPE}-filsystemet på partition nr. ${PARTITION} på ${DEVICE}..."
+"Opretter ${TYPE}-filsystemet på partition nr. ${PARTITION} på ${DEVICE} ..."
 
 #. Type: text
 #. Description
@@ -81,14 +81,14 @@ msgid ""
 "of ${DEVICE}..."
 msgstr ""
 "Opretter et ${TYPE}-filsystem til ${MOUNT_POINT} på partition nr. "
-"${PARTITION} på ${DEVICE}..."
+"${PARTITION} på ${DEVICE} ..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-basicfilesystems.templates:5001
 msgid "Formatting swap space in partition #${PARTITION} of ${DEVICE}..."
-msgstr "Formaterer swap-område på partition nr. ${PARTITION} på ${DEVICE}..."
+msgstr "Formaterer swap-område på partition nr. ${PARTITION} på ${DEVICE} ..."
 
 #. Type: boolean
 #. Description
@@ -502,12 +502,20 @@ msgstr "standard"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Typisk brug af denne partition:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -518,6 +526,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -788,7 +800,7 @@ msgstr "acls - understøttelse for POSIX.1e Access Control List"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
-msgstr "shortnames - brug filnavne med 8.3 tegnmaksimum i stil med MS-DOS."
+msgstr "shortnames - brug filnavne med 8.3 tegnmaksimum som MS-DOS"
 
 #. Type: boolean
 #. Description

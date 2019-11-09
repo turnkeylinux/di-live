@@ -14,12 +14,12 @@ for item in $(sed -e 's/[^ =]*="[^"]*[ ][^"]*"//g' \
 	# Remove trailing '?' for debconf variables set with '?='
 	var="${var%\?}"
 
-	if [ "$item" = "--" ]; then
+	if [ "$item" = "--" ] || [ "$item" = "---" ]; then
 		inuser=1
 		collect=""
 	elif [ "$inuser" ]; then
-		# BOOT_IMAGE is added by syslinux
-		if [ "$var" = "BOOT_IMAGE" ]; then
+		# BOOT_IMAGE and BOOTIF are added by syslinux
+		if [ "$var" = "BOOT_IMAGE" ] || [ "$var" = "BOOTIF" ]; then
 			continue
 		fi
 
@@ -46,34 +46,9 @@ for item in $(sed -e 's/[^ =]*="[^"]*[ ][^"]*"//g' \
 			continue
 		fi
 
-		# We don't believe that vga= is needed to display a console
-		# any more now that we've switched to 640x400 by default,
-		# and it breaks suspend/resume. People can always type it in
-		# again at the installed boot loader if need be.
-		if [ "$var" = vga ]; then
-			continue
-		fi
-
-		# Sometimes used on the live CD for debugging initramfs-tools.
-		if [ "$var" = break ]; then
-			continue
-		fi
-
-		# Skip live-CD-specific crud
-		if [ "${var%-ubiquity}" != "$var" ] || \
-		   [ "$var" = noninteractive ]; then
-			continue
-		fi
-
 		# Skip debconf variables
 		varnoslash="${var##*/*}"
 		if [ "$varnoslash" = "" ]; then
-			continue
-		fi
-
-		# Skip module-specific variables
-		varnodot="${var##*.*}"
-		if [ "$varnodot" = "" ]; then
 			continue
 		fi
 

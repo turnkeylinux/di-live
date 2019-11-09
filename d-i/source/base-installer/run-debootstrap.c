@@ -441,8 +441,13 @@ main(int argc, char *argv[])
     debconf = debconfclient_new();
     args = (char **)malloc(sizeof(char *) * (argc + 1));
     args[0] = "/usr/sbin/debootstrap";
-    for (i = 1; i < argc; i++)
+    printf("%s", args[0]);
+    for (i = 1; i < argc; i++) {
         args[i] = argv[i];
+        printf(" %s", argv[i]);
+    }
+    printf("\n");
+    fflush(stdout);
     args[argc] = NULL;
     return exec_debootstrap(args);
 }

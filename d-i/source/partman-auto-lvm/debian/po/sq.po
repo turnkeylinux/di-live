@@ -12,19 +12,24 @@
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@debian.org>, 2004
 #   Elian Myftiu <elian.myftiu@gmail.com>, 2004,2006.
+#
+# Eva Vranici <evavranici@gmail.com>, 2017.
+# Silva Arapi <silva.arapi@gmail.com>, 2017.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2010-02-21 18:30+0100\n"
-"Last-Translator:  Elian Myftiu <elian.myftiu@gmail.com>\n"
-"Language-Team: Albanian \n"
-"Language: \n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2017-09-11 23:13+0300\n"
+"Last-Translator: Sotirios Vrachas <sotirios@vrachas.net>\n"
+"Language-Team: Albanian <debian-l10n-albanian@lists.debian.org>\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4;\n"
 
 #. Type: text
 #. Description
@@ -179,8 +184,8 @@ msgid ""
 "Please check that all devices are properly connected. Alternatively, please "
 "check the automatic partitioning recipe."
 msgstr ""
-"Të lutem kontroll që të gjithë dipozitivët janë lidhur si duhet. Gjithashtu, "
-"të lutem kontrollo recetën e ndarjes automatike."
+"Të lutem kontrollo që të gjithë dipozitivët janë lidhur si duhet. "
+"Gjithashtu, të lutem kontrollo recetën e ndarjes automatike."
 
 #. Type: error
 #. Description

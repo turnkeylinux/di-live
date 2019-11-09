@@ -3,28 +3,39 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of he.po to Hebrew
+# translation of debian-installer_packages_po_sublevel1_he.po to Hebrew
 # Hebrew messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-#
-#
-# Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008.
+# Translations from iso-codes:
+# Translations taken from ICU SVN on 2007-09-09
+# Translations taken from KDE:
 # Amit Dovev <debian.translator@gmail.com>, 2007.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
-# Omer Zak <w1@zak.co.il>, 2008, 2010.
+# Omer Zak <w1@zak.co.il>, 2008, 2010, 2012, 2013.
+# Tobias Quathamer <toddy@debian.org>, 2007.
+# Free Software Foundation, Inc., 2002,2004.
+# Alastair McKinstry <mckinstry@computer.org>, 2002.
+# Meni Livne <livne@kde.org>, 2000.
+# Free Software Foundation, Inc., 2002,2003.
+# Meni Livne <livne@kde.org>, 2000.
+# Meital Bourvine <meitalbourvine@gmail.com>, 2007.
+# Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: he\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-01-23 07:29+0000\n"
-"PO-Revision-Date: 2010-02-22 14:52+0200\n"
-"Last-Translator: Omer Zak <w1@zak.co.il>\n"
-"Language-Team: Hebrew <debian-hebrew-common@lists.alioth.debian.org>\n"
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2014-12-30 22:01+0000\n"
+"PO-Revision-Date: 2019-02-28 22:08+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: boolean
 #. Description
@@ -34,7 +45,7 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
 msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "להתקין את מנהל האתחול GRUB בסקטור האתחול הראשי (MBR) של הדיסק הקשיח?"
+msgstr "להתקין את מנהל האתחול GRUB לרשומת האתחול הראשית (MBR) של הכונן הקשיח?"
 
 #. Type: boolean
 #. Description
@@ -56,8 +67,9 @@ msgid ""
 "operating systems or your new system."
 msgstr ""
 "אם כל מערכות ההפעלה שלך רשומות למעלה, אז אפשר להתקין בבטחה את מנהל האתחול על "
-"סקטור האתחול הראשי (MBR) של הדיסק הקשיח הראשון. כאשר המחשב שלך יאתחל את "
-"עצמו, תוכל לבחור לטעון את אחת ממערכות ההפעלה הרשומות או את המערכת החדשה שלך."
+"רשומת האתחול הראשית (MBR) של הכונן הקשיח הראשון. כאשר המחשב שלך יפעיל את "
+"עצמו מחדש, ניתן יהיה לבחור לטעון את אחת ממערכות ההפעלה הרשומות או את המערכת "
+"החדשה שלך."
 
 #. Type: boolean
 #. Description
@@ -68,8 +80,8 @@ msgid ""
 "computer. If so, it should be safe to install the GRUB boot loader to the "
 "master boot record of your first hard drive."
 msgstr ""
-"נראה שההתקנה החדשה היא המערכת ההפעלה היחידה על המחשב זה. אם כך, אפשר להתקין "
-"בבטחה את מנהל האתחול GRUB על סקטור האתחול הראשי (MBR) של הדיסק הקשיח הראשון."
+"נראה שההתקנה החדשה היא מערכת ההפעלה היחידה על מחשב זה. אם כך, אפשר להתקין "
+"בבטחה את מנהל האתחול GRUB על רשומת האתחול הראשית (MBR) של הכונן הקשיח הראשון."
 
 #. Type: boolean
 #. Description
@@ -81,23 +93,23 @@ msgid ""
 "operating system temporarily unbootable, though GRUB can be manually "
 "configured later to boot it."
 msgstr ""
-"אזהרה: אם תוכנית ההתקנה לא גילתה מערכת הפעלה נוספת שנמצאת על המחשב שלך, "
-"עדכון סקטור האתחול הראשי (MBR) יהפוך באופן זמני את מערכת ההפעלה הנוספת ללא "
-"ניתנת לאתחול, למרות שניתן  אחר כך להגדיר את GRUB באופן ידני כדי שיאתחל אותה."
+"אזהרה: אם תכנית ההתקנה לא גילתה מערכת הפעלה נוספת שנמצאת על המחשב שלך, עדכון "
+"רשומת האתחול הראשית (MBR) יהפוך באופן זמני את מערכת ההפעלה הנוספת לבלתי "
+"ניתנת לאתחול, למרות שניתן לאחר מכן להגדיר את GRUB באופן ידני כדי לאתחל אותה."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:3001
 msgid "Install the GRUB boot loader to the Serial ATA RAID disk?"
-msgstr "התקנת מנהל האתחול GRUB על דיסק מסוג Serial ATA RAID?"
+msgstr "להתקין את מנהל האתחול GRUB על כונן מסוג ATA RAID טורי?"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:3001
 msgid "Installation of GRUB on Serial ATA RAID is experimental."
-msgstr "התקנה של GRUB על Serial ATA RAID הינה ניסיונית."
+msgstr "התקנה של GRUB על ATA RAID טורי הנה ניסיונית."
 
 #. Type: boolean
 #. Description
@@ -108,8 +120,8 @@ msgid ""
 "RAID disk. It is also assumed that disk is listed as the first hard disk in "
 "the boot order defined in the system's BIOS setup."
 msgstr ""
-"GRUB תמיד מותקן ל-MBR של דיסק  ה-Serial ATA RAID. בנוסף ההנחה היא שהדיסק הוא "
-"הדיסק הקשיח הראשון בסדר האתחול שמוגדר ב-BIOS של המערכת."
+"GRUB תמיד מותקן ל־MBR של כונן  ה־ATA RAID הטורי. בנוסף ההנחה היא שהכונן הוא "
+"הכונן הקשיח הראשון בסדר האתחול שמוגדר ב־BIOS של המערכת."
 
 #. Type: boolean
 #. Description
@@ -131,7 +143,7 @@ msgstr "התקן השורש של GRUB הוא: ${GRUBROOT}."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
 msgstr "לא מצליח להגדיר את GRUB"
 
@@ -140,7 +152,7 @@ msgstr "לא מצליח להגדיר את GRUB"
 #. :sl3:
 #: ../grub-installer.templates:4001
 msgid "An error occurred while setting up GRUB for your Serial ATA RAID disk."
-msgstr "שגיאה קרתה בזמן הגדרת GRUB לדיסק ה-Serial ATA RAID שלך."
+msgstr "אירעה שגיאה במהלך הגדרת GRUB לכונן ה־ATA RAID הטורי שלך."
 
 #. Type: error
 #. Description
@@ -188,14 +200,20 @@ msgstr "שגיאה קרתה בזמן הגדרת GRUB להתקן רב-הנתיב�
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
 msgstr "התקן עבור התקנת מנהל האתחול:"
 
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
@@ -212,17 +230,6 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -233,27 +240,29 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"ניתן לציין את ההתקן על ידי השיטה של GRUB לציון כוננים (hdn,m), או על ידי "
-"התקן ב-/dev. מספר דוגמאות:\n"
-" - \"(hd0)\" או /dev/hda יתקין את GRUB על ה-master-boot-record של הדיסק "
-"הראשון (IDE);\n"
-" - \"(hd0,1)\" או \"/dev/hda2\" יתקין את ישתמש במחיצה השנייה של הדיסק IDE "
-"הראשון שלך;\n"
-" - \"(hd2,4)\"·או·\"/dev/sdc5\"·ישתמש במחיצה המורחבת הראשונה של הדיסק השלישי "
-"(בחיבור SCSI במקרה זה);\n"
-" - \"(fd0)\"·או·\"/dev/fd0\"·יתקין את GRUB על דיסקט."
+"ההתקן צריך להיות מיוצג כהתקן ב־‎/dev. להלן מספר דוגמאות:\n"
+" - „‎/dev/sda” יתקין את GRUB על ה־master-boot-record של הכונן הראשון שלך;\n"
+" - „‎/dev/sda2” ישתמש במחיצה השנייה של הכונן הראשון שלך;\n"
+" - „‎/dev/sdc5” ישתמש במחיצה המורחבת הראשונה של הכונן השלישי;\n"
+" - „‎/dev/fd0” יתקין את GRUB על דיסקט."
+
+#. Type: select
+#. Choices
+#: ../grub-installer.templates:8001
+msgid "Enter device manually"
+msgstr "הזנת התקן באופן ידני"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "GRUB password:"
 msgstr "סיסמת GRUB:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid ""
 "The GRUB boot loader offers many powerful interactive features, which could "
 "be used to compromise your system if unauthorized users have access to the "
@@ -270,21 +279,21 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
 msgstr "אם אינך רוצה לקבוע סיסמת GRUB, השאר את הדה ריק."
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
-msgstr "הכנס שוב את הסיסמה לבדיקה אם הכנסת אותה נכון:"
+msgstr "נא להכניס את הססמה שוב לצורך אימות:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
@@ -293,28 +302,28 @@ msgstr "אנא הכנס את סיסמת ה-GRUB בשנית על מנת לווד�
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "Password input error"
 msgstr "שגיאה בקליטת הסיסמה"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr "שתי הסיסמאות שהכנסת אינן זהות. אנא נסה שוב."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
 msgstr "התקנת GRUB נכשלה"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
@@ -325,14 +334,14 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Unable to install GRUB in ${BOOTDEV}"
 msgstr "לא ניתן להתקין את GRUB ב-${BOOTDEV}"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
 msgstr "הרצת 'grub-install ${BOOTDEV}' נכשלה."
 
@@ -342,78 +351,219 @@ msgstr "הרצת 'grub-install ${BOOTDEV}' נכשלה."
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001 ../grub-installer.templates:14001
+#: ../grub-installer.templates:14001 ../grub-installer.templates:15001
 msgid "This is a fatal error."
 msgstr "זאת שגיאה קטלנית."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
 msgstr "הרצת 'update-grub' נכשלה."
 
-#. Type: text
+#. Type: boolean
 #. Description
-#. :sl1:
+#. :sl4:
 #: ../grub-installer.templates:17001
-msgid "Installing GRUB boot loader"
-msgstr "התקנת מנהל האתחול GRUB"
+msgid "Install GRUB?"
+msgstr "להתקין את GRUB?"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+"GRUB 2 הוא הדור הבא של GNU GRUB, מנהל האתחול הנפוץ בעיקר עבור מחשבי i386/"
+"amd64. זמין כעת גם עבור ${ARCH}."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
+"למערכת זו ישנן תכונות חדשות ומעניינות אך היא עדיין בשלב ניסיוני לארכיטקטורה "
+"זו. אם בחירתך היא להתקין אותה, עשויות להתרחש כל מיני תופעות חריגות וכדאי "
+"שיהיה לך ידע מקדים כיצד לשקם את המערכת אם היא אינה מתאתחלת. מומלץ שלא לנסות "
+"אפשרות זו בסביבות הפקה פעילות."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:18001
-msgid "Looking for other operating systems..."
-msgstr "מחפש מערכות הפעלה אחרות..."
+msgid "Installing GRUB boot loader"
+msgstr "מנהל האתחול GRUB מותקן"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:19001
-msgid "Installing the '${GRUB}' package..."
-msgstr "מתקין את החבילה  '${GRUB}'..."
+msgid "Looking for other operating systems..."
+msgstr "מתבצע חיפוש אחר מערכות הפעלה אחרות…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:20001
-msgid "Determining GRUB boot device..."
-msgstr "קובע את התקן האתחול של GRUB..."
+msgid "Installing the '${GRUB}' package..."
+msgstr "החבילה ‚${GRUB}’ מותקנת…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:21001
-msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "מריץ \"grub-install ${BOOTDEV}\"..."
+msgid "Determining GRUB boot device..."
+msgstr "התקן האתחול של GRUB מוגדר…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:22001
-msgid "Running \"update-grub\"..."
-msgstr "מריץ \"update-grub\"..."
+msgid "Running \"grub-install ${BOOTDEV}\"..."
+msgstr "הפקודה „grub-install ${BOOTDEV}” רצה…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:23001
+msgid "Running \"update-grub\"..."
+msgstr "הפקודה „update-grub” רצה…"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "מעדכן את /etc/kernel-img.conf..."
+msgstr "מתבצע עדכון של ‎/etc/kernel-img.conf…"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:25001
+msgid "Checking whether to force usage of the removable media path"
+msgstr "מתבצעת בדיקה האם לאכוף שימוש בנתיב המדיה הנתיקה"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:26001
+msgid "Mounting filesystems"
+msgstr "מערכות הקבצים מעוגנות"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:27001
+msgid "Configuring grub-efi for future usage of the removable media path"
+msgstr "grub-efi מוגדר לצורך שימוש עתידי של נתיב המדיה הנתיקה"
 
 #. Type: text
 #. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader on a hard disk"
-msgstr "התקנת מנהל האתחול GRUB על דיסק קשיח"
+msgstr "התקנת מנהל האתחול GRUB על כונן קשיח"
 
 #. Type: text
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
+#: ../grub-installer.templates:29001
 msgid "Reinstall GRUB boot loader"
 msgstr "התקנה מחדש של מנהל האתחול GRUB"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Failed to mount /target/proc"
+msgstr "העיגון של ‎/target/proc נכשל"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Mounting the proc file system on /target/proc failed."
+msgstr "עיגון מערכת קבצים מסוג proc ב־‎ /target/proc נכשל."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr "מוטב לעיין ב־‎/var/log/syslod או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Warning: Your system may be unbootable!"
+msgstr "אזהרה: יתכן שהמערכת שלך אינה ניתנת לאתחול!"
+
+#. Type: text
+#. Description
+#. Rescue menu item
+#. :sl2:
+#: ../grub-installer.templates:33001
+msgid "Force GRUB installation to the EFI removable media path"
+msgstr "לאלץ התקנת GRUB על נתיב מדיית EFI נתינת להסרה"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid "Force GRUB installation to the EFI removable media path?"
+msgstr "לאלץ התקנת GRUB על נתיב מדיית EFI ניתנת להסרה?"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"It seems that this computer is configured to boot via EFI, but maybe that "
+"configuration will not work for booting from the hard drive. Some EFI "
+"firmware implementations do not meet the EFI specification (i.e. they are "
+"buggy!) and do not support proper configuration of boot options from system "
+"hard drives."
+msgstr ""
+"נראה שהמחשב שלך מוגדר לאתחל דרך EFI, אך יתכן שהגדרה זאת לא תעבוד לאתחול "
+"מכונן קשיח. חלק ממימושי קושחות ה־EFI אינם עומדים בתקנים של EFI (למשל: יש בהן "
+"באגים!) ואינם תומכים בהגדרה תקינה של אפשרויות האתחול מהכוננים הקשיחים של "
+"המערכת."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"A workaround for this problem is to install an extra copy of the EFI version "
+"of the GRUB boot loader to a fallback location, the \"removable media path"
+"\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
+msgstr ""
+"אחת הדרכים לעקוף בעיה זאת היא להתקין עותק נוסף של גרסת ה־EFI של מנהל האתחול "
+"GRUB למיקום חלופי „נתיב מדיה נתיקה”. כמעט כל מערכות ה־EFI, ללא תלות בכמות "
+"התקלות שיש בהן, יאתחלו את GRUB בדרך זאת."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"Warning: If the installer failed to detect another operating system that is "
+"present on your computer that also depends on this fallback, installing GRUB "
+"there will make that operating system temporarily unbootable. GRUB can be "
+"manually configured later to boot it if necessary."
+msgstr ""
+"אזהרה: אם תכנית ההתקנה נכשלה בגילוי מערכת הפעלה נוספת שנמצאת על המחשב שלך, "
+"שגם תלויה בחלופה זאת, התקנה של GRUB שם תהפוך את המערכת הפעלה ההיא לבלתי "
+"ניתנת לאתחול באופן זמני. לאחר מכן ניתן להגדיר את GRUB באופן ידני כדי לאתחל "
+"אותה."

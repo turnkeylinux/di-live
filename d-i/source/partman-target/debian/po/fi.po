@@ -12,19 +12,29 @@
 # Tommi Vainikainen <thv+debian@iki.fi>, 2003 - 2004.
 # Tapio Lehtonen <tale@debian.org>, 2004 - 2006.
 # Esko Arajärvi <edu@iki.fi>, 2007 - 2008, 2009, 2010.
+# Timo Jyrinki <timo.jyrinki@iki.fi>, 2012.
+# Juhani Numminen <juhaninumminen0@gmail.com>, 2018, 2019.
+# Arto Keiski <arto.keiski@iki.fi>, 2018.
+#
+# Translations from iso-codes:
+# Copyright (C) 2007 Tobias Toedter <t.toedter@gmx.net>.
+#     Translations taken from ICU SVN on 2007-09-09
+# Tommi Vainikainen <Tommi.Vainikainen@iki.fi>, 2005-2010.
+# Copyright (C) 2005-2006, 2008-2010 Free Software Foundation, Inc.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2010-08-22 12:24+0300\n"
-"Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
+"PO-Revision-Date: 2019-02-01 20:18+0000\n"
+"Last-Translator: Juhani Numminen <juhaninumminen0@gmail.com>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: note
 #. Description
@@ -81,7 +91,7 @@ msgstr ""
 "ainakin yksi levyosio tiedostojärjestelmän juureksi (sen liitoskohta on /). "
 "Useimpien mielestä myös erillinen sivutusosio (swap) on välttämätön. ”Swap” "
 "on käyttöjärjestelmän työtilaa, jonka ansiosta levyä voidaan käyttää "
-"näennäismuistina. "
+"näennäismuistina."
 
 #. Type: note
 #. Description
@@ -276,54 +286,3 @@ msgstr "Miten tätä osiota käytetään:"
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "Käyttö:"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr "Ristiriitaisten tiedostojen poistaminen epäonnistui"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-"Asennusohjelman täytyy poistaa asennuskohteesta käyttöjärjestelmätiedostoja, "
-"mutta ei voinut tehdä sitä. Asennus ei voi jatkua."
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr "Poistetaan ristiriitaisia käyttöjärjestelmätiedostoja..."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr "Haluatko palata osiointiin?"
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-"Osiolla ${PARTITION} olevaa tiedostojärjestelmää, joka on liitetty "
-"kohteeseen ${MOUNTPOINT}, ei ole merkitty alustettavaksi. Määriteltyjen "
-"liitoskohtien alla olevat järjestelmätiedostoja sisältävät hakemistot (/"
-"etc, /lib, /usr, /var, ...) poistetaan asennuksen aikana."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""
-"Varmista ennen asentamista, että kaikista tärkeistä tiedostoista on "
-"varmuuskopiot."

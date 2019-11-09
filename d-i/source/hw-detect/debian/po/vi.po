@@ -4,21 +4,25 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Vietnamese translation for Debian Installer Level 1.
-# Copyright © 2008 Software in the Public Interest, Inc.
+# Copyright © 2010 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Jean Christophe André <progfou@gmail.com>
 # Vũ Quang Trung <vu.quang.trung@auf.org>
 # Trịnh Minh Thành <tmthanh@yahoo.com>
-# Clytie Siddall <clytie@riverland.net.au>, 2005-2008
+# Nguyễn Hùng Vũ <vuhung16@bigfoot.com>, 2001.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2010
+# Hai-Nam Nguyen <hainam@jcisio.com>, 2012
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2018, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer Level 1\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
 "POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2010-05-13 19:27+0930\n"
-"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"PO-Revision-Date: 2019-02-27 14:34+0700\n"
+"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
+"Language-Team: Vietnamese <debian-l10n-vietnamese@lists.debian.org>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +33,7 @@ msgstr ""
 #. :sl2:
 #: ../ethdetect.templates:1001
 msgid "no ethernet card"
-msgstr "không có thẻ Ethernet"
+msgstr "không có card Ethernet"
 
 #. Type: select
 #. Choices
@@ -54,8 +58,8 @@ msgid ""
 "No Ethernet card was detected. If you know the name of the driver needed by "
 "your Ethernet card, you can select it from the list."
 msgstr ""
-"Không có thẻ Ethernet nào được tìm ra. Nếu biết tên trình điều khiển cần bởi "
-"thẻ Ethernet trong máy tính này, hãy chọn nó trong danh sách."
+"Không có card Ethernet nào được tìm ra. Nếu biết tên trình điều khiển cần "
+"bởi card Ethernet trong máy tính này, hãy chọn nó trong danh sách."
 
 #. Type: boolean
 #. Description
@@ -82,14 +86,14 @@ msgstr ""
 #. :sl2:
 #: ../ethdetect.templates:3001
 msgid "Ethernet card not found"
-msgstr "Không tìm thấy thẻ Ethernet"
+msgstr "Không tìm thấy card Ethernet"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../ethdetect.templates:3001
 msgid "No Ethernet card was found on the system."
-msgstr "Không tìm thấy thẻ Ethernet nào trong hệ thống."
+msgstr "Không tìm thấy card Ethernet nào trong hệ thống."
 
 #. Type: text
 #. Description
@@ -126,7 +130,7 @@ msgstr "Đang dò tìm các đĩa và các phần cứng khác"
 #. :sl2:
 #: ../disk-detect.templates:3001
 msgid "continue with no disk drive"
-msgstr "tiếp tục lại mà không có ổ đĩa"
+msgstr "tiếp tục mà không có ổ đĩa"
 
 #. Type: select
 #. Description
@@ -167,62 +171,40 @@ msgstr "Không tìm thấy vật chứa nào có khả năng phân vùng."
 msgid "Please check that a hard disk is attached to this machine."
 msgstr "Hãy kiểm tra xem có đĩa cứng được kết nối đến máy này."
 
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid "Activate Serial ATA RAID devices?"
-msgstr "kích hoạt thiết bị Serial ATA RAID?"
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid ""
-"One or more drives containing Serial ATA RAID configurations have been "
-"found. Do you wish to activate these RAID devices?"
-msgstr ""
-"Một hoặc nhiều ổ đĩa chứa Serial ATA RAID cấu hình đã được tìm thấy. Bạn có "
-"muốn kích hoạt các thiết bị RAID?"
-
-#. Type: text
-#. Description
-#: ../disk-detect.templates:8001
-msgid "login to iSCSI targets"
-msgstr "đăng nhập vào các mục tiêu iSCSI"
-
 #. Type: text
 #. Description
 #. :sl1:
 #: ../hw-detect.templates:1001
 msgid "Detecting hardware, please wait..."
-msgstr "Đang dò tìm phần cứng, hãy chờ..."
+msgstr "Đang dò tìm phần cứng, hãy chờ…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../hw-detect.templates:2001
 msgid "Loading module '${MODULE}' for '${CARDNAME}'..."
-msgstr "Đang nạp mô-đun « ${MODULE} » cho thẻ « ${CARDNAME} »..."
+msgstr "Đang tải mô-đun “${MODULE}” cho “${CARDNAME}”…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../hw-detect.templates:3001
 msgid "Starting PC card services..."
-msgstr "Đang khởi chạy các dịch vụ thẻ PC..."
+msgstr "Đang khởi chạy các dịch vụ card PC…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../hw-detect.templates:4001
 msgid "Waiting for hardware initialization..."
-msgstr "Đang đợi phần cứng được sơ khởi..."
+msgstr "Đang đợi phần cứng được khởi tạo…"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
 #: ../hw-detect.templates:5001
 msgid "Modules to load:"
-msgstr "Các mô-đun cần nạp:"
+msgstr "Các mô-đun cần tải:"
 
 #. Type: multiselect
 #. Description
@@ -235,7 +217,7 @@ msgid ""
 msgstr ""
 "Những mô-đun hạt nhân Linux sau đã được tìm ra như là thích hợp với phần "
 "cứng của bạn. Nếu bạn biết các mô-đun không cần thiết, hoặc sẽ gây ra lỗi, "
-"bạn có thể chọn không nạp chúng. Nếu không chắc, bạn nên để lại mọi điều "
+"bạn có thể chọn không tải chúng. Nếu không chắc, bạn nên để lại mọi điều "
 "được chọn."
 
 #. Type: boolean
@@ -245,7 +227,7 @@ msgstr ""
 #. :sl2:
 #: ../hw-detect.templates:6001
 msgid "Start PC card services?"
-msgstr "Khởi chạy các dịch vụ thẻ PC không?"
+msgstr "Khởi chạy các dịch vụ card PC không?"
 
 #. Type: boolean
 #. Description
@@ -257,7 +239,7 @@ msgid ""
 "Please choose whether PC card services should be started in order to allow "
 "the use of PCMCIA cards."
 msgstr ""
-"Hãy chọn có nên khởi chạy các dịch vụ thẻ PC để cho khả năng sử dụng thẻ "
+"Hãy chọn có nên khởi chạy các dịch vụ card PC để cho khả năng sử dụng thẻ "
 "PCMCIA hay không."
 
 #. Type: string
@@ -280,18 +262,18 @@ msgid ""
 msgstr ""
 "Một số kiểu phần cứng PCMCIA riêng cần những tùy chọn cấu hình tài nguyên "
 "đặc biệt để hoạt động được; nếu không thì có thể gây ra hệ thống đông đặc. "
-"Chẳng hạn, một số máy tính xách tay kiểu Dell cần tùy chọn « exclude port "
-"0x800-0x8ff » (loại trừ cổng trong phạm vị 0x800-0x8ff) được ghi rõ vào đây. "
-"Những tùy chọn này sẽ được thêm vào tập tin « /etc/pcmcia/config.opts ». Xem "
-"sổ tay cài đặt (tiếng Việt) hay tập tin PCMCIA Thế Nào (HowTo) để tìm thông "
-"tin thêm."
+"Chẳng hạn, một số máy tính xách tay kiểu Dell cần tùy chọn “exclude port "
+"0x800-0x8ff” (loại trừ cổng trong phạm vị 0x800-0x8ff) được chỉ định vào "
+"đây. Những tùy chọn này sẽ được thêm vào tập tin “/etc/pcmcia/config.opts”. "
+"Xem sổ tay cài đặt (tiếng Việt) hay tập tin PCMCIA Thế Nào (HowTo) để tìm "
+"thông tin thêm."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../hw-detect.templates:7001
 msgid "For most hardware, you do not need to specify anything here."
-msgstr "Đối với hầu hết các kiểu phần cứng, bạn không cần ghi rõ gì vào đây."
+msgstr "Đối với hầu hết các kiểu phần cứng, bạn không cần chỉ định gì vào đây."
 
 #. Type: string
 #. Description
@@ -315,7 +297,7 @@ msgstr ""
 "này để kích hoạt nó; trường hợp này thường thông với phần cứng cũ hơn. Những "
 "tham số này thường là số hiệu cổng nhập/xuất (I/O) và IRQ mà thay đổi mỗi "
 "máy một khác, cũng không thể được quyết định từ phần cứng. Một chuỗi mẫu "
-"hình như « irq=7 io=0x220 »."
+"hình như “irq=7 io=0x220”."
 
 #. Type: string
 #. Description
@@ -333,14 +315,15 @@ msgstr ""
 #. :sl2:
 #: ../hw-detect.templates:9001
 msgid "Error while running '${CMD_LINE_PARAM}'"
-msgstr "Gặp lỗi khi chạy « ${CMD_LINE_PARAM} »"
+msgstr "Gặp lỗi khi chạy “${CMD_LINE_PARAM}”"
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../hw-detect.templates:10001
 msgid "Load missing drivers from removable media?"
-msgstr "Nạp các trình điều khiển còn thiếu từ vật chứa rời không?"
+msgstr ""
+"Tải các trình điều khiển còn thiếu từ đĩa di động đa phương tiện không?"
 
 #. Type: boolean
 #. Description
@@ -350,9 +333,9 @@ msgid ""
 "A driver for your hardware is not available. You may need to load drivers "
 "from removable media, such as a USB stick, or driver floppy."
 msgstr ""
-"Không có sẵn trình điều khiển cho phần cứng của bạn. Bạn có thể cần phải nạp "
-"trình điều khiển từ vật chứa rời, như một thanh USB hay đĩa mềm trình điều "
-"khiển. "
+"Không có sẵn trình điều khiển cho phần cứng của bạn. Bạn có thể cần phải tải "
+"trình điều khiển từ đĩa di động đa phương tiện, như một thanh USB hay đĩa "
+"mềm trình điều khiển. "
 
 #. Type: boolean
 #. Description
@@ -370,7 +353,7 @@ msgstr ""
 #. :sl2:
 #: ../hw-detect.templates:11001
 msgid "Load missing firmware from removable media?"
-msgstr "Nạp phần vững còn thiếu từ vật chứa rời không?"
+msgstr "Tải phần dẻo (firmware) còn thiếu từ đĩa di động đa phương tiện không?"
 
 #. Type: boolean
 #. Description
@@ -380,22 +363,23 @@ msgid ""
 "Some of your hardware needs non-free firmware files to operate. The firmware "
 "can be loaded from removable media, such as a USB stick or floppy."
 msgstr ""
-"Một số phần cứng của bạn cần thiết phần vững khác tự do để hoạt động. Phần "
-"vững như vậy có thể được nạp từ vật chứa rời, như một thanh USB hay đĩa mềm."
+"Một số phần cứng của bạn cần thiết phần dẻo (firmware) khác tự do để hoạt "
+"động. Phần dẻo như vậy có thể được tải từ đĩa di động đa phương tiện, như "
+"một thanh USB hay đĩa mềm."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../hw-detect.templates:11001
 msgid "The missing firmware files are: ${FILES}"
-msgstr "Những tập tin phần vững còn thiếu: ${FILES}"
+msgstr "Những tập tin phần dẻo (firmware) còn thiếu: ${FILES}"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../hw-detect.templates:12001
 msgid "Checking for firmware..."
-msgstr "Đang kiểm tra có phần vững..."
+msgstr "Đang kiểm tra cho phần dẻo (firmware)…"
 
 #. Type: text
 #. Description

@@ -15,9 +15,11 @@ dnl You should have received a copy of the GNU General Public License along
 dnl with this program; if not, write to the Free Software Foundation, Inc.,
 dnl 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-AC_INIT([squashfs-installer], [0])
+AC_INIT([live-installer], [0])
 AC_CONFIG_HEADER(include/config.h:include/config.h.in)
 AM_INIT_AUTOMAKE([1.8])
+
+AM_MAINTAINER_MODE([enable])
 
 dnl Checks for programs we'd need for building
 AC_PROG_MAKE_SET

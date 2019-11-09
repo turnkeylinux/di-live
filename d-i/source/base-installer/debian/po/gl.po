@@ -3,7 +3,12 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of gl.po to galician
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# translation of gl.po to Galician
 # Galician messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
@@ -11,15 +16,17 @@
 # Marce Villarino <mvillarino@users.sourceforge.net>, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@gmail.com>, 2009.
-# Jorge Barreiro <yortx.barry@gmail.com>, 2010.
+# Jorge Barreiro <xurxo@findomundo.es>, 2010, 2011, 2012, 2013, 2014, 2015, 2017.
+# mantinan <github@manty.net>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
 "POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2010-06-23 01:11+0200\n"
-"Last-Translator: Jorge Barreiro <yortx.barry@gmail.com>\n"
-"Language-Team: galician <proxecto@trasno.net>\n"
+"PO-Revision-Date: 2018-09-18 21:24+0000\n"
+"Last-Translator: mantinan <github@manty.net>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,7 +88,7 @@ msgid ""
 "back and erase or format the target file system before proceeding with the "
 "install."
 msgstr ""
-"Cancelouse a instalación no sistema de ficheiros de destino. Debería voltar "
+"Cancelouse a instalación no sistema de ficheiros de destino. Debería volver "
 "e borrar ou formatar o sistema de ficheiros de destino antes de continuar a "
 "instalación."
 
@@ -229,7 +236,7 @@ msgstr "Non foi posíbel instalar o sistema base"
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "The base system installation into /target/ failed."
-msgstr "Non foi posíbel instalar o sistema base en /target/"
+msgstr "A instalación do sistema base en /target/ fallou."
 
 #. Type: error
 #. Description
@@ -303,14 +310,14 @@ msgid ""
 msgstr ""
 "A lista mostra as ferramentas dispoñíbeis. Se non está seguro de cal "
 "escoller, debería escoller a opción predeterminada. Se o sistema non "
-"arrinca, pode volver tentar a instalación empregando as outras opcións."
+"arranca, pode tentar de novo a instalación empregando as outras opcións."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../bootstrap-base.templates:9001
 msgid "Unsupported initrd generator"
-msgstr "Xerador de initrd non soportado"
+msgstr "Xerador de initrd non admitido"
 
 #. Type: error
 #. Description
@@ -320,8 +327,7 @@ msgid ""
 "The package ${GENERATOR} that was selected to generate the initrd is not "
 "supported."
 msgstr ""
-"O paquete ${GENERATOR} que se escolleu para xerar o initrd non está "
-"soportado."
+"O paquete ${GENERATOR} que se escolleu para xerar o initrd non está admitido."
 
 #. Type: select
 #. Choices
@@ -716,7 +722,7 @@ msgstr "Estase a comprobar a sinatura do ficheiro Release"
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:43001
 msgid "Valid Release signature (key id ${SUBST0})"
-msgstr "A sinatura do ficheiro Release é válida (id ${SUBST0})"
+msgstr "A sinatura do ficheiro Release é válida (id da chave ${SUBST0})"
 
 #. Type: text
 #. Description
@@ -848,7 +854,7 @@ msgstr "Aviso: ${INFO}"
 #. :sl2:
 #: ../bootstrap-base.templates:58001
 msgid "Retrying failed download of ${SUBST0}"
-msgstr "Vólvese tentar obter ${SUBST0}"
+msgstr "Tentando descargar de novo ${SUBST0}"
 
 #. Type: text
 #. Description

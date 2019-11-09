@@ -425,7 +425,7 @@ choose_recipe () {
 	fi
 
 	db_subst partman-auto/choose_recipe TARGET "$target"
-	debconf_select medium partman-auto/choose_recipe \
+	debconf_select high partman-auto/choose_recipe \
 		"$choices" "$default_recipe"
 	if [ $? = 255 ]; then
 		return 255

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-04-13 11:43+0100\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -263,8 +263,8 @@ msgstr "Partizione /home separata"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Partizioni /home, /usr, /var e /tmp separate"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Partizioni /home, /var e /tmp separate"
 
 #. Type: text
 #. Description
@@ -273,35 +273,3 @@ msgstr "Partizioni /home, /usr, /var e /tmp separate"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Schema di partizionamento per dischi piccoli (< 1Gb)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Guidato - ridimensionare ${PARTITION} e usare lo spazio liberato"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Guidato - usa l'intera partizione ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Creazione di sufficiente spazio per l'installazione fallita"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"L'operazione di ridimensionamento non ha creato spazio sufficiente per "
-"l'installazione. Il ridimensionamento potrebbe non aver funzionato. È "
-"necessario impostare le partizioni manualmente."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Partizioni /home, /var e /tmp separate"

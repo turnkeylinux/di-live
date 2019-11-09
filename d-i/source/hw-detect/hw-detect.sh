@@ -43,7 +43,7 @@ is_not_loaded() {
 }
 
 is_available () {
-	[ "$(modprobe -l $1)" ] || return 1
+	modprobe -qn "$1"
 }
 
 # Module as first parameter, description of device the second.
@@ -161,14 +161,6 @@ get_ide_floppy_info() {
 	esac
 }
 
-get_rtc_info() {
-	# On i386, this gets loaded by hotplug through isapnp, but that
-	# doesn't work on amd64.
-	case $SUBARCH in
-		amd64/*) register-module rtc ;;
-	esac
-}
-
 # Manually load modules to enable things we can't detect.
 # XXX: This isn't the best way to do this; we should autodetect.
 # The order of these modules are important.
@@ -181,16 +173,6 @@ get_manual_hw_info() {
 		echo "ide-disk:Linux ATA DISK"
 		echo "ide-cd:Linux ATAPI CD-ROM"
 	fi
-	get_rtc_info
-
-	case $SUBARCH in
-		powerpc/ps3)
-			echo "ps3rom:PS3 internal CD-ROM drive"
-			echo "ps3disk:PS3 internal disk drive"
-			echo "ps3_gelic:PS3 Gigabit Ethernet"
-			register-module snd_ps3
-		;;
-	esac
 }
 
 # Should be greater than the number of kernel modules we can reasonably
@@ -248,7 +230,7 @@ fi
 # TODO: this just loads modules itself, rather than handing back a list
 # Since we've just run depmod, new modules might be available, so we
 # must trigger as well as settle.
-update-dev
+update-dev >/dev/null
 
 ALL_HW_INFO=$(get_detected_hw_info; get_manual_hw_info)
 db_progress STEP $OTHER_STEPSIZE
@@ -344,12 +326,12 @@ fi
 # be done unconditionally.
 if [ -z "$LOAD_IDE" ] && is_not_loaded ide-generic && \
    [ -e /sys/bus/isa ] && is_available ide-generic; then
-	update-dev --settle
+	update-dev --settle >/dev/null
 	blockdev_count=$(ls /sys/block | wc -w)
 
 	log "ISA bus detected; loading module 'ide-generic'"
 	load_module ide-generic
-	update-dev --settle
+	update-dev --settle >/dev/null
 	if [ $(ls /sys/block | wc -w) -gt $blockdev_count ]; then
 		log "New devices detected after loading ide-generic"
 
@@ -386,14 +368,22 @@ if ! is_not_loaded ohci1394 || ! is_not_loaded firewire-ohci; then
 		fi
 	fi
 	db_progress STEP $OTHER_STEPSIZE
-fi
 
-# Always load the printer driver on i386 and amd64; it's hard to autodetect.
-case $SUBARCH in
-	i386/*|amd64/*)
-		register-module lp
-		;;
-esac
+	# also try to enable firewire ethernet (The right way to do this is
+	# really to catch the hotplug events from the kernel.)
+	if is_not_loaded eth1394; then
+		if is_available eth1394; then
+			db_subst hw-detect/load_progress_step CARDNAME "FireWire ethernet support"
+			db_subst hw-detect/load_progress_step MODULE "eth1394"
+			db_progress INFO hw-detect/load_progress_step
+			load_module eth1394 "FireWire ethernet"
+			# do not call register-module; udev/hotplug will load it
+			# on the installed system
+		else
+			missing_module eth1394 "FireWire ethernet"
+		fi
+	fi
+fi
 
 apply_pcmcia_resource_opts() {
 	local config_opts=/etc/pcmcia/config.opts
@@ -516,42 +506,6 @@ if [ -n "$(list-devices cd; list-devices maybe-usb-floppy)" ]; then
 	apt-install eject || true
 fi
 
-# Install optimised libc based on CPU type
-case "$(udpkg --print-architecture)" in
-    i386)
-	case "$(grep '^cpu family' /proc/cpuinfo | head -n1 | cut -d: -f2)" in
-	    " 6"|" 15")
-		# intel 686 or Amd k6.
-		apt-install libc6-i686 || true
-                ;;
-	esac
-	;;
-    sparc)
-	if grep -q '^type.*: sun4u' /proc/cpuinfo ; then
-		# sparc v9 or v9b
-		if grep -q '^cpu.*: .*UltraSparc III' /proc/cpuinfo; then
-			apt-install libc6-sparcv9b || true
-		else
-			apt-install libc6-sparcv9 || true
-		fi
-	fi
-	;;
-esac
-
-# Install PS3 utilities
-case $SUBARCH in
-	powerpc/ps3)
-		apt-install ps3pf-utils || true
-		;;
-esac
-
-# Install Cell utilities
-case $SUBARCH in
-	powerpc/ps3|powerpc/cell)
-		apt-install elfspe2 || true
-		;;
-esac
-
 db_progress SET $MAX_STEPS
 db_progress STOP
 
@@ -564,6 +518,6 @@ check-missing-firmware
 sysfs-update-devnames
 
 # Let userspace /dev tools rescan the devices
-update-dev --settle
+update-dev --settle >/dev/null
 
 exit 0

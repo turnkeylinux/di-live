@@ -16,7 +16,8 @@
 # * I Gede Wijaya S (gwijayas@yahoo.com), 2004.
 # * Arief S F (arief@gurame.fisika.ui.ac.id), 2004-2007.
 # * Setyo Nugroho (setyo@gmx.net), 2004.
-# Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
+# * Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
+# * Al Qalit <qal.smith@gmail.com>, 2018.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2002.
@@ -32,15 +33,15 @@ msgstr ""
 "Project-Id-Version: debian-installer (level1)\n"
 "Report-Msgid-Bugs-To: partman-ext3@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-23 22:48+0000\n"
-"PO-Revision-Date: 2012-02-13 03:15+0700\n"
-"Last-Translator: Mahyuddin Susanto <udienz@ubuntu.com>\n"
+"PO-Revision-Date: 2018-03-04 12:38+0000\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Debian Indonesia Translators <debian-l10n-indonesian@lists."
 "debian.org>\n"
-"Language: \n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: text
 #. Description
@@ -182,9 +183,9 @@ msgid ""
 "${OFFSET} bytes from the minimum alignment for this disk, which may lead to "
 "very poor performance."
 msgstr ""
-"Partisi ${PARTITION} yang dikaitkan ke ${MOUNTPOINT} dimulai dari offset"
-"${OFFSET} bytes dari keselarasan minimum dari diska ini, yang mungkin "
-"dapatmenyebabkan kinerja yang buruk"
+"Partisi ${PARTITION} yang ditugaskan ke ${MOUNTPOINT} dimulai dari ofset "
+"${OFFSET} byte dari penyelarasan (alignment) minimum dari diska ini, yang "
+"mungkin dapat menyebabkan kinerja yang sangat buruk."
 
 #. Type: boolean
 #. Description

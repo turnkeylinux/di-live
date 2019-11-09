@@ -13,16 +13,19 @@
 # Konstantinos Margaritis <markos@debian.org>, 2004, 2006.
 # Greek Translation Team <debian-l10n-greek@lists.debian.org>, 2004, 2005.
 # quad-nrg.net <galaxico@quad-nrg.net>, 2005, 2006, 2007.
-# quad-nrg.net <yodesy@quad-nrg.net>, 2006.
+# quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
 # QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
+# galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009.
+# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2007-02-20 12:26+0200\n"
-"Last-Translator: galaxico\n"
-"Language-Team:  <en@li.org>\n"
+"PO-Revision-Date: 2010-09-04 19:11+0300\n"
+"Last-Translator: Emmanuel Galatoulas <galaxico@quad-nrg.net>\n"
+"Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,25 +35,22 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../live-installer.templates:1001
-#, fuzzy
 msgid "Install the system"
-msgstr "Εγκατάσταση του βασικού συστήματος"
+msgstr "Εγκατάσταση του συστήματος"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:2001
-#, fuzzy
 msgid "Installing the system..."
-msgstr "Εγκατάσταση του βασικού συστήματος"
+msgstr "Εγκατάσταση του συστήματος..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:3001
-#, fuzzy
 msgid "Copying data to disk..."
-msgstr "Αντιγραφή της κατάτμησης..."
+msgstr "Αντιγραφή των δεδομένων στον δίσκο..."
 
 #. Type: text
 #. Description
@@ -59,25 +59,22 @@ msgstr "Αντιγραφή της κατάτμησης..."
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "Αποθήκευση των ρυθμίσεων δικτύου..."
+msgstr "Καθάρισμα των ρυθμίσεων του δικτύου..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "Αποθήκευση των ρυθμίσεων δικτύου..."
+msgstr "Αφαίρεση των πακέτων που αφορούν το \"ζωντανό\" σύστημα..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "Ρύθμιση δικτύου..."
+msgstr "Επαναδιαμόρφωση του X.org..."
 
 #. Type: text
 #. Description
@@ -90,24 +87,22 @@ msgstr "Εκτελείται το ${SCRIPT}..."
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "διαμόρφωση"
+msgstr "συνηθισμένο"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "live"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "Επιλέξτε μια εργασία "
+msgstr "Τύπος εγκατάστασης:"
 
 #. Type: select
 #. Description
@@ -117,6 +112,8 @@ msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
 msgstr ""
+"Το \"ζωντανό\" σύστημα μπορεί να εγκατασταθεί στον σκληρό σας δίσκο "
+"χρησιμοποιώντας μια από τις παρακάτω επιλογές."
 
 #. Type: select
 #. Description
@@ -127,3 +124,7 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"Αν επιλέξετε 'κανονικό', το σύστημα θα εγκατασταθεί σαν ένα κανονικό "
+"σύστημα. Αν επιλέξετε 'ζωντανό' το εγκατεστημένο σύστημα θα εξακολουθεί να "
+"λειτουργεί σαν ένα \"ζωντανό\" σύστημα αλλά μπορεί στη συνέχεια να εκκινηθεί "
+"απευθείας από τον σκληρό δίσκο."

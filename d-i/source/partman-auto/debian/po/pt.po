@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-09-16 20:11+0100\n"
 "Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team:  Portuguese <traduz@debianpt.org>\n"
@@ -247,8 +247,8 @@ msgstr "Partição /home separada"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Partições /home, /usr, /var e /tmp separadas"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Partições /home, /var e /tmp separadas"
 
 #. Type: text
 #. Description
@@ -257,36 +257,3 @@ msgstr "Partições /home, /usr, /var e /tmp separadas"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Esquema de particionamento disco-pequeno (< 1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"Guiado - Alterar o tamanho de ${PARTITION} e utilizar o espaço libertado"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Falhou ao criar espaço suficiente para instalação"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"A operação de redimensionamento não criou espaço suficiente em disco para a "
-"instalação. O redimensionamento pode ter falhado. Terá de preparar e "
-"configurar as partições manualmente."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Partições /home, /var e /tmp separadas"

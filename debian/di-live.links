@@ -1,1 +1,2 @@
 usr/lib/di-live/di-live.py usr/bin/di-live
+dev/null etc/systemd/system/live-tools.service

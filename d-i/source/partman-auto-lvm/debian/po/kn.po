@@ -20,14 +20,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2012-01-24 19:34+0530\n"
-"Last-Translator: Prabodh C P <prabodh@fsmk.org>\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2018-04-02 06:37+0000\n"
+"Last-Translator: Yogesh <yogesh@kalike.org>\n"
 "Language-Team: Kannada <debian-l10n-kannada@lists.debian.org>\n"
 "Language: kn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: text
 #. Description
@@ -247,11 +248,14 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
+#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"ಈ ವಿಭಜನೆಯ ಕನಿಷ್ಠ ಗಾತ್ರ ${MINSIZE} (ಅಥವಾ ${PERCENT}) ಮತ್ತದರ ಗರಿಷ್ಠ ಗಾತ್ರ "
+"${MAXSIZE} ಆಗಿರುತ್ತದೆ."
 
 #. Type: string
 #. Description
@@ -262,13 +266,16 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
+"ಸೂಚನೆ: ಗರಿಷ್ಟ ಗಾತ್ರದ ಬದಲಾಗಿ \"max\" ಪರ್ಯಾಯ ನಾಮವನ್ನು ಬಳಸಬಹುದು, ಅಥವಾ ಗರಿಷ್ಟ ಭಾಗದ "
+"ಎಷ್ಟು ಭಾಗವನ್ನು ಬಳಸಬೇಕೆಂದು ಪ್ರತಿಶತದಲ್ಲಿ ಕೊಡಿ.(ಉದಾ: \"20%\")"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
+#, fuzzy
 msgid "Invalid input"
-msgstr ""
+msgstr "ಅಮಾನ್ಯವಾದ ಗಾತ್ರ"
 
 #. Type: error
 #. Description
@@ -297,8 +304,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
+#, fuzzy
 msgid "${SIZE} is too small"
-msgstr ""
+msgstr "ತುಂಬಾ ಚಿಕ್ಕ EFI ವಿಭಜನೆ"
 
 #. Type: error
 #. Description

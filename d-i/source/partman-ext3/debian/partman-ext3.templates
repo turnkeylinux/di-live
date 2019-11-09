@@ -83,12 +83,3 @@ _Description: Do you want to return to the partitioning menu?
  and recreate it in the same position with the same settings. This will
  cause the partition to start at a point best suited for this disk.
 
-Template: partman-ext3/lazy_itable_init
-Type: boolean
-Default: false
-Description: for internal use; can be preseeded
- Pass '-E lazy_itable_init' to mkfs.  This is currently unsafe when used on
- previously-used areas of disk, since e2fsck can then get confused with
- inodes from previous filesystems, so it's off by default; but it can make
- filesystem initialisation much faster on large disks.
-

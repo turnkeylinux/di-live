@@ -6,7 +6,7 @@
 # translation of debian-installer_packages_po_sublevel1_da.po to
 # Danish messages for debian-installer.
 # This file is distributed under the same license as debian-installer.
-# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014, 2015.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2010.
 # Mads Bille Lundby <lundbymads@gmail.com, 2009.
 # Henrik Christian Grove <debian@3001.dk>, 2008.
@@ -39,7 +39,7 @@ msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_da\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2014-08-10 20:20+0200\n"
+"PO-Revision-Date: 2015-08-16 20:20+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -60,7 +60,7 @@ msgstr "Ændrer partitionens størrelse ..."
 #. :sl1:
 #: ../partman-partitioning.templates:2001
 msgid "Computing the new state of the partition table..."
-msgstr "Beregner partitionstabellens nye udformning..."
+msgstr "Beregner partitionstabellens nye udformning ..."
 
 #. Type: error
 #. Description
@@ -572,50 +572,3 @@ msgstr "Reserveret BIOS-opstartsområde"
 #: ../partman-partitioning.templates:33001
 msgid "biosgrub"
 msgstr "biosgrub"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid "Go back to the menu and correct this problem?"
-msgstr "Gå tilbage til menuen for at ordne dette problem?"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as an \"EFI boot partition\" and should be at least 35 MB in "
-"size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid ""
-"If you do not go back to the partitioning menu and correct this error, boot "
-"loader installation may fail later, although it may still be possible to "
-"install the boot loader to a partition."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:39001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as a \"Reserved BIOS boot area\" and should be at least 1 MB "
-"in size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""

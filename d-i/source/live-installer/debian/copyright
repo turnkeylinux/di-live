@@ -1,24 +1,26 @@
-This package was debianized by Otavio Salvador <otavio@ossystems.com.br> on
-Sex, 15 Jun 2007 00:00:00 -0300.
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: live-installer
+Upstream-Contact: debian-boot@lists.debian.org
+Source: http://snapshot.debian.org/package/live-installer/
 
-License:
+Files: *
+Copyright: 2007-2010 Otavio Salvador <otavio@ossystems.com.br>
+           2007-2012 Daniel Baumann <daniel@debian.org>
+License: GPL-2+
 
-        Copyright (C) 2007 O.S. Systems
-        Copyright (C) 2007 Otavio Salvador <otavio@ossystems.com.br>
-
-        This program is free software; you can redistribute it and/or modify
-        it under the terms of the GNU General Public License as published by
-        the Free Software Foundation; either version 2 of the License, or
-        (at your option) any later version.
-
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-        GNU General Public License for more details.
-
-        You should have received a copy of the GNU General Public License
-        along with this program; if not, write to the Free Software
-        Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
-
-On Debian systems, the complete text of the GNU General Public License
-can be found in /usr/share/common-licenses/GPL file.
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.

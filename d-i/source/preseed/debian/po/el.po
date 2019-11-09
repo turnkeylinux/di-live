@@ -1,0 +1,198 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# translation of el.po to
+# Greek messages for debian-installer.
+# Copyright (C) 2003 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+#
+# Translations from iso-codes:
+#     Translations taken from ICU SVN on 2007-09-09
+#   Panayotis Pakos <aeikineton@yahoo.com>
+# George Papamichelakis <george@step.gr>, 2004.
+# Emmanuel Galatoulas <galas@tee.gr>, 2004.
+# Konstantinos Margaritis <markos@debian.org>, 2004, 2006.
+# Greek Translation Team <debian-l10n-greek@lists.debian.org>, 2004, 2005.
+# quad-nrg.net <galaxico@quad-nrg.net>, 2005, 2006, 2007.
+# quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
+# QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
+# galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009, 2011.
+# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#   Free Software Foundation, Inc., 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   QUAD-nrg.net <yodesy@quad-nrg.net>, 2006, 2010.
+#   Simos Xenitellis <simos@hellug.gr>, 2001.
+#   Konstantinos Margaritis <markos@debian.org>, 2004.
+#   Athanasios Lefteris <alefteris@gmail.com>, 2008, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: el\n"
+"Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
+"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"PO-Revision-Date: 2017-09-02 23:06+0300\n"
+"Last-Translator: Sotirios Vrachas <sotirios@vrachas.net>\n"
+"Language-Team: el <debian-l10n-greek@lists.debian.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: error
+#. Description
+#. Translators : DO NOT TRANSLATE variable names : ALGORITHM, LOCATION
+#. and CHECKSUM
+#. :sl2:
+#: ../preseed-common.templates:1001
+msgid "Checksum error"
+msgstr "Λάθος Checksum"
+
+#. Type: error
+#. Description
+#. Translators : DO NOT TRANSLATE variable names : ALGORITHM, LOCATION
+#. and CHECKSUM
+#. :sl2:
+#: ../preseed-common.templates:1001
+msgid ""
+"The ${ALGORITHM} checksum of the file retrieved from <${LOCATION}> fails to "
+"match the expected value of \"${CHECKSUM}\".  The file may be corrupt, or "
+"the provided checksums may be out of date."
+msgstr ""
+"Το ${ALGORITHM} checksum του αρχείου που λήφθηκε από <${LOCATION}> απέτυχε "
+"να ταιριάξει με την αναμενόμενη τιμή του \"${CHECKSUM}\".  Το αρχείο μπορεί "
+"να έχει φθαρεί, η το παρεχόμενο checksums μπορεί να είναι ξεπερασμένο."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:2001
+msgid "Failed to retrieve the preconfiguration file"
+msgstr "Αδύνατη η ανάκτηση του αρχείου προρύθμισης"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:2001
+msgid ""
+"The file needed for preconfiguration could not be retrieved from "
+"${LOCATION}. The installation will proceed in non-automated mode."
+msgstr ""
+"Δεν ήταν δυνατή η μεταφόρτωση του απαραίτητου αρχείου για προρύθμιση από τη "
+"διεύθυνση ${LOCATION}. Η εγκατάσταση θα συνεχιστεί με χειροκίνητο τρόπο."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:3001
+msgid "Failed to process the preconfiguration file"
+msgstr "Απέτυχε η επεξεργασία του αρχείου προρύθμισης"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:3001
+msgid ""
+"The installer failed to process the preconfiguration file from ${LOCATION}. "
+"The file may be corrupt."
+msgstr ""
+"Ο εγκαταστάτης απέτυχε στην επεξαργασία του αρχείου προρυθμίσεων από το "
+"${LOCATION}. Το αρχείο μπορεί να μην είναι έγκυρο."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:12001
+msgid "Failed to run preseeded command"
+msgstr "Αποτυχία εκτέλεσης της εντολής προρύθμισης"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:12001
+msgid ""
+"Execution of preseeded command \"${COMMAND}\" failed with exit code ${CODE}."
+msgstr ""
+"Η εκτέλεση της εντολής προρύθμισης \"${COMMAND}\" απέτυχε με κωδικό εξόδου "
+"${CODE}."
+
+#. Type: text
+#. Description
+#. Main menu item
+#: ../network-preseed.templates:1001
+msgid "Download debconf preconfiguration file"
+msgstr "Κατεβάστε από το δίκυο το αρχείο προρυθμίσεων debconf"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid "Location of initial preconfiguration file:"
+msgstr "Τοποθεσία του αρχικού αρχείου προρυθμίσεων:"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"In order to perform an automated install, you need to supply a "
+"preconfiguration file (which can in turn pull in other files). To do that, "
+"you need to provide a (perhaps partial) URL."
+msgstr ""
+"Για να πραγματοποιήσετε μιαν αυτοματοποιημένη εγκατάσταση, θα πρέπει να "
+"δώσετε ένα αρχείο προρυθμίσεων (που με τη σειρά του μπορεί να καλεί άλλα "
+"αρχεία). Για να το κάνετε αυτό, θα πρέπει να δώσετε ένα (πιθανόν ατελές) URL."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"This can be as simple as the machine name where your preseed files reside up "
+"to a full URL. Any of these could be made to work:\n"
+"  intra\t\t[for example.com, these three are equivalent]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
+msgstr ""
+"Αυτό μπορεί να είναι τόσο απλό όσο το όνομα του μηχανήματος στο οποίο "
+"βρίσκονται τα αρχεία προρύθμισης ή ένα πλήρες URL. Οποιοδήποτε από τα "
+"παρακάτω μπορούν να δουλέψουν:\n"
+"  intra\t\t[για το example.com, αυτά τα τρία είναι ισοδύναμα]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"For fully automated installs, preseed/url should itself be preseeded (via "
+"kernel command line, DHCP, or syslinux.cfg on customised media)"
+msgstr ""
+"Για πλήρως αυτοματοποιημένες εγκαταστάσεις, το preseed/url θα πρέπει το ίδιο "
+"να δωθεί από πριν (μέσω της γραμμής εντολών του πυρήνα, DHCP, ή του αρχείου "
+"syslinux.cfg σε ένα προσαρμοσμένο από σας μέσο)"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid "See http://wiki.debian.org/DebianInstaller/Preseed for inspiration."
+msgstr ""
+"Δείτε στο http://wiki.debian.org/DebianInstaller/Preseed για να πάρετε ιδέες."
+
+#. Type: text
+#. Description
+#. Main menu item
+#: ../file-preseed.templates:1001
+msgid "Load debconf preconfiguration file"
+msgstr "Φόρτωση του αρχείου προρυθμίσεων debconf"

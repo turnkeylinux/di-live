@@ -30,15 +30,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2013-09-30 14:59+0800\n"
-"Last-Translator: Yao Wei (魏銘廷) <mwei@lxde.org>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2019-01-13 14:06+0000\n"
+"Last-Translator: Louies <louies0623@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
 "debian.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: text
 #. Description
@@ -482,12 +483,20 @@ msgstr "standard"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "此分割區的主要用途:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -496,6 +505,10 @@ msgstr "請指定將要如何使用該檔案系統，以便能夠據此來選擇
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -572,9 +585,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "JFS 日誌式檔案系統"
+msgstr "NTFS 日誌式檔案系統"
 
 #. Type: text
 #. Description
@@ -582,7 +594,7 @@ msgstr "JFS 日誌式檔案系統"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -631,7 +643,7 @@ msgstr "掛載選項可以用來調整檔案系統的運作方式。"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
-msgstr "noatime - 在存取時不更新 inode 的存取時間。"
+msgstr "noatime - 在存取時不更新 inode 的存取時間"
 
 #. Type: text
 #. Description
@@ -639,9 +651,8 @@ msgstr "noatime - 在存取時不更新 inode 的存取時間。"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - 在存取時不更新 inode 的存取時間。"
+msgstr "nodiratime - 在存取目錄時不更新 inode 的存取時間"
 
 #. Type: text
 #. Description
@@ -659,7 +670,7 @@ msgstr "relatime - 以相對於修改時間來更新 inode 的存取時間"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
-msgstr "nodev - 不支援字元或區塊等特殊裝置。"
+msgstr "nodev - 不支援字元或區塊等特殊裝置"
 
 #. Type: text
 #. Description
@@ -678,7 +689,7 @@ msgstr ""
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
-msgstr "noexec - 禁止執行任何二進位檔案。"
+msgstr "noexec - 禁止執行任何二進位檔案"
 
 #. Type: text
 #. Description
@@ -687,7 +698,7 @@ msgstr "noexec - 禁止執行任何二進位檔案。"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
-msgstr "ro - 以唯讀方式掛載該檔案系統。"
+msgstr "ro - 以唯讀方式掛載該檔案系統"
 
 #. Type: text
 #. Description
@@ -696,7 +707,7 @@ msgstr "ro - 以唯讀方式掛載該檔案系統。"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
-msgstr "sync - 所有 輸入/輸出 動作都將同步執行。"
+msgstr "sync - 所有 輸入/輸出 動作都將同步執行"
 
 #. Type: text
 #. Description
@@ -732,7 +743,7 @@ msgstr "user_xattr - 支援使用者擴充屬性"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
-msgstr "quiet - 在改變擁有者和權限時不回應任何錯誤訊息。"
+msgstr "quiet - 在改變擁有者和權限時不回應任何錯誤訊息"
 
 #. Type: text
 #. Description
@@ -741,7 +752,7 @@ msgstr "quiet - 在改變擁有者和權限時不回應任何錯誤訊息。"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
-msgstr "notail - 不要將檔案合併儲存至檔案系統樹狀結構。"
+msgstr "notail - 不要將檔案合併儲存至檔案系統樹狀結構"
 
 #. Type: text
 #. Description
@@ -750,7 +761,7 @@ msgstr "notail - 不要將檔案合併儲存至檔案系統樹狀結構。"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - 從區塊裝置上清除不使用的區塊 (TRIM)"
 
 #. Type: text
 #. Description
@@ -785,14 +796,13 @@ msgstr "是否返回選單並更正此錯誤？"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"您的啟動分割區並未設定為使用 ext2 或 ext3 檔案系統。但您必須如此設定，您的機"
-"器才能夠開機。請返回並使用 ext2 或 ext3 檔案系統。"
+"您的啟動分割區並未設定為使用 ext2 檔案系統。但您必須如此設定，您的機器才能夠"
+"開機。請返回並使用 ext2 檔案系統。"
 
 #. Type: boolean
 #. Description
@@ -814,11 +824,10 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"您的啟動分割區並未位於硬碟的第一個主要分割區。但您必須如此設定，您的機器才能"
-"夠開機。請返回並將您的第一個主要分割區設定為啟動分割區。"
+"您的啟動分割區並未位於硬碟的第一個分割區。但您必須如此設定，您的機器才能夠開"
+"機。請返回並將您的第一個分割區設定為啟動分割區。"

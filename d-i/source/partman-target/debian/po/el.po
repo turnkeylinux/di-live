@@ -8,6 +8,10 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
+#
+# Translations from iso-codes:
+#     Translations taken from ICU SVN on 2007-09-09
+#   Panayotis Pakos <aeikineton@yahoo.com>
 # George Papamichelakis <george@step.gr>, 2004.
 # Emmanuel Galatoulas <galas@tee.gr>, 2004.
 # Konstantinos Margaritis <markos@debian.org>, 2004, 2006.
@@ -15,21 +19,28 @@
 # quad-nrg.net <galaxico@quad-nrg.net>, 2005, 2006, 2007.
 # quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
 # QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
-# galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009.
-# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010.
+# galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009, 2011.
+# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#   Free Software Foundation, Inc., 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   QUAD-nrg.net <yodesy@quad-nrg.net>, 2006, 2010.
+#   Simos Xenitellis <simos@hellug.gr>, 2001.
+#   Konstantinos Margaritis <markos@debian.org>, 2004.
+#   Athanasios Lefteris <alefteris@gmail.com>, 2008, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2010-09-04 19:11+0300\n"
-"Last-Translator: Emmanuel Galatoulas <galaxico@quad-nrg.net>\n"
-"Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
+"PO-Revision-Date: 2018-12-09 23:08+0000\n"
+"Last-Translator: Vangelis Skarmoutsos <skarmoutsosv@gmail.com>\n"
+"Language-Team: el <debian-l10n-greek@lists.debian.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: note
 #. Description
@@ -39,7 +50,7 @@ msgstr ""
 #. :sl1:
 #: ../partman-target.templates:1001 ../partman-target.templates:11001
 msgid "Help on partitioning"
-msgstr "Εμφάνιση βοήθειας για την διαδικασία διαμέρισης"
+msgstr "Βοήθεια για την διαμέριση"
 
 #. Type: note
 #. Description
@@ -50,17 +61,16 @@ msgid ""
 "to install your new system.  You need to choose which partition(s) will be "
 "used for the installation."
 msgstr ""
-"Η διαμέριση ενός σκληρού δίσκου συνίσταται στον χωρισμό του για την "
-"δημιουργία του απαραίτητου χώρου για την εγκατάσταση του καινούριου σας "
-"συστήματος. Θα πρέπει να επιλέξετε ποια(ες) κατάτμηση/κατατμήσεις θα "
-"χρησιμοποιηθούν για την εγκατάσταση."
+"Η διαμέριση ενός σκληρού δίσκου τον χωρίζει ώστε να δημιουργηθεί χώρος "
+"εγκατάστασης του καινούριου συστήματος. Θα πρέπει να επιλέξετε ποια "
+"κατάτμηση θα χρησιμοποιηθεί για την εγκατάσταση."
 
 #. Type: note
 #. Description
 #. :sl1:
 #: ../partman-target.templates:1001
 msgid "Select a free space to create partitions in it."
-msgstr "Επιλέξτε ελεύθερο χώρο για την δημιουργία νέων τμημάτων."
+msgstr "Επιλέξτε ελεύθερο χώρο για την δημιουργία νέων κατατμήσεων."
 
 #. Type: note
 #. Description
@@ -70,8 +80,8 @@ msgid ""
 "Select a device to remove all partitions in it and create a new empty "
 "partition table."
 msgstr ""
-"Επιλέξτε μια μονάδα για διαγραφή όλων των τμημάτων σε αυτή και δημιουργία "
-"ενός νέου πίνακα τμημάτων."
+"Επιλέξτε συσκευή για διαγραφή όλων των κατατμήσεων και δημιουργία νέου "
+"πίνακα κατατμήσεων."
 
 #. Type: note
 #. Description
@@ -84,13 +94,11 @@ msgid ""
 "partition is a necessity.  \"Swap\" is scratch space for an operating "
 "system, which allows the system to use disk storage as \"virtual memory\"."
 msgstr ""
-"Επιλέξτε μια κατάτμηση για διαγραφή ή για καθορισμό της χρήσης της. Στην "
-"ελάχιστη περίπτωση χρειάζεστε μια κατάτμηση που να περιέχει το ριζικό (root) "
-"σύστημα αρχείων (του οποίου το σημείο προσάρτησης είναι το /). Οι "
-"περισσότεροι χρήστες αισθάνονται επίσης ότι είναι αναγκαία μια ξεχωριστή "
-"κατάτμηση εναλλακτικής μνήμης (swap). Ο χώρος \"swap\" είναι ένας κενός "
-"χώρος για ένα λειτουργικό σύστημα, που του επιτρέπει να χρησιμοποιεί χώρο "
-"αποθήκευσης στον δίσκο σαν \"εικονική\" μνήμη."
+"Επιλέξτε κατάτμηση για διαγραφή ή για καθορισμό της χρήσης της. Κατά "
+"ελάχιστο χρειάζεστε μια κατάτμηση με το ριζικό σύστημα αρχείων (με σημείο "
+"προσάρτησης το /). Οι περισσότεροι χρήστες αισθάνονται ότι χρειάζεται μια "
+"ξεχωριστή κατάτμηση swap. Η \"swap\" είναι χώρος αποθήκευσης στον δίσκο, που "
+"το λειτουργικό σύστημα χρησιμοποιεί ως \"εικονική μνήμη\"."
 
 #. Type: note
 #. Description
@@ -101,10 +109,9 @@ msgid ""
 "existing data in the partition.  Partitions that will be used in this way "
 "are marked with \"${KEEP}\" in the main partitioning menu."
 msgstr ""
-"Όταν η κατάτμηση έχει ήδη διαμορφωθεί, μπορείτε να επιλέξετε να διατηρήσετε "
-"και να χρησιμοποιήσετε τα δεδομένα που υπάρχουν σ' αυτήν. Καταμήσεις που θα "
-"χρησιμοποιηθούν μ' αυτόν τον τρόπο, έχουν επισημανθεί με \"${KEEP}\" στο "
-"κυρίως μενού διαμέρισης."
+"Όταν η κατάτμηση έχει ήδη διαμορφωθεί, μπορείτε να την διατηρήσετε και να "
+"χρησιμοποιήσετε τα δεδομένα της. Κατατμήσεις που θα χρησιμοποιηθούν έτσι, "
+"επισημαίνονται με \"${KEEP}\" στο κυρίως μενού."
 
 #. Type: note
 #. Description
@@ -117,11 +124,10 @@ msgid ""
 "marked with \"${DESTROY}\" in the main partitioning menu.  Otherwise it will "
 "be marked with \"${FORMAT}\"."
 msgstr ""
-"Γενικά, συνιστάται η διαμόρφωση ενός νεοδημιουργηθέντος συστήματος αρχείων. "
-"ΣΗΜΕΙΩΣΗ: όλα τα δεδομένα στην κατάτμηση θα διαγραφούν ανεπιστρεπτί. Αν "
-"αποφασίσετε να διαμορφώσετε μια ήδη διαμορφωμένη κατάτμηση, αυτή θα "
-"επισημανθεί με \"${DESTROY}\" στο κυρίως μενού διαμέρισης. Διαφορετικά, θα "
-"επισημανθεί με \"${FORMAT}\"."
+"Γενικά, συνιστάται η διαμόρφωση ενός νέου συστήματος αρχείων. ΣΗΜΕΙΩΣΗ: όλα "
+"τα δεδομένα στην κατάτμηση θα διαγραφούν μόνιμα. Αν διαμορφώσετε μια ήδη "
+"διαμορφωμένη κατάτμηση, αυτή θα επισημανθεί με \"${DESTROY}\" στο κυρίως "
+"μενού. Διαφορετικά, θα επισημανθεί με \"${FORMAT}\"."
 
 #. Type: text
 #. Description
@@ -200,8 +206,8 @@ msgid ""
 "Two file systems are assigned the same mount point (${MOUNTPOINT}): ${PART1} "
 "and ${PART2}."
 msgstr ""
-"Δύο συστήματα αρχείων, έχουν το ίδιο σημείο επαφής ${MOUNTPOINT}: ${PART1} "
-"και ${PART2} "
+"Δύο συστήματα αρχείων έχουν το ίδιο σημείο προσάρτησης ${MOUNTPOINT}: "
+"${PART1} και ${PART2}."
 
 #. Type: error
 #. Description
@@ -222,7 +228,7 @@ msgstr "Μη ορισμένο βασικό σύστημα αρχείων"
 #. :sl2:
 #: ../partman-target.templates:6001
 msgid "No root file system is defined."
-msgstr "Δεν έχει οριστεί βασικό σύστημα αρχείων!"
+msgstr "Δεν έχει οριστεί βασικό σύστημα αρχείων."
 
 #. Type: error
 #. Description
@@ -290,55 +296,3 @@ msgstr "Πώς να χρησιμοποιήσετε αυτή η κατάτμησ�
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "Χρήση ως:"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr "Αποτυχία αφαίρεσης των συγκρουόμενων αρχείων"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-"Το πρόγραμμα εγκατάστασης πρέπει να αφαιρέσει τα αρχεία του λειτουργικού "
-"συστήματος από την επιλεγμένη διαδρομή εγκατάστασης, αλλά απέτυχε να το "
-"κάνει. Η εγκατάσταση δεν μπορεί να συνεχιστεί."
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr "Αφαίρεση συγκρουόμενων αρχείων λειτουργικού συστήματος..."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr "Θέλετε να επιστρέψετε στον οδηγό διαμέρισης;"
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-"Το σύστημα αρχείων στην ${PARTITION} που έχει προσαρτηθεί στο ${MOUNTPOINT} "
-"δεν έχει επιλεχθεί για μορφοποίηση. Οι υπάρχοντες κατάλογοι με αρχεία "
-"συστήματος (/etc, /lib, /usr, /var, ...) σε όλα τα καθορισμένα σημεία "
-"προσάρτησης θα διαγραφούν κατά την εγκατάσταση."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""
-"Παρακαλώ επιβεβαιώστε ότι έχετε δημιουργήσει αντίγραφα ασφαλείας όλων των "
-"σημαντικών δεδομένων σας πριν την έναρξη της εγκατάστασης."

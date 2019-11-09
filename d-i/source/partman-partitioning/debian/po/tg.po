@@ -9,17 +9,17 @@
 #
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2014-01-05 13:26+0500\n"
+"PO-Revision-Date: 2018-02-08 14:24+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
-"Language: Tajik\n"
+"Language: tg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -77,7 +77,7 @@ msgid ""
 "Before you can select a new partition size, any previous changes have to be "
 "written to disk."
 msgstr ""
-"Пеш аз оне, ки шумо тавонед андозаи қисми диски наверо интихоб кунед, шумо "
+"Пеш аз оне, ки шумо тавонед андозаи қисми диски наверо интихоб намоед, шумо "
 "бояд ягон тағйироти мавҷудбударо ба диск сабт намоед."
 
 #. Type: boolean
@@ -85,7 +85,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:4001
 msgid "You cannot undo this operation."
-msgstr "Ин амал ботил сохта намешавад"
+msgstr "Ин амал ботил сохта намешавад."
 
 #. Type: boolean
 #. Description
@@ -93,7 +93,7 @@ msgstr "Ин амал ботил сохта намешавад"
 #: ../partman-partitioning.templates:4001
 msgid "Please note that the resize operation may take a long time."
 msgstr ""
-"Лутфан, қайд кунед, ки амали тағйири андоза метавонад вақти зиёдро гирад."
+"Лутфан, қайд намоед, ки амали тағйири андоза метавонад вақти зиёдро гирад."
 
 #. Type: string
 #. Description
@@ -131,8 +131,8 @@ msgid ""
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
 "Маслиҳат: Шумо метавонед қимати \"max\" -ро ҳамчун миёнбуре барои муайян "
-"кардани андозаи зиёдтарин истифода баред ё фоизеро (масалан \"20%\") барои "
-"истифодаи фоизи андозаи зиёдтарин ворид кунед."
+"кардани андозаи зиёдтарин истифода баред ё дарсадеро (масалан \"20%\") барои "
+"истифодаи дарсади андозаи зиёдтарин ворид намоед."
 
 #. Type: error
 #. Description
@@ -151,7 +151,7 @@ msgid ""
 "unit of measure is the megabyte."
 msgstr ""
 "Андозаи воридшудаи шумо муайян нашудааст. Лутфан, барои андоза рақами бутуни "
-"мусбатеро ворид кунед, ки воҳиди ченаки интихобиро дар бар мегирад (масалан "
+"мусбатеро ворид намоед, ки воҳиди ченаки интихобиро дар бар мегирад (масалан "
 "\"200 ГБ\"). Воҳиди ченаки пешфарз \"мегабайт\" мебошад."
 
 #. Type: error
@@ -170,7 +170,7 @@ msgid ""
 "Please enter a smaller size to continue."
 msgstr ""
 "Андозаи воридшудаи шумо зиёда аз андозаи зиёдтарини қисми диск мебошад. "
-"Лутфан, барои идома андозаи хурдтареро ворид кунед."
+"Лутфан, барои идома андозаи хурдтареро ворид намоед."
 
 #. Type: error
 #. Description
@@ -188,14 +188,14 @@ msgid ""
 "Please enter a larger size to continue."
 msgstr ""
 "Андозаи воридшудаи шумо камтар аз андозаи камтарини қисми диск мебошад. "
-"Лутфан, барои идома андозаи зиёдеро ворид кунед."
+"Лутфан, барои идома андозаи зиёдеро ворид намоед."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:9001
 msgid "Resize operation failure"
-msgstr "Амали тағйири андоза қатъ карда шуд."
+msgstr "Амали тағйири андоза қатъ карда шуд"
 
 #. Type: error
 #. Description
@@ -244,7 +244,7 @@ msgstr "Анҷом"
 #. :sl1:
 #: ../partman-partitioning.templates:12002
 msgid "Location for the new partition:"
-msgstr "Ҷойгиршавии қиси диски нав:"
+msgstr "Ҷойгиршавии қисми диски нав:"
 
 #. Type: select
 #. Description
@@ -254,7 +254,7 @@ msgid ""
 "Please choose whether you want the new partition to be created at the "
 "beginning or at the end of the available space."
 msgstr ""
-"Лутфан, интихоб кунед, ки қисми диски нав бояд дар аввал ё дар охири фазои "
+"Лутфан, интихоб намоед, ки қисми диски нав бояд дар аввал ё дар охири фазои "
 "дастрас эҷод карда шавад."
 
 #. Type: select
@@ -349,7 +349,7 @@ msgid ""
 "libparted."
 msgstr ""
 "Агар тавонед, лутфан, дастгириро барои намуди ҷадвали қисмбандии худ ба "
-"libparted илова кунед."
+"libparted илова намоед."
 
 #. Type: select
 #. Description
@@ -363,7 +363,7 @@ msgstr "Навъи ҷадвали қисмбандӣ:"
 #. :sl2:
 #: ../partman-partitioning.templates:19001
 msgid "Select the type of partition table to use."
-msgstr "Интихоб кардани навъи ҷадвали қисмбандӣ барои истифода:"
+msgstr "Интихоб кардани навъи ҷадвали қисмбандӣ барои истифода."
 
 #. Type: boolean
 #. Description
@@ -381,8 +381,8 @@ msgid ""
 "creating a new partition table on the device, then all current partitions "
 "will be removed."
 msgstr ""
-"Шумо тамоми дасгоҳро барои қисми диск интихоб кардед. Агар шумо ҷадвали "
-"қисмбандии наверо дар ин дастгоҳ эҷод кунед, он тавр ҳамаи қисмҳои диски "
+"Шумо тамоми дастгоҳро барои қисми диск интихоб кардед. Агар шумо ҷадвали "
+"қисмбандии наверо дар ин дастгоҳ эҷод намоед, он тавр ҳамаи қисмҳои диски "
 "ҷорӣ тоза карда мешаванд."
 
 #. Type: boolean
@@ -390,7 +390,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:20001
 msgid "Note that you will be able to undo this operation later if you wish."
-msgstr "Қайд кунед, ки шумо метавонед ин амалро баъдтар ботил созед."
+msgstr "Қайд намоед, ки шумо метавонед ин амалро баъдтар ботил созед."
 
 #. Type: boolean
 #. Description
@@ -420,7 +420,7 @@ msgid ""
 "You will NOT be able to undo this operation later and all existing data on "
 "the disk will be irreversibly removed."
 msgstr ""
-"Шумо НАМЕТАВОНЕД ин амалро баъдтар ботил созед, ва тамоми иттилооти дар диск "
+"Шумо НАМЕТАВОНЕД ин амалро баъдтар ботил созед ва тамоми иттилооти дар диск "
 "мавҷудбуда бебозгашт тоза карда мешавад."
 
 #. Type: boolean
@@ -431,7 +431,7 @@ msgid ""
 "Confirm whether you actually want to create a new partition table and write "
 "it to disk."
 msgstr ""
-"Тасдиқ кунед, ки шумо воқеан мехоҳед ҷадвали нави қисмбандиҳоро эҷод кунед "
+"Тасдиқ намоед, ки шумо воқеан мехоҳед ҷадвали нави қисмбандиҳоро эҷод намоед "
 "ва онро ба диск нависед."
 
 #. Type: boolean
@@ -440,7 +440,7 @@ msgstr ""
 #: ../partman-partitioning.templates:22001
 msgid "Are you sure you want a bootable logical partition?"
 msgstr ""
-"Шумо мутмаин ҳастед, ки мехоҳед қисмбандии мантиқии боршавандаро эҷод кунед?"
+"Шумо мутмаин ҳастед, ки мехоҳед қисмбандии мантиқии боршавандаро эҷод намоед?"
 
 #. Type: boolean
 #. Description
@@ -453,9 +453,9 @@ msgid ""
 "fail to boot if there is no bootable primary partition."
 msgstr ""
 "Шумо кӯшиш мекунед, ки ба қисми диски мантиқӣ байрақчаи роҳандозиро таъин "
-"кунед. Умуман, байрақчаи роҳандозӣ танҳо дар қисмщои диски асосӣ истифода "
-"мешавад, барои ҳамин танзим кардани он ба қисмщои диски мантиқӣ одатан "
-"тавсия дода намешавад. Баъзе версияҳои BIOS дар ҳолати мавҷуд набудани қисми "
+"намоед. Умуман, байрақчаи роҳандозӣ танҳо дар қисмҳои диски асосӣ истифода "
+"мешавад, барои ҳамин танзим кардани он ба қисмҳои диски мантиқӣ одатан "
+"тавсия дода намешавад. Баъзе гунаҳои BIOS дар ҳолати мавҷуд набудани қисми "
 "диски асосии роҳандозишаванда бо нокомиҳо дучор мешаванд."
 
 #. Type: boolean
@@ -468,9 +468,9 @@ msgid ""
 "partitions, then setting this flag may make sense."
 msgstr ""
 "Аммо, агар шумо мутмаин бошед, ки BIOS-и шумо ин мушкилиро надорад, ё ки "
-"агар шумо мудири роҳандозии танзимшавандаро истифода баред, ки бо қисмщои "
+"агар шумо мудири роҳандозии танзимшавандаро истифода баред, ки бо қисмҳои "
 "диски мантиқии роҳандозишаванда кор мекунад, он гоҳ шумо метавонед ин "
-"байрақчаро таъин кунед."
+"байрақчаро таъин намоед."
 
 #. Type: text
 #. Description
@@ -552,50 +552,3 @@ msgstr "Ноҳияи роҳандозии истифодашудаи BIOS"
 #: ../partman-partitioning.templates:33001
 msgid "biosgrub"
 msgstr "biosgrub"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid "Go back to the menu and correct this problem?"
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as an \"EFI boot partition\" and should be at least 35 MB in "
-"size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid ""
-"If you do not go back to the partitioning menu and correct this error, boot "
-"loader installation may fail later, although it may still be possible to "
-"install the boot loader to a partition."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:39001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as a \"Reserved BIOS boot area\" and should be at least 1 MB "
-"in size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""

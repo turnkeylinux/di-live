@@ -451,17 +451,3 @@ Template: base-installer/debootstrap_script
 Type: string
 Description: for internal use; can be preseeded
  Force use of a specific debootstrap script
-
-Template: base-installer/kernel/headers
-Type: boolean
-Default: true
-Description: for internal use; can be preseeded
- Install kernel headers along with the kernel.
-
-Template: base-installer/kernel/backports-modules
-Type: string
-Description: for internal use; can be preseeded
- Install kernel backports modules along with the kernel.  For example,
- setting this to "nouveau wireless" will install
- linux-backports-modules-nouveau-$DISTRIBUTION-$FLAVOUR and
- linux-backports-modules-wireless-$DISTRIBUTION-$FLAVOUR.

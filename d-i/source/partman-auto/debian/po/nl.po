@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer/sublevel1\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-10-19 16:11+0200\n"
 "Last-Translator: Jeroen Schot <schot@a-eskwadraat.nl>\n"
 "Language-Team: Debian l10n Dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -252,8 +252,8 @@ msgstr "Afzonderlijke /home partitie"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Afzonderlijke /home, /usr, /var, en /tmp partities"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Afzonderlijke /home, /var, en /tmp partities"
 
 #. Type: text
 #. Description
@@ -262,38 +262,3 @@ msgstr "Afzonderlijke /home, /usr, /var, en /tmp partities"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Indeling voor kleine harde schijf (< 1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"Begeleid - de grootte van ${PARTITION} aanpassen en de zo vrijgekomen ruimte "
-"gebruiken"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Begeleid - gebruik gehele partitie, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr ""
-"Het aanmaken van voldoende vrije ruimte voor de installatie is niet gelukt"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Het aanpassen van de grootte maakte niet voldoende vrije ruimte voor de "
-"installatie aan. Mogelijk is de grootteaanpassing mislukt. U zult de schijf "
-"handmatig moeten indelen."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Afzonderlijke /home, /var, en /tmp partities"

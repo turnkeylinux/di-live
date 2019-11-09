@@ -7,6 +7,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+# Adriano Rafael Gomes <adrianorg@arg.eti.br>, 2010-2015.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
@@ -22,8 +23,8 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2012-06-24 19:11-0300\n"
-"Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
+"PO-Revision-Date: 2015-05-15 15:49-0300\n"
+"Last-Translator: Adriano Rafael Gomes <adrianorg@arg.eti.br>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
 "Language: pt_BR\n"
@@ -434,10 +435,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
-#, fuzzy
-#| msgid "Error while deleting volume group"
 msgid "Error while creating volume group"
-msgstr "Erro na exclusão do grupo de volumes"
+msgstr "Erro na criação do grupo de volumes"
 
 #. Type: error
 #. Description

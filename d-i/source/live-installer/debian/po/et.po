@@ -3,41 +3,63 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
+# Estonian translation of Debian-installer
+#
+# This translation is released under the same licence as the debian-installer.
+#
+# Siim Põder <siim@p6drad-teel.net>, 2007.
+#
+# Thanks to following Ubuntu Translators for review and fixes:
+#     Laur Mõtus
+#     Heiki Nooremäe
+#     tabbernuk
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Free Software Foundation, Inc., 2000, 2004, 2006
+#   Hasso Tepper <hasso@estpak.ee>, 2006.
+#   Margus Väli <mvali@hot.ee>, 2000.
+#   Siim Põder <windo@p6drad-teel.net>, 2006.
+#   Tõivo Leedjärv <leedjarv@interest.ee>, 2000, 2001, 2008.
+#   Mattias Põldaru <mahfiaz@gmail.com>, 2009-2012, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2007-02-17 10:45+0300\n"
-"Last-Translator: Siim Põder <siim@p6drad-teel.net>\n"
-"Language-Team: Eesti <linuxiabi@hot.ee>\n"
+"PO-Revision-Date: 2014-08-23 09:54+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
+"Language-Team: Estonian <>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:1001
-#, fuzzy
 msgid "Install the system"
-msgstr "Paigalda alussüsteem"
+msgstr "Süsteemi paigaldamine"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:2001
-#, fuzzy
 msgid "Installing the system..."
-msgstr "Alussüsteemi paigaldamine"
+msgstr "Süsteemi paigaldamine..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:3001
-#, fuzzy
 msgid "Copying data to disk..."
-msgstr "Partitsiooni kopeerimine..."
+msgstr "Andmete kopeerimine kettale..."
 
 #. Type: text
 #. Description
@@ -46,25 +68,22 @@ msgstr "Partitsiooni kopeerimine..."
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "Võrgu seadistuste salvestamine ..."
+msgstr "Võrguseadistuste puhastamine ..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "Võrgu seadistuste salvestamine ..."
+msgstr "Live-süsteemi pakkide eemaldamine ..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "Võrgu seadistamine..."
+msgstr "X.org-i ümberseadistamine..."
 
 #. Type: text
 #. Description
@@ -77,24 +96,22 @@ msgstr "Jookseb ${SCRIPT}..."
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "formaadi"
+msgstr "tavaline"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "live"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "Vali paigaldamise samm:"
+msgstr "Paigalduse tüüp:"
 
 #. Type: select
 #. Description
@@ -104,6 +121,8 @@ msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
 msgstr ""
+"'Live'-süsteemi saab paigaldada kõvakettale kasutades üht järgnevatest "
+"võimalustest."
 
 #. Type: select
 #. Description
@@ -114,3 +133,6 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"Kui sa valid 'tavaline', paigaldatakse süsteem nagu tavaliselt. Kui sa valid "
+"'live', paigaldatakse see nii, et see käitub ka edaspidi nagu 'live'-"
+"süsteem, kuigi käivitatakse otse kõvakettalt."

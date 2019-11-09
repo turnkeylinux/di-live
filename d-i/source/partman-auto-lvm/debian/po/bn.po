@@ -15,17 +15,26 @@
 # Mahay Alam Khan (মাহে আলম খান) <makl10n@yahoo.com>, 2007.
 # Tisa Nafisa <tisa_nafisa@yahoo.com>, 2007.
 # Md. Rezwan Shahid <rezwan@ankur.org.bd>, 2009.
-# Sadia Afroz <sadia@ankur.org.bd>, 2010.
+# Ayesha Akhtar <ayesha@ankur.org.bd>, 2010.
 # Israt Jahan <israt@ankur.org.bd>, 2010.
+# Zenat Rahnuma <zenat@ankur.org.bd>, 2011.
 #
+# Translations from iso-codes:
+#   Debian Foundation, 2005.
+#   Progga <progga@BengaLinux.Org>, 2005.
+#   Jamil Ahmed <jamil@bengalinux.org>, 2006.
+#   Md. Rezwan Shahid <rezwan@ankur.org.bd>, 2009.
+#   Israt Jahan <israt@ankur.org.bd>, 2010.
+#   Ayesha Akhtar <ayesha@ankur.org.bd>, 2012.
+#   Robin Mehdee (রবিন মেহদী) <robin@ankur.org.bd>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2010-11-07 17:52+0600\n"
-"Last-Translator: Israt Jahan <israt@ankur.org.bd>\n"
-"Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2012-03-13 19:06+0600\n"
+"Last-Translator: Robin Mehdee (রবিন মেহদী) <robin@ankur.org.bd>\n"
+"Language-Team: Bengali \n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -250,6 +259,7 @@ msgstr ""
 "লক্ষ্য করুন, আপনি যে প্যাকেজগুলো ইনস্টল করার জন্য নির্বাচন করেছেন তাতে হয়ত আরও "
 "ফাঁকাস্থানের প্রয়োজন হতে পারে। বিদ্যমান সর্বোচ্চ ফাঁকাস্থান ${MAXSIZE}।"
 
+# damn! FixMe. couldn't thing better than this. - mak
 #. Type: string
 #. Description
 #. :sl3:
@@ -260,7 +270,7 @@ msgid ""
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
 "ইঙ্গিত: \"max\" সর্বোচ্চ আকারের শর্টকাট হিসাবে ব্যবহার করা যাবে, অথবা সর্বোচ্চ "
-"আকারের শতকরা হিসাবও ব্যবহার করা যেতে পারে।"
+"আকারের শতকরা (যেমন, \"২০%\") হিসাবও ব্যবহার করা যেতে পারে।"
 
 #. Type: error
 #. Description

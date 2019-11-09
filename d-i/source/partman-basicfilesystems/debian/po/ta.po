@@ -14,17 +14,17 @@
 # Damodharan Rajalingam <rdamodharan@gmail.com>, 2006.
 # Dr.T.Vasudevan <drtvasudevan@gmail.com>, 2007, 2008, 2010.
 # Dr,T,Vasudevan <agnihot3@gmail.com>, 2010.
-#   Dr.T.Vasudevan <drtvasudevan@gmail.com>, 2007, 2008, 2011, 2012.
+#   Dr.T.Vasudevan <drtvasudevan@gmail.com>, 2007, 2008, 2011, 2012, 2015.
 #   Dwayne Bailey <dwayne@translate.org.za>, 2009.
 # I. Felix <ifelix25@gmail.com>, 2009, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2013-03-30 20:36+0530\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-08-05 09:04+0000\n"
 "Last-Translator: Dr.T.Vasudevan <drtvasudevan@gmail.com>\n"
-"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language-Team: Tamil <<gnome-tamil-translation@googlegroups.com>>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -481,12 +481,20 @@ msgstr "இயல்பான"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "இந்த பகிர்வினுடைய வழக்கமான உபயோகம்:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -497,14 +505,17 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"standard = இயல்பான அளபுருக்கள், news (செய்திகள்) = ஒரு ஐநோட் 4KB தொகுதிக்கு, "
-"largefile (பெரிய கோப்பு) = ஒரு ஐநோட் மெகாபைடுக்கு, largefile4 (பெரிய கோப்பு 4) = "
-"ஒரு ஐநோட் 4 மெகாபைட்களுக்கு ."
+"standard = இயல்பான அளபுருக்கள், news = ஒரு ஐநோட் 4KB தொகுதிக்கு, largefile = ஒரு "
+"ஐநோட் மெகாபைடுக்கு, largefile4 = ஒரு ஐநோட் 4 மெகாபைட்களுக்கு ."
 
 #. Type: text
 #. Description
@@ -584,7 +595,7 @@ msgstr "ஜேஎப்எஸ் (jfs) ஆய்விதழ் எழுது�
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "என்டிஎஃப்எஸ்"
 
 #. Type: text
 #. Description
@@ -825,5 +836,5 @@ msgid ""
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"தங்களது துவக்கி பகிர்வு வன்வட்டின் பகிர்வில் இல்லை. தங்கள் கணிணி துவங்குவதற்கு இது "
+"தங்களது துவக்கி பகிர்வு வன்வட்டின் முதன்மை பகிர்வில் இல்லை. தங்கள் கணிணி துவங்குவதற்கு இது "
 "அவசியமாகும். பின்சென்று தங்களது முதல்·முதன்மை·பகிர்வை துவக்கி பகிர்வாக உபயோகிக்கவும்."

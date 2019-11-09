@@ -76,6 +76,7 @@ is_floppy(const char *path)
 void
 process_device(PedDevice *dev)
 {
+	PedDisk *disk;
 	if (dev->read_only)
 		return;
 	if (is_cdrom(dev->path) || is_floppy(dev->path))
@@ -84,10 +85,13 @@ process_device(PedDevice *dev)
 	if (strstr(dev->path, "/dev/ramzswap") != NULL ||
 	    strstr(dev->path, "/dev/zram") != NULL)
 		return;
-	printf("%s\t%lli\t%s\n",
+	disk = ped_disk_new(dev);
+	printf("%s\t%lli\t%s\t%s\n",
 	       dev->path,
 	       dev->length * dev->sector_size,
-	       dev->model);
+	       dev->model,
+	       disk && disk->type && disk->type->name ?
+	       disk->type->name : "unknown");
 }
 
 int

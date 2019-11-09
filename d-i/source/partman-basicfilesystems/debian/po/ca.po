@@ -4,9 +4,9 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Catalan messages for debian-installer.
-# Copyright 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2012 Software in the Public Interest, Inc.
+# Copyright 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2012, 2015 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Jordi Mallach <jordi@debian.org>, 2002, 2003, 2004, 2006, 2007, 2008, 2010, 2012.
+# Jordi Mallach <jordi@debian.org>, 2002, 2003, 2004, 2006, 2007, 2008, 2010, 2012, 2015.
 # Guillem Jover <guillem@debian.org>, 2005, 2007.
 #
 # Translations from iso-codes:
@@ -18,10 +18,10 @@
 # Traductor: Jordi Ferré <jordiferre@catalonia.altranet.fr>
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer wheezy\n"
+"Project-Id-Version: debian-installer jessie\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2012-10-18 18:34+0200\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2015-04-04 01:39+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
@@ -491,12 +491,20 @@ msgstr "estàndard"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Ús típic d'aquesta partició:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -507,6 +515,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -583,9 +595,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "Sistema de fitxers transaccional JFS"
+msgstr "Sistema de fitxers transaccional NTFS"
 
 #. Type: text
 #. Description
@@ -593,7 +604,7 @@ msgstr "Sistema de fitxers transaccional JFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -651,9 +662,8 @@ msgstr "noatime - no actualitza els temps d'accés als inodes en cada accés"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - no actualitza els temps d'accés als inodes en cada accés"
+msgstr "nodiratime - no actualitza els temps d'accés als inodes de directori"
 
 #. Type: text
 #. Description
@@ -766,6 +776,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
 msgstr ""
+"discard - retalla els blocs alliberats del dispositiu de bloc subjacent"
 
 #. Type: text
 #. Description
@@ -800,15 +811,14 @@ msgstr "Voleu tornar al menú i corregir aquest problema?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"La partició d'arrencada no s'ha configurat amb el sistema de fitxers ext2 o "
-"ext3. Això és necessari per a que l'ordinador puga arrencar. Aneu enrere i "
-"utilitzeu el sistema de fitxers ext2 o ext3."
+"La partició d'arrencada no s'ha configurat amb el sistema de fitxers ext2. "
+"Això és necessari per a que l'ordinador puga arrencar. Aneu enrere i "
+"utilitzeu el sistema de fitxers ext2."
 
 #. Type: boolean
 #. Description
@@ -831,12 +841,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"La partició d'arrencada no està ubicada a la primera partició primària del "
-"disc dur. Això és necessari per a que l'ordinador puga arrencar. Aneu enrere "
-"i utilitzeu la partició primària com a partició d'arrencada."
+"La partició d'arrencada no està ubicada a la primera partició del disc dur. "
+"Això és necessari per a que l'ordinador puga arrencar. Aneu enrere i "
+"utilitzeu la partició com a partició d'arrencada."

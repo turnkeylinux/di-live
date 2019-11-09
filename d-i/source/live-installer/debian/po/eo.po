@@ -4,19 +4,21 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # translation of Debian Installer templates to Esperanto.
-# Copyright (C) 2005-2007 Software in the Public Interest, Inc.
+# Copyright (C) 2005-2011 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
 # Samuel Gimeno <sgimeno@gmail.com>, 2005.
-# Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005-2007.
+# Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005, 2006, 2007.
+# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: eo\n"
+"Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2008-03-18 10:59+0100\n"
-"Last-Translator: Serge Leblanc <serge.leblanc@wanadoo.fr>\n"
+"PO-Revision-Date: 2011-03-16 20:46-0300\n"
+"Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,14 +35,14 @@ msgstr "Instali la sistemon"
 #. :sl3:
 #: ../live-installer.templates:2001
 msgid "Installing the system..."
-msgstr "Instalado de sistemo..."
+msgstr "Instalado de la sistemo..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:3001
 msgid "Copying data to disk..."
-msgstr "Kopii datumojn al disko..."
+msgstr "Kopiado de datumaro al disko..."
 
 #. Type: text
 #. Description
@@ -50,14 +52,14 @@ msgstr "Kopii datumojn al disko..."
 #. Live system
 #: ../live-installer.templates:4001
 msgid "Cleaning up network settings..."
-msgstr "Purigado de la retaj akomodoj..."
+msgstr "Purigado de la retaj agordoj..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
 msgid "Removing packages specific to the live system..."
-msgstr "Forviŝado de apartaj pakoj el la aktuala sistemo..."
+msgstr "Forviŝado de specifaj pakoj de la surmemora sistemo..."
 
 #. Type: text
 #. Description
@@ -71,7 +73,7 @@ msgstr "Agordado de X.org..."
 #. :sl3:
 #: ../live-installer.templates:7001
 msgid "Running ${SCRIPT}..."
-msgstr "Interpretado de ${SCRIPT}..."
+msgstr "Interpretado de '${SCRIPT}'..."
 
 #. Type: select
 #. Choices
@@ -85,14 +87,14 @@ msgstr "normala"
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr "virtuala"
+msgstr "surmemora"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
 msgid "Type of installation:"
-msgstr "Instalan tipon:"
+msgstr "Tipo de instalado:"
 
 #. Type: select
 #. Description
@@ -102,8 +104,8 @@ msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
 msgstr ""
-"Vi povas instali la virtualan sistemon (funkciante nur en memoro) sur fiksan "
-"diskon uzante unu el sekvaj elektoj."
+"Vi povas instali la surmemoran sistemon sur fiksan diskon uzante unu el la "
+"sekvaj opcioj."
 
 #. Type: select
 #. Description
@@ -114,6 +116,6 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
-"Per elekto de 'normala', la instalilo instalos regulan sistemon. Krome, per "
-"la elekto de 'virtuala', la sistemo virtuale daŭros en via komputilo "
-"(funkciante nur en memoro) sed vi eblos rekte lanĉi ĝin el fiksa disko."
+"Per elekto de 'normala', la sistemo estos instalata kiel ordinaran sistemon. "
+"Kaj per elekto de 'surmemora', la instalota sistemo daŭre kondutos kiel "
+"surmemora sed ĝi povos esti lanĉata rekte el la fiksa disko."

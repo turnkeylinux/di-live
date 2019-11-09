@@ -16,7 +16,9 @@
 # * I Gede Wijaya S (gwijayas@yahoo.com), 2004.
 # * Arief S F (arief@gurame.fisika.ui.ac.id), 2004-2007.
 # * Setyo Nugroho (setyo@gmx.net), 2004.
-# Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
+# * Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
+# * Al Qalit <qal.smith@gmail.com>, 2018.
+# * Andika Triwidada <andika@gmail.com>, 2018.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2002.
@@ -31,16 +33,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer (level1)\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2012-10-18 21:29+0700\n"
-"Last-Translator: T. Surya Fajri <kilelme@gmail.com>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2019-03-11 16:03+0000\n"
+"Last-Translator: Muhammad Rifqi Priyo Susanto "
+"<muhammadrifqipriyosusanto@gmail.com>\n"
 "Language-Team: Debian Indonesia Translators <debian-l10n-indonesian@lists."
 "debian.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: text
 #. Description
@@ -493,12 +496,20 @@ msgstr "standard"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Penggunaan umum untuk partisi ini:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -509,6 +520,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -585,9 +600,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "Sistem berkas berjurnal JFS"
+msgstr "Sistem berkas berjurnal NTFS"
 
 #. Type: text
 #. Description
@@ -595,7 +609,7 @@ msgstr "Sistem berkas berjurnal JFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -652,9 +666,8 @@ msgstr "noatime - jangan mengubah waktu akses pada tiap inode"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - jangan mengubah waktu akses pada tiap inode"
+msgstr "nodiratime - jangan perbarui waktu akses pada inode direktori"
 
 #. Type: text
 #. Description
@@ -764,7 +777,7 @@ msgstr "notail - mematikan pengepakan berkas pada pohon sistem berkas"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - blok dilepaskan dari blok perangkat dasar"
 
 #. Type: text
 #. Description
@@ -782,7 +795,7 @@ msgstr "acl - dukungan untuk POSIX.1e Access Control List"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
-msgstr "namasingkat - hanya menggunakan sistem penamaan 8.3 MS-DOS"
+msgstr "shortnames - hanya menggunakan sistem penamaan 8.3 MS-DOS"
 
 #. Type: boolean
 #. Description
@@ -799,15 +812,14 @@ msgstr "Kembali ke menu sebelumnya dan perbaiki kesalahan tersebut?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Partisi boot Anda belum dikonfigurasi untuk menggunakan sistem berkas ext2 "
-"atau ext3. Hal ini diperlukan Anda agar dapat menjalankan komputer. Silakan "
-"kembali ke menu sebelumnya dan gunakan sistem berkas ext2 atau ext3."
+"Partisi but Anda belum dikonfigurasi dengan sistem berkas ext2. Hal ini "
+"diperlukan untuk menjalankan komputer Anda. Silakan kembali ke menu "
+"sebelumnya dan gunakan sistem berkas ext2."
 
 #. Type: boolean
 #. Description
@@ -830,13 +842,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"Partisi boot Anda tidak terletak pada partisi utama (primer) pertama hard "
-"disk. Hal ini diperlukan agar dapat menyalakan komputer Anda. Silakan "
-"kembali ke menu sebelumnya dan gunakan partisi utama pertama hard disk "
-"sebagai partisi boot."
+"Partisi but Anda tidak terletak pada partisi pertama diska keras Anda. Hal "
+"ini diperlukan agar dapat menyalakan komputer Anda. Silakan kembali ke menu "
+"sebelumnya dan gunakan partisi pertama sebagai sebuah partisi but."

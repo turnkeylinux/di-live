@@ -4,27 +4,37 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Serbian/Cyrillic messages for debian-installer.
-# Copyright (C) 2010 Software in the Public Interest, Inc.
+# Copyright (C) 2010-2012 Software in the Public Interest, Inc.
 # Copyright (C) 2008 THE cp6Linux'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the debian-installer package.
-# Karolina Kalic <karolina@janos.in.rs>, 2010.
-# Janos Guljas <janos@janos.in.rs>, 2010.
+# Karolina Kalic <karolina@resenje.org>, 2010-2012.
+# Janos Guljas <janos@resenje.org>, 2010-2012.
 # Veselin Mijušković <veselin.mijuskovic@gmail.com>, 2008.
-# , fuzzy
+# Milan Kostic <kosticmilan77@open.telekom.rs>, 2012.
+# Filipovic Dragan <filipovic@tutanota.com>, 2018.
 #
+# Translations from iso-codes:
+#   Aleksandar Jelenak <aleksandar.jelenak@gmail.com>, 2010.
+#   Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+#   Danilo Segan <dsegan@gmx.net>, 2003, 2004, 2005.
+#   Milos Komarcevic <kmilos@gmail.com>, Caslav Ilic <caslav.ilic@gmx.net>, 2009.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-installer-utils@packages.debian.org\n"
 "POT-Creation-Date: 2009-07-02 20:15+0000\n"
-"PO-Revision-Date: 2010-07-04 18:23+0100\n"
-"Last-Translator: Janos Guljas <janos@janos.in.rs>\n"
-"Language-Team: Serbian/Cyrillic\n"
+"PO-Revision-Date: 2018-02-07 21:39+0000\n"
+"Last-Translator: Слободан Симић(Slobodan Simić) <slsimic@gmail.com>\n"
+"Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. Type: note
 #. Description
@@ -55,8 +65,8 @@ msgid ""
 "you, use the \"help\" command."
 msgstr ""
 "Root фајл систем је на RAM диску. Фајл системи са хард диска су монтирани у /"
-"target. Доступан вам је „nano“ едитор. Он је врло мали и једноставан "
-"заупотребу. Списак доступних Unix команди се може добити командом „help“."
+"target. Доступан вам је „nano“ едитор. Он је врло мали и једноставан за "
+"употребу. Списак доступних Unix команди се може добити командом „help“."
 
 #. Type: note
 #. Description
@@ -100,8 +110,8 @@ msgid ""
 "If you have not finished the install, your system may be left in an unusable "
 "state."
 msgstr ""
-"Ако нисте завршили инсталацију, ваш систем може бити остављен у нестабилном "
-"стању."
+"Ако нисте завршили инсталацију, ваш систем може бити остављен у "
+"неупотребљивом стању."
 
 #. Type: text
 #. Description
@@ -126,7 +136,7 @@ msgstr "Регистрованје модула..."
 #. :sl2:
 #: ../di-utils.templates:6001
 msgid "Terminal plugin not available"
-msgstr "Дотатак за терминал није доступан"
+msgstr "Прикључак за терминал није доступан"
 
 #. Type: error
 #. Description
@@ -136,8 +146,9 @@ msgid ""
 "This build of the debian-installer requires the terminal plugin in order to "
 "display a shell. Unfortunately, this plugin is currently unavailable."
 msgstr ""
-"Ова верзија „debian-installer“ програма захтева додатак за терминал да би "
-"приказала командни интерфејс. На жалост, овај додатак тренутно није доступан."
+"Ова верзија „debian-installer“ програма захтева прикључак за терминал да би "
+"приказала командни интерфејс. Нажалост, овај прикључак тренутно није "
+"доступан."
 
 #. Type: error
 #. Description
@@ -148,7 +159,7 @@ msgid ""
 "installation step."
 msgstr ""
 "Требао би бити доступан након корака инсталације „Учитавање додатних "
-"компоненти„."
+"компоненти“."
 
 #. Type: text
 #. Description
@@ -158,5 +169,5 @@ msgid ""
 "Alternatively, you can open a shell by pressing Ctrl+Alt+F2. Use Alt+F5 to "
 "get back to the installer."
 msgstr ""
-"Командни интерфејс можете отворити и на други начин, комбинацијом тастера "
-"Ctrl+Alt+F2. Користите Alt+F5 за повратак на инсталер."
+"Командни интерфејс можете отворити и притиском тастера Ctrl+Alt+F2. "
+"Користите Alt+F5 за повратак на инсталатера."

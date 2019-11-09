@@ -3,53 +3,52 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Georgian messages for ubuntu-installer.
+# Georgian messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Aiet Kolkhi <aietkolkhi@gmail.com>, 2005, 2006.
+# Aiet Kolkhi <aietkolkhi@gmail.com>, 2005, 2006, 2007, 2008.
 #
 # This file is maintained by Aiet Kolkhi <aietkolkhi@gmail.com>
 #
 # Includes contributions by Malkhaz Barkalaza <malxaz@gmail.com>,
 # Alexander Didebulidze <didebuli@in.tum.de>, Vladimer Sichinava <vlsichinava@gmail.com>
-# Taya Kharitonashvili <taya13@gmail.com>
+# Taya Kharitonashvili <taya13@gmail.com>, Gia Shervashidze - www.gia.ge
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer.2006071\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-03-17 22:51+0000\n"
-"PO-Revision-Date: 2007-01-15 11:41+0400\n"
+"PO-Revision-Date: 2010-07-08 22:36+0400\n"
 "Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
-"Language-Team: Georgian <www.gia.ge>\n"
+"Language-Team: Georgian\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:1001
-#, fuzzy
 msgid "Install the system"
-msgstr "ძირითადი სისტემის ინსტალაცია"
+msgstr "სისტემის ინსტალაცია"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:2001
-#, fuzzy
 msgid "Installing the system..."
-msgstr "ძირითადი სისტემის ინსტალაცია"
+msgstr "სისტემის ინსტალაცია..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:3001
-#, fuzzy
 msgid "Copying data to disk..."
-msgstr "დანაყოფის კოპირება..."
+msgstr "მონაცემების დისკზე გადაწერა..."
 
 #. Type: text
 #. Description
@@ -58,25 +57,22 @@ msgstr "დანაყოფის კოპირება..."
 #. drop network settings that are used only by the
 #. Live system
 #: ../live-installer.templates:4001
-#, fuzzy
 msgid "Cleaning up network settings..."
-msgstr "ქსელის პარამეტრების შენახვა ..."
+msgstr "ქსელის პარამეტრების გასუფთავება..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:5001
-#, fuzzy
 msgid "Removing packages specific to the live system..."
-msgstr "ქსელის პარამეტრების შენახვა ..."
+msgstr "live-სისტემასთან დაკავშირებული პაკეტების წაშლა..."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../live-installer.templates:6001
-#, fuzzy
 msgid "Reconfiguring X.org..."
-msgstr "მიმდინარეობს ქსელის კონფიგურაცია..."
+msgstr "X.org-ის ხელახალი კონფიგურაცია..."
 
 #. Type: text
 #. Description
@@ -89,24 +85,22 @@ msgstr "${SCRIPT}-ის გაშვება..."
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
-#, fuzzy
 msgid "normal"
-msgstr "დაფორმატება"
+msgstr "ჩვეულებრივი"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../live-installer.templates:8001
 msgid "live"
-msgstr ""
+msgstr "live-სისტემა"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../live-installer.templates:8002
-#, fuzzy
 msgid "Type of installation:"
-msgstr "ინსტალაციის ეტაპის ამორჩევა:"
+msgstr "ინსტალაციის ტიპი:"
 
 #. Type: select
 #. Description
@@ -115,7 +109,7 @@ msgstr "ინსტალაციის ეტაპის ამორჩე�
 msgid ""
 "The live system can be installed to hard disk using one of the following "
 "options."
-msgstr ""
+msgstr "live-სისტემა შესაძლოა დისკზე ერთ-ერთი შემდეგი მეთოდით დაყენდეს."
 
 #. Type: select
 #. Description
@@ -126,3 +120,6 @@ msgid ""
 "you choose 'live', the installed system will continue to act as a live "
 "system but it can then be launched directly from the hard disk."
 msgstr ""
+"თუ თქვენ „ჩვეულებრივი“ რეჟიმს აირჩევთ, სისტემა ჩვეულებრივი სახით დაყენდება. "
+"თუ „live-სისტემა“ რეჟიმს აირჩევთ, დაყენებული სისტემა live-სისტემასავით "
+"იმოქმედებს, თუმცა მისი გამოძახება პირდაპირ მყარი დისკიდან იქნება შესაძლებელი."

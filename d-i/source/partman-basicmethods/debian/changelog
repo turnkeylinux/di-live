@@ -1,3 +1,96 @@
+partman-basicmethods (70) UNRELEASED; urgency=medium
+
+  * Remove Christian Perrier from Uploaders, with many thanks for all
+    his contributions over the years! (Closes: #927534)
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:38:31 +0200
+
+partman-basicmethods (69) unstable; urgency=medium
+  * Team upload
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Vietnamese (vi.po) by Trần Ngọc Quân
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 04 Mar 2019 05:21:10 +0100
+
+partman-basicmethods (68) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Marathi (mr.po) by Nayan Nakhare
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 01 Nov 2018 15:41:31 +0100
+
+partman-basicmethods (67) unstable; urgency=medium
+
+  * Team upload
+
+  [ Cyril Brulebois ]
+  * Update Vcs-{Browser,Git} to point to salsa (alioth's replacement).
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 Aug 2018 15:07:15 +0200
+
+partman-basicmethods (66) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 18 Feb 2018 08:40:42 +0100
+
+partman-basicmethods (65) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 23 Jan 2018 07:14:54 +0100
+
+partman-basicmethods (64) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Icelandic (is.po) by Sveinn í Felli
+  * Serbian (sr.po) by Filipovic Dragan
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 13 Jan 2018 19:11:36 +0100
+
+partman-basicmethods (63) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Norwegian Nynorsk (nn.po) by Allan Nordhøy
+  * Swedish (sv.po) by Anders Jonsson
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 03 Dec 2017 15:32:06 +0100
+
+partman-basicmethods (62) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Simplified Chinese (zh_CN.po) by Yangfl
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 28 Jun 2017 07:08:11 +0200
+
+partman-basicmethods (61) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * Use HTTPS for Vcs-* URLs, and link to cgit rather than gitweb.
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 02 Feb 2016 05:53:06 +0100
+
+partman-basicmethods (60) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 10 Aug 2015 09:20:33 +0200
+
+partman-basicmethods (59) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Turkish (tr.po) by Mert Dirik
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 02 Jul 2015 17:49:06 +0200
+
 partman-basicmethods (58) unstable; urgency=low
 
   [ Updated translations ]
@@ -963,7 +1056,3 @@ partman-basicmethods (2) unstable; urgency=low
   * First version.
 
  -- Anton Zinoviev <zinoviev@debian.org>  Wed, 12 Nov 2003 21:13:09 +0200
-
-Local Variables:
-coding: utf-8
-End:

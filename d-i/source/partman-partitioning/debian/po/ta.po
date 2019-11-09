@@ -14,7 +14,7 @@
 # Damodharan Rajalingam <rdamodharan@gmail.com>, 2006.
 # Dr.T.Vasudevan <drtvasudevan@gmail.com>, 2007, 2008, 2010.
 # Dr,T,Vasudevan <agnihot3@gmail.com>, 2010.
-#   Dr.T.Vasudevan <drtvasudevan@gmail.com>, 2007, 2008, 2011, 2012.
+#   Dr.T.Vasudevan <drtvasudevan@gmail.com>, 2007, 2008, 2011, 2012, 2015.
 #   Dwayne Bailey <dwayne@translate.org.za>, 2009.
 # I. Felix <ifelix25@gmail.com>, 2009, 2012.
 msgid ""
@@ -22,9 +22,9 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2013-03-30 20:36+0530\n"
+"PO-Revision-Date: 2018-08-05 09:04+0000\n"
 "Last-Translator: Dr.T.Vasudevan <drtvasudevan@gmail.com>\n"
-"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language-Team: Tamil <<gnome-tamil-translation@googlegroups.com>>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -536,7 +536,7 @@ msgstr "இந்த சாதனத்தில் வெற்று பகி
 #. such as GRUB.
 #: ../partman-partitioning.templates:32001
 msgid "Reserved BIOS boot area"
-msgstr "ஒதுக்கீடு செய்த பயாஸ் துவக்கி இடம்."
+msgstr "ஒதுக்கீடு செய்த பயாஸ் (BIOS) துவக்கி இடம்."
 
 #. Type: text
 #. Description
@@ -545,51 +545,4 @@ msgstr "ஒதுக்கீடு செய்த பயாஸ் துவக
 #. Up to 10 character positions
 #: ../partman-partitioning.templates:33001
 msgid "biosgrub"
-msgstr "பயாஸ்க்ரப்"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid "Go back to the menu and correct this problem?"
-msgstr "மீண்டும் பட்டியலுக்கு சென்று தவறுகளை திருத்தவா?"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as an \"EFI boot partition\" and should be at least 35 MB in "
-"size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid ""
-"If you do not go back to the partitioning menu and correct this error, boot "
-"loader installation may fail later, although it may still be possible to "
-"install the boot loader to a partition."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:39001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as a \"Reserved BIOS boot area\" and should be at least 1 MB "
-"in size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""
+msgstr "பயாஸ்-க்ரப் (biosgrub)"

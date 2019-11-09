@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-10-02 08:22-0500\n"
 "Last-Translator: Kumar Appaiah\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -253,8 +253,8 @@ msgstr "अलग /home पार्टिशन"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "अलग-अलग /home, /usr, /var और /tmp पार्टिशन्स"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "अलग-अलग /home, /var और /tmp पार्टिशन्स"
 
 #. Type: text
 #. Description
@@ -263,34 +263,3 @@ msgstr "अलग-अलग /home, /usr, /var और /tmp पार्टिश�
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "छोटी-डिस्क (< 1 जीबी) पार्टीशन करने की योजना:कीमः"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "निर्देश - ${PARTITION} को पुनःआकार दे तथा खाली जगहों का उपयोग करें"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "संस्थापन के लिये ज़रूरी जगह नहीं बन पाया"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"बड़ा-छोटा करने का प्रक्रिया ने संस्थापन के लिये ज़रूरी जगह नहीं बनाया। शायद बड़ा-छोटा करने "
-"का प्रक्रिया असफल हुआ।आप को हाथ से विभाजनों को बडा-छोटा करना पडेगा।"
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "अलग-अलग /home, /var और /tmp पार्टिशन्स"

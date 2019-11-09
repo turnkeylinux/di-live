@@ -428,10 +428,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
-#, fuzzy
-#| msgid "Error while deleting volume group"
 msgid "Error while creating volume group"
-msgstr "Earráid agus grúpa imleabhar á scriosadh"
+msgstr "Earráid agus grúpa imleabhar á chruthú"
 
 #. Type: error
 #. Description

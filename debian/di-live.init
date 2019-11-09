@@ -49,7 +49,7 @@ case "$1" in
         ;;
 
   stop)
-        grep -qs boot=casper /proc/cmdline || exit 0
+        grep -qs boot=live /proc/cmdline || exit 0
         [ -e $EJECT_FLAG ] || exit 0
         which file >/dev/null || exit 0
         which eject >/dev/null || exit 0

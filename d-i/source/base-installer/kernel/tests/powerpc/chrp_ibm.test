@@ -3,18 +3,16 @@ cpuinfo chrp_ibm.cpuinfo
 majors 2.6
 flavour powerpc64
 kernel-2.6 \
-  linux-powerpc64-smp \
-  linux-image-powerpc64-smp \
-  linux-powerpc64 \
   linux-image-powerpc64
 usable \
-  linux-powerpc64-smp \
-  linux-image-powerpc64-smp \
-  linux-image-2.6.20-15-powerpc64-smp
+  linux-image-powerpc64 \
+  linux-image-2.6.18-4-powerpc64
 unusable \
-  linux-powerpc \
-  linux-powerpc-smp \
   linux-image-powerpc \
+  linux-image-powerpc-miboot \
   linux-image-powerpc-smp \
-  linux-image-2.6.20-15-powerpc \
-  linux-image-2.6.20-15-powerpc-smp
+  linux-image-prep \
+  linux-image-2.6.18-4-powerpc \
+  linux-image-2.6.18-4-powerpc-miboot \
+  linux-image-2.6.18-4-powerpc-smp \
+  linux-image-2.6.18-4-prep

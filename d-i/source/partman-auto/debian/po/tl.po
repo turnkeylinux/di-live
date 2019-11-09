@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2010-07-09 22:53+0800\n"
 "Last-Translator: Eric Pareja <eric.pareja@gmail.com>\n"
 "Language-Team: Tagalog <debian-tl@banwa.upm.edu.ph>\n"
@@ -248,8 +248,8 @@ msgstr "Ihiwalay ang partisyon na /home "
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Ihiwalay na partisyon ng /home, /usr, /var, at /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Ihiwalay na partisyon ng /home, /var, at /tmp"
 
 #. Type: text
 #. Description
@@ -258,32 +258,3 @@ msgstr "Ihiwalay na partisyon ng /home, /usr, /var, at /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Iskemang pagpartisyon pang-maliit na disk (< 1GB) "
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Di nagtagumpay ang paglikha ng dagdag na lugar para sa pagluklok"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Ihiwalay na partisyon ng /home, /var, at /tmp"

@@ -7,6 +7,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+# Adriano Rafael Gomes <adrianorg@debian.org>, 2010-2018.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
@@ -22,8 +23,8 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2012-04-07 19:57-0300\n"
-"Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
+"PO-Revision-Date: 2018-12-09 16:07-0200\n"
+"Last-Translator: Adriano Rafael Gomes <adrianorg@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
 "Language: pt_BR\n"
@@ -51,8 +52,8 @@ msgid ""
 "used for the installation."
 msgstr ""
 "Particionar um disco rígido consiste em dividi-lo para criar o espaço "
-"necessário para instalar seu novo sistema. Você precisa escolher qual(is) "
-"partição(ões) será(ão) usada(s) para a instalação."
+"necessário para instalar o novo sistema. Você precisa escolher quais "
+"partições serão usadas para a instalação."
 
 #. Type: note
 #. Description
@@ -69,8 +70,8 @@ msgid ""
 "Select a device to remove all partitions in it and create a new empty "
 "partition table."
 msgstr ""
-"Selecione um dispositivo para remover todas as partições dele e criar uma "
-"nova tabela de partições vazia."
+"Selecione um dispositivo para remover todas as partições e criar uma tabela "
+"de partições vazia."
 
 #. Type: note
 #. Description
@@ -83,12 +84,12 @@ msgid ""
 "partition is a necessity.  \"Swap\" is scratch space for an operating "
 "system, which allows the system to use disk storage as \"virtual memory\"."
 msgstr ""
-"Selecione uma partição para removê-la ou para especificar como a mesma "
-"deverá ser usada. No mínimo, você precisa de uma partição para armazenar o "
-"sistema de arquivos raiz (cujo ponto de montagem é /). A maioria das pessoas "
-"acham que uma partição de troca separada é uma necessidade. A partição de "
-"troca (swap) é um espaço de rascunho para um sistema operacional, a qual "
-"permite que o sistema use armazenamento em disco como \"memória virtual\"."
+"Selecione uma partição para removê-la ou especificar como deverá ser usada. "
+"No mínimo, você precisa de uma partição para armazenar o sistema de arquivos "
+"raiz (cujo ponto de montagem é /). A maioria das pessoas acha que uma "
+"partição de troca separada é uma necessidade. A partição de troca (swap) é "
+"um espaço de rascunho para o sistema operacional, permitindo usar o disco "
+"como \"memória virtual\"."
 
 #. Type: note
 #. Description
@@ -115,10 +116,10 @@ msgid ""
 "be marked with \"${FORMAT}\"."
 msgstr ""
 "Geralmente você desejará formatar a partição com um sistema de arquivos "
-"recém criado. NOTA: todos os dados na partição serão irreversivelmente "
-"excluídos. Se você decidir formatar uma partição que já esteja formatada, a "
-"mesma será marcada como \"${DESTROY}\" no menu principal de particionamento. "
-"Caso contrário, a mesma será marcada como \"${FORMAT}\"."
+"recém criado. NOTA: todos os dados na partição serão excluídos. Se você "
+"decidir formatar uma partição que já esteja formatada, ela será marcada como "
+"\"${DESTROY}\" no menu principal de particionamento. Caso contrário, será "
+"marcada como \"${FORMAT}\"."
 
 #. Type: text
 #. Description
@@ -289,54 +290,3 @@ msgstr "Como usar esta partição:"
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "Usar como:"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr "Falha ao remover arquivos conflitantes"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-"O instalador precisa remover arquivos do sistema operacional do destino da "
-"instalação, mas não foi capaz de fazê-lo. A instalação não pode continuar."
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr "Removendo arquivos conflitantes do sistema operacional..."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr "Você quer retornar para a partição?"
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-"O sistema de arquivos em ${PARTITION} atribuído a ${MOUNTPOINT} não foi "
-"marcado para formatação. Diretórios contendo arquivos de sistema (/etc, /"
-"lib, /usr, /var, ...) que já existem em qualquer ponto de montagem definido "
-"serão apagados durante a instalação."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""
-"Por favor tenha certeza que você salvou dados importantes antes da "
-"instalação."

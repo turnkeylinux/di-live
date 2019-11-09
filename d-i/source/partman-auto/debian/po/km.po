@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: km\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-01-18 15:40+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -234,8 +234,8 @@ msgstr "បំបែក​ភាគ​ថាស /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "បំបែក​ភាគថាស /home, /usr, /var និង /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "បំបែក​ភាគថាស /home, /var និង /tmp"
 
 #. Type: text
 #. Description
@@ -244,34 +244,3 @@ msgstr "បំបែក​ភាគថាស /home, /usr, /var និង /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "គ្រោងការណ៍​ចែក​ថាស​តូចៗ (< ១ ជីកាបៃ)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "ប្ដូរ​ទំហំ​ភាគថាស ${PARTITION} ឡើង​វិញ​និង​ប្រើ​ទំហំ​ដែល​ទំនេរ"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "បានណែនាំ - ប្រើ​ភាគ​ថាស​ទាំង​មូល ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "បរាជ័យ​ក្នុង​ការ​បង្កើត​ទំហំ​គ្រប់​គ្រាន់​សម្រាប់​ការ​ដំឡើង"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"ការ​ប្ដូរ​ទំហំ​មិន​អាច​បង្កើត​ទំហំ​ទំនេរ​គ្រប់​គ្រាន់​សម្រាប់​ការ​ដំឡើង ។ ការ​ផ្លាស់​ប្ដូរ​ទំហំ​ត្រូវ​បរាជ័យ ។ អ្នក​ត្រូវ​តែ​"
-"រៀប​ចំ​ចែក​ភាគ​ថាស​ដោយ​ដៃ ។"
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "បំបែក​ភាគថាស /home, /var និង /tmp"

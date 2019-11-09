@@ -7,18 +7,25 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Free Software Foundation, 2002,2004 
+#   Miroslav Kure <kurem@debian.cz>, 2004--2010.
+#   Petr Cech <cech@debian.org> (Petr Čech), 2000.
+#   Stanislav Brabec <utx@penguin.cz>, 2001.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
 "POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2011-02-20 19:50+0100\n"
+"PO-Revision-Date: 2015-12-19 17:25+0100\n"
 "Last-Translator:  Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team:  Czech <provoz@debian.cz>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
 
 #. Type: boolean
 #. Description
@@ -359,11 +366,11 @@ msgid ""
 "smaller targeted initrd there is a very small chance that not all needed "
 "drivers are included."
 msgstr ""
-"Obecný initrd je mnohem větší než ten cílený. Dokonce může být tak velký, \n"
-"že jej některé zavaděče nedokáží zavést. Jeho výhodou však je fakt, že \n"
-"jej můžete použít pro zavedení systému na téměř libovolném hardwaru. \n"
-"S cíleným initrd je zde jistá malá šance, že nebude obsahovat všechny \n"
-"potřebné ovladače."
+"Obecný initrd je mnohem větší než ten cílený. Dokonce může být tak velký, že "
+"jej některé zavaděče nedokáží zavést. Jeho výhodou však je fakt, že jej "
+"můžete použít pro zavedení systému na téměř libovolném hardwaru. S cíleným "
+"initrd je zde jistá malá šance, že nebude obsahovat všechny potřebné "
+"ovladače."
 
 #. Type: error
 #. Description

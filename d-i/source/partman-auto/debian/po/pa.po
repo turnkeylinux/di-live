@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-08-21 21:30-0500\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -244,8 +244,8 @@ msgstr "ਵੱਖਰਾ /home ਪਾਰਟੀਸ਼ਨ"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "ਵੱਖਰੇ /home, /usr, /var, ਅਤੇ /tmp ਪਾਰਟੀਸ਼ਨ"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "ਵੱਖਰੇ /home, /var, ਅਤੇ /tmp ਪਾਰਟੀਸ਼ਨ"
 
 #. Type: text
 #. Description
@@ -254,32 +254,3 @@ msgstr "ਵੱਖਰੇ /home, /usr, /var, ਅਤੇ /tmp ਪਾਰਟੀਸ਼�
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "ਛੋਟੀ-ਡਿਸਕ (<1ਗੀਬਾ) ਪਾਰਟੀਸ਼ਨਿੰਗ ਸਕੀਮ"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "ਮੱਦਦ ਪ੍ਰਾਪਤ - ${PARTITION} ਆਕਾਰ ਬਦਲੋ ਤੇ ਖਾਲੀ ਹੋਈ ਥਾਂ ਵਰਤੋਂ"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "ਇੰਸਟਾਲੇਸ਼ਨ ਲਈ ਲੋੜੀਦੀ ਥਾਂ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "ਵੱਖਰੇ /home, /var, ਅਤੇ /tmp ਪਾਰਟੀਸ਼ਨ"

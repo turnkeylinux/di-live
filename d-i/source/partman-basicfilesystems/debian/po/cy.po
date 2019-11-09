@@ -20,14 +20,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2012-10-18 14:11-0000\n"
-"Last-Translator: Dafydd Tomos <l10n@da.fydd.org>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-03-19 21:51+0000\n"
+"Last-Translator: Huw Waters <huwwaters@gmail.com>\n"
 "Language-Team: Welsh <>\n"
 "Language: cy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0) ? 0 : (n==1) ? 1 : (n==2) ? 2 : "
+"(n==3) ? 3 :(n==6) ? 4 : 5;\n"
 
 #. Type: text
 #. Description
@@ -484,12 +486,20 @@ msgstr "safonol"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Defnydd nodweddiadol y rhaniad hwn:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -500,6 +510,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -576,9 +590,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "System ffeiliau dyddlyfru JFS"
+msgstr "System ffeiliau dyddlyfru NTFS"
 
 #. Type: text
 #. Description
@@ -586,7 +599,7 @@ msgstr "System ffeiliau dyddlyfru JFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -643,9 +656,8 @@ msgstr "noatime - peidio a diweddaru amser cyrchu inodau ar bob cyrchiad"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - peidio a diweddaru amser cyrchu inodau ar bob cyrchiad"
+msgstr "nodiratime - peidio a diweddaru amser cyrchu inodau"
 
 #. Type: text
 #. Description
@@ -788,15 +800,14 @@ msgstr "Dychwelyd i'r ddewislen a chywiro gwallau?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Mae'r rhaniad ymgychwyn ddim wedi ei gyflunio gyda'r system ffeil ext2 neu "
-"ext3. Mae angen hwn ar y peiriant er mwyn iddo gychwyn. Dychwelwch a "
-"defnyddiwch naill ai y system ffeil ext2 neu ext3."
+"Nid yw eich rhaniad ymgychwyn wedi ei gyflunio gyda system ffeil ext2. Mae "
+"angen hwn ar y peiriant er mwyn iddo gychwyn. Dychwelwch a defnyddiwch "
+"system ffeil ext2."
 
 #. Type: boolean
 #. Description
@@ -818,12 +829,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"Nid yw'ch rhaniad ymgychwyn wedi'i leoli ar y rhaniad cynradd cyntaf o'ch "
-"ddisg caled. Mae angen hwn ar eich peiriant er mwyn iddo gychwyn. Dychwelwch "
-"a defnyddiwch eich rhaniad cynradd cyntaf fel rhaniad ymgychwyn."
+"Nid yw'ch rhaniad ymgychwyn wedi'i leoli ar y rhaniad cyntaf o'ch ddisg "
+"caled. Mae angen hwn ar eich peiriant er mwyn iddo gychwyn. Dychwelwch a "
+"defnyddiwch eich rhaniad cyntaf fel rhaniad ymgychwyn."

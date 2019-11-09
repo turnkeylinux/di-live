@@ -40,10 +40,6 @@ choice_mountpoint () {
 }
 
 choice_options () {
-	if [ "$filesystem" = ntfs ]; then
-		# no mount options support yet (requires translations)
-		return
-	fi
 	db_metaget partman-basicfilesystems/text/options description
 	printf "options\t%s %.45s\n" "$RET" "$(get_mountoptions $dev $id)"
 }

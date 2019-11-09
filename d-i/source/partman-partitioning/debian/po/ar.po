@@ -4,34 +4,38 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # translation of ar.po to Arabic
-# Arabic messages for debian-installer. Copyright (C) 2003 Software in the Public Interest, Inc. This file is distributed under the same license as debian-installer. Ossama M. Khayat <okhayat@yahoo.com>, 2005.
+# Arabic messages for debian-installer. Copyright (C) 2003 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Ossama Khayat <okhayat@yahoo.com>, 2005 - 2013.
+# Abdelhak Bougouffa, 2017.
+# najib LAARIBI <supnano@gmail.com>, 2018.
+# ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
 #
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
 #   Translations from kde-i18n/desktop.po:
 #
-# Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2007, 2008, 2009, 2010.
 #   Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
 #   Alastair McKinstry <mckinstry@computer.org>, 2002.
 #   Free Software Foundation, Inc., 2002, 2004.
 #   Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2008, 2010.
 #   Tobias Quathamer <toddy@debian.org>, 2007.
 #   Mohammad Gamal <f2c2001@yahoo.com>, 2001.
-# Ossama Khayat <okhayat@yahoo.com>, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2013-09-30 11:24+0300\n"
-"Last-Translator: Ossama Khayat <okhayat@gmail.com>\n"
-"Language-Team: American English <okhayat@gmail.com>\n"
+"PO-Revision-Date: 2019-02-22 14:15+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n⇐10 ? "
-"3 : n>=11 && n⇐99 ? 4 : 5\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 
 #. Type: text
 #. Description
@@ -66,7 +70,7 @@ msgstr "يستحيل تغيير حجم هذا الجزء، لسببٍ ما مج�
 #. :sl2:
 #: ../partman-partitioning.templates:3001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "تفقّد /var/log/syslog أو انظر الطرفية الافتراضية الرابعة للتفاصيل."
+msgstr "تفقّد ‎/var/log/syslog أو انظر الطرفية الافتراضية الرابعة للتفاصيل."
 
 #. Type: boolean
 #. Description
@@ -89,7 +93,7 @@ msgstr "قبل إختيار حجم جديد للجزء، يجب أن تكتب ا
 #. :sl2:
 #: ../partman-partitioning.templates:4001
 msgid "You cannot undo this operation."
-msgstr "لا يمكنك التّراجع عن هذه العمليّة"
+msgstr "لا يمكنك التّراجع عن هذه العمليّة."
 
 #. Type: boolean
 #. Description
@@ -538,50 +542,3 @@ msgstr "منطقة إقلاع BIOS محجوزة"
 #: ../partman-partitioning.templates:33001
 msgid "biosgrub"
 msgstr "biosgrub"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid "Go back to the menu and correct this problem?"
-msgstr "هل تريد العودة إلى القائمة و تصحيح هذه المشكلة؟"
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as an \"EFI boot partition\" and should be at least 35 MB in "
-"size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:38001
-#: ../partman-partitioning.templates:39001
-msgid ""
-"If you do not go back to the partitioning menu and correct this error, boot "
-"loader installation may fail later, although it may still be possible to "
-"install the boot loader to a partition."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#. :sl5:
-#: ../partman-partitioning.templates:39001
-msgid ""
-"The partition table format in use on your disks normally requires you to "
-"create a separate partition for boot loader code. This partition should be "
-"marked for use as a \"Reserved BIOS boot area\" and should be at least 1 MB "
-"in size. Note that this is not the same as a partition mounted on /boot."
-msgstr ""

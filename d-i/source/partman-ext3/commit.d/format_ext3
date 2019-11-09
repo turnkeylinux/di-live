@@ -55,20 +55,8 @@ for dev in $DEVICES/*; do
 			else
 				usage=''
 			fi
-			# According to Szabolcs Szakacsits, the NTFS-3g
-			# author, it is safer to format the loop file,
-			# rather than the device.
-			if [ -s loop ]; then
-				device="$(cat loop)"
-				force=-F
-			fi
-			options=''
-			db_get partman-ext3/lazy_itable_init
-			if [ "$RET" = true ]; then
-				options='-E lazy_itable_init'
-			fi
 			if log-output -t partman --pass-stdout \
-			   mkfs.$filesystem $options $force "$device" $usage >/dev/null; then
+			   mkfs.$filesystem -F $device $usage >/dev/null; then
 				sync
 				status=OK
 			else

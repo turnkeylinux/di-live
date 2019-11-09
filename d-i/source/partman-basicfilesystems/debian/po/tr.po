@@ -28,8 +28,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2014-09-09 18:44+0200\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2015-08-02 02:44+0300\n"
 "Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
 "Language-Team: Debian L10N Turkish\n"
 "Language: tr\n"
@@ -94,7 +94,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:6001
 #: ../partman-basicfilesystems.templates:7001
 msgid "Go back to the menu and correct errors?"
-msgstr "Menüye geri dönerek hataları düzeltmek ister misiniz?"
+msgstr "Hataların düzeltilmesi için menüye geri dönülsün mü?"
 
 #. Type: boolean
 #. Description
@@ -463,7 +463,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Label:\" ]"
-msgstr "hiçbiri"
+msgstr "yok"
 
 #. Type: text
 #. Description
@@ -498,12 +498,20 @@ msgstr "standart"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Bu bölümün tipik kullanımını:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -514,6 +522,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -540,7 +552,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Mount point:\" ]"
-msgstr "hiçbiri"
+msgstr "yok"
 
 #. Type: text
 #. Description
@@ -795,7 +807,7 @@ msgstr "shortnames - Yalnızca eski 8.3 MS-DOS tarzı dosya adları kullan"
 #: ../partman-basicfilesystems.templates:60001
 #: ../partman-basicfilesystems.templates:61001
 msgid "Go back to the menu and correct this problem?"
-msgstr "Menüye geri dönerek hataları düzeltmek ister misiniz?"
+msgstr "Menüye geri dönerek bu sorunu düzeltmek ister misiniz?"
 
 #. Type: boolean
 #. Description

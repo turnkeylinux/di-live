@@ -1,0 +1,187 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# Translation of Debian Installer templates to Brazilian Portuguese.
+# This file is distributed under the same license as debian-installer.
+#
+# Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+# Adriano Rafael Gomes <adrianorg@debian.org>, 2010-2016.
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
+#   Free Software Foundation, Inc., 2000
+#   Juan Carlos Castro y Castro <jcastro@vialink.com.br>, 2000-2005.
+#   Leonardo Ferreira Fontenelle <leonardof@gnome.org>, 2006-2009.
+#   Lisiane Sztoltz <lisiane@conectiva.com.br>
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
+"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"PO-Revision-Date: 2016-11-23 08:52-0200\n"
+"Last-Translator: Adriano Rafael Gomes <adrianorg@debian.org>\n"
+"Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
+"org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: error
+#. Description
+#. Translators : DO NOT TRANSLATE variable names : ALGORITHM, LOCATION
+#. and CHECKSUM
+#. :sl2:
+#: ../preseed-common.templates:1001
+msgid "Checksum error"
+msgstr "Erro de soma de verificação"
+
+#. Type: error
+#. Description
+#. Translators : DO NOT TRANSLATE variable names : ALGORITHM, LOCATION
+#. and CHECKSUM
+#. :sl2:
+#: ../preseed-common.templates:1001
+msgid ""
+"The ${ALGORITHM} checksum of the file retrieved from <${LOCATION}> fails to "
+"match the expected value of \"${CHECKSUM}\".  The file may be corrupt, or "
+"the provided checksums may be out of date."
+msgstr ""
+"A soma de verificação ${ALGORITHM} do arquivo obtido de <${LOCATION}> não "
+"combina com o valor esperado de \"${CHECKSUM}\". O arquivo pode estar "
+"corrompido, ou as somas de verificação fornecidas podem estar desatualizadas."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:2001
+msgid "Failed to retrieve the preconfiguration file"
+msgstr "Falha ao obter arquivo de pré-configuração"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:2001
+msgid ""
+"The file needed for preconfiguration could not be retrieved from "
+"${LOCATION}. The installation will proceed in non-automated mode."
+msgstr ""
+"O arquivo necessário para a pré-configuração não pôde ser obtido de "
+"${LOCATION}. A instalação prosseguirá em modo não-automatizado."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:3001
+msgid "Failed to process the preconfiguration file"
+msgstr "Falha ao processar o arquivo de pré-configuração"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:3001
+msgid ""
+"The installer failed to process the preconfiguration file from ${LOCATION}. "
+"The file may be corrupt."
+msgstr ""
+"O instalador falhou ao processar o arquivo de pré-configuração de "
+"${LOCATION}. O arquivo pode estar corrompido."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:12001
+msgid "Failed to run preseeded command"
+msgstr "Falha ao executar comando pré-configurado"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:12001
+msgid ""
+"Execution of preseeded command \"${COMMAND}\" failed with exit code ${CODE}."
+msgstr ""
+"A execução do comando pré-configurado \"${COMMAND}\" falhou com o código de "
+"saída ${CODE}."
+
+#. Type: text
+#. Description
+#. Main menu item
+#: ../network-preseed.templates:1001
+msgid "Download debconf preconfiguration file"
+msgstr "Baixar arquivo de pré-configuração debconf"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid "Location of initial preconfiguration file:"
+msgstr "Localização do arquivo inicial de pré-configuração:"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"In order to perform an automated install, you need to supply a "
+"preconfiguration file (which can in turn pull in other files). To do that, "
+"you need to provide a (perhaps partial) URL."
+msgstr ""
+"Para realizar uma instalação automatizada, você precisa fornecer um arquivo "
+"de pré-configuração (que pode carregar outros arquivos). Para tanto, você "
+"precisa fornecer uma URL (talvez parcial)."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"This can be as simple as the machine name where your preseed files reside up "
+"to a full URL. Any of these could be made to work:\n"
+"  intra\t\t[for example.com, these three are equivalent]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
+msgstr ""
+"Isto pode ser tão simples quanto o nome da máquina onde seus arquivos de pré-"
+"configuração estão guardados até uma URL completa. Qualquer um dos itens "
+"listados poderia funcionar:\n"
+"  intra\t\t[para example.com, estes três são equivalentes]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"For fully automated installs, preseed/url should itself be preseeded (via "
+"kernel command line, DHCP, or syslinux.cfg on customised media)"
+msgstr ""
+"Para instalações totalmente automatizadas, o próprio valor de \"preseed/url"
+"\" deverá ser pré-configurado (via linha de comando do kernel, DHCP ou um "
+"arquivo syslinux.cfg em uma mídia personalizada)"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid "See http://wiki.debian.org/DebianInstaller/Preseed for inspiration."
+msgstr "Veja http://wiki.debian.org/DebianInstaller/Preseed para inspiração."
+
+#. Type: text
+#. Description
+#. Main menu item
+#: ../file-preseed.templates:1001
+msgid "Load debconf preconfiguration file"
+msgstr "Carregar arquivo de pré-configuração debconf"

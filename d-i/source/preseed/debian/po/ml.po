@@ -1,0 +1,181 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# translation of Debian Installer Level 1 - sublevel 1 to malayalam
+# Copyright (c)  2006-2010 Debian Project
+# Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>, 2006-2010.
+# Santhosh Thottingal <santhosh00@gmail.com>, 2006.
+# Sreejith :: ശ്രീജിത്ത് കെ <sreejithk2000@gmail.com>, 2006.
+# Credits:  V Sasi Kumar, Sreejith N, Seena N, Anivar Aravind, Hiran Venugopalan and Suresh P
+# Debian Installer master translation file template
+# Don't forget to properly fill-in the header of PO files
+# Debian Installer translators, please read the D-I i18n documentation
+# in doc/i18n/i18n.txt#
+# Translations from iso-codes:
+# Tobias Quathamer <toddy@debian.org>, 2007.
+# Translations taken from ICU SVN on 2007-09-09
+# Praveen A <pravi.a@gmail.com>, 2006, 2008.
+# Ani Peter <peter.ani@gmail.com>, 2009
+# Anish Sheela <aneesh.nl@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: Debian Installer Level 1\n"
+"Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
+"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"Last-Translator: Anish Sheela <aneesh.nl@gmail.com>\n"
+"Language-Team: Swatantra Malayalam Computing <discuss@lists.smc.org.in>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Type: error
+#. Description
+#. Translators : DO NOT TRANSLATE variable names : ALGORITHM, LOCATION
+#. and CHECKSUM
+#. :sl2:
+#: ../preseed-common.templates:1001
+msgid "Checksum error"
+msgstr "ചെക്ക്സം പിഴവ്"
+
+#. Type: error
+#. Description
+#. Translators : DO NOT TRANSLATE variable names : ALGORITHM, LOCATION
+#. and CHECKSUM
+#. :sl2:
+#: ../preseed-common.templates:1001
+msgid ""
+"The ${ALGORITHM} checksum of the file retrieved from <${LOCATION}> fails to "
+"match the expected value of \"${CHECKSUM}\".  The file may be corrupt, or "
+"the provided checksums may be out of date."
+msgstr ""
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:2001
+msgid "Failed to retrieve the preconfiguration file"
+msgstr "മുന്‍ ക്രമീകരണ ഫയല്‍ വീണ്ടെടുക്കാന്‍ സാധിച്ചില്ല"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:2001
+msgid ""
+"The file needed for preconfiguration could not be retrieved from "
+"${LOCATION}. The installation will proceed in non-automated mode."
+msgstr ""
+"${LOCATION} ല്‍ നിന്നും മുന്‍ ക്രമീകരണത്തിനാവശ്യമായ ഫയല്‍ വീണ്ടെടുക്കാന്‍ സാധിച്ചില്ല. "
+"ഓട്ടോമേറ്റഡല്ലാത്ത മോഡില്‍ ഇന്‍സ്റ്റലേഷന്‍ പ്രക്രിയ മുന്നോട്ട് നീങ്ങും."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:3001
+msgid "Failed to process the preconfiguration file"
+msgstr "മുന്‍ ക്രമീകരണ ഫയല്‍ മനസ്സിലാക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:3001
+msgid ""
+"The installer failed to process the preconfiguration file from ${LOCATION}. "
+"The file may be corrupt."
+msgstr ""
+"${LOCATION} ല്‍ നിന്നും മുന്‍ ക്രമീകരണ ഫയല്‍ മനസ്സിലാക്കുന്നതില്‍ ഇന്‍സ്റ്റോളര്‍ പരാജയപ്പെട്ടു. ഒരു "
+"പക്ഷേ ഫയല്‍ കറപ്റ്റായിരിക്കും."
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:12001
+msgid "Failed to run preseeded command"
+msgstr "മുന്‍പത്തെ കമാന്‍ഡ് പ്രവര്‍ത്തിപ്പിക്കുന്നതില്‍ പരാജയപ്പെട്ടു"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../preseed-common.templates:12001
+msgid ""
+"Execution of preseeded command \"${COMMAND}\" failed with exit code ${CODE}."
+msgstr ""
+"മുന്‍പത്തെ കമാന്‍ഡ് \"${COMMAND}\" പ്രവര്‍ത്തനം ${CODE} എന്ന എക്സിറ്റ് കോഡോടു കൂടി പരാജയപ്പെട്ടു."
+
+#. Type: text
+#. Description
+#. Main menu item
+#: ../network-preseed.templates:1001
+msgid "Download debconf preconfiguration file"
+msgstr "ഡെബ്കോണ്‍ഫ് മുന്‍ക്രമീകരണ ഫയല്‍ ഡൌണ്‍ലോഡ് ചെയ്യുക"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid "Location of initial preconfiguration file:"
+msgstr "ആദ്യത്തെ മുന്‍ക്രമീകരണ ഫയലിന്റെ സ്ഥാനം:"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"In order to perform an automated install, you need to supply a "
+"preconfiguration file (which can in turn pull in other files). To do that, "
+"you need to provide a (perhaps partial) URL."
+msgstr ""
+"തനിയെ സ്ഥാപിക്കാന്‍, ഒരു മുന്‍ക്രമീകരണ ഫയല്‍ കൊടുക്കണം (അത് മറ്റ് ഫയലുകള്‍ എടുക്കാന്‍ ഉപയോഗിക്കാം). "
+"അത് ചെയ്യാന്‍, ഒരു URL (ഭാഗികമായാലും) വേണം."
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"This can be as simple as the machine name where your preseed files reside up "
+"to a full URL. Any of these could be made to work:\n"
+"  intra\t\t[for example.com, these three are equivalent]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
+msgstr ""
+"ഇത് പ്രീസീഡ് ഫയലുകളുള്ള ഒരു കമ്പ്യൂട്ടറിന്റെ പേരോ ഒരു മുഴുവന്‍ യൂആര്‍‌‌എല്ലോ ആകാം. ഇതിലേതു "
+"വേണമെങ്കിലും  ഉപയോഗിക്കാം :\n"
+"  intra\t\t[for example.com, these three are equivalent]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid ""
+"For fully automated installs, preseed/url should itself be preseeded (via "
+"kernel command line, DHCP, or syslinux.cfg on customised media)"
+msgstr ""
+"മുഴുവനായും  യാന്ത്രികമായ ഇന്‍സ്റ്റാളിന്. പ്രീസീഡ്/യൂആര്‍‌‌എല്‍ പ്രീസീഡെഡ് ആയിരിക്കണാം (കേര്‍ണല്‍ കമാന്റ് "
+"ലൈന്‍ , ഡിഎച്സിപി അല്ലെങ്കില്‍ കസ്റ്റമൈസ്ഡ് മീഡിയയിലെ syslinux.conf എന്നിവ വഴി)"
+
+#. Type: string
+#. Description
+#. :sl3:
+#: ../network-preseed.templates:2001
+msgid "See http://wiki.debian.org/DebianInstaller/Preseed for inspiration."
+msgstr "കുടുതല്‍ അറിയുന്നതിനായി http://wiki.debian.org/DebianInstaller/Preseed കാണുക."
+
+#. Type: text
+#. Description
+#. Main menu item
+#: ../file-preseed.templates:1001
+msgid "Load debconf preconfiguration file"
+msgstr "ഡെബ്കോണ്‍ഫ് മുന്‍ക്രമീകരണ ഫയല്‍ ചേര്‍ക്കുക"

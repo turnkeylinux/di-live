@@ -175,11 +175,11 @@ _Description: standard
 
 Template: partman-basicfilesystems/specify_usage
 Type: select
+Choices: ${CHOICES}
 # :sl2:
 # Translate "standard" the same way as in the
 # partman-basicfilesystems/text/typical_usage template.  Do not
 # translate "news", "largefile" and "largefile4".
-Choices: ${CHOICES}
 _Description: Typical usage of this partition:
  Please specify how the file system is going to be used, so that
  optimal file system parameters can be chosen for that use.
@@ -415,10 +415,4 @@ _Description: Go back to the menu and correct this problem?
  If you do not go back to the partitioning menu and correct this error,
  the partition will be used as is. This means that you may not be able
  to boot from your hard disk.
-
-Template: partman/automount
-Type: boolean
-Default: false
-Description: for internal use; can be preseeded
- Set to true to automount interesting-looking partitions under /media.
 

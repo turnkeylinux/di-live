@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2013-10-06 13:45+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
@@ -250,8 +250,8 @@ msgstr "Atsevišķs /home nodalījums"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Atsevišķi /home, /usr, /var un /tmp nodalījumi"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Atsevišķi /home, /var un /tmp nodalījumi"
 
 #. Type: text
 #. Description
@@ -260,34 +260,3 @@ msgstr "Atsevišķi /home, /usr, /var un /tmp nodalījumi"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Maza diska (< 1GB) dalīšanas shēma"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Vadītā - samazināt ${PARTITION} un izmantot brīvo vietu"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Vadītā - izmantot visu nodalījumu, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Neizdevās izveidot pietiekami brīvās vietas instalācijai"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Izmēra maiņa neizveidoja pietiekamu vietu instalācijai. Iespējams, izmēra "
-"maiņa neizdevās. Jums būs jāizveido diska sadaļas manuāli."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Atsevišķi /home, /var un /tmp nodalījumi"

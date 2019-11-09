@@ -7,56 +7,49 @@
 # Hebrew messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-#
-#
-#
-#
 # Translations from iso-codes:
-#     Translations taken from ICU SVN on 2007-09-09
-#   Translations from KDE:
-#
-#   Translations taken from KDE:
-#
-#
+# Translations taken from ICU SVN on 2007-09-09
+# Translations taken from KDE:
 # Amit Dovev <debian.translator@gmail.com>, 2007.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Omer Zak <w1@zak.co.il>, 2008, 2010, 2012, 2013.
-# Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011.
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#   Free Software Foundation, Inc., 2002,2004.
-#   Alastair McKinstry <mckinstry@computer.org>, 2002.
-#   Meni Livne <livne@kde.org>, 2000.
-#   Free Software Foundation, Inc., 2002,2003.
-#   - Meni Livne <livne@kde.org>, 2000.
-#   Lior Kaplan <kaplan@debian.org>, 2005,2006, 2007, 2008, 2010.
-#   Meital Bourvine <meitalbourvine@gmail.com>, 2007.
+# Tobias Quathamer <toddy@debian.org>, 2007.
+# Free Software Foundation, Inc., 2002,2004.
+# Alastair McKinstry <mckinstry@computer.org>, 2002.
+# Meni Livne <livne@kde.org>, 2000.
+# Free Software Foundation, Inc., 2002,2003.
+# Meni Livne <livne@kde.org>, 2000.
+# Meital Bourvine <meitalbourvine@gmail.com>, 2007.
+# Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_he\n"
+"Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
-"PO-Revision-Date: 2013-10-02 11:05+0300\n"
-"Last-Translator: Omer Zak <w1@zak.co.il>\n"
-"Language-Team: Hebrew <debian-hebrew-common@lists.alioth.debian.org>\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"PO-Revision-Date: 2019-02-28 22:08+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:1001
 msgid "Please wait..."
-msgstr "אנא המתן..."
+msgstr "נא להמתין…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:2001
 msgid "Computing the new partitions..."
-msgstr "מחשב את המחיצות החדשות..."
+msgstr "מתבצע חישוב של המחיצות החדשות…"
 
 #. Type: error
 #. Description
@@ -66,7 +59,7 @@ msgstr "מחשב את המחיצות החדשות..."
 #. :sl2:
 #: ../partman-auto.templates:3001 ../partman-auto.templates:4001
 msgid "Failed to partition the selected disk"
-msgstr "כישלון בחלוקת הדיסק הנבחר למחיצות"
+msgstr "חלוקת הכונן הנבחר למחיצות נכשלה"
 
 #. Type: error
 #. Description
@@ -76,7 +69,8 @@ msgid ""
 "This probably happened because the selected disk or free space is too small "
 "to be automatically partitioned."
 msgstr ""
-"זה כנראה קרה כי הדיסק או השטח הפנוי שבחרת קטן מדי לחלוקה אוטומטית למחיצות."
+"תקלה זו כנראה קרתה עקב כך שהכונן הנבחר או המקום הפנוי בו קטנים מכדי לאפשר "
+"חלוקה למחיצות."
 
 #. Type: error
 #. Description
@@ -95,7 +89,7 @@ msgstr "זה כנראה קרה כי יש יותר מידי מחיצות (ראש�
 #. :sl1:
 #: ../partman-auto.templates:5001 ../partman-auto.templates:8001
 msgid "Partitioning method:"
-msgstr "שיטה לחלוקה למחיצות:"
+msgstr "שיטת חלוקה למחיצות:"
 
 #. Type: select
 #. Description
@@ -107,9 +101,9 @@ msgid ""
 "partitioning you will still have a chance later to review and customise the "
 "results."
 msgstr ""
-"תוכנת ההתקנה יכולה להדריך אותך בזמן החלוקה למחיצות (בעזרת מספר סכמות "
-"אפשריות), או אם תעדיף, תוכל לעשות זאת באופן ידני. אם תבחר להשתמש בחלוקה "
-"מודרכת, עדיין תינתן לך הזדמנות לסקור ולשנות את התוצאות מאוחר יותר."
+"תכנית ההתקנה יכולה ללוות אותך בהליך החלוקה למחיצות (בעזרת מספר סכמות "
+"אפשריות) או ,אם עדיף לך, ניתן לעשות זאת באופן ידני. על אף הבחירה בחלוקה "
+"מודרכת, עדיין יתאפשר לך לסקור ולשנות את התוצאות מאוחר יותר."
 
 #. Type: select
 #. Description
@@ -122,8 +116,8 @@ msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
 msgstr ""
-"אם תבחר בחלוקה מודרכת למחיצות של דיסק שלם, תישאל בהמשך באיזה דיסק תבוצע "
-"החלוקה למחיצות."
+"לאחר בחירה בחלוקה מודרכת למחיצות על כונן שלם, תופיע בקשה לבחירת הכונן לביצוע "
+"המשימה."
 
 #. Type: select
 #. Description
@@ -143,7 +137,7 @@ msgstr "סכמת חלוקה למחיצות:"
 #. at the end of the sentence. Please keep it.
 #: ../partman-auto.templates:9001
 msgid "Selected for partitioning:"
-msgstr "נבחר לחלוקה למחיצות:"
+msgstr "נבחרו לחלוקה למחיצות:"
 
 #. Type: select
 #. Description
@@ -153,8 +147,8 @@ msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
 msgstr ""
-"אפשר לחלק את הדיסק למחיצות בעזרת אחת מכמה סכמות שונות. אם אינך בטוח באיזו "
-"מהן לבחור, בחר בראשונה."
+"ניתן לחלק את הכונן למחיצות בעזרת אחת מכמה סכמות שונות. במקרה של חוסר וודאות "
+"באיזו מהן לבחור, כדאי לבחור בראשונה."
 
 #. Type: error
 #. Description
@@ -171,7 +165,7 @@ msgid ""
 "Partitioning failed because the chosen free space may not be used. There are "
 "probably too many (primary) partitions in the partition table."
 msgstr ""
-"כישלון בחלוקה למחיצות מאחר והשטח הפנוי לא ניתן לשימוש. כנראה שיש יותר מידי "
+"החלוקה למחיצות נכשלה כיוון שהשטח הפנוי לא ניתן לשימוש. כנראה שיש יותר מידי "
 "מחיצות (ראשיות) בטבלת המחיצות."
 
 #. Type: text
@@ -188,7 +182,7 @@ msgstr "חלוקה מודרכת למחיצות"
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:14001
 msgid "Guided - use the largest continuous free space"
-msgstr "חלוקה מודרכת - השתמש בשטח הפנוי הרציף הכי גדול"
+msgstr "חלוקה מודרכת - שימוש בשטח הפנוי הרציף הגדול ביותר"
 
 #. Type: text
 #. Description
@@ -196,14 +190,14 @@ msgstr "חלוקה מודרכת - השתמש בשטח הפנוי הרציף הכ
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:15001
 msgid "Guided - use entire disk"
-msgstr "חלוקה מודרכת - השתמש בכל שטח הדיסק"
+msgstr "חלוקה מודרכת - שימוש בכל שטח הכונן"
 
 #. Type: select
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:16001
 msgid "Select disk to partition:"
-msgstr "בחר דיסק לחלוקה למחיצות:"
+msgstr "בחירת כונן לחלוקה למחיצות:"
 
 #. Type: select
 #. Description
@@ -213,8 +207,8 @@ msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
 msgstr ""
-"שים לב שכל המידע על הדיסק שתבחר ימחק, אבל לא לפני שתאשר שאתה בטוח שברצונך "
-"לבצע את השינויים."
+"לתשומת לבך: כל הנתונים בכונן הנבחר יימחקו, אך לא לפני אישורך לביצוע השינויים "
+"האלה."
 
 #. Type: text
 #. Description
@@ -247,15 +241,15 @@ msgstr "כל הקבצים במחיצה אחת (מומלץ למשתמשים חד�
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:20001
 msgid "Separate /home partition"
-msgstr "מחיצה נפרדת ל-/home"
+msgstr "מחיצה נפרדת ל־‎/home"
 
 #. Type: text
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "מחיצות נפרדות ל-/home, /usr, /var, ו-/tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "מחיצות נפרדות ל־‎/home‎, ל־‎/var ול־‎/tmp"
 
 #. Type: text
 #. Description
@@ -263,35 +257,4 @@ msgstr "מחיצות נפרדות ל-/home, /usr, /var, ו-/tmp"
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
-msgstr "חלוקה למחיצות של דיסק קטן (< 1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "מונחה - כיווץ ${PARTITION} ושימוש בשטח שהתפנה"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "מונחה - שימוש בכל המחיצה, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "לא ניתן ליצור די מקום פנוי להתקנה"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"פעולת שינוי הגודל לא יצרה די מקום פנוי להתקנה. יתכן שהפעולה נכשלה. יהיה עליך "
-"להגדיר את המחיצות באופן ידני."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "מחיצות נפרדות ל-/home, /var, ו-/tmp"
+msgstr "חלוקה למחיצות של דיסק קטן (< 1 ג״ב)"

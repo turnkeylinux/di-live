@@ -90,17 +90,6 @@ if [ "$method" ] && [ "$disks" ]; then
 		autopartition "$ids"
 		exit 0
 		;;
-	    loop)
-		search-path autopartition-loop || exit 1
-		for disk in $disks; do
-			id=$(dev_to_partman "$disk") || true
-			if [ "$id" ]; then
-				autopartition-loop "$id"
-				exit 0
-			fi
-		done
-		exit 1
-		;;
 	    *)
 		logger -t partman-auto "Unsupported method '$method'"
 		exit 1

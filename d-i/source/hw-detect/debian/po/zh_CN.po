@@ -12,17 +12,36 @@
 # Ming Hua (2005,2006,2007,2008), Xiyue Deng (2008), Kov Chai (2008),
 # Kenlen Lai (2008), WCM (2008), Ren Xiaolei (2008).
 #
+#
+# Translations from iso-codes:
+#   Tobias Toedter <t.toedter@gmx.net>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#   Free Software Foundation, Inc., 2002, 2003, 2007, 2008.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Translations taken from KDE:
+#   - Wang Jian <lark@linux.net.cn>, 2000.
+#   - Carlos Z.F. Liu <carlosliu@users.sourceforge.net>, 2004 - 2006.
+#   LI Daobing <lidaobing@gmail.com>, 2007, 2008, 2009, 2010.
+#   YunQiang Su <wzssyqa@gmail.com>, 2011.
+#
+#   Mai Hao Hui <mhh@126.com>, 2001 (translations from galeon)
+# YunQiang Su <wzssyqa@gmail.com>, 2010, 2011, 2012, 2013.
+# Yangfl <mmyangfl@gmail.com>, 2017.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
 "POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2010-06-06 17:15+0800\n"
-"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
-"Language-Team: Simplified Chinese <debian-chinese-gb@lists.debian.org>\n"
+"PO-Revision-Date: 2017-12-22 19:54+0000\n"
+"Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
+"Language-Team: <debian-l10n-chinese@lists.debian.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: select
 #. Choices
@@ -102,7 +121,7 @@ msgstr "正在探测网络硬件"
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
-msgstr "探测网络设备"
+msgstr "探测网络硬件"
 
 #. Type: text
 #. Description
@@ -117,7 +136,7 @@ msgstr "探测磁盘"
 #. :sl1:
 #: ../disk-detect.templates:2001
 msgid "Detecting disks and all other hardware"
-msgstr "正在探测磁盘和其它硬件"
+msgstr "正在探测磁盘和其他硬件"
 
 #. Type: select
 #. Choices
@@ -163,27 +182,6 @@ msgstr "未找到可分区的介质。"
 #: ../disk-detect.templates:4001
 msgid "Please check that a hard disk is attached to this machine."
 msgstr "请您检查这台计算机是否接有硬盘。"
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid "Activate Serial ATA RAID devices?"
-msgstr "启用 串行 ATA RAID 设备吗？"
-
-#. Type: boolean
-#. Description
-#: ../disk-detect.templates:7001
-msgid ""
-"One or more drives containing Serial ATA RAID configurations have been "
-"found. Do you wish to activate these RAID devices?"
-msgstr ""
-"发现了一个或多个包含串行 ATA RAID 配置的设备。您想启用这些 RAID 设备吗？"
-
-#. Type: text
-#. Description
-#: ../disk-detect.templates:8001
-msgid "login to iSCSI targets"
-msgstr "登录到 iSCSI 目标"
 
 #. Type: text
 #. Description
@@ -302,7 +300,7 @@ msgid ""
 msgstr ""
 "${MODULE} 模块加载失败。您可能需要提供一些工作参数以使该模块能正常工作，这在"
 "老旧的硬件中是很常见的。这些参数通常是 I/O 端口和 IRQ 号，它们根据机器不同而"
-"有区别，而且不能通过硬件型号确定。该参数样式一般类似于“irq=7 io=0x220”。"
+"有区别，而且不能通过硬件型号确定。该参数样式一般类似于“irq=7 io=0x220”"
 
 #. Type: string
 #. Description

@@ -1,5 +1,5 @@
 bin_PROGRAMS = parted_server parted_devices partmap
-bin_SCRIPTS = partman partman-command partman-commit
+bin_SCRIPTS = partman partman-command
 
 parted_server_SOURCES = parted_server.c
 parted_server_LDADD = $(libparted_fs_resize_LIBS) $(libparted_LIBS)

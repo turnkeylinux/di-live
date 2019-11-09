@@ -6,11 +6,17 @@
 # Irish messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
+#
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@computer.org>, 2001,2002
+# Free Software Foundation, Inc., 2001,2003
+# Kevin Patrick Scannell <scannell@SLU.EDU>, 2004, 2008, 2009, 2011.
+# Sean V. Kelley <s_oceallaigh@yahoo.com>, 1999
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2006-03-21 14:42-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -228,11 +234,14 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
+#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
+"Is é ${MINSIZE} íosmhéid na deighilte seo (nó ${PERCENT}) agus is é "
+"${MAXSIZE} a huasmhéid."
 
 #. Type: string
 #. Description
@@ -250,8 +259,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
+#, fuzzy
 msgid "Invalid input"
-msgstr ""
+msgstr "Méid neamhbhailí"
 
 #. Type: error
 #. Description
@@ -280,8 +290,9 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
+#, fuzzy
 msgid "${SIZE} is too small"
-msgstr ""
+msgstr "Tá an deighilt EFI róbheag"
 
 #. Type: error
 #. Description

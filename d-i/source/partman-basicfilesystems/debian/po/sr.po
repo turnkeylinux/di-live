@@ -11,6 +11,7 @@
 # Janos Guljas <janos@resenje.org>, 2010-2012.
 # Veselin Mijušković <veselin.mijuskovic@gmail.com>, 2008.
 # Milan Kostic <kosticmilan77@open.telekom.rs>, 2012.
+# Filipovic Dragan <filipovic@tutanota.com>, 2018.
 #
 # Translations from iso-codes:
 #   Aleksandar Jelenak <aleksandar.jelenak@gmail.com>, 2010.
@@ -24,14 +25,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2012-10-19 22:10+0100\n"
-"Last-Translator: Karolina Kalic <karolina@resenje.org>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-01-11 20:47+0000\n"
+"Last-Translator: Filipovic Dragan <filipovic@tutanota.com>\n"
 "Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. Type: text
 #. Description
@@ -401,7 +404,7 @@ msgstr "Неисправна тачка монтирања"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "The mount point you entered is invalid."
-msgstr "Тачка монирања коју сте унели није исправна"
+msgstr "Тачка монирања коју сте унели није исправна."
 
 #. Type: error
 #. Description
@@ -492,12 +495,20 @@ msgstr "стандардна"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Типична употреба ове партиције:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -508,6 +519,10 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
@@ -585,9 +600,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "JFS журналски фајл систем"
+msgstr "NTFS журналски фајл систем"
 
 #. Type: text
 #. Description
@@ -595,7 +609,7 @@ msgstr "JFS журналски фајл систем"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -652,9 +666,8 @@ msgstr "noatime - не ажурирај време приступа и-нода 
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - не ажурирај време приступа и-нода при сваком приступу"
+msgstr "nodiratime - не ажурирај време приступа и-нода"
 
 #. Type: text
 #. Description
@@ -762,7 +775,7 @@ msgstr "notail - онемогући паковање фајлова у стаб�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - ослободи блокове који се више не користе"
 
 #. Type: text
 #. Description
@@ -797,15 +810,14 @@ msgstr "Вратити се назад у мени и исправити про�
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Ваша бут партиција није конфигурисана са ext2 или ext3 фајл системом. Ово је "
+"Ваша бут партиција није конфигурисана са ext2  фајл системом. Ово је "
 "потребно да би ваша машина могла да се покрене. Вратите се назад и "
-"употребите ext2 или ext3 фајл систем."
+"употребите ext2 фајл систем."
 
 #. Type: boolean
 #. Description
@@ -828,7 +840,6 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "

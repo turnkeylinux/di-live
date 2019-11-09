@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Not to be confused with the default live-installer 'support/squashfs'
+# script (which actually extracts a squashfs).
+#
+# This custom TurnKey script leverages Debian live-installer (via di-live)
+# to install a TurnKey live system to HDD. Whilst named 'squashfs', it
+# instead triggers live-installer to install from the unpacked read-only
+# filesystem mounted at /run/live/rootfs/10root.squashfs
+
+PLACES="$PLACES /run/live/rootfs/10root.squashfs"
+
+squashfs_prepare() {
+	cd /run/live/rootfs/10root.squashfs
+}
+
+squashfs_count() {
+    echo `print-inodes /run/live/rootfs/10root.squashfs`
+}

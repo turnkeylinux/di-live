@@ -9,10 +9,4 @@ while [ $code -eq 255 ]; do
 	autopartition $disk
 	code=$?
 done
-
-if [ $code -ne 0 ]; then
-	exit $code
-else
-	# accept the autopartitioning
-	exit 100
-fi
+exit $code

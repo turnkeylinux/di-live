@@ -10,21 +10,26 @@
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt#
 #
+#
+# Translations from iso-codes:
 # Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
 # Amanpreet Singh Alam <apreet.alam@gmail.com>, 2006.
-# A S Alam <apreet.alam@gmail.com>, 2006, 2007.
-# A S Alam <aalam@users.sf.net>, 2007.
+# A S Alam <aalam@users.sf.net>, 2006, 2007.
+# A S Alam <aalam@users.sf.net>, 2007, 2010.
 # Amanpreet Singh Alam <apreet.alam@gmail.com>, 2008.
 # Amanpreet Singh Brar <aalam@users.sf.net>, 2008.
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
+# Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
+# A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2010-03-26 09:46+0000\n"
-"PO-Revision-Date: 2009-01-16 14:09+0530\n"
-"Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <kde-i18n-doc@lists.kde.org>\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2014-12-30 22:01+0000\n"
+"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -137,7 +142,7 @@ msgstr "GRUB ਰੂਟ ਜੰਤਰ: ${GRUBROOT}."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
 msgstr "GRUB ਸੰਰਚਿਤ ਕਰਨ ਵਿੱਚ ਅਸਮਰਥ"
 
@@ -195,14 +200,20 @@ msgstr "ਗਰਬ ਨੂੰ ਮਲਟੀ-ਪਾਥ ਜੰਤਰ ਲਈ ਸੈੱ
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
 msgstr "ਬੂਟ ਲੋਡਰ ਇੰਸਟਾਲੇਸ਼ਨ ਲਈ ਜੰਤਰ:"
 
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
@@ -219,17 +230,6 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -240,27 +240,32 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"ਜੰਤਰ GRUB ਦੀ \"(hdn,m)\" ਅੰਕ-ਲਿਪੀ ਵਰਤ ਕੇ, ਜਾਂ /dev ਵਿੱਚ ਜੰਤਰ ਤੌਰ ਤੇ ਦਰਸਾਇਆ ਜਾ ਸਕਦਾ "
-"ਹੈ। ਹੇਠਾਂ ਕੁਝ ਉਦਾਹਰਨਾ ਹਨ:\n"
-" - \"(hd0)\" ਜਾਂ \"/dev/hda\" GRUB ਨੂੰ ਤੁਹਾਡੀ ਪਹਿਲੀ ਹਾਰਡ ਡਰਾਈਵ (IDE) ਦੇ ਮਾਸਟਰ\n"
+"ਜੰਤਰ /dev ਵਿੱਚ ਜੰਤਰ ਤੌਰ ਤੇ ਦਰਸਾਇਆ ਜਾ ਸਕਦਾ ਹੈ। ਹੇਠਾਂ ਕੁਝ ਉਦਾਹਰਨਾਂ ਹਨ:\n"
+" - \"/dev/sda\" GRUB ਨੂੰ ਤੁਹਾਡੀ ਪਹਿਲੀ ਹਾਰਡ ਡਰਾਈਵ ਦੇ ਮਾਸਟਰ\n"
 "   ਬੂਟ ਰਿਕਾਰਡ ਤੇ ਇੰਸਟਾਲ ਕਰੇਗਾ;\n"
-" - \"(hd0,1)\" ਜਾਂ \"/dev/hda2\" ਤੁਹਾਡੀ ਪਹਿਲੀ IDE ਡਰਾਈਵ ਦਾ ਦੂਜਾ ਭਾਗ\n"
+" - \"/dev/sda2\" ਤੁਹਾਡੀ ਪਹਿਲੀ IDE ਡਰਾਈਵ ਦਾ ਦੂਜਾ ਭਾਗ\n"
 "   ਵਰਤੇਗਾ;\n"
-" - \"(hd2,4)\" ਜਾਂ \"/dev/sdc5\" ਤੁਹਾਡੀ ਤੀਜੀ ਡਰਾਈਵ (ਇੱਥੇ SCSI) ਦੇ ਪਹਿਲੇ ਵਧਾਏ\n"
+" - \"/dev/sdc5\" ਤੁਹਾਡੀ ਤੀਜੀ ਡਰਾਈਵ (ਇੱਥੇ SCSI) ਦੇ ਪਹਿਲੇ ਵਧਾਏ\n"
 "   ਨੂੰ ਵਰਤੇਗੀ;\n"
-" - \"(fd0)\" ਜਾਂ \"/dev/fd0\" GRUB ਨੂੰ ਫਲਾਪੀ ਤੇ ਇੰਸਟਾਲ ਕਰੇਗਾ।"
+" - \"/dev/fd0\" GRUB ਨੂੰ ਫਲਾਪੀ ਤੇ ਇੰਸਟਾਲ ਕਰੇਗਾ।"
+
+#. Type: select
+#. Choices
+#: ../grub-installer.templates:8001
+msgid "Enter device manually"
+msgstr "ਜੰਤਰ ਖੁਦ ਦਿਓ"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "GRUB password:"
 msgstr "GRUB ਪਾਸਵਰਡ:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid ""
 "The GRUB boot loader offers many powerful interactive features, which could "
 "be used to compromise your system if unauthorized users have access to the "
@@ -277,21 +282,21 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
 msgstr "ਜੇਕਰ ਤੁਸੀਂ GRUB ਪਾਸਵਰਡ ਨਹੀਂ ਦੇਣਾ, ਇਹ ਖਾਨਾ ਖਾਲੀ ਛੱਡੋ।"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
 msgstr "ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਪਾਸਵਰਡ ਮੁੜ ਦਿਓ:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
@@ -301,28 +306,28 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "Password input error"
 msgstr "ਪਾਸਵਰਡ ਇੰਪੁੱਟ ਗਲਤੀ ਹੈ"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr "ਦੋ ਪਾਸਵਰਡ, ਜੋ ਤੁਸੀਂ ਦਿੱਤੇ ਹਨ, ਇੱਕੋ ਜਿਹੇ ਨਹੀਂ ਹਨ। ਮੁੜ ਕੋਸ਼ਿਸ ਕਰੋ ਜੀ।"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
 msgstr "GRUB ਇੰਸਟਾਲੇਸ਼ਨ ਫੇਲ੍ਹ ਹੋਈ"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
@@ -333,14 +338,14 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Unable to install GRUB in ${BOOTDEV}"
 msgstr "${BOOTDEV} ਵਿੱਚ GRUB ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਅਸਮਰੱਥ"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
 msgstr "'grub-install ${BOOTDEV}' ਚਲਾਉਣ ਵਿੱਚ ਅਸਫਲ।"
 
@@ -350,71 +355,125 @@ msgstr "'grub-install ${BOOTDEV}' ਚਲਾਉਣ ਵਿੱਚ ਅਸਫਲ।"
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001 ../grub-installer.templates:14001
+#: ../grub-installer.templates:14001 ../grub-installer.templates:15001
 msgid "This is a fatal error."
 msgstr "ਇਹ ਘਾਤਕ ਗਲਤੀ ਹੈ।"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
 msgstr "'update-grub' ਚਲਾਉਣ ਵਿੱਚ ਅਸਫਲ।"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid "Install GRUB?"
+msgstr "GRUB ਇੰਸਟਾਲ ਕਰਨਾ ਹੈ?"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+"GRUB 2 ਗਨੂ ਗਰਬ (GNU GRUB) ਦੀ ਅਗਲੀ ਪੀੜ੍ਹੀ ਹੈ, ਬੂਟ ਲੋਡਰ, ਜਿਸ ਨੂੰ ਆਮ ਤੌਰ ਉੱਤੇ i386/amd64 "
+"ਪੀਸੀ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ। ਇਹ ਹੁਣ ${ARCH} ਲਈ ਵੀ ਉਪਲੱਬਧ ਹੈ।"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
+"ਇਹ ਦਿਲਖਿਚਵੇਂ ਨਵੇਂ ਫੀਚਰ ਹਨ, ਪਰ ਇਹ ਇਸ ਆਰਚੀਟੈਕਚਰ ਲਈ ਤਜਰਬੇ ਅਧੀਨ ਸਾਫਟਵੇਅਰ ਹੈ। ਜੇ ਤੁਸੀਂ ਇਸ ਨੂੰ "
+"ਇੰਸਟਾਲ ਕਰਨ ਦੀ ਚੋਣ ਕਰਦੇ ਹੋ ਤਾਂ ਤੁਹਾਨੂੰ ਖਰਾਬੀ ਲਈ ਤਿਆਰ ਰਹਿਣਾ ਚਾਹੀਦਾ ਹੈ ਅਤੇ ਪਤਾ ਹੋਣਾ ਚਾਹੀਦਾ "
+"ਹੈ ਕਿ ਆਪਣੇ ਸਿਸਟਮ ਨੂੰ ਮੁੜ-ਪ੍ਰਾਪਤ ਕਿਵੇਂ ਕਰਨਾ ਹੈ, ਜੇ ਇਹ ਬੂਟ ਨਾ ਹੋ ਸਕਿਆ ਤਾਂ। ਤੁਹਾਨੂੰ ਇਸ ਨੂੰ ਪ੍ਰੋਡੱਕਸ਼ਨ "
+"ਮਾਹੌਲ ਵਿੱਚ ਵਰਤਣ ਦੀ ਸਲਾਹ ਨਹੀਂ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ।"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:17001
+#: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
 msgstr "GRUB ਬੂਟ ਲੋਡਰ ਇੰਸਟਾਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:18001
+#: ../grub-installer.templates:19001
 msgid "Looking for other operating systems..."
 msgstr "ਹੋਰ ਓਪਰੇਟਿੰਗ ਸਿਸਟਮ ਦੀ ਖੋਜ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:19001
+#: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
 msgstr "'${GRUB}' ਪੈਕੇਜ ਇੰਸਟਾਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:20001
+#: ../grub-installer.templates:21001
 msgid "Determining GRUB boot device..."
 msgstr "GRUB ਬੂਟ ਜੰਤਰ ਦਾ ਪਤਾ ਲਗਾਇਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:21001
+#: ../grub-installer.templates:22001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
 msgstr "\"grub-install ${BOOTDEV}\" ਚਲਾ ਰਿਹਾ ਹੈ..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:22001
+#: ../grub-installer.templates:23001
 msgid "Running \"update-grub\"..."
 msgstr "\"update-grub\" ਚਲਾਇਆ ਜਾ ਰਿਹਾ ਹੈ..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:23001
+#: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
 msgstr "/etc/kernel-img.conf ਅੱਪਡੇਟ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
 #. Type: text
 #. Description
+#. :sl1:
+#: ../grub-installer.templates:25001
+msgid "Checking whether to force usage of the removable media path"
+msgstr "ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ ਕਿ ਕੀ ਹਟਾਉਣਯੋਗ ਮੀਡੀਆ ਮਾਰਗ ਦੀ ਵਰਤੋਂ ਨੂੰ ਮਜ਼ਬੂਰ ਕਰਨਾ ਹੈ"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:26001
+msgid "Mounting filesystems"
+msgstr "ਫਾਇਲ ਸਿਸਟਮ ਮਾਊਂਟ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:27001
+msgid "Configuring grub-efi for future usage of the removable media path"
+msgstr "ਹਟਾਉਣਯੋਗ ਮੀਡੀਆ ਮਾਰਗ ਦੀ ਭਵਿੱਖ ਦੀ ਮਵਰਤੋਂ ਲਈ grub-efi ਦੀ ਸੰਰਚਨਾ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
+
+#. Type: text
+#. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "ਹਾਰਡ ਡਿਸਕ ਤੇ GRUB ਬੂਟ ਲੋਡਰ ਇੰਸਟਾਲ ਕਰੋ"
 
@@ -422,6 +481,93 @@ msgstr "ਹਾਰਡ ਡਿਸਕ ਤੇ GRUB ਬੂਟ ਲੋਡਰ ਇੰਸ�
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
+#: ../grub-installer.templates:29001
 msgid "Reinstall GRUB boot loader"
 msgstr "GRUB ਬੂਟ ਲੋਡਰ ਮੁੜ-ਇੰਸਟਾਲ ਹੋ ਰਿਹਾ ਹੈ"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Failed to mount /target/proc"
+msgstr "/target/proc ਨੂੰ ਮਾਊਂਟ ਕਰਨ ਵਿੱਚ ਫੇਲ੍ਹ"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Mounting the proc file system on /target/proc failed."
+msgstr "/target/proc ਤੇ proc ਫਾਇਲ ਸਿਸਟਮ ਮਾਊਂਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr "ਵੇਰਵੇ ਵਾਸਤੇ /var/log/syslog ਦੀ ਚੈੱਕ ਕਰੋ ਜਾਂ ਆਰਜੀ ਕੰਸੋਲ 4 ਵੇਖੋ।"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Warning: Your system may be unbootable!"
+msgstr "ਚੇਤਾਵਨੀ: ਤੁਹਾਡਾ ਸਿਸਟਮ ਨਾ ਬੂਟ ਹੋਣ ਯੋਗ ਹੋ ਸਕਦਾ ਹੈ!"
+
+#. Type: text
+#. Description
+#. Rescue menu item
+#. :sl2:
+#: ../grub-installer.templates:33001
+msgid "Force GRUB installation to the EFI removable media path"
+msgstr "GRUB ਇੰਸਟਾਲੇਸ਼ਨ ਨੂੰ EFI ਹਟਾਉਣਯੋਗ ਮੀਡੀਆ ਮਾਰਗ ਲਈ ਮਜ਼ਬੂਰ ਕਰੋ"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid "Force GRUB installation to the EFI removable media path?"
+msgstr "EFI ਹਟਾਉਣਯੋਗ ਮੀਡੀਆ ਮਾਰਗ ਲਈ GRUB ਇੰਸਟਾਲੇਸ਼ਨ ਲਈ ਮਜ਼ਬੂਰ ਕਰਨਾ ਹੈ?"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"It seems that this computer is configured to boot via EFI, but maybe that "
+"configuration will not work for booting from the hard drive. Some EFI "
+"firmware implementations do not meet the EFI specification (i.e. they are "
+"buggy!) and do not support proper configuration of boot options from system "
+"hard drives."
+msgstr ""
+"ਜਾਪਦਾ ਹੈ ਕਿ ਇਸ ਕੰਪਿਊਟਰ ਨੂੰ GRUB ਰਾਹੀਂ ਬੂਟ ਹੋਣ ਲਈ ਸੰਰਚਿਤ ਕੀਤਾ ਹੈ, ਪਰ ਉਹ ਸੰਰਚਨਾ ਹਾਰਡ "
+"ਡਰਾਇਵ ਤੋਂ ਬੂਟ ਕਰਨ ਲਈ ਕੰਮ ਨਹੀਂ ਕਰੇਗੀ। ਕੁਝ EFI ਫਿਰਮਵੇਅਰ ਸਥਾਪਨ EFI ਸ਼ਰਤਾਂ ਨੂੰ \n"
+"ਪੂਰਾ ਨਹੀਂ ਕਰਦੇ ਹੋ ਸਕਦਾ ਹੈ (ਜਿਵੇਂ ਕਿ ਬੱਗ ਹੋਵੇ!) ਅਤੇ ਸਿਸਟਮ ਹਾਰਡ ਡਰਾਇਵ ਤੋਂ ਬੂਟ ਚੋਣਾਂ ਦੀ ਢੁੱਕਵੀਂ "
+"ਸੰਰਚਨਾ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ।"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"A workaround for this problem is to install an extra copy of the EFI version "
+"of the GRUB boot loader to a fallback location, the \"removable media path"
+"\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
+msgstr ""
+"ਇਸ ਸਮੱਸਿਆ ਦਾ ਹੱਲ GRUB ਬੂਟ ਲੋਡਰ ਦੇ EFI ਵਰਜ਼ਨ ਦੀ ਵਾਧੂ ਕਾਪੀ ਨੂੰ ਬਚਾਓ ਟਿਕਾਣੇ, \"ਹਟਾਉਣਯੋਗ "
+"ਮੀਡੀਆ ਮਾਰਗ\" ਉੱਤੇ ਇੰਸਟਾਲ ਕਰਨਾ ਹੈ। ਲਗਭਗ ਸਾਰੇ EFI ਸਿਸਟਮ, ਭਾਵੇਂ ਕਿੰਨਾ ਵੀ ਨੁਕਸਦਾਰ ਕਿਓ ਨਾ "
+"ਹੋਵੇ, ਇਸ ਢੰਗ ਨਾਲ GRUB ਬੂਟ ਹੋਵੇਗਾ।"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"Warning: If the installer failed to detect another operating system that is "
+"present on your computer that also depends on this fallback, installing GRUB "
+"there will make that operating system temporarily unbootable. GRUB can be "
+"manually configured later to boot it if necessary."
+msgstr ""
+"ਚੇਤਾਵਨੀ: ਜੇ ਇੰਸਟਾਲਰ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਉੱਤੇ ਮੌਜੂਦ ਹੋਰ ਓਪਰੇਟਿੰਗ ਸਿਸਟਮ ਲੱਭਣ ਲਈ ਅਸਫ਼ਲ ਹੋਇਆ, ਜੋ ਕਿ "
+"ਪਹਿਲਾਂ ਹੀ ਇਸ ਬਚਾਅ ਉੱਤੇ ਨਿਰਭਰ ਹੈ, GRUB ਨੂੰ ਉੱਥੇ ਇੰਸਟਾਲ ਕਰਨ ਨਾਲ ਓਪਰੇਟਿੰਗ ਸਿਸਟਮ ਨੂੰ ਆਰਜ਼ੀ ਤੌਰ "
+"'ਤੇ ਨਾ-ਬੂਟ ਹੋਣਯੋਗ ਬਣਾਏਗਾ। ਜੇ ਲੋੜ ਹੋਵੇ ਤਾਂ ਬੂਟ ਕਰਨ ਲਈ GRUB ਨੂੰ ਬਾਅਦ 'ਚ ਖੁਦ ਸੰਰਚਿਤ ਕੀਤਾ ਜਾ "
+"ਸਕਦਾ ਹੈ।"

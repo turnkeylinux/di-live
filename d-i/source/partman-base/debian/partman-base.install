@@ -1,6 +1,5 @@
 bin/parted_server
 bin/partman
 bin/partman-command
-bin/partman-commit
 lib lib/partman
 post-base-installer.d usr/lib

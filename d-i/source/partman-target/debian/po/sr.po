@@ -4,13 +4,14 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Serbian/Cyrillic messages for debian-installer.
-# Copyright (C) 2010 Software in the Public Interest, Inc.
+# Copyright (C) 2010-2012 Software in the Public Interest, Inc.
 # Copyright (C) 2008 THE cp6Linux'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the debian-installer package.
-# Karolina Kalic <karolina@resenje.org>, 2010-2011.
-# Janos Guljas <janos@resenje.org>, 2010-2011.
+# Karolina Kalic <karolina@resenje.org>, 2010-2012.
+# Janos Guljas <janos@resenje.org>, 2010-2012.
 # Veselin Mijušković <veselin.mijuskovic@gmail.com>, 2008.
-#
+# Milan Kostic <kosticmilan77@open.telekom.rs>, 2012.
+# Filipovic Dragan <filipovic@tutanota.com>, 2018.
 #
 # Translations from iso-codes:
 #   Aleksandar Jelenak <aleksandar.jelenak@gmail.com>, 2010.
@@ -25,13 +26,15 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2011-12-04 00:12+0100\n"
-"Last-Translator: Karolina Kalic <karolina@resenje.org>\n"
-"Language-Team: Serbian/Cyrillic\n"
-"Language: \n"
+"PO-Revision-Date: 2018-12-16 11:12+0000\n"
+"Last-Translator: Filipovic Dragan <filipovic@tutanota.com>\n"
+"Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. Type: note
 #. Description
@@ -53,15 +56,15 @@ msgid ""
 "used for the installation."
 msgstr ""
 "Партиционисање хард драјва се састоји од дељења истог да би се направио "
-"простор потребан за инсталацију вашег новог система.  Потребно је да "
-"одаберете које партиције ће бити употребљене за инсталацију."
+"простор потребан за инсталацију система.  Потребно је да одабрати партиције "
+"за инсталацију."
 
 #. Type: note
 #. Description
 #. :sl1:
 #: ../partman-target.templates:1001
 msgid "Select a free space to create partitions in it."
-msgstr "Изаберите празан простор да бисте на њему креирали партиције."
+msgstr "Изаберите празан простор за креирање партиција."
 
 #. Type: note
 #. Description
@@ -71,8 +74,8 @@ msgid ""
 "Select a device to remove all partitions in it and create a new empty "
 "partition table."
 msgstr ""
-"Изаберите уређај са кога ћете уклонити све партиције и креирати нову, празну "
-"партициону табелу."
+"Изаберите уређај за уклањање свих партиција и креирање нове, празне "
+"партиционе табеле."
 
 #. Type: note
 #. Description
@@ -85,11 +88,11 @@ msgid ""
 "partition is a necessity.  \"Swap\" is scratch space for an operating "
 "system, which allows the system to use disk storage as \"virtual memory\"."
 msgstr ""
-"Изаберите партицију да бисте је уклонили или назначили као ће бити "
-"коришћена. Минимално је потребно да имате једну партицију која ће садржати "
-"„root“ фајл систем (чија тачка монтирања је /). Многи сматрају да је засебна "
-"партиција за помоћну меморију неопходна.  „Помоћна меморија“ дозвољава "
-"систему да користи простор на диску као своју „виртуелну меморију“."
+"Изаберите партицију за уклањање или коришћење. Минимално је имати једну "
+"партицију која ће садржати „root“ фајл систем (чија тачка монтирања је /). "
+"Многи сматрају да је засебна партиција за помоћну меморију неопходна.  "
+"„Swap“ дозвољава систему да користи простор на диску као своју „виртуелну "
+"меморију“."
 
 #. Type: note
 #. Description
@@ -101,8 +104,8 @@ msgid ""
 "are marked with \"${KEEP}\" in the main partitioning menu."
 msgstr ""
 "Када је партиција већ форматирана можете одабрати да је сачувате и "
-"искористите постојеће податке на њој.  Партиције које ће се користити на "
-"овај начин су означене са „${KEEP}“ у главном менију за партиционисање."
+"искористите постојеће податке на њој.  Партиције у употреби на овај начин су "
+"означене са „${KEEP}“ у главном менију."
 
 #. Type: note
 #. Description
@@ -115,11 +118,10 @@ msgid ""
 "marked with \"${DESTROY}\" in the main partitioning menu.  Otherwise it will "
 "be marked with \"${FORMAT}\"."
 msgstr ""
-"У општем случају пожелећете да форматирате партицију са новокреираним фајл "
-"системом.  НАПОМЕНА: сви подаци на партицији ће бити неповратно обрисани.  "
-"Ако одлучите да форматирате већ форматирану партицију, она ће бити означена "
-"са „${DESTROY}“ у менију за партиционисање.  У супротном она ће бити "
-"означена са „${FORMAT}“."
+"Генерално, пожелећете формат партиције са новим фајл системом.  НАПОМЕНА: "
+"сви подаци на партицији ће бити обрисани. Ако одлучите да форматирате већ "
+"форматирану партицију, она ће бити означена са „${DESTROY}“ у менију за "
+"партиционисање.  У супротном она ће бити означена са „${FORMAT}“."
 
 #. Type: text
 #. Description
@@ -132,11 +134,11 @@ msgid ""
 "the bootable flag for it. Such a partition will be marked with "
 "\"${BOOTABLE}\" in the main partitioning menu."
 msgstr ""
-"Да би покренули ваш нови систем, морате користити тзв. покретачки програм "
-"(boot loader). Он може бити инсталиран или на мастер бут запису првог хард "
-"диска, или на партицији.  Када је покретачки програм инсталиран на "
-"партицији, њој морате поставити покретачку заставицу. Таква партиција ће "
-"бити означена са „${BOOTABLE}“ у менију за партиционисање."
+"Покретањем вашег новог система, морате користити програм (boot loader). Он "
+"може бити инсталиран или на мастер бут запису првог хард диска, или на "
+"партицији.  Када је покретачки програм инсталиран на партицији, њој морате "
+"поставити покретачку заставицу. Таква партиција ће бити означена са "
+"„${BOOTABLE}“ у менију."
 
 #. Type: text
 #. Description
@@ -284,53 +286,3 @@ msgstr "Како хоћете да користите ову партицију:
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "Користи као:"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr "Неуспело уклањање конфликтних фајлова"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-"Инсталациони програм треба да уклони оперативни систем са циља инсталације, "
-"али није успео у томе. Инсталација не може да настави даље."
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr "Уклањање конфликтних фајлова оперативног система..."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr "Да ли желите да се вратите у партиционер?"
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-"Фајл систем на ${PARTITION} који је додељен ${MOUNTPOIINT} није означен за "
-"форматирање. Директоријуми који садрже системске фајлове (/etc, /lib, /usr, /"
-"var, ...) и који већ постоје под било којом дефинисаном тачком монтирања ће "
-"бити обрисани у току инсталације."
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""
-"Молим да проверите да ли сте сачували све важне податке пре инсталације."

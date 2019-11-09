@@ -1,7 +1,7 @@
 Source: di-live
 Section: admin
 Priority: optional
-Maintainer: Alon Swartz <alon@turnkeylinux.org>
+Maintainer: Jeremy Davis <jeremy@turnkeylinux.org>
 Build-Depends:
  cdbs,
  debconf (>= 0.5.0),
@@ -21,10 +21,14 @@ Package: di-live
 Architecture: any
 Depends:
  debconf,
+ python3-debconf,
  grub-pc,
  libdebconfclient0,
  os-prober,
- python (>= 2.4),
+ python3 (>= 3.5),
+ live-boot-initramfs-tools,
+ live-boot,
+ live-tools,
  ${misc:Depends},
  ${shlibs:Depends},
 Recommends:

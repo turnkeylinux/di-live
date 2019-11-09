@@ -5,28 +5,33 @@
 #
 # translation of debian-installer_packages_po_sublevel1_ne.po to Nepali
 # Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2006.
-# Shiva Pokharel <pokharelshiva@hotmail.com>, 2006.
+# Shiva Pokharel <shiva@mpp.org.np>, 2006.
 # Shyam Krishna Bal <shyam@mpp.org.np>, 2006.
-# Shiva Prasad Pokharel <pokharelshiva@hotmail.com>, 2006.
+# Shiva Prasad Pokharel <shiva@mpp.org.np>, 2006.
 # Shiva Pokharel <shiva@mpp.org.np>, 2007, 2008.
 # Shiva Prasad Pokharel <pokharelshiv@gmail.com>, 2007.
 # shyam krishna bal <shyamkrishna_bal@yahoo.com>, 2007.
 # Nabin Gautam <nabin@mpp.org.np>, 2007.
 # Shyam Krishna Bal <balshyam24@yahoo.com>, 2008.
-# Shiva Prasad Pokharel <shiva@mpp.org.np>, 2008, 2010.
+# Shiva Prasad Pokharel <shiva@mpp.org.np>, 2008, 2010, 2011.
+# Jeewal Kunwar <jeewalkunwar1@gmail.com>, 2017.
+#
+# Translations from iso-codes:
+#   Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2006.
+#   Shiva Prasad Pokharel <shiva@mpp.org.np>, 2006, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_ne\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2010-07-09 12:14+0545\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2017-12-17 18:40+0000\n"
+"Last-Translator: Jeewal Kunwar <jeewalkunwar1@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n !=1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: note
 #. Description
@@ -96,7 +101,7 @@ msgid ""
 msgstr ""
 "यदि विभाजन पहिलेनै ढाँचाबद्ध भईसकेको छ भने तपाईँ विभाजनमा अवस्थित डेटानै राख्न र प्रयोग "
 "गर्न रोज्न सक्नु हुनेछ । यो तरिकाले प्रयोग हुने विभाजनहरू मुख्य विभाजन मेनुमा \"${KEEP}\" ले "
-"चिन्ह लगाएको छ ।  "
+"चिन्ह लगाएको छ ."
 
 #. Type: note
 #. Description
@@ -275,46 +280,3 @@ msgstr "यो विभाजन कसरी प्रयोग गर्न�
 #: ../partman-target.templates:10001
 msgid "Use as:"
 msgstr "यस किसिमले प्रयोग गर्नुहोस्:"
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid "Failed to remove conflicting files"
-msgstr ""
-
-#. Type: error
-#. Description
-#: ../partman-target.templates:13001
-msgid ""
-"The installer needs to remove operating system files from the install "
-"target, but was unable to do so.  The install cannot continue."
-msgstr ""
-
-#. Type: text
-#. Description
-#: ../partman-target.templates:14001
-msgid "Removing conflicting operating system files..."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid "Do you want to return to the partitioner?"
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"The file system on ${PARTITION} assigned to ${MOUNTPOINT} has not been "
-"marked for formatting.  Directories containing system files (/etc, /lib, /"
-"usr, /var, ...) that already exist under any defined mountpoint will be "
-"deleted during the install."
-msgstr ""
-
-#. Type: boolean
-#. Description
-#: ../partman-target.templates:15001
-msgid ""
-"Please ensure that you have backed up any critical data before installing."
-msgstr ""

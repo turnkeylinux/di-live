@@ -1,13 +1,7 @@
 arch_get_kernel_flavour () {
 	case "$SUBARCH" in
-	    4kc-malta|5kc-malta|loongson-2e|loongson-2f|r3k-kn02|r4k-kn04|sb1-bcm91250a|sb1a-bcm91480b)
+	    4kc-malta|5kc-malta|loongson-3|octeon)
 		echo "$SUBARCH"
-		return 0 ;;
-	    qemu-mips32)
-		echo "qemu"
-		return 0 ;;
-	    cobalt)
-		echo r5k-cobalt
 		return 0 ;;
 	    *)
 		warning "Unknown $ARCH subarchitecture '$SUBARCH'."
@@ -27,16 +21,15 @@ arch_check_usable_kernel () {
 }
 
 arch_get_kernel () {
-	# use the more generic package versioning for 2.6 ff
 	case "$KERNEL_MAJOR" in
-	    2.6)
+	    2.6|3.*|4.*)
 		case $1 in
 		    5kc-malta)
-			echo "linux-image-$KERNEL_MAJOR-$1"
+			echo "linux-image-$1"
 			set 4kc-malta
 			;;
 		esac
-		echo "linux-image-$KERNEL_MAJOR-$1"
+		echo "linux-image-$1"
 		;;
 	    *)
 		warning "Unsupported kernel major '$KERNEL_MAJOR'."

@@ -20,15 +20,15 @@
 # Amanpreet Singh Brar <aalam@users.sf.net>, 2008.
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
-# A S Alam <aalam@users.sf.net>, 2009, 2012, 2014.
+# A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2014-08-21 21:30-0500\n"
-"Last-Translator: A S Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -220,7 +220,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:12001
 msgid "Invalid file system for this mount point"
-msgstr "ਇਸ ਮਾਊਂਟ ਪੁਆਇੰਟ ਲਈ ਗਲਤ ਫਾਇਲ ਟਾਈਪ:"
+msgstr "ਇਸ ਮਾਊਂਟ ਪੁਆਇੰਟ ਲਈ ਗਲਤ ਫਾਇਲ ਸਿਸਟਮ"
 
 #. Type: error
 #. Description
@@ -482,12 +482,20 @@ msgstr "ਸਟੈਂਡਰਡ"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
-msgstr "ਇਸ ਪਾਰਟੀਸ਼ਨ ਦੀ ਖਾਸ ਵਰਤੋਂ:"
+msgstr "ਇਸ ਪਾਰਟੀਸ਼ਨ ਦੀ ਆਮ ਵਰਤੋਂ:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -497,12 +505,16 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"standard = ਸਟੈਂਡਰਡ ਪੈਰਾਮੀਟਰ, news = ਇੱਕ inode ਪ੍ਰਤੀ 4ਕਿਬਾ ਬਲਾਕ, largefile = ਇੱਕ "
+"standard = ਸਟੈਂਡਰਡ ਪੈਰਾਮੀਟਰ, news = ਇੱਕ inode ਪ੍ਰਤੀ 4KB ਬਲਾਕ, largefile = ਇੱਕ "
 "inode ਪ੍ਰਤੀ ਮੈਗਾਬਾਈਟ, largefile4 = ਇੱਕ inode ਪ੍ਰਤੀ 4 ਮੈਗਾਬਾਈਟ।"
 
 #. Type: text
@@ -573,9 +585,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "JFS ਜਰਨਲਿੰਗ ਫਾਇਲ ਸਿਸਟਮ"
+msgstr "NTFS ਜਰਨਲਿੰਗ ਫਾਇਲ ਸਿਸਟਮ"
 
 #. Type: text
 #. Description
@@ -583,7 +594,7 @@ msgstr "JFS ਜਰਨਲਿੰਗ ਫਾਇਲ ਸਿਸਟਮ"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -640,9 +651,8 @@ msgstr "noatime - ਹਰੇਕ ਵਾਰ ਵਰਤਣ ਤੇ inode ਪਹੁੰ�
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - ਹਰੇਕ ਵਾਰ ਵਰਤਣ ਤੇ inode ਪਹੁੰਚ ਸਮੇਂ ਦਾ ਅੱਪਡੇਟ ਨਾ ਕਰੋ"
+msgstr "nodiratime - ਡਾਇਰੈਕਟਰੀ inode ਪਹੁੰਚ ਸਮੇਂ ਦਾ ਅੱਪਡੇਟ ਨਾ ਕਰੋ"
 
 #. Type: text
 #. Description
@@ -750,7 +760,7 @@ msgstr "notail - ਫਾਇਲ ਸਿਸਟਮ ਸੂਚੀ ਲੜੀ ਵਿੱ�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - ਬੁਨਿਆਦੀ ਬਲਾਕ ਡਿਵਾਈਸ ਤੋਂ ਖ਼ਾਲੀ ਹੋਏ ਬਲਾਕਾਂ ਨੂੰ ਕੱਢੋ"
 
 #. Type: text
 #. Description

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2012-03-13 19:06+0600\n"
 "Last-Translator: Robin Mehdee (রবিন মেহদী) <robin@ankur.org.bd>\n"
 "Language-Team: Bengali \n"
@@ -258,8 +258,8 @@ msgstr "পৃথক /home পার্টিশন"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "পৃথক /home, /usr, /var, ও /tmp পার্টিশন"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "পৃথক /home, /var, ও /tmp পার্টিশন"
 
 #. Type: text
 #. Description
@@ -268,35 +268,3 @@ msgstr "পৃথক /home, /usr, /var, ও /tmp পার্টিশন"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "ছোট-ডিস্ক (< ১ গিগাবাইট) পার্টিশন পরিকল্পনা"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Guided - ${PARTITION}'র আকার পরিবর্তন করুন এবং ফাঁকাস্থান ব্যবহার করুন"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "পরিচালিত - সম্পূর্ণ অবস্থান ব্যবহার, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "ইনস্টলেশনের জন্য পর্য়াপ্ত স্থান তৈরী করতে ব্যর্থ"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"আকার পরিবর্তনের অপারেশন ইনস্টলেশনের জন্য যথেষ্ট পরিমাণ জায়গা ফাঁকা করতে পারেনা। "
-"আকার পরিবর্তন ব্যর্থও হতে পারে। আপনাকে নিজ হাতে পার্টিশন সেট আপ করতে হবে।"
-
-# FIXME: Is it a command?
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "পৃথক /home, /var, ও /tmp পার্টিশন"

@@ -7,6 +7,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+# Adriano Rafael Gomes <adrianorg@debian.org>, 2010-2018.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
@@ -21,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
-"POT-Creation-Date: 2014-08-31 22:00+0000\n"
-"PO-Revision-Date: 2012-06-27 01:39-0300\n"
-"Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
+"POT-Creation-Date: 2018-09-28 22:43+0200\n"
+"PO-Revision-Date: 2018-12-09 16:07-0200\n"
+"Last-Translator: Adriano Rafael Gomes <adrianorg@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
 "Language: pt_BR\n"
@@ -491,12 +492,20 @@ msgstr "padrão"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
 msgstr "Uso típico desta partição:"
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
@@ -508,12 +517,16 @@ msgstr ""
 
 #. Type: select
 #. Description
+#. :sl2:
+#. Translate "standard" the same way as in the
+#. partman-basicfilesystems/text/typical_usage template.  Do not
+#. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"padrão = parâmetros padrões, news = um inode para cada bloco de 4KB, "
+"padrão = parâmetros padrão, news = um inode para cada bloco de 4KB, "
 "largefile = um inode por megabyte, largefile4 = um inode para cada 4 "
 "megabytes."
 
@@ -585,9 +598,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "Sistema de arquivos com \"journaling\" JFS"
+msgstr "Sistema de arquivos com \"journaling\" NTFS"
 
 #. Type: text
 #. Description
@@ -595,7 +607,7 @@ msgstr "Sistema de arquivos com \"journaling\" JFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -653,9 +665,8 @@ msgstr "noatime - não atualizar datas de acesso dos inodes a cada acesso"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - não atualizar datas de acesso dos inodes a cada acesso"
+msgstr "nodiratime - não atualizar datas de acesso de inodes de diretório"
 
 #. Type: text
 #. Description
@@ -763,7 +774,7 @@ msgstr "notail - desabilita packing de arq. na árvore do sist. de arq."
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - tirar blocos livres do dispositivo de bloco subjacente"
 
 #. Type: text
 #. Description
@@ -798,15 +809,14 @@ msgstr "Voltar ao menu e corrigir esse problema?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
 "Sua partição de inicialização não foi configurada com o sistema de arquivos "
-"ext2 ou ext3. Isto é necessário para que seu computador possa ser "
-"inicializado. Por favor, volte e use o sistema de arquivos ext2 ou ext3."
+"ext2. Isso é necessário para que seu computador possa ser inicializado. Por "
+"favor, volte e use o sistema de arquivos ext2."
 
 #. Type: boolean
 #. Description
@@ -829,7 +839,6 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
@@ -837,5 +846,5 @@ msgid ""
 msgstr ""
 "Sua partição de inicialização não está localizada na primeira partição de "
 "seu disco rígido. Isso é necessário para que seu computador possa ser "
-"inicializado. Por favor, volte e use sua primeira partição primária como uma "
-"partição de inicialização."
+"inicializado. Por favor, volte e use sua primeira partição como uma partição "
+"de inicialização."

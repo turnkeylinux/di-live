@@ -8,18 +8,28 @@
 # This file is distributed under the same license as debian-installer.
 #
 #
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004
+#   Elian Myftiu <elian.myftiu@gmail.com>, 2004,2006.
+#
+# Eva Vranici <evavranici@gmail.com>, 2017.
+# Silva Arapi <silva.arapi@gmail.com>, 2017.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2010-03-26 09:46+0000\n"
-"PO-Revision-Date: 2008-09-19 23:30+0200\n"
-"Last-Translator:  Elian Myftiu <elian.myftiu@gmail.com>\n"
-"Language-Team: Albanian <Albanian>\n"
+"Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
+"POT-Creation-Date: 2014-12-30 22:01+0000\n"
+"PO-Revision-Date: 2017-09-04 19:14+0200\n"
+"Last-Translator: Silva Arapi <silva.arapi@gmail.com>\n"
+"Language-Team: Albanian <debian-l10n-albanian@lists.debian.org>\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4;\n"
 
 #. Type: boolean
 #. Description
@@ -29,7 +39,7 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
 msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Ta instaloj ngarkuesin e nisjes GRUB në MBR (master boot record)?"
+msgstr "Ta instaloj ngarkuesin e nisjes GRUB në master boot record?"
 
 #. Type: boolean
 #. Description
@@ -130,7 +140,7 @@ msgstr "Dispozitivi rrënjë i GRUB është ${GRUBROOT}."
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
 msgstr "GRUB nuk mund të konfigurohet"
 
@@ -188,14 +198,20 @@ msgstr "Ndodhi një gabim duke rregulluar GRUB për dispozitivin multipath."
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
 msgstr "Dispozitivi për instalimin e ngarkuesit të nisjes:"
 
 #. Type: string
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:7001
+#. Type: select
+#. Description
+#. :sl2:
+#: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
@@ -213,17 +229,6 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
-#| msgid ""
-#| "The device can be specified using GRUB's \"(hdn,m)\" notation, or as a "
-#| "device in /dev. Below are some examples:\n"
-#| " - \"(hd0)\" or \"/dev/hda\" will install GRUB to the master boot record\n"
-#| "   of your first hard drive (IDE);\n"
-#| " - \"(hd0,1)\" or \"/dev/hda2\" will use the second partition of your\n"
-#| "   first IDE drive;\n"
-#| " - \"(hd2,4)\" or \"/dev/sdc5\" will use the first extended partition of\n"
-#| "   your third drive (SCSI here);\n"
-#| " - \"(fd0)\" or \"/dev/fd0\" will install GRUB to a floppy."
 msgid ""
 "The device should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -234,30 +239,33 @@ msgid ""
 "   drive;\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Dispozitivi mund të përcaktohet duke përdorur shënimin e GRUB-it \"(hdn,"
-"m)\", ose si një dispozitiv në /dev. Ja disa shembuj më poshtë:\n"
-" - \"(hd0)\" ose \"/dev/hda\" do të instalojë GRUB në MBR(master boot "
-"record)\n"
-"   e diskut tënd të parë (IDE);\n"
-" - \"(hd0,1)\" ose \"/dev/hda2\" do të përdorë ndarjen e dytë të diskut "
-"tënd\n"
-"   të parë IDE;\n"
-" - \"(hd2,4)\" ose \"/dev/sdc5\" do të përdorë ndarjen e parë të zgjeruar "
-"të\n"
-"   diskut tënd të tretë (në këtë rast SCSI);\n"
-" - \"(fd0)\" ose \"/dev/fd0\" do të instalojë GRUB në një disketë."
+"Paisja duhet të specifikohet si një paisje në /dev. Më poshtë janë disa "
+"shembuj:\n"
+"-\"/dev/sda\" do të instaloj \tGRUB në rekordin kryesor të iniciuesit në "
+"hard drive-in tënd;\n"
+"-\"/dev/sda2\" do të përdor particionin e dytë në hard drive-in tuaj të "
+"parë;\n"
+"-\"/dev/sdc5\" do të përdorë particionin e parë të zgjeruar të hard drive-it "
+"tënd të tretë;\n"
+"-\"/dev/fd0\" do të instaloj GRUB në një floppy."
+
+#. Type: select
+#. Choices
+#: ../grub-installer.templates:8001
+msgid "Enter device manually"
+msgstr "Futu në pajisje manualisht"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "GRUB password:"
 msgstr "Fjalëkalimi i GRUB:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid ""
 "The GRUB boot loader offers many powerful interactive features, which could "
 "be used to compromise your system if unauthorized users have access to the "
@@ -277,7 +285,7 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:8001
+#: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
 msgstr ""
 "Nëse nuk di dëshiron të caktosh një fjalëkalim për GRUB, lëre bosh këtë "
@@ -286,14 +294,14 @@ msgstr ""
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
 msgstr "Ri-fut fjalëkalimin për t'a verifikuar:"
 
 #. Type: password
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:9001
+#: ../grub-installer.templates:10001
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
@@ -304,14 +312,14 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "Password input error"
 msgstr "Gabim në futjen e fjalëkalimit"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:10001
+#: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr ""
 "Dy fjalëkalimet që fute nuk ishin të njëjtë. Të lutem provoje dhe njëherë."
@@ -319,14 +327,14 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
 msgstr "Instalimi i GRUB-it dështoi"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:12001
+#: ../grub-installer.templates:13001
 msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
@@ -337,14 +345,14 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Unable to install GRUB in ${BOOTDEV}"
 msgstr "GRUB nuk mund të instalohet në ${BOOTDEV}"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001
+#: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
 msgstr "Ekzekutimi i 'grub-install' ${BOOTDEV}' dështoi."
 
@@ -354,71 +362,128 @@ msgstr "Ekzekutimi i 'grub-install' ${BOOTDEV}' dështoi."
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:13001 ../grub-installer.templates:14001
+#: ../grub-installer.templates:14001 ../grub-installer.templates:15001
 msgid "This is a fatal error."
 msgstr "Gabim fatal."
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../grub-installer.templates:14001
+#: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
 msgstr "Ekzekutimi i 'update-grub' dështoi."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid "Install GRUB?"
+msgstr "Instalo GRUB?"
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
+"used on i386/amd64 PCs. It is now also available for ${ARCH}."
+msgstr ""
+"GRUB 2 është gjenerata pasardhëse e GNU GRUB, ngarkuesi i ndezjes që "
+"përdoret zakonisht në i386/amd64 PCs. është tani i disponueshem për ${ARCH}."
+
+#. Type: boolean
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:17001
+msgid ""
+"It has interesting new features but is still experimental software for this "
+"architecture. If you choose to install it, you should be prepared for "
+"breakage, and have an idea on how to recover your system if it becomes "
+"unbootable. You're advised not to try this in production environments."
+msgstr ""
+"Ka karakteristika të reja por është ende program eksperimental për këtë "
+"arkitekturë. Nëse ti zgjedh ta instalosh atë,  duhet te jesh i përgatitur "
+"për thyerje, dhe të kesh një ide se si të riparosh sistemin tënd nëse nuk "
+"ndizet. Këshillohet të mos e provosh këtë në mjedise prodhimi."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:17001
+#: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
 msgstr "Duke instaluar ngarkuesin e nisjes GRUB"
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:18001
+#: ../grub-installer.templates:19001
 msgid "Looking for other operating systems..."
 msgstr "Duke kërkuar për të tjerë sisteme operativë..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:19001
+#: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
 msgstr "Duke instaluar paketën '${GRUB}'..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:20001
+#: ../grub-installer.templates:21001
 msgid "Determining GRUB boot device..."
 msgstr "Duke gjetur dispozitivin e nisjes GRUB..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:21001
+#: ../grub-installer.templates:22001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
 msgstr "Duke ekzekutuar \"grub-install ${BOOTDEV}\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:22001
+#: ../grub-installer.templates:23001
 msgid "Running \"update-grub\"..."
 msgstr "Duke ekzekutuar \"update-grub\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
-#: ../grub-installer.templates:23001
+#: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
 msgstr "Duke freskuar /etc/kernel-img.conf..."
 
 #. Type: text
 #. Description
+#. :sl1:
+#: ../grub-installer.templates:25001
+msgid "Checking whether to force usage of the removable media path"
+msgstr ""
+"Kontrollimi nëse do të detyrojë përdorimin e rrugës së lëvizshme të mediave"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:26001
+msgid "Mounting filesystems"
+msgstr "Duke montuar filesistemet..."
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:27001
+msgid "Configuring grub-efi for future usage of the removable media path"
+msgstr ""
+"Konfigurimi i grub-efi për përdorimin e ardhshëm të rrugës së lëvizshme të "
+"mediave"
+
+#. Type: text
+#. Description
 #. Main menu item
 #. :sl1:
-#: ../grub-installer.templates:24001
+#: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader on a hard disk"
 msgstr "Instalo ngarkuesin e nisjes GRUB në një hard disk"
 
@@ -426,6 +491,95 @@ msgstr "Instalo ngarkuesin e nisjes GRUB në një hard disk"
 #. Description
 #. Rescue menu item
 #. :sl2:
-#: ../grub-installer.templates:25001
+#: ../grub-installer.templates:29001
 msgid "Reinstall GRUB boot loader"
 msgstr "Duke reinstaluar ngarkuesin e nisjes GRUB"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Failed to mount /target/proc"
+msgstr "Montimi i /target/proc dështoi"
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Mounting the proc file system on /target/proc failed."
+msgstr "Montimi i filesistemit proc në /target/proc dështoi."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Check /var/log/syslog or see virtual console 4 for the details."
+msgstr "Kontrollo /var/log/syslog ose shiko konsolën virtuale 4 për hollësitë."
+
+#. Type: error
+#. Description
+#. :sl4:
+#: ../grub-installer.templates:32001
+msgid "Warning: Your system may be unbootable!"
+msgstr "Kujdes: Sistemi yt mund të mos niset!"
+
+#. Type: text
+#. Description
+#. Rescue menu item
+#. :sl2:
+#: ../grub-installer.templates:33001
+msgid "Force GRUB installation to the EFI removable media path"
+msgstr "Detyro instalimin e GRUB në rrugën e medias së lëvizshme EFI"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid "Force GRUB installation to the EFI removable media path?"
+msgstr "Sforco instalimin e GRUB në rrugën e lëvizshme EFI të medias?"
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"It seems that this computer is configured to boot via EFI, but maybe that "
+"configuration will not work for booting from the hard drive. Some EFI "
+"firmware implementations do not meet the EFI specification (i.e. they are "
+"buggy!) and do not support proper configuration of boot options from system "
+"hard drives."
+msgstr ""
+"Duket sikur ky kompjuter është konfiguruar të nisë nëpërmjet EFI, por "
+"ndoshta ky konfigurim nuk do të funksionojë për të nisur nga hard drive. "
+"Disa implementime të firmware EFI nuk i plotësojnë specifikimet EFI (dmth. "
+"ata janë buggy!) dhe nuk mbështesin konfigurimin e duhur të opsioneve të "
+"boot nga hard disqet e sistemit."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"A workaround for this problem is to install an extra copy of the EFI version "
+"of the GRUB boot loader to a fallback location, the \"removable media path"
+"\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
+msgstr ""
+"Një zgjidhje për këtë problem është instalimi i një kopje ekstra të "
+"versionit EFI të ngarkuesit të nisjes GRUB në një vend rezervë, \"rruga e "
+"lëvizshme e mediave\". Pothuajse të gjitha sistemet EFI, pa marrë parasysh "
+"se sa buggy, do të boot GRUB në këtë mënyrë."
+
+#. Type: boolean
+#. Description
+#. :sl1:
+#: ../grub-installer.templates:34001
+msgid ""
+"Warning: If the installer failed to detect another operating system that is "
+"present on your computer that also depends on this fallback, installing GRUB "
+"there will make that operating system temporarily unbootable. GRUB can be "
+"manually configured later to boot it if necessary."
+msgstr ""
+"Kujdes: Nëse instaluesi dështoi në gjetjen e një sistemi tjetër operativ që "
+"ndodhet në kompjuter dhe gjithashtu varet nga ky fallback, instalimi i GRUB "
+"atje do ta bëjë atë sistem operativ të mos niset përkohësisht. GRUB mund të "
+"konfigurohet më vonë për ta nisur atë sistem."

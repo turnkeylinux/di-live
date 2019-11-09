@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-05-11 13:37+0300\n"
 "Last-Translator: galaxico <galaxico@quad-nrg.net>\n"
 "Language-Team: el <debian-l10n-greek@lists.debian.org>\n"
@@ -259,8 +259,8 @@ msgstr "Ξεχωριστή κατάτμηση /home"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Ξεχωριστές κατατμήσεις /home, /usr, /var και /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Ξεχωριστές κατατμήσεις /home, /var και /tmp"
 
 #. Type: text
 #. Description
@@ -269,36 +269,3 @@ msgstr "Ξεχωριστές κατατμήσεις /home, /usr, /var και /tm
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Σχήμα διαμέρισης για μικρό δίσκο (<1GB)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr ""
-"Καθοδηγούμενη - Αλλαγή μεγέθους ${PARTITION} και χρήση του ελεύθερου χώρου"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Καθοδηγούμενη - χρησιμοποίηση όλης της κατάτμησης, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Αποτυχία δημιουργίας αρκετού ελεύθερου χώρου για την εγκατάσταση"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Η λειτουργία αλλαγής μεγέθους δεν δημιούργησε αρκετό χώρο για την "
-"εγκατάσταση, Η αλλαγή μεγέθους μπορεί να απέτυχε. Θα πρέπει να ρυθμίσετε τα "
-"τμήματα χειροκίνητα."
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Ξεχωριστές κατατμήσεις /home, /var και /tmp"

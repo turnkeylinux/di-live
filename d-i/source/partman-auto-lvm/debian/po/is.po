@@ -9,29 +9,30 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 #
 # Copyright (C) 2010 Free Software Foundation
+# Sveinn í Felli <sv1@fellsnet.is>, 2018.
 #
+# Translations from iso-codes:
+# Copyright (C) 2002,2003, 2010, 2011, 2012 Free Software Foundation, Inc.
+# Translations from KDE:
+# Þórarinn Rúnar Einarsson <thori@mindspring.com>
 # zorglubb <debian-user-icelandic@lists.debian.org>, 2008.
 # Sveinn í Felli <sveinki@nett.is>, 2010.
 # Alastair McKinstry, <mckinstry@computer.org>, 2002.
-# Sveinn í Felli <sveinki@nett.is>, 2010, 2011.
+# Sveinn í Felli <sveinki@nett.is>, 2010, 2011, 2012, 2013.
 # Alastair McKinstry <mckinstry@computer.org>, 2002.
-# Translations from iso-codes:
-# Copyright (C) 2002,2003, 2010, 2011 Free Software Foundation, Inc.
-# Translations from KDE:
-# Þórarinn Rúnar Einarsson <thori@mindspring.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_is\n"
+"Project-Id-Version: Icelandic (Debian Installer)\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
-"POT-Creation-Date: 2009-02-23 16:38+0000\n"
-"PO-Revision-Date: 2011-12-27 21:05+0000\n"
-"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
+"POT-Creation-Date: 2008-08-16 22:50+0000\n"
+"PO-Revision-Date: 2018-06-30 14:38+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-">\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
@@ -260,7 +261,7 @@ msgid ""
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
 "Hjálp: Hægt er að nota „max“ sem flýtivísun til að tilgreina stærstu "
-"mögulegu stærðina, og einnig er hægt að pikka inn hundraðshluti (til dæmis "
+"mögulegu stærðina, og einnig er hægt að setja inn hundraðshluti (til dæmis "
 "„20%“) til að nota þann hluta af stærstu mögulegu stærðinni."
 
 #. Type: error

@@ -18,14 +18,14 @@ default_disk_label () {
 		else
 			echo msdos
 		fi;;
-	    amd64|kfreebsd-amd64|i386|kfreebsd-i386|hurd-i386)
+	    amd64|kfreebsd-amd64|i386|kfreebsd-i386|hurd-i386|armhf)
 		case "$sub" in
 		    mac|efi)
 			echo gpt;;
 		    *)
 			echo msdos;;
 		esac;;
-	    arm|armeb|armel|armhf)
+	    arm|armeb|armel)
 		echo msdos;;
 	    arm64)
 		echo gpt;;
@@ -48,47 +48,9 @@ default_disk_label () {
 		    *)
 			echo UNKNOWN;;
 		esac;;
-	    mips)
-		case "$sub" in
-		    4kc-malta | 5kc-malta)
-			# MIPS Malta
-			echo msdos;;
-		    octeon)
-			# Cavium Octeon
-			echo msdos;;
-		    r4k-ip22 | r5k-ip22 | r8k-ip26 | r10k-ip28)
-			# Indy
-			echo dvh;;
-		    r10k-ip27 | r12k-ip27)
-			# Origin
-			echo dvh;;
-		    r5k-ip32 | r10k-ip32 | r12k-ip32)
-			# O2
-			echo dvh;;
-		    sb1-bcm91250a | sb1a-bcm91480b)
-			# Broadcom SB1 evaluation boards
-			echo msdos;;
-		    *)
-			echo UNKNOWN;;
-		esac;;
-	    mipsel)
-		case "$sub" in
-		    4kc-malta | 5kc-malta)
-			# MIPS Malta
-			echo msdos;;
-		    sb1-bcm91250a | sb1a-bcm91480b)
-			# Broadcom SB1 evaluation boards
-			echo msdos;;
-		    cobalt)
-			echo msdos;;
-		    bcm947xx)
-			echo msdos;;
-		    loongson-2e | loongson-2f | loongson-3)
-			echo msdos;;
-		    *)
-			echo UNKNOWN;;
-		esac;;
-	    powerpc)
+	    mips|mipsel|mips64el)
+		echo msdos;;
+	    powerpc|ppc64)
 		case "$sub" in
 		    apus)
 			echo amiga;;
@@ -112,19 +74,32 @@ default_disk_label () {
 			echo msdos;;
 		    cell)
 			echo msdos;;
-		    fsl)
-			echo gpt;;
 		    *)
 			echo UNKNOWN;;
 		esac;;
 	    ppc64el)
 		echo gpt;;
+	    riscv*)
+		echo gpt;;
 	    s390|s390x)
-		echo msdos;;
+		if [ -e ./label ]; then
+		    disklabel=$(cat label)
+		fi
+		if [ "$disklabel" != dasd ]; then
+		    disklabel=msdos
+		fi
+		echo $disklabel;;
 	    sh4)
 		echo msdos;;
 	    sparc|sparc64)
-		echo sun;;
+		case "$sub" in
+		    *_gpt)
+			echo gpt;;
+		    *_sun)
+			echo sun;;
+		    *)
+			echo UNKNOWN;;
+		esac;;
 	    *)
 		echo UNKNOWN;;
 	esac

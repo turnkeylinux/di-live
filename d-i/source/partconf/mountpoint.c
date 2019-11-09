@@ -20,7 +20,6 @@ const char *fs_list[] = {
     "hfs",
     "jfs",
     "ntfs",
-    "reiserfs",
     "xfs",
     NULL
 };

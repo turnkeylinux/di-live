@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2011-02-06 22:48+0000\n"
+"POT-Creation-Date: 2014-09-25 22:00+0000\n"
 "PO-Revision-Date: 2014-09-23 11:29+0200\n"
 "Last-Translator: Hans Fredrik Nordhaug <hans@nordhaug.priv.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -256,8 +256,8 @@ msgstr "Egen /home-partisjon"
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
-msgid "Separate /home, /usr, /var, and /tmp partitions"
-msgstr "Egne partisjoner for /home, /usr, /var og /tmp"
+msgid "Separate /home, /var, and /tmp partitions"
+msgstr "Egne partisjoner for /home, /var og /tmp"
 
 #. Type: text
 #. Description
@@ -266,35 +266,3 @@ msgstr "Egne partisjoner for /home, /usr, /var og /tmp"
 #: ../partman-auto.templates:22001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "Partisjoneringsoppsett for liten disk (< 1 Gb)"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:24001
-msgid "Guided - resize ${PARTITION} and use freed space"
-msgstr "Guidet - Endre størrelse på ${PARTITION} og bruk ledig plass"
-
-#. Type: text
-#. Description
-#: ../partman-auto.templates:25001
-msgid "Guided - use entire partition, ${PARTITION}"
-msgstr "Veiledet - bruk hele partisjonen, ${PARTITION}"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid "Failed to create enough space for installation"
-msgstr "Klarte ikke å frigjøre nok plass til installasjonen"
-
-#. Type: error
-#. Description
-#: ../partman-auto.templates:26001
-msgid ""
-"The resize operation did not create enough free space for the installation. "
-"Resizing may have failed. You will have to set up partitions manually."
-msgstr ""
-"Operasjonen med størrelsesendring av partisjonene frigjorde ikke nok plass "
-"for installasjonen. Størrelsesendringen kan ha feilet. Du må kanskje sette "
-"opp partisjonene manuelt"
-
-#~ msgid "Separate /home, /var, and /tmp partitions"
-#~ msgstr "Egne partisjoner for /home, /var og /tmp"

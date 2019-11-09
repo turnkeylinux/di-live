@@ -1,26 +1,14 @@
 subarch kirkwood
 cpuinfo sheevaplug.cpuinfo
 majors 2.6
-flavour kirkwood
-kernel-2.6 \
-  linux-kirkwood \
-  linux-image-kirkwood
+flavour marvell
+kernel-2.6 linux-image-marvell
 usable \
-  linux-kirkwood \
-  linux-image-kirkwood \
-  linux-image-2.6.29-1-kirkwood
+  linux-image-marvell \
+  linux-image-4.4.2-1-marvell
 unusable \
-  linux-imx51 \
-  linux-iop32x \
-  linux-netwinder \
-  linux-orion5x \
-  linux-rpc \
-  linux-s3c2410 \
-  linux-ixp4xx \
-  linux-image-imx51 \
-  linux-image-iop32x \
   linux-image-netwinder \
   linux-image-orion5x \
   linux-image-rpc \
   linux-image-s3c2410 \
-  linux-image-ixp4xx
+  linux-image-2.6.29-1-kirkwood-dbg
