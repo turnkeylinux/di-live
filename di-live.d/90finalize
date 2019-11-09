@@ -32,7 +32,7 @@ class DiliveFinish():
 
     def __init__(self):
         deep_umount('/target')
-        self.db = DiliveDebconf()
+        self.db = DiliveDebconf(title="Finalize Install")
         self.is_install = self._is_install()
         self.live_dev = self._find_live_src()
         self.cached = False

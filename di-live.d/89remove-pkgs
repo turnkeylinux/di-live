@@ -20,7 +20,7 @@ def clean_target_pkgs(*pkgs, path='/target'):
 def main():
     if not target_mounted('/target'):
         sys.exit(10)  # return to menu
-    db = DiliveDebconf()
+    db = DiliveDebconf(title='Remove live packages')
     db.progress_init(2, description=
                      'Removing live packages from installed system')
     db.progress_step(1)

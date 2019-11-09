@@ -59,11 +59,14 @@ class DiliveDebconf:
     using generic templates included in the di-live package.
     """
 
-    def __init__(self):
-        self.db = debconf.Debconf(run_frontend=True)
+    def __init__(self, title=None):
+        if title:
+            self.db = debconf.Debconf(run_frontend=True, title=title)
+        else:
+            self.db = debconf.Debconf(run_frontend=True)
         self.db.capb('backup')
 
-    def _db_input(self, template, description, default):
+    def _db_input(self, template, description=None, default=None):
         self.db.reset(template)
         if description:
             self.db.subst(template, 'DESCRIPTION', description)
@@ -100,7 +103,7 @@ class DiliveDebconf:
 
     def progress_init(self, steps, template='di-live/progress/generic',
                       description=None):
-        if template == 'di-live/progress/generic' and description:
+        if description:
             self.db.subst(template, 'DESCRIPTION', description)
         self.progress_steps = steps
         self.db.progress('START 0 {} {}'.format(steps, template))
