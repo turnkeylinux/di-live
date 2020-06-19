@@ -13,7 +13,7 @@ pkgs_to_clean = ['di-live', 'live-boot', 'live-tools',
 def clean_target_pkgs(*pkgs, path='/target'):
     """Clean up unrequired pkgs from installed system"""
     chroot = Chroot(path)
-    chroot.system(['apt', 'purge', '-y', *pkgs], stdout=PIPE)
+    chroot.system(['apt-get', 'purge', '--autoremove', '-y', *pkgs], stdout=PIPE)
     chroot.exit()
 
 
