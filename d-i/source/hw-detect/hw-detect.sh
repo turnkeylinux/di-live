@@ -513,7 +513,11 @@ if [ -n "$MISSING_MODULES_LIST" ]; then
 	log "Missing modules '$MISSING_MODULES_LIST"
 fi
 
-check-missing-firmware
+if [ "$CHECK_MISSING_FIRMWARE" != 0 ]; then
+	check-missing-firmware
+else
+	log "skipping check-missing-firmware as requested by the caller"
+fi
 
 sysfs-update-devnames
 

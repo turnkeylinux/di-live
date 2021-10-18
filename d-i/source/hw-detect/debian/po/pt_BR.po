@@ -7,6 +7,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+# Adriano Rafael Gomes <adrianorg@debian.org>, 2010-2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
@@ -21,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2012-04-07 19:57-0300\n"
-"Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
+"PO-Revision-Date: 2020-04-12 20:04-0300\n"
+"Last-Translator: Adriano Rafael Gomes <adrianorg@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
 "Language: pt_BR\n"
@@ -108,6 +109,7 @@ msgstr "Detectando hardware de rede"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -116,6 +118,7 @@ msgstr "Detectar hardware de rede"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -352,8 +355,7 @@ msgstr ""
 #: ../hw-detect.templates:10001 ../hw-detect.templates:11001
 msgid "If you have such media available now, insert it, and continue."
 msgstr ""
-"Se você possui uma mídia dessas disponível agora, insira-a na unidade e "
-"continue."
+"Se você possui tal mídia disponível agora, insira-a na unidade e continue."
 
 #. Type: boolean
 #. Description
@@ -391,6 +393,7 @@ msgstr "Procurando por firmware..."
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"

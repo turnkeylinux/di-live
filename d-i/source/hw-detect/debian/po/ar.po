@@ -12,6 +12,9 @@
 # najib LAARIBI <supnano@gmail.com>, 2018.
 # ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
 # Osama <osama.ibrahim.89@gmail.com>, 2019.
+# zer0-x <ProFessorHassan3@gmail.com>, 2021.
+# Fahim Sabah <katheer.kaleel@gmail.com>, 2021.
+#
 #
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
@@ -27,9 +30,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2019-06-10 10:55+0000\n"
-"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
+"PO-Revision-Date: 2021-04-01 14:26+0000\n"
+"Last-Translator: Fahim Sabah <katheer.kaleel@gmail.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -115,6 +118,7 @@ msgstr "اكتشاف عتاد الشبكة"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -123,6 +127,7 @@ msgstr "اكتشاف عتاد الشبكة"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -193,7 +198,7 @@ msgstr "اكتشاف العتاد، الرجاء الانتظار..."
 #. :sl1:
 #: ../hw-detect.templates:2001
 msgid "Loading module '${MODULE}' for '${CARDNAME}'..."
-msgstr "تحميل الوحدة '${MODULE}' لـ'${CARDNAME}'..."
+msgstr "تحميل الوحدة '${MODULE}' لـ '${CARDNAME}'..."
 
 #. Type: text
 #. Description
@@ -384,6 +389,7 @@ msgstr "التحقق من البرمجيات المدمجة..."
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"

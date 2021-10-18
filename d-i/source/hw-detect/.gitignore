@@ -1,0 +1,7 @@
+build-stamp
+configure-stamp
+archdetect
+archdetect-deb
+*.o
+devnames-static.gz
+

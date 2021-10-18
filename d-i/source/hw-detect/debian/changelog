@@ -1,4 +1,123 @@
-hw-detect (1.138) UNRELEASED; urgency=medium
+hw-detect (1.147) unstable; urgency=medium
+
+  * Add support for CHECK_MISSING_FIRMWARE=0 to hw-detect. This makes it
+    possible for some callers (e.g. cdrom-detect, maybe iso-scan too) to
+    avoid triggering firmware-related prompts when it's too early in the
+    installation process to do anything about it (See: #991587, #991590).
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 28 Jul 2021 09:05:05 +0200
+
+hw-detect (1.146) unstable; urgency=medium
+
+  * Make the install-firmware script check both /firmware (PXE) and
+    /cdrom/firmware (ISO) for patterns extracted from DEP-11 metadata,
+    like check-missing-firmware does.
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 28 Jul 2021 00:46:22 +0200
+
+hw-detect (1.145) unstable; urgency=medium
+
+  * Drop firmware-map file and surrounding logic: it never went further
+    than a proof-of-concept, and we're approaching the firmware problem
+    differently now (see: #989863).
+  * If /firmware/dep11 is present (which should be the case starting with
+    D-I Bullseye RC 3, for firmware-enabled images), query the udev
+    database, extract modalias information, and use the patterns available
+    under that directory to figure out which firmware packages might be
+    helpful. Copy the relevant /firmware/<package>_*.deb files under
+    /var/cache/firmware, and let the existing code enable non-free in
+    apt-setup and install those packages in /target (see: #989863).
+  * Check the actual module behind a given driver, since there might be a
+    slight mismatch between the name coming up in dmesg (e.g. rtw_8821ce)
+    and the actual module name (e.g. rtw88_8821ce). With many thanks to
+    Daniel Lewart for the original patch (Closes: #973733).
+  * Uniquify module list earlier in check-missing-firmware, to avoid
+    repeating n times the same module if it requests n firmware files
+    (e.g. iwlwifi).
+  * Finally stop looking into the obsolete /dev/.udev/firmware-missing and
+    /run/udev/firmware-missing locations, which were obsoleted upstream
+    (udev) in 2013. This only generates noise in the installer's syslog.
+  * When resuming parsing dmesg from a timestamp, just mention the
+    timestamp in the log instead of the actual pattern, for better
+    readability.
+  * Set udevdir to /lib/udev/rules.d (instead of /etc/udev/rules.d), to
+    appease lintian (udev-rule-in-etc).
+  * Ignore iwl-debug-yoyo.bin requested by iwlwifi as it seems to be about
+    debugging, it doesn't seem actually required, and it's not packaged
+    anyway (see: #969264, 966218).
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 27 Jul 2021 02:26:23 +0200
+
+hw-detect (1.144) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 30 May 2021 22:33:19 +0200
+
+hw-detect (1.143) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by KushagraKarira
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Traditional Chinese (zh_TW.po) by louies0623
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 13 Mar 2021 19:19:38 +0100
+
+hw-detect (1.142) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by Vangelis Skarmoutsos
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Lithuanian (lt.po) by Kornelijus Tvarijanavičius
+  * Punjabi (Gurmukhi) (pa.po) by Aman ALam
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 04 Nov 2020 19:22:45 +0100
+
+hw-detect (1.141) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Icelandic (is.po) by Sveinn í Felli
+  * Polish (pl.po) by Bartosz Feński
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Sep 2020 22:24:07 +0200
+
+hw-detect (1.140) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 18:03:38 +0200
+
+hw-detect (1.139) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 02 Feb 2020 19:08:46 +0100
+
+hw-detect (1.138) unstable; urgency=medium
+
+  * Team upload
 
   [ Cyril Brulebois ]
   * Remove Christian Perrier from Uploaders, with many thanks for all
@@ -8,9 +127,19 @@ hw-detect (1.138) UNRELEASED; urgency=medium
   * Add finish-install.d/08hw-detect.sh to install virtualization related
     packages when virtualization is detected. (Closes: #782287)
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:34:47 +0200
+  [ Holger Wansing ]
+  * Add comment for translators, to keep main menu entry below a 55 columns
+    limit. This updates all po|pot files.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by ButterflyOfFire
+  * Croatian (hr.po) by gogogogi
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 12 Oct 2019 23:20:41 +0200
 
 hw-detect (1.137) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -19,6 +148,7 @@ hw-detect (1.137) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Wed, 27 Mar 2019 21:56:08 +0100
 
 hw-detect (1.136) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -27,6 +157,7 @@ hw-detect (1.136) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Wed, 06 Mar 2019 22:16:49 +0100
 
 hw-detect (1.135) unstable; urgency=medium
+
   * Team upload
 
   * Remove trailing whitespaces from changelog file, to fix lintian tag.

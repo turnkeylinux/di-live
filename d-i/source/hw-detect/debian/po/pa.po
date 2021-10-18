@@ -21,12 +21,13 @@
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
 # A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
+# Aman ALam <alam.yellow@gmail.com>, 2018, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
+"PO-Revision-Date: 2020-10-15 04:26+0000\n"
 "Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -111,6 +112,7 @@ msgstr "ਨੈੱਟਵਰਕ ਜੰਤਰ ਖੋਜਿਆ ਜਾ ਰਿਹਾ �
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -119,6 +121,7 @@ msgstr "ਨੈੱਟਵਰਕ ਜੰਤਰ ਖੋਜਿਆ"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -143,7 +146,7 @@ msgstr "ਕੋਈ ਵੀ ਡਿਸਕ ਡਰਾਈਵ ਤੋਂ ਬਿਨਾਂ 
 #. :sl2:
 #: ../disk-detect.templates:3002
 msgid "Driver needed for your disk drive:"
-msgstr "ਤੁਹਾਡੀ ਡਿਸਕ ਡਰਾਈਵ ਲਈ ਲਈ ਲੋੜੀਦਾ ਡਰਾਇਵਰ:"
+msgstr "ਤੁਹਾਡੀ ਡਿਸਕ ਡਰਾਈਵ ਲਈ ਲੋੜੀਦਾ ਡਰਾਇਵਰ:"
 
 #. Type: select
 #. Description
@@ -381,6 +384,7 @@ msgstr "ਫਾਇਰਮਵੇਅਰ ਲਈ ਚੈੱਕ ਕੀਤਾ ਜਾ ਰ�
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"

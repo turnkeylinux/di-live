@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
 "PO-Revision-Date: 2017-11-19 13:25+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -118,6 +118,7 @@ msgstr "Võrguriistvara tuvastamine"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -126,6 +127,7 @@ msgstr "Võrguriistvara tuvastamine"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -390,6 +392,7 @@ msgstr "Püsivara kontrollimine..."
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"

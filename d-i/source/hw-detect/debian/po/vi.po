@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
 "PO-Revision-Date: 2019-02-27 14:34+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <debian-l10n-vietnamese@lists.debian.org>\n"
@@ -105,6 +105,7 @@ msgstr "Đang dò tìm phần cứng mạng"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -113,6 +114,7 @@ msgstr "Dò tìm phần cứng mạng"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -384,6 +386,7 @@ msgstr "Đang kiểm tra cho phần dẻo (firmware)…"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"

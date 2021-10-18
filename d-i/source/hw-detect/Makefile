@@ -26,7 +26,7 @@ CPPFLAGS += `dpkg-buildflags --get CPPFLAGS`
 bindir=$(DESTDIR)/bin/
 hpdir=$(DESTDIR)/etc/hotplug.d
 netdir=$(DESTDIR)/etc/network
-udevdir=$(DESTDIR)/etc/udev/rules.d
+udevdir=$(DESTDIR)/lib/udev/rules.d
 didir=$(DESTDIR)/lib/debian-installer.d
 fidir=$(DESTDIR)/usr/lib/finish-install.d
 sharedir=$(DESTDIR)/usr/share/hw-detect/
@@ -79,8 +79,6 @@ endif
 else
 	$(INSTALL) detect-stub.sh $(bindir)/hw-detect
 endif
-	$(INSTALL) -d $(sharedir)
-	$(INSTALL_DATA) firmware-map $(sharedir)/firmware-map
 
 install-ethdetect: ethdetect.sh
 	$(INSTALL) -d $(bindir) $(netdir)
@@ -113,7 +111,3 @@ archdetect.o: %.o:%.c
 
 devnames-static.gz: devnames-static.txt
 	grep -v '^#' $< | gzip -9cn > $@
-
-.PHONY: firmware-map
-firmware-map:
-	./build-firmware-map --verbose > $@

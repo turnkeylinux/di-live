@@ -12,14 +12,14 @@
 # in doc/i18n/i18n.txt
 #
 #
-# Danishka Navin <danishka@gmail.com>, 2009, 2011.
+# Danishka Navin <danishka@gmail.com>, 2009, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2011-09-15 07:01+0530\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
@@ -103,6 +103,7 @@ msgstr "ජාල දෘඩාංග හදුනාගනිමින්"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -111,6 +112,7 @@ msgstr "ජාල දෘඩාංග හදුනාගන්න"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -371,6 +373,7 @@ msgstr "ස්ථිරාංග පරීක්ෂා කරමින්..."
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"
@@ -381,7 +384,7 @@ msgstr "දෘඩාංග නිෂ්පාදකගෙන් අථත්‍�
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:2001
 msgid "Load drivers from internal virtual driver disk?"
-msgstr "අභ්‍යන්තර අත්ථ්‍ය තැටියෙන් ධාවක ප්‍රවේශ කරන්නද? "
+msgstr "අභ්‍යන්තර අත්ථ්‍ය තැටියෙන් ධාවක ප්‍රවේශ කරන්නද?"
 
 #. Type: boolean
 #. Description

@@ -21,14 +21,14 @@
 # Meni Livne <livne@kde.org>, 2000.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2018-07-22 13:38+0000\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
+"PO-Revision-Date: 2020-05-01 13:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
 "Language: he\n"
@@ -113,6 +113,7 @@ msgstr "מתבצעת סריקה לאיתור חומרת הרשת"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -121,6 +122,7 @@ msgstr "איתור חומרת רשת"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -344,7 +346,7 @@ msgstr ""
 #. :sl2:
 #: ../hw-detect.templates:10001 ../hw-detect.templates:11001
 msgid "If you have such media available now, insert it, and continue."
-msgstr "אם יש ברשותך מדיה כזאת, נא להכניס אותה ולהמשיך בהתקנה."
+msgstr "אם יש לך אמצעי שכזה, נא להכניס אותו ולהמשיך בהתקנה."
 
 #. Type: boolean
 #. Description
@@ -381,6 +383,7 @@ msgstr "הקושחה נבדקת…"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"

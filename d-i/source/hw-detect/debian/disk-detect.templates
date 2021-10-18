@@ -1,6 +1,7 @@
 Template: debian-installer/disk-detect/title
 Type: text
 #  Main menu item
+#  Translators: keep below 55 columns
 # :sl1:
 _Description: Detect disks
 

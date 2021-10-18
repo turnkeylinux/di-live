@@ -7,15 +7,24 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # Console-setup strings translations:
 # (identified by "./console-setup.templates")
-# Copyright (C) 2007-2009 Pedro Ribeiro <p.m42.ribeiro@gmail.com>
+# Copyright (C) 2003-2019 Miguel Figueiredo <elmig@debianpt.org>
 # This file is distributed under the same license as debian-installer.
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Free Software Foundation, Inc., 2001,2004
+#   Filipe Maia <fmaia@gmx.net>, 2001.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2010-06-03 11:57+0100\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
+"PO-Revision-Date: 2019-09-23 20:36+0100\n"
 "Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team:  Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -54,7 +63,7 @@ msgid ""
 "your Ethernet card, you can select it from the list."
 msgstr ""
 "Não foi detectada nenhuma placa Ethernet. Se sabe o nome do driver "
-"necessário para a sua placa Ethernet, pode escolhe-lo a partir da lista."
+"necessário para a sua placa Ethernet, pode escolhê-lo a partir da lista."
 
 #. Type: boolean
 #. Description
@@ -100,6 +109,7 @@ msgstr "A detectar o hardware de rede"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -108,6 +118,7 @@ msgstr "Detectar o hardware de rede"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -143,21 +154,21 @@ msgid ""
 "your disk drive, you can select it from the list."
 msgstr ""
 "Não foi detectado nenhum disco. Se sabe o nome do driver necessário para o "
-"seu disco, pode escolhe-lo a partir da lista."
+"seu disco, pode escolhê-lo a partir da lista."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../disk-detect.templates:4001
 msgid "No partitionable media"
-msgstr "Sem media particionável"
+msgstr "Sem mídia particionável"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../disk-detect.templates:4001
 msgid "No partitionable media were found."
-msgstr "Não foi encontrada media particionável."
+msgstr "Não foi encontrada mídia particionável."
 
 #. Type: error
 #. Description
@@ -375,6 +386,7 @@ msgstr "Á procura de firmware..."
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"
@@ -396,5 +408,5 @@ msgid ""
 "manufacturer to be loaded from the built-in driver injection disk."
 msgstr ""
 "Instalar neste hardware pode necessitar que alguns drivers disponibilizados "
-"pelos fabricantes sejam carregados a partir do disco incluido de injecção de "
+"pelos fabricantes sejam carregados a partir do disco incluído de injecção de "
 "drivers."

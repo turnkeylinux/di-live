@@ -5,6 +5,8 @@
 #
 # Traditional Chinese messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
+# Louies <louies0623@gmail.com>, 2019, 2021.
+# Walter Cheuk <wwycheuk@gmail.com>, 2019.
 # This file is distributed under the same license as debian-installer.
 #
 #
@@ -25,20 +27,22 @@
 #   JOE MAN <trmetal@yahoo.com.hk>, 2001.
 #   Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2005.
 #   Yao Wei (魏銘廷) <mwei@lxde.org>, 2012.
+#   Walter Cheuk <wwycheuk@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2012-04-03 03:11+0800\n"
-"Last-Translator: Yao Wei (魏銘廷) <mwei@lxde.org>\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
+"PO-Revision-Date: 2021-02-16 09:50+0000\n"
+"Last-Translator: louies0623 <louies0623@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
 "debian.org>\n"
-"Language: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: select
 #. Choices
@@ -116,6 +120,7 @@ msgstr "偵測網路硬體"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -124,6 +129,7 @@ msgstr "偵測網路硬體"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -187,7 +193,7 @@ msgstr "請確認在該機器上是否有安裝硬碟。"
 #. :sl1:
 #: ../hw-detect.templates:1001
 msgid "Detecting hardware, please wait..."
-msgstr "正在偵測硬體，請稍候……"
+msgstr "正在偵測硬體，請稍候…"
 
 #. Type: text
 #. Description
@@ -201,14 +207,14 @@ msgstr "正在為 ${CARDNAME} 載入 ${MODULE} 模組……"
 #. :sl1:
 #: ../hw-detect.templates:3001
 msgid "Starting PC card services..."
-msgstr "正在啟動 PC 卡服務程式……"
+msgstr "正在啟動 PC 卡服務程式…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../hw-detect.templates:4001
 msgid "Waiting for hardware initialization..."
-msgstr "正在等待初始化硬體……"
+msgstr "正在等待初始化硬體…"
 
 #. Type: multiselect
 #. Description
@@ -377,11 +383,12 @@ msgstr "欠缺的韌體檔是: ${FILES}"
 #. :sl1:
 #: ../hw-detect.templates:12001
 msgid "Checking for firmware..."
-msgstr "正在檢查韌體……"
+msgstr "正在檢查韌體…"
 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"

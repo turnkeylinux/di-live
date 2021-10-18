@@ -20,20 +20,21 @@
 # Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
 # Piarres Beobide <pi@beobide.net>, 2008.
 # Xabier Bilbao <xabidu@gmail.com>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: di-sublevel1_eu\n"
 "Report-Msgid-Bugs-To: hw-detect@packages.debian.org\n"
-"POT-Creation-Date: 2010-06-01 22:47+0000\n"
-"PO-Revision-Date: 2012-04-13 00:19+0200\n"
-"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
-"Language-Team: debian-l10n-eu@lists.debian.org\n"
+"POT-Creation-Date: 2019-09-27 20:11+0000\n"
+"PO-Revision-Date: 2020-11-03 18:23+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Content-Transfer-Encoding=UTF-8Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: select
 #. Choices
@@ -65,7 +66,7 @@ msgid ""
 "No Ethernet card was detected. If you know the name of the driver needed by "
 "your Ethernet card, you can select it from the list."
 msgstr ""
-"Ez da Ethernet txartelik ez da detektatu. Ethernet txartelak behar duen "
+"Ez da Ethernet txartelik detektatu. Ethernet txartelak behar duen "
 "kontrolatzailearen izena badakizu, zerrendan hauta dezakezu."
 
 #. Type: boolean
@@ -112,6 +113,7 @@ msgstr "Sareko hardwarea detektatzea"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../ethdetect.templates:6001
 msgid "Detect network hardware"
@@ -120,6 +122,7 @@ msgstr "Detektatu sareko hardwarea"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../disk-detect.templates:1001
 msgid "Detect disks"
@@ -130,21 +133,21 @@ msgstr "Detektatu diskoak"
 #. :sl1:
 #: ../disk-detect.templates:2001
 msgid "Detecting disks and all other hardware"
-msgstr "Diskoak eta bestelako hardwarea antzematen"
+msgstr "Diskoak eta bestelako hardwarea detektatzea"
 
 #. Type: select
 #. Choices
 #. :sl2:
 #: ../disk-detect.templates:3001
 msgid "continue with no disk drive"
-msgstr "jarraitu disko gailurik gabe"
+msgstr "jarraitu disko unitaterik gabe"
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../disk-detect.templates:3002
 msgid "Driver needed for your disk drive:"
-msgstr "Disko gailuaren kontrolatzailea behar da:"
+msgstr "Disko unitatearen kontrolatzailea behar da:"
 
 #. Type: select
 #. Description
@@ -154,8 +157,8 @@ msgid ""
 "No disk drive was detected. If you know the name of the driver needed by "
 "your disk drive, you can select it from the list."
 msgstr ""
-"Diskorik ez da detektatu. Ethernet txartelak behar duen kontrolatzailearen "
-"izena badakizu, zerrendan hauta dezakezu."
+"Ez da disko unitaterik detektatu. Disko unitateak behar duen "
+"kontrolatzailearen izena badakizu, zerrendan hauta dezakezu."
 
 #. Type: error
 #. Description
@@ -169,7 +172,7 @@ msgstr "Ez dago partizioetan bana daitekeen euskarririk"
 #. :sl2:
 #: ../disk-detect.templates:4001
 msgid "No partitionable media were found."
-msgstr "Ez da aurkitu partizioetan bana daitekeen euskarririk."
+msgstr "Ez da partizioetan bana daitekeen euskarririk aurkitu."
 
 #. Type: error
 #. Description
@@ -183,7 +186,7 @@ msgstr "Egiaztatu disko gogor bat makina honi konektatuta dagoela."
 #. :sl1:
 #: ../hw-detect.templates:1001
 msgid "Detecting hardware, please wait..."
-msgstr "Hardwarea antzematen, itxaron..."
+msgstr "Hardwarea detektatzen, itxaron..."
 
 #. Type: text
 #. Description
@@ -246,7 +249,7 @@ msgid ""
 "Please choose whether PC card services should be started in order to allow "
 "the use of PCMCIA cards."
 msgstr ""
-"Hautatu zein PC txartel zerbitzu abiarazi behar diren PCMCIA txartelak "
+"Hautatu PC txartel zerbitzuak abiarazi behar diren edo ez PCMCIA txartelak "
 "erabili ahal izateko."
 
 #. Type: string
@@ -254,7 +257,7 @@ msgstr ""
 #. :sl2:
 #: ../hw-detect.templates:7001
 msgid "PCMCIA resource range options:"
-msgstr "PCMCIA baliabide bitartearen aukerak:"
+msgstr "PCMCIA baliabidearen barrutiaren aukerak:"
 
 #. Type: string
 #. Description
@@ -285,7 +288,7 @@ msgstr "Hardware gehienetarako ez duzu ezer zehaztu behar hemen."
 #. :sl3:
 #: ../hw-detect.templates:8001
 msgid "Additional parameters for module ${MODULE}:"
-msgstr "${MODULE} moduluaren beste parametro batzuk:"
+msgstr "${MODULE} moduluaren parametro gehigarriak:"
 
 #. Type: string
 #. Description
@@ -368,9 +371,9 @@ msgid ""
 "Some of your hardware needs non-free firmware files to operate. The firmware "
 "can be loaded from removable media, such as a USB stick or floppy."
 msgstr ""
-"Zure hardware baten-batek libre ez diren firmware-fitxategiak behar dituzte "
-"funtzionatzeko. Firmware hori USB lapitz edo diskete baten antzerako "
-"euskarri aldagarri batetik kargatu daitezke."
+"Hardwaretariko batzuk libre ez diren firmware-fitxategiak behar dituzte "
+"funtzionatzeko. Firmware hori euskarri aldagarri batetik (USB edo diskete "
+"unitatea adib.) karga daiteke."
 
 #. Type: boolean
 #. Description
@@ -389,17 +392,18 @@ msgstr "Firmware bila arakatzen..."
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:1001
 msgid "Detect virtual driver disks from hardware manufacturer"
-msgstr "Atzeman hardware sortzailearen disko gailu birtualak"
+msgstr "Detektatu ekoizlearen disko birtualen kontrolatzaileak"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../driver-injection-disk-detect.templates:2001
 msgid "Load drivers from internal virtual driver disk?"
-msgstr "Kargatu kontrolatzaileak barne disko euskarri birtualetik?"
+msgstr "Kargatu kontrolatzaileak barneko disko birtualetik?"
 
 #. Type: boolean
 #. Description
@@ -409,5 +413,5 @@ msgid ""
 "Installing on this hardware may require some drivers provided by the "
 "manufacturer to be loaded from the built-in driver injection disk."
 msgstr ""
-"Hardware hau instalatzeak sortzaileak hornitutako zenbait kontratatzaile "
-"barneratutako euskarri txertatze diskotik behar dezake."
+"Hardware honetan instalatzeak fabrikatzaileak (kontrolatzaileen barneko "
+"diskoen bidez) hornitutako kontrolatzaile batzuk kargatzea behar izan lezake."
