@@ -7,6 +7,8 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Nima Sahraneshin <unix.nima@gmail.com>, 2018.
+# Seyed Hany Hosseini <hany1894@gmail.com>, 2020.
+# <soheilkhanalipur@tutanota.com>, 2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry - further translations from ICU-3.0
@@ -24,8 +26,8 @@ msgstr ""
 "Project-Id-Version: fa\n"
 "Report-Msgid-Bugs-To: debian-installer-utils@packages.debian.org\n"
 "POT-Creation-Date: 2009-07-02 20:15+0000\n"
-"PO-Revision-Date: 2019-01-01 17:49+0000\n"
-"Last-Translator: nima sahraneshin <unix.nima@gmail.com>\n"
+"PO-Revision-Date: 2020-08-04 18:32+0000\n"
+"Last-Translator: Abbas Baharforoosh <abahar1996@gmail.com>\n"
 "Language-Team: Debian-l10n-persian <debian-l10n-persian@lists.debian.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +74,7 @@ msgstr ""
 #. :sl2:
 #: ../di-utils-shell.templates:1001
 msgid "Use the \"exit\" command to return to the installation menu."
-msgstr "استفاده از فرمان «exit» برای بازگشت به منوی نصب؟"
+msgstr "برای بازگشت به منوی نصب از فرمان \"exit\" استفاده نمایید."
 
 #. Type: text
 #. Description
@@ -135,7 +137,7 @@ msgstr "ثبت کردن ماژول‌ها..."
 #. :sl2:
 #: ../di-utils.templates:6001
 msgid "Terminal plugin not available"
-msgstr "افزونهٔ ترمینال موجود نیست."
+msgstr "افزونهٔ ترمینال در دسترس نمی‌باشد."
 
 #. Type: error
 #. Description

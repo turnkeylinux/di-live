@@ -1,3 +1,88 @@
+debian-installer-utils (1.140) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by zer0-x
+  * Hindi (hi.po) by KushagraKarira
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Traditional Chinese (zh_TW.po) by louies0623
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 24 Feb 2021 19:25:32 +0100
+
+debian-installer-utils (1.139) unstable; urgency=medium
+
+  * Team upload
+  * list-devices-linux: Support partitions on USB UAS devices
+  * list-devices-linux: Remove mention of udevinfo, it went away many
+    years ago.
+
+ -- Steve McIntyre <93sam@debian.org>  Sat, 16 Jan 2021 18:30:43 +0000
+
+debian-installer-utils (1.138) unstable; urgency=medium
+
+  * Team upload
+
+  * list-devices-hurd: Support partitions from rumpdisk.
+
+ -- Samuel Thibault <sthibault@debian.org>  Thu, 26 Nov 2020 10:03:19 +0100
+
+debian-installer-utils (1.137) unstable; urgency=medium
+
+  * Team upload
+
+  * list-devices-hurd: Support /dev/cd* from rumpdisk.
+
+ -- Samuel Thibault <sthibault@debian.org>  Thu, 26 Nov 2020 02:33:49 +0100
+
+debian-installer-utils (1.136) unstable; urgency=medium
+
+  * Team upload
+
+  * list-devices-hurd: Support /dev/wd* from rumpdisk.
+
+ -- Samuel Thibault <sthibault@debian.org>  Fri, 20 Nov 2020 14:07:51 +0100
+
+debian-installer-utils (1.135) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 06 Nov 2020 19:24:53 +0100
+
+debian-installer-utils (1.134) unstable; urgency=medium
+
+  * Team upload
+
+  [ Philip Hands ]
+  * typos (it's vs. its)
+
+  [ Raphaël Hertzog ]
+  * Use /proc/self/fd/4 instead of /dev/fd/4 to unbreak fetch-url with recent
+    udev versions that no longer setup the /dev/fd symlink. Closes: #967546
+
+  [ Updated translations ]
+  * Persian (fa.po) by Abbas Baharforoosh
+  * Polish (pl.po) by Bartosz Feński
+
+ -- Raphaël Hertzog <raphael@offensive-security.com>  Thu, 24 Sep 2020 18:31:46 +0200
+
+debian-installer-utils (1.133) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Amharic (am.po) by leela
+  * Croatian (hr.po) by gogogogi
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 13 Nov 2019 22:18:44 +0100
+
 debian-installer-utils (1.132) unstable; urgency=high
 
   * Team upload
@@ -13,6 +98,7 @@ debian-installer-utils (1.132) unstable; urgency=high
  -- Ben Hutchings <ben@decadent.org.uk>  Sun, 30 Jun 2019 16:49:06 +0100
 
 debian-installer-utils (1.131) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]

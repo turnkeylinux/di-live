@@ -26,26 +26,27 @@ esac
 
 is_cd_kernel() {
 	dev="${1#/dev/}"
-	grep -q "kernel: $dev: .* CDROM drive" /var/log/syslog
+	grep -q "kernel: $dev: .* CDROM drive" /var/log/syslog || \
+	grep -q "kernel: $dev at .*> cdrom " /var/log/syslog
 }
 
 is_cd() {
 	# FIXME: this also detect hard drives, but anyway the mount will
 	# later fail
 
-	echo "$1" | egrep -q '^/dev/[sh]d[0-9]+$' || return 1
+	echo "$1" | egrep -q '^/dev/[cshw]d[0-9]+$' || return 1
 	
 	is_cd_kernel "$1"
 }
 
 is_disk() {
-	echo "$1" | egrep -q '^/dev/[sh]d[0-9]+$' || return 1
+	echo "$1" | egrep -q '^/dev/[shw]d[0-9]+$' || return 1
 	
 	! is_cd_kernel "$1"
 }
 
 is_partition() {
-	echo "$1" | egrep -q '^/dev/[sh]d[0-9]+s[0-9]+$' || return 1
+	echo "$1" | egrep -q '^/dev/[shw]d[0-9]+s[0-9]+$' || return 1
 	
 	return 0
 }
@@ -57,7 +58,7 @@ is_floppy() {
 }
 
 # Loop through some /dev/ entries and test all the character ones
-for x in /dev/fd* /dev/hd* /dev/sd* ; do
+for x in /dev/fd* /dev/hd* /dev/sd* /dev/wd* /dev/cd* ; do
 	[ -b "$x" -a -s "$x" ] || continue
 
 	if is_$TYPE "$x" ; then

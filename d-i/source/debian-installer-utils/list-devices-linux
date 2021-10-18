@@ -17,17 +17,10 @@ esac
 if [ ! -d /sys/block ]; then
 	exit 0
 fi
-if type udevadm >/dev/null 2>&1; then
-	device_info () {
-		udevadm info -q "$1" -p "$2" 2>/dev/null
-	}
-elif type udevinfo >/dev/null 2>&1; then
-	device_info () {
-		udevinfo -q "$1" -p "$2" 2>/dev/null
-	}
-else
-	exit 0
-fi
+
+device_info () {
+	udevadm info -q "$1" -p "$2" 2>/dev/null
+}
 
 device_name () {
 	local name
@@ -197,9 +190,14 @@ for x in $syspaths; do
 	fi
 	# Disk partitions, but only on USB drives
 	if ! $match && [ "$TYPE" = usb-partition ]; then
-		if device_info env "$devpath" | grep -q '^ID_BUS=usb' && \
-		   device_info env "$devpath" | grep -q '^ID_TYPE=disk'; then
-			match=:
+		if device_info env "$devpath" | grep -q '^ID_TYPE=disk'; then
+			if device_info env "$devpath" | grep -q '^ID_BUS=usb'; then
+				match=:
+			# USB UAS devices may show up as a different
+			# bus type here, so also look for "usb" in ID_PATH
+			elif device_info env "$devpath" | grep -q '^ID_PATH=.*usb'; then
+				match=:
+			fi
 		fi
 	fi
 	if $match; then

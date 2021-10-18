@@ -8,19 +8,24 @@
 # tegegne tefera <tefera@mekuria.com>, 2006.
 #
 #
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@debian.org>, 2004.
+#   Data taken from ICU-2.8; contributed by:
+#   - Daniel Yacob <yacob@geez.org>, Ge'ez Frontier Foundation
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: debian-installer-utils@packages.debian.org\n"
 "POT-Creation-Date: 2009-07-02 20:15+0000\n"
-"PO-Revision-Date: 2010-06-29 17:14+0800\n"
-"Last-Translator: Tegegne Tefera <tefera@mekuria.com>\n"
-"Language-Team: Amharic\n"
-"Language: \n"
+"PO-Revision-Date: 2019-08-28 18:09+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
+"Language-Team: Amharic <linux-ethiopia@googlegroups.com>\n"
+"Language: am\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: n>1\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: note
 #. Description
@@ -103,8 +108,9 @@ msgstr "ተከላውን ካልጨረሱ ስርዓትዎን ለመጠቀም በ�
 #. that are only supported in the graphical version of the installer
 #. :sl1:
 #: ../di-utils-reboot.templates:2001
+#, fuzzy
 msgid "Abort the installation"
-msgstr "ተከላውን ይቁም?"
+msgstr "ተከላውን ይቁም"
 
 #. Type: text
 #. Description
