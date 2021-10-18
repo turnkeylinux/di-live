@@ -12,6 +12,7 @@
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
 #   Panayotis Pakos <aeikineton@yahoo.com>
+#
 # George Papamichelakis <george@step.gr>, 2004.
 # Emmanuel Galatoulas <galas@tee.gr>, 2004.
 # Konstantinos Margaritis <markos@debian.org>, 2004, 2006.
@@ -20,7 +21,7 @@
 # quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
 # QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
 # galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009, 2011.
-# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014.
+# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014, 2018, 2020.
 #   Tobias Quathamer <toddy@debian.org>, 2007.
 #   Free Software Foundation, Inc., 2004.
 #   Alastair McKinstry <mckinstry@computer.org>, 2001.
@@ -28,19 +29,21 @@
 #   Simos Xenitellis <simos@hellug.gr>, 2001.
 #   Konstantinos Margaritis <markos@debian.org>, 2004.
 #   Athanasios Lefteris <alefteris@gmail.com>, 2008, 2012.
+#   root <galatoulas@cti.gr>, 2020.
+#   Vangelis Skarmoutsos <skarmoutsosv@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2017-11-17 01:07+0200\n"
-"Last-Translator: Sotirios Vrachas <sotirios@vrachas.net>\n"
-"Language-Team: el <debian-l10n-greek@lists.debian.org>\n"
+"PO-Revision-Date: 2020-11-17 19:54+0000\n"
+"Last-Translator: Vangelis Skarmoutsos <skarmoutsosv@gmail.com>\n"
+"Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
@@ -69,7 +72,7 @@ msgstr "Όνομα ομάδας τόμων για το νέο σύστημα:"
 msgid ""
 "The selected volume group name is already in use. Please choose another name."
 msgstr ""
-"Το επιλεγμένο όνομα Ομάδας Τόμων χρησιμοποιείται ήδη. Παρακαλώ, διαλέξτε "
+"Το επιλεγμένο όνομα ομάδας τόμων χρησιμοποιείται ήδη. Παρακαλώ, επιλέξτε "
 "κάποιο άλλο όνομα."
 
 #. Type: error
@@ -87,8 +90,8 @@ msgid ""
 "This happened because the selected recipe does not contain any partition "
 "that can be created on LVM volumes."
 msgstr ""
-"Αυτό συνέβη επιεδή η \"συνταγή\" που επιλέξατε δεν περιέχει καμμιά κατάτμηση "
-"που να μπορεί να δημιουργηθεί σε τόμους LVM."
+"Αυτό συνέβη επειδή η συνταγή που επιλέξατε δεν περιέχει καμία κατάτμηση που "
+"να μπορεί να δημιουργηθεί σε τόμους LVM."
 
 #. Type: boolean
 #. Description
@@ -105,9 +108,9 @@ msgid ""
 "The recipe you selected does not contain a separate partition for /boot. "
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
-"H μέθοδος που διαλέξατε δεν προβλέπει για μια ξεχωριστή κατάτμηση εκκίνησης /"
-"boot. Συνήθως αυτό απαιτείται για να έχετε την δυνατότητα εκκίνησης του "
-"συστήματος με χρήση του LVM."
+"Η συνταγή που διαλέξατε δεν προβλέπει ξεχωριστή κατάτμηση για το /boot. "
+"Συνήθως αυτό χρειάζεται για να έχετε την δυνατότητα εκκίνησης του συστήματος "
+"όταν χρησιμοποιείτε LVM."
 
 #. Type: boolean
 #. Description
@@ -126,7 +129,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:6001
 msgid "Volume group name already in use"
-msgstr "Το όνομα αυτό της Ομάδας Τόμων χρησιμοποιείται ήδη"
+msgstr "Το όνομα της ομάδας τόμων χρησιμοποιείται ήδη"
 
 #. Type: error
 #. Description
@@ -137,9 +140,9 @@ msgid ""
 "in use. Lowering the priority for configuration questions will allow you to "
 "specify an alternative name."
 msgstr ""
-"To όνομα ομάδας τόμου που επιλέξατε για αυτόματη διαμέριση με χρήση LVM "
-"είναι ήδη σε χρήση.Η ελάττωση της προτεραιότητας των ερωτήσεων ρύθμισης θα "
-"σας επιτρέψουν να προσδιορίσετε ένα εναλλακτικό όνομα."
+"Τo όνομα ομάδας τόμου που επιλέξατε για αυτόματη διαμέριση με χρήση LVM "
+"είναι ήδη σε χρήση. Η ελάττωση της προτεραιότητας των ερωτήσεων ρύθμισης θα "
+"σας επιτρέψει να προσδιορίσετε εναλλακτικό όνομα."
 
 #. Type: error
 #. Description
@@ -191,8 +194,7 @@ msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
 msgstr ""
-"Ο προσδιορισμός μιας ομάδας τόμων περιέχει μια αναφορά σε μη-υπαρκτό φυσικό "
-"τόμο."
+"Ο ορισμός μιας ομάδας τόμων περιέχει μια αναφορά σε μη-υπαρκτό φυσικό τόμο."
 
 #. Type: error
 #. Description
@@ -266,7 +268,7 @@ msgid ""
 msgstr ""
 "Το ελάχιστο μέγεθος του επιλεγμένου τρόπου διαμέρισης είναι ${MINSIZE} (ή "
 "${PERCENT}). Παρακαλούμε σημειώστε πως τα πακέτα που θα επιλέξετε να "
-"εγκαταστήσετε μπορεί να χρειαστούν περισσότερο χώρο από αυτόν. O μέγιστος "
+"εγκαταστήσετε μπορεί να χρειαστούν περισσότερο χώρο από αυτόν. Ο μέγιστος "
 "διαθέσιμος χώρος είναι ${MAXSIZE}."
 
 #. Type: string

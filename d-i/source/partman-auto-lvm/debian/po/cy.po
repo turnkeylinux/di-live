@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2018-03-19 21:51+0000\n"
 "Last-Translator: Huw Waters <huwwaters@gmail.com>\n"

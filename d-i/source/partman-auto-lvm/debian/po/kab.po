@@ -3,47 +3,23 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Polish messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-# Copyright (C) 2004-2010 Bartosz Feński <fenio@debian.org>
-#
-#
-# Translations from iso-codes:
-#     Translations taken from ICU SVN on 2007-09-09
-#
-#      Translations from KDE:
-#      - Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>
-#
-#   Tobias Toedter <t.toedter@gmx.net>, 2007.
-#   Jakub Bogusz <qboosh@pld-linux.org>, 2009-2011.
-#      Alastair McKinstry <mckinstry@computer.org>, 2001.
-#      Alastair McKinstry, <mckinstry@debian.org>, 2004.
-#      Andrzej M. Krzysztofowicz <ankry@mif.pg.gda.pl>, 2007.
-#      Cezary Jackiewicz <cjackiewicz@poczta.onet.pl>, 2000-2001.
-#      Free Software Foundation, Inc., 2000-2010.
-#      Free Software Foundation, Inc., 2004-2009.
-#      GNOME PL Team <translators@gnome.pl>, 2001.
-#      Jakub Bogusz <qboosh@pld-linux.org>, 2007-2011.
-#      Tomasz Z. Napierala <zen@debian.linux.org.pl>, 2004, 2006.
-# Marcin Owsiany <porridge@debian.org>, 2011.
-# Michał Kułach <michal.kulach@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Bartosz Feński <fenio@debian.org>, 2020.
+# Kabyle translation for debian-installer
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the debian-installer package.
+# Slimane Selyan Amiri <selyan.kab@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2020-09-11 20:10+0000\n"
-"Last-Translator: Bartosz Feński <fenio@debian.org>\n"
-"Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
-"Language: pl\n"
+"PO-Revision-Date: 2020-10-24 15:08+0100\n"
+"Last-Translator: Slimane Selyan Amiri <selyan.kab@gmail.com>\n"
+"Language-Team: Kabyle <kab@li.org>\n"
+"Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
 
 #. Type: text
 #. Description
@@ -51,7 +27,7 @@ msgstr ""
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto-lvm.templates:1001
 msgid "Guided - use entire disk and set up LVM"
-msgstr "Przewodnik - cały dysk i ustawienie LVM"
+msgstr "Yettuwelleh - seqdec akk aḍebsi syen sbadu LVM"
 
 #. Type: string
 #. Description
@@ -61,7 +37,7 @@ msgstr "Przewodnik - cały dysk i ustawienie LVM"
 #. :sl3:
 #: ../partman-auto-lvm.templates:2001 ../partman-auto-lvm.templates:3001
 msgid "Name of the volume group for the new system:"
-msgstr "Nazwa grupy woluminów dla nowego systemu:"
+msgstr "Isem n ugraw n ubleɣ i unagraw amaynut:"
 
 #. Type: string
 #. Description
@@ -70,14 +46,15 @@ msgstr "Nazwa grupy woluminów dla nowego systemu:"
 msgid ""
 "The selected volume group name is already in use. Please choose another name."
 msgstr ""
-"Wybrana nazwa grupy woluminów jest już używana. Proszę wybrać inną nazwę."
+"Isem n ugraw n ubleɣ i yettwafernen ha-t-an la yettuseqdac yakan. Ma ulac "
+"uɣilif, fren isem-nniḍen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:4001
 msgid "Failed to partition the selected disk"
-msgstr "Nie udało się spartycjonować wybranego dysku"
+msgstr "Beṭṭu n uḍebsi i d-yettufernen yecceḍ"
 
 #. Type: error
 #. Description
@@ -87,15 +64,15 @@ msgid ""
 "This happened because the selected recipe does not contain any partition "
 "that can be created on LVM volumes."
 msgstr ""
-"Błąd wystąpił ponieważ wybór nie zawiera żadnej partycji, która może być "
-"utworzona na woluminie LVM."
+"Yeḍra-d waya acku tasesfert i yettwafernen ulac deg-s ula d yiwen uḥric i "
+"izemren ad yettwarnu ɣef yiblaɣen LVM."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:5001
 msgid "Continue installation without /boot partition?"
-msgstr "Kontynuować instalację bez partycji /boot?"
+msgstr "Kemmel asebded n uḥric s war /boot?"
 
 #. Type: boolean
 #. Description
@@ -105,8 +82,8 @@ msgid ""
 "The recipe you selected does not contain a separate partition for /boot. "
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
-"Dokonany wybór nie zawiera osobnej partycji dla /boot. Zazwyczaj jest ona "
-"konieczna by móc uruchomić system z użyciem LVM."
+"Tasesfart i tferneḍ ulac deg-s aḥric i yettuɛezlen /boot. Ayagi yettusra deg "
+"tuget akken ad ak·akem-yeǧǧ ad tesnekreḍ anagraw mi ara tesqedceḍ LVM."
 
 #. Type: boolean
 #. Description
@@ -116,15 +93,15 @@ msgid ""
 "You can choose to ignore this warning, but that may result in a failure to "
 "reboot the system after the installation is completed."
 msgstr ""
-"Możesz wybrać zignorowanie tego ostrzeżenia, ale może to doprowadzić do "
-"sytuacji, że po instalacji system nie uruchomić się."
+"Tzemreḍ ad tferneḍ ad tzegleḍ tuccḍa-a, maca aya yezmer ad d-yeglu s truẓi n "
+"wallus n usenker seld ad yemmed usebded."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:6001
 msgid "Volume group name already in use"
-msgstr "Nazwa grupy woluminów jest już używana"
+msgstr "Isem n ugraw n ubleɣ yettuseqdac yakan"
 
 #. Type: error
 #. Description
@@ -135,16 +112,16 @@ msgid ""
 "in use. Lowering the priority for configuration questions will allow you to "
 "specify an alternative name."
 msgstr ""
-"Nazwa grupy woluminów użyta do automatycznego partycjonowania z użyciem LVM "
-"jest aktualnie wykorzystywana. Zmniejszenie priorytetu dla pytań "
-"konfiguracyjnych pozwoli określić nazwę alternatywną."
+"Isem n unagraw n ubleɣ yettuseqdec i beṭṭu awurman s useqdec n LVM "
+"yetuseqdac yakan. Asenqes deg tezwart i yisteqsiyen n twila ad ak·akem-yeǧǧ "
+"ad tferneḍ isem-nniḍen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:7001
 msgid "Unexpected error while creating volume group"
-msgstr "Niespodziewany błąd podczas tworzenia grupy woluminów"
+msgstr "Tella tuccḍu yettwaṛǧă ara deg tmerna n ugraw n ubleɣ"
 
 #. Type: error
 #. Description
@@ -154,15 +131,15 @@ msgid ""
 "Autopartitioning using LVM failed because an error occurred while creating "
 "the volume group."
 msgstr ""
-"Automatyczne partycjonowanie z użyciem LVM nie powiodło się, ponieważ "
-"wystąpił błąd podczas tworzenia grupy woluminów."
+"Beṭṭu awurman s useqdec n LVM yecceḍ acku tella-d tuccḍa mi ara nrennu agraw "
+"n ubleɣ."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:7001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "Sprawdź /var/log/messages lub wirtualną konsolę nr 4 po szczegóły."
+msgstr "Senqed /var/log/syslog neɣ wali tadiwent tuhlist 4 i wugar n telqayt."
 
 #. Type: text
 #. Description
@@ -170,14 +147,14 @@ msgstr "Sprawdź /var/log/messages lub wirtualną konsolę nr 4 po szczegóły."
 #: ../partman-auto-lvm.templates:8001
 #, no-c-format
 msgid "Multiple disks (%s)"
-msgstr "Wiele dysków (%s)"
+msgstr "Iḍebsiyen usgiten (%s)"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:9001
 msgid "Non-existing physical volume"
-msgstr "Nieistniejący fizyczny wolumin"
+msgstr "Ableɣ aɣaran ur nelli"
 
 #. Type: error
 #. Description
@@ -186,7 +163,8 @@ msgstr "Nieistniejący fizyczny wolumin"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr "Grupa woluminów odnosi się do nieistniejącego fizycznego woluminu."
+msgstr ""
+"Tbadadut n ugraw n yiblaɣen tella deg-s temselɣut ɣer ubleɣ aɣaran ur nelli."
 
 #. Type: error
 #. Description
@@ -196,15 +174,15 @@ msgid ""
 "Please check that all devices are properly connected. Alternatively, please "
 "check the automatic partitioning recipe."
 msgstr ""
-"Proszę sprawdzić czy wszystkie urządzenia są poprawnie podłączone lub "
-"sprawdzić sposób automatycznego partycjonowania."
+"Ttxil-k·m senqed ma yella meṛṛa ibenkan qqnen akken iwata. Daɣen, senqed "
+"ttxil-k·m beṭṭu awurman n uḍebsi d iḥricen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "No physical volume defined in volume group"
-msgstr "Brak zdefiniowanych fizycznych woluminów w grupie woluminów"
+msgstr "Ulac ableɣ aɣaran yettusbadun deg ugraq n yiblaɣen"
 
 #. Type: error
 #. Description
@@ -214,22 +192,22 @@ msgid ""
 "The automatic partitioning recipe contains the definition of a volume group "
 "that does not contain any physical volume."
 msgstr ""
-"Wybrany sposób automatycznego partycjonowania zawiera definicję grupy "
-"woluminów, która nie zawiera fizycznych woluminów."
+"Beṭṭu awurman n uḍebsi d iḥricen tella deg-s tbadut n ugraw n yiblaɣen ideg "
+"ulac akk ableɣ aɣaran."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "Please check the automatic partitioning recipe."
-msgstr "Proszę sprawdzić sposób automatycznego partycjonowania."
+msgstr "Ttxil-k·m senqed beṭṭu awurman n uḍebsi d iḥricen."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr "Liczba woluminów używanych przy partycjonowaniu automatycznym:"
+msgstr "Tasmekta n ugraw n yiblaɣen ara yettusqedcen i beṭṭu yettuwellhen:"
 
 #. Type: string
 #. Description
@@ -241,11 +219,11 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
-"Można użyć wszystkich woluminów z grupy lub tylko jakiejś ich części. W "
-"przypadku użycia tylko części z nich, lub późniejszego dodania większej "
-"ilości dysków, możliwe będzie powiększenie logicznych woluminów używając "
-"narzędzi LVM. Tak więc użycie mniejszej części woluminów przy instalacji da "
-"większą swobodę późniejszych zmian."
+"Ahat ilaq ad tesqedceḍ agraw n yiblaɣen s lekmal, neɣ aḥrec seg-s. Ma yella "
+"tesqedceḍ aḥric kan seg-s, neɣ ma yella terniḍ aṭas n yiḍebsiyen mbeεd, ad "
+"tizmireḍ ad tesnerniḍ iblaɣen imeẓẓulen send aseqdec n yifecka LVM, ihi "
+"aseqdec n uḥric mecṭuḥen aṭas seg ugraw n yiblaɣen lawan n usebded yezmer ad "
+"d-imudd ugar n tfallaẓt."
 
 #. Type: string
 #. Description
@@ -256,9 +234,10 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"Minimalny rozmiar wybranego przepisu partycjonowania to ${MINSIZE} (lub "
-"${PERCENT}); proszę zwrócić uwagę, że pakiety wybrane do instalacji mogą "
-"wymagać więcej miejsca. Maksymalny dostępny rozmiar to ${MAXSIZE}."
+"Teɣzi taddayt n beṭṭu awurman n uḍebsi d iḥricen d ${MINSIZE} (neɣ "
+"${PERCENT}); ttxil-k·m ger tamawt ɣer yikemmusen i tferneḍ ad tesbeddeḍ "
+"zemren ad d-sutren ugar n tallunt ɣef tagi. teɣzi tafellayt akk yellan d "
+"${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -269,30 +248,29 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
-"Wskazówka: \"max\" może być użyte jako skrót dla maksymalnej wielkości lub "
-"można wykorzystać zapis procentowy (np. \"20%\") by określić procentowe "
-"wykorzystanie maksimum."
+"Assumer: \"max\" yezmer ad yettuseqdac i ufran n teɣzi tafellayt, neɣ sekcem "
+"afmiḍi (am. \"20%\") i useqdec n ufmiḍi-a n teɣzi tafellayt."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "Invalid input"
-msgstr "Niepoprawne dane wejściowe"
+msgstr "Yir anekcam"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
-msgstr "Wprowadzono \"${INPUT}\", co nie jest rozpoznaną poprawną wartością."
+msgstr "Teskecmeḍ \"${INPUT}\", ur nettuneḥsab ara d teɣti tameɣtut."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:13001
 msgid "${SIZE} is too big"
-msgstr "${SIZE} to zbyt dużo"
+msgstr "${SIZE} meqqer aṭas"
 
 #. Type: error
 #. Description
@@ -302,15 +280,15 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
-"Zażądano ${SIZE} do użycia podczas partycjonowania, ale dostępne miejsce to "
-"tylko ${MAXSIZE}."
+"Tsutreḍ i ${SIZE} ad tettuseqdec i unegzum yettuwellhen, maca ala ${MAXSIZE} "
+"n tallunt i yellan."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
 msgid "${SIZE} is too small"
-msgstr "${SIZE} to zbyt mało"
+msgstr "${SIZE} meẓẓi aṭas"
 
 #. Type: error
 #. Description
@@ -320,5 +298,5 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
-"Zażądano ${SIZE} do użycia podczas partycjonowania, ale wybrany przepis "
-"partycjonowania wymaga co najmniej ${MINSIZE}."
+"Tsutreḍ i ${SIZE} ad tettuseqdec i unegzum yettuwellhen, maca tasesfert n "
+"unegzum i d-yettwafernen tesra xeṛsum ${MAXSIZE}."

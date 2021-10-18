@@ -7,7 +7,7 @@
 # Copyright (C) 2003,2004,2005,2008 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Changwoo Ryu <cwryu@debian.org>, 2010-2012, 2014-2015, 2017-2018.
+# Changwoo Ryu <cwryu@debian.org>, 2010-2012, 2014-2015, 2017-2018, 2020.
 #
 # Translations from iso-codes:
 # Copyright (C)
@@ -26,9 +26,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2018-07-25 18:21+0800\n"
+"PO-Revision-Date: 2020-04-21 05:24+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team:  Korean <debian-l10n-korean@lists.debian.org>\n"
 "Language: ko\n"
@@ -95,8 +95,8 @@ msgid ""
 "The recipe you selected does not contain a separate partition for /boot. "
 "This is normally needed to allow you to boot the system when using LVM."
 msgstr ""
-"선택한 내역에 /boot 파티션이 따로 존재하지 않습니다. LVM을 통해 시스템을 부팅"
-"하려면 일반적으로 /boot 파티션을 따로 둬야 합니다."
+"선택한 내역에 /boot 파티션이 따로 없습니다. LVM을 통해 시스템을 부팅하려면 일"
+"반적으로 /boot 파티션을 따로 둬야 합니다."
 
 #. Type: boolean
 #. Description
@@ -177,7 +177,7 @@ msgstr "물리 볼륨이 없습니다"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr "볼륨 그룹 정의에서 존재하지 않는 물리 볼륨을 참고하고 있습니다."
+msgstr "볼륨 그룹 정의에서 없는 물리 볼륨을 참고하고 있습니다."
 
 #. Type: error
 #. Description
@@ -232,9 +232,9 @@ msgid ""
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
 "자동 분할을 위해 볼륨 그룹 전체 또는 일부분을 사용하게 할 겁니다.  만약 일부"
-"분만 사용하거나, 나중에 디스크를 추가한다면, LVM 도구들을 이용해서 논리 볼륨"
-"을 확장할 수 있으므로, 설치 시점에서는 불륨 그룹의 작은 부분만 사용하는 것이 "
-"더 유연성이 좋을 겁니다."
+"분만 사용하거나, 나중에 디스크를 추가한다면, LVM 도구를 이용해서 논리 볼륨을 "
+"확장할 수 있으므로, 설치 시점에서는 불륨 그룹의 작은 부분만 사용하는 것이 더 "
+"유연성이 좋을 겁니다."
 
 #. Type: string
 #. Description
@@ -246,8 +246,8 @@ msgid ""
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
 "선택한 분할의 최소 크기는 ${MINSIZE} (또는 ${PERCENT}) 입니다;  설치하도록 선"
-"택한 패키지들을 위해 이 보다 더 많은 공간이 필요할 수도 있다는 것에 주의하시"
-"기 바랍니다.  최대 쓸 수 있는 크기는 ${MAXSIZE} 입니다."
+"택한 패키지를 위해 이 보다 더 많은 공간이 필요할 수도 있다는 것에 주의하시기 "
+"바랍니다.  최대 쓸 수 있는 크기는 ${MAXSIZE} 입니다."
 
 #. Type: string
 #. Description

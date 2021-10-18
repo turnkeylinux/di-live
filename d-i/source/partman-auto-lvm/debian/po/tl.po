@@ -19,7 +19,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2017-12-02 22:53+0000\n"
 "Last-Translator: Eric Pareja <eric.pareja@gmail.com>\n"

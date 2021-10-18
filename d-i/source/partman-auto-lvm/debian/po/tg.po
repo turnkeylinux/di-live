@@ -9,14 +9,14 @@
 #
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2018, 2019
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2018-03-05 11:00+0500\n"
+"PO-Revision-Date: 2019-08-02 22:04+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
 "Language: tg\n"
@@ -215,7 +215,7 @@ msgstr "Лутфан, дастури қисмбандии худкорро са�
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr ""
+msgstr "Андозаи гурӯҳи ҳаҷм барои истифодаи қисмбандии ёридиҳанда:"
 
 #. Type: string
 #. Description
@@ -227,19 +227,26 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
+"Шумо метавонед тамоми гурӯҳи ҳаҷм ё қисми онро барои қисмбандии ёридиҳанда "
+"истифода баред. Агар шумо танҳо қисми онро истифода баред ё агар шумо "
+"дискҳои иловагиро баъдтар илова намоед, он гоҳ шумо метавонед ҳаҷмҳои "
+"мантиқиро ба воситаи абзорҳои LVM баъдтар истифода баред, ва ҳамин тавр "
+"истифодаи қисми хурди гурӯҳи ҳаҷм ҳангоми насбкунӣ имкониятҳои бештарро "
+"пешниҳод менамояд."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
-#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"Андозаи хурдтарин барои ин қисми диск: ${MINSIZE} (ё ${PERCENT}) ва андозаи "
-"зиёдтарин: ${MAXSIZE}."
+"Андозаи хурдтарин барои нусхаи қисми диски интихобшуда ${MINSIZE} (ё "
+"${PERCENT}) мебошад; лутфан, ба назар гиред, ки қуттиҳои интихобкардаи шумо "
+"барои насб метавонанд ҳаҷми зиёдро талаб намоянд. Андозаи зиёдтарин бо ҳаҷми "
+"${MAXSIZE} дастрас аст."
 
 #. Type: string
 #. Description
@@ -258,9 +265,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
-#, fuzzy
 msgid "Invalid input"
-msgstr "Андозаи нодуруст"
+msgstr "Вуруди нодуруст"
 
 #. Type: error
 #. Description
@@ -268,13 +274,15 @@ msgstr "Андозаи нодуруст"
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
 msgstr ""
+"Шумо адади \"${INPUT}\"-ро ворид кардаед, ки ҳамчун андозаи нодуруст муайян "
+"карда шудааст."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:13001
 msgid "${SIZE} is too big"
-msgstr ""
+msgstr "${SIZE} хеле калон аст"
 
 #. Type: error
 #. Description
@@ -284,14 +292,15 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
+"Шумо барои қисмбандии ёридиҳанда истифодаи ${SIZE}-ро дархост кардед, аммо "
+"ҳаҷми дастрас танҳо ${MAXSIZE} мебошад."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
-#, fuzzy
 msgid "${SIZE} is too small"
-msgstr "Қисми диски EFI хеле хурд аст"
+msgstr "${SIZE} хеле хурд аст"
 
 #. Type: error
 #. Description
@@ -301,3 +310,5 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
+"Шумо барои қисмбандии ёридиҳанда истифодаи ${SIZE}-ро дархост кардед, аммо "
+"нусхаи қисмбандии интихобшуда ақаллан ${MAXSIZE}-ро талаб мекунад."

@@ -16,7 +16,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2012-02-28 10:16+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
@@ -230,8 +230,8 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"මෙම කොටසට අදාල අවම ප්‍රමාණය වනුයේ ${MINSIZE} (හෝ ${PERCENT}) වන අතර එහි උපරිම "
-"ප්‍රමාණය වනුයේ ${MAXSIZE} යි."
+"මෙම කොටසට අදාල අවම ප්‍රමාණය වනුයේ ${MINSIZE} (හෝ ${PERCENT}) වන අතර එහි උපරිම ප්‍"
+"රමාණය වනුයේ ${MAXSIZE} යි."
 
 #. Type: string
 #. Description

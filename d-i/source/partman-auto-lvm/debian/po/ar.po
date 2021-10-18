@@ -11,6 +11,10 @@
 # Abdelhak Bougouffa, 2017.
 # najib LAARIBI <supnano@gmail.com>, 2018.
 # ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
+# Osama <osama.ibrahim.89@gmail.com>, 2019.
+# zer0-x <ProFessorHassan3@gmail.com>, 2021.
+# Fahim Sabah <katheer.kaleel@gmail.com>, 2021.
+#
 #
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
@@ -25,10 +29,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2019-02-22 14:15+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2021-04-01 14:26+0000\n"
+"Last-Translator: Fahim Sabah <katheer.kaleel@gmail.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -243,8 +247,8 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"أقل حجم للتقسيم المُحضّر  ${MINSIZE} (or ${PERCENT}); انتبه فالحزم المختارة "
-"للتثبيت تتطلّب حجم أكبر . أقصى حجم متوفر ${MAXSIZE}."
+"أقل حجم للتقسيم المُحضّر ${MINSIZE} (or ${PERCENT})؛ لطفا لاحظ أنّ الحزم التي "
+"تختار تثبيتها قد تتطلّب مساحة أكبر من هذه. أقصى حجم متوفر ${MAXSIZE}."
 
 #. Type: string
 #. Description

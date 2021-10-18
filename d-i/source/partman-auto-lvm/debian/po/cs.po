@@ -17,9 +17,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2017-11-07 19:50+0100\n"
+"PO-Revision-Date: 2020-11-13 20:49+0100\n"
 "Last-Translator:  Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team:  Czech <provoz@debian.cz>\n"
 "Language: cs\n"
@@ -236,9 +236,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"Minimální velikost vybraného způsobu rozdělení je $ () MINSIZE (nebo $ "
-"(PERCENT)); pamatujte, že balíky, které budete instalovat, mohou vyžadovat "
-"více místa. Maximální dostupná velikost je $ (MAXSIZE)."
+"Minimální velikost vybraného způsobu rozdělení je ${MINSIZE} (nebo "
+"${PERCENT}); pamatujte, že balíky, které budete instalovat, mohou vyžadovat "
+"více místa. Maximální dostupná velikost je ${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -265,7 +265,7 @@ msgstr "Chybný vstup"
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
-msgstr "Zadali jste \"$ (INPUT)\", což nebylo rozpoznáno jako platná velikost."
+msgstr "Zadali jste \"${INPUT}\", což nebylo rozpoznáno jako platná velikost."
 
 #. Type: error
 #. Description

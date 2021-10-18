@@ -21,14 +21,14 @@
 # Meni Livne <livne@kde.org>, 2000.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2019-02-28 22:08+0000\n"
+"PO-Revision-Date: 2020-05-01 13:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
 "Language: he\n"
@@ -152,7 +152,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:7001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "מוטב לעיין ב־‎/var/log/syslod או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
+msgstr "מוטב לעיין ב־‎/var/log/syslog או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
 
 #. Type: text
 #. Description
@@ -186,7 +186,7 @@ msgid ""
 "Please check that all devices are properly connected. Alternatively, please "
 "check the automatic partitioning recipe."
 msgstr ""
-"נא לבדוק שכל ההתקנים מחוברים כראוי. לחלופין, נא בדוק את מרשם החלוקה "
+"נא לבדוק שכל ההתקנים מחוברים כראוי. לחלופין, יש לבדוק את מרשם החלוקה "
 "האוטומטית למחיצות."
 
 #. Type: error
@@ -219,7 +219,7 @@ msgstr "נא לבדוק את מרשם החלוקה האוטומטית למחיצ
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr "כמות קבוצה רבה שתהיה בשימוש יצירת המחיצות המודרכת:"
+msgstr "כמות קבוצות כרכים לשימוש לטובת חלוקה מודרכת למחיצות:"
 
 #. Type: string
 #. Description
@@ -231,10 +231,9 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
-"תוכל להשתמש בכל הגודל עבור הגדרת המחיצות המודרכת, אם חלק ממנו. אם תבחר רק "
-"חלק ממנו, או אם תוסיף עוד דיסקים אח\"כ, תוכל להגדיל את הגודל בצורה לוגית "
-"יותר מאוחר בעזרת כלי LVM, כך ששימוש בחלק קטן יותר של הגודל בזמן ההתקנה יציע "
-"גמישות יתר."
+"אפשר להשתמש בכל הגודל עבור הגדרת המחיצות המודרכת או בחלק ממנו. בחירה בחלק "
+"ממנו או הוספה של כוננים נוספים אח״כ, תאפשר לך להגדיל את הנפח בצורה לוגית "
+"בהמשך בעזרת LVM, כך ששימוש בחלק קטן יותר מהנפח בזמן ההתקנה יציע גמישות יתר."
 
 #. Type: string
 #. Description
@@ -245,9 +244,9 @@ msgid ""
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"הגודל המינימלי של הגדרת המחיצה שנבחרה הוא ${MINSIZE} (או ${PERCENT}); אנא "
-"שים לב שיתכן שהחבילות שתבחר להתקין ידרשו יותר מקום מזה. הגדול הזמין המקסימלי "
-"הוא ${MAXSIZE}."
+"הגודל המזערי של הגדרת המחיצה שנבחרה הוא ${MINSIZE} (או ${PERCENT}); נא לשים "
+"לב שייתכן שהחבילות שבחרת להתקין ידרשו יותר מקום מזה. הגדול הזמין המרבי הוא "
+"${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -273,14 +272,14 @@ msgstr "קלט בלתי חוקי"
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
-msgstr "הכנסת \"${INPUT}\", אשר אינו מזוהה כגדול חוקי."
+msgstr "מילאת „${INPUT}”, אשר אינו מזוהה כגדול חוקי."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:13001
 msgid "${SIZE} is too big"
-msgstr "${SIZE} גדול מידי"
+msgstr "${SIZE} גדול מדי"
 
 #. Type: error
 #. Description
@@ -290,8 +289,8 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
-"בחרת ב-${SIZE} כגודל שיהיה בשימוש בחלוקת המחיצות המודרכת, אך הגודל הזמין הוא "
-"רק ${MAXSIZE}."
+"בחרת ב־${SIZE} כגודל לשימוש בחלוקת המחיצות המודרכת, אך הגודל הזמין הוא "
+"${MAXSIZE} בלבד."
 
 #. Type: error
 #. Description
@@ -308,5 +307,5 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
-"בחרת ב-${SIZE} כגודל שיהיה בשימוש בחלוקת המחיצות המודרכת, אך הגדרת חלוקת "
-"המחיצות שבחרת דורשת לפחות ${MINSIZE}."
+"בחרת ב־${SIZE} כגודל לשימוש בחלוקת המחיצות המודרכת, אך הגדרת חלוקת המחיצות "
+"שבחרת דורשת ${MINSIZE} לפחות."

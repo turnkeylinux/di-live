@@ -25,7 +25,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2019-04-20 07:33+0000\n"
 "Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"

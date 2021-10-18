@@ -3,8 +3,7 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_hi.po to Hindi
-# translation of debian-installer_packages_po_sublevel1_hi.po to
+# translation of debian-installer_packages_po_sublevel1 to Hindi
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
 # Debian Installer translators, please read the D-I i18n documentation
@@ -26,14 +25,20 @@
 #   Alastair McKinstry <mckinstry@debian.org>, 2004.
 # Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008.
 # Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011, 2012.
+# Sruthi Chandran <srud@openmailbox.org>, 2018.
+# Himanshu Awasthi <johim9493@gmail.com>, 2018.
+# KushagraKarira <kushagrakarira@gmail.com>, 2020, 2021.
+# षिखर् <dnitesigm@gmail.com>, 2020.
+# Indrani Roy <indrani@scriptek.co.in>, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2018-01-04 06:20+0000\n"
-"Last-Translator: Sruthi Chandran <srud@openmailbox.org>\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2021-01-20 18:26+0000\n"
+"Last-Translator: KushagraKarira <kushagrakarira@gmail.com>\n"
+"Language-Team: \n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -179,7 +184,7 @@ msgstr "अनुपस्थित फिजिकल वॉल्यूम"
 msgid ""
 "A volume group definition contains a reference to a non-existing physical "
 "volume."
-msgstr "किसी वॉल्यूम समूह में एक नामौजूद फिज़िकल वॉल्यूम का संकेत किया गया है.े"
+msgstr "वॉल्यूम समूह परिभाषा में गैर-मौजूदा भौतिक वॉल्यूम का संदर्भ होता है।"
 
 #. Type: error
 #. Description
@@ -215,14 +220,14 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "Please check the automatic partitioning recipe."
-msgstr "्तव में स्वचालित पार्टिशनिके पार्टिशनिंग की जाँच करेंोग करें?"
+msgstr "कृपया स्वचालित विभाजन नुस्खा की जाँच करें।"
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr "पार्टिशन निर्देश के उपयोग हेतु मात्रा समुह का योगफल"
+msgstr "निर्देशित विभाजन के लिए उपयोग करने के लिए मात्रा समूह की राशि:"
 
 #. Type: string
 #. Description

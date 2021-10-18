@@ -22,7 +22,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian Installer Level 1\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
 "PO-Revision-Date: 2018-01-04 06:20+0000\n"
 "Last-Translator: Anish Sheela <aneesh.nl@gmail.com>\n"
@@ -104,8 +104,8 @@ msgid ""
 "You can choose to ignore this warning, but that may result in a failure to "
 "reboot the system after the installation is completed."
 msgstr ""
-"നിങ്ങള്‍ക്കു് വേണമെങ്കില്‍ ഈ മുന്നറിയിപ്പു് അവഗണിയ്ക്കാം, പക്ഷേ അതിന്റെ ഫലമായി ഇന്‍സ്റ്റളേഷന്‍ "
-"പൂര്‍ത്തിയായതിനു ശേഷം സിസ്റ്റം റീബൂട്ട് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടേക്കാം."
+"നിങ്ങള്‍ക്കു് വേണമെങ്കില്‍ ഈ മുന്നറിയിപ്പു് അവഗണിയ്ക്കാം, പക്ഷേ അതിന്റെ ഫലമായി ഇന്‍സ്റ്റളേഷന്‍ പൂര്‍"
+"ത്തിയായതിനു ശേഷം സിസ്റ്റം റീബൂട്ട് ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടേക്കാം."
 
 #. Type: error
 #. Description

@@ -7,6 +7,8 @@
 # Tamil messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
+# Jeyanthinath MuthuRam <jeyanthinath10@gmail.com>, 2020.
+# Vasudevan Tirumurti <agnihot3@gmail.com>, 2021.
 #
 #
 # Translations from iso-codes:
@@ -20,10 +22,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2018-08-05 09:04+0000\n"
-"Last-Translator: Dr.T.Vasudevan <drtvasudevan@gmail.com>\n"
+"PO-Revision-Date: 2021-02-09 18:59+0000\n"
+"Last-Translator: Vasudevan Tirumurti <agnihot3@gmail.com>\n"
 "Language-Team: Tamil <<gnome-tamil-translation@googlegroups.com>>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
@@ -103,14 +105,14 @@ msgid ""
 "reboot the system after the installation is completed."
 msgstr ""
 "நீங்கள் இந்த எச்சரிக்கையை உதாசீனப் படுத்தலாம். ஆனால் நிறுவல் முடிந்த பின் கணினியை மீண்டும் "
-"துவக்குதல் தோல்வி அடையும்"
+"துவக்குதல் தோல்வி அடையும்."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:6001
 msgid "Volume group name already in use"
-msgstr "உள்ளிட்ட தொகுதிப் பிரிவு பெயர் ஏற்கெனவே பயன் பாட்டில் உள்ளது."
+msgstr "உள்ளிட்ட தொகுதிப் பிரிவு பெயர் ஏற்கெனவே பயன் பாட்டில் உள்ளது"
 
 #. Type: error
 #. Description
@@ -158,7 +160,7 @@ msgstr ""
 #: ../partman-auto-lvm.templates:8001
 #, no-c-format
 msgid "Multiple disks (%s)"
-msgstr "பல் வட்டு  (%s)"
+msgstr "பல் வட்டுகள் (%s)"
 
 #. Type: error
 #. Description
@@ -192,7 +194,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "No physical volume defined in volume group"
-msgstr "தொகுதிப் குழுவில் பௌதிக தொகுதி ஏதும் குறிப்பிடப்படவில்லை."
+msgstr "தொகுதிக்குழுவில் பௌதிக தொகுதி ஏதும் குறிப்பிடப்படவில்லை"
 
 #. Type: error
 #. Description
@@ -209,14 +211,14 @@ msgstr ""
 #. :sl3:
 #: ../partman-auto-lvm.templates:10001
 msgid "Please check the automatic partitioning recipe."
-msgstr "தானியங்கி  பகிர்வு சீட்டை சோதிக்கவும்."
+msgstr "தானியங்கி பகிர்வு சீட்டை சோதிக்கவும்."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
 msgid "Amount of volume group to use for guided partitioning:"
-msgstr ""
+msgstr "வழிகாட்டிய பகிர்வில் பயன்படுத்த தேவையான தொகுதி குழுவின் அளவு:"
 
 #. Type: string
 #. Description
@@ -228,19 +230,23 @@ msgid ""
 "able to grow logical volumes later using the LVM tools, so using a smaller "
 "part of the volume group at installation time may offer more flexibility."
 msgstr ""
+"நீங்கள் முழு தொகுதி குழுவையும் வழிகாட்டிய பகிர்வுக்கு பயன்படுத்தலாம். அல்லது ஒரு "
+"பகுதியை பயன்படுத்தி பின்னால் மேலும் சில வட்டுகளை சேர்க்க வேண்டி இருந்தால் எல்விஎம் "
+"கருவிகளை பயன்படுத்தி தர்க்கரீதி தொகுதிகளை பெரிதாக்க இயலும். ஆகவே நிறுவலின்போது "
+"தொகுதி குழுவின் ஒரு சிறு பகுதியை பயன்படுத்துவது அதிக நெகிழ்வை தரும்."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:11001
-#, fuzzy
 msgid ""
 "The minimum size of the selected partitioning recipe is ${MINSIZE} (or "
 "${PERCENT}); please note that the packages you choose to install may require "
 "more space than this. The maximum available size is ${MAXSIZE}."
 msgstr ""
-"இந்த பகிர்வுக்கு நீங்கள் பயன்படுத்தக்கூடிய குறைந்தபட்ச அளவு ${MINSIZE} அல்லது ${PERCENT} "
-"மற்றும் அதிகபட்ச அளவு ${MAXSIZE}"
+"இந்த பகிர்வுக்கு நீங்கள் பயன்படுத்தக்கூடிய குறைந்தபட்ச அளவு ${MINSIZE} அல்லது "
+"${PERCENT}; கிடைக்கக்கூடிய அதிகபட்ச அளவு ${MAXSIZE}. நீங்கள் நிறுவ விரும்பும் "
+"பொதிகளின் அளவு இதைவிட அதிகமாக இருக்கலாம்."
 
 #. Type: string
 #. Description
@@ -252,7 +258,7 @@ msgid ""
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
 "உதவி: \"max\"ஐ அதிக பட்ச அளவை குறிப்பிட குறுக்கு விசையாக பயன்படுத்தலாம். அல்லது "
-"அதிக பட்ச அளவில்  ஒரு சதவிகிதமாக (எ-டு. \"20%\")  பயன்படுத்த சதவிகிதத்தை "
+"அதிக பட்ச அளவில் ஒரு சதவிகிதமாக (எ-டு. \"20%\") பயன்படுத்த சதவிகிதத்தை "
 "குறிப்பிடலாம்."
 
 #. Type: error
@@ -267,14 +273,14 @@ msgstr "செல்லுபடியாகாத உள்ளீடு"
 #. :sl3:
 #: ../partman-auto-lvm.templates:12001
 msgid "You entered \"${INPUT}\", which was not recognized as a valid size."
-msgstr ""
+msgstr "நீங்கள் \"${INPUT}\" என உள்ளிட்டீர்கள். அது செல்லுபடியாகும் ஒரு அளவு இல்லை."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:13001
 msgid "${SIZE} is too big"
-msgstr ""
+msgstr "${SIZE} மிகப்பெரியது"
 
 #. Type: error
 #. Description
@@ -284,14 +290,14 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the available "
 "space is only ${MAXSIZE}."
 msgstr ""
+"${SIZE} ஐ வழிகாட்டிய பகிர்வுக்கு கேட்டீர்கள். ஆனால் இருப்பில் உள்ளது ${MAXSIZE} மட்டுமே."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-auto-lvm.templates:14001
-#, fuzzy
 msgid "${SIZE} is too small"
-msgstr "ஈஎஃப்ஐ பகிர்வு மிகச்சிறியது"
+msgstr "${SIZE} என்பது மிகச்சிறியது"
 
 #. Type: error
 #. Description
@@ -301,3 +307,5 @@ msgid ""
 "You asked for ${SIZE} to be used for guided partitioning, but the selected "
 "partitioning recipe requires at least ${MINSIZE}."
 msgstr ""
+"${SIZE} ஐ வழிகாட்டிய பகிர்வுக்கு கேட்டீர்கள். ஆனால் தேர்ந்தெடுத்த பகிர்வுக்கு தேவை "
+"குறைந்தது ${MINSIZE}."

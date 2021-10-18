@@ -18,7 +18,8 @@
 # * Setyo Nugroho (setyo@gmx.net), 2004.
 # * Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
 # * Al Qalit <qal.smith@gmail.com>, 2018.
-# * Andika Triwidada <andika@gmail.com>, 2018.
+# * Andika Triwidada <andika@gmail.com>, 2018, 2019, 2020.
+# * Fahmi Ali <fahmi.ali1945@gmail.com>, 2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2002.
@@ -32,9 +33,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer (level1)\n"
-"Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
+"Report-Msgid-Bugs-To: partman-auto-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2008-08-16 22:50+0000\n"
-"PO-Revision-Date: 2018-10-14 05:31+0000\n"
+"PO-Revision-Date: 2020-10-31 02:27+0000\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Debian Indonesia Translators <debian-l10n-indonesian@lists."
 "debian.org>\n"
@@ -258,7 +259,7 @@ msgstr ""
 "Ukuran minimum pada partisi yang dipilih adalah ${MINSIZE} (atau "
 "${PERCENT}); harap diingat bahwa paket-paket yang Anda pilih untuk "
 "menginstal mungkin memerlukan lebih banyak daripada ini. Ukuran maksimum "
-"yang tersedia adalah $ (MAXSIZE)."
+"yang tersedia adalah ${MAXSIZE}."
 
 #. Type: string
 #. Description
