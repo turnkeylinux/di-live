@@ -7,6 +7,10 @@ live-installer (58) UNRELEASED; urgency=medium
   * Remove Christian Perrier from Uploaders, with many thanks for all
     his contributions over the years! (Closes: #927548)
 
+  [ Holger Wansing ]
+  * Remove trailing whitespace from changelog file, to fix lintian tag.
+  * Change Format URI in copyright file to https, to fix lintian tag.
+
  -- Jonathan Carter <jcc@debian.org>  Mon, 15 Apr 2019 17:43:07 +0000
 
 live-installer (57) unstable; urgency=medium
@@ -89,7 +93,7 @@ live-installer (49) unstable; urgency=medium
 live-installer (48) unstable; urgency=low
 
   * Drop cruft files from my unclean git copy. Sigh:
-    - live-installer.d/remove-packages 
+    - live-installer.d/remove-packages
     - live-installer.d/xserver-xorg
 
  -- Christian Perrier <bubulle@debian.org>  Mon, 09 Mar 2015 16:56:58 +0100
