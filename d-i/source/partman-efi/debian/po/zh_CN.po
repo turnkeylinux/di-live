@@ -1,0 +1,136 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# Simplified Chinese translation for Debian Installer.
+#
+# Copyright (C) 2003-2008 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Translated by Yijun Yuan (2004), Carlos Z.F. Liu (2004,2005,2006),
+# Ming Hua (2005,2006,2007,2008), Xiyue Deng (2008), Kov Chai (2008),
+# Kenlen Lai (2008), WCM (2008), Ren Xiaolei (2008).
+#
+#
+# Translations from iso-codes:
+#   Tobias Toedter <t.toedter@gmx.net>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
+#   Free Software Foundation, Inc., 2002, 2003, 2007, 2008.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
+#   Translations taken from KDE:
+#   - Wang Jian <lark@linux.net.cn>, 2000.
+#   - Carlos Z.F. Liu <carlosliu@users.sourceforge.net>, 2004 - 2006.
+#   LI Daobing <lidaobing@gmail.com>, 2007, 2008, 2009, 2010.
+#   YunQiang Su <wzssyqa@gmail.com>, 2011.
+#
+#   Mai Hao Hui <mhh@126.com>, 2001 (translations from galeon)
+# YunQiang Su <wzssyqa@gmail.com>, 2010, 2011, 2012, 2013.
+# Yangfl <mmyangfl@gmail.com>, 2017.
+# Boyuan Yang <073plan@gmail.com>, 2018, 2019.
+# 玉堂白鹤 <yjwork@qq.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: partman-efi@packages.debian.org\n"
+"POT-Creation-Date: 2019-11-29 20:02+0000\n"
+"PO-Revision-Date: 2020-01-18 06:21+0000\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
+"Language-Team: <debian-l10n-chinese@lists.debian.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Type: text
+#. Description
+#. :sl1:
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:2001 ../partman-efi.templates:4001
+msgid "EFI System Partition"
+msgstr "EFI 系统分区"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "Go back to the menu and resume partitioning?"
+msgstr "返回菜单并恢复分区进程吗？"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "No EFI partition was found."
+msgstr "未找到 EFI 启动分区。"
+
+#. Type: text
+#. Description
+#. :sl1:
+#. short variant of 'EFI System Partition'
+#. Up to 10 character positions
+#: ../partman-efi.templates:5001
+msgid "ESP"
+msgstr "系统分区"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:7001
+msgid "EFI-fat16"
+msgstr "EFI-fat16"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+msgid "EFI partition too small"
+msgstr "EFI 分区太小"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+msgid ""
+"EFI System Partitions on this architecture cannot be created with a size "
+"less than 35 MB. Please make the EFI System Partition larger."
+msgstr "此架构上的 EFI 系统分区不可小于 35MB。请扩大 EFI 系统分区。"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid "Force UEFI installation?"
+msgstr "强制 UEFI 安装？"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"This machine's firmware has started the installer in UEFI mode but it looks "
+"like there may be existing operating systems already installed using \"BIOS "
+"compatibility mode\". If you continue to install Debian in UEFI mode, it "
+"might be difficult to reboot the machine into any BIOS-mode operating "
+"systems later."
+msgstr ""
+"机器以 UEFI 模式启动了安装器，但是似乎已经存在使用 BIOS 兼容模式安装的系统。"
+"如果继续以 UEFI 模式安装 Debian，可能非常难以重启进入其他 BIOS 模式的系统。"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"If you wish to install in UEFI mode and don't care about keeping the ability "
+"to boot one of the existing systems, you have the option to force that here. "
+"If you wish to keep the option to boot an existing operating system, you "
+"should choose NOT to force UEFI installation here."
+msgstr ""
+"如果希望以 UEFI 模式安装且无意再启动现有的系统，此处有强制选项。如果要保持现"
+"有系统可启动，不要选择强制 UEFI 安装。"

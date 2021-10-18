@@ -1,0 +1,130 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# Portuguese messages for debian-installer.
+# Copyright (C) 2003 Software in the Public Interest, Inc.
+# Console-setup strings translations:
+# (identified by "./console-setup.templates")
+# Copyright (C) 2003-2019 Miguel Figueiredo <elmig@debianpt.org>
+# This file is distributed under the same license as debian-installer.
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Free Software Foundation, Inc., 2001,2004
+#   Filipe Maia <fmaia@gmx.net>, 2001.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2018
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: partman-efi@packages.debian.org\n"
+"POT-Creation-Date: 2019-11-29 20:02+0000\n"
+"PO-Revision-Date: 2019-11-30 11:55+0000\n"
+"Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
+"Language-Team:  Portuguese <traduz@debianpt.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: text
+#. Description
+#. :sl1:
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:2001 ../partman-efi.templates:4001
+msgid "EFI System Partition"
+msgstr "Partição de Sistema EFI"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "Go back to the menu and resume partitioning?"
+msgstr "Voltar atrás para o menu e continuar o particionamento?"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "No EFI partition was found."
+msgstr "Não foi encontrada nenhuma partição EFI."
+
+#. Type: text
+#. Description
+#. :sl1:
+#. short variant of 'EFI System Partition'
+#. Up to 10 character positions
+#: ../partman-efi.templates:5001
+msgid "ESP"
+msgstr "PSE"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:7001
+msgid "EFI-fat16"
+msgstr "EFI-fat16"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+msgid "EFI partition too small"
+msgstr "Partição EFI demasiado pequena"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+msgid ""
+"EFI System Partitions on this architecture cannot be created with a size "
+"less than 35 MB. Please make the EFI System Partition larger."
+msgstr ""
+"As partições de sistema EFI nesta arquitectura não podem ser criadas com um "
+"tamanho inferior a 35 MB. Por favor torne a Partição de Sistema EFI maior."
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid "Force UEFI installation?"
+msgstr "Forçar a instalação UEFI?"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"This machine's firmware has started the installer in UEFI mode but it looks "
+"like there may be existing operating systems already installed using \"BIOS "
+"compatibility mode\". If you continue to install Debian in UEFI mode, it "
+"might be difficult to reboot the machine into any BIOS-mode operating "
+"systems later."
+msgstr ""
+"O firmware da sua máquina iniciou o instalador em modo UEFI mas parece que "
+"já existem sistemas operativos instalados no seu computador que utilizam o "
+"'modo de compatibilidade da BIOS'. Se continuar a instalar Debian em modo "
+"UEFI, poderá ser difícil reiniciar posteriormente o computador para sistemas "
+"operativos em modo BIOS."
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"If you wish to install in UEFI mode and don't care about keeping the ability "
+"to boot one of the existing systems, you have the option to force that here. "
+"If you wish to keep the option to boot an existing operating system, you "
+"should choose NOT to force UEFI installation here."
+msgstr ""
+"Se desejar instalar em modo UEFI e não se importar de manter a capacidade de "
+"arrancar um dos seus sistemas operativos já existentes, tem aqui a opção "
+"para forçar isso. Se desejar manter a opção de arrancar um sistema operativo "
+"existente, então deve escolher aqui NÃO forçar a instalação UEFI."

@@ -1,0 +1,128 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# translation of Debian Installer templates to Esperanto.
+# Copyright (C) 2005-2013 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Samuel Gimeno <sgimeno@gmail.com>, 2005.
+# Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005, 2006, 2007.
+# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2017, 2018, 2020.
+#
+# Translations from iso-codes:
+# Alastair McKInstry <mckinstry@computer.org>, 2001,2002.
+# Copyright (C) 2001,2002,2003,2004 Free Software Foundation, Inc.
+# D. Dale Gulledge <dsplat@rochester.rr.com> (translations from drakfw), 2001.
+# Edmund GRIMLEY EVANS <edmundo@rano.org>, 2004-2011
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: debian-installer\n"
+"Report-Msgid-Bugs-To: partman-efi@packages.debian.org\n"
+"POT-Creation-Date: 2019-11-29 20:02+0000\n"
+"PO-Revision-Date: 2020-01-03 17:56+0000\n"
+"Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
+"Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Type: text
+#. Description
+#. :sl1:
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:2001 ../partman-efi.templates:4001
+msgid "EFI System Partition"
+msgstr "Sistem-diskpartigo EFI"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "Go back to the menu and resume partitioning?"
+msgstr "Ĉu retroiri al la menuo kaj repreni diskpartigon?"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "No EFI partition was found."
+msgstr "Neniu diskparto EFI estis trovata."
+
+#. Type: text
+#. Description
+#. :sl1:
+#. short variant of 'EFI System Partition'
+#. Up to 10 character positions
+#: ../partman-efi.templates:5001
+msgid "ESP"
+msgstr "SDP-EFI"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:7001
+msgid "EFI-fat16"
+msgstr "EFI-fat16"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+msgid "EFI partition too small"
+msgstr "Diskparto EFI tro malgrandas"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+msgid ""
+"EFI System Partitions on this architecture cannot be created with a size "
+"less than 35 MB. Please make the EFI System Partition larger."
+msgstr ""
+"Sistem-Diskpartigoj EFI en tiu ĉi arĥitekturo ne povas esti kreataj kum "
+"grando malplia ol 35 MB. Bonvolu pligrandigu la Sistem-Diskpartigon EFI."
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid "Force UEFI installation?"
+msgstr "Ĉu perfortigi instaladon de UEFI?"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"This machine's firmware has started the installer in UEFI mode but it looks "
+"like there may be existing operating systems already installed using \"BIOS "
+"compatibility mode\". If you continue to install Debian in UEFI mode, it "
+"might be difficult to reboot the machine into any BIOS-mode operating "
+"systems later."
+msgstr ""
+"La mikroprogramaro de la maŝino praŝargis la instalilon laŭ reĝimo UEFI sed "
+"ŝajne estas operaciuma sistemo jam instalata uzanta \"reĝimo kongrua al BIOS"
+"\". Se vi daŭrigas instali Debianon laŭ reĝimo UEFI, eble estos malfacile "
+"praŝargi la maŝinon je iu ajn BIOS-reĝimaj operaciumaj sistemoj poste."
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"If you wish to install in UEFI mode and don't care about keeping the ability "
+"to boot one of the existing systems, you have the option to force that here. "
+"If you wish to keep the option to boot an existing operating system, you "
+"should choose NOT to force UEFI installation here."
+msgstr ""
+"Se vi deziras instali reĝimon UEFI kaj vi ne zorgas pri praŝargo je unu el "
+"la ekzistantaj sistemoj, vi havas la eblecon perfortigi tion ĉi tie. Se vi "
+"deziras teni la eblecon praŝargi je ekzintanta operaciuma sistemo, vi devas "
+"elekti NE perfortigi la instalon de UEFI ĉi tie."

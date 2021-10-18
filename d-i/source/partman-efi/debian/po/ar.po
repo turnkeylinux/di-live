@@ -1,0 +1,137 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# translation of ar.po to Arabic
+# Arabic messages for debian-installer. Copyright (C) 2003 Software in the Public Interest, Inc.
+# This file is distributed under the same license as debian-installer.
+#
+# Ossama Khayat <okhayat@yahoo.com>, 2005 - 2013.
+# Abdelhak Bougouffa, 2017.
+# najib LAARIBI <supnano@gmail.com>, 2018.
+# ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
+# Osama <osama.ibrahim.89@gmail.com>, 2019.
+# zer0-x <ProFessorHassan3@gmail.com>, 2021.
+# Fahim Sabah <katheer.kaleel@gmail.com>, 2021.
+#
+#
+# Translations from iso-codes:
+#     Translations taken from ICU SVN on 2007-09-09
+#   Translations from kde-i18n/desktop.po:
+#
+#   Abdulaziz Al-Arfaj <alarfaj0@yahoo.com>, 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2002.
+#   Free Software Foundation, Inc., 2002, 2004.
+#   Ossama M. Khayat <okhayat@yahoo.com>, 2006, 2008, 2010.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#   Mohammad Gamal <f2c2001@yahoo.com>, 2001.
+msgid ""
+msgstr ""
+"Project-Id-Version: ar\n"
+"Report-Msgid-Bugs-To: partman-efi@packages.debian.org\n"
+"POT-Creation-Date: 2019-11-29 20:02+0000\n"
+"PO-Revision-Date: 2021-04-01 14:26+0000\n"
+"Last-Translator: Fahim Sabah <katheer.kaleel@gmail.com>\n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. Type: text
+#. Description
+#. :sl1:
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:2001 ../partman-efi.templates:4001
+msgid "EFI System Partition"
+msgstr "جزء نظام EFI"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "Go back to the menu and resume partitioning?"
+msgstr "العودة إلى القائمة وإكمال التجزئة؟"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "No EFI partition was found."
+msgstr "لم يعثر على جزء EFI."
+
+#. Type: text
+#. Description
+#. :sl1:
+#. short variant of 'EFI System Partition'
+#. Up to 10 character positions
+#: ../partman-efi.templates:5001
+msgid "ESP"
+msgstr "جزء ESP"
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:7001
+msgid "EFI-fat16"
+msgstr "EFI-fat16"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+msgid "EFI partition too small"
+msgstr "جزء EFI صغير جدا"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+msgid ""
+"EFI System Partitions on this architecture cannot be created with a size "
+"less than 35 MB. Please make the EFI System Partition larger."
+msgstr ""
+"أجزاء نظام EFI على هذه المنصة لا يمكن إنشاؤها بحجم أقل من ٣٥ ميجابايت. رجاءً "
+"تأكد من أن جزء نظام EFI أكبر من ذلك."
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid "Force UEFI installation?"
+msgstr "إنفاذ تثبيت UEFI؟"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"This machine's firmware has started the installer in UEFI mode but it looks "
+"like there may be existing operating systems already installed using \"BIOS "
+"compatibility mode\". If you continue to install Debian in UEFI mode, it "
+"might be difficult to reboot the machine into any BIOS-mode operating "
+"systems later."
+msgstr ""
+"البرنامج الثايت لهذه الماكنة قد بدأ المثبّت في طور UEFI لكن يبدو أنّ هناك "
+"نظاما تشغيليا موجودا مثبت مسبقا باستخدام \"طور توافق BIOS\". إذا واصلت تثبيت "
+"دبيان في طور UEFI، فقد يكون من العسير إعادة إقلاع الماكنة إلى أية أنظمة "
+"تشغيلية بطور BIOS لاحقا."
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"If you wish to install in UEFI mode and don't care about keeping the ability "
+"to boot one of the existing systems, you have the option to force that here. "
+"If you wish to keep the option to boot an existing operating system, you "
+"should choose NOT to force UEFI installation here."
+msgstr ""
+"إذا رغبت في التثبيت بطور UEFI ولا تهتم بالاحتفاظ بإمكانية إقلاع أحد الأنظمة "
+"التشغيلية الموجودة، فلديك الخيار بإنفاذ ذلك هنا. إذا رغبت في الاحتفاظ بخيار "
+"إقلاع نظام تشغيلي موجود، فينبغي عليك أن لا تُنفِذ تثبيت UEFI هنا."

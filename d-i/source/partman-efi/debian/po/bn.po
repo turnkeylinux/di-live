@@ -1,0 +1,134 @@
+# THIS FILE IS GENERATED AUTOMATICALLY FROM THE D-I PO MASTER FILES
+# The master files can be found under packages/po/
+#
+# DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
+#
+# Bangla translation of Debian-Installer.
+# Copyright (C) 2005, 2006, Debian Foundation.
+# This file is distributed under the same license as the Debian-Installer package.
+# Anubadok, the en2bn auto-translator by Golam Mortuza Hossain <golam@imsc.res.in>, 2005.
+# Baishampayan Ghose <b.ghose@gnu.org.in>, 2005-2006.
+# Quazi Ashfaq-ur Rahman <quazi.ashfaq@gmail.com>, 2005.
+# Khandakar Mujahidul Islam <suzan@bengalinux.org>, 2005, 2006.
+# Progga <progga@BengaLinux.Org>, 2005, 2006.
+# Jamil Ahmed <jamil@bengalinux.org>, 2006-2007.
+# Mahay Alam Khan (মাহে আলম খান) <makl10n@yahoo.com>, 2007.
+# Tisa Nafisa <tisa_nafisa@yahoo.com>, 2007.
+# Md. Rezwan Shahid <rezwan@ankur.org.bd>, 2009.
+# Ayesha Akhtar <ayesha@ankur.org.bd>, 2010.
+# Israt Jahan <israt@ankur.org.bd>, 2010.
+# Zenat Rahnuma <zenat@ankur.org.bd>, 2011.
+#
+# Translations from iso-codes:
+#   Debian Foundation, 2005.
+#   Progga <progga@BengaLinux.Org>, 2005.
+#   Jamil Ahmed <jamil@bengalinux.org>, 2006.
+#   Md. Rezwan Shahid <rezwan@ankur.org.bd>, 2009.
+#   Israt Jahan <israt@ankur.org.bd>, 2010.
+#   Ayesha Akhtar <ayesha@ankur.org.bd>, 2012.
+#   Robin Mehdee (রবিন মেহদী) <robin@ankur.org.bd>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: bn\n"
+"Report-Msgid-Bugs-To: partman-efi@packages.debian.org\n"
+"POT-Creation-Date: 2019-11-29 20:02+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
+"Language-Team: Bengali \n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: text
+#. Description
+#. :sl1:
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:2001 ../partman-efi.templates:4001
+#, fuzzy
+msgid "EFI System Partition"
+msgstr "EFI বুট পার্টিশন"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "Go back to the menu and resume partitioning?"
+msgstr "মেনুতে পেছনে ফিরে গিয়ে পার্টিশন করা আরম্ভ করবো কি?"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:3001
+msgid "No EFI partition was found."
+msgstr "কোনো EFI পার্টিশন খুঁজে পাওয়া যায় নি।"
+
+#. Type: text
+#. Description
+#. :sl1:
+#. short variant of 'EFI System Partition'
+#. Up to 10 character positions
+#: ../partman-efi.templates:5001
+msgid "ESP"
+msgstr ""
+
+#. Type: text
+#. Description
+#. :sl1:
+#: ../partman-efi.templates:7001
+msgid "EFI-fat16"
+msgstr "EFI-fat16"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+#, fuzzy
+msgid "EFI partition too small"
+msgstr "একত্রিত করা হবে এমন পার্টিশন:"
+
+#. Type: error
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:8001
+#, fuzzy
+msgid ""
+"EFI System Partitions on this architecture cannot be created with a size "
+"less than 35 MB. Please make the EFI System Partition larger."
+msgstr ""
+"এই কাঠামোর EFI বুট পার্টিশন ৩৫ মেগাবাইটের কমে তৈরি করা সম্ভব নয়। অনুগ্রহ করে EFI "
+"বুট পার্টিশনের আকৃতি আরও বড় করুন।"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+#, fuzzy
+msgid "Force UEFI installation?"
+msgstr "ইনস্টলেশন বাতিল করো"
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"This machine's firmware has started the installer in UEFI mode but it looks "
+"like there may be existing operating systems already installed using \"BIOS "
+"compatibility mode\". If you continue to install Debian in UEFI mode, it "
+"might be difficult to reboot the machine into any BIOS-mode operating "
+"systems later."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#. :sl2:
+#: ../partman-efi.templates:9001
+msgid ""
+"If you wish to install in UEFI mode and don't care about keeping the ability "
+"to boot one of the existing systems, you have the option to force that here. "
+"If you wish to keep the option to boot an existing operating system, you "
+"should choose NOT to force UEFI installation here."
+msgstr ""
