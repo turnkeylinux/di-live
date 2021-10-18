@@ -11,7 +11,7 @@
 # Janos Guljas <janos@resenje.org>, 2010-2012.
 # Veselin Mijušković <veselin.mijuskovic@gmail.com>, 2008.
 # Milan Kostic <kosticmilan77@open.telekom.rs>, 2012.
-# Filipovic Dragan <filipovic@tutanota.com>, 2018.
+# Filipovic Dragan <filipovic@tutanota.com>, 2018, 2020.
 #
 # Translations from iso-codes:
 #   Aleksandar Jelenak <aleksandar.jelenak@gmail.com>, 2010.
@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2018-01-11 20:47+0000\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2020-09-07 19:36+0000\n"
 "Last-Translator: Filipovic Dragan <filipovic@tutanota.com>\n"
 "Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
 "Language: sr\n"
@@ -92,6 +92,7 @@ msgstr "нема"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -202,7 +203,7 @@ msgid ""
 "undone."
 msgstr ""
 "Пре конфигурације LVM-a, тренутна партициона шема треба да се запише на "
-"диск.  Ове промене се не могу поништити."
+"диск. Ове промене се не могу поништити."
 
 #. Type: boolean
 #. Description

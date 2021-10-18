@@ -17,19 +17,21 @@
 # Christian Perrier <bubulle@debian.org>, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
 #   Alastair McKinstry <mckinstry@computer.org>, 2001.
 #   Cedric De Wilde <daique@tiscalinet.be>, 2001.
-#   Christian Perrier <bubulle@debian.org>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2013, 2014.
+#   Christian Perrier <bubulle@debian.org>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2017.
 #   Christophe Fergeau <christophe.fergeau@ensimag.imag.fr>, 2000-2001.
 #   Christophe Merlet (RedFox) <redfox@eikonex.org>, 2001.
 #   Free Software Foundation, Inc., 2000-2001, 2004, 2005, 2006.
 #   Grégoire Colbert <gregus@linux-mandrake.com>, 2001.
 #   Tobias Quathamer <toddy@debian.org>, 2007, 2008.
+# Alban Vidal <alban.vidal@zordhak.fr>, 2018.
+# Baptiste Jammet <baptiste@mailoo.org>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2014-09-16 06:53+0200\n"
-"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2020-08-17 10:18+0100\n"
+"Last-Translator: Baptiste Jammet <baptiste@mailoo.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +51,7 @@ msgstr "Volumes physiques non alloués :"
 #. :sl3:
 #: ../partman-lvm.templates:2001
 msgid "Volume groups:"
-msgstr "Groupe de volumes :"
+msgstr "Groupes de volumes :"
 
 #. Type: text
 #. Description
@@ -93,6 +95,7 @@ msgstr "aucun"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -926,9 +929,9 @@ msgid ""
 "\"snapshot\"."
 msgstr ""
 "Les noms de volumes logiques ou de groupes de volumes ne peuvent contenir "
-"que les caractères suivants : caractères alphanumériques, tiret, signe "
+"que les caractères suivants : caractères alphanumériques, tiret, signe "
 "« plus », point et caractère de soulignement (« underscore »). Ils ne "
-"doivent ni comporter plus de 128 caractères, ni commencer par un tiret. Les "
+"doivent ni comporter plus de 128 caractères, ni commencer par un tiret. Les "
 "noms « . » et « .. » ne sont pas autorisés et, enfin, les noms de volumes "
 "logiques ne peuvent pas commencer par « snapshot »."
 
@@ -1046,13 +1049,13 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
-"LVM permet de combiner vos les disques ou les partitions (« volumes "
-"physiques ») en disques virtuels (« groupe de volumes ») qui peut être "
-"divisé en partitions virtuelles (« volumes logiques »). Les groupes de "
-"volumes et les volumes logiques peuvent s'étendre sur plusieurs disques "
-"physiques. Des volumes physiques peuvent être ajoutés à tout moment à un "
-"groupe de volumes et les volumes logiques peuvent être retaillés dans les "
-"limites de l'espace non alloué du groupe de volume."
+"LVM permet de combiner les disques ou les partitions (« volumes physiques ») "
+"en disques virtuels (« groupe de volumes ») qui peuvent être divisés en "
+"partitions virtuelles (« volumes logiques »). Les groupes de volumes et les "
+"volumes logiques peuvent s'étendre sur plusieurs disques physiques. Des "
+"volumes physiques peuvent être ajoutés à tout moment à un groupe de volumes "
+"et les volumes logiques peuvent être retaillés dans les limites de l'espace "
+"non alloué du groupe de volume."
 
 #. Type: note
 #. Description

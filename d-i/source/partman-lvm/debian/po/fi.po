@@ -15,6 +15,7 @@
 # Timo Jyrinki <timo.jyrinki@iki.fi>, 2012.
 # Juhani Numminen <juhaninumminen0@gmail.com>, 2018, 2019.
 # Arto Keiski <arto.keiski@iki.fi>, 2018.
+# Kimmo Kujansuu <mrkujansuu@gmail.com>, 2021.
 #
 # Translations from iso-codes:
 # Copyright (C) 2007 Tobias Toedter <t.toedter@gmx.net>.
@@ -26,9 +27,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2019-02-01 20:18+0000\n"
-"Last-Translator: Juhani Numminen <juhaninumminen0@gmail.com>\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2021-07-12 20:33+0000\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -92,6 +93,7 @@ msgstr "ei mikään"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -939,7 +941,7 @@ msgstr "Poistettavat loogiset taltiot: ${LVTARGETS}"
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Volume group(s) to be removed: ${VGTARGETS}"
-msgstr "Poistettavat taltioryhmät:     ${VGTARGETS}"
+msgstr "Poistettavat taltioryhmät: ${VGTARGETS}"
 
 #. Type: boolean
 #. Description

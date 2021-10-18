@@ -19,21 +19,26 @@
 # Gediminas Paulauskas <menesis@delfi.lt>, 2000-2001.
 # Alastair McKinstry <mckinstry@computer.org>, 2001,2002.
 # Kęstutis Biliūnas <kebil@kaunas.init.lt>, 2004, 2006, 2008, 2009, 2010.
-# Rimas Kudelis <rq@akl.lt>, 2012, 2017.
+# Rimas Kudelis <rq@akl.lt>, 2012, 2017, 2018.
+# Tautvydas Zukauskas <tautzuk@tutanota.com>, 2020.
+# Andrius Ulrikas <andrius@ulrikas.lt>, 2020.
+# Andrius Majauskas <komitetas@gmail.com>, 2020.
+# Kornelijus Tvarijanavičius <kornelitvari@protonmail.com>, 2020, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2017-11-26 20:23+0000\n"
-"Last-Translator: Rimas Kudelis <rq@akl.lt>\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2021-07-06 21:18+0000\n"
+"Last-Translator: Gediminas Murauskas <muziejusinfo@gmail.com>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
-"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Type: text
 #. Description
@@ -91,6 +96,7 @@ msgstr "joks"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -201,7 +207,7 @@ msgid ""
 "undone."
 msgstr ""
 "Prieš konfigūruojant loginių tomų tvarkytuvę, dabartinė disko dalijimo "
-"schema turi būti įrašyta į diską.  Šis pakeitimas negrįžtamas."
+"schema turi būti įrašyta į diską. Šis pakeitimas negrįžtamas."
 
 #. Type: boolean
 #. Description
@@ -781,7 +787,7 @@ msgid ""
 msgstr ""
 "Prašau įvesti norimą naujo loginio tomo (Logical Volume) dydį. Jį galite "
 "nurodyti kilobaitais (pvz., 10K), megabaitais (10M), gigabaitais (10G), "
-"terabaitais (10T).  Jei nenurodysite vieneto, dydis bus matuojamas "
+"terabaitais (10T). Jei nenurodysite vieneto, dydis bus matuojamas "
 "megabaitais."
 
 #. Type: error
@@ -860,7 +866,7 @@ msgid ""
 "physical volumes may already be in use. You may also need to load some "
 "required kernel modules or re-partition the hard drives."
 msgstr ""
-"Sistemoje nepavyko rasti fizinių tomų (t.y. diskų skaidinių).  Galbūt jie "
+"Sistemoje nepavyko rasti fizinių tomų (t.y. diskų skaidinių). Galbūt jie "
 "visi jau naudojami. Galbūt jums reiktų įkelti branduolio modulių ar "
 "perdalyti kietus diskus."
 
@@ -879,7 +885,7 @@ msgid ""
 "The current kernel doesn't support the Logical Volume Manager. You may need "
 "to load the lvm-mod module."
 msgstr ""
-"Esamas branduolys nepalaiko loginių tomų tvarkyklės (LVM).  Galbūt reikia "
+"Esamas branduolys nepalaiko loginių tomų tvarkyklės (LVM). Galbūt reikia "
 "įkelti modulį 'lvm-mod'."
 
 #. Type: error

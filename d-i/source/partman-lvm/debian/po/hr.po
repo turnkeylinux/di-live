@@ -17,14 +17,16 @@
 #   Vlatko Kosturjak, 2001
 #   Tomislav Krznar <tomislav.krznar@gmail.com>, 2012, 2013, 2014, 2015.
 #   Valentin Vidic <Valentin.Vidic@CARNet.hr>, 2017
+#   Milo Ivir <mail@milotype.de>, 2019.
+#   gogogogi <trebelnik2@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian-installer 1st-stage master file HR\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2019-07-04 17:02+0000\n"
-"Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2021-04-23 16:46+0200\n"
+"Last-Translator: Valentin Vidic <vvidic@debian.org>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +72,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Physical Volumes:\" ]"
-msgstr "nema fizičkih uređaja"
+msgstr "nedostupan"
 
 #. Type: text
 #. Description
@@ -81,7 +83,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Volume Groups:\" ]"
-msgstr "nema grupa uređaja"
+msgstr "nedostupne"
 
 #. Type: text
 #. Description
@@ -89,6 +91,7 @@ msgstr "nema grupa uređaja"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -465,7 +468,7 @@ msgstr "Za pojedinosti provjerite /var/log/syslog ili četvrtu konzolu."
 #. :sl3:
 #: ../partman-lvm.templates:33001
 msgid "Volume group to delete:"
-msgstr "Grupa uređaja za brisnje:"
+msgstr "Grupa uređaja za brisanje:"
 
 #. Type: select
 #. Description
@@ -895,11 +898,11 @@ msgid ""
 "\" are not allowed. In addition, logical volume names cannot begin with "
 "\"snapshot\"."
 msgstr ""
-"Nazivi logičkih uređaja ili grupa uređaja mogu sadržavati samo "
-"slovnobrojčane znakove, crticu, plus, točku i podvlaku. Oni moraju biti "
-"dugački 128 znakova ili manje i ne smiju počinjati crticom. Nazivi \".\" i "
-"\"..\" nisu dopušteni. Osim toga, nazivi logičkih uređaja ne mogu počinjati "
-"sa \"snapshot\"."
+"Nazivi logičkih uređaja ili grupa uređaja mogu sadržavati samo slova, "
+"brojeve, crticu, plus, točku i podvlaku. Oni moraju biti dugački 128 znakova "
+"ili manje i ne smiju počinjati crticom. Nazivi \".\" i \"..\" nisu "
+"dopušteni. Osim toga, nazivi logičkih uređaja ne mogu počinjati sa \"snapshot"
+"\"."
 
 #. Type: error
 #. Description

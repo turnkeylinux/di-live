@@ -9,7 +9,7 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 #
 # Copyright (C) 2010 Free Software Foundation
-# Sveinn í Felli <sv1@fellsnet.is>, 2018.
+# Sveinn í Felli <sv1@fellsnet.is>, 2018, 2019, 2020.
 #
 # Translations from iso-codes:
 # Copyright (C) 2002,2003, 2010, 2011, 2012 Free Software Foundation, Inc.
@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icelandic (Debian Installer)\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2020-06-23 09:41+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -90,6 +90,7 @@ msgstr "Engir"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -899,9 +900,9 @@ msgid ""
 msgstr ""
 "Nöfn rökeintaka eða sýndardiska mega aðeins innihalda bókstafi og tölustafi, "
 "bandstrik, plús, punkt og undirstrik. Íslenskir stafir eru ekki leyfðir. Þau "
-"verða að að vera 128 stafir eða minna og mega ekki byrja á bandstriki. "
-"Nöfnin \".\" og \"..\"  eru ekki leyfð. Að auki mega nöfn rökeintaka ekki "
-"byrja á \"snapshot\"."
+"verða að vera 128 stafir eða minna og mega ekki byrja á bandstriki. Nöfnin "
+"\".\" og \"..\" eru ekki leyfð. Að auki mega nöfn rökeintaka ekki byrja á "
+"\"snapshot\"."
 
 #. Type: error
 #. Description

@@ -12,6 +12,7 @@
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
 #   Panayotis Pakos <aeikineton@yahoo.com>
+#
 # George Papamichelakis <george@step.gr>, 2004.
 # Emmanuel Galatoulas <galas@tee.gr>, 2004.
 # Konstantinos Margaritis <markos@debian.org>, 2004, 2006.
@@ -20,7 +21,7 @@
 # quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
 # QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
 # galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009, 2011.
-# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014.
+# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014, 2018, 2020.
 #   Tobias Quathamer <toddy@debian.org>, 2007.
 #   Free Software Foundation, Inc., 2004.
 #   Alastair McKinstry <mckinstry@computer.org>, 2001.
@@ -28,26 +29,28 @@
 #   Simos Xenitellis <simos@hellug.gr>, 2001.
 #   Konstantinos Margaritis <markos@debian.org>, 2004.
 #   Athanasios Lefteris <alefteris@gmail.com>, 2008, 2012.
+#   root <galatoulas@cti.gr>, 2020.
+#   Vangelis Skarmoutsos <skarmoutsosv@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2017-11-17 01:07+0200\n"
-"Last-Translator: Sotirios Vrachas <sotirios@vrachas.net>\n"
-"Language-Team: el <debian-l10n-greek@lists.debian.org>\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2020-11-17 19:54+0000\n"
+"Last-Translator: Vangelis Skarmoutsos <skarmoutsosv@gmail.com>\n"
+"Language-Team: Greek <debian-l10n-greek@lists.debian.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:1001
 msgid "Unallocated physical volumes:"
-msgstr "Μη αποδοθέντες φυσικοί τόμοι:"
+msgstr "Αδιάθετοι φυσικοί τόμοι:"
 
 #. Type: text
 #. Description
@@ -79,7 +82,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Physical Volumes:\" ]"
-msgstr "καμία"
+msgstr "κανένας"
 
 #. Type: text
 #. Description
@@ -98,6 +101,7 @@ msgstr "καμία"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -109,7 +113,7 @@ msgstr "Ρύθμιση του Διαχειριστή Λογικών Τόμων"
 #. Translators: use the acronym for "Physical Volume" in your language here
 #: ../partman-lvm.templates:8001
 msgid "PV"
-msgstr "PV"
+msgstr "ΦΤ"
 
 #. Type: text
 #. Description
@@ -126,7 +130,7 @@ msgstr "Είναι σε χρήση από την ομάδα τόμων ${VG} τ�
 #. Use infinitive form
 #: ../partman-lvm.templates:10001
 msgid "Display configuration details"
-msgstr "Εμφάνιση των λεπτομερειών ρύθμισης"
+msgstr "Εμφάνιση λεπτομερειών ρύθμισης"
 
 #. Type: text
 #. Description
@@ -162,7 +166,7 @@ msgstr "Επέκταση ομάδας τόμων"
 #. Use infinitive form
 #: ../partman-lvm.templates:14001
 msgid "Reduce volume group"
-msgstr "Συρίκνωση ομάδας τόμων"
+msgstr "Σμίκρυνση ομάδας τόμων"
 
 #. Type: text
 #. Description
@@ -196,7 +200,8 @@ msgstr "Ολοκλήρωση"
 #. :sl3:
 #: ../partman-lvm.templates:18001
 msgid "Write the changes to disks and configure LVM?"
-msgstr "Να αποθηκευθούν οι αλλαγές και να γίνει η ρύθμιση του LVM;"
+msgstr ""
+"Να αποθηκευθούν οι αλλαγές στους δίσκους και να γίνει η ρύθμιση του LVM;"
 
 #. Type: boolean
 #. Description
@@ -207,9 +212,9 @@ msgid ""
 "partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Πριν γίνει η ρύθμιση του Διαχειριστή Λογικών Τόμων (Logical Volume Manager), "
-"θα πρέπει πρώτα να αποθηκευτεί στον δίσκο το τρέχον σχήμα διαμέρισης. Αυτές "
-"οι αλλαγές δε μπορούν να αναιρεθούν."
+"Πριν γίνει η ρύθμιση του διαχειριστή λογικών τόμων, θα πρέπει να γραφτεί "
+"στον δίσκο το τρέχον σχήμα διαμέρισης. Αυτές οι αλλαγές δε μπορούν να "
+"αναιρεθούν."
 
 #. Type: boolean
 #. Description
@@ -221,7 +226,7 @@ msgid ""
 "the installation. Please decide if you are satisfied with the current "
 "partitioning scheme before continuing."
 msgstr ""
-"Μετά τη ρύθμιση του Διαχειριστή Λογικών Τόμων δεν επιτρέπονται επιπρόσθετες "
+"Μετά τη ρύθμιση του διαχειριστή λογικών τόμων δεν επιτρέπονται επιπρόσθετες "
 "αλλαγές στο σχήμα διαμέρισης των δίσκων που περιέχουν φυσικούς τόμους κατά "
 "την διάρκεια της εγκατάστασης. Παρακαλώ, σιγουρευτείτε ότι είσαστε "
 "ικανοποιημένοι με το παρόν σχήμα διαμέρισης πριν συνεχίσετε."
@@ -231,7 +236,8 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:19001
 msgid "Keep current partition layout and configure LVM?"
-msgstr "Να κρατηθούν οι τρέχουσες αλλαγές και να γίνει η ρύθμιση του LVM;"
+msgstr ""
+"Να διατηρηθεί η τρέχουσα διάταξη διαμέρισης και να γίνει η ρύθμιση του LVM;"
 
 #. Type: boolean
 #. Description
@@ -243,8 +249,8 @@ msgid ""
 "decide if you are satisfied with the current partitioning scheme in these "
 "disks before continuing."
 msgstr ""
-"Μετά τη ρύθμιση του Διαχειριστή Λογικών Τόμων δεν επιτρέπονται αλλαγές στις "
-"κατατμήσεις των δίσκων που περιέχουν φυσικούς τόμους.  Πριν συνεχίσετε, "
+"Μετά τη ρύθμιση του διαχειριστή λογικών τόμων δεν επιτρέπονται αλλαγές στις "
+"κατατμήσεις των δίσκων που περιέχουν φυσικούς τόμους. Πριν συνεχίσετε, "
 "βεβαιωθείτε ότι το παρόν σχήμα διαμέρισης αυτών των δίσκων είναι "
 "ικανοποιητικό."
 
@@ -260,15 +266,14 @@ msgstr "Αποτυχία ρύθμισης του LVM"
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "An error occurred while writing the changes to the disks."
-msgstr ""
-"Κάποιο σφάλμα συνέβη κατά την αποθήκευση των αλλαγών στις μονάδες δίσκων."
+msgstr "Κάποιο σφάλμα συνέβη κατά την εγγραφή των αλλαγών στους δίσκους."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "Logical Volume Manager configuration has been aborted."
-msgstr "Η ρύθμιση του Διαχειριστή Λογικών Τόμων εγκαταλείφθηκε."
+msgstr "Η ρύθμιση του διαχειριστή λογικών τόμων εγκαταλείφθηκε."
 
 #. Type: text
 #. Description
@@ -326,14 +331,14 @@ msgstr "Τρέχουσα ρύθμιση του LVM:"
 #. :sl3:
 #: ../partman-lvm.templates:26001
 msgid "Devices for the new volume group:"
-msgstr "Μονάδες που θα αποτελέσουν τη νέα Ομάδα Τόμων:"
+msgstr "Συσκευές για τη νέα ομάδα τόμων:"
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:26001
 msgid "Please select the devices for the new volume group."
-msgstr "Παρακαλώ, επιλέξτε τις μονάδες που θα αποτελέσουν τη νέα Ομάδα Τόμων."
+msgstr "Παρακαλώ, επιλέξτε τις συσκευές για τη νέα ομάδα τόμων."
 
 #. Type: multiselect
 #. Description
@@ -347,14 +352,14 @@ msgstr "Παρακαλώ, επιλέξτε τις μονάδες που θα α�
 #: ../partman-lvm.templates:26001 ../partman-lvm.templates:39001
 #: ../partman-lvm.templates:44001
 msgid "You can select one or more devices."
-msgstr "Μπορείτε να επιλέξετε μία ή περισσότερες μονάδες."
+msgstr "Μπορείτε να επιλέξετε μία ή περισσότερες συσκευές."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:27001
 msgid "Volume group name:"
-msgstr "Όνομα της Ομάδας Τόμων:"
+msgstr "Όνομα της ομάδας τόμων:"
 
 #. Type: string
 #. Description
@@ -362,7 +367,7 @@ msgstr "Όνομα της Ομάδας Τόμων:"
 #: ../partman-lvm.templates:27001
 msgid "Please enter the name you would like to use for the new volume group."
 msgstr ""
-"Δώστε το όνομα που θα θέλατε να χρησιμοποιήσετε για τη νέα Ομάδα Τόμων."
+"Δώστε το όνομα που θα θέλατε να χρησιμοποιήσετε για τη νέα ομάδα τόμων."
 
 #. Type: error
 #. Description
@@ -376,7 +381,7 @@ msgstr ""
 #: ../partman-lvm.templates:28001 ../partman-lvm.templates:40001
 #: ../partman-lvm.templates:45001
 msgid "No physical volumes selected"
-msgstr "Δεν επιλέχθηκαν φυσικές μονάδες"
+msgstr "Δεν επιλέχθηκαν φυσικοί τόμοι"
 
 #. Type: error
 #. Description
@@ -386,7 +391,7 @@ msgid ""
 "No physical volumes were selected. The creation of a new volume group has "
 "been aborted."
 msgstr ""
-"Δεν επιλέχθηκαν φυσικοί τόμοι. Η διαδικασία δημιουργίας ενός νέου τόμου "
+"Δεν επιλέχθηκαν φυσικοί τόμοι. Η δημιουργία μιας νέας ομάδας τόμων "
 "εγκαταλείφθηκε."
 
 #. Type: error
@@ -394,21 +399,21 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:29001
 msgid "No volume group name entered"
-msgstr "Δε δόθηκε όνομα Ομάδας Τόμων"
+msgstr "Δε δόθηκε όνομα ομάδας τόμων"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:29001
 msgid "No name for the volume group has been entered. Please enter a name."
-msgstr "Δε δόθηκε κάποιο όνομα για την Ομάδα Τόμων. Παρακαλώ, δώστε ένα όνομα."
+msgstr "Δε δόθηκε κάποιο όνομα για την ομάδα τόμων. Παρακαλώ, δώστε ένα όνομα."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:30001
 msgid "Volume group name already in use"
-msgstr "Το όνομα αυτό της Ομάδας Τόμων χρησιμοποιείται ήδη"
+msgstr "Το όνομα της ομάδας τόμων χρησιμοποιείται ήδη"
 
 #. Type: error
 #. Description
@@ -418,7 +423,7 @@ msgid ""
 "The selected volume group name is already in use. Please choose a different "
 "name."
 msgstr ""
-"Το επιλεγμένο όνομα Ομάδας Τόμων χρησιμοποιείται ήδη. Παρακαλώ, διαλέξτε ένα "
+"Το επιλεγμένο όνομα ομάδας τόμων χρησιμοποιείται ήδη. Παρακαλώ, διαλέξτε ένα "
 "διαφορετικό όνομα."
 
 #. Type: error
@@ -426,7 +431,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:31001
 msgid "Volume group name overlaps with device name"
-msgstr "Το όνομα της Ομάδας Τόμων επικαλύπτεται με το όνομα της μονάδας"
+msgstr "Το όνομα της ομάδας τόμων επικαλύπτεται με το όνομα της συσκευής"
 
 #. Type: error
 #. Description
@@ -436,7 +441,7 @@ msgid ""
 "The selected volume group name overlaps with an existing device name. Please "
 "choose a different name."
 msgstr ""
-"Το επιλεγμένο όνομα Ομάδας Τόμων επικαλύπτεται με το όνομα μιας υπάρχουσας "
+"Το επιλεγμένο όνομα ομάδας τόμων επικαλύπτεται με το όνομα μιας υπάρχουσας "
 "συσκευής. Παρακαλώ, διαλέξτε ένα διαφορετικό όνομα."
 
 #. Type: error
@@ -444,7 +449,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:32001
 msgid "Error while creating volume group"
-msgstr "Σφάλμα κατά τη διαγραφή της Ομάδας Τόμων"
+msgstr "Σφάλμα κατά τη δημιουργία ομάδας τόμων"
 
 #. Type: error
 #. Description
@@ -481,14 +486,14 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:33001
 msgid "Volume group to delete:"
-msgstr "Ομάδα Τόμων προς διαγραφή:"
+msgstr "Ομάδα τόμων προς διαγραφή:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:33001
 msgid "Please select the volume group you wish to delete."
-msgstr "Επιλέξτε το όνομα της Ομάδας Τόμων που επιθυμείτε να διαγράψετε."
+msgstr "Επιλέξτε το όνομα της ομάδας τόμων που επιθυμείτε να διαγράψετε."
 
 #. Type: error
 #. Description
@@ -505,7 +510,7 @@ msgstr "Επιλέξτε το όνομα της Ομάδας Τόμων που �
 #: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
 #: ../partman-lvm.templates:42001 ../partman-lvm.templates:47001
 msgid "No volume group found"
-msgstr "Δε βρέθηκε Ομάδα Τόμων"
+msgstr "Δε βρέθηκε ομάδα τόμων"
 
 #. Type: error
 #. Description
@@ -519,35 +524,35 @@ msgstr "Δε βρέθηκε Ομάδα Τόμων"
 #: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
 #: ../partman-lvm.templates:42001
 msgid "No volume group has been found."
-msgstr "Δε βρέθηκε Ομάδα Τόμων."
+msgstr "Δε βρέθηκε ομάδα τόμων."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:34001
 msgid "The volume group may have already been deleted."
-msgstr "Η Ομάδα Τόμων πιθανόν έχει ήδη διαγραφεί."
+msgstr "Η ομάδα τόμων πιθανόν έχει ήδη διαγραφεί."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:35001
 msgid "Really delete the volume group?"
-msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε την Ομάδα Τόμων;"
+msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε την ομάδα τόμων;"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:35001
 msgid "Please confirm the ${VG} volume group removal."
-msgstr "Παρακαλώ, επιβεβαιώστε την διαγραφή της Ομάδας Τόμων ${VG}."
+msgstr "Παρακαλώ, επιβεβαιώστε την διαγραφή της ομάδας τόμων ${VG}."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:36001
 msgid "Error while deleting volume group"
-msgstr "Σφάλμα κατά τη διαγραφή της Ομάδας Τόμων"
+msgstr "Σφάλμα κατά τη διαγραφή της ομάδας τόμων"
 
 #. Type: error
 #. Description
@@ -557,36 +562,36 @@ msgid ""
 "The selected volume group could not be deleted. One or more logical volumes "
 "may currently be in use."
 msgstr ""
-"Δεν ήταν δυνατή η διαγραφή της επιλεγμένης Ομάδα Τόμων. Ίσως κάποιος Λογικός "
-"Τόμος είναι ακόμη σε χρήση."
+"Δεν ήταν δυνατή η διαγραφή της επιλεγμένης ομάδας τόμων. Ίσως κάποιος "
+"λογικός τόμος είναι ακόμη σε χρήση."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:37001
 msgid "No volume group can be deleted."
-msgstr "Δεν είναι δυνατή η διαγραφή κάποιας Ομάδας Τόμων."
+msgstr "Δεν είναι δυνατή η διαγραφή κάποιας ομάδας τόμων."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:38001
 msgid "Volume group to extend:"
-msgstr "Ομάδα Τόμων προς επέκταση:"
+msgstr "Ομάδα τόμων προς επέκταση:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:38001
 msgid "Please select the volume group you wish to extend."
-msgstr "Επιλέξτε την Ομάδα Τόμων που θέλετε να επεκτείνετε."
+msgstr "Επιλέξτε την ομάδα τόμων που θέλετε να επεκτείνετε."
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:39001
 msgid "Devices to add to the volume group:"
-msgstr "Μονάδες για πρόσθεση στην Ομάδα Τόμων:"
+msgstr "Συσκευές για προσθήκη στην ομάδα τόμων:"
 
 #. Type: multiselect
 #. Description
@@ -594,7 +599,7 @@ msgstr "Μονάδες για πρόσθεση στην Ομάδα Τόμων:"
 #: ../partman-lvm.templates:39001
 msgid "Please select the devices you wish to add to the volume group."
 msgstr ""
-"Παρακαλώ, επιλέξτε τις μονάδες που θέλετε να προσθέσετε στην Ομάδα Τόμων."
+"Παρακαλώ, επιλέξτε τις συσκευές που θέλετε να προσθέσετε στην ομάδα τόμων."
 
 #. Type: error
 #. Description
@@ -604,15 +609,14 @@ msgid ""
 "No physical volumes were selected. Extension of the volume group has been "
 "aborted."
 msgstr ""
-"Δεν επιλέχθηκαν φυσικοί τόμοι. Η διαδικασία επέκτασης της Ομάδας Τόμων "
-"εγκαταλείφθηκε."
+"Δεν επιλέχθηκαν φυσικοί τόμοι. Η επέκταση της ομάδας τόμων εγκαταλείφθηκε."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:41001
 msgid "Error while extending volume group"
-msgstr "Σφάλμα κατά την επέκταση της Ομάδας Τόμων"
+msgstr "Σφάλμα κατά την επέκταση της ομάδας τόμων"
 
 #. Type: error
 #. Description
@@ -622,29 +626,29 @@ msgid ""
 "The physical volume ${PARTITION} could not be added to the selected volume "
 "group."
 msgstr ""
-"Δεν ήταν δυνατή η προσθήκη της φυσικής μονάδας ${PARTITION} στην επιλεγμένη "
-"Ομάδα Τόμων."
+"Δεν ήταν δυνατή η προσθήκη του φυσικού τόμου ${PARTITION} στην επιλεγμένη "
+"ομάδα τόμων."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:42001
 msgid "No volume group can be reduced."
-msgstr "Δεν είναι δυνατή η σμίκρυνση των Ομάδων Τόμων."
+msgstr "Δεν είναι δυνατή η σμίκρυνση των ομάδων τόμων."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:43001
 msgid "Volume group to reduce:"
-msgstr "Ομάδα Τόμων προς σμίκρυνση:"
+msgstr "Ομάδα τόμων προς σμίκρυνση:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:43001
 msgid "Please select the volume group you wish to reduce."
-msgstr "Επιλέξτε την Ομάδα Τόμων που θέλετε να σμικρύνετε."
+msgstr "Επιλέξτε την ομάδα τόμων που θέλετε να σμικρύνετε."
 
 #. Type: multiselect
 #. Description
@@ -668,15 +672,15 @@ msgstr ""
 msgid ""
 "No physical volumes were selected. Reduction of the volume group was aborted."
 msgstr ""
-"Δεν επιλέχθηκαν φυσικοί τόμοι. Η διαδικασία συρίκνωσης της ομάδας τόμων "
-"ακυρώθηκε."
+"Δεν επιλέχθηκαν φυσικοί τόμοι. Η διαδικασία σμίκρυνσης της ομάδας τόμων "
+"εγκαταλείφθηκε."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
 msgid "Error while reducing volume group"
-msgstr "Σφάλμα κατά της σμίκρυνσης της Ομάδας Τόμων"
+msgstr "Σφάλμα κατά την σμίκρυνση της ομάδας τόμων"
 
 #. Type: error
 #. Description
@@ -686,8 +690,8 @@ msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
 msgstr ""
-"Δεν ήταν δυνατή η προσθήκη της φυσικής μονάδας ${PARTITION} στην επιλεγμένη "
-"Ομάδα Τόμων."
+"Δεν ήταν δυνατή η αφαίρεση του φυσικού τόμου ${PARTITION} από την επιλεγμένη "
+"ομάδα τόμων."
 
 #. Type: error
 #. Description
@@ -707,7 +711,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:48001
 msgid "Logical volume name:"
-msgstr "Όνομα του Λογικού Τόμου:"
+msgstr "Όνομα λογικού τόμου:"
 
 #. Type: string
 #. Description
@@ -715,14 +719,14 @@ msgstr "Όνομα του Λογικού Τόμου:"
 #: ../partman-lvm.templates:48001
 msgid "Please enter the name you would like to use for the new logical volume."
 msgstr ""
-"Δώστε το όνομα που θα θέλατε να χρησιμοποιήσετε για το νέο Λογικό Τόμο."
+"Δώστε το όνομα που θα θέλατε να χρησιμοποιήσετε για το νέο λογικό τόμο."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:49001
 msgid "Volume group:"
-msgstr "Ομάδα Τόμων:"
+msgstr "Ομάδα τόμων:"
 
 #. Type: select
 #. Description
@@ -731,22 +735,22 @@ msgstr "Ομάδα Τόμων:"
 msgid ""
 "Please select the volume group where the new logical volume should be "
 "created."
-msgstr "Επιλέξτε την Ομάδα Τόμων στην οποία θα ανήκει ο νέος Λογικός Τόμος."
+msgstr ""
+"Επιλέξτε την ομάδα τόμων στην οποία θα δημιουργηθεί ο νέος λογικός τόμος."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
 msgid "No logical volume name entered"
-msgstr "Δε δόθηκε όνομα του Λογικού Τόμου"
+msgstr "Δε δόθηκε όνομα του λογικού τόμου"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
 msgid "No name for the logical volume has been entered. Please enter a name."
-msgstr ""
-"Δεν δώθηκε κάποιο όνομα για το λογικό τόμο. Παρακαλώ εισάγετε ένα όνομα."
+msgstr "Δεν δόθηκε όνομα για τον λογικό τόμο. Παρακαλώ εισάγετε ένα όνομα."
 
 #. Type: error
 #. Description
@@ -756,7 +760,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:51001 ../partman-lvm.templates:53001
 msgid "Error while creating a new logical volume"
-msgstr "Σφάλμα κατά τη δημιουργία του νέου Λογικού Τόμου"
+msgstr "Σφάλμα κατά τη δημιουργία του νέου λογικού τόμου"
 
 #. Type: error
 #. Description
@@ -766,15 +770,15 @@ msgid ""
 "The name ${LV} is already in use by another logical volume on the same "
 "volume group (${VG})."
 msgstr ""
-"Το όνομα ${LV} χρησιμοποιείται ήδη από άλλο Λογικό Τόμο στην ίδια Ομάδα "
-"Τόμων (${VG})."
+"Το όνομα ${LV} χρησιμοποιείται ήδη από άλλο λογικό τόμο στην ίδια ομάδα "
+"τόμων (${VG})."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:52001
 msgid "Logical volume size:"
-msgstr "Μέγεθος Λογικού Τόμου:"
+msgstr "Μέγεθος λογικού τόμου:"
 
 #. Type: string
 #. Description
@@ -785,7 +789,7 @@ msgid ""
 "the following formats: 10K (Kilobytes), 10M (Megabytes), 10G (Gigabytes), "
 "10T (Terabytes). The default unit is Megabytes."
 msgstr ""
-"Δώστε το μέγεθος του νέου Λογικού Τόμου. Το μέγεθος μπορεί να δοθεί σε μία "
+"Δώστε το μέγεθος του νέου λογικού τόμου. Το μέγεθος μπορεί να δοθεί σε μία "
 "από τις ακόλουθες μορφές: 10K (Kilobytes), 10M (Megabytes), 10G (Gigabytes), "
 "10T (Terabytes). Η προεπιλεγμένη μονάδα μεγέθους είναι Megabytes."
 
@@ -797,15 +801,15 @@ msgid ""
 "Unable to create a new logical volume (${LV}) on ${VG} with the new size "
 "${SIZE}."
 msgstr ""
-"Δεν ήταν δυνατή η δημιουργία του νέου Λογικού Τόμου (${LV}) στην Ομάδα ${VG} "
-"με μέγεθος ${SIZE}."
+"Δεν ήταν δυνατή η δημιουργία του νέου λογικού τόμου (${LV}) στην ομάδα ${VG} "
+"με νέο μέγεθος ${SIZE}."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
 msgid "No logical volume found"
-msgstr "Δε βρέθηκαν Λογικοί Τόμοι"
+msgstr "Δε βρέθηκε λογικός τόμος"
 
 #. Type: error
 #. Description
@@ -813,7 +817,7 @@ msgstr "Δε βρέθηκαν Λογικοί Τόμοι"
 #: ../partman-lvm.templates:54001
 msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
-"Δεν βρέθηκε κάποιος λογικός τόμος. Παρακαλώ δημιουργήστε πρώτα ένανλογικό "
+"Δεν βρέθηκε κάποιος λογικός τόμος. Παρακαλώ δημιουργήστε πρώτα έναν λογικό "
 "τόμο."
 
 #. Type: select
@@ -821,7 +825,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:55001
 msgid "Logical volume:"
-msgstr "Λογικός Τόμος:"
+msgstr "Λογικός τόμος:"
 
 #. Type: select
 #. Description
@@ -842,7 +846,7 @@ msgstr "στην ομάδα τόμων ${VG}"
 #. :sl3:
 #: ../partman-lvm.templates:57001
 msgid "Error while deleting the logical volume"
-msgstr "Σφάλμα κατά τη διαγραφή του Λογικού Τόμου"
+msgstr "Σφάλμα κατά τη διαγραφή του λογικού τόμου"
 
 #. Type: error
 #. Description
@@ -867,18 +871,17 @@ msgid ""
 "physical volumes may already be in use. You may also need to load some "
 "required kernel modules or re-partition the hard drives."
 msgstr ""
-"Δε βρέθηκαν χρησιμοποιήσιμοι φυσικοί τόμοι (δηλ. κατατμήσεις) στο σύστημά "
-"σας. Πιθανόν όλοι οι φυσικοί τόμοι είναι ήδη σε χρήση. Πιθανόν να πρέπει "
-"επίσης να φορτώσετε τα απαραίτητα αρθρώματα του πυρήνα, ή να "
-"επαναδιαμερίσετε τους σκληρούς σας δίσκους."
+"Δε βρέθηκαν φυσικοί τόμοι (δηλ. κατατμήσεις) στο σύστημά σας. Πιθανόν όλοι "
+"οι φυσικοί τόμοι να είναι ήδη σε χρήση. Ίσως να πρέπει επίσης να φορτώσετε "
+"τα απαραίτητα αρθρώματα του πυρήνα ή να επαναδιαμερίσετε τους σκληρούς "
+"δίσκους."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:59001
 msgid "Logical Volume Manager not available"
-msgstr ""
-"Δεν είναι διαθέσιμος ο Διαχειριστής Λογικών Τόμων (Logical Volume Manager)"
+msgstr "Δεν είναι διαθέσιμος ο διαχειριστής λογικών τόμων"
 
 #. Type: error
 #. Description
@@ -888,9 +891,8 @@ msgid ""
 "The current kernel doesn't support the Logical Volume Manager. You may need "
 "to load the lvm-mod module."
 msgstr ""
-"Ο τρέχων πυρήνας δεν υποστηρίζει Διαχείριση Λογικών Τόμων (LVM). Πιθανόν να "
-"χρειάζεται να φορτώσετε το άρθρωμα lvm-mod για την ενεργοποίηση αυτής της "
-"λειτουργίας."
+"Ο τρέχων πυρήνας δεν υποστηρίζει τον διαχειριστή λογικών τόμων. Πιθανόν να "
+"χρειάζεται να φορτώσετε το άρθρωμα lvm-mod."
 
 #. Type: error
 #. Description
@@ -925,7 +927,7 @@ msgid ""
 "\"snapshot\"."
 msgstr ""
 "Τα ονόματα των λογικών τόμων ή της ομάδας τόμων μπορούν να περιέχουν μόνο "
-"αλφαριθμητικούς χαρακτήρες, παύλες, συν, τελείες και υποδείκτες. Πρέπει να "
+"αλφαριθμητικούς χαρακτήρες, παύλα, συν, τελεία και κάτω παύλα. Πρέπει να "
 "έχουν 128 χαρακτήρες ή λιγότερους και να μην ξεκινούν με παύλα. Δεν "
 "επιτρέπονται τα ονόματα \".\" και \"..\". Επιπλέον, τα ονόματα των λογικών "
 "τόμων δεν θα πρέπει να ξεκινούν με το \"snapshot\"."
@@ -942,7 +944,7 @@ msgstr "Παρακαλώ επιλέξτε ένα διαφορετικό όνομ
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Remove existing logical volume data?"
-msgstr "Να απομακρυνθούν όλα τα δεδομένα του λογικού τόμου;"
+msgstr "Να αφαιρεθούν όλα τα δεδομένα του λογικού τόμου;"
 
 #. Type: boolean
 #. Description
@@ -967,7 +969,7 @@ msgstr "Λογικοί τόμοι που πρόκειται να αφαιρεθ�
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Volume group(s) to be removed: ${VGTARGETS}"
-msgstr "Ομάδα Τόμων που πρόκειται να διαγραφούν: ${VGTARGETS}"
+msgstr "Ομάδα τόμων που πρόκειται να αφαιρεθούν: ${VGTARGETS}"
 
 #. Type: boolean
 #. Description
@@ -1004,17 +1006,17 @@ msgid ""
 "automatically. If you wish to use this device for partitioning, please "
 "remove its LVM data first."
 msgstr ""
-"Επειδή οι ομάδες τόμων στην επιλεγμένη συσκευή συνίστανται από φυσικούς "
-"τόμους σε άλλες συσκευές, δεν θεωρείται ασφαλές να αφαιρεθούν αυτόματα τα "
-"δεδομένα LVM από αυτές. Αν θέλετε να χρησιμοποιήσετε αυτή τη συσκευή για "
-"διαμέριση, παρακαλώ αφαιρέστε πρώτα τα δεδομένα LVM."
+"Επειδή οι ομάδες τόμων στην επιλεγμένη συσκευή αποτελούνται επίσης από "
+"φυσικούς τόμους σε άλλες συσκευές, δεν θεωρείται ασφαλές να αφαιρεθούν "
+"αυτόματα τα δεδομένα LVM από αυτές. Αν θέλετε να χρησιμοποιήσετε αυτή τη "
+"συσκευή για διαμέριση, παρακαλώ αφαιρέστε πρώτα τα δεδομένα LVM."
 
 #. Type: note
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
 msgid "Logical Volume Management"
-msgstr "Διαχείριση Λογικών Τόμων"
+msgstr "Διαχείριση λογικών τόμων"
 
 #. Type: note
 #. Description
@@ -1027,7 +1029,7 @@ msgid ""
 "this."
 msgstr ""
 "Μια συνηθισμένη κατάσταση για διαχειριστές συστημάτων είναι να ανακαλύπτουν "
-"ότι κάποια κατάτμηση ενός δίσκου (συνήθως η σημαντικότερη!) έχει λίγο "
+"ότι κάποια κατάτμηση ενός δίσκου (συνήθως η σημαντικότερη) έχει λίγο "
 "ελεύθερο χώρο, ενώ κάποια άλλη χρησιμοποιείται ελάχιστα. Η διαχείριση "
 "λογικών τόμων (LVM) μπορεί να βοηθήσει σ' αυτό."
 
@@ -1046,7 +1048,7 @@ msgstr ""
 "Η διαχείριση λογικών τόμων επιτρέπει τον συνδυασμό συσκευών δίσκων ή "
 "κατατμήσεων (\"φυσικών τόμων\") για την δημιουργία ενός εικονικού δίσκου "
 "(\"ομάδας τόμων\"), που μπορεί στη συνέχεια να διαιρεθεί σε εικονικές "
-"κατατμήσεις (\"λογικούς τόμους\"). Οι ομάδες δίσκων και οι λογικοί τόμοι "
+"κατατμήσεις (\"λογικούς τόμους\"). Οι ομάδες τόμων και οι λογικοί τόμοι "
 "μπορούν να εκτείνονται σε πολλαπλούς φυσικούς δίσκους. Καινούριοι φυσικοί "
 "τόμοι μπορούν να προστεθούν σε μια ομάδα τόμων σε οποιαδήποτε χρονική στιγμή "
 "και το μέγεθος των λογικών τόμων μπορεί να προσαρμοστεί και να καταλάβει τον "
@@ -1062,7 +1064,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
-"Τα στοιχεία στο μενού διαμόρφωσης της Διαχείρισης λογικών τόμων μπορούν να "
+"Τα στοιχεία στο μενού διαμόρφωσης της διαχείρισης λογικών τόμων μπορούν να "
 "χρησιμοποιηθούν για τη ρύθμιση ομάδων τόμων και λογικών τόμων. Μετά την "
 "επιστροφή σας στην κύρια οθόνη του διαχειριστή διαμέρισης, οι λογικοί τόμοι "
 "θα εμφανιστούν με τον ίδιο τρόπο που εμφανίζονται οι συνηθισμένες "

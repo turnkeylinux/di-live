@@ -11,6 +11,10 @@
 # Abdelhak Bougouffa, 2017.
 # najib LAARIBI <supnano@gmail.com>, 2018.
 # ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
+# Osama <osama.ibrahim.89@gmail.com>, 2019.
+# zer0-x <ProFessorHassan3@gmail.com>, 2021.
+# Fahim Sabah <katheer.kaleel@gmail.com>, 2021.
+#
 #
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
@@ -26,9 +30,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2019-02-22 14:15+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2021-04-01 14:26+0000\n"
+"Last-Translator: Fahim Sabah <katheer.kaleel@gmail.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -93,6 +97,7 @@ msgstr "بدون"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -757,7 +762,7 @@ msgid ""
 "10T (Terabytes). The default unit is Megabytes."
 msgstr ""
 "الرجاء إدخال حجم الكتلة الافتراضيّة الجديدة. يمكنك إدخال الحجم حسب الأنساق "
-"التّالية:  10K (كيلوبايت)، 10M (ميجابايت)، 10G (جيجابايت)، 10T (تيرابايت). "
+"التّالية: 10K (كيلوبايت)، 10M (ميجابايت)، 10G (جيجابايت)، 10T (تيرابايت). "
 "الوحدة الافتراضيّة هي الميجابايت."
 
 #. Type: error

@@ -3,63 +3,52 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Norwegian Nynorsk translation of debian-installer.
-# Copyright (C) 2003–2010 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
+# Kabyle translation for debian-installer
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the debian-installer package.
+# Slimane Selyan Amiri <selyan.kab@gmail.com>, 2020, 2021.
 #
-# Håvard Korsvoll <korsvoll@skulelinux.no>, 2004, 2005, 2006, 2007, 2008.
-# Eirik U. Birkeland <eirbir@gmail.com>, 2010.
-#
-# Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Free Software Foundation, Inc., 2001, 2004.
-#   Håvard Korsvoll <korsvoll@gmail.com>, 2004,2006, 2007.
-#   Karl Ove Hufthammer <karl@huftis.org>, 2003-2004, 2006. (New translation done from scratch.).
-#   Kjartan Maraas  <kmaraas@gnome.org>, 2001.
-#   Roy-Magne Mo <rmo@sunnmore.net>, 2001.
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
 msgid ""
 msgstr ""
-"Project-Id-Version: nn\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
 "POT-Creation-Date: 2019-09-26 22:05+0000\n"
-"PO-Revision-Date: 2017-11-24 15:19+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
-"Language: nn\n"
+"PO-Revision-Date: 2021-01-22 00:39+0000\n"
+"Last-Translator: Selyan Sliman Amiri <selyan.kab@gmail.com>\n"
+"Language-Team: Kabyle <kab@li.org>\n"
+"Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:1001
 msgid "Unallocated physical volumes:"
-msgstr "Ikkje tilordna fysiske dataområde:"
+msgstr "Iblaɣen iɣaranen ur nettuḥarr ara:"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:2001
 msgid "Volume groups:"
-msgstr "Gruppert dataområde:"
+msgstr "Igrawen n ubleɣ:"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:3001
 msgid "Uses physical volume:"
-msgstr "Brukar fysisk dataområde:"
+msgstr "Isseqdac ableɣ aɣaran:"
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:4001
 msgid "Provides logical volume:"
-msgstr "Inneheld logisk dataområde:"
+msgstr "Yettmuddu ableɣ ameẓẓul:"
 
 #. Type: text
 #. Description
@@ -70,7 +59,10 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Physical Volumes:\" ]"
-msgstr "Ingen"
+msgstr ""
+"none[ Ur ssuqul ara ayen yellan gar yikrucciyen, err kan tasuqilt n wawal "
+"\"none\" deg tutlayt-inek·inem war ikrucciyen. \"none\"-agi yeɛna \"Physical "
+"Volumes:\" ]"
 
 #. Type: text
 #. Description
@@ -81,7 +73,10 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Volume Groups:\" ]"
-msgstr "Ingen"
+msgstr ""
+"none[ Ur ssuqul ara ayen yellan gar yikrucciyen, err kan tasuqilt n wawal "
+"\"none\" deg tutlayt-inek·inem war ikrucciyen. \"none\"-agi yeɛna \"Physical "
+"Volumes:\" ]"
 
 #. Type: text
 #. Description
@@ -93,7 +88,7 @@ msgstr "Ingen"
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
-msgstr "Set opp den logiske volumstyringa"
+msgstr "Swel amsefrak n ubleɣ ameẓẓul"
 
 #. Type: text
 #. Description
@@ -101,7 +96,7 @@ msgstr "Set opp den logiske volumstyringa"
 #. Translators: use the acronym for "Physical Volume" in your language here
 #: ../partman-lvm.templates:8001
 msgid "PV"
-msgstr "FD"
+msgstr "AZAL.AMIRAN"
 
 #. Type: text
 #. Description
@@ -109,7 +104,7 @@ msgstr "FD"
 #. What is "in use" is a partition
 #: ../partman-lvm.templates:9001
 msgid "In use by LVM volume group ${VG}"
-msgstr "Er brukt i det grupperte LVM-dataområdet ${VG}"
+msgstr "Isseqdac-it ugraw n ubleɣ LVM ${VG}"
 
 #. Type: text
 #. Description
@@ -118,7 +113,7 @@ msgstr "Er brukt i det grupperte LVM-dataområdet ${VG}"
 #. Use infinitive form
 #: ../partman-lvm.templates:10001
 msgid "Display configuration details"
-msgstr "Vis oppsettsdetaljar"
+msgstr "Sken talqayt n twila"
 
 #. Type: text
 #. Description
@@ -127,7 +122,7 @@ msgstr "Vis oppsettsdetaljar"
 #. Use infinitive form
 #: ../partman-lvm.templates:11001
 msgid "Create volume group"
-msgstr "Opprette gruppert dataområde"
+msgstr "Snulfu-d agraw n ubleɣ"
 
 #. Type: text
 #. Description
@@ -136,7 +131,7 @@ msgstr "Opprette gruppert dataområde"
 #. Use infinitive form
 #: ../partman-lvm.templates:12001
 msgid "Delete volume group"
-msgstr "Slette gruppert dataområde"
+msgstr "Kkes agraw n ubleɣ"
 
 #. Type: text
 #. Description
@@ -145,7 +140,7 @@ msgstr "Slette gruppert dataområde"
 #. Use infinitive form
 #: ../partman-lvm.templates:13001
 msgid "Extend volume group"
-msgstr "Utvida gruppert dataområde"
+msgstr "Siɣzef agraw n ubleɣ"
 
 #. Type: text
 #. Description
@@ -154,7 +149,7 @@ msgstr "Utvida gruppert dataområde"
 #. Use infinitive form
 #: ../partman-lvm.templates:14001
 msgid "Reduce volume group"
-msgstr "Redusere gruppert dataområde"
+msgstr "Semẓẓi agraw n ubleɣ"
 
 #. Type: text
 #. Description
@@ -163,7 +158,7 @@ msgstr "Redusere gruppert dataområde"
 #. Use infinitive form
 #: ../partman-lvm.templates:15001
 msgid "Create logical volume"
-msgstr "Opprette logisk dataområde"
+msgstr "Snulfu-d ableɣ ameẓẓul"
 
 #. Type: text
 #. Description
@@ -172,7 +167,7 @@ msgstr "Opprette logisk dataområde"
 #. Use infinitive form
 #: ../partman-lvm.templates:16001
 msgid "Delete logical volume"
-msgstr "Slette logisk dataområde"
+msgstr "KKes ableɣ ameẓẓul"
 
 #. Type: text
 #. Description
@@ -181,27 +176,26 @@ msgstr "Slette logisk dataområde"
 #. Use infinitive form
 #: ../partman-lvm.templates:17001
 msgid "Finish"
-msgstr "Ferdig"
+msgstr "Fakk"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:18001
 msgid "Write the changes to disks and configure LVM?"
-msgstr "Skrive endringane til disk og setje opp logisk volumstyring?"
+msgstr "Aru isnifal ɣef yiḍebsiyen syen swel LVM?"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:18001
-#, fuzzy
 msgid ""
 "Before the Logical Volume Manager can be configured, the current "
 "partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Før den logiske volumstyringa kan setjast opp må partisjoneringsoppsettet "
-"skrivast til harddisk. Desse endringane kan ikkje angrast."
+"Send amsefrak n ubleɣ ameẓẓul ad yettuswel, azenziɣ n beṭṭu amiran ilaq ad "
+"yettwaru ɣef uḍebsi. Isenfal-a ur zmiren ara ad ttwasfesxen."
 
 #. Type: boolean
 #. Description
@@ -213,17 +207,16 @@ msgid ""
 "the installation. Please decide if you are satisfied with the current "
 "partitioning scheme before continuing."
 msgstr ""
-"Når oppsettet av den logiske volumstyringa er ferdig kan du ikkje gjere "
-"fleire endringar på partisjonar på harddiskar som inneheld fysiske volum. "
-"Forviss deg om at du er nøgd med den gjeldande partisjoneringa før du held "
-"fram."
+"Mi ara yettuswel umsefrak n ubleɣ ameẓẓul, ulac isenfal-nniḍen n uzenziɣ n "
+"beṭṭu n yiḍebsiyen ideg llan iblaɣen iɣaranen yettusirgen deg usebded. Ttxil-"
+"k·m wali ma yella iɛǧeb-ak·am uzenziɣ-a n beṭṭu send ad tkemmleḍ."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:19001
 msgid "Keep current partition layout and configure LVM?"
-msgstr "Halde på noverande partisjonsoppsett og setje opp logisk volumstyring?"
+msgstr "Eǧǧ taneɣruft tamirant n uḥric syen swel LVM?"
 
 #. Type: boolean
 #. Description
@@ -235,38 +228,37 @@ msgid ""
 "decide if you are satisfied with the current partitioning scheme in these "
 "disks before continuing."
 msgstr ""
-"Når den logiske volumstyringa er sett opp kan du ikkje gjere fleire "
-"endringar på partisjonar på harddiskar som inneheld fysiske volum. Forviss "
-"deg om at du er nøgd med den gjeldande partisjoneringa på desse harddiskane "
-"før du held fram."
+"Mi ara yettuswel umsefrak n ubleɣ ameẓẓul, ulac isenfal-nniḍen n yiḥricen "
+"deg yiḍebsiyen ideg llan iblaɣen iɣaranen i yettusirgen. Ttxil-k·m wali ma "
+"yella iɛǧeb-ak·am uzenziɣ-a n beṭṭu send ad tkemmleḍ."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "LVM configuration failure"
-msgstr "Oppsett av logisk volumstyring feila"
+msgstr "Tawila n LVM ur teddi ara"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "An error occurred while writing the changes to the disks."
-msgstr "Ein feil oppsto ved skriving av endringar til diskane."
+msgstr "Tella-d tuccḍa lawan n tira n yisnifal ɣef yiḍebsiyen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "Logical Volume Manager configuration has been aborted."
-msgstr "Oppsett av handterar for logisk dataområde er blitt avbrote."
+msgstr "Tawila n umsefrak n ubleɣ ameẓẓul tettwanef."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:21001
 msgid "physical volume for LVM"
-msgstr "fysisk volum for logisk volumstyring"
+msgstr "ableɣ aɣaran i LVM"
 
 #. Type: text
 #. Description
@@ -274,21 +266,21 @@ msgstr "fysisk volum for logisk volumstyring"
 #. keep it short (ideally a 3-letter acronym)
 #: ../partman-lvm.templates:22001
 msgid "lvm"
-msgstr "logisk volumstyring"
+msgstr "lvm"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:24001
 msgid "LVM configuration action:"
-msgstr "Handlingar for oppsett av LVM:"
+msgstr "Tigawt n twila n LVM:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:24001
 msgid "Summary of current LVM configuration:"
-msgstr "Samandrag av gjeldande LVM-oppsett:"
+msgstr "Agzul n twila tamirant n LVM:"
 
 #. Type: select
 #. Description
@@ -300,31 +292,31 @@ msgid ""
 " Volume Groups:          ${VGS}\n"
 " Logical Volumes:        ${LVS}"
 msgstr ""
-" Frie fysiske område:    ${FREE_PVS}\n"
-" Brukte fysiske område:  ${USED_PVS}\n"
-" Grupperte dataområde:   ${VGS}\n"
-" Logiske dataområde:     ${LVS}"
+" Iblaɣen iɣaranen ilelliyen:     ${FREE_PVS}\n"
+" Iblaɣen iɣaranen yettwasqedcen: ${USED_PVS}\n"
+" Igrawen n ubleɣ:                ${VGS}\n"
+" Iblaɣen imeẓlanen:              ${LVS}"
 
 #. Type: note
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:25001
 msgid "Current LVM configuration:"
-msgstr "Gjeldande LVM-oppsett:"
+msgstr "Tawila tamirant n LVM:"
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:26001
 msgid "Devices for the new volume group:"
-msgstr "Einingar for den nye gruppert dataområdet:"
+msgstr "Ibenkan i ugraw n ubleɣ amaynut:"
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:26001
 msgid "Please select the devices for the new volume group."
-msgstr "Vel einingane for det nye grupperte dataområdet."
+msgstr "Ttxil-k·m fren ibenkan i ugraw n ubleɣ amaynut."
 
 #. Type: multiselect
 #. Description
@@ -338,21 +330,22 @@ msgstr "Vel einingane for det nye grupperte dataområdet."
 #: ../partman-lvm.templates:26001 ../partman-lvm.templates:39001
 #: ../partman-lvm.templates:44001
 msgid "You can select one or more devices."
-msgstr "Du kan velje ei eller fleire einingar."
+msgstr "Tzemreḍ ad tferneḍ yiwen neɣ ugar n yibenkan."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:27001
 msgid "Volume group name:"
-msgstr "Namn på det grupperte dataområdet:"
+msgstr "Isem n ugraw n ubleɣ:"
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:27001
 msgid "Please enter the name you would like to use for the new volume group."
-msgstr "Skriv inn namnet du vil bruke på det nye grupperte dataområdet."
+msgstr ""
+"Ma ulac aɣilif, sekcem isem i tebɣiḍ ad t-tesqedceḍ i ugraw n ubleɣ amaynut."
 
 #. Type: error
 #. Description
@@ -366,7 +359,7 @@ msgstr "Skriv inn namnet du vil bruke på det nye grupperte dataområdet."
 #: ../partman-lvm.templates:28001 ../partman-lvm.templates:40001
 #: ../partman-lvm.templates:45001
 msgid "No physical volumes selected"
-msgstr "Ingen fysiske dataområde valt"
+msgstr "Ulac iblaɣen iɣaranen i yettwafen"
 
 #. Type: error
 #. Description
@@ -376,31 +369,29 @@ msgid ""
 "No physical volumes were selected. The creation of a new volume group has "
 "been aborted."
 msgstr ""
-"Ingen fysiske dataområde var valt. Opprettinga av det nye grupperte "
-"dataområdet er blitt avbrote."
+"Ulac iblaɣen iɣaranen i yettwafernen. Timerna n ugraw n ubleɣ amaynut "
+"tettwanef."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:29001
 msgid "No volume group name entered"
-msgstr "Manglar namn for gruppert dataområde"
+msgstr "Ulac isem n ugraw n ubleɣ i yettwaskecmen"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:29001
 msgid "No name for the volume group has been entered. Please enter a name."
-msgstr ""
-"Det er ikkje skrive inn noko namn for det grupperte dataområdet. Skriv inn "
-"eit namn."
+msgstr "Ulac isem i yettuskecmen i ugraw n ubleɣ. Ma ulac aɣilif sekcem isem."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:30001
 msgid "Volume group name already in use"
-msgstr "Eit anna gruppert dataområde brukar namnet"
+msgstr "Isem n ugraw n ubleɣ yettuseqdac yakan"
 
 #. Type: error
 #. Description
@@ -410,14 +401,15 @@ msgid ""
 "The selected volume group name is already in use. Please choose a different "
 "name."
 msgstr ""
-"Namnet for grupperte dataområdet er allereie i bruk. Bruk eit anna namn."
+"Isem n ugraw n ubleɣ i yettwafernen ha-t-an la yettuseqdac yakan. Ma ulac "
+"uɣilif, fren isem-nniḍen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:31001
 msgid "Volume group name overlaps with device name"
-msgstr "Namnet på det grupperte dataområdet overlappar med eit einingsnamn"
+msgstr "Isem n ugraw n ubleɣ ad yimyekcam akked yisem n yibenk"
 
 #. Type: error
 #. Description
@@ -427,23 +419,22 @@ msgid ""
 "The selected volume group name overlaps with an existing device name. Please "
 "choose a different name."
 msgstr ""
-"Det valde namnet for det grupperte dataområdet overlappar med eit "
-"eksisterande einingsnamn. Vel eit anna namn."
+"Isem n ugraw n ubleɣ yemmezdi akked yisem n yibenk yellan. Ma ulac aɣilif "
+"fren isem-nniḍen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
-#, fuzzy
 msgid "Error while creating volume group"
-msgstr "Feil under sletting av gruppert dataområde"
+msgstr "Tella-d tuccḍa mi nrennu agraw n ubleɣ"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
 msgid "The volume group ${VG} could not be created."
-msgstr "Klarte ikkje å opprette det grupperte dataområdet ${VG}."
+msgstr "Agraw n ubleɣ ${VG} yegguma ad yettwernu."
 
 #. Type: error
 #. Description
@@ -464,21 +455,21 @@ msgstr "Klarte ikkje å opprette det grupperte dataområdet ${VG}."
 #: ../partman-lvm.templates:53001 ../partman-lvm.templates:57001
 #: ../partman-lvm.templates:60001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "Sjekk /var/log/messages eller sjå virituelt konsoll 4 for detaljar."
+msgstr "Senqed /var/log/syslog neɣ wali tadiwent tuhlist 4 i wugar n telqayt."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:33001
 msgid "Volume group to delete:"
-msgstr "Gruppert dataområde som skal slettast:"
+msgstr "Agraw n ubleɣ ara yettwakksen:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:33001
 msgid "Please select the volume group you wish to delete."
-msgstr "Vel det grupperte dataområdet du vil slette."
+msgstr "Ttxil-k·m fren agraw n ubleɣ i tebɣiḍ ad t-tekkseḍ."
 
 #. Type: error
 #. Description
@@ -495,7 +486,7 @@ msgstr "Vel det grupperte dataområdet du vil slette."
 #: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
 #: ../partman-lvm.templates:42001 ../partman-lvm.templates:47001
 msgid "No volume group found"
-msgstr "Ingen grupperte dataområde funne"
+msgstr "Ulac agraw n ubleɣ i yettwafen"
 
 #. Type: error
 #. Description
@@ -509,35 +500,35 @@ msgstr "Ingen grupperte dataområde funne"
 #: ../partman-lvm.templates:34001 ../partman-lvm.templates:37001
 #: ../partman-lvm.templates:42001
 msgid "No volume group has been found."
-msgstr "Ingen grupperte dataområde funne."
+msgstr "Ulac agraw n ubleɣ i yettwafen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:34001
 msgid "The volume group may have already been deleted."
-msgstr "Det grupperte dataområdet er kanskje sletta allereie."
+msgstr "Agraw n ubleɣ yezmer ad yili yettwakkes yakan."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:35001
 msgid "Really delete the volume group?"
-msgstr "Vil du verkeleg slette det grupperte dataområdet?"
+msgstr "Tebɣiḍ s tidet ad tekkseḍ agraw n ubleɣ?"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:35001
 msgid "Please confirm the ${VG} volume group removal."
-msgstr "Stadfest sletting av det grupperte dataområdet ${VG}."
+msgstr "Ttxil-k·m sentem tukksa n ugraw n ubleɣ ${VG}."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:36001
 msgid "Error while deleting volume group"
-msgstr "Feil under sletting av gruppert dataområde"
+msgstr "Tuccḍa deg tukksa n ugraw n ubleɣ"
 
 #. Type: error
 #. Description
@@ -547,43 +538,43 @@ msgid ""
 "The selected volume group could not be deleted. One or more logical volumes "
 "may currently be in use."
 msgstr ""
-"Den valde grupperte dataområdet kunne ikkje slettast. Ein eller fleire "
-"logiske dataområde er framleis i bruk."
+"Agraw n ubleɣ i yettwafernen yegguma ad yettwakkes. Yiwen neɣ ugar seg "
+"yiblaɣen imeẓẓulen ahat akka tura la ttuseqdacan."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:37001
 msgid "No volume group can be deleted."
-msgstr "Ingen grupperte dataområde kan slettast."
+msgstr "Ulac agraw n ubleɣ i zemren ad yettwakkes."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:38001
 msgid "Volume group to extend:"
-msgstr "Gruppert dataområde som skal utvidast:"
+msgstr "Agraw n ubleɣ ara yettusɣezfen:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:38001
 msgid "Please select the volume group you wish to extend."
-msgstr "Vel det grupperte dataområdet du vil utvida."
+msgstr "Ttxil-k·m fren agraw n ubleɣ i tebɣiḍ ad t-tesɣezfeḍ."
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:39001
 msgid "Devices to add to the volume group:"
-msgstr "Einingar som skal leggjast til det grupperte dataområdet:"
+msgstr "Ibenkan ara yettwarnun ɣer ugraw n ubleɣ:"
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:39001
 msgid "Please select the devices you wish to add to the volume group."
-msgstr "Vel dei einingane du vil leggja til det grupperte dataområdet."
+msgstr "Ttxil-k·m fren ibenkan i tebɣiḍ ad ten-ternuḍ ɣer ugraw n ubleɣ."
 
 #. Type: error
 #. Description
@@ -593,15 +584,14 @@ msgid ""
 "No physical volumes were selected. Extension of the volume group has been "
 "aborted."
 msgstr ""
-"Ingen fysiske dataområde var valt. Utvidinga av det grupperte dataområdet "
-"blei avbrote."
+"Ulac iblaɣen iɣaranen i yettwafernen. Asiɣzef n ugraw n ubleɣ yettwanef."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:41001
 msgid "Error while extending volume group"
-msgstr "Feil under utviding av grupperte dataområde"
+msgstr "Tella-d tuccḍa lawn n usiɣzef n ugraw n ubleɣ"
 
 #. Type: error
 #. Description
@@ -611,43 +601,43 @@ msgid ""
 "The physical volume ${PARTITION} could not be added to the selected volume "
 "group."
 msgstr ""
-"Det fysiske dataområdet ${PARTITION} kunne ikkje leggjast til den valde "
-"grupperte dataområdet."
+"Ableɣ aɣaran ${PARTITION} ur yezmir ara ad yettwernu ɣer ugraw n ubleɣ i "
+"yettwafernen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:42001
 msgid "No volume group can be reduced."
-msgstr "Ingen grupperte dataområde kan reduserast."
+msgstr "Ulac agraw n ubleɣ i izemren ad yettwafneẓ."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:43001
 msgid "Volume group to reduce:"
-msgstr "Gruppert dataområde som skal reduserast:"
+msgstr "Agraw n ubleɣ ara yettufenẓen:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:43001
 msgid "Please select the volume group you wish to reduce."
-msgstr "Vel det grupperte dataområdet du vil redusera."
+msgstr "Ttxil-k·m fren agraw n ubleɣ i tebɣiḍ ad t-tfenẓeḍ."
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:44001
 msgid "Devices to remove from the volume group:"
-msgstr "Einingar som skal fjernast frå det grupperte dataområdet:"
+msgstr "Ibenkan ara yettwakksen qeg ugraw n ubleɣ:"
 
 #. Type: multiselect
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:44001
 msgid "Please select the devices you wish to remove from the volume group."
-msgstr "Vel dei einingane du vil fjerna frå det grupperte dataområdet."
+msgstr "Ttxil-k·m fren ibenkan i tebɣiḍ ad ten-tekkseḍ seg ugraw n ubleɣ."
 
 #. Type: error
 #. Description
@@ -655,16 +645,14 @@ msgstr "Vel dei einingane du vil fjerna frå det grupperte dataområdet."
 #: ../partman-lvm.templates:45001
 msgid ""
 "No physical volumes were selected. Reduction of the volume group was aborted."
-msgstr ""
-"Ingen fysiske dataområde var valt. Reduseringa av det grupperte dataområdet "
-"blei avbrote."
+msgstr "Ulac iblaɣen iɣaranen i yettwafernen. Afnaẓ n ugraw n ubleɣ yettwanef."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:46001
 msgid "Error while reducing volume group"
-msgstr "Feil under reduksjon av gruppert dataområde"
+msgstr "Tella-d tuccḍa lawan n ufnaẓ n ugraw ubleɣ"
 
 #. Type: error
 #. Description
@@ -674,8 +662,8 @@ msgid ""
 "The physical volume ${PARTITION} could not be removed from the selected "
 "volume group."
 msgstr ""
-"Det fysiske dataområdet ${PARTITION} kunne ikkje leggjast til den valde "
-"grupperte dataområdet."
+"Ableɣ aɣaran ${PARTITION} ur yezmir ara ad yettwakkes seg ugraw n ubleɣ i "
+"yettwafernen."
 
 #. Type: error
 #. Description
@@ -686,30 +674,31 @@ msgid ""
 "create more physical volumes and volume groups, or reduce an existing volume "
 "group."
 msgstr ""
-"Ingen ledige grupperte dataområde blei funne for å oppretta eit nytt logisk "
-"dataområde. Opprett fleire fysiske dataområde og grupperte dataområde, eller "
-"reduser eit eksisterande gruppert dataområde."
+"Ulac igrawen n ubleɣ ilelliyen i yettwafen i tmerna n ubleɣ ameẓẓul amaynut. "
+"Ttxil-k·m rnu ugar n yiblaɣen iɣaranen d yigrawen n ubleɣ, neɣ fneẓ agraw n "
+"ubleɣ yellan."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:48001
 msgid "Logical volume name:"
-msgstr "Namn på logisk dataområde:"
+msgstr "Isem n ubleɣ ameẓẓul:"
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:48001
 msgid "Please enter the name you would like to use for the new logical volume."
-msgstr "Skriv inn namnet du vil bruke på det nye logiske dataområdet."
+msgstr ""
+"Ma ulac aɣilif, sekcem isem i tebɣiḍ ad t-tesqedceḍ i ubleɣ ameẓẓul amaynut."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:49001
 msgid "Volume group:"
-msgstr "Gruppert dataområde:"
+msgstr "Agraw n ubleɣ:"
 
 #. Type: select
 #. Description
@@ -719,25 +708,22 @@ msgid ""
 "Please select the volume group where the new logical volume should be "
 "created."
 msgstr ""
-"Vel det grupperte dataområdet der det nye logiske dataområdet skal "
-"opprettast."
+"Ma ulac aɣilif, fren agraw n ubleɣ anida i ilaq ad yettwarnu ubleɣ ameẓẓul "
+"amaynut."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
 msgid "No logical volume name entered"
-msgstr "Manglar namn på logisk dataområde"
+msgstr "Ulac isem n ugraw amuẓẓul i yettuskecmen"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:50001
-#, fuzzy
 msgid "No name for the logical volume has been entered. Please enter a name."
-msgstr ""
-"Det er ikkje skrive inn noko namn for det logiske dataområdet. Skriv inn eit "
-"namn."
+msgstr "Ulac isem i yettuskecmen i ubleɣ ameẓẓul. Ma ulac aɣilif sekcem isem."
 
 #. Type: error
 #. Description
@@ -747,7 +733,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:51001 ../partman-lvm.templates:53001
 msgid "Error while creating a new logical volume"
-msgstr "Feil under oppretting av eit nytt logiske dataområde"
+msgstr "Tuccḍa deg tmerna n ubleɣ ameẓẓul amaynut"
 
 #. Type: error
 #. Description
@@ -757,15 +743,15 @@ msgid ""
 "The name ${LV} is already in use by another logical volume on the same "
 "volume group (${VG})."
 msgstr ""
-"Namnet ${LV} er allereie i bruk av eit anna logisk dataområde i den samme "
-"grupperte dataområdet (${VG})."
+"Isem ${LV} yettuseqdac yakan sɣur ubleɣ-nniḍen ameẓẓul yellan deg yiwen n "
+"ugraw n ubleɣ (${VG})."
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:52001
 msgid "Logical volume size:"
-msgstr "Storleiken på det logisk dataområdet:"
+msgstr "Teɣzi n ubleɣ ameẓẓul:"
 
 #. Type: string
 #. Description
@@ -776,9 +762,9 @@ msgid ""
 "the following formats: 10K (Kilobytes), 10M (Megabytes), 10G (Gigabytes), "
 "10T (Terabytes). The default unit is Megabytes."
 msgstr ""
-"Skriv inn storleiken på det nye logiske dataområdet. Storleiken kan skrivast "
-"inn på følgjande format: 10K (Kilobyte), 10M (Megabyte), 10G (Gigabyte), 10T "
-"(Terabyte). Standardeininga er Megabyte."
+"Ttxil-k·m sekcem teɣzi n ubleɣ ameẓẓul amaynut. Tezɣi tezmer ad tettusekcem "
+"deg yimasalen-a: 10K (Kilobytes), 10M (Megabytes), 10G (Gigabytes), 10T "
+"(Terabytes). Aferdis amezwer d Megabytes."
 
 #. Type: error
 #. Description
@@ -788,68 +774,65 @@ msgid ""
 "Unable to create a new logical volume (${LV}) on ${VG} with the new size "
 "${SIZE}."
 msgstr ""
-"Klarte ikkje å lage eit nytt logisk dataområde (${LV}) på ${VG} med "
-"storleiken ${SIZE}."
+"D awezɣi ad yettwarnu ubleɣ ameẓẓul amaynut (${LV}) ɣef ${VG} s teɣzi "
+"tamaynut ${SIZE}."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
 msgid "No logical volume found"
-msgstr "Fann ingen logiske dataområde"
+msgstr "Ulac ableɣ ameẓẓul yettwafen"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:54001
-#, fuzzy
 msgid "No logical volume has been found. Please create a logical volume first."
 msgstr ""
-"Har ikkje funne nokon logiske dataområde. Opprett eit logisk dataområde "
-"først."
+"Ulac ableɣ ameẓẓul i yettwafen. Ma ulac aɣilif, rnu ableɣ ameẓẓul d amezwaru."
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:55001
 msgid "Logical volume:"
-msgstr "Logisk dataområde:"
+msgstr "Ableɣ ameẓẓul:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:55001
 msgid "Please select the logical volume to delete."
-msgstr "Vel det logiske dataområdet som skal slettast."
+msgstr "Ttxil-k·m fren ableɣ ameẓẓul ara tekkseḍ."
 
 #. Type: text
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:56001
 msgid "in VG ${VG}"
-msgstr "på VG ${VG}"
+msgstr "deg VG ${VG}"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
 msgid "Error while deleting the logical volume"
-msgstr "Feil under sletting av det logiske dataområdet"
+msgstr "Tella-d tuccḍa lawan n tukksa n ubleɣ ameẓẓul"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:57001
-#, fuzzy
 msgid "The logical volume ${LV} on ${VG} could not be deleted."
-msgstr "Det logiske dataområdet (${LV}) på ${VG} kunne ikkje slettast."
+msgstr "Ableɣ ameẓẓul (${LV}) deg ${VG} yegguma ad yettwakkes."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:58001
 msgid "No usable physical volumes found"
-msgstr "Fann ingen brukbare fysiske dataområde."
+msgstr "Ulac akk ableɣ aɣaran yettwafen i useqdec"
 
 #. Type: error
 #. Description
@@ -860,16 +843,16 @@ msgid ""
 "physical volumes may already be in use. You may also need to load some "
 "required kernel modules or re-partition the hard drives."
 msgstr ""
-"Klarte ikkje å finne nokon fysiske dataområde (dvs. partisjonar) på "
-"systemet. Alle fysiske dataområde kan allereie vere i bruk. Du må også "
-"kanskje laste nokre påkrevde kjernemodular eller ompartisjonere harddisken."
+"Ulac iblaɣenn iɣaranen (i.e. iḥricen) yettwafen deg unagraw-inek·inem. Akk "
+"iblaɣen iɣaranen yezmer llan yakan deg useqdec. Ilaq-ak·am daɣen ad d-tsaliḍ "
+"kra n yizegrar n yiɣessan yettwasran neɣ εawed bḍu ibenk ameqqran."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:59001
 msgid "Logical Volume Manager not available"
-msgstr "Handteraren av logiske dataområde er ikkje tilgjengelig"
+msgstr "Amsefrak n ubleɣ ameẓẓul ulac-it"
 
 #. Type: error
 #. Description
@@ -879,35 +862,34 @@ msgid ""
 "The current kernel doesn't support the Logical Volume Manager. You may need "
 "to load the lvm-mod module."
 msgstr ""
-"Noverande kjerne støttar ikkje styring av logiske dataområde. Du må kanskje "
-"laste modulen lvm-mod."
+"Kernel amiran ur isefrak ara amsefrak n ubleɣ ameẓẓul. Ahat ilaq ad d-tsaliḍ "
+"azegrir lvm-mod."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:60001
 msgid "Error while initializing physical volume"
-msgstr "Feil ved klargjering av det fysiske dataområdet"
+msgstr "Tella-d tuccḍa deg uwennez n ubleɣ aɣaran"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:60001
 msgid "The physical volume ${PV} could not be initialized."
-msgstr "Klarte ikkje å klargjere det fysiske dataområdet ${PV}."
+msgstr "Ableɣ aɣaran ${PV} yegguma ad yettuwennez."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:61001
 msgid "Invalid logical volume or volume group name"
-msgstr "Ugyldig namn på logisk dataområde eller gruppert område"
+msgstr "Isem n ubleɣ ameẓẓul neɣ n ugraw n ubleɣ d arameɣtu"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:61001
-#, fuzzy
 msgid ""
 "Logical volume or volume group names may only contain alphanumeric "
 "characters, hyphen, plus, period, and underscore. They must be 128 "
@@ -915,25 +897,25 @@ msgid ""
 "\" are not allowed. In addition, logical volume names cannot begin with "
 "\"snapshot\"."
 msgstr ""
-"Namn på logiske dataområde eller grupperte område kan berre innehalde "
-"alfanumeriske teikn, bindestrek, pluss, punktum og understrek. Dei må vere "
-"høgst 128 teikn lange og kan ikkje byrje med bindestrek. Namna «.» og «..» "
-"er ikkje tillate. Dessutan kan namn på logiske dataområde ikkje byrje med "
-"«snapshot»."
+"Ismawen n ubleɣ ameẓẓul neɣ n ugraw n ubleɣ zemren kan ad sɛun isekkilen "
+"igmumḍinen, tizdiyin, ugar, agaz d ujerrid. Ilaq ad ilin 128 yisekkilen neɣ "
+"ddaw, yezmer ur ilaq ara ad bdun s tizdit. Ismawen \".\" akked \"..\" ur "
+"ttusirgen ara. Rnu, ismawen n ubleɣ ameẓẓul ur zmiren ara ad bdun s "
+"\"snapshot\"."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:61001
 msgid "Please choose a different name."
-msgstr "Vel eit anna namn."
+msgstr "Ma ulac aɣilif fren isem-nniḍen."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Remove existing logical volume data?"
-msgstr "Fjerne alle eksisterande data om logiske dataområde?"
+msgstr "Kkes isefka n ubleɣ ameẓẓul yellan?"
 
 #. Type: boolean
 #. Description
@@ -943,29 +925,29 @@ msgid ""
 "The selected device already contains the following LVM logical volumes, "
 "volume groups and physical volumes which are about to be removed:"
 msgstr ""
-"Den valte eininga inneheld frå før av desse logiske dataområda, grupperte "
-"dataområda og fysiske dataområda som no kjem til å bli fjerna:"
+"Ibenk i d-yettwafernen llan yakan deg-s iblaɣen imeẓẓulen LVM, igrawen n "
+"ubleɣ d yiblaɣen iɣaranen qrib ad ttwakksen:"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Logical volume(s) to be removed: ${LVTARGETS}"
-msgstr "Logisk(e) dataområde som vert fjerna: ${LVTARGETS}"
+msgstr "Ableɣ ameẓẓuli(iblaɣen imeẓẓulen) ara yettwakksen: ${LVTARGETS}"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Volume group(s) to be removed: ${VGTARGETS}"
-msgstr "Gruppert(e) dataområde som skal slettast: ${VGTARGETS}"
+msgstr "Agraw ameẓẓuli(igrawen imeẓẓulen) ara yettwakksen: ${LVTARGETS}"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:62001
 msgid "Physical volume(s) to be removed: ${PVTARGETS}"
-msgstr "Fysisk(e) dataområde som skal slettast: ${PVTARGETS}"
+msgstr "Ableɣ aɣaran(iblaɣen iɣaranen) ara yettwakksen: ${LVTARGETS}"
 
 #. Type: boolean
 #. Description
@@ -975,15 +957,15 @@ msgid ""
 "Note that this will also permanently erase any data currently on the logical "
 "volumes."
 msgstr ""
-"Merk at dette også vil permanent slette data som no ligg på dei logiske "
-"dataområda."
+"Ẓer belli aya ad yesfeḍ daɣen i lebda meṛṛa isefka imiranen ɣef yiblaɣen "
+"imeẓẓulen."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:63001
 msgid "Unable to automatically remove LVM data"
-msgstr "Ikkje i stand til å fjerne LVM-data automatisk"
+msgstr "D awezɣi ad ttwakksen isefka n LVM s wudem awurman"
 
 #. Type: error
 #. Description
@@ -995,17 +977,17 @@ msgid ""
 "automatically. If you wish to use this device for partitioning, please "
 "remove its LVM data first."
 msgstr ""
-"Sidan volumgruppa/gruppene på den valte eininga også inneheld fysiske volum "
-"på andre einingar, så er det ikkje trygt å fjerne LVM-data automatisk. Viss "
-"du vil bruke denne eininga til partisjonering, så må du fjerne LVM-data "
-"først."
+"Imi agraw(inagrawen) n ubleɣ i yellan ɣef yibenk i yettufernen bnan daɣen "
+"ɣef yigrawen iɣaranen ɣef yibenkan-nniḍen, ur yettuneḥsab ara d aɣellsan "
+"tukksa tawurmant n yisefka n LVM. Ma yella tebɣiḍ ad tesqedceḍ ibenk-a i "
+"beṭṭu, ttxil-k·m kkes qbel isefka-ines n LVM."
 
 #. Type: note
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:64001
 msgid "Logical Volume Management"
-msgstr "Handsaming av logiske dataområde (LVM)"
+msgstr "Amsefrak n ubleɣ ameẓẓul"
 
 #. Type: note
 #. Description
@@ -1017,10 +999,10 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
-"Ein vanleg situasjon for systemadministratorar er at ein eller annan "
-"diskpartisjon vanlegvis den viktigaste manglar plass, medan andre "
-"partisjonar har ledig plass. Handsaming av logiske dataområde (LVM) kan "
-"hjelpa deg med dette."
+"Tagnit i d-ttmagaren tuget n wakud inedbalen n yinagrawen d lexṣaṣ n umḍiq "
+"ilelli deg uḥric n udebṣi (deg tuget d aya i iṭṭuqqten deg unagraw) maca "
+"aḥric-nniḍen ur yettwaseqdec ara akken iwata. Amsefrak n yiblaɣen imeẓẓulen "
+"(LVM) zemren ad frun anaw-a n wuguren."
 
 #. Type: note
 #. Description
@@ -1034,13 +1016,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
-"LVM lèt deg setja saman disk- eller partisjonseiningar («fysiske "
-"dataområde») for å oppretta ein virtuell disk («dataområdegruppe»), som "
-"deretter kan delast inn i virtuelle partisjonar («logiske dataområde»). "
-"Dataområdegrupper og logiske dataområde kan gå over fleire fysiske diskar. "
-"Nye fysiske dataområde kan ein leggja til i ei volumgruppe når som helst, og "
-"logiske dataområde kan ein endra storleik på til ein ikkje har meir fri "
-"plass att i dataområdegruppa."
+"LVM yessirig asuddes n yiḍebsiyen neɣ n yibenkan n yiḥricen (\"iblaɣen "
+"iɣaranen\") i umsal n uḍebsi uhlis (\"iblaɣen nugraw\"), ara ttwabḍun mbeɛd "
+"ɣef yiḥricen uhlisen (\"iblaɣen imeẓẓulen\"). Igrawen iɣaranen zemren ad "
+"ttwernun ɣer ugraw n ubleɣ melmi i tebɣiḍ, ma d iblaɣen imeẓẓulen zemren ad "
+"tettubeddel teɣzi-nsen alamma d azal n tallunt ur nettuḥerr ara deg ugraw n "
+"ubleɣ."
 
 #. Type: note
 #. Description
@@ -1052,7 +1033,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
-"Elementa på LVM-oppsettsmenyen kan brukast til å redigera grupper med "
-"lagringseiningar og dataområde. Når du går tilbake til hovudbiletet for "
-"partisjonshandsaming, vil dataområde verta viste på same måten som vanlege "
-"partisjonar, og bør også handsamast slik."
+"Iferdisen i yellan deg wumuɣ n twila LVM zemren ad ttusqedcen i uẓrag n "
+"yigrawen n ubleɣ neɣ igrawen imeẓẓulen. Akken ara tuɣaleḍ ɣer ugdil n "
+"umsefrak n yiḥricen igejdanen, igrawen imeẓẓulen ad d-ttwaskanen akken ara d-"
+"ttwaskanen yiḥricen imugna, yerna ilaq ad ttusqedcen akken kan i llan."

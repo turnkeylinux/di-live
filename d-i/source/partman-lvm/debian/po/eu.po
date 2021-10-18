@@ -20,20 +20,21 @@
 # Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
 # Piarres Beobide <pi@beobide.net>, 2008.
 # Xabier Bilbao <xabidu@gmail.com>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: di-sublevel1_eu\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2012-10-19 19:41+0200\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2020-11-03 18:23+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: debian-l10n-eu@lists.debian.org\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Content-Transfer-Encoding=UTF-8Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -91,10 +92,11 @@ msgstr "bat ere ez"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
-msgstr "Konfiguratu bolumen logikoen kudeatzailea"
+msgstr "Konfiguratu bolumen logikoen kudeatzailea (LVM)"
 
 #. Type: text
 #. Description
@@ -110,7 +112,7 @@ msgstr "BF"
 #. What is "in use" is a partition
 #: ../partman-lvm.templates:9001
 msgid "In use by LVM volume group ${VG}"
-msgstr "LVM ${VG} bolumen taldeak erabilia"
+msgstr "${VG} LVM bolumen taldeak darabil"
 
 #. Type: text
 #. Description
@@ -200,8 +202,8 @@ msgid ""
 "partitioning scheme has to be written to disk. These changes cannot be "
 "undone."
 msgstr ""
-"Bolumen Logikoen Kudeatzailea konfiguratu baino lehen, uneko partizio-eskema "
-"idatzi behar da diskoan.  Aldaketa horiek ezin dira desegin."
+"Bolumen Logikoen Kudeatzailea (LVM) konfiguratu baino lehen, uneko partizio-"
+"eskema idatzi behar da diskoan. Aldaketa horiek ezingo dira desegin."
 
 #. Type: boolean
 #. Description
@@ -214,9 +216,9 @@ msgid ""
 "partitioning scheme before continuing."
 msgstr ""
 "Bolumen Logiko Kudeatzailea konfiguratu eta gero, bolumen fisikoak dituen "
-"diskoetako partizioetan beste aldaketarik ezin da egin instalazio prozesuan. "
-"Jarraitu aurretik erabaki gustura zauden disko hauetako uneko partizio "
-"eskemarekin."
+"diskoetako partizioetan beste aldaketarik ezingo da egin instalazio "
+"prozesuan. Jarraitu aurretik erabaki gustura zauden disko hauetako uneko "
+"partizio-eskemarekin."
 
 #. Type: boolean
 #. Description
@@ -236,16 +238,16 @@ msgid ""
 "decide if you are satisfied with the current partitioning scheme in these "
 "disks before continuing."
 msgstr ""
-"Bolumen Logikoen Kudeatzailea konfiguratu eta gero, bolumen fisikoak dituen "
-"diskoetako partizioetan beste aldaketarik ezin da egin. Jarraitu aurretik "
-"erabaki gustura zauden disko hauetako uneko partizio-eskemarekin."
+"Bolumen Logikoen Kudeatzailea (LVM) konfiguratu eta gero, bolumen fisikoak "
+"dituen diskoetako partizioetan beste aldaketarik ezingo da egin. Jarraitu "
+"aurretik erabaki gustura zauden disko hauetako uneko partizio-eskemarekin."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:20001
 msgid "LVM configuration failure"
-msgstr "Ezin izan da LVM konfiguratu"
+msgstr "Huts egin du LVM konfiguratzean"
 
 #. Type: error
 #. Description
@@ -300,10 +302,10 @@ msgid ""
 " Volume Groups:          ${VGS}\n"
 " Logical Volumes:        ${LVS}"
 msgstr ""
-" Bolumen Fisiko Libreak:         ${FREE_PVS}\n"
-" Erabilitako Bolumen fisikoak:  ${USED_PVS}\n"
-" Bolumen Taldeak:          ${VGS}\n"
-" Bolumen Logikoak:        ${LVS}"
+" Bolumen fisiko libreak:        ${FREE_PVS}\n"
+" Erabilitako bolumen fisikoak:  ${USED_PVS}\n"
+" Bolumen taldeak:               ${VGS}\n"
+" Bolumen logikoak:              ${LVS}"
 
 #. Type: note
 #. Description
@@ -376,7 +378,7 @@ msgid ""
 "No physical volumes were selected. The creation of a new volume group has "
 "been aborted."
 msgstr ""
-"Bolumen fisikorik ez da hautatu. Bolumen talde berria sortzeko ahalegina "
+"Ez da bolumen fisikorik hautatu. Bolumen talde berria sortzeko ahalegina "
 "abortatu egin da."
 
 #. Type: error
@@ -433,10 +435,8 @@ msgstr ""
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:32001
-#, fuzzy
-#| msgid "Error while deleting volume group"
 msgid "Error while creating volume group"
-msgstr "Errorea bolumen taldea ezabatzean"
+msgstr "Errorea bolumen taldea sortzean"
 
 #. Type: error
 #. Description
@@ -464,7 +464,7 @@ msgstr "Ezin izan da ${VG} bolumen taldea sortu."
 #: ../partman-lvm.templates:53001 ../partman-lvm.templates:57001
 #: ../partman-lvm.templates:60001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "Egiaztatu /var/log/messages edo ikusi 4. kontsola xehetasunetarako."
+msgstr "Egiaztatu /var/log/syslog edo ikusi 4. kontsola xehetasunetarako."
 
 #. Type: select
 #. Description
@@ -583,7 +583,7 @@ msgstr "Bolumen taldeari gehitu beharreko gailuak:"
 #. :sl3:
 #: ../partman-lvm.templates:39001
 msgid "Please select the devices you wish to add to the volume group."
-msgstr "Hautatu bolumen taldeari gehitzea nahi duzun gailuak."
+msgstr "Hautatu bolumen taldeari gehitzea nahi dizkiozun gailuak."
 
 #. Type: error
 #. Description
@@ -656,7 +656,7 @@ msgstr "Hautatu gailuak bolumen taldetik ezabatzeko."
 msgid ""
 "No physical volumes were selected. Reduction of the volume group was aborted."
 msgstr ""
-"Ez da bolumen fisikorik hautatu. Bolumen taldea hedatzea abortatu egin da."
+"Ez da bolumen fisikorik hautatu. Bolumen taldea murriztea abortatu egin da."
 
 #. Type: error
 #. Description
@@ -750,8 +750,8 @@ msgid ""
 "The name ${LV} is already in use by another logical volume on the same "
 "volume group (${VG})."
 msgstr ""
-"${LV} izena lehendik erabili du bolumen talde bereko (${VG}) beste bolumen "
-"logiko batek."
+"Bolumen talde bereko (${VG}) beste bolumen logiko batek ${LV} izena lehendik "
+"erabili du."
 
 #. Type: string
 #. Description
@@ -769,9 +769,9 @@ msgid ""
 "the following formats: 10K (Kilobytes), 10M (Megabytes), 10G (Gigabytes), "
 "10T (Terabytes). The default unit is Megabytes."
 msgstr ""
-"Sartu bolumen logiko berriaren tamaina. Formatua tamaina hauetan sar "
-"daiteke: 10K (kilobyte), 10M (megabyte), 10G (gigabyte), 10T (terabyte). "
-"Unitate lehenetsia megabyte da."
+"Sartu bolumen logiko berriaren tamaina. Tamaina formatu hauetan sar daiteke: "
+"10K (kilobyte), 10M (megabyte), 10G (gigabyte), 10T (terabyte). Unitate "
+"lehenetsia megabyte da."
 
 #. Type: error
 #. Description
@@ -781,8 +781,8 @@ msgid ""
 "Unable to create a new logical volume (${LV}) on ${VG} with the new size "
 "${SIZE}."
 msgstr ""
-"Ezin izan da bolumen logiko berri bat (${LV}) sortu ${VG} bolumen taldean "
-"tamaina berriarekin ${SIZE}."
+"Ezin izan da bolumen logiko berria (${LV}) sortu ${VG} bolumen taldean "
+"${SIZE} tamaina berriarekin."
 
 #. Type: error
 #. Description
@@ -817,7 +817,7 @@ msgstr "Hautatu ezabatu beharreko bolumen logikoa."
 #. :sl3:
 #: ../partman-lvm.templates:56001
 msgid "in VG ${VG}"
-msgstr "BT-an ${VG}"
+msgstr "${VG} BT-an"
 
 #. Type: error
 #. Description
@@ -849,17 +849,17 @@ msgid ""
 "physical volumes may already be in use. You may also need to load some "
 "required kernel modules or re-partition the hard drives."
 msgstr ""
-"Bolumen fisikorik (hau da, partiziorik) ez da aurkitu sisteman. Baliteke "
-"bolumen fisiko guztiak lehendik erabilita egotea. Agian behar diren nukleo-"
-"modulu batzuk kargatu edo disko gogorretan partizioak berriro egin beharko "
-"dituzu."
+"Ez da bolumen fisikorik (adib. partiziorik) aurkitu sisteman. Baliteke "
+"bolumen fisiko guztiak erabiltzen egotea. Agian behar diren nukleo-modulu "
+"batzuk kargatu beharko dituzu, edo disko gogorretan partizioak berriro "
+"egitea."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../partman-lvm.templates:59001
 msgid "Logical Volume Manager not available"
-msgstr "Bolumen Logikoen Kudeatzailea ez dago erabilgarri"
+msgstr "Bolumen Logikoen Kudeatzailea (LVM) ez dago erabilgarri"
 
 #. Type: error
 #. Description
@@ -932,8 +932,8 @@ msgid ""
 "The selected device already contains the following LVM logical volumes, "
 "volume groups and physical volumes which are about to be removed:"
 msgstr ""
-"Hautatutako gailuak dagoeneko baditu ezabatu egingo diren hurrengo LVM "
-"bolumen logiko, bolumen taldeak eta bolumen fisikoak:"
+"Hautatutako gailuak dagoeneko baditu ezabatu egingo diren honako LVM bolumen "
+"logiko, bolumen taldeak eta bolumen fisikoak:"
 
 #. Type: boolean
 #. Description
@@ -964,7 +964,7 @@ msgid ""
 "Note that this will also permanently erase any data currently on the logical "
 "volumes."
 msgstr ""
-"Kontutan izan honek betirako ezabatuko duela bolumen logikoetan dauden "
+"Kontutan izan honek betirako ezabatuko dituela bolumen logikoetan dauden "
 "edozein datu."
 
 #. Type: error
@@ -993,7 +993,7 @@ msgstr ""
 #. :sl3:
 #: ../partman-lvm.templates:64001
 msgid "Logical Volume Management"
-msgstr "Bolumen logiko kudeaketa"
+msgstr "Bolumen logikoaren kudeaketa"
 
 #. Type: note
 #. Description
@@ -1005,9 +1005,10 @@ msgid ""
 "other partition is underused. The Logical Volume Manager (LVM) can help with "
 "this."
 msgstr ""
-"Sistema kudeatzaileen egoera arrunt bat da disko partizio batenbat "
-"(normalean garrantzitsuena) leku gabe geratzea beste partizio batenbat "
-"erabili gabe dagoelarik. Bolumen logiko kudeatzaileak (LVM) honetan lagun "
+"Sistemako administratzaileek askotan aurkitzen duten egoera: disko partizio "
+"batzuk \n"
+"(normalean garrantzitsuenak) lekurik gabe geratzea, beste batzuk erabili "
+"gabe dauden bitartean. Bolumen logikoen kudeatzaileak (LVM) honetan lagun "
 "zaitzake."
 
 #. Type: note
@@ -1022,12 +1023,12 @@ msgid ""
 "volume group at any time, and logical volumes can be resized up to the "
 "amount of unallocated space in the volume group."
 msgstr ""
-"LVM-ek disko edo partizio gailuak (\"bolumen fisikoak\") disko birtual bat "
-"sortzeko (\"Bolumen taldea\") konbinatzeko aukera ematen du, berau partizio "
-"birtualetan banatu daiteke (\"Bolumen logikoak\"). Bolumen talde eta bolumen "
-"logikoek zenbait disko fisiko batera ditzakete. Bolumen fisiko berriak "
-"edozein momentutan batu daitezke bolumen taldera eta bolumen logikoak "
-"bolumen taldean libre dagoen tokia hartzeko tamainaz aldatu daitezke."
+"LVM-ek aukera hau baimentzen du: disko edo partizio gailuak (\"bolumen "
+"fisikoak\") konbinatuz disko birtual bat (\"bolumen taldea\") sortzea, gero "
+"partizio birtualetan (\"bolumen logikoak\") zati daiteke. Bolumen talde eta "
+"bolumen logikoek zenbait disko fisiko heda ditzakete. Bolumen fisiko berriak "
+"edozein momentutan batu daitezke bolumen taldera, eta bolumen logikoen "
+"tamaina handiagotu daiteke bolumen taldean dagoen toki librea hartzeko."
 
 #. Type: note
 #. Description
@@ -1039,7 +1040,7 @@ msgid ""
 "logical volumes will be displayed in the same way as ordinary partitions, "
 "and should be treated as such."
 msgstr ""
-"LVM konfigurazio menuko elementuak erabili daitezke bolumen talde eta "
-"bolumen logikoak editatzeko. Behin partizio kudeaketa pantaila nagusira "
-"itzultzean, bolumen logikoak partizio arruntak bezala bistaraziko dira, eta "
+"LVM konfigurazioaren menuko elementuak erabili daitezke bolumen talde eta "
+"bolumen logikoak editatzeko. Behin partizio kudeaketaren pantaila nagusira "
+"itzultzean, bolumen logikoak partizio arruntak bezala bistaratuko dira, eta "
 "hauek bezala erabili behar dira."

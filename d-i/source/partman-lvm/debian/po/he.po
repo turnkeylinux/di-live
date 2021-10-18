@@ -21,14 +21,14 @@
 # Meni Livne <livne@kde.org>, 2000.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-lvm@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-15 22:01+0000\n"
-"PO-Revision-Date: 2019-02-28 22:08+0000\n"
+"POT-Creation-Date: 2019-09-26 22:05+0000\n"
+"PO-Revision-Date: 2020-05-01 13:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
 "Language: he\n"
@@ -93,6 +93,7 @@ msgstr "ללא"
 #. Description
 #. :sl3:
 #. Main menu item
+#. Translators: keep below 55 columns
 #. Use infinitive form
 #: ../partman-lvm.templates:7001 ../partman-lvm.templates:23001
 msgid "Configure the Logical Volume Manager"
@@ -104,7 +105,7 @@ msgstr "הגדרת מנהל הכרכים הלוגיים (LVM)"
 #. Translators: use the acronym for "Physical Volume" in your language here
 #: ../partman-lvm.templates:8001
 msgid "PV"
-msgstr "נ\"פ"
+msgstr "כ״פ"
 
 #. Type: text
 #. Description
@@ -352,7 +353,7 @@ msgstr "שם קבוצת כרכים:"
 #. :sl3:
 #: ../partman-lvm.templates:27001
 msgid "Please enter the name you would like to use for the new volume group."
-msgstr "נא להכניס את השם בו ברצונך להשתמש עבור קבוצת הכרכים."
+msgstr "נא למלא את השם בו ברצונך להשתמש עבור קבוצת הכרכים."
 
 #. Type: error
 #. Description
@@ -456,7 +457,7 @@ msgstr "לא ניתן ליצור את קבוצת הכרכים ${VG}."
 #: ../partman-lvm.templates:53001 ../partman-lvm.templates:57001
 #: ../partman-lvm.templates:60001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "מוטב לעיין ב־‎/var/log/syslod או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
+msgstr "מוטב לעיין ב־‎/var/log/syslog או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
 
 #. Type: select
 #. Description
