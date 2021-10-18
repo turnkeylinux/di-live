@@ -17,19 +17,21 @@
 # Christian Perrier <bubulle@debian.org>, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
 #   Alastair McKinstry <mckinstry@computer.org>, 2001.
 #   Cedric De Wilde <daique@tiscalinet.be>, 2001.
-#   Christian Perrier <bubulle@debian.org>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2013, 2014.
+#   Christian Perrier <bubulle@debian.org>, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2017.
 #   Christophe Fergeau <christophe.fergeau@ensimag.imag.fr>, 2000-2001.
 #   Christophe Merlet (RedFox) <redfox@eikonex.org>, 2001.
 #   Free Software Foundation, Inc., 2000-2001, 2004, 2005, 2006.
 #   Grégoire Colbert <gregus@linux-mandrake.com>, 2001.
 #   Tobias Quathamer <toddy@debian.org>, 2007, 2008.
+# Alban Vidal <alban.vidal@zordhak.fr>, 2018.
+# Baptiste Jammet <baptiste@mailoo.org>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2014-09-01 07:49+0200\n"
-"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"PO-Revision-Date: 2020-08-17 10:18+0100\n"
+"Last-Translator: Baptiste Jammet <baptiste@mailoo.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -480,7 +482,7 @@ msgstr "Blocs réservés :"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:24001
 msgid "Percentage of the file system blocks reserved for the super-user:"
-msgstr "Pourcentage des blocs réservés pour le superutilisateur :"
+msgstr "Pourcentage de blocs réservés pour le superutilisateur :"
 
 #. Type: text
 #. Description
@@ -534,7 +536,7 @@ msgid ""
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
 "standard : paramètres classiques, news : un inode par bloc de 4 kilo-octets, "
-"largefile : un inode par mégaoctet, largefile4 : un inode pour 4 mégaoctets."
+"largefile : un inode par mégaoctet, largefile4 : un inode pour 4 mégaoctets."
 
 #. Type: text
 #. Description
@@ -680,7 +682,7 @@ msgstr "nodiratime - pas de MAJ des heures d'accès des inodes de répertoires"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:46001
 msgid "relatime - update inode access times relative to modify time"
-msgstr "relatime - màj relative des date et heure d'accès des inodes"
+msgstr "relatime - MAJ relative des date et heure d'accès des inodes"
 
 #. Type: text
 #. Description
@@ -734,7 +736,7 @@ msgstr "sync - toutes les entrées/sorties sont synchrones"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
-msgstr "usrquota - gestion des quota des utilisateurs"
+msgstr "usrquota - gestion des quotas des utilisateurs"
 
 #. Type: text
 #. Description
@@ -743,7 +745,7 @@ msgstr "usrquota - gestion des quota des utilisateurs"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
-msgstr "grpquota - gestion des quota des groupes"
+msgstr "grpquota - gestion des quotas des groupes"
 
 #. Type: text
 #. Description

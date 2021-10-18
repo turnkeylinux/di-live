@@ -7,6 +7,8 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Nima Sahraneshin <unix.nima@gmail.com>, 2018.
+# Seyed Hany Hosseini <hany1894@gmail.com>, 2020.
+# <soheilkhanalipur@tutanota.com>, 2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry - further translations from ICU-3.0
@@ -24,8 +26,8 @@ msgstr ""
 "Project-Id-Version: fa\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2019-01-01 17:49+0000\n"
-"Last-Translator: nima sahraneshin <unix.nima@gmail.com>\n"
+"PO-Revision-Date: 2020-10-22 09:29+0000\n"
+"Last-Translator: Seyed Hany Hosseini <hany1894@gmail.com>\n"
 "Language-Team: Debian-l10n-persian <debian-l10n-persian@lists.debian.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +49,7 @@ msgstr ""
 #. :sl1:
 #: ../partman-basicfilesystems.templates:2001
 msgid "Checking the swap space in partition #${PARTITION} of ${DEVICE}..."
-msgstr "در حال آزمون فضای swap در پارتیشن #${PARTITION} از  ${DEVICE}..."
+msgstr "در حال آزمون فضای swap در پارتیشن #${PARTITION} از ${DEVICE}..."
 
 #. Type: text
 #. Description
@@ -55,7 +57,7 @@ msgstr "در حال آزمون فضای swap در پارتیشن #${PARTITION} �
 #: ../partman-basicfilesystems.templates:3001
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"در حال ایجاد فایل سیستم ${TYPE}  در پارتیشن #${PARTITION} از ${DEVICE}..."
+"در حال ایجاد فایل سیستم ${TYPE} در پارتیشن #${PARTITION} از ${DEVICE}..."
 
 #. Type: text
 #. Description
@@ -799,14 +801,13 @@ msgstr "بازگشت به منو و تصحیح این مشکل؟"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"پارتیشن بوت شما با سیستم‌فایل ext2 یا ext3 پیکربندی نشده است. اینکار برای "
-"بالا آمدن سیستم شما لازم است. لطفاً برگردید و یکی از این دو را انتخاب کنید."
+"پارتیشن بوت شما با سیستم‌فایل ext2 پیکربندی نشده است. اینکار برای بالا آمدن "
+"سیستم شما لازم است. لطفاً برگردید و ext2 را انتخاب کنید."
 
 #. Type: boolean
 #. Description
@@ -829,12 +830,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"پارتیشن بوت شما در اولین پارتیشن اصلی دیسک سخت قرار ندارد. اینکار برای بالا "
-"آمدن سیسام شما لازم است.  لطفاً برگردید و اولین پارتیشن اصلی خود را به عنوان "
-"پارتیشن بوت برگزینید."
+"پارتیشن بوت شما در اولین پارتیشن دیسک سخت قرار ندارد. اینکار برای بالا آمدن "
+"سیسام شما لازم است. لطفاً برگردید و اولین پارتیشن خود را به عنوان پارتیشن بوت "
+"برگزینید."

@@ -16,13 +16,13 @@
 # Borys Yanovych <borys@yanovy.ch>, 2010, 2011.
 # Maxim V. Dziumanenko <dziumanenko@gmail.com>, 2010.
 # Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011, 2012, 2013.
-# Anton Gladky <gladk@debian.org>, 2014
+# Anton Gladky <gladk@debian.org>, 2011-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2014-10-07 00:12+0100\n"
+"PO-Revision-Date: 2021-01-02 22:03+0100\n"
 "Last-Translator: Anton Gladky <gladk@debian.org>\n"
 "Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
 "Language: uk\n"
@@ -344,7 +344,7 @@ msgstr "/usr/local - локальна ієрархія"
 #: ../partman-basicfilesystems.templates:13001
 #: ../partman-basicfilesystems.templates:14001
 msgid "Enter manually"
-msgstr "ввести вручну"
+msgstr "Ввести вручну"
 
 #. Type: select
 #. Choices
@@ -358,7 +358,7 @@ msgstr "ввести вручну"
 #: ../partman-basicfilesystems.templates:13001
 #: ../partman-basicfilesystems.templates:14001
 msgid "Do not mount it"
-msgstr "не монтувати"
+msgstr "Не монтувати цей роздiл"
 
 #. Type: select
 #. Description
@@ -551,7 +551,7 @@ msgstr "відсутня"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:30001
 msgid "Ext2 file system"
-msgstr "файлова система Ext2"
+msgstr "Файлова система Ext2"
 
 #. Type: text
 #. Description
@@ -566,7 +566,7 @@ msgstr "ext2"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:32001
 msgid "FAT16 file system"
-msgstr "файлова система FAT16"
+msgstr "Файлова система FAT16"
 
 #. Type: text
 #. Description
@@ -581,7 +581,7 @@ msgstr "fat16"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:34001
 msgid "FAT32 file system"
-msgstr "файлова система FAT32"
+msgstr "Файлова система FAT32"
 
 #. Type: text
 #. Description
@@ -596,7 +596,7 @@ msgstr "fat32"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
 msgid "NTFS journaling file system"
-msgstr "журнальна файлова система NTFS"
+msgstr "Журнальована файлова система NTFS"
 
 #. Type: text
 #. Description

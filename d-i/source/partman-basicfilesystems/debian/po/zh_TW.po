@@ -5,6 +5,8 @@
 #
 # Traditional Chinese messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
+# Louies <louies0623@gmail.com>, 2019, 2021.
+# Walter Cheuk <wwycheuk@gmail.com>, 2019.
 # This file is distributed under the same license as debian-installer.
 #
 #
@@ -25,14 +27,15 @@
 #   JOE MAN <trmetal@yahoo.com.hk>, 2001.
 #   Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2005.
 #   Yao Wei (魏銘廷) <mwei@lxde.org>, 2012.
+#   Walter Cheuk <wwycheuk@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2019-01-13 14:06+0000\n"
-"Last-Translator: Louies <louies0623@gmail.com>\n"
+"PO-Revision-Date: 2021-02-16 09:50+0000\n"
+"Last-Translator: louies0623 <louies0623@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
 "debian.org>\n"
 "Language: zh_TW\n"
@@ -47,21 +50,21 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:1001
 msgid ""
 "Checking the ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
-msgstr "正在檢驗 ${DEVICE} 裝置上第 ${PARTITION} 分割區的 ${TYPE} 檔案系統……"
+msgstr "正在檢驗 ${DEVICE} 裝置上第 ${PARTITION} 分割區的 ${TYPE} 檔案系統…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-basicfilesystems.templates:2001
 msgid "Checking the swap space in partition #${PARTITION} of ${DEVICE}..."
-msgstr "正在檢驗 ${DEVICE} 裝置上第 ${PARTITION} 分割區的置換空間……"
+msgstr "正在檢驗 ${DEVICE} 裝置上第 ${PARTITION} 分割區的置換空間…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-basicfilesystems.templates:3001
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
-msgstr "正於 ${DEVICE} 裝置上第 ${PARTITION} 分割區上建立 ${TYPE} 檔案系統……"
+msgstr "正於 ${DEVICE} 裝置上第 ${PARTITION} 分割區上建立 ${TYPE} 檔案系統…"
 
 #. Type: text
 #. Description
@@ -72,14 +75,14 @@ msgid ""
 "of ${DEVICE}..."
 msgstr ""
 "正在替掛載在 ${MOUNT_POINT} 的 ${DEVICE} 裝置上的第 ${PARTITION} 分割區上建"
-"立 ${TYPE} 檔案系統……"
+"立 ${TYPE} 檔案系統…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-basicfilesystems.templates:5001
 msgid "Formatting swap space in partition #${PARTITION} of ${DEVICE}..."
-msgstr "正在格式化 ${DEVICE} 裝置上第 ${PARTITION} 分割區的置換空間……"
+msgstr "正在格式化 ${DEVICE} 裝置上第 ${PARTITION} 分割區的置換空間…"
 
 #. Type: boolean
 #. Description

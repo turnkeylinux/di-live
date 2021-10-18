@@ -20,20 +20,21 @@
 # Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
 # Piarres Beobide <pi@beobide.net>, 2008.
 # Xabier Bilbao <xabidu@gmail.com>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: di-sublevel1_eu\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2012-10-19 19:41+0200\n"
+"PO-Revision-Date: 2020-11-03 18:23+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: debian-l10n-eu@lists.debian.org\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Content-Transfer-Encoding=UTF-8Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -601,9 +602,8 @@ msgstr "fat32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "JFS egunkaridun fitxategi-sistema"
+msgstr "NTFS egunkaridun fitxategi-sistema"
 
 #. Type: text
 #. Description
@@ -611,7 +611,7 @@ msgstr "JFS egunkaridun fitxategi-sistema"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -668,9 +668,8 @@ msgstr "noatime - ez eguneratu inodoen atzipen orduak atzipen bakoitzeko"
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - ez eguneratu inodoen atzipen orduak atzipen bakoitzeko"
+msgstr "nodiratime - ez eguneratu direktorioen inodoen atzipen orduak"
 
 #. Type: text
 #. Description
@@ -734,7 +733,7 @@ msgstr "sync - sarrerako/irteerako jarduerak sinkronikoki gertatzen dira"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
-msgstr "usrquota - erabiltzailearen disko kuotaren kontua gaituta dago"
+msgstr "usrquota - erabiltzailearen disko kuotaren kontua gaituta"
 
 #. Type: text
 #. Description
@@ -743,7 +742,7 @@ msgstr "usrquota - erabiltzailearen disko kuotaren kontua gaituta dago"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
-msgstr "grpquota - taldearen disko kuotaren kontua gaituta dago"
+msgstr "grpquota - taldearen disko kuotaren kontua gaituta"
 
 #. Type: text
 #. Description
@@ -779,7 +778,7 @@ msgstr "notail - desgaitu fitxategiak paketatzea sistemako zuhaitzean"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "discard - ezabatu blokeen gailuko hustutako blokeak"
 
 #. Type: text
 #. Description
@@ -797,7 +796,7 @@ msgstr "acls - POSIX.1e Sarbideko Kontrol Zerrenda (ACL) euskarria"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
-msgstr "shortnames -  zahartutako MS-DOS 8.3 estiloko izenak bakarrik erabili"
+msgstr "shortnames - MS-DOS 8.3 estilo zaharreko izenak soilik erabili"
 
 #. Type: boolean
 #. Description
@@ -814,15 +813,14 @@ msgstr "Menura itzuli eta arazo hau konpondu nahi duzu?"
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Abioko partizioa ez da ext2 edo ext3 motako fitxategi-sistema batekin "
-"konfiguratu. Makinak hori behar du abiarazi ahal izateko. Joan atzera eta "
-"erabili ext2 edo ext3 fitxategi-sistema."
+"Abioko partizioa ez da ext2 motako fitxategi-sistemarekin konfiguratu. Hau "
+"beharrezkoa da makina abiarazi ahal izateko. Joan atzera eta erabili ext2 "
+"fitxategi-sistema."
 
 #. Type: boolean
 #. Description
@@ -845,12 +843,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
 "Abioko partizioa ez dago disko gogorreko lehen mailako partizioan kokatuta. "
-"Makinak hori behar du abiarazi ahal izateko. Joan atzera eta erabili lehen "
-"mailako partizioa abioko partizio gisa."
+"Hau beharrezkoa da makina abiarazi ahal izateko. Joan atzera eta erabili "
+"aurreneko partizioa abioko partizio gisa."

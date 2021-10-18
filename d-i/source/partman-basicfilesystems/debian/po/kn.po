@@ -10,6 +10,7 @@
 # Translators:
 # shashi kiran <shashi859@gmail.com>, 2010, 2011.
 # Prabodh CP <prabodhcp@gmail.com>, 2011.
+# Yogesh <yogesh@karnatakaeducation.org.in>, 2020.
 #
 # Credits: Thanks to contributions from Free Software Movement Karnataka (FSMK), 2011.
 #
@@ -21,8 +22,8 @@ msgstr ""
 "Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2019-02-13 15:09+0000\n"
-"Last-Translator: deepu2 <deepuhsdeepak@gmail.com>\n"
+"PO-Revision-Date: 2020-07-21 17:24+0000\n"
+"Last-Translator: Yogesh <yogesh@karnatakaeducation.org.in>\n"
 "Language-Team: Kannada <debian-l10n-kannada@lists.debian.org>\n"
 "Language: kn\n"
 "MIME-Version: 1.0\n"
@@ -326,9 +327,6 @@ msgstr "/opt - ಹೆಚ್ಚುವರಿ ಕಾರ್ಯನಿಮ್ಮಿತ�
 msgid "/usr/local - local hierarchy"
 msgstr "/usr/local - ಸ್ಥಳೀಯ ಶ್ರೇಣಿವ್ಯವಸ್ಥೆ"
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: select
 #. Choices
 #. Note to translators : Please keep your translations of the choices
@@ -343,8 +341,6 @@ msgstr "/usr/local - ಸ್ಥಳೀಯ ಶ್ರೇಣಿವ್ಯವಸ್ಥ�
 msgid "Enter manually"
 msgstr "ಕೈಯಾರೆ ದಾಖಲಿಸಿ"
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: select
 #. Choices
 #. Note to translators : Please keep your translations of the choices
@@ -423,8 +419,6 @@ msgstr "ಈ ವಿಭಜನೆಯಲ್ಲಿನ ಕಡತ ವ್ಯವಸ್ಥ
 msgid "Format the swap area:"
 msgstr "ಸ್ವಾಪ್ ಜಾಗವನ್ನು ಸಿದ್ಧಪಡಿಸು:"
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: text
 #. Description
 #. In the following context: "Format the partition: yes"
@@ -433,8 +427,6 @@ msgstr "ಸ್ವಾಪ್ ಜಾಗವನ್ನು ಸಿದ್ಧಪಡಿಸ�
 msgid "yes"
 msgstr "ಹೌದು"
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: text
 #. Description
 #. In the following context: "Format the partition: no"
@@ -461,9 +453,6 @@ msgid ""
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Label:\" ]"
 msgstr ""
-"ಯಾವುದು ಇಲ್ಲ[ ಆವರಣ ಚಿಹ್ನೆಗಳ ಒಳಗೆ ಇರುವುದನ್ನು ಭಾಷಾಂತರಿಸಬೇಡಿ ಮತ್ತು \"none\" ಎಂಬ ಪದದ "
-"ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿನ ಭಾಷಾಂತರವನ್ನು ಆವರಣ ಚಿಹ್ನೆಗಳಿಲ್ಲದೆ ಹಾಕಿರಿ. ಈ  \"none\" ಪದವು "
-"\"Label:\"ಗೆ ಸಂಬಂಧಿಸಿರುತ್ತದೆ ]"
 
 #. Type: text
 #. Description
@@ -534,11 +523,6 @@ msgstr ""
 "ವರ್ಗ = ವರ್ಗದ ಅಂಶಗಳು ವಿಷಯ  = ೪ ಕೆಬಿ ಭಾಗ ಪ್ರತಿ  ಇನೋಡೆಗೆ , ಹಿರಿಯ ಕಡತ  = ಒಂದು ಎಂಬಿ "
 "ಭಾಗ ಪ್ರತಿ   ಇನೋಡೆಗೆ ,ಹಿರಿಯ ೪ ರ  ಕಡತ  = ೪  ಎಂಬಿ ಭಾಗ ಪ್ರತಿ   ಇನೋಡೆಗೆ "
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: text
 #. Description
 #. This is an item in the menu "Partition settings"
@@ -557,9 +541,6 @@ msgid ""
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Mount point:\" ]"
 msgstr ""
-"ಯಾವುದು ಇಲ್ಲ[ ಆವರಣ ಚಿಹ್ನೆಗಳ ಒಳಗೆ ಇರುವುದನ್ನು ಭಾಷಾಂತರಿಸಬೇಡಿ ಮತ್ತು \"none\" ಎಂಬ ಪದದ "
-"ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿನ ಭಾಷಾಂತರವನ್ನು ಆವರಣ ಚಿಹ್ನೆಗಳಿಲ್ಲದೆ ಹಾಕಿರಿ. ಈ  \"none\" ಪದವು "
-"\"Mount point:\"ಗೆ ಸಂಬಂಧಿಸಿರುತ್ತದೆ ]"
 
 #. Type: text
 #. Description
@@ -620,7 +601,7 @@ msgstr "JFS ದಾಖಲಾತಿ ಕಡತವ್ಯವಸ್ಥೆ"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr ""
+msgstr "NTFS"
 
 #. Type: text
 #. Description
@@ -718,12 +699,6 @@ msgstr ""
 msgid "noexec - do not allow execution of any binaries"
 msgstr "noexec - ದ್ವಿಸಂಕೇತ ಕಡತಗಳನ್ನು ಚಲಾಯಿಸಲು ಅವಕಾಶ ನೀಡದಿರು "
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: text
 #. Description
 #. :sl2:
@@ -733,12 +708,6 @@ msgstr "noexec - ದ್ವಿಸಂಕೇತ ಕಡತಗಳನ್ನು ಚಲ�
 msgid "ro - mount the file system read-only"
 msgstr "ro - ಕಡತ ವ್ಯವಸ್ಥೆಯನ್ನು ಕೇವಲ ಓದುವಂತೆ ಏರಿಸಿ"
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: text
 #. Description
 #. :sl2:

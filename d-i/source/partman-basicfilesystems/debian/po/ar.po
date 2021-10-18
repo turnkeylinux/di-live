@@ -12,6 +12,9 @@
 # najib LAARIBI <supnano@gmail.com>, 2018.
 # ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
 # Osama <osama.ibrahim.89@gmail.com>, 2019.
+# zer0-x <ProFessorHassan3@gmail.com>, 2021.
+# Fahim Sabah <katheer.kaleel@gmail.com>, 2021.
+#
 #
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
@@ -28,8 +31,8 @@ msgstr ""
 "Project-Id-Version: ar\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2019-06-10 10:55+0000\n"
-"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
+"PO-Revision-Date: 2021-04-01 14:26+0000\n"
+"Last-Translator: Fahim Sabah <katheer.kaleel@gmail.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +62,7 @@ msgstr "تفقّد مساحة الإبدال في الجزء #${PARTITION} من 
 #. :sl1:
 #: ../partman-basicfilesystems.templates:3001
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
-msgstr "إنشاء نظام الملفّات ${TYPE} في الجزء #${PARTITION} من  ${DEVICE}..."
+msgstr "إنشاء نظام الملفّات ${TYPE} في الجزء #${PARTITION} من ${DEVICE}..."
 
 #. Type: text
 #. Description
@@ -655,9 +658,8 @@ msgstr "noatime - عدم تحديث أزمان الوصول إلى الـinode �
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "nodiratime - عدم تحديث أزمان مجلد الوصول إلى الـinode"
+msgstr "nodiratime - عدم تحديث أزمان ولوج عُقد المجلد"
 
 #. Type: text
 #. Description
@@ -767,7 +769,7 @@ msgstr "notail - تعطيل تكديس الملفّات في شجرة نظام �
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "اترك - استقطع الكتل المحررة من جهاز الكتل الضمني"
 
 #. Type: text
 #. Description

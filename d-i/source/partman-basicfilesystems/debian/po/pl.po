@@ -27,21 +27,23 @@
 #      Jakub Bogusz <qboosh@pld-linux.org>, 2007-2011.
 #      Tomasz Z. Napierala <zen@debian.linux.org.pl>, 2004, 2006.
 # Marcin Owsiany <porridge@debian.org>, 2011.
-# Michał Kułach <michal.kulach@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017.
+# Michał Kułach <michal.kulach@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Bartosz Feński <fenio@debian.org>, 2020.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2017-12-12 21:18+0100\n"
-"Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
+"PO-Revision-Date: 2020-09-11 20:10+0000\n"
+"Last-Translator: Bartosz Feński <fenio@debian.org>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 
 #. Type: text
 #. Description
@@ -211,7 +213,7 @@ msgid ""
 "The creation of swap space in partition #${PARTITION} of ${DEVICE} failed."
 msgstr ""
 "Tworzenie przestrzeni wymiany na partycji #${PARTITION} urządzenia ${DEVICE} "
-"nie powiodło się"
+"nie powiodło się."
 
 #. Type: boolean
 #. Description
@@ -477,7 +479,7 @@ msgstr "brak"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:23001
 msgid "Reserved blocks:"
-msgstr "Bloki zarezerwowane"
+msgstr "Bloki zarezerwowane:"
 
 #. Type: string
 #. Description
@@ -539,7 +541,7 @@ msgid ""
 msgstr ""
 "standard = standardowe parametry, news = jeden i-węzeł na 4KB blok, "
 "largefile = jeden i-węzeł na megabajt, largefile4 = jeden i-węzeł na 4 "
-"megabajty"
+"megabajty."
 
 #. Type: text
 #. Description

@@ -3,8 +3,8 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of nl.po to Dutch
-# Dutch messages for debian-installer.
+# translation of debian-installer/sublevel1 to Dutch
+# Dutch messages for debian-installer/sublevel1.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Frans Pop <aragorn@tiscali.nl>, 2005.
@@ -21,14 +21,14 @@
 # Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2006, 2007, 2008, 2009, 2010, 2011.
 # Taco Witte <tcwitte@cs.uu.nl>, 2004.
 # Reinout van Schouwen <reinouts@gnome.org>, 2007.
-# Frans Spiesschaert <Frans.Spiesschaert@yucom.be>, 2014.
+# Frans Spiesschaert <Frans.Spiesschaert@yucom.be>, 2014-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer/sublevel1\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2014-10-13 13:12+0200\n"
+"PO-Revision-Date: 2020-03-30 22:36+0200\n"
 "Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
 "Language-Team: Debian Dutch l10n Team <debian-l10n-dutch@lists.debian.org>\n"
 "Language: nl\n"
@@ -480,8 +480,7 @@ msgstr "Gereserveerde blokken:"
 #: ../partman-basicfilesystems.templates:24001
 msgid "Percentage of the file system blocks reserved for the super-user:"
 msgstr ""
-"Welk percentage van de bestandssysteemblokken dient gereserveerd te worden "
-"voor de beheerder?"
+"Percentage van de voor de beheerder gereserveerde bestandssysteemblokken:"
 
 #. Type: text
 #. Description
@@ -520,8 +519,8 @@ msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
 "system parameters can be chosen for that use."
 msgstr ""
-"Hoe zal dit systeem gebruikt worden (nodig opdat hierop afgestemde "
-"bestandssysteemparameters voor dit type gekozen kunnen worden)?"
+"Geef aan hoe dit bestandssysteem gebruikt zal worden, zodat optimale "
+"bestandssysteemparameters gekozen kunnen worden voor dat gebruik."
 
 #. Type: select
 #. Description
@@ -624,7 +623,7 @@ msgstr "ntfs"
 #: ../partman-basicfilesystems.templates:38001
 #: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
-msgstr "Wisselgeheugen (swap area)"
+msgstr "wisselgeheugen (swap area)"
 
 #. Type: text
 #. Description

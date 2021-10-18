@@ -11,7 +11,7 @@
 # Janos Guljas <janos@resenje.org>, 2010-2012.
 # Veselin Mijušković <veselin.mijuskovic@gmail.com>, 2008.
 # Milan Kostic <kosticmilan77@open.telekom.rs>, 2012.
-# Filipovic Dragan <filipovic@tutanota.com>, 2018.
+# Filipovic Dragan <filipovic@tutanota.com>, 2018, 2020.
 #
 # Translations from iso-codes:
 #   Aleksandar Jelenak <aleksandar.jelenak@gmail.com>, 2010.
@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2018-01-11 20:47+0000\n"
+"PO-Revision-Date: 2020-09-07 19:36+0000\n"
 "Last-Translator: Filipovic Dragan <filipovic@tutanota.com>\n"
 "Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
 "Language: sr\n"
@@ -815,9 +815,9 @@ msgid ""
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Ваша бут партиција није конфигурисана са ext2  фајл системом. Ово је "
-"потребно да би ваша машина могла да се покрене. Вратите се назад и "
-"употребите ext2 фајл систем."
+"Ваша бут партиција није конфигурисана са ext2 фајл системом. Ово је потребно "
+"да би ваша машина могла да се покрене. Вратите се назад и употребите ext2 "
+"фајл систем."
 
 #. Type: boolean
 #. Description

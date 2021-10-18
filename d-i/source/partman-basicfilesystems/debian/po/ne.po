@@ -448,7 +448,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Label:\" ]"
-msgstr "कुनै पनि होइन"
+msgstr ""
 
 #. Type: text
 #. Description
@@ -538,9 +538,6 @@ msgid ""
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Mount point:\" ]"
 msgstr ""
-"कुनै पनि होइन[ कोष्ठ भित्र के छ त्यसलाई अनुवाद नगर्नुहोस् र तपाईँको भाषामा कुनै पनि कोष्ठ "
-"बिनै \"कुनैपनि होईन\" शव्दलाई अनुवाद मा मात्र राख्नुहोस् । यो \"कुनैपनि होईन\" ले "
-"\"माउन्ट विन्दू:\" सँग सम्बन्ध राख्दछ । ]"
 
 #. Type: text
 #. Description

@@ -27,13 +27,17 @@
 # Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011, 2012.
 # Sruthi Chandran <srud@openmailbox.org>, 2018.
 # Himanshu Awasthi <johim9493@gmail.com>, 2018.
+# KushagraKarira <kushagrakarira@gmail.com>, 2020, 2021.
+# षिखर् <dnitesigm@gmail.com>, 2020.
+# Indrani Roy <indrani@scriptek.co.in>, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2018-09-24 21:29+0000\n"
-"Last-Translator: Himanshu Awasthi <johim9493@gmail.com>\n"
+"PO-Revision-Date: 2021-02-09 19:14+0000\n"
+"Last-Translator: KushagraKarira <kushagrakarira@gmail.com>\n"
 "Language-Team: \n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
@@ -245,9 +249,9 @@ msgid ""
 "because it is not a fully-functional Unix file system. Please choose a "
 "different file system, such as ${EXT2}."
 msgstr ""
-"फाइलसिस्टम प्रकार ${FILESYSTEM} को ${MOUNTPOINT} पर माउन्ट नहीं किया जा सका "
-"क्योंकियह एक पूर्णतया समर्थित यूनिक्स फाइलसिस्टम नहीं है। कृपया कोई अन्य फाइलसिस्टम चुनें, "
-"जैसे कि ${EXT2}"
+"फ़ाइल सिस्टम प्रकार ${FILESYSTEM} को ${MOUNTPOINT} पर नहीं रखा जा सकता है, क्योंकि "
+"यह पूरी तरह कार्यात्मक यूनिक्स फाइल सिस्टम नहीं है। कृपया एक अलग फ़ाइल सिस्टम चुनें, जैसे "
+"${EXT2}।"
 
 #. Type: select
 #. Choices
@@ -550,7 +554,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Mount point:\" ]"
-msgstr "कुछ नहीं."
+msgstr "कोई नहीं"
 
 #. Type: text
 #. Description
@@ -601,9 +605,8 @@ msgstr "एफ़एटी32"
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
-#, fuzzy
 msgid "NTFS journaling file system"
-msgstr "जेएफ़एस जर्नलिंग फ़ाइल सिस्टम"
+msgstr "NTFS जर्नलिंग फ़ाइल सिस्टम"
 
 #. Type: text
 #. Description
@@ -668,9 +671,8 @@ msgstr "noatime - प्रत्येक अभिगम पर ऐक्स�
 #. Note to translators: Please keep your translations of this string below
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
-#, fuzzy
 msgid "nodiratime - do not update directory inode access times"
-msgstr "noatime - प्रत्येक अभिगम पर ऐक्सेस समय न बदलें"
+msgstr "nodiratime - निर्देशिका इनोड एक्सेस बार अपडेट न करें"
 
 #. Type: text
 #. Description
@@ -778,7 +780,7 @@ msgstr "notail - फाइलों का फाइलतंत्र वृक
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr ""
+msgstr "त्यागें - अंतर्निहित ब्लॉक डिवाइस से मुक्त ट्रिम को ट्रिम करें"
 
 #. Type: text
 #. Description
@@ -796,7 +798,7 @@ msgstr "एसीएलएस - प्रवेश नियंत्रण स�
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
-msgstr "shortnames - मात्र पुराने ढंग के MS-DOS 8.3 फ़ाइल तंत्र का उपयोग करें"
+msgstr "shortnames - केवल पुराने MS-DOS 8.3 शैली फ़ाइल नाम का उपयोग करें"
 
 #. Type: boolean
 #. Description
@@ -813,14 +815,13 @@ msgstr "मेन्यू में वापस जाएँ तथा त्�
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:60001
-#, fuzzy
 msgid ""
 "Your boot partition has not been configured with the ext2 file system. This "
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"आपका बूट पार्टिशन ईएक्सटी२ या ईएक्सटी३ फाइलसिस्टम में नहीं बना है. आपके यंत्र को बूट करने "
-"के लिए यह आवश्यक है. कृपया वापस जा कर ईएक्सटी२ या ईएक्सटी३ फाइलसिस्टम चुनिए."
+"आपका बूट विभाजन ext2 फाइल सिस्टम से कॉन्फ़िगर नहीं किया गया है। बूट करने के लिए यह "
+"आपकी मशीन द्वारा आवश्यक है। कृपया वापस जाएं और ext2 फ़ाइल सिस्टम का उपयोग करें।"
 
 #. Type: boolean
 #. Description
@@ -842,12 +843,11 @@ msgstr ""
 #. Description
 #. :sl5:
 #: ../partman-basicfilesystems.templates:61001
-#, fuzzy
 msgid ""
 "Your boot partition is not located on the first partition of your hard disk. "
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"आपका बूट पार्टिशन आपके हार्ड डिस्क के प्राथमिक पार्टिशन पर स्थित नहीं है. यह आपके तंत्र को "
-"बूट करने के लिए आवश्यक है. कृपया वापस जा कर अपने प्राथमिक पार्टिशन को बूट पार्टिशन के रूप "
-"में उपयोग करें."
+"आपका बूट पार्टिशन आपके हार्ड डिस्क के प्रथम पार्टिशन पर स्थित नहीं है. यह आपके तंत्र को बूट "
+"करने के लिए आवश्यक है. कृपया वापस जा कर अपने प्रथम पार्टिशन को बूट पार्टिशन के रूप में "
+"उपयोग करें."

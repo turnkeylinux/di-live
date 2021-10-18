@@ -3,33 +3,27 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of Debian Installer templates to Esperanto.
-# Copyright (C) 2005-2013 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
+# Occitan (post 1500) translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# Yannig MARCHEGAY <yannick.marchegay@lokanova.com>, 2006.
+# Cédric VALMARY <cvalmary@yahoo.fr>, 2016.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2020.
 #
-# Samuel Gimeno <sgimeno@gmail.com>, 2005.
-# Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005, 2006, 2007.
-# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2017, 2018, 2020.
-#
-# Translations from iso-codes:
-# Alastair McKInstry <mckinstry@computer.org>, 2001,2002.
-# Copyright (C) 2001,2002,2003,2004 Free Software Foundation, Inc.
-# D. Dale Gulledge <dsplat@rochester.rr.com> (translations from drakfw), 2001.
-# Edmund GRIMLEY EVANS <edmundo@rano.org>, 2004-2011
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-basicfilesystems@packages.debian.org\n"
 "POT-Creation-Date: 2018-09-28 22:43+0200\n"
-"PO-Revision-Date: 2020-11-17 04:48+0000\n"
-"Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
-"Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
-"Language: eo\n"
+"PO-Revision-Date: 2020-11-15 18:28+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: text
 #. Description
@@ -38,8 +32,8 @@ msgstr ""
 msgid ""
 "Checking the ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Kontrolo de la dosiersistemo ${TYPE} en la diskparto #${PARTITION} de "
-"${DEVICE}..."
+"Verificacion del sistèma de fichièrs ${TYPE} sus la particion #${PARTITION} "
+"de ${DEVICE}..."
 
 #. Type: text
 #. Description
@@ -47,7 +41,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:2001
 msgid "Checking the swap space in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Kontrolo de la interŝanĝa spaco en la diskparto #${PARTITION} de ${DEVICE}..."
+"Verificacion de l'espaci swap de la particion #${PARTITION} de ${DEVICE}..."
 
 #. Type: text
 #. Description
@@ -55,7 +49,8 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:3001
 msgid "Creating ${TYPE} file system in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Kreado de dosiersistemo ${TYPE} en la diskparto #${PARTITION} de ${DEVICE}..."
+"Creacion del sistèma de fichièrs ${TYPE} sus la particion n° ${PARTITION} de "
+"${DEVICE}..."
 
 #. Type: text
 #. Description
@@ -65,8 +60,8 @@ msgid ""
 "Creating ${TYPE} file system for ${MOUNT_POINT} in partition #${PARTITION} "
 "of ${DEVICE}..."
 msgstr ""
-"Kreado de dosiersistemo ${TYPE} por la munt-punkto ${MOUNT_POINT} en la "
-"diskparto #${PARTITION} de ${DEVICE}..."
+"Creacion del sistèma de fichièrs ${TYPE} pel punt de montatge ${MOUNT_POINT} "
+"sus la particion n° ${PARTITION} de ${DEVICE}..."
 
 #. Type: text
 #. Description
@@ -74,8 +69,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:5001
 msgid "Formatting swap space in partition #${PARTITION} of ${DEVICE}..."
 msgstr ""
-"Strukturigado de la interŝanĝa spaco en la diskparto #${PARTITION} de "
-"${DEVICE}..."
+"Formatatge de l'espaci swap de la particion n° ${PARTITION} de ${DEVICE}..."
 
 #. Type: boolean
 #. Description
@@ -86,7 +80,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:6001
 #: ../partman-basicfilesystems.templates:7001
 msgid "Go back to the menu and correct errors?"
-msgstr "Ĉu retroiri al la menuo kaj korekti la erarojn?"
+msgstr "Tornar al menú e corregir las errors ?"
 
 #. Type: boolean
 #. Description
@@ -96,8 +90,8 @@ msgid ""
 "The test of the file system with type ${TYPE} in partition #${PARTITION} of "
 "${DEVICE} found uncorrected errors."
 msgstr ""
-"La testo de la dosiersistemo kun tipo ${TYPE} en la diskparto #${PARTITION} "
-"el ${DEVICE} trovis ne korektitajn erarojn."
+"Lo contraròtle del sistèma de fichièrs ${TYPE} sus la particion n"
+"° ${PARTITION} de ${DEVICE} a mes en evidéncia d'errors pas corregidas."
 
 #. Type: boolean
 #. Description
@@ -111,8 +105,8 @@ msgid ""
 "If you do not go back to the partitioning menu and correct these errors, the "
 "partition will be used as is."
 msgstr ""
-"Se vi ne retroiras al diskpartigada menuo por korekti ĉiujn erarojn, la "
-"diskparto estos uzita tiel, kiel ĝi estas."
+"Se tornatz pas sul menú de particionament e corregissètz pas las errors la "
+"particion demorarà atal."
 
 #. Type: boolean
 #. Description
@@ -122,8 +116,8 @@ msgid ""
 "The test of the swap space in partition #${PARTITION} of ${DEVICE} found "
 "uncorrected errors."
 msgstr ""
-"La testo de interŝanĝa spaco en diskpartigo #${PARTITION} de ${DEVICE} "
-"trovis ne korektitajn erarojn."
+"Lo tèst de la memòria virtuala d’escambi (swap) dins la particion n"
+"° ${PARTITION} de ${DEVICE} fa veire d'errors pas corregidas."
 
 #. Type: boolean
 #. Description
@@ -134,7 +128,7 @@ msgstr ""
 #: ../partman-basicfilesystems.templates:8001
 #: ../partman-basicfilesystems.templates:11001
 msgid "Do you want to return to the partitioning menu?"
-msgstr "Ĉu vi volas retroiri al la diskpartiga menuo?"
+msgstr "Volètz tornar al menú de particionament ?"
 
 #. Type: boolean
 #. Description
@@ -147,10 +141,11 @@ msgid ""
 "scarce. You may experience installation problems if you do not have enough "
 "physical memory."
 msgstr ""
-"Vi ne elektis diskparton por esti uzata kiel interŝanĝa spaco. Aktivigi "
-"interŝanĝan spacon estas tre konsilinde por ke via sistemo plej bone uzu la "
-"disponeblan memoron kaj pli bone funkciu kiam memoro mankos. La instalado "
-"povos fiaski se vi ne disponas sufiĉan fizikan memorkapablon en via sistemo."
+"Pas cap de particion causida coma espaci d'escambi (swap space). "
+"L'activacion d'un espaci d'escambi (« swap ») es conselhada per que lo "
+"sistèma utilize melhor la memòria fisica e per que foncione melhor quand la "
+"memòria fisica es limitada. Es possible qu'ajatz de problèmas se i a pas pro "
+"de memòria fisica."
 
 #. Type: boolean
 #. Description
@@ -160,15 +155,15 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a swap partition, "
 "the installation will continue without swap space."
 msgstr ""
-"Se vi ne retroiras al diskpartigada menuo por indiki interŝanĝan diskparton, "
-"la instalado daŭrigos sen interŝanĝa diskpartigo."
+"Se tornatz pas sul menú de particionament e definissètz pas una particion "
+"per l'espaci d'escambi (swap partition), l'installacion se farà aqueste."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:9001
 msgid "Failed to create a file system"
-msgstr "Kreado de dosiersistemo malsukcesis"
+msgstr "Impossible de crear un sistèma de fichièrs"
 
 #. Type: error
 #. Description
@@ -178,15 +173,15 @@ msgid ""
 "The ${TYPE} file system creation in partition #${PARTITION} of ${DEVICE} "
 "failed."
 msgstr ""
-"La kreado de dosiersistemo ${TYPE} en la diskparto #${PARTITION} de "
-"${DEVICE} malsukcesis."
+"La creacion del sistèma de fichièrs ${TYPE} dins la particion n"
+"° ${PARTITION} de ${DEVICE} a pas capitat."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:10001
 msgid "Failed to create a swap space"
-msgstr "Kreado de interŝanĝa spaco malsukcesis"
+msgstr "Impossible de crear un espaci d'escambi"
 
 #. Type: error
 #. Description
@@ -195,8 +190,8 @@ msgstr "Kreado de interŝanĝa spaco malsukcesis"
 msgid ""
 "The creation of swap space in partition #${PARTITION} of ${DEVICE} failed."
 msgstr ""
-"La kreado de interŝanĝa spaco en diskparto #${PARTITION} de ${DEVICE} "
-"malsukcesis."
+"La creacion de l'espaci d'escambi de la particion n° ${PARTITION} de "
+"${DEVICE} a pas capitat."
 
 #. Type: boolean
 #. Description
@@ -206,8 +201,8 @@ msgid ""
 "No mount point is assigned for the ${FILESYSTEM} file system in partition #"
 "${PARTITION} of ${DEVICE}."
 msgstr ""
-"Neniu munt-punkto estas indikita por la dosiersistemo ${FILESYSTEM} en la "
-"diskparto #${PARTITION} de ${DEVICE}."
+"Cap de punt de montatge es pas afectat al sistèma de fichièrs ${FILESYSTEM} "
+"de la particion n° ${PARTITION} de ${DEVICE}."
 
 #. Type: boolean
 #. Description
@@ -217,15 +212,15 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a mount point from "
 "there, this partition will not be used at all."
 msgstr ""
-"Se vi ne retroiras al la diskpartigada menuo por indiki munt-punkton el tie, "
-"tiu ĉi diskparto tute ne estos uzata."
+"Se tornatz pas al menú de particionament per assignar un punt de montatge "
+"per aquesta particion, serà pas utilizada."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:12001
 msgid "Invalid file system for this mount point"
-msgstr "Malvalida dosiersistemo por tiu ĉi munt-punkto"
+msgstr "Lo sistèma de fichièrs es pas valid per aqueste punt de montatge"
 
 #. Type: error
 #. Description
@@ -236,9 +231,9 @@ msgid ""
 "because it is not a fully-functional Unix file system. Please choose a "
 "different file system, such as ${EXT2}."
 msgstr ""
-"La dosiersistemtipo '${FILESYSTEM}' ne povas esti muntita sur "
-"'${MOUNTPOINT}', ĉar ĝi ne disponigas ĉiujn 'Unix'-ajn dosiersistemajn "
-"funkciojn. Bonvolu elekti alian dosiersistemon, kiel '${EXT2}'."
+"Se pòt pas crear un sistèma de fichièrs ${FILESYSTEM} sus ${MOUNTPOINT} "
+"perque aurà pas totas las foncionalitats d'un sistèma de fichièrs de Unix. "
+"Vos caldriá causir un autre tipe de sistèma de fichièrs coma ${EXT2}."
 
 #. Type: select
 #. Choices
@@ -248,7 +243,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/ - the root file system"
-msgstr "/ - radika dosiersistemo"
+msgstr "/ - lo sistèma de fichièrs raiç"
 
 #. Type: select
 #. Choices
@@ -258,7 +253,7 @@ msgstr "/ - radika dosiersistemo"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/boot - static files of the boot loader"
-msgstr "/boot - statikaj dosieroj de la ekŝargilo"
+msgstr "/boot - fichièrs estatics pel gestionari d'aviada"
 
 #. Type: select
 #. Choices
@@ -268,7 +263,7 @@ msgstr "/boot - statikaj dosieroj de la ekŝargilo"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/home - user home directories"
-msgstr "/home - personaj dosierujoj de uzantoj"
+msgstr "/home - repèrtoris personals dels utilizaires"
 
 #. Type: select
 #. Choices
@@ -278,7 +273,7 @@ msgstr "/home - personaj dosierujoj de uzantoj"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/tmp - temporary files"
-msgstr "/tmp - provizoraj dosieroj"
+msgstr "/tmp - fichièrs temporaris"
 
 #. Type: select
 #. Choices
@@ -288,7 +283,7 @@ msgstr "/tmp - provizoraj dosieroj"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/usr - static data"
-msgstr "/usr - statika datumaro"
+msgstr "/usr - donadas estaticas"
 
 #. Type: select
 #. Choices
@@ -298,7 +293,7 @@ msgstr "/usr - statika datumaro"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/var - variable data"
-msgstr "/var - variebla datumaro"
+msgstr "/var - donadas variablas"
 
 #. Type: select
 #. Choices
@@ -308,7 +303,7 @@ msgstr "/var - variebla datumaro"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/srv - data for services provided by this system"
-msgstr "/srv - datumaro por servoj provizitaj de ĉi tiu sistemo"
+msgstr "/srv - donadas pels servicis provesits pel sistèma"
 
 #. Type: select
 #. Choices
@@ -318,7 +313,7 @@ msgstr "/srv - datumaro por servoj provizitaj de ĉi tiu sistemo"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/opt - add-on application software packages"
-msgstr "/opt - aldonaj programaraj pakoj"
+msgstr "/opt - ensemble de fichièrs addicionals"
 
 #. Type: select
 #. Choices
@@ -328,7 +323,7 @@ msgstr "/opt - aldonaj programaraj pakoj"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:13001
 msgid "/usr/local - local hierarchy"
-msgstr "/usr/local - loka hierarkio"
+msgstr "/usr/local - ierarquia locala"
 
 #. Type: select
 #. Choices
@@ -342,7 +337,7 @@ msgstr "/usr/local - loka hierarkio"
 #: ../partman-basicfilesystems.templates:13001
 #: ../partman-basicfilesystems.templates:14001
 msgid "Enter manually"
-msgstr "Tajpi mem"
+msgstr "Picar manualament"
 
 #. Type: select
 #. Choices
@@ -356,7 +351,7 @@ msgstr "Tajpi mem"
 #: ../partman-basicfilesystems.templates:13001
 #: ../partman-basicfilesystems.templates:14001
 msgid "Do not mount it"
-msgstr "Ne munti ĝin"
+msgstr "Utilizar pas aquesta particion"
 
 #. Type: select
 #. Description
@@ -369,7 +364,7 @@ msgstr "Ne munti ĝin"
 #: ../partman-basicfilesystems.templates:14002
 #: ../partman-basicfilesystems.templates:15001
 msgid "Mount point for this partition:"
-msgstr "Munt-punkto por ĉi tiu diskparto:"
+msgstr "Punt de montatge per aquesta particion :"
 
 #. Type: select
 #. Choices
@@ -390,35 +385,36 @@ msgstr "/windows"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "Invalid mount point"
-msgstr "Malvalida munt-punkto"
+msgstr "Punt de montatge incorrècte"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "The mount point you entered is invalid."
-msgstr "La munt-punkto kiun vi tajpis estas malvalida."
+msgstr "Lo punt de montatge qu'avètz picat es pas corrècte."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:16001
 msgid "Mount points must start with \"/\". They cannot contain spaces."
-msgstr "Munt-punktoj devas komenciĝi per \"/\". Ili ne devas enhavi spacojn."
+msgstr ""
+"Los punts de montatge devon començar per « / ». Pòdon pas conténer d'espacis."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:17001
 msgid "Label for the file system in this partition:"
-msgstr "Etikedo por la dosiersistemo en ĉi tiu diskparto:"
+msgstr "Etiqueta del sistèma de fichièrs (« label ») per aquesta particion :"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:18001
 msgid "Format the swap area:"
-msgstr "Strukturigi interŝanĝan areon:"
+msgstr "Formatar la zòna « swap » :"
 
 #. Type: text
 #. Description
@@ -426,7 +422,7 @@ msgstr "Strukturigi interŝanĝan areon:"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:19001
 msgid "yes"
-msgstr "jes"
+msgstr "òc"
 
 #. Type: text
 #. Description
@@ -434,7 +430,7 @@ msgstr "jes"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:20001
 msgid "no"
-msgstr "ne"
+msgstr "non"
 
 #. Type: text
 #. Description
@@ -442,7 +438,7 @@ msgstr "ne"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:21001
 msgid "Label:"
-msgstr "Etikedo:"
+msgstr "Etiqueta :"
 
 #. Type: text
 #. Description
@@ -453,7 +449,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Label:\" ]"
-msgstr "neniu"
+msgstr "pas cap"
 
 #. Type: text
 #. Description
@@ -461,14 +457,14 @@ msgstr "neniu"
 #. :sl2:
 #: ../partman-basicfilesystems.templates:23001
 msgid "Reserved blocks:"
-msgstr "Rezervitaj blokoj:"
+msgstr "Blòts reservats :"
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:24001
 msgid "Percentage of the file system blocks reserved for the super-user:"
-msgstr "Elcento el la dosiersistemaj blokoj rezervataj por la ĉefuzanto:"
+msgstr "Percentatge de blòts reservats pel superutilizaire :"
 
 #. Type: text
 #. Description
@@ -476,7 +472,7 @@ msgstr "Elcento el la dosiersistemaj blokoj rezervataj por la ĉefuzanto:"
 #. Up to 25 character positions
 #: ../partman-basicfilesystems.templates:25001
 msgid "Typical usage:"
-msgstr "Kutima uzado:"
+msgstr "Utilizacion costumièra :"
 
 #. Type: text
 #. Description
@@ -484,7 +480,7 @@ msgstr "Kutima uzado:"
 #. In the following context: "Typical usage: standard"
 #: ../partman-basicfilesystems.templates:26001
 msgid "standard"
-msgstr "laŭnorma"
+msgstr "estandard"
 
 #. Type: select
 #. Description
@@ -494,7 +490,7 @@ msgstr "laŭnorma"
 #. translate "news", "largefile" and "largefile4".
 #: ../partman-basicfilesystems.templates:27001
 msgid "Typical usage of this partition:"
-msgstr "Kutima uzado de ĉi tiu diskparto:"
+msgstr "Utilizacion costumièra per aquesta particion :"
 
 #. Type: select
 #. Description
@@ -507,8 +503,8 @@ msgid ""
 "Please specify how the file system is going to be used, so that optimal file "
 "system parameters can be chosen for that use."
 msgstr ""
-"Bonvolu indiki kiel la dosiersistemo estos uzata, tiel ke plejbonaj "
-"dosiersistemaj parametroj estu elektitaj por tia uzo."
+"Vos cal precisar la metòde d'utilizacion d'aqueste sistèma de fichièrs per "
+"qu'aja una causida adaptada a aquesta utilizacion."
 
 #. Type: select
 #. Description
@@ -521,9 +517,9 @@ msgid ""
 "standard = standard parameters, news = one inode per 4KB block, largefile = "
 "one inode per megabyte, largefile4 = one inode per 4 megabytes."
 msgstr ""
-"standard = kutimaj parametroj, news = po unu indeksnodo por 4kB-a bloko, "
-"largefile = po unu indeks-nodo por megabajto, largefile4 = po unu indeks-"
-"nodo por 4 megabajtoj."
+"estandard : paramètres classics, news : un nosèl d'indèx (inode) per blòt de "
+"4 quilòoctets, largefile : un nosèl d'indèx per octet, largefile4 : un nosèl "
+"d'indèx per 4 megaoctets."
 
 #. Type: text
 #. Description
@@ -531,7 +527,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicfilesystems.templates:28001
 msgid "Mount point:"
-msgstr "Munt-punkto:"
+msgstr "Punt de montatge :"
 
 #. Type: text
 #. Description
@@ -542,14 +538,14 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" relates to \"Mount point:\" ]"
-msgstr "neniu"
+msgstr "pas cap"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:30001
 msgid "Ext2 file system"
-msgstr "'Ext2'-dosiersistemo"
+msgstr "Sistèma de fichièrs Ext2"
 
 #. Type: text
 #. Description
@@ -557,14 +553,14 @@ msgstr "'Ext2'-dosiersistemo"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:31001
 msgid "ext2"
-msgstr "'ext2'"
+msgstr "ext2"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:32001
 msgid "FAT16 file system"
-msgstr "'FAT16'-dosiersistemo"
+msgstr "Sistèma de fichièrs FAT16"
 
 #. Type: text
 #. Description
@@ -572,14 +568,14 @@ msgstr "'FAT16'-dosiersistemo"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:33001
 msgid "fat16"
-msgstr "'fat16'"
+msgstr "fat16"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:34001
 msgid "FAT32 file system"
-msgstr "'FAT32'-dosiersistemo"
+msgstr "Sistèma de fichièrs FAT32"
 
 #. Type: text
 #. Description
@@ -587,14 +583,14 @@ msgstr "'FAT32'-dosiersistemo"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:35001
 msgid "fat32"
-msgstr "'fat32'"
+msgstr "fat32"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:36001
 msgid "NTFS journaling file system"
-msgstr "Protokoliga dosiersistemo NTFS"
+msgstr "Sistèma de fichièrs jornalizat NTFS"
 
 #. Type: text
 #. Description
@@ -602,7 +598,7 @@ msgstr "Protokoliga dosiersistemo NTFS"
 #. Short file system name (untranslatable in many languages)
 #: ../partman-basicfilesystems.templates:37001
 msgid "ntfs"
-msgstr "'ntfs'"
+msgstr "ntfs"
 
 #. Type: text
 #. Description
@@ -612,7 +608,7 @@ msgstr "'ntfs'"
 #: ../partman-basicfilesystems.templates:38001
 #: ../partman-basicfilesystems.templates:40001
 msgid "swap area"
-msgstr "interŝanĝa areo ('swap')"
+msgstr "espaci d'escambi (« swap »)"
 
 #. Type: text
 #. Description
@@ -625,7 +621,7 @@ msgstr "interŝanĝa areo ('swap')"
 #: ../partman-basicfilesystems.templates:39001
 #: ../partman-basicfilesystems.templates:41001
 msgid "swap"
-msgstr "swap"
+msgstr "particion d'escambi (swap)"
 
 #. Type: text
 #. Description
@@ -635,14 +631,15 @@ msgstr "swap"
 #: ../partman-basicfilesystems.templates:42001
 #: ../partman-basicfilesystems.templates:43001
 msgid "Mount options:"
-msgstr "Munt-punktaj opcioj:"
+msgstr "Opcions de montatge :"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
 #: ../partman-basicfilesystems.templates:43001
 msgid "Mount options can tune the behavior of the file system."
-msgstr "Munt-punktaj opcioj permesas agordi la funkciadon de la dosiersistemo."
+msgstr ""
+"Las options de montatge (mount) pertmeton de reglar lo sistèma de fichièrs."
 
 #. Type: text
 #. Description
@@ -651,7 +648,9 @@ msgstr "Munt-punktaj opcioj permesas agordi la funkciadon de la dosiersistemo."
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:44001
 msgid "noatime - do not update inode access times at each access"
-msgstr "noatime - ne ĝisdatigi alir-tempojn de 'inodoj' je ĉiu aliro"
+msgstr ""
+"noatime - pas d'actualizacion de las datas e de las oras d'accèsses dels "
+"nosèls d'indèx (inodes)"
 
 #. Type: text
 #. Description
@@ -660,7 +659,9 @@ msgstr "noatime - ne ĝisdatigi alir-tempojn de 'inodoj' je ĉiu aliro"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:45001
 msgid "nodiratime - do not update directory inode access times"
-msgstr "nodiratime - ne ĝisdatigi alir-tempojn de dosierujaj 'inodoj'"
+msgstr ""
+"nodiratime - pas d'actualizacion de las datas e de las oras d'accèsses dels "
+"nosèls d'indèx (inodes)"
 
 #. Type: text
 #. Description
@@ -669,7 +670,7 @@ msgstr "nodiratime - ne ĝisdatigi alir-tempojn de dosierujaj 'inodoj'"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:46001
 msgid "relatime - update inode access times relative to modify time"
-msgstr "relatime - ĝisdatigi alir-tempojn de 'inodoj' relative al modif-tempo"
+msgstr "relatime - mesa a jorn relativa de las data e ora d'accès dels inodes"
 
 #. Type: text
 #. Description
@@ -678,7 +679,7 @@ msgstr "relatime - ĝisdatigi alir-tempojn de 'inodoj' relative al modif-tempo"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:47001
 msgid "nodev - do not support character or block special devices"
-msgstr "nodev - ne administri signecajn aŭ blokecajn specialajn aparatojn"
+msgstr "nodev - pas de gestion dels periferics blòt o caractèr"
 
 #. Type: text
 #. Description
@@ -687,7 +688,7 @@ msgstr "nodev - ne administri signecajn aŭ blokecajn specialajn aparatojn"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:48001
 msgid "nosuid - ignore set-user-identifier or set-group-identifier bits"
-msgstr "nosuid - preteratenti la bitojn 'setuid' kaj 'setgid'"
+msgstr "nosuid - pas de gestion dels bits setuid o setgid"
 
 #. Type: text
 #. Description
@@ -696,7 +697,7 @@ msgstr "nosuid - preteratenti la bitojn 'setuid' kaj 'setgid'"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:49001
 msgid "noexec - do not allow execution of any binaries"
-msgstr "noexec - malpermesi plenumigon de iuj ajn programoj"
+msgstr "noexec - l'aviada dels programas es pas permesa"
 
 #. Type: text
 #. Description
@@ -705,7 +706,7 @@ msgstr "noexec - malpermesi plenumigon de iuj ajn programoj"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:50001
 msgid "ro - mount the file system read-only"
-msgstr "ro - munti la dosiersistemon nur-lege"
+msgstr "ro - montar en lectura sola"
 
 #. Type: text
 #. Description
@@ -714,7 +715,7 @@ msgstr "ro - munti la dosiersistemon nur-lege"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:51001
 msgid "sync - all input/output activities occur synchronously"
-msgstr "sync - ĉiuj enigaj/eligaj aktivaĵoj okazas sinkrone"
+msgstr "sync - las entradas/sortidas son totas sincrònas"
 
 #. Type: text
 #. Description
@@ -723,7 +724,7 @@ msgstr "sync - ĉiuj enigaj/eligaj aktivaĵoj okazas sinkrone"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:52001
 msgid "usrquota - user disk quota accounting enabled"
-msgstr "usrquota - ebligi kontroladon de disko-kvotoj por uzantoj"
+msgstr "usrquota - gestion dels quòtas dels utilizaires"
 
 #. Type: text
 #. Description
@@ -732,7 +733,7 @@ msgstr "usrquota - ebligi kontroladon de disko-kvotoj por uzantoj"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:53001
 msgid "grpquota - group disk quota accounting enabled"
-msgstr "grpquota - ebligi kontroladon de disko-kvotoj por grupoj"
+msgstr "grpquota - gestion dels quòtas dels gropes"
 
 #. Type: text
 #. Description
@@ -741,7 +742,7 @@ msgstr "grpquota - ebligi kontroladon de disko-kvotoj por grupoj"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:54001
 msgid "user_xattr - support user extended attributes"
-msgstr "user_xattr - administri etenditajn atributojn por uzantoj"
+msgstr "user_xattr - gestion dels atributs mai espandits pels utilizaires"
 
 #. Type: text
 #. Description
@@ -750,7 +751,8 @@ msgstr "user_xattr - administri etenditajn atributojn por uzantoj"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:55001
 msgid "quiet - changing owner and permissions does not return errors"
-msgstr "quiet - ŝanĝado de posedanto kaj permesoj ne rezultas en eraroj"
+msgstr ""
+"silenci - pas cap d'error dins lo cambiament de proprietari o los dreits"
 
 #. Type: text
 #. Description
@@ -759,7 +761,7 @@ msgstr "quiet - ŝanĝado de posedanto kaj permesoj ne rezultas en eraroj"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:56001
 msgid "notail - disable packing of files into the file system tree"
-msgstr "notail - malebligi pakigadon de dosieroj en la dosiersistema arbo"
+msgstr "notail - pas cap de regropament de fichièrs dins l'arborescéncia"
 
 #. Type: text
 #. Description
@@ -768,7 +770,7 @@ msgstr "notail - malebligi pakigadon de dosieroj en la dosiersistema arbo"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:57001
 msgid "discard - trim freed blocks from underlying block device"
-msgstr "forlasi - stuci liberajn blokojn el la implicita blok-aparato"
+msgstr "discard - redutz los blòts liberats del periferic supòrt"
 
 #. Type: text
 #. Description
@@ -777,7 +779,7 @@ msgstr "forlasi - stuci liberajn blokojn el la implicita blok-aparato"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:58001
 msgid "acls - support POSIX.1e Access Control List"
-msgstr "acls - subteni POSIX.1E Alir-Kontrola Listo"
+msgstr "acls - gestion de las listas de contraròtle d'accès POSIX.1e"
 
 #. Type: text
 #. Description
@@ -786,7 +788,7 @@ msgstr "acls - subteni POSIX.1E Alir-Kontrola Listo"
 #. a 65 columns limit (which means 65 characters in single-byte languages)
 #: ../partman-basicfilesystems.templates:59001
 msgid "shortnames - only use the old MS-DOS 8.3 style filenames"
-msgstr "nometoj - nur uzi la malnovajn dosiernomojn laŭ stilo 8.3 de MS-DOS"
+msgstr "shortnames - utilizar pas que de noms de fichièrs 8.3 tipe MS-DOS"
 
 #. Type: boolean
 #. Description
@@ -797,7 +799,7 @@ msgstr "nometoj - nur uzi la malnovajn dosiernomojn laŭ stilo 8.3 de MS-DOS"
 #: ../partman-basicfilesystems.templates:60001
 #: ../partman-basicfilesystems.templates:61001
 msgid "Go back to the menu and correct this problem?"
-msgstr "Ĉu retroiri al la menuo kaj korekti tiun ĉi problemon?"
+msgstr "Tornar al menú e corregir aqueste defaut ?"
 
 #. Type: boolean
 #. Description
@@ -808,9 +810,9 @@ msgid ""
 "is needed by your machine in order to boot. Please go back and use the ext2 "
 "file system."
 msgstr ""
-"Via ekŝarga diskparto ne estis akomodita kun la dosiersistemo 'ext2'. Tio "
-"estas nepre necesa por ekŝargi vian sistemon. Bonvolu retroiri kaj indiki "
-"dosiersistemon 'ext2'."
+"Vòstra particion d'aviada es pas estada configurada amb lo sistèma de "
+"fichièr ext2. Aquò's necessari per l'aviada de vòstra maquina. Tornatz en "
+"arrièr e utilizatz lo sistèma de fichièr ext2."
 
 #. Type: boolean
 #. Description
@@ -825,9 +827,9 @@ msgid ""
 "partition will be used as is. This means that you may not be able to boot "
 "from your hard disk."
 msgstr ""
-"Se vi ne retroiras al diskpartiga menuo kaj ne korektas tiun ĉi eraron, la "
-"diskparto estos uzata tiel, kiel ĝi estas. Verŝajne, vi ne povos ekŝargi el "
-"via fiksita disko."
+"Se tornatz pas al menú de particionament per corregir aquesta error, la "
+"particion serà utilizada talacoma es. Aquò significa que poiriatz èsser dins "
+"l'incapacitat d'amodar a partir del disc dur."
 
 #. Type: boolean
 #. Description
@@ -838,6 +840,6 @@ msgid ""
 "This is needed by your machine in order to boot.  Please go back and use "
 "your first partition as a boot partition."
 msgstr ""
-"Via ekŝarga diskparto ne lokiĝas en la unua diskparto de via fiksita disko. "
-"Tio nepre necesas por ekŝargi vian maŝinon. Bonvolu retroiri kaj indiki vian "
-"unuan diskparton kiel ekŝargan diskparton."
+"La particion d'aviada es pas dins la primièra particion primària del disc. "
+"Aquò's necessari per l'aviada de la maquina. Tornatz en arrièr e utilizatz "
+"la primièra particion primària coma particion d'aviada."
