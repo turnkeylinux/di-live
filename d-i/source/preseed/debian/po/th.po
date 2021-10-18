@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
 "PO-Revision-Date: 2017-02-22 21:24+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -108,6 +108,8 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
 msgstr "ดาวน์โหลดแฟ้มค่าตั้งล่วงหน้าสำหรับ debconf"
@@ -176,6 +178,8 @@ msgstr "อ่านรายละเอียดเพิ่มเติมไ
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "โหลดแฟ้มค่าตั้งล่วงหน้าสำหรับ debconf"

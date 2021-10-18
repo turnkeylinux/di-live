@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
 "PO-Revision-Date: 2017-12-01 00:46+0000\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
@@ -111,6 +111,8 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
 msgstr "Elŝuti antaŭagordan 'debconf'-dosieron"
@@ -180,6 +182,8 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "Ŝargi je antaŭagorda 'debconf'-dosiero"

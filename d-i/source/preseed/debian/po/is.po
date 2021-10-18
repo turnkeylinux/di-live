@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icelandic (Debian Installer)\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
 "PO-Revision-Date: 2018-01-04 06:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -114,6 +114,8 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
 msgstr "Hala niður debconf foruppsetningarskránni"
@@ -185,6 +187,8 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "Hleð debconf foruppsetningarskránni"

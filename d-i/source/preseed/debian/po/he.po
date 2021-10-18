@@ -21,14 +21,14 @@
 # Meni Livne <livne@kde.org>, 2000.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
-"PO-Revision-Date: 2019-01-18 15:20+0000\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
+"PO-Revision-Date: 2020-07-26 03:41+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
 "Language: he\n"
@@ -65,7 +65,7 @@ msgstr ""
 #. :sl2:
 #: ../preseed-common.templates:2001
 msgid "Failed to retrieve the preconfiguration file"
-msgstr "כישלון בהבאת קובץ הגדרות מוקדמות"
+msgstr "קבלת קובץ הגדרות מוקדמות נכשלה"
 
 #. Type: error
 #. Description
@@ -75,15 +75,15 @@ msgid ""
 "The file needed for preconfiguration could not be retrieved from "
 "${LOCATION}. The installation will proceed in non-automated mode."
 msgstr ""
-"הקובץ הנדרש בשביל הגדרות מוקדמות לא ניתן להורדה מ-${LOCATION}. תהליך ההתקנה "
-"יימשך במצב לא אוטומטי."
+"לא ניתן להוריד את הקובץ הנדרש בשביל הגדרות מוקדמות מ־${LOCATION}. תהליך "
+"ההתקנה יימשך במצב לא אוטומטי."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../preseed-common.templates:3001
 msgid "Failed to process the preconfiguration file"
-msgstr "כישלון בעיבוד קובץ הגדרות מוקדמות"
+msgstr "עיבוד קובץ הגדרות מוקדמות נכשל"
 
 #. Type: error
 #. Description
@@ -93,7 +93,7 @@ msgid ""
 "The installer failed to process the preconfiguration file from ${LOCATION}. "
 "The file may be corrupt."
 msgstr ""
-"תוכנית ההתקנה נכשלה בעיבוד קובץ הגדרות מוקדמות מ-${LOCATION}. הקובץ עלול "
+"תוכנית ההתקנה נכשלה בעיבוד קובץ הגדרות מוקדמות מ־${LOCATION}. הקובץ עלול "
 "להיות לא תקין."
 
 #. Type: error
@@ -101,7 +101,7 @@ msgstr ""
 #. :sl2:
 #: ../preseed-common.templates:12001
 msgid "Failed to run preseeded command"
-msgstr "כישלון בהרצת פקודה טעונה מראש"
+msgstr "הרצת פקודה טעונה מראש נכשלה"
 
 #. Type: error
 #. Description
@@ -114,6 +114,8 @@ msgstr "הרצת הפקודה „${COMMAND}” שנטענה מראש נכשלה 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
 msgstr "הורדת קובץ הגדרות מוקדמות של debconf"
@@ -134,8 +136,8 @@ msgid ""
 "preconfiguration file (which can in turn pull in other files). To do that, "
 "you need to provide a (perhaps partial) URL."
 msgstr ""
-"כדי לבצע התקנה אוטומטית, עליך לספק קובץ קדם הגדרות (שיכול לכלול קבצים "
-"אחרים). כדי לעשות זאת, עליך לספק URL (שיכול להיות חלקי)."
+"כדי לבצע התקנה אוטומטית, עליך לספק קובץ קדם הגדרות (שעשוי לכלול קבצים "
+"אחרים). כדי לעשות זאת, עליך לספק כתובת (אולי אפילו חלקית)."
 
 #. Type: string
 #. Description
@@ -151,9 +153,9 @@ msgid ""
 "  floppy://preseed.cfg\n"
 "  file:///hd-media/kiosk/./preseed.cfg"
 msgstr ""
-"זה יכול להיות פשוט כמו שם המכונה שבה קבצי הזרע שלך נמצאים ועד ל-URL מלא. כל "
-"אחד מהבאים יכול לעבוד: [שלוש האפשרויות להלן שוות ערך עבור example.com]  "
-"intra\n"
+"זה יכול להיות פשוט כמו שם המכונה שבה קובצי הזריעה שלך נמצאים ועד לכתובת "
+"מלאה. כל אחד מהבאים יכול לעבוד:\n"
+"  intra [עבור example.com שלוש האפשרויות להלן שוות ערך] \n"
 "  intra.example.com\n"
 "  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
 "  http://192.168.0.1/~phil/test47.txt\n"
@@ -168,8 +170,8 @@ msgid ""
 "For fully automated installs, preseed/url should itself be preseeded (via "
 "kernel command line, DHCP, or syslinux.cfg on customised media)"
 msgstr ""
-"להתקנות אוטומטיות לגמרי, קבצי זרע/קישור אמורים להיות בעצמם מוזרעים (ע\"י "
-"שורת פקודה לליבה, DHCP, או syslinux.cfg על מדיה בהתאמה אישית)"
+"לטובת התקנות אוטומטיות לחלוטין, טרום הזריעה/כתובת אמורים להיות במצב טרום "
+"זריעה (באמצעות שורת פקודה לליבה, DHCP או אמצעי עם syslinux.cfg מותאם)"
 
 #. Type: string
 #. Description
@@ -181,6 +183,8 @@ msgstr "ראו את http://wiki.debian.org/DebianInstaller/Preseed עבור הש
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "טעינת קובץ הגדרות מוקדמות של debconf"

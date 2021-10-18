@@ -3,8 +3,7 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_hi.po to Hindi
-# translation of debian-installer_packages_po_sublevel1_hi.po to
+# translation of debian-installer_packages_po_sublevel1 to Hindi
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
 # Debian Installer translators, please read the D-I i18n documentation
@@ -25,20 +24,26 @@
 # Kumar Appaiah <kumar.appaiah@gmail.com>, 2009.
 #   Alastair McKinstry <mckinstry@debian.org>, 2004.
 # Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008.
-# Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011.
+# Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011, 2012.
+# Sruthi Chandran <srud@openmailbox.org>, 2018.
+# Himanshu Awasthi <johim9493@gmail.com>, 2018.
+# KushagraKarira <kushagrakarira@gmail.com>, 2020, 2021.
+# षिखर् <dnitesigm@gmail.com>, 2020.
+# Indrani Roy <indrani@scriptek.co.in>, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
-"PO-Revision-Date: 2011-09-22 23:26-0500\n"
-"Last-Translator: Kumar Appaiah\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
-"Language: en_US\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
+"PO-Revision-Date: 2021-01-20 18:26+0000\n"
+"Last-Translator: KushagraKarira <kushagrakarira@gmail.com>\n"
+"Language-Team: \n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: 2X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: error
 #. Description
@@ -47,7 +52,7 @@ msgstr ""
 #. :sl2:
 #: ../preseed-common.templates:1001
 msgid "Checksum error"
-msgstr ""
+msgstr "चेकसम त्रुटि"
 
 #. Type: error
 #. Description
@@ -60,6 +65,8 @@ msgid ""
 "match the expected value of \"${CHECKSUM}\".  The file may be corrupt, or "
 "the provided checksums may be out of date."
 msgstr ""
+"${LOCATION} से प्राप्त फ़ाइल का ${ALGORITHM} चेकसम \"${CHECKSUM}\" के अपेक्षित मूल्य से "
+"मेल नहीं खाता। फ़ाइल दूषित हो सकती है, या प्रदत्त चेकसम आउट ऑफ डेट हो सकते हैं।"
 
 #. Type: error
 #. Description
@@ -111,11 +118,13 @@ msgstr "प्रीसीडेड कमांड चलाने में �
 msgid ""
 "Execution of preseeded command \"${COMMAND}\" failed with exit code ${CODE}."
 msgstr ""
-"प्रीसीडेड कमांड  \"${COMMAND}\" का कार्यान्वयन एग्ज़िट कोड ${CODE} के साथ असफल हुआ."
+"पूर्व-निर्धारित आदेश \"${COMMAND}\" का निष्पादन निकास कोड ${CODE} के साथ विफल रहा।"
 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
 msgstr "डेबकॉन्फ प्रीकॉन्फिगरेशन फाइल को डाउनलोड करे"
@@ -185,6 +194,8 @@ msgstr "उदाहरण के लिए http://wiki.debian.org/DebianInstall
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "डेबकॉन्फ प्रीकॉन्फिगरेशन फाइल को लोड करे"

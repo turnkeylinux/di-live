@@ -20,7 +20,7 @@
 # quad-nrg.net <yodesy@quad-nrg.net>, 2006, 2008.
 # QUAD-nrg.net <yodesy@quad-nrg.net>, 2006.
 # galaxico@quad-nrg.net <galaxico@quad-nrg.net>, 2009, 2011.
-# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014.
+# Emmanuel Galatoulas <galaxico@quad-nrg.net>, 2009, 2010, 2013, 2014, 2018.
 #   Tobias Quathamer <toddy@debian.org>, 2007.
 #   Free Software Foundation, Inc., 2004.
 #   Alastair McKinstry <mckinstry@computer.org>, 2001.
@@ -28,19 +28,22 @@
 #   Simos Xenitellis <simos@hellug.gr>, 2001.
 #   Konstantinos Margaritis <markos@debian.org>, 2004.
 #   Athanasios Lefteris <alefteris@gmail.com>, 2008, 2012.
+#   root <galatoulas@cti.gr>, 2020.
+#   Vangelis Skarmoutsos <skarmoutsosv@gmail.com>, 2020.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
-"PO-Revision-Date: 2017-09-02 23:06+0300\n"
-"Last-Translator: Sotirios Vrachas <sotirios@vrachas.net>\n"
-"Language-Team: el <debian-l10n-greek@lists.debian.org>\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
+"PO-Revision-Date: 2020-11-02 18:26+0000\n"
+"Last-Translator: Vangelis Skarmoutsos <skarmoutsosv@gmail.com>\n"
+"Language-Team: Greek\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: error
 #. Description
@@ -122,9 +125,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
-msgstr "Κατεβάστε από το δίκυο το αρχείο προρυθμίσεων debconf"
+msgstr "Κατεβάστε από το δίκτυο το αρχείο προρυθμίσεων debconf"
 
 #. Type: string
 #. Description
@@ -144,7 +149,7 @@ msgid ""
 msgstr ""
 "Για να πραγματοποιήσετε μιαν αυτοματοποιημένη εγκατάσταση, θα πρέπει να "
 "δώσετε ένα αρχείο προρυθμίσεων (που με τη σειρά του μπορεί να καλεί άλλα "
-"αρχεία). Για να το κάνετε αυτό, θα πρέπει να δώσετε ένα (πιθανόν ατελές) URL."
+"αρχεία). Για να το κάνετε αυτό, θα πρέπει να δώσετε ένα (πιθανά ατελές) URL."
 
 #. Type: string
 #. Description
@@ -162,7 +167,7 @@ msgid ""
 msgstr ""
 "Αυτό μπορεί να είναι τόσο απλό όσο το όνομα του μηχανήματος στο οποίο "
 "βρίσκονται τα αρχεία προρύθμισης ή ένα πλήρες URL. Οποιοδήποτε από τα "
-"παρακάτω μπορούν να δουλέψουν:\n"
+"παρακάτω μπορεί να δουλέψει:\n"
 "  intra\t\t[για το example.com, αυτά τα τρία είναι ισοδύναμα]\n"
 "  intra.example.com\n"
 "  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
@@ -193,6 +198,8 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "Φόρτωση του αρχείου προρυθμίσεων debconf"

@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dDz.po\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
 "PO-Revision-Date: 2012-02-29 04:41-0500\n"
 "Last-Translator: Jurmey Rabgay <jrabgay@dit.gov.bt>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -105,6 +105,8 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
 msgstr "debconf སྔ་གོང་རིམ་སྒྲིག་ཡིག་སྣོད་ ཕབ་ལེན་འབད།"
@@ -174,6 +176,8 @@ msgstr "http://wiki.debian.org/DebianInstaller/Preseed for inspiration. བལ�
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "debconfསྔ་གོང་རིམ་སྒྲིག་ཡིག་སྣོད་ མངོན་གསལ་འབད།"

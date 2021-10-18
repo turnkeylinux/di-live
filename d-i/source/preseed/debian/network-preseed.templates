@@ -1,11 +1,13 @@
 Template: debian-installer/network-preseed/title
 Type: text
 #  Main menu item
+#  Translators: keep below 55 columns
+# :sl3:
 _Description: Download debconf preconfiguration file
 
 Template: preseed/url
 Type: string
-#:sl3:
+# :sl3:
 _Description: Location of initial preconfiguration file:
  In order to perform an automated install, you need to supply a
  preconfiguration file (which can in turn pull in other files).
@@ -38,6 +40,6 @@ Description: for internal use; can be preseeded
 
 Template: auto-install/defaultroot
 Type: string
-Default: d-i/buster/./preseed.cfg
+Default: d-i/bullseye/./preseed.cfg
 Description: for internal use; can be preseeded
  Path added to local server to give the preseed root

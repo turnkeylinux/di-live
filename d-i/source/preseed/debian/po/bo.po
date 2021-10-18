@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
-"PO-Revision-Date: 2012-04-14 22:12+0600\n"
-"Last-Translator: Tennom <tankola@ymail.com, tennomyathog@gmail.com>\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
+"PO-Revision-Date: 2019-08-28 18:09+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: bo <translation-team-bo@lists.sourceforge.net>\n"
 "Language: bo\n"
 "MIME-Version: 1.0\n"
@@ -93,9 +93,12 @@ msgstr "བཀའ་བརྡ་ \"${COMMAND}\" བཀོལ་སྤྱོད�
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
+#, fuzzy
 msgid "Download debconf preconfiguration file"
-msgstr "debconf་ཡི་གྲ་སྒྲིག་སྒྲིག་འགོད་ཡིག་ཆ་ལེན་འཇུག་བྱེད་པ"
+msgstr "སྔོན་འགྲོའི་སྒྲིག་འགོད་ཡིག་ཆ་བེད་སྤྱོད་བྱེད་མ་ཐུབ"
 
 #. Type: string
 #. Description
@@ -103,7 +106,7 @@ msgstr "debconf་ཡི་གྲ་སྒྲིག་སྒྲིག་འག�
 #: ../network-preseed.templates:2001
 #, fuzzy
 msgid "Location of initial preconfiguration file:"
-msgstr "debconf ཡི་གྲ་སྒྲིག་སྒྲིག་འགོད་ཡིག་ཆ་ཡར་འཇུག་པ"
+msgstr "སྔོན་འགྲོའི་སྒྲིག་འགོད་ཡིག་ཆ་བེད་སྤྱོད་བྱེད་མ་ཐུབ"
 
 #. Type: string
 #. Description
@@ -149,6 +152,9 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
+#, fuzzy
 msgid "Load debconf preconfiguration file"
-msgstr "debconf ཡི་གྲ་སྒྲིག་སྒྲིག་འགོད་ཡིག་ཆ་ཡར་འཇུག་པ"
+msgstr "སྔོན་འགྲོའི་སྒྲིག་འགོད་ཡིག་ཆ་བེད་སྤྱོད་བྱེད་མ་ཐུབ"

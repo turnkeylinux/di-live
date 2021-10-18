@@ -3,45 +3,27 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of id.po to Bahasa Indonesia
-# Indonesian messages for debian-installer.
+# Occitan (post 1500) translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# Yannig MARCHEGAY <yannick.marchegay@lokanova.com>, 2006.
+# Cédric VALMARY <cvalmary@yahoo.fr>, 2016.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2020.
 #
-#
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-# Translators:
-#
-# Debian Indonesian L10N Team <debian-l10n-id@gurame.fisika.ui.ac.id>, 2004.
-# * Parlin Imanuel Toh (parlin_i@yahoo.com), 2004-2005.
-# * I Gede Wijaya S (gwijayas@yahoo.com), 2004.
-# * Arief S F (arief@gurame.fisika.ui.ac.id), 2004-2007.
-# * Setyo Nugroho (setyo@gmx.net), 2004.
-# * Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
-# * Al Qalit <qal.smith@gmail.com>, 2018.
-#
-# Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@computer.org>, 2002.
-#   Andhika Padmawan <andhika.padmawan@gmail.com>, 2010,2011.
-#   Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2004-2006.
-#   Erwid M Jadied <jadied@gmail.com>, 2008.
-#   Free Software Foundation, Inc., 2002,2004
-#   Translations from KDE:
-#   Ahmad Sofyan <fade@2bl.ac>, 2001.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer (level1)\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
 "POT-Creation-Date: 2019-11-02 21:27+0100\n"
-"PO-Revision-Date: 2018-03-04 12:38+0000\n"
-"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
-"Language-Team: Debian Indonesia Translators <debian-l10n-indonesian@lists."
-"debian.org>\n"
-"Language: id\n"
+"PO-Revision-Date: 2020-11-15 18:28+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: error
 #. Description
@@ -50,7 +32,7 @@ msgstr ""
 #. :sl2:
 #: ../preseed-common.templates:1001
 msgid "Checksum error"
-msgstr "Kesalahan Checksum"
+msgstr "Error de soma de contraròtle"
 
 #. Type: error
 #. Description
@@ -63,16 +45,16 @@ msgid ""
 "match the expected value of \"${CHECKSUM}\".  The file may be corrupt, or "
 "the provided checksums may be out of date."
 msgstr ""
-"${ALGORITHM} checksum yang diterima dari <${LOCATION}> gagal dicocokkan "
-"dengan \"${CHECKSUM}\".  Kemungkinan file tersebut rusak, atau checksum yang "
-"tersedia sudah kadaluarsa."
+"La soma de contraròtle ${ALGORITHM} del fichièr recuperat a partir de "
+"${LOCATION} conten pas la valor ${CHECKSUM} esperada.  Lo fichièr pòt èsser "
+"corromput o la soma de contraròtle provesida es pas a jorn."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../preseed-common.templates:2001
 msgid "Failed to retrieve the preconfiguration file"
-msgstr "Gagal mengambil berkas prakonfigurasi"
+msgstr "Fracàs de la recuperacion del fichièr de preconfiguracion"
 
 #. Type: error
 #. Description
@@ -82,15 +64,15 @@ msgid ""
 "The file needed for preconfiguration could not be retrieved from "
 "${LOCATION}. The installation will proceed in non-automated mode."
 msgstr ""
-"Berkas yang diperlukan untuk prakonfigurasi tidak dapat diambil dari "
-"${LOCATION}. Instalasi ini akan dilanjutkan dalam moda non otomatis."
+"Lo fichièr necessari per la preconfiguracion a pas pogut èsser telecargat a "
+"l'adreça ${LOCATION}. L'installacion serà faicha sens automatizacion."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../preseed-common.templates:3001
 msgid "Failed to process the preconfiguration file"
-msgstr "Gagal memroses berkas prakonfigurasi"
+msgstr "Lo tractament del fichièr de preconfiguracion a pas capitat"
 
 #. Type: error
 #. Description
@@ -100,15 +82,15 @@ msgid ""
 "The installer failed to process the preconfiguration file from ${LOCATION}. "
 "The file may be corrupt."
 msgstr ""
-"Program instalasi gagal memproses berkas prakonfigurasi dari ${LOCATION}. "
-"Berkas tersebut mungkin rusak."
+"L'aisina d'installacion tractèt pas lo fichièr de preconfiguracion dempuèi "
+"${LOCATION}. Benlèu lo fichièr es corromput."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../preseed-common.templates:12001
 msgid "Failed to run preseeded command"
-msgstr "Gagal menjalakan perintah yang telah disiapkan"
+msgstr "Impossible d'executar la comanda preconfigurada"
 
 #. Type: error
 #. Description
@@ -116,7 +98,9 @@ msgstr "Gagal menjalakan perintah yang telah disiapkan"
 #: ../preseed-common.templates:12001
 msgid ""
 "Execution of preseeded command \"${COMMAND}\" failed with exit code ${CODE}."
-msgstr "Jalannya perintah preseeded \"${COMMAND}\" gagal dengan kode ${CODE}."
+msgstr ""
+"L'execucion de la comanda preconfigurada (« ${COMMAND} ») a pas capitat amb "
+"lo còdi d'error ${CODE}."
 
 #. Type: text
 #. Description
@@ -125,14 +109,14 @@ msgstr "Jalannya perintah preseeded \"${COMMAND}\" gagal dengan kode ${CODE}."
 #. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
-msgstr "Mengunduh berkas prakonfigurasi debconf"
+msgstr "Telecargar lo fichièr de preconfiguracion debconf"
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../network-preseed.templates:2001
 msgid "Location of initial preconfiguration file:"
-msgstr "Lokasi dari berkas prakonfigurasi awal:"
+msgstr "Emplaçament del fichièr inicial de preconfiguracion :"
 
 #. Type: string
 #. Description
@@ -143,9 +127,9 @@ msgid ""
 "preconfiguration file (which can in turn pull in other files). To do that, "
 "you need to provide a (perhaps partial) URL."
 msgstr ""
-"Dalam rangka untuk melakukan instalasi otomatis, Anda harus menyediakan file "
-"preconfiguration (yang pada gilirannya dapat menarik file lain) Untuk "
-"melakukan itu, Anda perlu menyediakan URL (mungkin parsial).."
+"Per efectuar una installacion automatizada, es necessari d'indicar un "
+"fichièr de preconfiguracion (que pòt el-meteis far referéncia a d'autres "
+"fichièrs). Per aquò, indicatz una URL (eventualament parciala)."
 
 #. Type: string
 #. Description
@@ -161,14 +145,14 @@ msgid ""
 "  floppy://preseed.cfg\n"
 "  file:///hd-media/kiosk/./preseed.cfg"
 msgstr ""
-"Hal ini akam mudah seperti nama mesin dimana berkas preseed berada dengan "
-"URL lengkap. Semua ini bisa dibuat untuk bekerja:\n"
-" intra\t\t[untuk example.com, ketiganya adalah setara]\n"
-" intra.example.com\n"
-" http://intra.example.com/d-i/./lenny/preseed.cfg\n"
-" http://192.168.0.1/~phil/test47.txt\n"
-" floppy://preseed.cfg\n"
-" file:///hd-media/kiosk/./preseed.cfg"
+"Aquò pòt anar del simple nom d'una maquina qu'albèrga los fichièrs de "
+"preconfiguracion fins a una URL completa. Per exemple :\n"
+"  intra\t\t[per example.com, las tres son equivalentas]\n"
+"  intra.example.com\n"
+"  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
+"  http://192.168.0.1/~phil/test47.txt\n"
+"  floppy://preseed.cfg\n"
+"  file:///hd-media/kiosk/./preseed.cfg"
 
 #. Type: string
 #. Description
@@ -178,16 +162,18 @@ msgid ""
 "For fully automated installs, preseed/url should itself be preseeded (via "
 "kernel command line, DHCP, or syslinux.cfg on customised media)"
 msgstr ""
-"Untuk menginstall sepenuhnya otomatis, Preseed/url itu sendiri akan di "
-"preseeded (melalui baris perintah kernel, DHCP, atau syslinux.cfg pada media "
-"yang disesuaikan)"
+"Per una installacion totalament automatizada, la valor preseed/url pòt ela-"
+"meteissa èsser preconfigurada (a la linha de comanda del nucli, per lo DHCP "
+"o syslinux.cfg sus un supòrt personalizat)"
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../network-preseed.templates:2001
 msgid "See http://wiki.debian.org/DebianInstaller/Preseed for inspiration."
-msgstr "Lihat http://wiki.debian.org/DebianInstaller/Preseed untuk inspirasi."
+msgstr ""
+"Podètz consultar http://wiki.debian.org/DebianInstaller/Preseed per vos "
+"inspirar d'exemples."
 
 #. Type: text
 #. Description
@@ -196,4 +182,4 @@ msgstr "Lihat http://wiki.debian.org/DebianInstaller/Preseed untuk inspirasi."
 #. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
-msgstr "Memuat berkas prakonfigurasi debconf"
+msgstr "Cargar un fichièr de preconfiguracion debconf"

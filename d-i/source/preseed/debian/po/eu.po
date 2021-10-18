@@ -20,20 +20,21 @@
 # Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
 # Piarres Beobide <pi@beobide.net>, 2008.
 # Xabier Bilbao <xabidu@gmail.com>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: di-sublevel1_eu\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
-"PO-Revision-Date: 2012-05-06 15:56+0200\n"
-"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
-"Language-Team: debian-l10n-eu@lists.debian.org\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
+"PO-Revision-Date: 2020-11-03 18:23+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Content-Transfer-Encoding=UTF-8Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: error
 #. Description
@@ -42,7 +43,7 @@ msgstr ""
 #. :sl2:
 #: ../preseed-common.templates:1001
 msgid "Checksum error"
-msgstr ""
+msgstr "Errorea kontrol-baturan"
 
 #. Type: error
 #. Description
@@ -55,13 +56,17 @@ msgid ""
 "match the expected value of \"${CHECKSUM}\".  The file may be corrupt, or "
 "the provided checksums may be out of date."
 msgstr ""
+"<${LOCATION}>-(e)ndik berreskuratutako fitxategiaren ${ALGORITHM} kontrol-"
+"baturak huts egin du, ez baitator bat espero zen \"${CHECKSUM}\" "
+"balioarekin. Baliteke fitxategia hondatuta egotea, edo emandako kontrol-"
+"baturak zaharkitua egotea."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../preseed-common.templates:2001
 msgid "Failed to retrieve the preconfiguration file"
-msgstr "Ezin izan da aurrekonfigurazioaren fitxategia berreskuratu"
+msgstr "Huts egin du aurrekonfigurazioaren fitxategia berreskuratzean"
 
 #. Type: error
 #. Description
@@ -79,7 +84,7 @@ msgstr ""
 #. :sl2:
 #: ../preseed-common.templates:3001
 msgid "Failed to process the preconfiguration file"
-msgstr "Ezin izan da aurrekonfigurazioko fitxategia prozesatu"
+msgstr "Huts egin du aurrekonfigurazioko fitxategia prozesatzean"
 
 #. Type: error
 #. Description
@@ -97,7 +102,7 @@ msgstr ""
 #. :sl2:
 #: ../preseed-common.templates:12001
 msgid "Failed to run preseeded command"
-msgstr "Ezin izan da aurrez konfiguratutako komandoa exekutatu"
+msgstr "Huts egin du aurrez konfiguratutako komandoa exekutatzean"
 
 #. Type: error
 #. Description
@@ -106,22 +111,24 @@ msgstr "Ezin izan da aurrez konfiguratutako komandoa exekutatu"
 msgid ""
 "Execution of preseeded command \"${COMMAND}\" failed with exit code ${CODE}."
 msgstr ""
-"Ezin izan da aurrez konfiguratutako \"${COMMAND}\" komandoa exekutatu, "
+"Huts egin du aurrez konfiguratutako \"${COMMAND}\" komandoa exekutatzean, "
 "irteerako kodea: ${CODE}."
 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
-msgstr "Deskargatu debconf aurrekonfigurazioko fitxategia"
+msgstr "Deskargatu debconf-en aurrekonfigurazioko fitxategia"
 
 #. Type: string
 #. Description
 #. :sl3:
 #: ../network-preseed.templates:2001
 msgid "Location of initial preconfiguration file:"
-msgstr "Hasiera aurrekonfigurazio fitxategiaren kokapena "
+msgstr "Hasierako aurrekonfigurazioko fitxategiaren kokalekua:"
 
 #. Type: string
 #. Description
@@ -132,8 +139,8 @@ msgid ""
 "preconfiguration file (which can in turn pull in other files). To do that, "
 "you need to provide a (perhaps partial) URL."
 msgstr ""
-"Instalazio automatikoa osatu ahal izateko, aurrekonfigurazio fitxategi batez "
-"(zein fitxategi ezberdinetan banatu daitezken) hornitu behar duzu. Hau "
+"Instalazio automatikoa osatu ahal izateko, aurrekonfigurazioko fitxategi "
+"batez (zein fitxategi ezberdinetan banatu daitezken) hornitu behar duzu. Hau "
 "egiteko URL bat (agian partziala) eman behar duzu."
 
 #. Type: string
@@ -150,9 +157,9 @@ msgid ""
 "  floppy://preseed.cfg\n"
 "  file:///hd-media/kiosk/./preseed.cfg"
 msgstr ""
-"Hau aurrekonfigurazio utzi duzun makinaren izena bezain sinplea edo URL oso "
+"Aurrekonfigurazioko fitxategiak kokatzen diren makinaren izena edo URL oso "
 "bat izan daiteke. Hautetako edozeinek funtzionatzea lortu beharko luke:\n"
-"  intra\t\t[adibidea.com-erako, hiru hauek berdinak dira]\n"
+"  intra\t\t[example.com-erako, hiru hauek berdinak dira]\n"
 "  intra.example.com\n"
 "  http://intra.example.com/d-i/./lenny/preseed.cfg\n"
 "  http://192.168.0.1/~phil/test47.txt\n"
@@ -167,8 +174,8 @@ msgid ""
 "For fully automated installs, preseed/url should itself be preseeded (via "
 "kernel command line, DHCP, or syslinux.cfg on customised media)"
 msgstr ""
-"Guztiz automatizatutako instalazioentzat, aurrezartze/urlak bere burua "
-"aurrezarri behar du (kernel komando lerroa, DHCP edo pertsonalizatutako "
+"Guztiz automatizatutako instalazioentzat, aurrezarpenak/urlak bere burua "
+"aurrezarri behar du (nukleoaren komando-lerroa, DHCP edo pertsonalizatutako "
 "euskarriko syslinux.cfg bidez)."
 
 #. Type: string
@@ -182,6 +189,8 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
-msgstr "Kargatu debconf aurrekonfigurazio fitxategia"
+msgstr "Kargatu debconf-en aurrekonfigurazioko fitxategia"

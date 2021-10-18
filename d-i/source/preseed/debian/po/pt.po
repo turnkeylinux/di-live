@@ -7,7 +7,7 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # Console-setup strings translations:
 # (identified by "./console-setup.templates")
-# Copyright (C) 2003-2016 Miguel Figueiredo <elmig@debianpt.org>
+# Copyright (C) 2003-2019 Miguel Figueiredo <elmig@debianpt.org>
 # This file is distributed under the same license as debian-installer.
 #
 #
@@ -17,14 +17,14 @@
 #   Free Software Foundation, Inc., 2001,2004
 #   Filipe Maia <fmaia@gmx.net>, 2001.
 #   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2016
+#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
-"PO-Revision-Date: 2016-11-25 19:09+0000\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
+"PO-Revision-Date: 2019-09-23 20:36+0100\n"
 "Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team:  Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -112,9 +112,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
-msgstr "Fazer o download do ficheiro de pré-configuração debconf"
+msgstr "Descarregar ficheiro de pré-configuração debconf"
 
 #. Type: string
 #. Description
@@ -133,7 +135,7 @@ msgid ""
 "you need to provide a (perhaps partial) URL."
 msgstr ""
 "De modo a fazer uma instalação automatizada, tem de fornecer um ficheiro de "
-"preconfiguração (que por sua vez pode obter outros ficheiros). Para fazer "
+"pré-configuração (que por sua vez pode obter outros ficheiros). Para fazer "
 "isso, tem de indicar um URL (talvez parcial)."
 
 #. Type: string
@@ -170,7 +172,7 @@ msgid ""
 msgstr ""
 "Para instalações totalmente automatizadas, dever ser feiro preseed ao "
 "próprio  preseed/url (através da linha de comandos do kernel, DHCP ou "
-"syslinux.cfg em media personalizada)."
+"syslinux.cfg em mídia personalizada)."
 
 #. Type: string
 #. Description
@@ -182,6 +184,8 @@ msgstr "Para inspiração veja http://wiki.debian.org/DebianInstaller/Preseed."
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "Carregar o ficheiro de pré-configuração debconf"

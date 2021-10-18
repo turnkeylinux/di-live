@@ -1,3 +1,83 @@
+preseed (1.109) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 31 May 2021 00:16:54 +0200
+
+preseed (1.108) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by KushagraKarira
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Tamil (ta.po) by Vasudevan Tirumurti
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 13 Mar 2021 18:37:59 +0100
+
+preseed (1.107) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by Vangelis Skarmoutsos
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * French (fr.po) by Baptiste Jammet
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Punjabi (Gurmukhi) (pa.po) by Aman ALam
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 04 Nov 2020 19:51:19 +0100
+
+preseed (1.106) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Korean (ko.po) by Changwoo Ryu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 22:18:19 +0200
+
+preseed (1.105) unstable; urgency=medium
+
+  * Team upload
+
+  * Update auto-install/defaultroot, replacing buster with bullseye. Thanks
+    to John Doe for the hint.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 09 Mar 2020 20:40:10 +0100
+
+preseed (1.104) unstable; urgency=medium
+
+  * Team upload
+
+  * Fix missing sublevelX declaration in templates files. Includes updating
+    all po|pot files.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 Jan 2020 22:59:07 +0100
+
+preseed (1.103) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Add comment for translators, to keep main menu entry below a 55 columns
+    limit. This updates all po|pot files.
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Croatian (hr.po) by gogogogi
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 18 Oct 2019 17:10:38 +0200
+
 preseed (1.102) unstable; urgency=medium
 
   * Remove Christian Perrier from Uploaders, with many thanks for all
@@ -8,6 +88,7 @@ preseed (1.102) unstable; urgency=medium
  -- Cyril Brulebois <kibi@debian.org>  Fri, 26 Apr 2019 15:05:13 +0200
 
 preseed (1.101) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -16,6 +97,7 @@ preseed (1.101) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Wed, 06 Mar 2019 23:04:27 +0100
 
 preseed (1.100) unstable; urgency=medium
+
   * Team upload
 
   * Remove trailing whitespaces from changelog file, to fix lintian tag.

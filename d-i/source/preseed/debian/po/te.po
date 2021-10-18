@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: preseed@packages.debian.org\n"
-"POT-Creation-Date: 2018-06-26 08:45+0200\n"
+"POT-Creation-Date: 2019-11-02 21:27+0100\n"
 "PO-Revision-Date: 2011-09-18 15:32+0530\n"
 "Last-Translator: Arjuna Rao Chavala <arjunaraoc@gmail.com>\n"
 "Language-Team: Telugu <debian-in-workers@lists.alioth.debian.org>\n"
@@ -102,6 +102,8 @@ msgstr "preseeded కమాండ్   \"${COMMAND}\" నడుపుట  ${CODE
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../network-preseed.templates:1001
 msgid "Download debconf preconfiguration file"
 msgstr "డెబ్కాన్ఫ్ ముందలి అమరిక ఫైలు   డౌన్ లోడ్"
@@ -169,6 +171,8 @@ msgstr "http://wiki.debian.org/DebianInstaller/Preseed చూడండి స్
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
+#. :sl3:
 #: ../file-preseed.templates:1001
 msgid "Load debconf preconfiguration file"
 msgstr "డెబ్కాన్ఫ్ ముందలి అమరిక ఫైలు ని  ఎక్కించు"
