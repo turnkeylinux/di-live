@@ -14,7 +14,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: partman-ext3\n"
 "Report-Msgid-Bugs-To: partman-ext3@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-23 22:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"

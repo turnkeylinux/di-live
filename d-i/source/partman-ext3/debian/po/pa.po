@@ -21,12 +21,13 @@
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
 # A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
+# Aman ALam <alam.yellow@gmail.com>, 2018, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: partman-ext3@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-23 22:48+0000\n"
-"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"PO-Revision-Date: 2020-10-15 04:26+0000\n"
 "Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -172,7 +173,7 @@ msgid ""
 "${OFFSET} bytes from the minimum alignment for this disk, which may lead to "
 "very poor performance."
 msgstr ""
-"ਪਾਰਟੀਸ਼ਨ  ${PARTITION}  ${MOUNTPOINT} ਨੂੰ ਦਿੱਤਾ ਗਿਆ ਹੈ, ਜੋ ਕਿ ਇਸ ਡਿਸਕ ਲਈ ਘੱਟੋ-ਘੱਟ "
+"ਪਾਰਟੀਸ਼ਨ ${PARTITION} ${MOUNTPOINT} ਨੂੰ ਦਿੱਤਾ ਗਿਆ ਹੈ, ਜੋ ਕਿ ਇਸ ਡਿਸਕ ਲਈ ਘੱਟੋ-ਘੱਟ "
 "ਇਕਸਾਰਤਾ ਤੋਂ ${OFFSET} ਬਾਈਟ ਦੇ ਆਫਸੈੱਟ ਉੱਤੇ ਹੈ, ਜੋ ਕਿ ਬਹੁਤ ਹੀ ਘਟੀਆਂ ਕਾਰਗੁਜ਼ਾਰੀ ਦਾ ਕਾਰਨ ਬਣ "
 "ਸਕਦਾ ਹੈ।"
 

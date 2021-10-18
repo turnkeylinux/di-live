@@ -20,20 +20,21 @@
 # Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
 # Piarres Beobide <pi@beobide.net>, 2008.
 # Xabier Bilbao <xabidu@gmail.com>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: di-sublevel1_eu\n"
 "Report-Msgid-Bugs-To: partman-ext3@packages.debian.org\n"
 "POT-Creation-Date: 2011-07-23 22:48+0000\n"
-"PO-Revision-Date: 2012-04-13 00:19+0200\n"
-"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
-"Language-Team: debian-l10n-eu@lists.debian.org\n"
+"PO-Revision-Date: 2020-11-03 18:23+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Content-Transfer-Encoding=UTF-8Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -136,7 +137,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-ext3.templates:9001
 msgid "Return to the menu to set the bootable flag?"
-msgstr "Menura itzuli abio bandera ezartzeko?"
+msgstr "Menura itzuli abioko bandera ezartzeko?"
 
 #. Type: boolean
 #. Description
@@ -148,8 +149,8 @@ msgid ""
 "set the bootable flag for the boot partition."
 msgstr ""
 "Erroko partizioa ez dago partizio abiarazgarri bezala markatuta. Makinak "
-"hori behar du abiarazi ahal izateko. Joan atzera eta ezarri abio bandera "
-"abio partizioari."
+"hori behar du abiarazi ahal izateko. Joan atzera eta ezarri abioaren bandera "
+"abioko partizioari."
 
 #. Type: boolean
 #. Description
@@ -194,7 +195,7 @@ msgid ""
 "partition to start at a point best suited for this disk."
 msgstr ""
 "Partizioa sortzen ari zarenez, arazo hau orain konpondu beharko zenuke "
-"partizioa berriz lerrokatuaz, berau beranduago aldatzeko oso zail izango "
-"bait da. Hau egiteko, partiziogile menura atzera itzuli, partizio hau "
-"ezabatu eta kokaleku berdinean ezarpen berdinekin berriz sor ezazu. Honek "
-"partizioa diskoaren errendimendurako leku egokienean hasiko du."
+"partizioa berriz lerrokatuz, beranduago aldatzeko zaila izango baita. Hau "
+"egiteko, partiziogile menura atzera itzuli, partizio hau ezabatu eta posizio "
+"berdinean ezarpen berdinekin berriz sor ezazu. Honek partizioa diskoaren "
+"errendimendurako leku egokienean hasiko du."

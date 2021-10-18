@@ -1,9 +1,55 @@
-partman-ext3 (104) UNRELEASED; urgency=medium
+partman-ext3 (107) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Latvian (lv.po) by Tranzistors
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Ukrainian (uk.po) by Anton Gladky
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 13 Mar 2021 18:44:07 +0100
+
+partman-ext3 (106) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * French (fr.po) by Baptiste Jammet
+  * Punjabi (Gurmukhi) (pa.po) by Aman ALam
+  * Traditional Chinese (zh_TW.po) by Walter Cheuk
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 19:17:13 +0100
+
+partman-ext3 (105) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Fix missing package name in 'Project-Id-Version' header of template.pot
+    file, to allow correct declaration in po|pot files.
+
+  [ Samuel Thibault ]
+  * init.d/kernelmodules_ext3: Don't try to read /proc/modules on non-Linux.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 15 Jul 2020 23:38:11 +0200
+
+partman-ext3 (104) unstable; urgency=medium
+
+  * Team upload
 
   [ John Paul Adrian Glaubitz ]
   * Remove obsolete workaround for Yaboot on powerpc
 
- -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Wed, 24 Apr 2019 12:09:45 +0200
+  [ Updated translations ]
+  * Croatian (hr.po) by gogogogi
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 19 Oct 2019 23:52:59 +0200
 
 partman-ext3 (103) unstable; urgency=medium
 
