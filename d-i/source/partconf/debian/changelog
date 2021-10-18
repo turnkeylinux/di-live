@@ -1,7 +1,18 @@
 partconf (1.53) UNRELEASED; urgency=medium
 
+  [ Cyril Brulebois ]
   * Remove Christian Perrier from Uploaders, with many thanks for all
     his contributions over the years! (Closes: #927554)
+
+  [ Holger Wansing ]
+  * Remove trailing whitespaces from changelog file, to fix lintian tag.
+
+  [ Debian Janitor ]
+  * Add missing ${misc:Depends} to Depends for partconf-find-partitions,
+    partconf-mkfstab.
+  * Bump debhelper from deprecated 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Rely on pre-initialized dpkg-architecture variables.
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:37:12 +0200
 
@@ -341,7 +352,7 @@ partconf (1.28) unstable; urgency=low
   * Croatian (hr.po) by Josip Rodin
   * Italian (it.po) by Milo Casagrande
   * Portuguese (Brazil) (pt_BR.po) by Felipe Augusto van de Wiel (faw)
-  
+
  -- Otavio Salvador <otavio@debian.org>  Tue, 29 Jul 2008 12:35:09 -0300
 
 partconf (1.27) unstable; urgency=low
@@ -367,7 +378,7 @@ partconf (1.26) unstable; urgency=low
   * Finnish (fi.po) by Esko Arajärvi
   * Marathi (mr.po) by Sampada
   * Panjabi (pa.po) by Amanpreet Singh Alam
-	
+
  -- Otavio Salvador <otavio@debian.org>  Thu, 08 May 2008 14:04:23 -0300
 
 partconf (1.25) unstable; urgency=low
@@ -785,7 +796,7 @@ partconf (1.07) unstable; urgency=low
     - Don't put empty directories in partconf which are also used in
       partconf-mkfstab, otherwise partconf might get purged
       inadvertently.
-  * Updated translations: 
+  * Updated translations:
     - Italian (it.po) by Stefano Canepa
 
  -- Thiemo Seufer <ths@debian.org>  Fri, 04 Feb 2005 17:36:51 +0100
@@ -812,7 +823,7 @@ partconf (1.06) unstable; urgency=low
 
 partconf (1.05) unstable; urgency=low
 
-  * Updated translations: 
+  * Updated translations:
     - Bulgarian (bg.po) by Ognyan Kulev
     - Catalan (ca.po) by Jordi Mallach
     - Czech (cs.po) by Miroslav Kure
@@ -851,7 +862,7 @@ partconf (1.05) unstable; urgency=low
 
 partconf (1.04) unstable; urgency=low
 
-  * Updated translations: 
+  * Updated translations:
     - Bulgarian (bg.po) by Ognyan Kulev
     - German (de.po) by Dennis Stampfer
     - Greek, Modern (1453-) (el.po) by Greek Translation Team
@@ -874,7 +885,7 @@ partconf (1.03) unstable; urgency=HIGH
       from substvars won't work. The only reason we got libparted1.6-udeb
       before without this dependency was because of some long and fragile
       dependency chains involving other udebs that have now changed/broken.
-  * Updated translations: 
+  * Updated translations:
     - Arabic (ar.po) by Ossama M. Khayat
     - Bulgarian (bg.po) by Ognyan Kulev
     - Bosnian (bs.po) by Safir Šećerović
