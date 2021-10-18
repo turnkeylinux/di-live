@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dDz.po\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
-"POT-Creation-Date: 2011-05-26 22:47+0000\n"
+"POT-Creation-Date: 2019-11-02 20:51+0100\n"
 "PO-Revision-Date: 2012-02-29 04:41-0500\n"
 "Last-Translator: Jurmey Rabgay <jrabgay@dit.gov.bt>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -266,6 +266,7 @@ msgstr "ཁྱོད་ཀྱིས་བར་བཅད་འབད་མིའ
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
 msgstr "བར་བཅད་འདི་ག་དེ་འབད་ལག་ལེན་འཐབ་ནི་ཨིན་ན:"

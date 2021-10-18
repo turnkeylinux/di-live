@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
-"POT-Creation-Date: 2011-05-26 22:47+0000\n"
+"POT-Creation-Date: 2019-11-02 20:51+0100\n"
 "PO-Revision-Date: 2009-04-24 00:34+0200\n"
 "Last-Translator: Hans Fredrik Nordhaug <hans@nordhaug.priv.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -45,8 +45,8 @@ msgid ""
 "used for the installation."
 msgstr ""
 "Partisjonering av en harddisk består av å dele opp harddisken for å lage "
-"plass til installasjonen av det nye systemet. Du må velge hvilk(e) partisjon"
-"(er) du vil bruke til installasjonen."
+"plass til installasjonen av det nye systemet. Du må velge hvilk(e) "
+"partisjon(er) du vil bruke til installasjonen."
 
 #. Type: note
 #. Description
@@ -268,6 +268,7 @@ msgstr "Du kan fortsette med partisjoneringa fra partisjoneringsmenyen."
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
 msgstr "Metode for å bruke denne partisjonen:"

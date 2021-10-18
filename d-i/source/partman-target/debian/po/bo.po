@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
-"POT-Creation-Date: 2011-05-26 22:47+0000\n"
+"POT-Creation-Date: 2019-11-02 20:51+0100\n"
 "PO-Revision-Date: 2012-04-14 22:12+0600\n"
 "Last-Translator: Tennom <tankola@ymail.com, tennomyathog@gmail.com>\n"
 "Language-Team: bo <translation-team-bo@lists.sourceforge.net>\n"
@@ -253,6 +253,7 @@ msgstr "ཁག་བཟོ་སའི་འདེམས་ཐོ་ནས་ཁ
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
 msgstr "གསོག་སྡེར་ཁག་འདིའི་སྤྱོད་སྟངས："

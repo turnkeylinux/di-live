@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: be\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
-"POT-Creation-Date: 2011-05-26 22:47+0000\n"
+"POT-Creation-Date: 2019-11-02 20:51+0100\n"
 "PO-Revision-Date: 2015-12-21 15:13+0300\n"
 "Last-Translator: Viktar Siarheichyk <vics@fsfe.org>\n"
 "Language-Team: Debian l10n team for Belarusian <debian-l10n-belarusian@lists."
@@ -276,6 +276,7 @@ msgstr "Вы можаце вярнуцца да перадзелу дыскаў 
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
 msgstr "Як выкарыстоўваць гэты падзел:"

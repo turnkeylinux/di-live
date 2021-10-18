@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
-"POT-Creation-Date: 2011-05-26 22:47+0000\n"
+"POT-Creation-Date: 2019-11-02 20:51+0100\n"
 "PO-Revision-Date: 2011-09-19 07:23+0300\n"
 "Last-Translator: Borys Yanovych <borys@yanovy.ch>\n"
 "Language-Team: Ukrainian <>\n"
@@ -274,6 +274,7 @@ msgstr "Ви можете продовжити розбивку з меню ро
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
 msgstr "Як використовувати цей розділ:"

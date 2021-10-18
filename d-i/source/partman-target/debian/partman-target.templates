@@ -90,9 +90,9 @@ _Description: Do you want to resume partitioning?
 
 Template: partman-target/choose_method
 Type: select
-# :sl2:
 Choices-C: ${CHOICES}
 Choices: ${DESCRIPTIONS}
+# :sl2:
 _Description: How to use this partition:
 Help: partman-target/help
 

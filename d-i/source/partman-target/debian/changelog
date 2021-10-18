@@ -1,3 +1,83 @@
+partman-target (122) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 31 May 2021 00:07:57 +0200
+
+partman-target (121) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by KushagraKarira
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Tamil (ta.po) by Vasudevan Tirumurti
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 13 Mar 2021 18:40:49 +0100
+
+partman-target (120) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 19:32:19 +0100
+
+partman-target (119) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Spanish (es.po) by Javier Fernández-Sanguino
+  * French (fr.po) by Baptiste Jammet
+  * Indonesian (id.po) by Andika Triwidada
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Sep 2020 23:12:01 +0200
+
+partman-target (118) unstable; urgency=medium
+
+  * Team upload
+
+  [ Chris Hofstaedtler ]
+  * Add a hint to the new fstab about using "systemctl daemon-reload"
+    after changing /etc/fstab. Closes: #963573
+
+  [ Updated translations ]
+  * Dutch (nl.po) by Frans Spiesschaert
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 12 Jul 2020 13:21:34 +0200
+
+partman-target (117) unstable; urgency=medium
+
+  * Team upload
+
+  * Fix missing sublevelX declaration in templates file. Includes updating
+    all po|pot files.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 Jan 2020 22:50:20 +0100
+
+partman-target (116) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Remove trailing whitespace from changelog file, to fix lintian tag.
+
+  [ Updated translations ]
+  * Croatian (hr.po) by gogogogi
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Oct 2019 00:08:16 +0200
+
 partman-target (115) unstable; urgency=medium
 
   * Team upload
@@ -25,7 +105,7 @@ partman-target (113) unstable; urgency=medium
   * Team upload
 
   [ Updated translations ]
-  * Indonesian (id.po) by Muhammad Rifqi Priyo Susanto 
+  * Indonesian (id.po) by Muhammad Rifqi Priyo Susanto
 
  -- Holger Wansing <hwansing@mailbox.org>  Thu, 28 Mar 2019 18:49:49 +0100
 

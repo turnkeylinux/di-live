@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
-"POT-Creation-Date: 2011-05-26 22:47+0000\n"
+"POT-Creation-Date: 2019-11-02 20:51+0100\n"
 "PO-Revision-Date: 2011-09-15 07:01+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
@@ -258,6 +258,7 @@ msgstr "ඔබට කොටස් කිරීමේ මෙනුව මගි�
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
 msgstr "මෙම පංගුව භාවිතා කරන්නේ කෙසේද:"

@@ -3,31 +3,20 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Portuguese messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# Console-setup strings translations:
-# (identified by "./console-setup.templates")
-# Copyright (C) 2003-2019 Miguel Figueiredo <elmig@debianpt.org>
-# This file is distributed under the same license as debian-installer.
-#
-#
-# Translations from iso-codes:
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#   Free Software Foundation, Inc., 2001,2004
-#   Filipe Maia <fmaia@gmx.net>, 2001.
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2018
+# Kabyle translation for debian-installer
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the debian-installer package.
+# Slimane Selyan Amiri <selyan.kab@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2019-11-02 20:51+0100\n"
-"PO-Revision-Date: 2019-09-23 20:36+0100\n"
-"Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
-"Language-Team:  Portuguese <traduz@debianpt.org>\n"
-"Language: pt\n"
+"PO-Revision-Date: 2020-10-24 15:08+0100\n"
+"Last-Translator: Slimane Selyan Amiri <selyan.kab@gmail.com>\n"
+"Language-Team: Kabyle <kab@li.org>\n"
+"Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,7 +29,7 @@ msgstr ""
 #. :sl1:
 #: ../partman-target.templates:1001 ../partman-target.templates:11001
 msgid "Help on partitioning"
-msgstr "Ajuda no particionamento"
+msgstr "Tallalt ɣef beṭṭu"
 
 #. Type: note
 #. Description
@@ -51,16 +40,16 @@ msgid ""
 "to install your new system.  You need to choose which partition(s) will be "
 "used for the installation."
 msgstr ""
-"Particionar um disco rígido consiste em dividi-lo para criar o espaço "
-"necessário para instalar o seu novo sistema.  Necessita escolher que "
-"partição(ões) será(ão) utilizada(s) para a instalação."
+"Beṭṭu n unuḍaf aqquran yewwi-d ad yettwabḍu i tmerna n tallunt yettusran i "
+"usebded n unagraw-inek·inem amaynut. Tesriḍ ad tferneḍ anwa aḥric(anwi "
+"iḥricen) ara yettusqedcen i usebded."
 
 #. Type: note
 #. Description
 #. :sl1:
 #: ../partman-target.templates:1001
 msgid "Select a free space to create partitions in it."
-msgstr "Escolha um espaço livre para criar nele as partições."
+msgstr "Fren tallunt tilellit i tmerna n yiḥricen deg-s."
 
 #. Type: note
 #. Description
@@ -70,8 +59,8 @@ msgid ""
 "Select a device to remove all partitions in it and create a new empty "
 "partition table."
 msgstr ""
-"Escolha um dispositivo para lhe remover todas as partições e criar uma nova "
-"tabela de partições vazia."
+"Fren ibenk i tukksa n meṛṛa iḥricen yellan deg-s syen rnu tafelwit n uḥric "
+"ilem tamaynut."
 
 #. Type: note
 #. Description
@@ -84,12 +73,11 @@ msgid ""
 "partition is a necessity.  \"Swap\" is scratch space for an operating "
 "system, which allows the system to use disk storage as \"virtual memory\"."
 msgstr ""
-"Escolha uma partição para remover ou para especificar como deve ser "
-"utilizada. No mínimo, necessita de uma partição para conter o sistema de "
-"ficheiros raiz (cujo ponto de montagem é /).  A maioria das pessoas também "
-"acha que é necessária uma partição de swap separada. \"Swap\" é um espaço "
-"para o sistema operativo, que permite ao sistema utilizar espaço em disco "
-"como \"memória virtual\"."
+"Fren aḥric ara tekkseḍ neɣ i wakken ad t-tferneḍ amek ara yettuseqdac. S "
+"wazal adday, tesriḍ yiwen uḥric ideg ara yili uẓar n unagraw n yifuyla (agaz-"
+"ines n userkeb d /).  Amur ameqqran n yimdanen ttxemmimen belli aḥric n swap "
+"yettuɛezlen d ayen ilaqen.  \"Swap\" d tallunt n useqdec n unagraw n wammud "
+"i yettaǧǧan anagraw ad iseqdec aklas n uḍebsi d \"takatut tuhlist\"."
 
 #. Type: note
 #. Description
@@ -100,9 +88,9 @@ msgid ""
 "existing data in the partition.  Partitions that will be used in this way "
 "are marked with \"${KEEP}\" in the main partitioning menu."
 msgstr ""
-"Quando a partição já estiver formatada pode escolher manter e utilizar os "
-"dados existentes na partição.  As partições que irão ser utilizadas desta "
-"forma são marcadas com \"${KEEP}\" no menu principal de particionamento."
+"Ma yili aḥric yettumsel yakan tzemreḍ ad tferneḍ ad teǧǧeḍ yerna ad "
+"tesqedceḍ isefka yellan deg-s.  Iḥricen ara yettusqedcen dagi ttucerḍen s "
+"\"${KEEP}\" deg wumuɣ n beṭṭu agejdan."
 
 #. Type: note
 #. Description
@@ -115,11 +103,10 @@ msgid ""
 "marked with \"${DESTROY}\" in the main partitioning menu.  Otherwise it will "
 "be marked with \"${FORMAT}\"."
 msgstr ""
-"Regra geral pretenderá formatar a partição com um novo sistema de ficheiros. "
-"NOTA: toda a informação na partição será irreversivelmente apagada. Se "
-"decidir formatar uma partição que já está formatada, irá ser marcada com "
-"\"${DESTROY}\" no menu principal de particionamento.  Caso contrário será "
-"marcada com \"${FORMAT}\"."
+"S umata, ma tebɣiḍ ad tmesleḍ aḥric s unagraw n yifuyla i yettwarnan yakan. "
+"TAMAWT: meṛṛa isefka deg uḥric ad ttwakksen i lebda. Ma yella twalaḍ ad "
+"tmesleḍ aḥric i yettumeslen yakan, ad yettucreḍ s \"${DESTROY}\" deg wumuɣ n "
+"beṭṭu agejdan. Neɣ, ad yettucreḍ s \"${FORMAT}\"."
 
 #. Type: text
 #. Description
@@ -132,11 +119,11 @@ msgid ""
 "the bootable flag for it. Such a partition will be marked with "
 "\"${BOOTABLE}\" in the main partitioning menu."
 msgstr ""
-"Para iniciar o seu novo sistema, é utilizado o chamado gestor de arranque. "
-"Pode ser instalado tanto no master boot record do primeiro disco rígido, "
-"como numa partição.  Quando o gestor de arranque for instalado numa partição "
-"é necessário definir a flag de arranque para essa partição. Uma partição "
-"dessas será marcada com \"${BOOTABLE}\" no menu principal de particionamento."
+"I wakken ad tesnekreḍ anagraw-inek·inem amaynut, ad yettuseqdac ayen "
+"yettusemman s usalay n usenker. Yezmer ad yettusebded deg usekles n usenker "
+"agejdan n uḍebsi aqquran amezwaru, neɣ deg yiwen seg yiḥricen. Ma yili "
+"asalay n usenker yettusebded deg uḥric, ilaq ad as-tesbaduḍ anay aziraz. "
+"Aḥric am wa yettucreḍ s \"${BOOTABLE}\" deg wumuɣ n beṭṭu agejdan."
 
 #. Type: text
 #. Description
@@ -148,17 +135,17 @@ msgid ""
 "partition.  Such a partition will be marked with \"${BOOTABLE}\" in the main "
 "partitioning menu."
 msgstr ""
-"Para iniciar o seu novo sistema, é utilizado o chamado carregador do "
-"sistema.  É instalado na partição de arranque.  É necessário definir a flag "
-"bootable para essa partição.  Uma partição dessas será marcada com "
-"\"${BOOTABLE}\" no menu principal de particionamento."
+"I wakken ad tesnekreḍ anagraw-inek·inem amaynut, ad yettuseqdec ayen "
+"yettusemman s usalay n usenker. Yettusebded ɣef uḥric n usenker. Ilaq ad "
+"tesbaduḍ anay n usekker i uḥric. Aḥric am wa ad yettucreḍ s \"${BOOTABLE}\" "
+"deg wumuɣ n beṭṭu agejdan."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:4001
 msgid "Identical labels for two file systems"
-msgstr "'labels' idênticos para dois sistemas de ficheiros"
+msgstr "Tibzimin yemṣadan i sin yinagrawen n yifuyla"
 
 #. Type: error
 #. Description
@@ -169,24 +156,23 @@ msgid ""
 "${PART2}. Since file system labels are usually used as unique identifiers, "
 "this is likely to cause reliability problems later."
 msgstr ""
-"Dois sistemas de ficheiros têm atribuido o mesmo 'label' (${LABEL}): "
-"${PART1} e ${PART2}. Como os 'labels' dos sistemas de ficheiros são "
-"normalmente utilizados como identificadores únicos, é provável que isto "
-"posteriormente cause problemas de fiabilidade."
+"Kfkif tabzimt i yettunefken i sin yinagrawen n yifuyla (${LABEL}): ${PART1} "
+"d ${PART2}. Imi tibzimin n unagraw n yifuyla zgant ttuseqdacent d inekcam "
+"asufen, ayagi yezmer ad -dyeglu s wuguren n tneflest ɣer sdat."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:4001
 msgid "Please correct this by changing labels."
-msgstr "Por favor corrija esta situação alterando os 'label'."
+msgstr "Ma ulac aɣilif, seɣti aya s ubeddel n tebzimin."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:5001
 msgid "Identical mount points for two file systems"
-msgstr "Pontos de montagem idênticos para dois sistemas de ficheiros"
+msgstr "Agazen n userkeb yemṣadan i sin yinagrawen n yifuyla"
 
 #. Type: error
 #. Description
@@ -196,29 +182,29 @@ msgid ""
 "Two file systems are assigned the same mount point (${MOUNTPOINT}): ${PART1} "
 "and ${PART2}."
 msgstr ""
-"Dois sistemas de ficheiros estão destinados a serem montados no mesmo ponto "
-"de montagem (${MOUNTPOINT}): ${PART1} e ${PART2}."
+"Sin yinagrawen n yifuyla yettunefk-asen yiwen wagaz n userkeb "
+"${MOUNTPOINT}): ${PART1} d ${PART2}."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:5001
 msgid "Please correct this by changing mount points."
-msgstr "Por favor corrija esta situação alterando os pontos de montagem."
+msgstr "Ma ulac aɣilif, seɣti aya s ubeddel n wagazen n userkeb."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:6001
 msgid "No root file system"
-msgstr "Sem sistema de ficheiros raiz"
+msgstr "Ulac anagraw n yifuyla aẓar"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:6001
 msgid "No root file system is defined."
-msgstr "Não está definido o sistema de ficheiros raiz."
+msgstr "Ulac anagraw n yifuyla aẓar i yettusbadun."
 
 #. Type: error
 #. Description
@@ -228,14 +214,14 @@ msgstr "Não está definido o sistema de ficheiros raiz."
 #. :sl2:
 #: ../partman-target.templates:6001 ../partman-target.templates:7001
 msgid "Please correct this from the partitioning menu."
-msgstr "Por favor, corrija esta situação a partir do menu de particionamento."
+msgstr "Ma ulac aɣilif, seɣti aya seg wumuɣ n beṭṭu."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:7001
 msgid "Separate file system not allowed here"
-msgstr "Aqui não é permitido um sistema de ficheiros separado"
+msgstr "Anagraw n yifuyla yettuɛezlen ur yettusireg ara dagi"
 
 #. Type: error
 #. Description
@@ -245,16 +231,15 @@ msgid ""
 "You assigned a separate file system to ${MOUNTPOINT}, but in order for the "
 "system to start correctly this directory must be on the root file system."
 msgstr ""
-"Você atribuiu um sistema de ficheiros separado para ${MOUNTPOINT}, mas para "
-"o sistema iniciar correctamente este directório tem de estar no sistema de "
-"ficheiros raiz."
+"Tmuddeḍ anagraw n yifuyla yettuɛezlen i ${MOUNTPOINT}, maca i wakken ad "
+"yekker unagraw akken iwata ilaq akaram-a ad yili ɣef unagraw n yifuyla aẓar."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-target.templates:8001
 msgid "Do you want to resume partitioning?"
-msgstr "Deseja continuar o particionamento?"
+msgstr "Tebɣiḍ ad tkemmleḍ beṭṭu?"
 
 #. Type: boolean
 #. Description
@@ -264,26 +249,26 @@ msgid ""
 "The attempt to mount a file system with type ${TYPE} in ${DEVICE} at "
 "${MOUNTPOINT} failed."
 msgstr ""
-"Falhou a tentativa de montar um sistema de ficheiros do tipo ${TYPE} em "
-"${DEVICE} em ${MOUNTPOINT}."
+"Aneɛruḍ n userkeb n unagraw n yifuyla n wanaw ${TYPE} deg ${DEVICE} deg "
+"${MOUNTPOINT} yecceḍ."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-target.templates:8001
 msgid "You may resume partitioning from the partitioning menu."
-msgstr "Pode continuar o particionamento a partir do menu de particionamento."
+msgstr "Tzemreḍ ad tkemmleḍ beṭṭu seg wumuɣ n beṭṭu."
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
-msgstr "Como utilizar esta partição:"
+msgstr "Amek ara tesqedceḍ aḥric-a:"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-target.templates:10001
 msgid "Use as:"
-msgstr "Utilizar como:"
+msgstr "Yettuseqdac am:"

@@ -3,34 +3,27 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Portuguese messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# Console-setup strings translations:
-# (identified by "./console-setup.templates")
-# Copyright (C) 2003-2019 Miguel Figueiredo <elmig@debianpt.org>
-# This file is distributed under the same license as debian-installer.
+# Occitan (post 1500) translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# Yannig MARCHEGAY <yannick.marchegay@lokanova.com>, 2006.
+# Cédric VALMARY <cvalmary@yahoo.fr>, 2016.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2020.
 #
-#
-# Translations from iso-codes:
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#   Free Software Foundation, Inc., 2001,2004
-#   Filipe Maia <fmaia@gmx.net>, 2001.
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2018
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
 "POT-Creation-Date: 2019-11-02 20:51+0100\n"
-"PO-Revision-Date: 2019-09-23 20:36+0100\n"
-"Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
-"Language-Team:  Portuguese <traduz@debianpt.org>\n"
-"Language: pt\n"
+"PO-Revision-Date: 2020-11-15 18:28+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: note
 #. Description
@@ -40,7 +33,7 @@ msgstr ""
 #. :sl1:
 #: ../partman-target.templates:1001 ../partman-target.templates:11001
 msgid "Help on partitioning"
-msgstr "Ajuda no particionamento"
+msgstr "Ajuda pel particionament"
 
 #. Type: note
 #. Description
@@ -51,16 +44,16 @@ msgid ""
 "to install your new system.  You need to choose which partition(s) will be "
 "used for the installation."
 msgstr ""
-"Particionar um disco rígido consiste em dividi-lo para criar o espaço "
-"necessário para instalar o seu novo sistema.  Necessita escolher que "
-"partição(ões) será(ão) utilizada(s) para a instalação."
+"Lo particionament d'un disc dur es una operacion que permet de lo copar "
+"logicament per crear l'espaci necessari per l'installacion de vòstre sistèma "
+"novèl. Vos cal causir quala(s) seràn utilizada(s) per l'installacion."
 
 #. Type: note
 #. Description
 #. :sl1:
 #: ../partman-target.templates:1001
 msgid "Select a free space to create partitions in it."
-msgstr "Escolha um espaço livre para criar nele as partições."
+msgstr "Causissètz un espaci liure per i crear de particions."
 
 #. Type: note
 #. Description
@@ -70,8 +63,8 @@ msgid ""
 "Select a device to remove all partitions in it and create a new empty "
 "partition table."
 msgstr ""
-"Escolha um dispositivo para lhe remover todas as partições e criar uma nova "
-"tabela de partições vazia."
+"Causissètz un periferic per suprimir totas sas particions e i crear una "
+"taula de particions novèla."
 
 #. Type: note
 #. Description
@@ -84,12 +77,12 @@ msgid ""
 "partition is a necessity.  \"Swap\" is scratch space for an operating "
 "system, which allows the system to use disk storage as \"virtual memory\"."
 msgstr ""
-"Escolha uma partição para remover ou para especificar como deve ser "
-"utilizada. No mínimo, necessita de uma partição para conter o sistema de "
-"ficheiros raiz (cujo ponto de montagem é /).  A maioria das pessoas também "
-"acha que é necessária uma partição de swap separada. \"Swap\" é um espaço "
-"para o sistema operativo, que permite ao sistema utilizar espaço em disco "
-"como \"memória virtual\"."
+"Podètz causir una particion de suprimir o ensenhar cossí una particion "
+"existenta serà utilizada. Al minimum, una particion es indispensabla per la "
+"raiç del sistèma, que lo punt de montatge es « / ». La màger part dels "
+"administrators s'estimaràn mai d'utilizar un espaci d'escambi especial. "
+"L'espaci d'escambi (« swap ») permet al sistèma de se servir d'una partida "
+"del disc coma memòria virtuala."
 
 #. Type: note
 #. Description
@@ -100,9 +93,9 @@ msgid ""
 "existing data in the partition.  Partitions that will be used in this way "
 "are marked with \"${KEEP}\" in the main partitioning menu."
 msgstr ""
-"Quando a partição já estiver formatada pode escolher manter e utilizar os "
-"dados existentes na partição.  As partições que irão ser utilizadas desta "
-"forma são marcadas com \"${KEEP}\" no menu principal de particionamento."
+"Se la particion ja es formatada, podètz causir de la conservar e d'utilizar "
+"las donadas qu' i son. Aquestas particions seràn senhaladas per « ${KEEP} » "
+"dins lo menú principal de l'aisina de particionament."
 
 #. Type: note
 #. Description
@@ -115,11 +108,10 @@ msgid ""
 "marked with \"${DESTROY}\" in the main partitioning menu.  Otherwise it will "
 "be marked with \"${FORMAT}\"."
 msgstr ""
-"Regra geral pretenderá formatar a partição com um novo sistema de ficheiros. "
-"NOTA: toda a informação na partição será irreversivelmente apagada. Se "
-"decidir formatar uma partição que já está formatada, irá ser marcada com "
-"\"${DESTROY}\" no menu principal de particionamento.  Caso contrário será "
-"marcada com \"${FORMAT}\"."
+"Generalament, auretz de formatar la particion amb un sistèma de fichièrs "
+"novèl, qu'escafarà las donadas. Una particion que ja existís que volètz "
+"tornar formatar serà senhalada amb un « ${DESTROY} ». Autrament, serà "
+"senhalada amb « ${FORMAT} »."
 
 #. Type: text
 #. Description
@@ -132,11 +124,11 @@ msgid ""
 "the bootable flag for it. Such a partition will be marked with "
 "\"${BOOTABLE}\" in the main partitioning menu."
 msgstr ""
-"Para iniciar o seu novo sistema, é utilizado o chamado gestor de arranque. "
-"Pode ser instalado tanto no master boot record do primeiro disco rígido, "
-"como numa partição.  Quando o gestor de arranque for instalado numa partição "
-"é necessário definir a flag de arranque para essa partição. Uma partição "
-"dessas será marcada com \"${BOOTABLE}\" no menu principal de particionamento."
+"Per poder aviar lo sistèma novèl, un programa d'aviada es utilizat. Pòt "
+"èsser installat dins lo sector principal d'amorçatge del primièr disc dur o "
+"sus una particion. Dins aquel darrièr cas, aquesta particion deu èsser "
+"« amorsabla », aquò serà indicat per « ${BOOTABLE} » dins lo menú de "
+"particionament."
 
 #. Type: text
 #. Description
@@ -148,17 +140,17 @@ msgid ""
 "partition.  Such a partition will be marked with \"${BOOTABLE}\" in the main "
 "partitioning menu."
 msgstr ""
-"Para iniciar o seu novo sistema, é utilizado o chamado carregador do "
-"sistema.  É instalado na partição de arranque.  É necessário definir a flag "
-"bootable para essa partição.  Uma partição dessas será marcada com "
-"\"${BOOTABLE}\" no menu principal de particionamento."
+"Per aviar vòstre sistèma novèl, un programa d'aviada es utilizat. Serà "
+"installat sus una particion d'amorçatge. Aquesta particion deu èsser "
+"senhalada coma « amorsable », aquò serà indicat per « ${BOOTABLE} » dins lo "
+"menú de particionament."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:4001
 msgid "Identical labels for two file systems"
-msgstr "'labels' idênticos para dois sistemas de ficheiros"
+msgstr "Etiquetas identicas per dos sistèmas de fichièrs"
 
 #. Type: error
 #. Description
@@ -169,24 +161,24 @@ msgid ""
 "${PART2}. Since file system labels are usually used as unique identifiers, "
 "this is likely to cause reliability problems later."
 msgstr ""
-"Dois sistemas de ficheiros têm atribuido o mesmo 'label' (${LABEL}): "
-"${PART1} e ${PART2}. Como os 'labels' dos sistemas de ficheiros são "
-"normalmente utilizados como identificadores únicos, é provável que isto "
-"posteriormente cause problemas de fiabilidade."
+"Dos sistèmas de fichièrs utilizan la meteissa etiqueta (${LABEL}) : ${PART1} "
+"e ${PART2}. Coma las etiquetas de sistèmas de fichièrs servisson "
+"generalament d'identificants unics, es fòrt probable qu'aquò pòsca èsser la "
+"font de problèmas pus tard."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:4001
 msgid "Please correct this by changing labels."
-msgstr "Por favor corrija esta situação alterando os 'label'."
+msgstr "Corregissètz aquò en modificant las etiquetas."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:5001
 msgid "Identical mount points for two file systems"
-msgstr "Pontos de montagem idênticos para dois sistemas de ficheiros"
+msgstr "Punts de montatge identics per dos sistèmas de fichièrs"
 
 #. Type: error
 #. Description
@@ -196,29 +188,29 @@ msgid ""
 "Two file systems are assigned the same mount point (${MOUNTPOINT}): ${PART1} "
 "and ${PART2}."
 msgstr ""
-"Dois sistemas de ficheiros estão destinados a serem montados no mesmo ponto "
-"de montagem (${MOUNTPOINT}): ${PART1} e ${PART2}."
+"Dos sistèma de fichièrs (${PART1} e ${PART2}) an lo meteis punt de montatge "
+"${MOUNTPOINT}."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:5001
 msgid "Please correct this by changing mount points."
-msgstr "Por favor corrija esta situação alterando os pontos de montagem."
+msgstr "Corregissètz aquò en modificant los punts de montatge."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:6001
 msgid "No root file system"
-msgstr "Sem sistema de ficheiros raiz"
+msgstr "Pas de sistèma de fichièrs raiç"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:6001
 msgid "No root file system is defined."
-msgstr "Não está definido o sistema de ficheiros raiz."
+msgstr "Pas cap de sistèma de fichièrs causit coma raiç."
 
 #. Type: error
 #. Description
@@ -228,14 +220,14 @@ msgstr "Não está definido o sistema de ficheiros raiz."
 #. :sl2:
 #: ../partman-target.templates:6001 ../partman-target.templates:7001
 msgid "Please correct this from the partitioning menu."
-msgstr "Por favor, corrija esta situação a partir do menu de particionamento."
+msgstr "Vos cal corregir aquò dempuèi lo menú de particionament."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-target.templates:7001
 msgid "Separate file system not allowed here"
-msgstr "Aqui não é permitido um sistema de ficheiros separado"
+msgstr "Pas de sistèma de fichièrs separat possible per aqueste repertòri"
 
 #. Type: error
 #. Description
@@ -245,16 +237,16 @@ msgid ""
 "You assigned a separate file system to ${MOUNTPOINT}, but in order for the "
 "system to start correctly this directory must be on the root file system."
 msgstr ""
-"Você atribuiu um sistema de ficheiros separado para ${MOUNTPOINT}, mas para "
-"o sistema iniciar correctamente este directório tem de estar no sistema de "
-"ficheiros raiz."
+"Avètz afectat un sistèma de fichièrs separat per ${MOUNTPOINT}. Çaquelà, per "
+"que lo sistèma se pòsca amodar normalament, aqueste repertòri se deu trobar "
+"sul sistèma de fichièrs raiç."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-target.templates:8001
 msgid "Do you want to resume partitioning?"
-msgstr "Deseja continuar o particionamento?"
+msgstr "Volètz contunhar lo particionament ?"
 
 #. Type: boolean
 #. Description
@@ -264,26 +256,26 @@ msgid ""
 "The attempt to mount a file system with type ${TYPE} in ${DEVICE} at "
 "${MOUNTPOINT} failed."
 msgstr ""
-"Falhou a tentativa de montar um sistema de ficheiros do tipo ${TYPE} em "
-"${DEVICE} em ${MOUNTPOINT}."
+"Lo montatge d'un sistèma de fichièrs ${TYPE} dins ${DEVICE} a ${MOUNTPOINT} "
+"a pas capitat."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-target.templates:8001
 msgid "You may resume partitioning from the partitioning menu."
-msgstr "Pode continuar o particionamento a partir do menu de particionamento."
+msgstr "Podètz contunhar lo particionament a partir del menú."
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
-msgstr "Como utilizar esta partição:"
+msgstr "Metòde d'utilizacion d'aquesta particion :"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-target.templates:10001
 msgid "Use as:"
-msgstr "Utilizar como:"
+msgstr "Utilizar coma :"

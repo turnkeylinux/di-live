@@ -24,13 +24,14 @@
 #   Grégoire Colbert <gregus@linux-mandrake.com>, 2001.
 #   Tobias Quathamer <toddy@debian.org>, 2007, 2008.
 # Alban Vidal <alban.vidal@zordhak.fr>, 2018.
+# Baptiste Jammet <baptiste@mailoo.org>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
-"POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2018-08-28 07:19+0100\n"
-"Last-Translator: Alban Vidal <alban.vidal@zordhak.fr>\n"
+"POT-Creation-Date: 2019-11-02 20:51+0100\n"
+"PO-Revision-Date: 2020-08-17 10:18+0100\n"
+"Last-Translator: Baptiste Jammet <baptiste@mailoo.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -174,7 +175,7 @@ msgid ""
 "${PART2}. Since file system labels are usually used as unique identifiers, "
 "this is likely to cause reliability problems later."
 msgstr ""
-"Deux systèmes de fichiers utilisent la même étiquette (${LABEL}) : ${PART1} "
+"Deux systèmes de fichiers utilisent la même étiquette (${LABEL}) : ${PART1} "
 "et ${PART2}. Comme les étiquettes de systèmes de fichiers servent "
 "généralement d'identifiants uniques, il est très probable que cela puisse "
 "être la source de problèmes par la suite."
@@ -252,7 +253,7 @@ msgid ""
 msgstr ""
 "Vous avez affecté un système de fichiers séparé pour ${MOUNTPOINT}. "
 "Cependant, pour que le système puisse démarrer normalement, ce répertoire "
-"doit sur trouver sur le système de fichiers racine."
+"doit se trouver sur le système de fichiers racine."
 
 #. Type: boolean
 #. Description
@@ -281,6 +282,7 @@ msgstr "Vous pouvez recommencer le partitionnement à partir du menu."
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
 msgstr "Méthode d'utilisation de cette partition :"

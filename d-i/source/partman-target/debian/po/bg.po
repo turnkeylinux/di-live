@@ -29,16 +29,16 @@
 #   Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004.
 #   Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010.
 #   Roumen Petrov <transl@roumenpetrov.info>, 2010.
-# Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017.
+# Damyan Ivanov <dmn@debian.org>, 2006-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: partman-target@packages.debian.org\n"
-"POT-Creation-Date: 2011-05-26 22:47+0000\n"
-"PO-Revision-Date: 2017-01-15 10:14+0200\n"
+"POT-Creation-Date: 2019-11-02 20:51+0100\n"
+"PO-Revision-Date: 2020-10-31 21:43+0200\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
-"Language-Team: Български <dict@fsa-bg.org>\n"
+"Language-Team: Bulgarian <dict@ludost.net>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -143,7 +143,7 @@ msgid ""
 "the bootable flag for it. Such a partition will be marked with "
 "\"${BOOTABLE}\" in the main partitioning menu."
 msgstr ""
-"За да пуснете Вашата нова система Debian, се използва така наречената "
+"За да пуснете Вашата нова система Дебиан, се използва така наречената "
 "програма за начално зареждане (boot loader). Тя може да бъде инсталирана "
 "както в главния блок за начално зареждане (MBR) на първия твърд диск, така и "
 "в дял. Ако програмата за начално зареждане е инсталирана в дял, трябва да "
@@ -289,6 +289,7 @@ msgstr "Можете да продължите с редактиране на д
 
 #. Type: select
 #. Description
+#. :sl2:
 #: ../partman-target.templates:9001
 msgid "How to use this partition:"
 msgstr "Метод за използване на този дял:"
