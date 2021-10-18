@@ -4,10 +4,11 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Catalan messages for debian-installer.
-# Copyright 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2012, 2015 Software in the Public Interest, Inc.
+# Copyright 2002-2008, 2010, 2012, 2015, 2017-2018 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Jordi Mallach <jordi@debian.org>, 2002, 2003, 2004, 2006, 2007, 2008, 2010, 2012, 2015.
+# Jordi Mallach <jordi@debian.org>, 2002-2008, 2010, 2012, 2015, 2017-2018.
 # Guillem Jover <guillem@debian.org>, 2005, 2007.
+# d <dmanye@gmail.com>, 2021.
 #
 # Translations from iso-codes:
 # Alastair McKinstry <mckinstry@computer.org>, 2001.
@@ -18,16 +19,17 @@
 # Traductor: Jordi Ferré <jordiferre@catalonia.altranet.fr>
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer jessie\n"
+"Project-Id-Version: debian-installer buster\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-04-04 01:39+0200\n"
-"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2021-02-12 18:39+0000\n"
+"Last-Translator: d <dmanye@gmail.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: boolean
 #. Description
@@ -36,8 +38,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Voleu instal·lar el carregador GRUB al registre mestre d'arrencada?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Instal·la el carregador GRUB al disc dur principal?"
 
 #. Type: boolean
 #. Description
@@ -56,14 +58,14 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Si tots els vostres sistemes operatius estan llistats ací, hauria de ser "
-"segur instal·lar el carregador al registre mestre d'arrencada del primer "
-"disc dur. Quan l'ordinador arrenque, podreu seleccionar un d'aquests "
-"sistemes operatius o el nou sistema."
+"segur instal·lar el carregador a la unitat principal (partició UEFI/registre "
+"d'arrencada). Quan l'ordinador arrenque, podreu seleccionar un d'aquests "
+"sistemes operatius o el recent instal·lat sistema Debian."
 
 #. Type: boolean
 #. Description
@@ -71,27 +73,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Sembla que aquesta nova instal·lació és l'únic sistema operatiu en aquest "
-"ordinador. Si és així, hauria de ser segur instal·lar el carregador GRUB al "
-"registre mestre d'arrencada del primer disc dur."
+"ordinador. Si és així, hauria de ser segur instal·lar el carregador GRUB a "
+"la unitat principal (partició UEFI/registre d'arrencada)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Avís: Si l'instal·lador no ha detectat un altre sistema operatiu que està "
-"present a l'ordinador, modificar el registre mestre d'arrencada farà que "
-"aquest sistema operatiu no es puga arrencar temporalment, encara que es pot "
-"configurar el GRUB manualment més tard per a arrencar-lo."
+"Avís: Si l'ordinador té un altre sistema operatiu que l'instal·lador no ha "
+"detectat, això farà que aquest sistema operatiu no es puga arrencar "
+"temporalment, encara que es pot configurar el GRUB manualment més tard per a "
+"arrencar-lo."
 
 #. Type: boolean
 #. Description
@@ -221,37 +222,37 @@ msgstr "Dispositiu on instal·lar el carregador:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Heu de fer arrencable el nou sistema instal·lat, instal·lant el carregador "
 "GRUB en un dispositiu arrencable. La manera normal de fer això és instal·lar "
-"el GRUB en el registre mestre d'arrencada del primer disc dur. Si ho "
-"preferiu, podeu instal·lar el GRUB en un altre lloc de la unitat, o en una "
-"altra unitat, o fins i tot en un disquet."
+"el GRUB en la vostra unitat principal (partició UEFI/registre d'arrencada). "
+"Si ho preferiu, podeu instal·lar el GRUB en una altra unitat (o partició), o "
+"en un mitjà extraïble."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Heu d'especificar el dispositiu com un dispositiu a /dev. A continuació "
-"teniu alguns exemples:\n"
-" - «/dev/sda» instal·larà el GRUB al registre mestre d'arrencada del\n"
-"   primer disc dur;\n"
-" - «/dev/sda2» utilitzarà la segona partició del primer disc dur\n"
-" - «/dev/sdc5» utilitzarà la primera partició estesa del tercer\n"
-"   disc dur;\n"
+"Heu d'especificar la notació del dispositiu com un dispositiu a /dev. A "
+"continuació teniu alguns exemples:\n"
+" - «/dev/sda» instal·larà el GRUB a la unitat principal (partició UEFI/"
+"registre\n"
+"   d'arrencada);\n"
+" - «/dev/sdb» instal·larà el GRUB en una unitat secundària (que pot ser per\n"
+"   exemple un llapis de memòria);\n"
 " - «/dev/fd0» instal·larà el GRUB en un disquet."
 
 #. Type: select
@@ -487,10 +488,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Instal·la el carregador GRUB en un disc dur"
+msgid "Install the GRUB boot loader"
+msgstr "Instal·lar el carregador GRUB"
 
 #. Type: text
 #. Description

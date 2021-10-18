@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: km\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2012-01-18 15:40+0700\n"
-"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
 "Language: km\n"
 "MIME-Version: 1.0\n"
@@ -30,8 +30,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "ដំឡើង​កម្មវិធី​ចាប់ផ្ដើម​ប្រព័ន្ធ GRUB ទៅ master boot record ?"
+#, fuzzy
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "ដំឡើង​កម្មវិធី​ចាប់ផ្ដើម​ប្រព័ន្ធ GRUB លើ​ថាស​រឹង"
 
 #. Type: boolean
 #. Description
@@ -46,11 +47,12 @@ msgstr "បាន​រកឃើញ​ប្រព័ន្ធ​ប្រតិ
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001
+#, fuzzy
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "ប្រសិន​បើ​ប្រព័ន្ធ​ប្រតិបត្តិការ​ទាំងអស់​របស់​អ្នក​ត្រូវ​បាន​រាយ​ក្នុង​បញ្ជី​ខាង​លើ​ហើយ នោះ​អ្នក​គួរ​តែ​អាច​ដំឡើង​កម្មវិធី​"
 "ចាប់ផ្ដើម​ប្រព័ន្ធ​ទៅ master boot record របស់​ដ្រាយ​ថាស​រឹង​ទីមួយ​របស់​អ្នក​ដោយ​សុវត្ថិភាព​ហើយ ។​ នៅ​ពេល​"
@@ -61,10 +63,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "ការ​ដំឡើង​ថ្មី​ទំនង​ជា​ប្រព័ន្ធ​ប្រតិបត្តិការ​តែ​មួយ​គត់​នៅ​លើ​កុំព្យូទ័រ​នេះ ។ នោះ​អ្នក​គួរ​តែ​អាច​ដំឡើង​កម្មវិធី​"
 "ចាប់ផ្ដើម​ប្រព័ន្ធ​ទៅ master boot record របស់​ដ្រាយ​ថាស​រឹង​ទីមួយ​របស់​អ្នក​ដោយ​សុវត្ថិភាព​ហើយ ។"
@@ -73,11 +76,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "ព្រមាន ៖ បើ​កម្មវិធី​ដំឡើង​មិន​អាច​រកឃើញ​ប្រព័ន្ធ​ប្រតិបត្តិការ​ផ្សេង​ទៀត​ដែល​មាន​នៅ​លើ​កុំព្យូទ័រ​របស់​អ្នក ការ​"
 "កែប្រែ master boot record នឹង​ធ្វើ​ឲ្យ​អ្នក​មិន​អាច​ចាប់ផ្ដើម​ប្រព័ន្ធ​ប្រតិបត្តិការ​នោះ​បាន​ឡើយ ប៉ុន្តែ​"
@@ -202,12 +205,12 @@ msgstr "ឧបករណ៍​សម្រាប់​ដំឡើង​កម្
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "អ្នក​ត្រូវ​តែ​ធ្វើ​ឲ្យ​ប្រព័ន្ធ​ដែល​បាន​ដំឡើង​ថ្មី​អាច​ចាប់ផ្ដើម​បាន ដោយ​ដំឡើង​កម្មវិធី​ចាប់ផ្ដើម GRUB លើ​ឧបករណ៍​"
 "ដែល​អាច​ចាប់ផ្ដើម​បាន ។ វិធី​ធម្មតា​ក្នុង​ការ​ធ្វើ​ដូច្នេះ​គឺ​ត្រូវ​ដំឡើង GRUB លើ master boot record "
@@ -218,14 +221,16 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "អ្នក​អាច​បញ្ជាក់​ឧបករណ៍​ដោយ​ប្រើ​ការ​កំណត់​របស់ GRUB \"(hdn,m)\" ឬ បញ្ជាក់​ជា​ឧបករណ៍​នៅ​ក្នុង /dev ក៏​"
@@ -462,10 +467,12 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "ដំឡើង​កម្មវិធី​ចាប់ផ្ដើម​ប្រព័ន្ធ GRUB លើ​ថាស​រឹង"
+#, fuzzy
+msgid "Install the GRUB boot loader"
+msgstr "កំពុង​ដំឡើង​កម្មវិធី​ចាប់ផ្ដើម​ប្រព័ន្ធ GRUB"
 
 #. Type: text
 #. Description

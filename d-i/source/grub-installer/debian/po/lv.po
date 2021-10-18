@@ -23,13 +23,14 @@
 # Rihards Priedītis <rprieditis@gmail.com>, 2009, 2010.
 # Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012, 2013, 2017.
 # Peteris Krisjanis <pecisk@gmail.com>, 2008, 2012.
-# Tranzistors <rudolfs.mazurs@gmail.com>, 2018.
+# Tranzistors <rudolfs.mazurs@gmail.com>, 2018, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2018-10-17 19:33+0000\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2021-01-29 15:32+0000\n"
 "Last-Translator: Tranzistors <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -45,8 +46,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Instalēt GRUB palaidēju uz galvenā palaišanas ieraksta (MBR)?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Instalēt GRUB palaidēju iz primārā dziņa?"
 
 #. Type: boolean
 #. Description
@@ -63,14 +64,14 @@ msgstr "Šīs ir operētājsistēmas, kas atrastas uz šī datora: ${OS_LIST}"
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Ja visas jūsu datora operētājsistēmas ir šajā sarakstā, droši var instalēt "
-"palaidēju datora pirmā cietā diska galvenajā palaišanas ierakstā. Kad jūsu "
-"dators tiks palaists, varēsiet izvēlēties kādu no šīm sistēmām vai savu "
-"jauno sistēmu."
+"palaidēju datora primārā dziņa (UEFI nodalījuma / ielādes ieraksta). Kad "
+"jūsu dators tiks palaists, varēsiet izvēlēties kādu no šīm sistēmām vai "
+"tikko instalēto Debian sistēmu."
 
 #. Type: boolean
 #. Description
@@ -78,27 +79,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Šķiet ka, šī instalācija ir vienīgā operētājsistēma uz jūsu datora. Ja tā "
-"ir, droši varat instalēt palaidēju uz datora pirmā cietā diska galvenā "
-"palaišanas ieraksta."
+"ir, droši varat instalēt palaidēju uz sava primārā dziņa (UEFI nodalījuma / "
+"ielādes ieraksta)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Uzmanību — ja instalators nespēja noteikt kādu no operētājsistēmām, kas "
-"atrodas uz jūsu datora cietajiem diskiem, tad galvenā palaišanas ieraksta "
-"izmainīšana padarīs šo operētājsistēmu par īslaicīgi nesasniedzamu. Lai to "
-"palaistu, jums vēlāk būs attiecīgi jāpārkonfigurē GRUB."
+"Uzmanību — ja datoram ir cita operētājsistēma, instalators to nav atradis. "
+"Tas padarīs šo operētājsistēmu par īslaicīgi nesasniedzamu. Lai to palaistu, "
+"jums vēlāk būs attiecīgi jāpārkonfigurē GRUB."
 
 #. Type: boolean
 #. Description
@@ -222,36 +221,35 @@ msgstr "Ierīce, uz kuras instalēt palaidēju:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Jums jāpadara jaunā sistēma palaižama, instalējot GRUB palaidēju uz kādas no "
-"palaižamām ierīcēm. Parasti to veic, instalējot GRUB uz pirmā cietā diska "
-"galvenā palaišanas ieraksta. Taču jūs varat instalēt GRUB arī citur uz "
-"diska, uz cita diska dziņa vai pat uz disketes."
+"palaižamām ierīcēm. Parasti to veic, instalējot GRUB uz primārā dziņa (UEFI "
+"nodalījums / ielādēšanas ieraksts). Iespējams, jums būs jāinstalē GRUB uz "
+"cita diska (vai nodalījuma) vai arī uz noņemama datu nesēja."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Ierīcei jābūt norādītai tādai, kāda tā ir norādīta /dev direktorijā. \n"
-"Daži piemēri pareizai izvēlei:\n"
-" - \"/dev/sda\" GRUB tiks instalēts uz primārā diska\n"
-"   MBR (galvenais palaišanas ieraksts);\n"
-" - \"/dev/sda2\" tiks izmantots primārā cietā diska otrais nodalījums;\n"
-" - \"/dev/sdc5\" tiks izmantots trešā cietā diska pirmais\n"
-"   paplašinātais nodalījums\n"
+"Ierīces notācijai jābūt norādītai kā ierīcei /dev direktorijā. Daži "
+"piemēri:\n"
+" - \"/dev/sda\" GRUB tiks instalēts uz primārā dziņa (UEFI nodalījums\n"
+"    vai ielādēšanas ieraksts);\n"
+" - \"/dev/sdb\" GRUB tiks instalēts uz sekundārā dziņa (piemēram, USB "
+"atmiņas);\n"
 " - \"/dev/fd0\" GRUB palaidējs tiks instalēts uz disketes."
 
 #. Type: select
@@ -480,10 +478,11 @@ msgstr "Konfigurē grub-efi izņemamo datu nesēju ceļa izmantošanai nākotnē
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "GRUB palaidēja instalēšana uz cietā diska"
+msgid "Install the GRUB boot loader"
+msgstr "Instalēt GRUB palaidēju"
 
 #. Type: text
 #. Description

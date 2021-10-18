@@ -7,13 +7,13 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Peter Mann <peter.mann@tuke.sk>
-# Ivan Masár <helix84@centrum.sk>, 2007, 2008, 2009, 2010, 2011, 2013, 2014.
+# Ivan Masár <helix84@centrum.sk>, 2007, 2008, 2009, 2010, 2011, 2013, 2014, 2015, 2017.
 # Translations from iso-codes:
 # (translations from drakfw)
 # Alastair McKinstry <mckinstry@computer.org>, 2001, 2002.
 # Copyright (C) 2002 Free Software Foundation, Inc.
 # Free Software Foundation, Inc., 2004
-# Ivan Masár <helix84@centrum.sk>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Ivan Masár <helix84@centrum.sk>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017.
 # Translations taken from sk.wikipedia.org on 2008-06-17
 # Pavol Cvengros <orpheus@hq.alert.sk>, 2001.
 # Peter Mann <Peter.Mann@tuke.sk>, 2004, 2006.
@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2014-12-31 10:34+0200\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2018-04-16 09:18+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: x\n"
 "Language: sk\n"
@@ -42,8 +42,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Nainštalovať zavádzač GRUB na hlavný štartovací záznam (MBR)?"
+#, fuzzy
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Inštalácia zavádzača GRUB na pevný disk"
 
 #. Type: boolean
 #. Description
@@ -59,11 +60,12 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001
+#, fuzzy
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Ak sú tu zobrazené všetky vaše operačné systémy, tak by malo byť bezpečné "
 "nainštalovanie zavádzača na hlavný štartovací záznam (MBR) vášho prvého "
@@ -74,10 +76,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Vyzerá to tak, že táto inštalácia je jediným operačným systémom na tomto "
 "počítači. V takomto prípade by mala bez problémov prebehnúť inštalácia "
@@ -87,11 +90,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "Upozornenie: Ak inštalačný program nerozpozná na vašom počítači ďalší "
 "operačný systém, zmena hlavného štartovacieho záznamu (MBR) bude mať za "
@@ -217,12 +220,12 @@ msgstr "Zariadenie na inštaláciu zavádzača:"
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Teraz nastal čas umožniť čerstvo nainštalovanému systému štartovanie z "
 "disku, a to nainštalovaním GRUB zavádzača na štartovacie zariadenie. "
@@ -234,14 +237,16 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "Zariadenie by malo byť určené ako zariadenie v /dev. Nasleduje niekoľko "
@@ -480,10 +485,12 @@ msgstr "Konfiguruje sa grub-efi na budúce využitie cesty k vymeniteľnému mé
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Inštalácia zavádzača GRUB na pevný disk"
+#, fuzzy
+msgid "Install the GRUB boot loader"
+msgstr "Inštaluje sa zavádzač GRUB"
 
 #. Type: text
 #. Description

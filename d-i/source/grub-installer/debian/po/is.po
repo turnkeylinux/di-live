@@ -9,7 +9,7 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 #
 # Copyright (C) 2010 Free Software Foundation
-# Sveinn í Felli <sv1@fellsnet.is>, 2018.
+# Sveinn í Felli <sv1@fellsnet.is>, 2018, 2019, 2020.
 #
 # Translations from iso-codes:
 # Copyright (C) 2002,2003, 2010, 2011, 2012 Free Software Foundation, Inc.
@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icelandic (Debian Installer)\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2018-01-04 06:20+0000\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-04-04 19:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -41,8 +41,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Setja upp GRUB ræsistjórann á aðalræsisvæðinu?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Setja GRUB ræsistjórann upp á aðaldrifið þitt?"
 
 #. Type: boolean
 #. Description
@@ -59,14 +59,14 @@ msgstr "Eftirfarandi önnur stýrikerfi fundust á þessari vél: ${OS_LIST}"
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Ef öll stýrikerfin þín sjást hér að ofan, þá ætti að vera öruggt að setja "
-"ræsistjórann upp á aðalræsisvæði (MBR) fyrsta harða disksins í vélinni. "
-"Þegar kveikt er á tölvunni munt þú geta valið eitt þessara stýrikerfa eða "
-"nýja kerfið."
+"ræsistjórann upp á aðalræsisvæði (UEFI-disksneið/MBR) fyrsta harða disksins "
+"í vélinni. Þegar kveikt er á tölvunni munt þú geta valið eitt þessara "
+"stýrikerfa eða nýuppsetta Debian-kerfið."
 
 #. Type: boolean
 #. Description
@@ -74,22 +74,21 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Svo virðist sem þessi nýja uppsetning sé eina stýrikerfið á þessari tölvu. "
 "Ef svo er, ætti að vera öruggt að setja upp GRUB ræsistjórann á "
-"aðalræsisvæði fyrsta harða disksins."
+"aðalræsisvæði (UEFI-disksneið/MBR) fyrsta harða disksins."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "Varúð: Ef uppsetningarforritinu tókst ekki að finna önnur stýrikerfi sem eru "
 "á vélinni þá munu breytingar á aðalræsisvæðinu gera þau óræsanleg. GRUB "
@@ -218,36 +217,36 @@ msgstr "Tæki til að setja upp ræsistjóra:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Þú þarft að gera nýja stýrikerfið þitt ræsanlegt með því að setja upp GRUB "
 "ræsistjórann á ræsanlegu jaðartæki. Venjulega er GRUB settur upp á "
-"aðalræsisvæði fyrsta harða disksins þíns. Ef þú vilt getur þú sett GRUB upp "
-"annars staðar á disknum, á annan disk eða jafnvel á diskling."
+"aðalræsisvæði (UEFI disksneið/MBR) fyrsta harða disksins þíns. Ef þú vilt "
+"getur þú sett GRUB upp annars staðar á disknum, á annan disk eða jafnvel á "
+"útskiptanleg drif."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Tækinu ætti að lýsa sem tæki í /dev skrásafninu. Hér að neðan eru nokkur "
-"dæmi: \n"
-" - \"/dev/sda\" setur GRUB upp á aðal ræsisvæðinu (MBR)\n"
+"Tækið ætti að skilgreina sem tæki í /dev skrásafninu. Hér að neðan eru "
+"nokkur dæmi: \n"
+" - \"/dev/sda\" setur GRUB upp á aðal ræsisvæðinu (UEFI disksneið/MBR)\n"
 "   á fyrsta disknum þínum;\n"
-" - \"/dev/sda2\" notar aðra sneið á fyrsta disknum;\n"
-" - \"/dev/sdc5\" notar fyrstu extended sneiðina á\n"
-"   þriðja drifinu þínu;\n"
+" - \"/dev/sdb\" setur GRUB upp á öðru drifi (sem gæti til dæmis\n"
+"   verið minnislykill);\n"
 " - \"/dev/fd0\" setur GRUB upp á diskling."
 
 #. Type: select
@@ -479,10 +478,11 @@ msgstr "Set upp grub-efi fyrir framtíðarnotkun slóðar fyrir útskiptanleg t�
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Setja upp GRUB ræsistjórann á harðan disk"
+msgid "Install the GRUB boot loader"
+msgstr "Setja upp GRUB ræsistjórann"
 
 #. Type: text
 #. Description

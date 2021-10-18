@@ -27,21 +27,23 @@
 #      Jakub Bogusz <qboosh@pld-linux.org>, 2007-2011.
 #      Tomasz Z. Napierala <zen@debian.linux.org.pl>, 2004, 2006.
 # Marcin Owsiany <porridge@debian.org>, 2011.
-# Michał Kułach <michal.kulach@gmail.com>, 2012, 2013, 2014, 2015.
+# Michał Kułach <michal.kulach@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Bartosz Feński <fenio@debian.org>, 2020.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-02-10 19:23+0100\n"
-"Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-09-11 20:10+0000\n"
+"Last-Translator: Bartosz Feński <fenio@debian.org>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 
 #. Type: boolean
 #. Description
@@ -50,8 +52,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Zainstalować program rozruchowy GRUB w głównym rekordzie rozruchowym?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Zainstalować program rozruchowy GRUB na głównym dysku twardym?"
 
 #. Type: boolean
 #. Description
@@ -69,14 +71,15 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Jeśli powyższa lista zawiera wszystkie Twoje systemy operacyjne, to "
-"instalacja programu rozruchowego w głównym rekordzie rozruchowy pierwszego "
-"dysku twardego powinna być bezpieczna. Podczas uruchamiania komputera będzie "
-"możliwość wyboru spośród tych systemów operacyjnych i nowego systemu."
+"instalacja programu rozruchowego na pierwszym dysku twardym (partycja UEFI / "
+"główny rekord rozruchowy) powinna być bezpieczna. Podczas uruchamiania "
+"komputera będzie możliwość wyboru spośród tych systemów operacyjnych i nowo "
+"zainstalowanego systemu Debian."
 
 #. Type: boolean
 #. Description
@@ -84,27 +87,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Wygląda na to, że ta instalacja jest jedynym systemem operacyjnym w tym "
-"komputerze. Jeśli tak jest to instalacja programu rozruchowego w głównym "
-"rekordzie rozruchowym pierwszego dysku twardego powinna być bezpieczna."
+"komputerze. Jeśli tak jest to instalacja programu rozruchowego na pierwszym "
+"dysku (partycja UEFI / główny rekord rozruchowy) powinna być bezpieczna."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Ostrzeżenie: Jeśli instalatorowi nie uda się wykryć innego systemu "
-"operacyjnego dostępnego w tym komputerze, modyfikacja głównego rekordu "
-"rozruchowego sprawi, że nie będzie można tego systemu uruchomić. Można "
-"jednakże w późniejszym czasie ręcznie skonfigurować GRUB-a odpowiednio."
+"Ostrzeżenie: Jeśli na komputerze jest inny system operacyjny, którego "
+"instalator nie wykrył, ta operacja sprawi, że uruchomienie tego systemu może "
+"być niemożliwe. Można jednakże w późniejszym czasie ręcznie skonfigurować "
+"GRUB-a odpowiednio."
 
 #. Type: boolean
 #. Description
@@ -229,37 +231,37 @@ msgstr "Urządzenie do instalacji programu rozruchowego:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Poprzez instalację programu rozruchowego GRUB, na rozruchowym urządzeniu, "
 "musisz umożliwić samoczynne uruchamianie zainstalowanego systemu. "
-"Najpopularniejszym sposobem by to osiągnąć, jest instalacja GRUB-a w głównym "
-"rekordzie rozruchowym pierwszego dysku twardego. Możesz jednakże użyć innego "
-"miejsca na dysku, innego dysku czy nawet dyskietki jeśli chcesz."
+"Najpopularniejszym sposobem by to osiągnąć, jest instalacja GRUB-a na "
+"pierwszym dysku twardym (partycja UEFI / główny rekord rozruchowy). Możesz "
+"jednakże użyć innego miejsca na dysku, innego dysku czy nawet zewnętrznego "
+"nośnika jeśli chcesz."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "Urządzenie powinno zostać określone jako urządzenie w /dev. Poniżej kilka "
 "przykładów:\n"
-" - \"/dev/sda\" zainstaluje GRUB-a w głównym rekordzie rozruchowym \n"
-"   pierwszego dysku twardego;\n"
-" - \"/dev/sda2\" użyje drugiej partycji pierwszego dysku twardego;\n"
-" - \"/dev/sdc5\" użyje pierwszej rozszerzonej partycji trzeciego dysku "
-"twardego;\n"
+" - \"/dev/sda\" zainstaluje GRUB-a na pierwszym dysku (partycja UEFI / "
+"główny \n"
+"   rekord rozruchowy);\n"
+" - \"/dev/sdb\" użyje drugiego dysku (to może być napęd USB);\n"
 " - \"/dev/fd0\" zainstaluje GRUB-a na dyskietce."
 
 #. Type: select
@@ -422,7 +424,7 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
-msgstr "Instalacja programu rozruchowego GRUB."
+msgstr "Instalacja programu rozruchowego GRUB"
 
 #. Type: text
 #. Description
@@ -491,10 +493,11 @@ msgstr "Konfigurowanie grub-efi do korzystania ze ścieżki nośników wymiennyc
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Zainstaluj program rozruchowy GRUB na dysku twardym"
+msgid "Install the GRUB boot loader"
+msgstr "Instalacja programu rozruchowego GRUB"
 
 #. Type: text
 #. Description

@@ -9,7 +9,7 @@
 #
 # Samuel Gimeno <sgimeno@gmail.com>, 2005.
 # Serge Leblanc <serge.leblanc@wanadoo.fr>, 2005, 2006, 2007.
-# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2017.
+# Felipe Castro <fefcas@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2017, 2018, 2020.
 #
 # Translations from iso-codes:
 # Alastair McKInstry <mckinstry@computer.org>, 2001,2002.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2017-12-01 00:46+0000\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-04-04 19:09+0000\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
 "Language: eo\n"
@@ -38,8 +38,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Ĉu instali la ekŝargilon 'GRUB' sur la ĉefa ekŝarga rikordo ('MBR')?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Ĉu instali la ekŝargilon 'GRUB' sur via ĉefa pelilo?"
 
 #. Type: boolean
 #. Description
@@ -58,14 +58,14 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Se ĉiuj el la operaciumoj de via komputilo estas supre listitaj, eblas "
-"sekure instali la ekŝargilon sur la ĉefan ekŝargan sektoron ('master boot "
-"record') de via unua fiksita disko. Kiam vi enŝaltos vian komputilon, vi "
-"povos ekŝargi je unu el tiuj operaciumoj, aŭ je via nova sistemo."
+"sekure instali la ekŝargilon sur la via ĉefa pelilo (UEFI-diskparto/'boot-"
+"record'). Kiam vi enŝaltos vian komputilon, vi povos ekŝargi je unu el tiuj "
+"operaciumoj, aŭ je via freŝ-instalita sistemo Debiano."
 
 #. Type: boolean
 #. Description
@@ -73,27 +73,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Ŝajnas ke tiu nova instalaĵo estas la sola ĉeestanta operaciumo sur tiu ĉi "
-"komputilo. Se jes, eblas sekure instali la ekŝargilon 'GRUB' sur la ĉefa "
-"ekŝarga sektoro ('MBR') de via unua fiksita disko."
+"komputilo. Se jes, eblas sekure instali la ekŝargilon 'GRUB' sur la via ĉefa "
+"pelilo (UEFI-diskparto/'boot-record')."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Atentu: se la instalilo ne detektis ĉeestantan operaciumon en tiu ĉi "
-"komputilo, modifon sur la ĉefan ekŝargsektoron ('MBR') provizore malhelpos "
-"ke la sistemo ekfunkciu, kvankam iom poste eblos permane agordi la "
-"ekŝargilon 'GRUB' por ebligi ties enŝaltadon."
+"Atentu: se havas alian operaciumon ke la instalilo malsukcesis detekti, tio "
+"provizore malhelpos ke la sistemo ekfunkciu, kvankam iom poste eblos permane "
+"agordi la ekŝargilon 'GRUB' por ebligi ties enŝaltadon."
 
 #. Type: boolean
 #. Description
@@ -217,35 +215,36 @@ msgstr "Aparato por instalado de la ekŝargilo:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Vi bezonas aktivigi la novan sistemon per la instalado de 'GRUB'-ekŝargilo "
-"sur startigebla gaparato. La kutima metodo estas la instalado de 'GRUB' sur "
-"la ĉefa ekŝargrikordo de via unua fiksa disko. Vi povos ankaŭ instali ĝin "
-"aliloke en la disko aŭ sur alia disko aŭ eĉ sur disketo."
+"sur startigebla aparato. La kutima metodo estas la instalado de 'GRUB' sur "
+"via ĉefa pelilo (UEFI-diskparto/'boot record'). Vi povos anstataŭe instali "
+"GRUB sur alia pelilo (aŭ diskparto), aŭ sur alia demetebla memorilo."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"La aparato estu specifata aparato en '/dev'. Jen estas kelkaj ekzemploj:\n"
-" - \"/dev/sda\" instalos 'GRUB'-on en la ĉefa ekŝargrikordo de\n"
-"   via unua fiksa disko;\n"
-" - \"/dev/sda2\" uzos la duan diskparton de via unua disko;\n"
-" - \"/dev/sdc5\" uzos la unuan etenditan diskparton de via\n"
-"   tria fiksa disko;\n"
+"La aparata sintakso estu specifata kiel aparato en '/dev'. Jen kelkaj "
+"ekzemploj:\n"
+" - \"/dev/sda\" instalos 'GRUB'-on en via ĉefa pelilo (UEFI "
+"diskparto/'boot-\n"
+"   record');\n"
+" - \"/dev/sdb\" instalos 'GRUB'-on en dua aldona pelilo (kiu povos esti\n"
+"   ekzemple poŝmemorilo);\n"
 " - \"/dev/fd0\" instalos 'GRUB'-on en disketo."
 
 #. Type: select
@@ -475,10 +474,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Instali la ekŝargilon 'GRUB' sur fiksita disko"
+msgid "Install the GRUB boot loader"
+msgstr "Instali la ekŝargilon 'GRUB'"
 
 #. Type: text
 #. Description

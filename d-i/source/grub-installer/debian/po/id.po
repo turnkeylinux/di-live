@@ -18,7 +18,8 @@
 # * Setyo Nugroho (setyo@gmx.net), 2004.
 # * Arief S Fitrianto <arief@gurame.fisika.ui.ac.id>, 2008-2011.
 # * Al Qalit <qal.smith@gmail.com>, 2018.
-# * Andika Triwidada <andika@gmail.com>, 2018.
+# * Andika Triwidada <andika@gmail.com>, 2018, 2019, 2020.
+# * Fahmi Ali <fahmi.ali1945@gmail.com>, 2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2002.
@@ -33,10 +34,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer (level1)\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2019-03-11 16:03+0000\n"
-"Last-Translator: Muhammad Rifqi Priyo Susanto "
-"<muhammadrifqipriyosusanto@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-04-05 15:40+0000\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Debian Indonesia Translators <debian-l10n-indonesian@lists."
 "debian.org>\n"
 "Language: id\n"
@@ -52,8 +52,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Memasang boot loader GRUB pada master boot record?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Pasang boot loader GRUB pada hard disk utama anda?"
 
 #. Type: boolean
 #. Description
@@ -70,14 +70,14 @@ msgstr "Sistem-sistem operasi berikut ditemukan pada komputer ini: ${OS_LIST}"
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Jika semua sistem operasi Anda terdaftar di atas, maka cukup aman untuk "
-"memasang boot loader pada master boot record dari hard disk pertama. Saat "
+"memasang boot loader pada drive primer Anda (partisi UEFI/boot record). Saat "
 "komputer boot, Anda dapat memilih untuk menjalankan salah satu sistem "
-"operasi tersebut atau sistem Anda yang baru."
+"operasi tersebut atau sistem Debian yang baru dipasang."
 
 #. Type: boolean
 #. Description
@@ -85,27 +85,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Tampaknya instalasi ini merupakan satu-satunya sistem operasi pada komputer "
-"ini. Jika demikian, cukup aman memasang boot loader GRUB pada master boot "
-"record dari hard disk pertama."
+"ini. Jika demikian, cukup aman memasang boot loader GRUB pada drive primer "
+"(partisi UEFI/boot record)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Perhatian: Jika penginstal gagal mendeteksi Sistem Operasi lain yang ada "
-"pada komputer Anda, mengubah master boot record akan membuat Sistem Operasi "
-"tersebut untuk sementara tidak dapat diboot, walaupun nantinya GRUB dapat "
-"dikonfigurasi secara manual untuk dapat memboot Sistem Operasi itu."
+"Perhatian: Jika komputer Anda punya sistem operasi lain yang installer gagal "
+"mendeteksinya, ini akan membuat sistem operasi tersebut untuk sementara "
+"tidak dapat diboot, walaupun nantinya GRUB dapat dikonfigurasi secara manual "
+"untuk dapat memboot sistem operasi itu."
 
 #. Type: boolean
 #. Description
@@ -230,14 +229,13 @@ msgstr "Piranti untuk pemasangan boot loader:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Anda perlu membuat sistem yang baru dipasang dapat di-boot dengan memasang "
 "boot loader GRUB pada piranti bootable. Biasanya ini dilakukan dengan "
-"memasang GRUB pada master boot record dari hard disk pertama. Anda juga "
-"dapat memasang GRUB pada bagian lain dari hard disk, pada hard disk lain "
+"memasang GRUB ke drive primer Anda (partisi UEFI/boot record). Anda juga "
+"dapat memasang GRUB pada bagian lain dari hard disk, pada hard disk lain, "
 "atau bahkan pada disket."
 
 #. Type: string
@@ -245,22 +243,22 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Perangkat harus ditetapkan sebagai perrangkat di /dev. Dibawah ini adalah "
-"beberapa contoh:\n"
-" - \"/dev/sda\" akan dipasang GRUB di pasang master boot record di hardisk "
-"pertama;\n"
-" - \"/dev/sda2\" akan digunakan sebagai partisi kedua dari hardisk pertama;\n"
-" - \"/dev/sdc5\" akan digunakan sebagai partisi perluasan pertama dari "
-"hardisk ketiga;\n"
+"Notasi perangkat harus dinyatakan sebagai perangkat di /dev. Di bawah ini "
+"adalah beberapa contoh:\n"
+" - \"/dev/sda\" akan memasang GRUB ke drive primer Anda\n"
+"   (partisi UEFI/boot record)\n"
+" - \"/dev/sdb\" akan memasang GRUB ke drive sekunder\n"
+"   (yang bisa jadi misalnya flashdisk)\n"
 " - \"/dev/fd0\" akan memasang GRUB ke floppy."
 
 #. Type: select
@@ -492,10 +490,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Memasang boot loader GRUB pada hard disk"
+msgid "Install the GRUB boot loader"
+msgstr "Pasang boot loader GRUB"
 
 #. Type: text
 #. Description

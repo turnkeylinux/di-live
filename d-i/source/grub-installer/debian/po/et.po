@@ -8,7 +8,7 @@
 # This translation is released under the same licence as the debian-installer.
 #
 # Siim Põder <siim@p6drad-teel.net>, 2007.
-# Kristjan Räts <kristjanrats@gmail.com>, 2017.
+# Kristjan Räts <kristjanrats@gmail.com>, 2017, 2018, 2020.
 #
 # Thanks to following Ubuntu Translators for review and fixes:
 #     Laur Mõtus
@@ -31,8 +31,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2017-11-19 13:25+0000\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-07-29 08:41+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
 "Language-Team: Estonian <>\n"
 "Language: et\n"
@@ -48,8 +48,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Kas GRUB alglaadur paigaldada MBR'i?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Kas paigaldada GRUB-alglaadur su esmasele kõvakettale?"
 
 #. Type: boolean
 #. Description
@@ -66,15 +66,15 @@ msgstr "Arvutist avastati ka teisi operatsioonisüsteeme: ${OS_LIST}"
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Kui ülemises nimekirjas on kõik sinu arvutis olevad operatsioonisüsteemid, "
-"peaks alglaaduri paigaldamine esimese kõvaketta peamisesse "
-"alglaadimiskirjesse (MBR-i) olema ohutu. Kui su arvuti taaskäivitub, "
-"esitatakse sulle valik kõigist nimekirjas olevatest operatsioonisüsteemidest "
-"- nende hulgas on ka su uus süsteem."
+"peaks alglaaduri paigaldamine esmasele kõvakettale (UEFI partitsioon või "
+"alglaade kirje) olema ohutu. Kui su arvuti taaskäivitub, esitatakse sulle "
+"valik kõigist nimekirjas olevatest operatsioonisüsteemidest - nende hulgas "
+"on ka su uus Debiani süsteem."
 
 #. Type: boolean
 #. Description
@@ -82,26 +82,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Paistab, et käesolev paigaldus on selle arvuti ainus operatsioonisüsteem. "
-"Kui see on nii, peaks alglaaduri GRUB esimese kõvaketta MBR'i salvestamine "
-"ohutu olema."
+"Kui see on nii, peaks alglaaduri GRUB paigaldamise esmasele kõvakettale "
+"(UEFI partitsioonile/alglaade kirje) ohutu olema."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "Hoiatus: Kui paigaldaja ei suutnud mõnd arvutis paiknevat "
 "operatsioonisüsteemi tuvastada, siis MBR'i muutmisel muutuvad tuvastamata "
-"operatsioonisüsteemid ajutiselt alglaaditamatuteks, aga hiljem saab GRUB'i "
+"operatsioonisüsteemid ajutiselt alglaaditamatuteks, ent hiljem saab GRUBi "
 "seadistada ka nende laadimiseks."
 
 #. Type: boolean
@@ -226,35 +225,36 @@ msgstr "Seade, kuhu alglaadur paigaldada:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Sa pead oma äsjapaigaldatud süsteemi käivitatavaks muutma. Selleks on vaja "
 "käivitatavale seadmele paigaldada alglaadur GRUB. Tavaliselt paigaldatakse "
-"GRUB esimese kõvaketta MBR'i, kuid soovi korral võid selle paigaldada ka "
-"ketta teistesse osadesse, teisele kõvakettale või lausa flopile."
+"GRUB esimasele kõvakettale (UEFI partitsioonile/alglaade kirjesse), kuid "
+"soovi korral võid selle paigaldada ka mõnele teisele kettale (või "
+"partitsioonile) või ka eemaldatavale meediale (USB pulk, mälukaart)."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Seade peaks olema määratud seadmena /dev kaustas. All on mõned näidised:\n"
-" - \"/dev/sda\" GRUB paigaldatakse esimese kõvaketta MBR'i;\n"
-"- \"/dev/sda2\" paigaldatakse esimese kõvaketta teisele partitsioonile;\n"
-"- \"dev/sdc5\" paigaldatakse kolmanda kõvaketta esimesele\n"
-"laienduspartitsioonile;\n"
-"- \"/dev/fd0\" GRUB paigaldatakse flopikettale."
+"Seade peaks olema määratud seadmena /dev kataloog. All on mõned näidised:\n"
+" - \"/dev/sda\" GRUB paigaldatakse esimesele kettale (UEFI partitsioon/\n"
+"   alglaade kirje),\n"
+" - \"/dev/sdb\" GRUB paigaldatakse teisele kettale (mis võib olla näiteks\n"
+"   USB mälupulk või mälukaart),\n"
+" - \"/dev/fd0\" GRUB paigaldatakse flopikettale."
 
 #. Type: select
 #. Choices
@@ -390,9 +390,8 @@ msgid ""
 "GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
 "used on i386/amd64 PCs. It is now also available for ${ARCH}."
 msgstr ""
-"GRUB 2 on GNU  GRUB-i järgmine põlvkond, alglaadur, mida kasutatakse "
-"tavaliselt i386/amd64 PC arvutitel. Nüüd on see saadaval ka platvormidele: "
-"${ARCH}."
+"GRUB 2 on GNU GRUB-i edasiarendus; alglaadur, mida kasutatakse tavaliselt "
+"i386/amd64 PC arvutitel. Nüüd on see saadaval ka platvormidele: ${ARCH}."
 
 #. Type: boolean
 #. Description
@@ -483,10 +482,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "GRUB-alglaaduri paigaldamine kõvakettale"
+msgid "Install the GRUB boot loader"
+msgstr "Paigalda GRUB alglaadur"
 
 #. Type: text
 #. Description

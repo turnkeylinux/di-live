@@ -9,14 +9,14 @@
 #
 # Debian Installer translators, please read the D-I i18n documentation
 # in doc/i18n/i18n.txt
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2018, 2019
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2018-02-08 14:24+0500\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2019-09-10 18:06+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <victor.ibragimov@gmail.com>\n"
 "Language: tg\n"
@@ -32,8 +32,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Худроҳандозии GRUB-ро ба сабти роҳандозии устод насб мекунед?"
+#, fuzzy
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Насбкунии худроҳандозии GRUB ба диски сахт"
 
 #. Type: boolean
 #. Description
@@ -48,11 +49,12 @@ msgstr "Низомҳои омили зерин дар ин компютер та
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001
+#, fuzzy
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Агар ҳамаи низомҳои оператсионии шумо дар боло номбар шуда бошанд, он гоҳ "
 "насбкунии худроҳандозӣ ба сабти асосии роҳандозии диски сахти аввалини шумо "
@@ -64,10 +66,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Чунин менамояд, ки ин насбкунии нав метавонад низоми омили ягонаи ин "
 "компютер бошад. Агар чунин бошад, барои бехатарӣ тавсия мешавад, ки "
@@ -78,11 +81,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "Огоҳӣ: Агар насбкунанда низоми омили дигарро, ки дар компютери шумо мавҷуд "
 "аст, ташхис карда натавонад, тағйир додани сабти асосии роҳандозӣ низоми "
@@ -212,12 +215,12 @@ msgstr "Дастгоҳ барои насби боркунандаи роҳанд
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Барои роҳандозӣ шудани низоми шумо, шумо бояд худроҳандозии GRUB-ро ба "
 "дастгоҳи роҳандозишаванда насб намоед. Роҳи оддӣ - ин насб кардани GRUB ба "
@@ -229,14 +232,16 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "Дастгоҳ бояд ҳамчун дастгоҳ дар /dev муайян карда шавад. Дар поён якчанд "
@@ -484,10 +489,12 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Насбкунии худроҳандозии GRUB ба диски сахт"
+#, fuzzy
+msgid "Install the GRUB boot loader"
+msgstr "Насбкунии худроҳандозии GRUB"
 
 #. Type: text
 #. Description

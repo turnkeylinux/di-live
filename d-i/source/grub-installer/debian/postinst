@@ -35,5 +35,6 @@ mountvirtfs () {
 # target. Maybe /proc too?
 mountvirtfs proc /target/proc
 mountvirtfs sysfs /target/sys
+mountvirtfs efivarfs /target/sys/firmware/efi/efivars || true
 
 grub-installer /target

@@ -3,51 +3,24 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_da.po to
-# Danish messages for debian-installer.
-# This file is distributed under the same license as debian-installer.
-# Michael Millet <mikevlet@protonmail.com>, 2021.
-# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2010.
-# Mads Bille Lundby <lundbymads@gmail.com, 2009.
-# Henrik Christian Grove <debian@3001.dk>, 2008.
-# Jesper Dahl Nyerup <debian@jespernyerup.dk>, 2008.
-# Jacob Sparre Andersen <jacob@jacob-sparre.dk>, 2008, 2010.
-# Claus Hindsgaul <claus.hindsgaul@gmail.com>, 2004-2007.
-# Reviewed 2007 by Niels Rasmussen
-#
-# Volume er oversat til diskenhed. Ret hvis Dansk-gruppen finder en anbefaling.
-#
-# Translations from iso-codes:
-# Alastair McKinstry <mckinstry@computer.org>, 2001.
-# Claus Hindsgaul <claus.hindsgaul@gmail.com>, 2006.
-# Claus Hindsgaul <claus_h@image.dk>, 2004, 2005, 2006.
-# Computeroversættelse Tobias Toedter <t.toedter@gmx.net>, 2007.
-# Copyright (C) Free Software Foundation, Inc., 2006.
-# Frederik 'Freso' S. Olesen <freso.dk@gmail.com>, 2008.
-# Free Software Foundation, Inc., 2000, 2004, 2005.
-# Joe Hansen <joedalton2@yahoo.dk>, 2009, 2010, 2011.
-# Keld Simonsen <keld@dkuug.dk>, 2000, 2001.
-# Kenneth Christiansen <kenneth@gnu.org>, 2000.
-# Ole Laursen <olau@hardworking.dk>, 2001.
-#
-# vedrørende russisk:
-# (bogstavet й bliver normalt til j på dansk og y på engelsk.  Der er
-# også nogle forskelle med de mange s/sh-agtige lyde)
+# Kabyle translation for debian-installer
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the debian-installer package.
+# Slimane Selyan Amiri <selyan.kab@gmail.com>, 2020, 2021.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer_packages_po_sublevel1_da\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
 "POT-Creation-Date: 2020-03-31 20:02+0000\n"
-"PO-Revision-Date: 2021-01-30 22:11+0000\n"
-"Last-Translator: Michael Millet <mikevlet@protonmail.com>\n"
-"Language-Team: <dansk@dansk-gruppen.dk>\n"
-"Language: da\n"
+"PO-Revision-Date: 2021-01-22 00:39+0000\n"
+"Last-Translator: Selyan Sliman Amiri <selyan.kab@gmail.com>\n"
+"Language-Team: Kabyle <kab@li.org>\n"
+"Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: boolean
 #. Description
@@ -57,7 +30,7 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
 msgid "Install the GRUB boot loader to your primary drive?"
-msgstr "Installér GRUB-opstartsindlæseren på dit primære drev?"
+msgstr "Sebded amsalay n usenker GRUB ɣef uḍebsi ameqqran?"
 
 #. Type: boolean
 #. Description
@@ -66,7 +39,7 @@ msgstr "Installér GRUB-opstartsindlæseren på dit primære drev?"
 msgid ""
 "The following other operating systems have been detected on this computer: "
 "${OS_LIST}"
-msgstr "Følgende andre styresystemer blev fundet på denne computer: ${OS_LIST}"
+msgstr "Inagrawen-a-nniḍen n wammud ttwafen ɣef uselkim-a: ${OS_LIST}"
 
 #. Type: boolean
 #. Description
@@ -78,10 +51,11 @@ msgid ""
 "When your computer boots, you will be able to choose to load one of these "
 "operating systems or the newly installed Debian system."
 msgstr ""
-"Hvis alle dine operativsystemer er optegnede ovenfor, så burde det være "
-"sikkert at installere opstartsindlæseren på dit primære drev (UEFI-partition/"
-"opstartsfortegnelse). Når din computer starter, vil du være i stand til, at "
-"indlæse et af disse operativsystemer, eller det nyinstallerede Debian-system."
+"Ma yella meṛṛa inagrawen-inek·inem n wammud ttwabdaren-d ddaw-a, ilqa ad "
+"tḍemneḍ asebded n usalay n usenker ɣef yimeɣri-inek·inem agejdan (aḥric UEFI/"
+"asekles n usenker). Mi ara yekker uselkim-inek·inem, tzemreḍ ad tferneḍ ad d-"
+"tsaliḍ yiwen se yinagrawen-a n wammud neɣ anagraw n Debian i yettusbedden "
+"melmi kan."
 
 #. Type: boolean
 #. Description
@@ -92,9 +66,9 @@ msgid ""
 "computer. If so, it should be safe to install the GRUB boot loader to your "
 "primary drive (UEFI partition/boot record)."
 msgstr ""
-"Det lader til, at denne nye installation er det eneste operativsystem på "
-"denne computer. Hvis så, burde det være sikkert, at installere GRUB-"
-"opstartsindlæseren på dit primære drev (UEFI-partition/opstartsfortegnelse)."
+"Asebdad amaynut yettban d netta kan i d anagraw n wammud i yellan deg "
+"uselkim-a. Ma yella d tidet waya, ilaq ad yettusebded usebdad n usenkar n "
+"GRUB s ttawil ɣef umeɣri-inek·inem agejdan (aḥric UEFI/asekles n usenker)."
 
 #. Type: boolean
 #. Description
@@ -105,24 +79,23 @@ msgid ""
 "failed to detect, this will make that operating system temporarily "
 "unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Advarsel: Hvis din computer har et andet operativsystem, som installeringen "
-"ikke kunne opfange, vil dette gøre det pågældende operativsystem "
-"midlertidigt umuligt at starte, selvom GRUB senere kan konfigureres manuelt, "
-"til at starte det."
+"Ɣur-k·m: Ma yella aselkim-inek·inem deg-s anagraw-nniḍen n wammud win ideg "
+"yecceḍ usebdad ad t-id-yaf, aya ad yerr anagraw-nni n wammud mačči n usekker "
+"i kra n wakud. GRUB yezmer ad yettuswel mbeɛd i wakken ad yettusenker."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:3001
 msgid "Install the GRUB boot loader to the Serial ATA RAID disk?"
-msgstr "Installer opstartsindlæseren GRUB på en SATA-RAID-disk?"
+msgstr "Sebded amsali n usenker n GRUB i uḍebsi Serial ATA RAID?"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:3001
 msgid "Installation of GRUB on Serial ATA RAID is experimental."
-msgstr "Installation af GRUB på SATA-RAID-diske er eksperimentel."
+msgstr "Asebded n GRUB ɣef Serial ATA RAID d armitan."
 
 #. Type: boolean
 #. Description
@@ -133,9 +106,9 @@ msgid ""
 "RAID disk. It is also assumed that disk is listed as the first hard disk in "
 "the boot order defined in the system's BIOS setup."
 msgstr ""
-"GRUB bliver altid installeret i MBR'en på SATA-RAID-disken. Det antages "
-"også, at disken står som den første disk i startrækkefølgen i systemets BIOS-"
-"opsætning."
+"GRUB yezga yettusebded deg useklas n usenker agejdan (MBR) n uḍebsi Serial "
+"ATA RAID. Yettuneḥsab daɣen d aḍebsi aqquran amezwaru deg usemizwer n "
+"usenker yettusbadun deg usebded n BIOS n unagraw."
 
 #. Type: boolean
 #. Description
@@ -145,7 +118,7 @@ msgstr ""
 #. :sl3:
 #: ../grub-installer.templates:3001 ../grub-installer.templates:5001
 msgid "The GRUB root device is: ${GRUBROOT}."
-msgstr "GRUB-rod-enheden er: ${GRUBROOT}."
+msgstr "Ibenk aẓar n GRUB d: ${GRUBROOT}."
 
 #. Type: error
 #. Description
@@ -159,14 +132,15 @@ msgstr "GRUB-rod-enheden er: ${GRUBROOT}."
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
 #: ../grub-installer.templates:15001
 msgid "Unable to configure GRUB"
-msgstr "Kunne ikke sætte GRUB op"
+msgstr "Aswel n GRUB d awezɣi"
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:4001
 msgid "An error occurred while setting up GRUB for your Serial ATA RAID disk."
-msgstr "Der opstod en fejl under opsætningen af GRUB til din SATA-RAID-disk."
+msgstr ""
+"Tella-d tuccḍa lawan n usesteb n GRUB i uḍebsi-inek·inem Serial ATA RAID."
 
 #. Type: error
 #. Description
@@ -176,21 +150,21 @@ msgstr "Der opstod en fejl under opsætningen af GRUB til din SATA-RAID-disk."
 #. :sl3:
 #: ../grub-installer.templates:4001 ../grub-installer.templates:6001
 msgid "The GRUB installation has been aborted."
-msgstr "Installationen af GRUB blev afbrudt."
+msgstr "Asebded n GRUB yettwanef."
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:5001
 msgid "Install the GRUB boot loader to the multipath device?"
-msgstr "Installer opstartsindlæseren GRUB på multipath-enheden?"
+msgstr "Asebded amsalay n usenker GRUB ɣef yibenk multipath?"
 
 #. Type: boolean
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:5001
 msgid "Installation of GRUB on multipath is experimental."
-msgstr "Installation af GRUB på multipath-enheder er eksperimentel."
+msgstr "Asebded n GRUB ɣef multipath d armitan."
 
 #. Type: boolean
 #. Description
@@ -201,16 +175,16 @@ msgid ""
 "device. It is also assumed that the WWID of this device is selected as boot "
 "device in the system's FibreChannel adapter BIOS."
 msgstr ""
-"GRUB bliver altid installeret i MBR'en på multipath-enheden. Det antages "
-"også at enhedens WWID er valgt som opstartsenhed i systemets FibreChannel-"
-"adapters BIOS."
+"GRUB yezga yettusebded ɣef useklas n usenker agejdan (MBR) n yibenk "
+"multipath. Akken yettuneḥsab daɣen WWID n yibenka d ibenk n usenker i "
+"yettwafernen deg BIOS n umezgay FibreChannel n unagraw."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:6001
 msgid "An error occurred while setting up GRUB for the multipath device."
-msgstr "Der opstod en fejl under opsætningen af GRUB til din multipath-enhed."
+msgstr "Tella-d tuccḍa deg usbeddi n GRUB i yibenk multipath."
 
 #. Type: string
 #. Description
@@ -220,7 +194,7 @@ msgstr "Der opstod en fejl under opsætningen af GRUB til din multipath-enhed."
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
 msgid "Device for boot loader installation:"
-msgstr "Enhed hvorpå opstartsindlæseren skal installeres:"
+msgstr "Ibenk n usebded n usebdad u skar:"
 
 #. Type: string
 #. Description
@@ -229,25 +203,22 @@ msgstr "Enhed hvorpå opstartsindlæseren skal installeres:"
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
-#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
 "GRUB to your primary drive (UEFI partition/boot record). You may instead "
 "install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
-"Du skal sætte dit nyinstallerede system i stand til at starte op, ved at "
-"installere opstartsindlæseren GRUB på en enhed som computeren kan starte op "
-"fra. Det gøres normalt ved at installere GRUB på din første harddisks "
-"opstartsspor (»master boot record«). Hvis du foretrækker det, kan du "
-"installere GRUB andre steder på drevet, på et andet drev eller sågar på en "
-"diskette."
+"Ilaq ad terreḍ anagraw n usekker yettusbedden d amaynut, s usebded n usalay "
+"n usenker GRUB deg yibenk n usekker. Akken i tuɣeḍ tannumi txeddmeḍ-t, "
+"asebded n GRUB ɣef yibenk-inek·inem agejdan (aḥric UEFI/asekles n usenker). "
+"Tzemreḍ ad tesbeddeḍ deg wadeg-is GRUB ɣef umeɣri-nniḍen (neɣ aḥric), neɣ "
+"ɣef amidyat aziraz."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
-#, fuzzy
 msgid ""
 "The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
@@ -259,26 +230,26 @@ msgid ""
 "   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Enheden skal angives som en enhed i /dev. Herunder vises nogle eksempler:\n"
-" - »/dev/sda« installerer GRUB i master boot record på din første\n"
-"   harddisk;\n"
-" - »/dev/sda2« benytter den anden partition på din første harddisk;\n"
-" - »/dev/sdc5« benytter den første udvidede partition på din tredje\n"
-"   harddisk;\n"
-" - »/dev/fd0« installerer GRUB på en diskette."
+"Tira n yibenk ilaq ad tili d tufrint am yibenk deg dev. Ddaw-a llan kra n "
+"yimedyaten:\n"
+" - \"/dev/sda\" ad isebded GRUB ɣef unuḍaf-ik·im agejdan (Aḥric UEFI/boot\n"
+"   record);\n"
+" - \"/dev/sdb\" ad isebded GRUB ɣef unuḍaf amalel (i izemren d amedya\n"
+"   ad yili anuḍaf USB);\n"
+" - \"/dev/fd0\" ad isebded GRUB ɣef tḍebsit talwayant."
 
 #. Type: select
 #. Choices
 #: ../grub-installer.templates:8001
 msgid "Enter device manually"
-msgstr "Angiv enhed manuelt"
+msgstr "Sekcem ibenk s ufus"
 
 #. Type: password
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:9001
 msgid "GRUB password:"
-msgstr "GRUB-adgangskode:"
+msgstr "Awal uffir GRUB:"
 
 #. Type: password
 #. Description
@@ -292,13 +263,13 @@ msgid ""
 "GRUB command-line interface. By default, any user will still be able to "
 "start any menu entry without entering the password."
 msgstr ""
-"Opstartsindlæseren GRUB indeholder mange kraftfulde interaktive funktioner, "
-"som vil kunne bruges til at bryde ind i dit system, hvis uautoriserede "
-"brugere har adgang til maskinen mens den starter op. For at gardere dig mod "
-"dette, kan du vælge en adgangskode, som skal angives før man kan redigere "
-"menupunkter eller få adgang til GRUBs kommandolinje. Som udgangspunkt kan "
-"enhver bruger stadig vælge alle menupunkterne uden at skulle angive en "
-"adgangskode."
+"Asalay n usenker n GRUB yettmuddu aṭas n tmahilin timyigawin iǧehden, i "
+"izemren ad ttusqedcent i wakken ad ḍurrent anagraw-inek·inem ma yella "
+"iseqdacen ur sɛin ara tisirag n unekcum ɣer tmacint mi ara yebdu tanekra. I "
+"ummesten mgal aya, tzemreḍ ad tferneḍ awal uffir ara d-yettusutren send "
+"aẓrag n yinekcumen n wumuɣ neɣ asekcem n ugrudem n yizirig n tladna n GRUB. "
+"S wudem amezwer, yal aseqdac yezmer ad isenker yal anekcum n wumuɣ war ma "
+"isekcem awal uffir."
 
 #. Type: password
 #. Description
@@ -306,14 +277,14 @@ msgstr ""
 #: ../grub-installer.templates:9001
 msgid "If you do not wish to set a GRUB password, leave this field blank."
 msgstr ""
-"Hvis du ikke ønsker at have en GRUB-adgangskode, så undlad at udfylde feltet."
+"Ma yella ur tebɣiḍ ara ad tesbaduḍ awal uffir i GRUB, eǧǧ urti-a d ilem."
 
 #. Type: password
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
-msgstr "Angiv adgangskoden igen for at verificere:"
+msgstr "Ales asekcem n wawal n uɛeddi i usenqed:"
 
 #. Type: password
 #. Description
@@ -323,29 +294,30 @@ msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
 msgstr ""
-"Angiv den samme GRUB-adgangskode igen for at sikre, at du har indtastet den "
-"korrekt."
+"Ttxil-k·m sekcem tikkelt-nniḍen awal uffir n GRUB i teskecmeḍ tazwara akken "
+"ad twaliḍ ma yella turiḍ-t swaswa."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:11001
 msgid "Password input error"
-msgstr "Adgangskode-indtastningsfejl"
+msgstr "Tuccḍa n unekcum n wawal uffir"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:11001
 msgid "The two passwords you entered were not the same. Please try again."
-msgstr "De to adgangskoder, du indtastede, var ikke ens. Prøv igen."
+msgstr ""
+"I sin n wawalen uffiren i teskecmeḍ mačči yiwen-nsen. Ttxil-k·m εreḍ ticki."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
-msgstr "Installationen af GRUB mislykkedes"
+msgstr "Asebded n GRUB ur yeddi ara"
 
 #. Type: error
 #. Description
@@ -355,22 +327,22 @@ msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
 msgstr ""
-"Pakken »${GRUB}« kunne ikke installeres på /target/. Uden GRUB-"
-"opstartsprogrammet, kan det installerede system ikke starte."
+"Asebded n ukemmus '${GRUB}' ur yeddi ara deg /target/. War GRUB asassay n "
+"wawel, anagraw yettusbedden ur yettenker ara."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:14001
 msgid "Unable to install GRUB in ${BOOTDEV}"
-msgstr "Kunne ikke installere GRUB i ${BOOTDEV}"
+msgstr "Ulamek tesbeddeḍ GRUB deg ${BOOTDEV}"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
-msgstr "Kørsel af »grub-install ${BOOTDEV}« mislykkedes."
+msgstr "Aselkem n 'grub-install ${BOOTDEV}' ur yeddi ara."
 
 #. Type: error
 #. Description
@@ -380,21 +352,21 @@ msgstr "Kørsel af »grub-install ${BOOTDEV}« mislykkedes."
 #. :sl2:
 #: ../grub-installer.templates:14001 ../grub-installer.templates:15001
 msgid "This is a fatal error."
-msgstr "Dette er en fatal fejl."
+msgstr "Tagi d tuccḍa meqqren."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
-msgstr "Kørsel af 'update-grub' mislykkedes."
+msgstr "Aselkem n 'update-grub' ur yeddi ara."
 
 #. Type: boolean
 #. Description
 #. :sl4:
 #: ../grub-installer.templates:17001
 msgid "Install GRUB?"
-msgstr "Installer GRUB?"
+msgstr "Sebded GRUB?"
 
 #. Type: boolean
 #. Description
@@ -404,8 +376,8 @@ msgid ""
 "GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
 "used on i386/amd64 PCs. It is now also available for ${ARCH}."
 msgstr ""
-"GRUB 2 er den næste generation for GNU GRUB, opstartsindlæseren som ofte "
-"bruges på i386/amd64 pc'er. Den er nu også tilgængelig for ${ARCH}."
+"GRUB 2 n tsuta tis snat n GNU GRUB, amsalay n usenker yettuseqdac s tuget "
+"ɣef PCs i386/amd64. Tura yella ula i ${ARCH}."
 
 #. Type: boolean
 #. Description
@@ -417,81 +389,80 @@ msgid ""
 "breakage, and have an idea on how to recover your system if it becomes "
 "unbootable. You're advised not to try this in production environments."
 msgstr ""
-"Programmet har nye og interessante funktioner men er stadig et "
-"eksperimentelt program for denne arkitektur. Hvis du vælger at installere "
-"den, så bør du være forberedt på eventuelle nedbrud, og bør have en ide om "
-"hvordan du gendanner dit system, hvis det ikke kan startes op. Du rådes til "
-"ikke at gøre dette i et produktionsmiljø."
+"Ɣur-s timahilin timaynutin s wazal-nsent maca yeqqim kan d aseɣẓan armitan i "
+"tsegda-a. Ma yella tferneḍ ad t-tesbeddeḍ, ilaq ad tebnuḍ ɣef truẓi, yerna "
+"ad tesɛuḍ takti amek ara d-terreḍ anagraw-inek·inem ma yella ur yettenker "
+"ara akk. Axir ur tettaɛraḍeḍ ara aya deg twennaḍin n tfarest."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
-msgstr "Installerer GRUB-opstartsindlæseren"
+msgstr "Asebded amsalay n usenker GRUB"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:19001
 msgid "Looking for other operating systems..."
-msgstr "Leder efter andre styresystemer ..."
+msgstr "Tamuɣli ɣef yinagrawen-nniḍen n wammud..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
-msgstr "Installerer \"${GRUB}\"-pakken ..."
+msgstr "Asebded n ukemmus '${GRUB}'..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:21001
 msgid "Determining GRUB boot device..."
-msgstr "Udpeger GRUB-opstartsenhed ..."
+msgstr "Aguccel n yibenk n usenker n GRUB..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:22001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "Kører \"grub-install ${BOOTDEV}\" ..."
+msgstr "Aseddu n \"grub-install ${BOOTDEV}\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:23001
 msgid "Running \"update-grub\"..."
-msgstr "Kører \"update-grub\" ..."
+msgstr "Aseddu \"update-grub\"..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "Opdaterer /etc/kernel-img.conf ..."
+msgstr "Aleqqem /etc/kernel-img.conf..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:25001
 msgid "Checking whether to force usage of the removable media path"
-msgstr "Kontrollerer om tvang skal bruges for den eksterne mediesti"
+msgstr "Asenqed ma yella ad nḥettem aseqdec n ubrid n umidyat aziraz"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:26001
 msgid "Mounting filesystems"
-msgstr "Monterer filsystemer"
+msgstr "Aserkeb n unagraw n yifuyla"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:27001
 msgid "Configuring grub-efi for future usage of the removable media path"
-msgstr "Konfigurerer grub-efi for fremtidig brug af ekstern mediesti"
+msgstr "Aswel n grub-efi i useqdec i d-iteddun n ubrid n umidyat aziraz"
 
 #. Type: text
 #. Description
@@ -500,7 +471,7 @@ msgstr "Konfigurerer grub-efi for fremtidig brug af ekstern mediesti"
 #. :sl1:
 #: ../grub-installer.templates:28001
 msgid "Install the GRUB boot loader"
-msgstr "Installér GRUB-opstartsindlæseren"
+msgstr "Asebded amsalay n usenker GRUB"
 
 #. Type: text
 #. Description
@@ -508,35 +479,35 @@ msgstr "Installér GRUB-opstartsindlæseren"
 #. :sl2:
 #: ../grub-installer.templates:29001
 msgid "Reinstall GRUB boot loader"
-msgstr "Geninstaller GRUB-opstartsindlæseren"
+msgstr "Ales asebded n umsalay n usenker GRUB"
 
 #. Type: error
 #. Description
 #. :sl4:
 #: ../grub-installer.templates:32001
 msgid "Failed to mount /target/proc"
-msgstr "Kunne ikke montere /target/proc"
+msgstr "Yecceḍ userkeb n /asaḍas/proc"
 
 #. Type: error
 #. Description
 #. :sl4:
 #: ../grub-installer.templates:32001
 msgid "Mounting the proc file system on /target/proc failed."
-msgstr "Montering af proc-filsystemet på /target/proc mislykkedes."
+msgstr "Yecceḍ userkeb n unagraw n yifuyla proc ɣef /usaḍas/proc."
 
 #. Type: error
 #. Description
 #. :sl4:
 #: ../grub-installer.templates:32001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "Tjek /var/log/syslog eller kig på den virtuelle konsol 4 for detaljer."
+msgstr "Senqed /var/log/syslog neɣ wali tadiwent tuhlist 4 i wugar n telqayt."
 
 #. Type: error
 #. Description
 #. :sl4:
 #: ../grub-installer.templates:32001
 msgid "Warning: Your system may be unbootable!"
-msgstr "Advarsel: Dit system er måske ude af stand til at starte op!"
+msgstr "Ɣur-k·m: Anagraw-ik·im yezmer ur yettenkar ara!"
 
 #. Type: text
 #. Description
@@ -544,14 +515,14 @@ msgstr "Advarsel: Dit system er måske ude af stand til at starte op!"
 #. :sl2:
 #: ../grub-installer.templates:33001
 msgid "Force GRUB installation to the EFI removable media path"
-msgstr "Fremtving GRUB-installation på EFI'ens eksterne mediesti"
+msgstr "Ḥettem asebded n GRUB ɣef ubrid n umidya aziraz EFI"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:34001
 msgid "Force GRUB installation to the EFI removable media path?"
-msgstr "Fremtving GRUB-installation til EFI'ens eksterne mediesti?"
+msgstr "Ḥettem asebded n GRUB ɣef ubrid n umidya aziraz EFI?"
 
 #. Type: boolean
 #. Description
@@ -564,11 +535,10 @@ msgid ""
 "buggy!) and do not support proper configuration of boot options from system "
 "hard drives."
 msgstr ""
-"Det ser ud til, at denne computer er konfigureret til at starte op via EFI, "
-"men måske vil den konfiguration ikke fungere for opstart fra harddisken. "
-"Nogle EFI-firmwareimplementeringer opfylder ikke EFI-specifikationen (dvs. "
-"de er fejlramte!) og understøtter ikke korrekt konfiguration af "
-"opstartsindstillinger fra systemharddiske."
+"Yettban uselkim-a yettuswel i wakken ad yekker s EFI, maca ahat tawila-a ur "
+"tetteddu ara i usenkar seg yibenk aqquran. Kra seg yisebdaden n ufreɣẓan EFI "
+"ur d-ttarrant ara i ilugan n EFI (anamek-is ttwabugin!) Yerna ur sefraken "
+"ara tawila tameɣtut n textiṛiyin n usenker seg yinuḍaf iqquranen n unagraw."
 
 #. Type: boolean
 #. Description
@@ -579,10 +549,10 @@ msgid ""
 "of the GRUB boot loader to a fallback location, the \"removable media path"
 "\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
 msgstr ""
-"En måde at omgå dette problem på er at installere en ekstra kopi af EFI-"
-"versionen for GRUB-opstartsindlæseren til en reserveplacering, »den eksterne "
-"mediesti«. Næsten alle EFI-systemer, uanset hvor fejlramte de er, vil starte "
-"GRUB op på den måde."
+"Tifrat-nniḍen i wugur-a tettezzi deg usebded n unɣal-nniḍen n lqem EFI n "
+"usalay n usenker deg yideg n usellek, d \"abrid n umidyat aziraz\". Tuget n "
+"yinagrawen EFI, ɣas akken llant tucḍiwin deg-sen, senkarayen GRUB s tarrayt-"
+"a."
 
 #. Type: boolean
 #. Description
@@ -594,7 +564,7 @@ msgid ""
 "there will make that operating system temporarily unbootable. GRUB can be "
 "manually configured later to boot it if necessary."
 msgstr ""
-"Advarsel: Hvis der er et andet styresystem på din computer, som også "
-"afhænger af denne reserve og som installationsprogrammet ikke opdagede vil "
-"installation af GRUB der medføre at operativsystemet midlertidigt ikke kan "
-"startes op."
+"Ɣur-k·m: Ma yella asebdad yecceḍ deg tifin n unagraw-nniḍen n wammud i "
+"yellan deg uselkim-inek·inem i ibedden ɣef tifrat-a n usellek, asebded n "
+"GRUB dinna ad yerr anagraw-nni n wammud mačči n usekker i kra n wakud. GRUB "
+"yezmer ad yettuswel mbeɛd i wakken ad yettusenker ma yella ilaq."

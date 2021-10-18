@@ -8,18 +8,10 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004, 2005, 2006.
-# Nikola Antonov <nikola@linux-bg.org>, 2004.
 #
 #
 # Translations from iso-codes:
-#   Tobias Quathamer <toddy@debian.org>, 2007.
 #     Translations taken from ICU SVN on 2007-09-09
-#   Free Software Foundation, Inc., 2004.
-#   Georgi Georgiev <assenov_g@operamail.com>, 2001, 2004.
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004.
-#   Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010.
 # Copyright (C)
 #   (translations from drakfw)
 #   - further translations from ICU-3.9
@@ -27,15 +19,24 @@
 # Copyright (C) 2010 Free Software Foundation, Inc.
 #
 # Copyright (C)
+#
+# Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004, 2005, 2006.
+# Nikola Antonov <nikola@linux-bg.org>, 2004.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#   Free Software Foundation, Inc., 2004.
+#   Georgi Georgiev <assenov_g@operamail.com>, 2001, 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004.
+#   Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010.
 #   Roumen Petrov <transl@roumenpetrov.info>, 2010.
-# Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015.
+# Damyan Ivanov <dmn@debian.org>, 2006-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-05-03 18:53+0300\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-10-24 09:53+0300\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
 "Language-Team: Български <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -51,8 +52,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Инсталиране на програмата за начално зареждане GRUB върху MBR?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Инсталиране на GRUB върху основния диск?"
 
 #. Type: boolean
 #. Description
@@ -70,14 +71,15 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"Ако всички Ваши операционни системи са изброени по-долу, тогава е безопасно "
-"да бъде инсталирана програма за начално зареждане в MBR на Вашия първи твърд "
-"диск. Когато компютърът ви се зарежда, ще можете да избирате за зареждане "
-"измежду тези операционни системи или Вашата нова система."
+"Ако всички инсталирани операционни системи са изброени по-горе, тогава е "
+"безопасно програмата за начално зареждане да бъде инсталирана на основния "
+"диск (UEFI дял/запис за начално зареждане). Когато компютърът ви се зарежда, "
+"ще можете да избирате измежду тези операционни системи и Вашата нова система "
+"Дебиан."
 
 #. Type: boolean
 #. Description
@@ -85,27 +87,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
-"Изглежда тази нова инсталация е единствената операционна система на този "
-"компютър. Ако е така, инсталирането на програмата за начално зареждане GRUB "
-"в MBR (master boot record) на Вашия първи твърд диск е безопасно."
+"Изглежда на компютъра няма инсталирани други операционни системи. В такъв "
+"случай инсталирането на програмата за начално зареждане GRUB на основния "
+"диск (UEFI дял или запис за начално зареждане) е безопасно."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Внимание: Ако инсталаторът не успее да разпознае друга операционна система, "
-"която я има на Вашия компютър, промяната на MBR (master boot record) ще "
-"направи тази операционна система временно неспособна да бъде заредена, но "
-"GRUB може по-късно ръчно да бъде настроен да я зарежда."
+"Внимание: Ако на компютъра има друга операционна система, която инсталаторът "
+"не разпознава, това ще я направи временно недостъпна. Настройките на GRUB "
+"могат да бъдат променени по-късно така, че да се добави липсващата "
+"операционна система в списъка за начално зареждане."
 
 #. Type: boolean
 #. Description
@@ -233,37 +234,36 @@ msgstr "Устройство, в което да се инсталира про�
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
-"Сега е време да бъде направена новоинсталираната система способна за "
-"зареждане, като бъде инсталирана програмата за начално зареждане GRUB. "
-"Обикновено GRUB се инсталира в първия сектор на твърдия диск (master boot "
-"record, MBR). Ако предпочитате, може да инсталирате GRUB някъде другаде в "
-"устройството, а може и в друго устройство или на флопидиск."
+"Следва осигуряване на зареждането на новоинсталираната система, като бъде "
+"инсталирана програмата за начално зареждане GRUB. Обикновено GRUB се "
+"инсталира в основния диск (дял UEFI/сектор за начално зареждане). Ако "
+"предпочитате, може да инсталирате GRUB на друго устройство или дял, или дори "
+"на преносим носител."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "Препоръчва се устройството може да бъде зададено като файл в /dev.\n"
 "Следват няколко примера:\n"
-" - „/dev/sda“ ще инсталира GRUB в главния блок за начално зареждане (MBR)\n"
-"   на първия твърд диск;\n"
-" - „/dev/sda2“ ще използва втория дял на първия твърд диск;\n"
-" - „/dev/sdc5“ ще използва първия разширен (extended) дял на третия твърд "
-"диск\n"
+" - „/dev/sda“ ще инсталира GRUB на основния диск (дял UEFI/запис за начално\n"
+"   зареждане);\n"
+" - „/dev/sdb“ ще инсталира GRUB на второстепенен диск (който може да е и\n"
+"   USB носител);\n"
 " - „/dev/fd0“ ще инсталира GRUB върху дискета."
 
 #. Type: select
@@ -496,10 +496,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Инсталиране на GRUB върху твърд диск"
+msgid "Install the GRUB boot loader"
+msgstr "Инсталиране на програмата за начално зареждане GRUB"
 
 #. Type: text
 #. Description

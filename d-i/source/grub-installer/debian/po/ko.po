@@ -7,7 +7,7 @@
 # Copyright (C) 2003,2004,2005,2008 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Changwoo Ryu <cwryu@debian.org>, 2010, 2011, 2012, 2014, 2015.
+# Changwoo Ryu <cwryu@debian.org>, 2010-2012, 2014-2015, 2017-2018, 2020.
 #
 # Translations from iso-codes:
 # Copyright (C)
@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-02-09 07:59+0900\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-04-21 05:24+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team:  Korean <debian-l10n-korean@lists.debian.org>\n"
 "Language: ko\n"
@@ -43,8 +43,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "마스터 부트 레코드에 GRUB 부트로더를 설치하시겠습니까?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "주 드라이브에 GRUB 부트로더를 설치하시겠습니까?"
 
 #. Type: boolean
 #. Description
@@ -62,14 +62,13 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"기존의 운영체제가 모두 위에 있다면, 부트로더를 첫 번째 하드드라이브의 마스터 "
-"부트 레코드에 설치해도 안전합니다. 컴퓨터가 부팅할 때 선택에 따라 위의 운영체"
-"제 중에서 하나로 부팅하거나, 새로 설치한 데비안 시스템으로 부팅할 수 있습니"
-"다."
+"기존의 운영체제가 모두 위에 있다면, 부트로더를 주 드라이브에 (UEFI 파티션/부"
+"트 레코드) 설치해도 안전합니다. 컴퓨터가 부팅할 때 선택에 따라 위의 운영체제 "
+"중에서 하나로 부팅하거나, 새로 설치한 데비안 시스템으로 부팅할 수 있습니다."
 
 #. Type: boolean
 #. Description
@@ -77,27 +76,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "이 컴퓨터에 설치한 운영체제는 지금 설치하고 있는 데비안뿐인 것 같습니다. 그"
-"게 맞다면, 첫 번째 하드 드라이브의 마스터 부트 레코드에 부트로더를 설치해도 "
-"안전합니다."
+"게 맞다면, 주 드라이브에 (UEFI 파티션/부트 레코드) 부트로더를 설치해도 안전합"
+"니다."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"경고: 이 컴퓨터에 들어 있는 운영 체제중에 이 설치 프로그램에서 찾아내지 못한 "
-"운영 체제가 있는 경우, 마스터 부트 레코드를 수정하면 일시적으로 그 운영 체제"
-"가 부팅하지 못하게 됩니다. 하지만 나중에 GRUB을 수동으로 설정하면 부팅하도록 "
-"만들 수 있습니다."
+"경고: 이 컴퓨터에 설치 프로그램에서 찾아내지 못한 운영 체제가 있는 경우, 이렇"
+"게 하면 일시적으로 그 운영 체제가 부팅하지 못하게 됩니다. 하지만 나중에 GRUB"
+"을 수동으로 설정하면 부팅하도록 만들 수 있습니다."
 
 #. Type: boolean
 #. Description
@@ -221,34 +218,33 @@ msgstr "부트로더를 설치할 장치:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "새로 설치한 데비안 시스템을 부팅 가능하게 만들 차례입니다. GRUB 부트로더를 부"
-"팅 가능한 장치에 설치합니다. 보통 GRUB을 첫 번째 하드 드라이브의 마스터 부트 "
-"레코드에 설치합니다. 원한다면 GRUB을 드라이브의 다른 위치나, 다른 하드 드라이"
-"브, 심지어 플로피에라도 설치할 수 있습니다."
+"팅 가능한 장치에 설치합니다. 보통 GRUB을 주 드라이브에 (UEFI 파티션/부트 레코"
+"드) 설치합니다. 아니면 GRUB을 다른 드라이브 (또는 파티션), 또는 이동식 미디어"
+"에 설치할 수도 있습니다."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "장치는 /dev 안에 들어 있는 장치로 지정해야 합니다. 예를 들어:\n"
-" - \"/dev/sda\"는 첫 번째 하드 드라이브의 마스터 부트 레코드에 GRUB을\n"
-"   설치합니다.\n"
-" - \"/dev/sda2\"는 첫 번째 하드 드라이브의 두 번째 파티션을 사용합니다.\n"
-" - \"/dev/sdc5\"는 세 번째 하드 드라이브의 첫 번째 확장 파티션을 사용합니"
+" - \"/dev/sda\"는 주 드라이브에 (UEFI 파티션/부트 레코드) GRUB을 설치합니"
+"다.\n"
+" - \"/dev/sdb\"는 두번째 드라이브에 (예를 들어 USB 메모리) GRUB을 설치합니"
 "다.\n"
 " - \"/dev/fd0\"은 GRUB을 플로피에 설치합니다."
 
@@ -304,7 +300,7 @@ msgstr "확인을 위해 암호를 다시 입력하십시오:"
 msgid ""
 "Please enter the same GRUB password again to verify that you have typed it "
 "correctly."
-msgstr "제대로 입력했는지 확인하기 위해 같은 GRUB 암호를 한번 더 입력하십시오."
+msgstr "제대로 입력했는지 확인하려면 같은 GRUB 암호를 한번 더 입력하십시오."
 
 #. Type: error
 #. Description
@@ -475,10 +471,11 @@ msgstr "이동식 미디어 경로 사용 강제하도록 grub-efi 설정"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "하드 디스크에 GRUB 부트로더 설치"
+msgid "Install the GRUB boot loader"
+msgstr "GRUB 부트로더 설치"
 
 #. Type: text
 #. Description

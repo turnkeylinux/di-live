@@ -7,6 +7,8 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Nima Sahraneshin <unix.nima@gmail.com>, 2018.
+# Seyed Hany Hosseini <hany1894@gmail.com>, 2020.
+# <soheilkhanalipur@tutanota.com>, 2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry - further translations from ICU-3.0
@@ -21,11 +23,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: fa\n"
+"Project-Id-Version: fa sublevel1\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2019-01-01 17:49+0000\n"
-"Last-Translator: nima sahraneshin <unix.nima@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-10-24 17:09+0000\n"
+"Last-Translator: سهیل خانعلی‌پور <soheilkhanalipur@tutanota.com>\n"
 "Language-Team: Debian-l10n-persian <debian-l10n-persian@lists.debian.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -40,8 +42,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "آیا می‌خواهید GRUB را بر روی MBR نصب کنید؟"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "با نصب راه‌انداز گراب بر روی درایو اصلی شما موافقید؟"
 
 #. Type: boolean
 #. Description
@@ -58,14 +60,15 @@ msgstr "سیستم‌عامل‌های دیگری که بر روی این رای
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "در صورتی که تمام سیستم‌عامل‌های نصب شده بر روی سیستم شما در بالا آمده است، شما "
-"با خیال راحت می‌توانید راه انداز (boot loader) را بر روی MBR یا دیسک سخت اول "
-"نصب کنید. زمانی که کامپیوتر شما راه اندازی شد، می‌توانید یکی از این سیستم "
-"عامل ها و یا سیستم عامل جدید نصب شده را برای بارگزاری انتخاب کنید."
+"با خیال راحت می‌توانید راه انداز (boot loader) را بر روی درایو اصلی خود "
+"(پارتیشن UEFI/ بوت رکورد) نصب کنید. زمانی که کامپیوتر شما راه اندازی شد، "
+"می‌توانید یکی از این سیستم عامل‌ها و یادبیان جدید نصب شده را برای بارگزاری "
+"انتخاب کنید."
 
 #. Type: boolean
 #. Description
@@ -73,25 +76,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
-"به نظر می‌رسد نصب جدید، تنها سیستم عامل بر روی این رایانه است. در این صورت "
-"نصب GRUB بر روی MBR دیسک سخت اول بی خطر است."
+"به نظر می‌رسد این نصب جدید، تنها سیستم عامل بر روی این رایانه است. در این "
+"صورت نصب گراب بر روی درایو اصلی بی خطر است."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"اخطار: اگر نصاب نتواند سیستم عاملی ر ا بر روی رایانهٔ شما تشخیص دهد، تغیرات "
-"در MBR این سیستم عامل را به طور موقت غیر قابل راه‌اندازی می‌نماید. بعدا GRUB  "
-"میتواند به طور دستی برای راه‌اندازی آن تنظیم گردد."
+"هشدار: اگر رایانه شما، سیستم عامل دیگری دارد، که نصب کننده نتوانسته آن را "
+"تشخیص دهد، این تغیرات آن سیستم عامل را، به طور موقت غیر قابل راه‌اندازی "
+"می‌کند. البته بعدا گراب (GRUB) می‌تواند به طور دستی برای راه‌اندازی آن تنظیم "
+"شود."
 
 #. Type: boolean
 #. Description
@@ -212,12 +215,12 @@ msgstr "ابزار برای نصب بارگذار بالاآمدن:"
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "نیاز دارید که سیستم تازه نصب‌شده را قابل بالا آمدن بسازید، با نصب بارگذار بوت "
 "GRUB روی یک ابزار قابل‌بالا آمدن. راه معمول برای انجام این، نصب GRUB روی MBR "
@@ -228,14 +231,16 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "تجهیز باید به عنوان یک تجهیز در dev/ مشخص شود. در زیر چندین مثال آمده است:\n"
@@ -291,7 +296,7 @@ msgstr ""
 #. :sl2:
 #: ../grub-installer.templates:10001
 msgid "Re-enter password to verify:"
-msgstr "ورود مجدد کلمه عبور:"
+msgstr "گذرواژه را برای درست داشتن دوباره وارد کنید:"
 
 #. Type: password
 #. Description
@@ -372,7 +377,7 @@ msgstr "اجرای 'update-grub' شکست خورد."
 #. :sl4:
 #: ../grub-installer.templates:17001
 msgid "Install GRUB?"
-msgstr "نصب GRUB؟"
+msgstr "گراب نصب شود؟"
 
 #. Type: boolean
 #. Description
@@ -473,10 +478,11 @@ msgstr "پیکربندی grub-efi برا استفاده از مسیر رسانه
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "نصب راه‌انداز GRUB بر روی یک دیسک سخت"
+msgid "Install the GRUB boot loader"
+msgstr "نصب راه‌انداز گراب (GRUB)"
 
 #. Type: text
 #. Description
@@ -491,7 +497,7 @@ msgstr "نصب مجدد راه‌انداز GRUB"
 #. :sl4:
 #: ../grub-installer.templates:32001
 msgid "Failed to mount /target/proc"
-msgstr " /target/proc مانت نشد ."
+msgstr "سوار کردن /target/proc شکست خورد"
 
 #. Type: error
 #. Description
@@ -540,10 +546,10 @@ msgid ""
 "buggy!) and do not support proper configuration of boot options from system "
 "hard drives."
 msgstr ""
-"گویا این رایانه پیکربندی شده است تا از روش EFI بوت بشود، اما احتمالا این "
+"گویا این رایانه پیکربندی شده است تا از روش EFI بوت شود، اما احتمالا این "
 "پیکربندی برای بوت شدن از دیسک سخت کار نخواهد کرد. برخی پیاده‌سازی‌های "
-"میان‌افزار‌های EFI ویژگی‌های EFI را  ندارند (مثالا باگ دارند!) و پشتیبانی "
-"مناسبی از گزینه‌های دیسک‌های سخت نمی‌کنند."
+"میان‌افزار‌های EFI ویژگی‌های EFI را ندارند (مثالا باگ دارند!) و پشتیبانی مناسبی "
+"از گزینه‌های دیسک‌های سخت نمی‌کنند."
 
 #. Type: boolean
 #. Description

@@ -5,6 +5,8 @@
 #
 # Traditional Chinese messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
+# Louies <louies0623@gmail.com>, 2019, 2021.
+# Walter Cheuk <wwycheuk@gmail.com>, 2019.
 # This file is distributed under the same license as debian-installer.
 #
 #
@@ -25,14 +27,15 @@
 #   JOE MAN <trmetal@yahoo.com.hk>, 2001.
 #   Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2005.
 #   Yao Wei (魏銘廷) <mwei@lxde.org>, 2012.
+#   Walter Cheuk <wwycheuk@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2018-08-22 12:35+0000\n"
-"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2021-02-16 09:50+0000\n"
+"Last-Translator: louies0623 <louies0623@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
 "debian.org>\n"
 "Language: zh_TW\n"
@@ -48,8 +51,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "是否要將 GRUB 開機程式安裝至主要開機記錄 (MBR) 上？"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "是否將 GRUB 開機程式安裝至主要硬碟？"
 
 #. Type: boolean
 #. Description
@@ -66,13 +69,13 @@ msgstr "以下列出的是在這台電腦上所偵測到的其它作業系統: $
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"如果以上已列出了您電腦中所有的作業系統，那麼您應該可以放心得把開機程式安裝在"
-"第一個硬碟的主要開機記錄 (MBR) 上。當您的電腦開機時，您可以選擇載入其中一種作"
-"業系統，或是由您的新系統開機。"
+"如果以上已列出了您電腦中所有的作業系統，那麼您應該可以放心把開機程式安裝在第"
+"一個硬碟 (UEFI 分割區或開機記錄)。當電腦開機時，您可以選擇載入其中一種作業系"
+"統，或是由您新安裝的 Debian 系統開機。"
 
 #. Type: boolean
 #. Description
@@ -80,25 +83,23 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "看來目前所安裝的新系統是這台電腦中唯一的作業系統。若確是如此，那麼您應該可以"
-"放心得把開機程式安裝在第一個硬碟的主要開機記錄 (MBR) 上。"
+"放心把開機程式安裝在主要硬碟 (UEFI 分割區或開機記錄)。"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"警告: 如果安裝程式無法偵測到您的電腦上已存在的其它作業系統，修改主要開機記錄 "
-"(MBR) 將會使得該作業系統暫時無法開機。然而，在事後還是可以藉由手動設定 GRUB "
-"來啟動它。"
+"警告: 如果安裝程式無法偵測到您的電腦已有的其他作業系統，該作業系統將會暫時無"
+"法用來開機；然而，您之後還是可以藉由手動設定 GRUB 來啟動它。"
 
 #. Type: boolean
 #. Description
@@ -220,34 +221,32 @@ msgstr "用來安裝開機程式的裝置:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
-"必須把 GRUB 開機程式安裝至可開機裝置上，才能讓這個新安裝的系統能夠開機。一般"
-"作法是將 GRUB 安裝至您第一顆硬碟的主要開機記錄 (MBR) 上。而或者，也可以依您喜"
-"好將 GRUB 安裝至磁碟的其它地方，或安裝至另一顆磁碟上，或甚至也可以將它安裝至"
-"磁碟片上。"
+"必須把 GRUB 開機程式安裝至可開機裝置，才能令這個新安裝的系統能夠開機。通常做"
+"法是將 GRUB 安裝至您的主要硬碟 (UEFI 分割區或開機記錄)。您也可以將 GRUB 安裝"
+"至其他硬碟 (或分割區)，又或安裝至其他移除式媒體 (磁碟)。"
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"請以 /dev 裡的裝置來指定磁碟。範例如下:\n"
-" - /dev/sda 將會把 GRUB 安裝至第一顆硬碟的主要開機記錄 (MBR) 上。\n"
-" - /dev/sda2 將安裝至第一顆硬碟的第二個分割區。\n"
-" - /dev/sdc5 將安裝至第三顆硬碟的第一個延伸分割區。\n"
-" - /dev/fd0 則會將 GRUB 安裝至磁碟片上。"
+"請以 /dev 裡的裝置稱呼來指定磁碟。範例如下：\n"
+" - /dev/sda 會將 GRUB 安裝至主要硬碟 (UEFI 分割區或開機記錄)；\n"
+" - /dev/sdb 會將 GRUB 安裝至次要硬碟 (有可能是 USB 隨身碟)；\n"
+" - /dev/fd0 則會將 GRUB 安裝至軟碟片。"
 
 #. Type: select
 #. Choices
@@ -409,28 +408,28 @@ msgstr "安裝 GRUB 開機程式"
 #. :sl1:
 #: ../grub-installer.templates:19001
 msgid "Looking for other operating systems..."
-msgstr "正在尋找其它的作業系統……"
+msgstr "正在尋找其它的作業系統…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
-msgstr "正在安裝 '${GRUB}' 套件……"
+msgstr "正在安裝 '${GRUB}' 套件…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:21001
 msgid "Determining GRUB boot device..."
-msgstr "正在決定 GRUB 的開機裝置……"
+msgstr "正在決定 GRUB 的開機裝置…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:22001
 msgid "Running \"grub-install ${BOOTDEV}\"..."
-msgstr "正在執行 \"grub-install ${BOOTDEV}\"……"
+msgstr "正在執行 \"grub-install ${BOOTDEV}\"…"
 
 #. Type: text
 #. Description
@@ -444,7 +443,7 @@ msgstr "正在執行 \"update-grub\"……"
 #. :sl1:
 #: ../grub-installer.templates:24001
 msgid "Updating /etc/kernel-img.conf..."
-msgstr "正在更新 /etc/kernel-img.conf……"
+msgstr "正在更新 /etc/kernel-img.conf…"
 
 #. Type: text
 #. Description
@@ -470,10 +469,11 @@ msgstr "設定 grub-efi 以在未來使用可移除式媒體路徑"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "將 GRUB 開機程式安裝至硬碟上"
+msgid "Install the GRUB boot loader"
+msgstr "安裝 GRUB 開機程式"
 
 #. Type: text
 #. Description

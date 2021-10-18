@@ -4,9 +4,9 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Thai translation of debian-installer.
-# Copyright (C) 2006-2015 Software in the Public Interest, Inc.
+# Copyright (C) 2006-2021 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2006-2015.
+# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2006-2021.
 #
 #
 # Translations from iso-codes:
@@ -16,14 +16,14 @@
 #   Alastair McKinstry <mckinstry@computer.org>, 2002, 2004
 # Translations from KDE:
 #   Thanomsub Noppaburana <donga@midaassets.com>
-# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2005-2015
+# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2005-2017
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-09-30 14:14+0700\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2021-02-03 16:48+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -38,8 +38,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "จะติดตั้งบูตโหลดเดอร์ GRUB ลงในมาสเตอร์บูตเรคอร์ดหรือไม่?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "จะติดตั้งบูตโหลดเดอร์ GRUB ลงในไดรว์หลักของคุณหรือไม่?"
 
 #. Type: boolean
 #. Description
@@ -56,13 +56,14 @@ msgstr "ตรวจพบระบบปฏิบัติการอื่น
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "ถ้าระบบปฏิบัติการทั้งหมดของคุณอยู่ในรายการข้างบนนี้ "
-"ก็น่าจะปลอดภัยที่จะติดตั้งบูตโหลดเดอร์ลงในมาสเตอร์บูตเรคอร์ดของฮาร์ดดิสก์ตัวแรกของคุณ "
-"เมื่อเครื่องของคุณบูต คุณจะสามารถเลือกโหลดระบบปฏิบัติการเหล่านี้ หรือจะโหลดระบบใหม่ที่เพิ่งติดตั้งนี้"
+"ก็น่าจะปลอดภัยที่จะติดตั้งบูตโหลดเดอร์ลงในไดรว์หลัก (พาร์ทิชัน UEFI หรือบูตเรคอร์ด) ของคุณ "
+"เมื่อเครื่องของคุณบูต คุณจะสามารถเลือกโหลดระบบปฏิบัติการเหล่านี้ "
+"หรือจะโหลดระบบเดเบียนที่เพิ่งติดตั้งใหม่นี้"
 
 #. Type: boolean
 #. Description
@@ -70,25 +71,24 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "ดูเหมือนว่า ระบบที่ติดตั้งใหม่นี้ จะเป็นเพียงระบบปฏิบัติการเดียวที่มีในคอมพิวเตอร์นี้ หากเป็นเช่นนั้น "
-"ก็น่าจะปลอดภัยที่จะติดตั้งบูตโหลดเดอร์ GRUB ลงในมาสเตอร์บูตเรคอร์ดของฮาร์ดดิสก์ตัวแรกของคุณ"
+"ก็น่าจะปลอดภัยที่จะติดตั้งบูตโหลดเดอร์ GRUB ลงในไดรว์หลัก (พาร์ทิชัน UEFI หรือบูตเรคอร์ด) ของคุณ"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"คำเตือน: ถ้าโปรแกรมติดตั้งไม่สามารถตรวจระบบปฏิบัติการอื่นที่มีอยู่ในเครื่องคุณพบ "
-"การเปลี่ยนแปลงมาสเตอร์บูตเรคอร์ดจะทำให้ไม่สามารถบูตระบบปฏิบัติการดังกล่าวได้ชั่วคราว "
-"แม้จะสามารถตั้งค่า GRUB ในภายหลังให้สามารถบูตได้ก็ตาม"
+"คำเตือน: ถ้าเครื่องของคุณมีระบบปฏิบัติการอื่นที่โปรแกรมติดตั้งไม่สามารถตรวจพบ "
+"นี่จะทำให้ไม่สามารถบูตระบบปฏิบัติการดังกล่าวได้ชั่วคราว แม้จะสามารถตั้งค่า GRUB "
+"ในภายหลังให้สามารถบูตได้ก็ตาม"
 
 #. Type: boolean
 #. Description
@@ -210,32 +210,31 @@ msgstr "อุปกรณ์สำหรับติดตั้งบูตโ
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "คุณต้องทำให้ระบบที่เพิ่งติดตั้งใหม่นี้บูตได้ โดยติดตั้งบูตโหลดเดอร์ GRUB ในอุปกรณ์ที่บูตได้ วิธีปกติก็คือ "
-"ติดตั้ง GRUB ลงในมาสเตอร์บูตเรคอร์ดของฮาร์ดดิสก์ตัวแรกของคุณ หรือถ้าคุณต้องการ คุณสามารถติดตั้ง "
-"GRUB ในที่อื่นในไดรว์ หรือในไดรว์อื่น หรือกระทั่งในแผ่นฟลอปปี้ก็ได้"
+"ติดตั้ง GRUB ลงในไดรว์หลัก (พาร์ทิชัน UEFI หรือบูตเรคอร์ด) ของคุณ นอกจากนี้ คุณยังสามารถติดตั้ง "
+"GRUB ลงในไดรว์ (หรือพาร์ทิชัน) อื่น หรือในสื่อถอดเสียบก็ได้"
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"ควรระบุอุปกรณ์โดยอ้างอุปกรณ์ใน /dev ดังตัวอย่างข้างล่าง:\n"
-" - \"/dev/sda\" จะติดตั้ง GRUB ลงในมาสเตอร์บูตเรคอร์ดของฮาร์ดดิสก์ตัวแรกของคุณ\n"
-" - \"/dev/sda2\" จะใช้พาร์ทิชันที่สองของฮาร์ดดิสก์ตัวแรกของคุณ\n"
-" - \"/dev/sdc5\" จะใช้พาร์ทิชันขยายพาร์ทิชันแรกของฮาร์ดดิสก์ตัวที่สามของคุณ\n"
+"ควรระบุอุปกรณ์โดยใช้รูปแบบการอ้างอุปกรณ์ใน /dev ตัวอย่างเช่น:\n"
+" - \"/dev/sda\" จะติดตั้ง GRUB ลงในไดรว์หลัก (พาร์ทิชัน UEFI หรือบูตเรคอร์ด) ของคุณ\n"
+" - \"/dev/sdb\" จะติดตั้ง GRUB ลงในไดรว์รอง (ซึ่งอาจเป็นไดรว์ USB เป็นต้น)\n"
 " - \"/dev/fd0\" จะติดตั้ง GRUB ลงในแผ่นฟลอปปี้"
 
 #. Type: select
@@ -461,10 +460,11 @@ msgstr "กำลังตั้งค่า grub-efi สำหรับกา�
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "ติดตั้งบูตโหลดเดอร์ GRUB ลงในฮาร์ดดิสก์"
+msgid "Install the GRUB boot loader"
+msgstr "ติดตั้งบูตโหลดเดอร์ GRUB"
 
 #. Type: text
 #. Description

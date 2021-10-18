@@ -11,35 +11,38 @@
 # Klaus Ade Johnstad <klaus@skolelinux.no>, 2004.
 # Axel Bojer <axelb@skolelinux.no>, 2004.
 # Bjørn Steensrud <bjornst@powertech.no>, 2004-2007.
-# Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2005, 2007-2014.
+# Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2005, 2007-2015.
+# Petter Reinholdtsen <pere@hungry.com>, 2017, 2020.
+# Allan Nordhøy <epost@anotheragency.no>, 2019, 2020.
 #
 # Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@computer.org>, 2002
+#
+#   Alastair McKinstry <mckinstry@computer.org>, 2002.
 #   Axel Bojer <axelb@skolelinux.no>, 2004.
 #   Bjørn Steensrud <bjornst@powertech.no>, 2006.
-#   Free Software Foundation, Inc., 2002,2004
+#   Free Software Foundation, Inc., 2002,2004.
 #   Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2007-2015.
 #   Håvard Korsvoll <korsvoll@skulelinux.no>, 2004.
 #   Knut Yrvin <knuty@skolelinux.no>, 2004.
 #   Tobias Toedter <t.toedter@gmx.net>, 2007.
 #     Translations taken from ICU SVN on 2007-09-09
 #   Translations from KDE:
-#   Rune Nordvik <rune@linuxnorge.com>, 2001
+#   Rune Nordvik <rune@linuxnorge.com>, 2001.
 #   Kjartan Maraas <kmaraas@broadpark.no>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-01-02 11:37+0100\n"
-"Last-Translator: Hans Fredrik Nordhaug <hans@nordhaug.priv.no>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-04-12 08:11+0000\n"
+"Last-Translator: Petter Reinholdtsen <pere-weblate@hungry.com>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: boolean
 #. Description
@@ -48,9 +51,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr ""
-"Vil du installere oppstartslasteren GRUB på hovedoppstartssporet (MBR)?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Installer oppstartssystemet GRUB på din primære lagringsenhet?"
 
 #. Type: boolean
 #. Description
@@ -68,13 +70,13 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Hvis alle dine operativsystemer er listet opp ovenfor, så bør det være trygt "
-"å installere oppstartslasteren i hovedoppstartssporet på den første "
-"harddisken. Når maskinen starter vil du få valget mellom å starte ett av "
+"å installere oppstartslasteren på din primære lagringsenhet (UEFI-partisjon/"
+"oppstartblokk). Når maskinen starter vil du få valget mellom å starte ett av "
 "disse operativsystemene eller det nye Debian-systemet."
 
 #. Type: boolean
@@ -83,27 +85,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Det ser ut til at denne Debian-installasjonen er det eneste operativsystemet "
 "på denne maskinen. Hvis det er riktig, skulle det være trygt å installere "
-"oppstartslasteren GRUB på hovedoppstartssporet på den første harddisken."
+"oppstartslasteren GRUB i hovedoppstartssporet på din primære lagringsenhet "
+"(UEFI-partisjon/oppstartblokk)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Advarsel: Hvis installasjonsprogrammet ikke klarte å oppdage et annet "
-"operativsystem som finnes på maskinen din, så blir det midlertidig umulig å "
-"starte dette andre systemet hvis hovedoppstartssporet endres, men GRUB kan "
-"senere settes opp manuelt slik at det andre systemet kan startes."
+"Advarsel: Hvis datamaskinen har et annet operativsystem som installasjonen "
+"ikke har fått med seg, kan det bli satt ut av stand til å starte opp, men "
+"GRUB kan senere settes opp manuelt til å også tilby oppstart av slike."
 
 #. Type: boolean
 #. Description
@@ -228,38 +229,37 @@ msgstr "Enheten oppstartslasteren skal installeres på:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Du må gjøre det mulig å starte opp det nyinstallerte systemet, ved å "
-"installere oppstartslasteren Grub på en enhet som er oppstartbar. Den "
-"vanlige måten å gjøre dette på, er å installere Grub på hovedoppstartssporet "
-"(MBR) på den første harddisken. Hvis du foretrekker det kan du installere "
-"Grub andre steder på harddisken, eller på en annen harddisk, eller til og "
-"med på en diskett."
+"installere oppstartslasteren GRUB på en enhet som kan starte maskinen. Den "
+"sedvanlige måten å gjøre dette på er å installere GRUB på din primære "
+"lagringsenhet (UEFI-partisjon/oppstartsblokk). Du kan isteden installere "
+"GRUB på en annen lagringsenhet (eller partisjon), eller til flyttbart medium."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Enheten kan oppgis som en enhet i /dev. Nedenfor er noen eksempler: \n"
-" - «/dev/sda» vil installere GRUB på hovedoppstartsporet på din første "
-"harddisk;\n"
-" - «/dev/sda2» vil bruke den andre partisjonen på din din første harddisk;\n"
-" - «/dev/sdc5» vil bruke den første utvidede partisjonen på din tredje "
-"harddisk;\n"
-" - «/dev/fd0» vil installere GRUB på en diskett."
+"Enhetsnotasjonen skal angis som en enhet i /dev. Nedenfor finner du noen "
+"eksempel:\n"
+" - \"/dev/sda\" vil installere GRUB på din primære lagringsenhet (UEFI-\n"
+"   partisjon/oppstartsblokk);\n"
+" - \"/dev/sdb\" vil installere GRUB på en sekundær lagringsenhet (som for\n"
+"   eksempel kan være en minnepinne);\n"
+" - \"/dev/fd0\" vil installere GRUB til en diskettstasjon."
 
 #. Type: select
 #. Choices
@@ -489,10 +489,11 @@ msgstr "Setter opp grub-efi for fremtidig bruk av stien for fjernbart media"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Installer oppstartssystemet GRUB på en harddisk"
+msgid "Install the GRUB boot loader"
+msgstr "Installer oppstartssystemet GRUB"
 
 #. Type: text
 #. Description

@@ -7,7 +7,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
-# Adriano Rafael Gomes <adrianorg@arg.eti.br>, 2010-2015.
+# Adriano Rafael Gomes <adrianorg@debian.org>, 2010-2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
@@ -22,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-06-06 10:16-0300\n"
-"Last-Translator: Adriano Rafael Gomes <adrianorg@arg.eti.br>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-04-12 20:04-0300\n"
+"Last-Translator: Adriano Rafael Gomes <adrianorg@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
 "Language: pt_BR\n"
@@ -39,10 +39,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr ""
-"Instalar o carregador de inicialização GRUB no registro mestre de "
-"inicialização?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Instalar o carregador de inicialização GRUB no seu disco primário?"
 
 #. Type: boolean
 #. Description
@@ -60,15 +58,15 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Se todos os seus sistemas operacionais estão listados acima, então será "
-"seguro instalar o carregador de inicialização no registro mestre de "
-"inicialização de seu primeiro disco rígido. Quando seu computador "
+"seguro instalar o carregador de inicialização no seu disco primário "
+"(partição UEFI/registro de inicialização). Quando seu computador "
 "inicializar, você poderá optar por carregar qualquer um destes sistemas "
-"operacionais ou o seu novo sistema."
+"operacionais ou o seu novo sistema Debian instalado."
 
 #. Type: boolean
 #. Description
@@ -76,30 +74,27 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Parece que esta nova instalação será o único sistema operacional neste "
 "computador. Se isso for verdade, será seguro instalar o carregador de "
-"inicialização GRUB no registro mestre de inicialização de seu primeiro disco "
-"rígido."
+"inicialização GRUB no seu disco primário (partição UEFI/registro de "
+"inicialização)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Aviso: Se o instalador falhou ao detectar outro sistema operacional que "
-"esteja presente em seu computador, modificar o registro mestre de "
-"inicialização fará com que os sistemas operacionais não detectados não "
-"possam ser inicializados temporariamente, porém o GRUB poderá ser "
-"configurado posteriormente para permitir a inicialização dos outros sistemas "
-"operacionais."
+"Aviso: Se o seu computador tem outro sistema operacional que o instalador "
+"não detectou, isso tornará tal sistema operacional temporariamente não "
+"inicializável, porém o GRUB poderá ser configurado manualmente mais tarde "
+"para permitir a inicialização dos outros sistemas operacionais."
 
 #. Type: boolean
 #. Description
@@ -230,38 +225,37 @@ msgstr "Dispositivo no qual instalar o carregador de inicialização:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Você precisa fazer com que seu novo sistema recém-instalado seja "
 "inicializável, instalando o carregador de inicialização GRUB em um "
 "dispositivo inicializável. A maneira usual de fazer isso é instalar o GRUB "
-"no registro mestre de inicialização de seu primeiro disco rígido. Se "
-"preferir, você pode instalar o GRUB em outro local de seu disco rígido, em "
-"outro disco ou até mesmo em um disquete."
+"no seu disco primário (partição UEFI/registro de inicialização). Em vez "
+"disso, você pode instalar o GRUB em outro disco (ou partição) ou em mídia "
+"removível."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"O dispositivo deve ser especificado como um dispositivo em /dev. Abaixo "
-"estão alguns exemplos:\n"
-" - \"/dev/sda\" instalará o GRUB no registro mestre de inicialização de seu\n"
-"   primeiro disco rígido;\n"
-" - \"/dev/sda2\" usará a segunda partição do seu primeiro disco rígido;\n"
-" - \"/dev/sdc5\" usará a primeira partição estendida do seu terceiro disco\n"
-"   rígido;\n"
+"A notação do dispositivo deve ser especificada como um dispositivo em /dev. "
+"Abaixo estão alguns exemplos:\n"
+" - \"/dev/sda\" instalará o GRUB no seu disco primário (partição UEFI/\n"
+"   registro de inicialização);\n"
+" - \"/dev/sdb\" instalará o GRUB em um disco secundário (o qual poderá ser,\n"
+"   por exemplo, um pendrive);\n"
 " - \"/dev/fd0\" instalará o GRUB em um disquete."
 
 #. Type: select
@@ -494,10 +488,11 @@ msgstr "Configurando o grub-efi para futuro uso do caminho de mídia removível"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Instalar o carregador de inicialização GRUB em um disco rígido"
+msgid "Install the GRUB boot loader"
+msgstr "Instalar o carregador de inicialização GRUB"
 
 #. Type: text
 #. Description

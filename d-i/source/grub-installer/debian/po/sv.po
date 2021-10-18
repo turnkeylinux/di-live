@@ -18,12 +18,14 @@
 # Christian Rose <menthos@menthos.com>, 2004.
 # Daniel Nylander <po@danielnylander.se>, 2007.
 # Martin Bagge <martin.bagge@bthstudent.se>, 2008, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2018, 2020.
+# Mattias Münster <mattiasmun@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2017-11-29 09:45+0000\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-08-20 09:36+0000\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
@@ -39,8 +41,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Installera starthanteraren GRUB i huvudstartsektorn?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Installera starthanteraren GRUB på din primära disk?"
 
 #. Type: boolean
 #. Description
@@ -58,14 +60,14 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Om alla dina operativsystem finns i ovanstående lista bör det vara säkert "
-"att installera starthanteraren i huvudstartsektorn på din första hårddisk. "
-"När din dator startar kommer du att kunna välja att läsa in ett av de här "
-"operativsystemen eller ditt nya system."
+"att installera starthanteraren på din primära disk (UEFI-partition/"
+"startsektorn). När din dator startar kommer du att kunna välja att läsa in "
+"ett av de här operativsystemen eller det nyss installerade Debiansystemet."
 
 #. Type: boolean
 #. Description
@@ -73,28 +75,27 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Det verkar som om den här installationen av Debian är det enda "
 "operativsystemet på den här datorn. I så fall bör det vara säkert att "
-"installera starthanteraren GRUB i huvudstartsektorn (Master Boot Record, "
-"MBR) på din första hårddisk."
+"installera starthanteraren GRUB till din primära disk (UEFI-partition/"
+"startsektorn)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Varning: Om installationsprogrammet misslyckades med att hitta de andra "
-"operativsystem som finns installerade på datorn kan ändring av "
-"huvudstartsektorn göra att operativsystemet temporärt inte kan startas, även "
-"om GRUB manuellt kan konfigureras senare för att starta det."
+"Varning: Om din dator har ett annat operativsystem som finns installerat på "
+"datorn kan installationsprogrammet misslyckats med att hitta detta, detta "
+"gör att operativsystemet temporärt inte kan startas, även om GRUB manuellt "
+"kan konfigureras senare för att starta det."
 
 #. Type: boolean
 #. Description
@@ -219,36 +220,35 @@ msgstr "Enhet för installation av starthanteraren:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Du måste göra det nyligen installerade systemet startbart genom att "
 "installera starthanteraren GRUB på en startbar enhet. Det vanliga sättet att "
-"göra det här på är att installera GRUB i huvudstartsektorn på din första "
-"hårddisk. Om du föredrar det så kan du installera GRUB någon annanstans på "
-"hårddisken, på en annan hårddisk eller till och med på en diskett."
+"göra det här på är att installera GRUB på din primära hårddisk (UEFI-"
+"partition/startsektorn). Du kan istället installera GRUB på en annan "
+"hårddisk (eller partition), eller till ett borttagbart media."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Enheten ska anges som en enhet i /dev. Nedan finns några exempel:\n"
-" - \"/dev/sda\" installerar GRUB i huvudstartsektorn på din första\n"
-"   hårddisk;\n"
-" - \"/dev/sda2\" väljer den andra partitionen på din första hårddisk;\n"
-" - \"/dev/sdc5\" väljer den första utökade partitionen på din tredje\n"
-"   hårddisk;\n"
+"Enhetsnotationen ska anges som en enhet i /dev. Nedan finns några exempel:\n"
+" - \"/dev/sda\" installerar GRUB på din primära hårddisk (UEFI-partition/\n"
+"   startsektorn);\n"
+" - \"/dev/sdb\" installerar GRUB på en sekundär disk (kan t.ex. vara en\n"
+"   minnessticka);\n"
 " - \"/dev/fd0\" kommer att installera GRUB på en diskett."
 
 #. Type: select
@@ -480,10 +480,11 @@ msgstr "Ställa in grub-efi för användning från flyttbart media"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Installera starthanteraren GRUB på en hårddisk"
+msgid "Install the GRUB boot loader"
+msgstr "Installera starthanteraren GRUB"
 
 #. Type: text
 #. Description

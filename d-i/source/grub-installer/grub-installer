@@ -685,6 +685,10 @@ case $ARCH:$grub_package in
 	bootdev="$wipe_bootdev"
 	state=3
 	;;
+    powerpc/powermac_newworld:grub-ieee1275|ppc64/powermac_newworld:grub-ieee1275)
+	bootdev="$(findfs /boot/grub)"
+	state=3
+	;;
     sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275)
 	bootfs=$(findfs /boot)
 	[ "$bootfs" ] || bootfs="$(findfs /)"
@@ -899,6 +903,9 @@ EOF
 			# nvram is broken here
 			grub_install_params="$grub_install_params --no-nvram"
 			;;
+		    powerpc/powermac_newworld|ppc64/powermac_newworld)
+			grub_install_params="$grub_install_params --macppc-directory=/boot/grub --no-nvram"
+			;;
 		    sparc/*|sparc64/*)
 			# see: https://github.com/esnowberg/grub2-sparc/wiki
 			case $SUBARCH in
@@ -923,9 +930,13 @@ EOF
 
 		CODE=0
 		case $ARCH:$grub_package in
-		    *:grub|*:grub-pc|*:grub-efi*|sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275|powerpc/*:grub-ieee1275|ppc64/*:grub-ieee1275|ppc64el/*:grub-ieee1275)
+		    *:grub|*:grub-pc|*:grub-efi*|sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275|powerpc/chrp*:grub-ieee1275|ppc64/chrp*:grub-ieee1275|ppc64el/*:grub-ieee1275)
 			info "Running $chroot $ROOT grub-install $grub_install_params \"$bootdev\""
 			log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params "$bootdev" || CODE=$?
+			;;
+		    powerpc/powermac_newworld:grub-ieee1275|ppc64/powermac_newworld:grub-ieee1275)
+			info "Running $chroot $ROOT grub-install $grub_install_params"
+			log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params || CODE=$?
 			;;
 		    amd64/*:grub-xen)
 			info "Running $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params"
@@ -944,9 +955,24 @@ EOF
 		esac
 		if [ "$CODE" = 0 ]; then
 			info "grub-install ran successfully"
+			case $ARCH:$grub_package in
+			    powerpc/powermac_newworld:grub-ieee1275|ppc64/powermac_newworld:grub-ieee1275)
+				ofpath=$($chroot $ROOT ofpathname $bootdev)
+				umount $bootdev
+				$chroot $ROOT hmount $bootdev
+				$chroot $ROOT hattrib -c UNIX -t tbxi :System:Library:CoreServices:BootX
+				$chroot $ROOT hattrib -b :System:Library:CoreServices
+				$chroot $ROOT humount
+				mount $bootdev $ROOT/boot/grub
+				$chroot $ROOT nvram --update-config boot-device=""$ofpath",\\\\:txbi"
+				;;
+			    *)
+				:
+				;;
+			esac
 		else
 			case $ARCH:$grub_package in
-			    *:grub|*:grub-pc|*:grub-efi*|sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275|powerpc/*:grub-ieee1275|ppc64/*:grub-ieee1275|ppc64el/*:grub-ieee1275)
+			    *:grub|*:grub-pc|*:grub-efi*|sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275|powerpc/chrp*:grub-ieee1275|ppc64/chrp*:grub-ieee1275|ppc64el/*:grub-ieee1275)
 				error "Running 'grub-install $grub_install_params \"$bootdev\"' failed."
 				;;
 			    *)

@@ -2,28 +2,27 @@ Template: grub-installer/with_other_os
 Type: boolean
 Default: true
 # :sl1:
-_Description: Install the GRUB boot loader to the master boot record?
+_Description: Install the GRUB boot loader to your primary drive?
  The following other operating systems have been detected on this
  computer: ${OS_LIST}
  .
  If all of your operating systems are listed above, then it should be safe to
- install the boot loader to the master boot record of your first hard
- drive. When your computer boots, you will be able to choose to load one of
- these operating systems or your new system.
+ install the boot loader to your primary drive (UEFI partition/boot record).
+ When your computer boots, you will be able to choose to load one of these
+ operating systems or the newly installed Debian system.
 
 Template: grub-installer/only_debian
 Type: boolean
 Default: true
 # :sl1:
-_Description: Install the GRUB boot loader to the master boot record?
+_Description: Install the GRUB boot loader to your primary drive?
  It seems that this new installation is the only operating system
  on this computer. If so, it should be safe to install the GRUB boot loader
- to the master boot record of your first hard drive.
+ to your primary drive (UEFI partition/boot record).
  .
- Warning: If the installer failed to detect another operating system that
- is present on your computer, modifying the master boot record will make
- that operating system temporarily unbootable, though GRUB can be manually
- configured later to boot it.
+ Warning: If your computer has another operating system that the installer
+ failed to detect, this will make that operating system temporarily
+ unbootable, though GRUB can be manually configured later to boot it.
 
 Template: grub-installer/sataraid
 Type: boolean
@@ -73,17 +72,16 @@ Type: string
 _Description: Device for boot loader installation:
  You need to make the newly installed system bootable, by installing
  the GRUB boot loader on a bootable device. The usual way to do this is to
- install GRUB on the master boot record of your first hard drive. If you
- prefer, you can install GRUB elsewhere on the drive, or to another drive,
- or even to a floppy.
+ install GRUB to your primary drive (UEFI partition/boot record). You may
+ instead install GRUB to a different drive (or partition), or to removable
+ media.
  .
- The device should be specified as a device in /dev. Below are some
+ The device notation should be specified as a device in /dev. Below are some
  examples:
-  - "/dev/sda" will install GRUB to the master boot record of your first
-    hard drive;
-  - "/dev/sda2" will use the second partition of your first hard drive;
-  - "/dev/sdc5" will use the first extended partition of your third hard
-    drive;
+  - "/dev/sda" will install GRUB to your primary drive (UEFI partition/boot
+    record);
+  - "/dev/sdb" will install GRUB to a secondary drive (which may for instance
+    be a thumbdrive);
   - "/dev/fd0" will install GRUB to a floppy.
 
 Template: grub-installer/choose_bootdev
@@ -95,9 +93,9 @@ __Choices: Enter device manually, ${DESCRIPTIONS}
 _Description: Device for boot loader installation:
  You need to make the newly installed system bootable, by installing
  the GRUB boot loader on a bootable device. The usual way to do this is to
- install GRUB on the master boot record of your first hard drive. If you
- prefer, you can install GRUB elsewhere on the drive, or to another drive,
- or even to a floppy.
+ install GRUB to your primary drive (UEFI partition/boot record). You may
+ instead install GRUB to a different drive (or partition), or to removable
+ media.
 
 Template: grub-installer/password
 Type: password
@@ -227,8 +225,9 @@ _Description: Configuring grub-efi for future usage of the removable media path
 Template: debian-installer/grub-installer/title
 Type: text
 #  Main menu item
+#  Translators: keep below 55 columns
 # :sl1:
-_Description: Install the GRUB boot loader on a hard disk
+_Description: Install the GRUB boot loader
 
 Template: rescue/menu/grub-reinstall
 Type: text

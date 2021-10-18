@@ -19,6 +19,9 @@
 #    Developers do not need to manually edit POT or PO files.
 #
 # Eddy Petrișor <eddy.petrisor@gmail.com>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Jobava <jobaval10n@gmail.com>, 2018.
+# Andrei Popescu <andreimpopescu@gmail.com>, 2018, 2020.
+# Sergiu <adinfinitvm@wail.ch>, 2020.
 #
 # Translations from iso-codes:
 # Alastair McKinstry <mckinstry@debian.org>, 2004
@@ -35,9 +38,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-04-08 22:04+0300\n"
-"Last-Translator: Ioan Eugen Stan <stan.ieugen@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2021-06-17 12:33+0000\n"
+"Last-Translator: Christian Eichert <c@zp1.net>\n"
 "Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -53,8 +56,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Instalează încărcătorul de sistem GRUB în înregistrarea master boot?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Se instalează încărcătorul de sistem GRUB pe discul primar?"
 
 #. Type: boolean
 #. Description
@@ -73,15 +76,15 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Dacă toate sistemele dumneavoastră de operare sunt afișate mai sus, atunci "
-"nu ar trebui să fie nici o problemă la instalarea încărcătorului de sistem "
-"în înregistrarea master boot a primului disc fix. Când calculatorul "
-"dumneavoastră va porni, veți putea să alegeți să încărcați unul din aceste "
-"sisteme de operare sau noul dumneavoastră sistem."
+"instalarea încărcătorului de sistem pe discul primar (partiția UEFI/boot "
+"record) ar trebui să fie lipsită de probleme. Când calculatorul "
+"dumneavoastră va porni, veți putea alege să încărcați unul din aceste "
+"sisteme de operare sau sistemul Debian nou instalat."
 
 #. Type: boolean
 #. Description
@@ -89,28 +92,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Se pare că această nouă instalare este singurul sistem de operare pe acest "
-"calculator. În acest caz nu ar trebui fie nici o problemă la instalarea "
-"încărcătorul de sistem GRUB în înregistrarea master boot a primului disc fix."
+"calculator. În acest caz instalarea încărcătorul de sistem GRUB pe discul "
+"primar (partiția UEFI/boot record) ar trebui să fie lipsită de probleme."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Atenție: Dacă programul de instalare nu a reușit detectarea unui alt sistem "
-"de operare deja prezent pe calculatorul dumneavoastră, modificarea "
-"înregistrării master boot poate duce temporar la imposibilitatea de a mai "
-"porni acel sistem. Ulterior GRUB poate fi configurat manual pentru a putea "
-"porni acel sistem."
+"Atenție: Dacă computerul conține un alt sistem de operarea pe care programul "
+"de instalare nu a reușit să-l detecteze, acest lucru va împiedica temporar "
+"pornirea acelui sistem de operare. Ulterior GRUB poate fi configurat manual "
+"pentru a putea porni acel sistem."
 
 #. Type: boolean
 #. Description
@@ -243,37 +244,36 @@ msgstr "Dispozitivul folosit pentru instalarea încărcătorului de sistem:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
-"Este necesar să instalați încărcătorul de sistem GRUB pentru a permite "
-"pornirea sistemului proaspăt. În mod uzual se instalează GRUB în zona "
-"înregistrării master boot a primului disc fix. Dacă preferați, puteți "
-"instala GRUB în altă parte pe disc, pe un alt dispozitiv, sau chiar pe o "
-"dischetă."
+"Trebuie să faceți ca sistemul nou instalat să fie bootabil, instalând "
+"încărcătorul de boot GRUB pe un dispozitiv bootabil. Modul obișnuit de a "
+"face acest lucru este să instalați GRUB pe unitatea principală (partiția "
+"UEFI/boot record). În schimb, puteți instala GRUB pe o altă unitate (sau "
+"partiție) sau pe un suport amovibil."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Dispozitivul ar trebui specificat ca un dispozitiv în /dev.\n"
-"Mai jos câteva exemple: \n"
-" - „/dev/sda” va instala GRUB în înregistrarea master boot a primului\n"
-"   disc fix;\n"
-" - „/dev/sda2” va utiliza a doua partiție a primului disc fix;\n"
-" - „/dev/sdc5” va utiliza prima partiție extinsă a celui de-al treilea\n"
-"   disc fix;\n"
+"Dispozitivul ar trebui specificat ca un dispozitiv în /dev. Mai jos câteva "
+"exemple: \n"
+" - „/dev/sda” va instala GRUB pe partiția dumneavoastră primară (partiția\n"
+"   UEFI/boot record);\n"
+" - „/dev/sdb” va instala GRUB pe o partiție secundară (care, spre exemplu,\n"
+"   poate fi o memorie USB);\n"
 " - „/dev/fd0” va instala GRUB pe o dischetă."
 
 #. Type: select
@@ -507,10 +507,11 @@ msgstr "Se configurează grub-efi pentru utilizarea căii pentru medii mobile"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Instalează încărcătorul de sistem GRUB pe un disc fix"
+msgid "Install the GRUB boot loader"
+msgstr "Instalează încărcătorul de sistem GRUB"
 
 #. Type: text
 #. Description

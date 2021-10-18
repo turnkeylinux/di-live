@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-01-11 14:20+0100\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-05-03 07:23+0200\n"
 "Last-Translator:  Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team:  Czech <provoz@debian.cz>\n"
 "Language: cs\n"
@@ -34,8 +34,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Instalovat zavaděč GRUB do hlavního zaváděcího záznamu?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Nainstalovat zavaděč GRUB na primární disk?"
 
 #. Type: boolean
 #. Description
@@ -53,12 +53,12 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Pokud jsou zde vypsány všechny vaše operační systémy, mělo by být bezpečné "
-"instalovat zavaděč do hlavního zaváděcího záznamu (MBR) vašeho prvního "
+"nainstalovat zavaděč do UEFI oblasti/zaváděcího záznamu vašeho primárního "
 "disku. Při startu počítače si pak budete moci vybrat, který ze systémů se má "
 "spustit."
 
@@ -68,27 +68,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Zdá se, že tato nová instalace je jediným operačním systémem na tomto "
-"počítači. Pokud je to pravda, mělo by být bezpečné instalovat zavaděč GRUB "
-"do hlavního zaváděcího záznamu (MBR) vašeho prvního disku."
+"počítači. Pokud je to pravda, mělo by být bezpečné nainstalovat zavaděč GRUB "
+"do UEFI oblasti/zaváděcího záznamu vašeho primárního disku."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Varování: Jestliže instalační program nerozpoznal typ stávajícího operačního "
-"systému na tomto počítači, je možné, že zásahem do hlavního zaváděcího "
-"záznamu dočasně ztratíte možnost zavádět tento neznámý operační systém. "
-"Zavádění neznámého systému pak budete muset nastavit v GRUBu ručně."
+"Varování: Jestliže se na tomto počítači nachází operační systém, který "
+"instalační program nerozpoznal, ztratíte tímto dočasně možnost jeho "
+"zavádění. Zavádění neznámého systému pak budete muset nastavit v GRUBu ručně."
 
 #. Type: boolean
 #. Description
@@ -212,35 +210,34 @@ msgstr "Zařízení pro instalaci zavaděče:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Nyní musíte připravit zavádění nově instalovaného systému. K tomu stačí "
 "nainstalovat zavaděč GRUB na zaveditelné zařízení. Obvyklá cesta je "
-"instalovat GRUB do hlavního zaváděcího záznamu (MBR) prvního disku. Pokud si "
-"přejete, můžete GRUB samozřejmě nainstalovat na jinou část disku, jiný disk, "
-"nebo dokonce na disketu."
+"instalovat GRUB do UEFI oblasti/zaváděcího záznamu (MBR) primárního disku. "
+"Pokud si přejete, můžete GRUB samozřejmě nainstalovat na jinou oblast, jiný "
+"disk, nebo třeba na výměnné médium."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "Zařízení byste měli zadat jako zařízení v /dev. Například:\n"
-" - „/dev/sda“ nainstaluje GRUB do hlavního zaváděcího záznamu\n"
-"    prvního pevného disku.\n"
-" - „/dev/sda2“ použije druhou oblast prvního disku.\n"
-" - „/dev/sdc5“ použije první logickou oblast třetího disku.\n"
+" - „/dev/sda“ nainstaluje GRUB do UEFI oblasti/zaváděcího záznamu\n"
+"    primárního disku.\n"
+" - „/dev/sdb“ použije sekundární disk (což může být třeba USB klíč).\n"
 " - „/dev/fd0“ nainstaluje GRUB na disketu."
 
 #. Type: select
@@ -330,7 +327,7 @@ msgid ""
 "The '${GRUB}' package failed to install into /target/. Without the GRUB boot "
 "loader, the installed system will not boot."
 msgstr ""
-"Balík '${GRUB}'se nepodařilo nainstalovat do /target/. Bez zavaděče GRUB se "
+"Balík „${GRUB}“ se nepodařilo nainstalovat do /target/. Bez zavaděče GRUB se "
 "nepodaří instalovaný systém zavést."
 
 #. Type: error
@@ -345,7 +342,7 @@ msgstr "Nelze nainstalovat GRUB na ${BOOTDEV}"
 #. :sl2:
 #: ../grub-installer.templates:14001
 msgid "Executing 'grub-install ${BOOTDEV}' failed."
-msgstr "Příkaz 'grub-install ${BOOTDEV}' selhal."
+msgstr "Příkaz „grub-install ${BOOTDEV}“ selhal."
 
 #. Type: error
 #. Description
@@ -362,7 +359,7 @@ msgstr "Toto je kritická chyba."
 #. :sl2:
 #: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
-msgstr "Příkaz 'update-grub' selhal."
+msgstr "Příkaz „update-grub“ selhal."
 
 #. Type: boolean
 #. Description
@@ -417,7 +414,7 @@ msgstr "Hledají se jiné operační systémy..."
 #. :sl1:
 #: ../grub-installer.templates:20001
 msgid "Installing the '${GRUB}' package..."
-msgstr "Instaluje se balík '${GRUB}'..."
+msgstr "Instaluje se balík „${GRUB}“..."
 
 #. Type: text
 #. Description
@@ -471,10 +468,11 @@ msgstr "Nastavuje se grub-efi pro budoucí použití cesty pro výměnná média
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Instalovat zavaděč GRUB na pevný disk"
+msgid "Install the GRUB boot loader"
+msgstr "Nainstalovat zavaděč GRUB"
 
 #. Type: text
 #. Description

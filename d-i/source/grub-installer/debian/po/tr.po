@@ -24,13 +24,15 @@
 # Tobias Quathamer <toddy@debian.org>, 2007.
 # Translations taken from ICU SVN on 2007-09-09
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 1999.
+# Fatih Altun <fatih.altun@pardus.org.tr>, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-06-30 01:49+0200\n"
-"Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2021-06-12 23:25+0300\n"
+"Last-Translator: Fatih Altun <fatih.altun@pardus.org.tr>\n"
 "Language-Team: Debian L10N Turkish\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +47,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "GRUB önyükleyici ana önyükleme kaydına (MBR) kurulsun mu?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "GRUB önyükleyici birincil sürücünüze yüklensin mi?"
 
 #. Type: boolean
 #. Description
@@ -64,14 +66,14 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"Kullandığınız bütün işletim sistemleri yukarıda listelenmişse önyükleyiciyi "
-"birincil sabit diskin ana önyükleme kaydına (MBR) kurmanızda herhangi bir "
-"sakınca yok. Bilgisayarınız yeniden açıldığında bu işletim sistemlerinden "
-"birini veya yeni sisteminizi seçebileceksiniz."
+"Tüm işletim sistemleriniz yukarıda listeleniyorsa, önyükleyiciyi birincil "
+"sürücünüze (UEFI bölümü/önyükleme kaydı) yüklemek güvenli olacaktır. "
+"Bilgisayarınız açıldığında, bu işletim sistemlerinden birini veya yeni "
+"kurulan Debian sistemini yüklemeyi seçebileceksiniz."
 
 #. Type: boolean
 #. Description
@@ -79,28 +81,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
-"Görünen o ki bu yeni kurulum bu bilgisayardaki tek işletim sistemi olacak. "
-"Eğer öyleyse önyükleyici GRUB'u birincil sabit diskin ana önyükleme kaydına "
-"(MBR) kurmanız uygun olacaktır."
+"Görünüşe göre bu yeni kurulum, bu bilgisayardaki tek işletim sistemi. "
+"Öyleyse, GRUB önyükleyicisini birincil sürücünüze (UEFI bölümü/önyükleme "
+"kaydı) yüklemek güvenli olacaktır."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Uyarı: Kurulum programı, bilgisayarınızda bulunan diğer bir işletim "
-"sistemini algılamakta başarısız olursa, ana önyükleme kaydının "
-"değiştirilmesi bu işletim sisteminin geçici olarak açılamamasına yol "
-"açacaktır. Bununla birlikte sisteminizin bu işletim sisteminden açılması "
-"için GRUB'u daha sonra elle yapılandırabilirsiniz."
+"Uyarı: Bilgisayarınızda yükleyicinin algılayamadığı başka bir işletim "
+"sistemi varsa, bu, işletim sistemini geçici olarak önyüklenemez hale "
+"getirecektir, ancak GRUB daha sonra önyüklemek için manuel olarak "
+"yapılandırılabilir."
 
 #. Type: boolean
 #. Description
@@ -221,12 +221,12 @@ msgstr "Önyükleyicinin kurulacağı aygıt:"
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Şimdi, önyükleme yapılabilecek bir aygıta GRUB önyükleyici kurularak yeni "
 "kurulan sistem açılabilir hale getirilecek. Bunu yapmanın alışılmış yolu, "
@@ -238,14 +238,16 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "Aygıt /dev dizinindeki bir aygıt şeklinde belirtilmelidir. Aşağıda bazı "
@@ -487,10 +489,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "GRUB önyükleyiciyi bir sabit diske kur"
+msgid "Install the GRUB boot loader"
+msgstr "GRUB önyükleyiciyi kur"
 
 #. Type: text
 #. Description

@@ -12,6 +12,9 @@
 # najib LAARIBI <supnano@gmail.com>, 2018.
 # ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
 # Osama <osama.ibrahim.89@gmail.com>, 2019.
+# zer0-x <ProFessorHassan3@gmail.com>, 2021.
+# Fahim Sabah <katheer.kaleel@gmail.com>, 2021.
+#
 #
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
@@ -27,9 +30,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2019-06-10 10:55+0000\n"
-"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2021-04-01 14:26+0000\n"
+"Last-Translator: Fahim Sabah <katheer.kaleel@gmail.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +48,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "تثبيت محمّل الإقلاع GRUB على سجلّ الإقلاع الرّئيسي؟"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "تثبيت محمّل الإقلاع GRUB إلى القرص الرئيسي؟"
 
 #. Type: boolean
 #. Description
@@ -63,13 +66,14 @@ msgstr "تمّ العثور على أنظمة التّشغيل التّالية 
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"إن كانت جميع أنظمة التشغيل الخاصّة بك مسردةً أعلاه، فسيكون من الآمن تثبيت محمّل "
-"الإقلاع على سجلّ الإقلاع الرّئيسي من أوّل قرصٍ صلب. عندما يقلع حاسوبك سوف يمكنك "
-"اختيار تحميل أحد أنظمة التشغيل هذه أو نظامك الجديد."
+"إن كانت جميع أنظمة التشغيل الخاصّة بك مسردةً أعلاه، فينبغي أن يكون من الآمن "
+"تثبيت محمّل الإقلاع على القرص الرئيسي (جزء UEFI/سجلّ الإقلاع). عندما يقلع "
+"حاسوبك ستتمكن من اختيار تحميل أحد أنظمة التشغيل هذه أو نظام دبيان المثبَّت "
+"للتوّ."
 
 #. Type: boolean
 #. Description
@@ -77,26 +81,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
-"يبدو أن هذا التثبيت الجديد هو نظام التشغيل الوحيد على هذا الحاسب. إن كان "
-"كذلك، فسيكون من الآمن تثبيت محمّل الإقلاع GRUB على سجلّ الإقلاع الرئيسي من أولّ "
-"قرصٍ صلب."
+"يبدو أن هذا التثبيت الجديد هو نظام التشغيل الوحيد على هذا الحاسوب. إن كان "
+"كذلك، فينبغي أن يكون من الآمن تثبيت محمّل الإقلاع GRUB على القرص الرئيسي (جزء "
+"UEFI/سجلّ الإقلاع)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"تحذير: إن كان برنامج التثبيت قد فشل باكتشاف نظام تشغيلٍ آخر موجودٍ على حاسوبك، "
-"فإن تعديل سجلّ الإقلاع الرّئيسي سوف يجعل نظام التّشغيل ذاك غير قابلٍ للإقلاع "
-"مؤقّتاً، إلّا أنّه من الممكن تهيئة GRUB يدويّاً لإقلاعه لاحقاً."
+"تحذير: إن كان لحاسوبك نظام تشغيل آخر قد فشل المثبّت من كشفه، فإن هذا سيجعل "
+"نظام التّشغيل ذاك غير قابلٍ للإقلاع مؤقّتاً، إلّا أنّه من الممكن تهيئة GRUB يدويّاً "
+"لاحقًا لإقلاعه."
 
 #. Type: boolean
 #. Description
@@ -219,36 +222,34 @@ msgstr "جهاز تثبيت محمّل الإقلاع:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "عليك أن تجعل النظام المُثبّت الجديد قابلاً للإقلاع بتثبيت محمّل الإقلاع GRUB على "
-"جهازٍ قابل للإقلاع. الطريقة الشائعة لذلك هي تثبيت محمّل الإقلاع على سجلّ "
-"الإقلاع الرئيسي من أول قرصٍ صلب. إن شئت يمكنك تثبيت GRUB في مكانٍ آخر على "
-"القرص أو على قرصٍ آخر أو حتّى على قرصٍ مرن."
+"جهازٍ قابل للإقلاع. الطريقة الشائعة لذلك هي تثبيت محمّل الإقلاع GRUB على القرص "
+"الرئيسي (جزء UEFI/سجلّ إقلاع). يمكنك بدلا عن ذلك تثبيت GRUB على قرص (أو جزء) "
+"مختلف، أو على وسائط قابلة للإزالة."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"يجب تحديد الجهاز كجهاز في /dev. إليك بعض الأمثلة أدناه:\n"
-" - \"/dev/sda\" سيثبّت GRUB على سجلّ الإقلاع الرّئيسي من\n"
-"   قرصك الصّلب الأوّل؛\n"
-" - \"/dev/sda2\" سيستعمل الجزء الثّاني من\n"
-"   قرصك الصّلب الأوّل؛\n"
-" - \"/dev/sdc5\" سيستعمل الجزء الممدّد الأوّل من\n"
-"   قرصك الثّالث؛\n"
+"يجب تحديد الإشارة الى الجهاز كجهاز في /dev. إليك بعض الأمثلة أدناه:\n"
+" - \"/dev/sda\" سيثبّت GRUB على القرص الرّئيسي (جزء UEFI/سجلّ\n"
+"إقلاع)؛\n"
+" - \"/dev/sdb\" سيثبّت GRUB على قرص ثانوي (والذي قد يكون على سبيل المثال\n"
+"قرصا اصبعيا)؛\n"
 " - \"/dev/fd0\" سيثبّت GRUB على قرصٍ مرن."
 
 #. Type: select
@@ -453,10 +454,8 @@ msgstr "تحديث /etc/kernel-img.conf..."
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:25001
-#, fuzzy
 msgid "Checking whether to force usage of the removable media path"
-msgstr ""
-"فحص ما إذا كان من الممكن استخدام القوة لاستعمال مسار الوسائط القابلة للإزالة"
+msgstr "فحص فيما إذا سيُنفَذ استعمال مسار الوسائط القابلة للإزالة"
 
 #. Type: text
 #. Description
@@ -469,17 +468,17 @@ msgstr "يتم تركيب أنظمة الملفات"
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:27001
-#, fuzzy
 msgid "Configuring grub-efi for future usage of the removable media path"
-msgstr "تهيئة grub-efi للاستخدام المستقبلي لمسار الوسائط القابلة للإزالة"
+msgstr "ضبط المثبّت grub-efi للاستخدام المستقبلي لمسار الوسائط القابلة للإزالة"
 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "تثبيت محمّل الإقلاع GRUB على قرصٍ صلب"
+msgid "Install the GRUB boot loader"
+msgstr "ثبّت محمّل الإقلاع GRUB"
 
 #. Type: text
 #. Description
@@ -522,16 +521,15 @@ msgstr "تحذير: قد يكون نظامك غير قابلٍ للإقلاع!"
 #. Rescue menu item
 #. :sl2:
 #: ../grub-installer.templates:33001
-#, fuzzy
 msgid "Force GRUB installation to the EFI removable media path"
-msgstr "فرض تثبيت GRUB على مسار الوسائط القابلة للازالة EFI"
+msgstr "فرض تثبيت GRUB على مسار وسائط EFI القابلة للازالة"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:34001
 msgid "Force GRUB installation to the EFI removable media path?"
-msgstr ""
+msgstr "فرض تثبيت GRUB على EFI مسار الوسائط القابلة للإزالة؟"
 
 #. Type: boolean
 #. Description
@@ -544,6 +542,10 @@ msgid ""
 "buggy!) and do not support proper configuration of boot options from system "
 "hard drives."
 msgstr ""
+"يبدو أن هذا الكمبيوتر مُهيأ للتمهيد عبر EFI ، ولكن ربما لن تعمل هذه التهيئة "
+"للتمهيد من محرك الأقراص الثابتة. لا تفي بعض تطبيقات البرامج الثابتة EFI "
+"بمواصفات EFI (أي أنها مليئة بالاخطاء!) ولا تدعم التهيئة المناسب لخيارات "
+"التمهيد من محركات الأقراص الثابتة للنظام."
 
 #. Type: boolean
 #. Description
@@ -554,6 +556,9 @@ msgid ""
 "of the GRUB boot loader to a fallback location, the \"removable media path"
 "\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
 msgstr ""
+"يتمثل الحل البديل لهذه المشكلة في تثبيت نسخة إضافية من إصدار EFI من محمل "
+"التمهيد GRUB إلى موقع احتياطي ، \"مسار الوسائط القابلة للإزالة\". ستعمل جميع "
+"أنظمة EFI تقريبًا ، بغض النظر عن وجود أخطاء بها، سيتم تمهيد GRUB بهذه الطريقة."
 
 #. Type: boolean
 #. Description

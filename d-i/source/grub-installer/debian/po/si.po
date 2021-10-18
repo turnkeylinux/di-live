@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2012-02-28 10:16+0530\n"
-"Last-Translator: Danishka Navin <danishka@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
@@ -34,8 +34,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "ප්‍රධාන ඇරඹුම් රෙකොඩරයට (MBR) මත GRUB ඇරඹුම්කාරකය පිහිටුවන්න ද?"
+#, fuzzy
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "දෘඩ තැටියක් මත GRUB ඇරඹුම්කාරකය පිහිටුවන්න ද"
 
 #. Type: boolean
 #. Description
@@ -50,37 +51,39 @@ msgstr "පහත අනෙකුත් මෙහෙයුම් පද්ධත
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001
+#, fuzzy
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"ඔබගේ සියළු මෙහෙයුම් පද්ධති ඉහත පෙළ ගස්සා ඇත්නම්, පණගැන්වුම් ප්‍රවේශකය ඔබගේ පළමු දෘඩ තැටියේ "
-"ප්‍රධාන පණගැන්වුම් වාර්තාවට ස්ථාපනය කිරීම ආරක්ෂාකාරී වනු ඇත. ඔබගේ පරිගණකය පණ ගැන්වෙන විට, "
+"ඔබගේ සියළු මෙහෙයුම් පද්ධති ඉහත පෙළ ගස්සා ඇත්නම්, පණගැන්වුම් ප්‍රවේශකය ඔබගේ පළමු දෘඩ තැටියේ ප්‍"
+"රධාන පණගැන්වුම් වාර්තාවට ස්ථාපනය කිරීම ආරක්ෂාකාරී වනු ඇත. ඔබගේ පරිගණකය පණ ගැන්වෙන විට, "
 "ඔබගේ මෙම මෙහෙයුමෙ පද්ධතීන්ගෙන් එකක් හෝ ඔබගේ නව පද්ධතිය තේරීමට හැකි වනු ඇත."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
-"මෙම නව ස්ථාපනය මෙම පරිගණකයේ ඇති එකම මෙහෙයුම් පද්ධතිය බව පෙනේ. එසේ නම්, GRUB පණගැන්වුම් "
-"ප්‍රවේශකය ඔබගේ පළමු දෘඩ තැටියේ ප්‍රධාන පණගැන්වුම් වාර්තාවට ස්ථාපනය කිරීම ආරක්ෂාකාරී වනු ඇත."
+"මෙම නව ස්ථාපනය මෙම පරිගණකයේ ඇති එකම මෙහෙයුම් පද්ධතිය බව පෙනේ. එසේ නම්, GRUB පණගැන්වුම් ප්‍"
+"රවේශකය ඔබගේ පළමු දෘඩ තැටියේ ප්‍රධාන පණගැන්වුම් වාර්තාවට ස්ථාපනය කිරීම ආරක්ෂාකාරී වනු ඇත."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "අනතුරු හැඟවීම: ඔබගේ පද්ධතියේ ඇති වෙනත් මෙහෙයුමෙ පද්ධතියක් හඳුනා ගැනීමට ස්ථාපකය අසමත් වුවහොත්, "
 "ප්‍රධාන පණගැන්වුම් වාර්තාක විකරණය කිරීමෙන් එම මෙහෙයුම් පද්ධතිය තාවකාලිකව පණගැන්විය නොහැකි "
@@ -204,12 +207,12 @@ msgstr "ආරම්භක පූරක ස්ථාපනය සඳහා උ�
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "ඔබට GRUB ආරම්භක පූරකය ස්ථාපනය කිරීම මගින් ඔබේ අළුතෙන් ස්ථාපනය කල පද්ධතිය ආරම්භ කිරීමට "
 "හැකියාව ලබාදිය යුතුය. මෙය ඉටුකිරීමේ සාමාන්‍ය ක්‍රමය වන්නේ ඔබේ ප්‍රථම දෘඩ තැටියේ ප්‍රධාන ආරම්භක "
@@ -220,14 +223,16 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "උපකරණය  /dev හී උපකරණයක් ලෙස දැක්විය යුතුය. උදාහරණ කිහිපයක් පහත දැක්වේ:\n"
@@ -460,10 +465,12 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "දෘඩ තැටියක් මත GRUB ඇරඹුම්කාරකය පිහිටුවන්න ද?"
+#, fuzzy
+msgid "Install the GRUB boot loader"
+msgstr "GRUB ඇරඹුම්කාරකය ස්ථාපනය කරමින්"
 
 #. Type: text
 #. Description

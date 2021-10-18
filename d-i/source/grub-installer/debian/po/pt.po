@@ -7,7 +7,7 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # Console-setup strings translations:
 # (identified by "./console-setup.templates")
-# Copyright (C) 2003-2014 Miguel Figueiredo <elmig@debianpt.org>
+# Copyright (C) 2003-2019 Miguel Figueiredo <elmig@debianpt.org>
 # This file is distributed under the same license as debian-installer.
 #
 #
@@ -17,14 +17,14 @@
 #   Free Software Foundation, Inc., 2001,2004
 #   Filipe Maia <fmaia@gmx.net>, 2001.
 #   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2014
+#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2020
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2015-01-02 18:25+0000\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-04-01 19:24+0100\n"
 "Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team:  Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -39,8 +39,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Instalar o gestor de arranque GRUB no master boot record?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Instalar o gestor de arranque GRUB no seu disco primário?"
 
 #. Type: boolean
 #. Description
@@ -59,14 +59,14 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"Se todos os seus sistemas operativos se encontram listados acima, então deve "
-"ser seguro instalar o gestor de arranque no master boot record do seu "
-"primeiro disco rígido. Quando o seu computador arrancar, vai poder escolher "
-"um desses sistemas operativos ou o seu novo sistema Debian."
+"Se todos os seus sistemas operativos estiverem listados acima, então deverá "
+"ser seguro instalar o gestor de arranque no seu disco primário (partição "
+"UEFI/boot record). Quando o seu computador arrancar, irá poder escolher "
+"carregar um desses sistemas operativos ou o seu novo sistema Debian."
 
 #. Type: boolean
 #. Description
@@ -74,27 +74,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Parece que esta nova instalação é o único sistema operativo neste "
 "computador. Se assim for, então deve ser seguro instalar o gestor de "
-"arranque GRUB no master boot record do seu primeiro disco rígido."
+"arranque GRUB no seu disco primário (partição UEFU/boot record)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Aviso: Se o instalador falhou a detecção de outro sistema operativo que "
-"esteja presente no seu computador, modificar o master boot record vai deixar "
-"esse sistema operativo temporariamente não iniciável, embora o GRUB possa "
-"ser posteriormente configurado manualmente para o iniciar."
+"Aviso: Se o seu computador tem outro sistema operativo que o instalador "
+"falhou a deteção, isso vai deixar esse sistema operativo temporariamente não "
+"iniciável, no entanto o GRUB pode ser posteriormente configurado manualmente "
+"para o iniciar."
 
 #. Type: boolean
 #. Description
@@ -218,38 +217,36 @@ msgstr "Dispositivo para a instalação do gestor de arranque:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Necessita fazer com que a nova instalação do sistema arranque, instalando o "
 "gestor de arranque GRUB num dispositivo de arranque. Normalmente instala-se "
-"o GRUB no master boot record do disco primário. Se preferir, pode instalar o "
-"GRUB noutro local do disco, ou noutro disco, ou mesmo numa disquete."
+"o GRUB no disco primário (partição UEFI/boot record). Se preferir, pode em "
+"vez disso, instalar o GRUB noutro disco (ou partição), ou em meio amovível."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"O dispositivo pode ser especificado como um dispositivo em /dev. Abaixo "
-"estão alguns exemplos:\n"
-" - \"/dev/sda\" irá instalar o GRUB no master boot record do primeiro\n"
-"   disco rígido;\n"
-" - \"/dev/sda2\" irá utilizar a segunda partição do seu primeiro disco "
-"rígido;\n"
-" - \"/dev/sdc5\" irá utilizar a primeira partição extendida do seu\n"
-"   terceiro disco rígido;\n"
-" - \"(fd0)\" ou \"/dev/fd0\" irá instalar o GRUB numa disquete."
+"A notação do dispositivo deve ser especificada como um dispositivo em /dev. "
+"Abaixo estão alguns exemplos:\n"
+" - \"/dev/sda\" irá instalar o GRUB no seu disco primário (partição UEFI/\n"
+"   boot);\n"
+" - \"/dev/sdb\" irá instalar o GRUB no disco secundário (que pode ser por\n"
+"   exemplo uma pen);\n"
+" - \"/dev/fd0\" irá instalar o GRUB numa disquete."
 
 #. Type: select
 #. Choices
@@ -414,7 +411,7 @@ msgstr ""
 #. :sl1:
 #: ../grub-installer.templates:18001
 msgid "Installing GRUB boot loader"
-msgstr "A instalar o carregador do sistema GRUB"
+msgstr "A instalar o gestor de arranque GRUB"
 
 #. Type: text
 #. Description
@@ -463,7 +460,7 @@ msgstr "A actualizar /etc/kernel-img.conf..."
 #. :sl1:
 #: ../grub-installer.templates:25001
 msgid "Checking whether to force usage of the removable media path"
-msgstr "A verificar se deve forçar a utilização do caminho de media amovível"
+msgstr "A verificar se deve forçar a utilização do caminho de mídia amovível"
 
 #. Type: text
 #. Description
@@ -478,15 +475,16 @@ msgstr "A montar os sistemas de ficheiros"
 #: ../grub-installer.templates:27001
 msgid "Configuring grub-efi for future usage of the removable media path"
 msgstr ""
-"A configurar o grub-efi para utilização futura do caminho de media amovível"
+"A configurar o grub-efi para utilização futura do caminho de mídia amovível"
 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Instalar o GRUB no disco rígido"
+msgid "Install the GRUB boot loader"
+msgstr "Instalar o gestor de arranque GRUB"
 
 #. Type: text
 #. Description
@@ -530,7 +528,7 @@ msgstr "Aviso : O seu sistema pode não ser capaz de ser iniciado!"
 #. :sl2:
 #: ../grub-installer.templates:33001
 msgid "Force GRUB installation to the EFI removable media path"
-msgstr "Forçar a instalação do GRUB no caminho de media amovível EFI"
+msgstr "Forçar a instalação do GRUB no caminho de mídia amovível EFI"
 
 #. Type: boolean
 #. Description
@@ -552,7 +550,7 @@ msgid ""
 msgstr ""
 "Parece que este computador está configurado para arrancar via EFI, mas "
 "parece que a configuração não irá funcionar para arrancar a partir do disco "
-"rígido. Algumas impementações de firmware de EFI não cumprem com a "
+"rígido. Algumas implementações de firmware de EFI não cumprem com a "
 "especificação de EFI (i.e. têm bugs!) e não suportam a correcta configuração "
 "das opções de arranque dos discos rígidos do sistema."
 

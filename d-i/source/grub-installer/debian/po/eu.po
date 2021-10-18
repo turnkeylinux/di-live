@@ -20,20 +20,21 @@
 # Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
 # Piarres Beobide <pi@beobide.net>, 2008.
 # Xabier Bilbao <xabidu@gmail.com>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: di-sublevel1_eu\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2012-10-19 19:41+0200\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-11-03 18:23+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: debian-l10n-eu@lists.debian.org\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Content-Transfer-Encoding=UTF-8Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: boolean
 #. Description
@@ -42,9 +43,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr ""
-"GRUB abioko kargatzailea abioko erregistro maisuan instalatu nahi duzu?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Instalatu GRUB abioko kargatzailea unitate nagusian?"
 
 #. Type: boolean
 #. Description
@@ -53,7 +53,7 @@ msgstr ""
 msgid ""
 "The following other operating systems have been detected on this computer: "
 "${OS_LIST}"
-msgstr "Beste sistema eragile hauek aurkitu dira ordenagailuan: ${OS_LIST}"
+msgstr "Honako beste sistema eragileak aurkitu dira ordenagailuan: ${OS_LIST}"
 
 #. Type: boolean
 #. Description
@@ -61,14 +61,14 @@ msgstr "Beste sistema eragile hauek aurkitu dira ordenagailuan: ${OS_LIST}"
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Sistema eragile guztiak goiko zerrendan badaude, segurua izango litzateke "
-"abioko kargatzailea aurreneko disko gogorreko abioko erregistro maisuan "
-"instalatzea. Ordenagailua abiaraztean, sistema eragile horietako bat edo "
-"Debian sistema berria kargatzea aukera dezakezu."
+"abioko kargatzailea aurreneko unitatean (UEFI partizioa/abioko erregistro "
+"maisua) instalatzea. Ordenagailua abiaraztean, sistema eragile horietako bat "
+"edo Debian sistema berria kargatzea aukera dezakezu."
 
 #. Type: boolean
 #. Description
@@ -76,27 +76,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Instalazio berri hau ordenagailu honetako sistema eragile bakarra dela "
-"dirudi. Hala bada, segurua litzateke GRUB abioko kargatzailea aurreneko "
-"disko gogorreko abioko erregistro maisuan instalatzea."
+"dirudi. Hala bada, segurua litzateke GRUB abioko kargatzailea unitate "
+"nagusian (UEFI partizioa/abioko erregistro maisua) instalatzea."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Kontuz: instalatzaileak ordenagailuan dagoen beste sistema eragile bat "
-"atzeman ez badu, abioko erregistro maisua aldatzean sistema eragile hori ez "
-"abiarazteko moduan utziko du, nahiz eta gero GRUB eskuz konfiguratu ahal "
-"izango duzun hura abiarazteko."
+"Kontuz: ordenagailuan instalatzaileak detektatu ez duen beste sistema "
+"eragile bat edukiz gero, aldi baterako abiarazgaitz utziko luke, nahiz eta "
+"gero GRUB eskuz konfiguratu ahal izango duzun hura abiarazteko."
 
 #. Type: boolean
 #. Description
@@ -123,7 +121,7 @@ msgid ""
 "the boot order defined in the system's BIOS setup."
 msgstr ""
 "GRUB beti Serieko ATA RAID diskoaren abioko erregistro maisuan (MBR) "
-"instalatzen da. Disko hau BIOS konfigurazioan abioko ordenean aurrenekoa "
+"instalatzen da. Disko hau BIOS-en konfigurazioan abioko ordenan aurrenekoa "
 "bezala zerrendatuta dagoela ere suposatzen da."
 
 #. Type: boolean
@@ -193,7 +191,7 @@ msgid ""
 msgstr ""
 "GRUB beti multipath gailuko abioko erregistro maisuan (MBR) instalatzen da. "
 "Disko honen WWIDa sistemako FibraKanala (FibraChannel) moldagailuko BIOSan "
-"abioko gailu gisa hautatuta dagoela suposatzen da baita ere."
+"abioko gailu gisa hautatuta dagoela ere suposatzen da."
 
 #. Type: error
 #. Description
@@ -222,38 +220,36 @@ msgstr "Abioko kargatzailea instalatzeko gailua:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Instalatu berria den sistema abiagarri egin behar duzu, GRUB abioko "
 "kargatzailea gailu abiagarri batean instalatuz. Horretarako modurik ohikoena "
-"GRUB lehenengo disko gogorreko abioko erregistro maisuan instalatzea da. "
-"Nahi izanez gero, GRUB unitateko beste leku batean, beste unitate batean edo "
-"baita diskete batean ere instala dezakezu."
+"GRUB unitate nagusian (UEFI partizioan edo abioko erregistro maisuan) "
+"instalatzea da. Nahi izanez gero, GRUB beste unitate (edo partizio) batean "
+"instala dezakezu, edo euskarri aldakor batean."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Gailua /dev-eko gailu baten gisa ezarri behar da. Hemen zenbait adibide:\n"
-"zehatz dezakezu. Hona hemen adibide batzuk:\n"
-" -  \"/dev/sda\"k lehen disko gogorreko abioko erregistro\n"
-"   maisuan instalatuko du GRUB;\n"
-" - \"/dev/sda2\"k lehen disko unitateko bigarren\n"
-"   partizioa erabiliko du;\n"
-" - \"/dev/sdc5\"ek hirugarren disko unitateko lehen\n"
-"   partizio hedatua erabiliko du;\n"
+"Gailua /dev-eko gailu baten gisa zehaztu behar da. Hona hemen adibide "
+"batzuk:\n"
+" - \"/dev/sda\"k unitate nagusian (UEFI partizioa/abioko erregistroa)\n"
+"   instalatuko du GRUB;\n"
+" - \"/dev/sdb\"k bigarren unitatean instalatuko du GRUB (adib. USB \n"
+"   euskarri aldakor batean)\n"
 " - \"/dev/fd0\"k GRUB diskete batean instalatuko du."
 
 #. Type: select
@@ -330,7 +326,7 @@ msgstr "Sartu dituzun bi pasahitzak ez dira berdinak. Saiatu berriro."
 #. :sl2:
 #: ../grub-installer.templates:13001
 msgid "GRUB installation failed"
-msgstr "GRUB instalazioak huts egin du"
+msgstr "Huts egin du GRUB instalatzean"
 
 #. Type: error
 #. Description
@@ -372,7 +368,7 @@ msgstr "Hau errore larria da."
 #. :sl2:
 #: ../grub-installer.templates:15001
 msgid "Executing 'update-grub' failed."
-msgstr "Huts 'update-grub' exekutatzean."
+msgstr "Huts egin du 'update-grub' exekutatzean."
 
 #. Type: boolean
 #. Description
@@ -389,8 +385,8 @@ msgid ""
 "GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly "
 "used on i386/amd64 PCs. It is now also available for ${ARCH}."
 msgstr ""
-"GNU GRUBen hurrengo belaunaldia da GRUB 2(i386/amd64 PCtako abio kargatzaile "
-"erabiliena da). ${ARCH}(e)n ere erabili daiteke."
+"GNU GRUBen hurrengo belaunaldia da GRUB 2 (i386/amd64 PCtako abio "
+"kargatzaile erabiliena da). ${ARCH}(e)n ere erabili daiteke."
 
 #. Type: boolean
 #. Description
@@ -402,11 +398,11 @@ msgid ""
 "breakage, and have an idea on how to recover your system if it becomes "
 "unbootable. You're advised not to try this in production environments."
 msgstr ""
-"Ezaugarri interesgarriak ditu, baina oraindik software esperimentala da "
-"arkitektura honentzako. Instalatzea hautatzen baduzu, haustura batentzat eta "
-"sistema abiatu ezina geratuko balitz zure kabuz berreskuratzeko prest egon "
-"beharko zinateke. Jakinarazita zaude produkzioan dauden ingurunetan ez dela "
-"instalatzea komeni."
+"Eginbide interesgarriak ditu, baina oraindik software esperimentala da "
+"arkitektura honentzako. Instalatzea hautatzen baduzu, haustura batentzat "
+"prest egon beharko zinateke, eta sistema abiatu ezina geratuko balitz zure "
+"kabuz nola berreskuratu jakin beharko zenuke. Jakinaren gainean zaude beraz "
+"ekoizpenean dauden ingurunetan ez dela instalatzea komeni."
 
 #. Type: text
 #. Description
@@ -463,14 +459,14 @@ msgstr "/etc/kernel-img.conf eguneratzen..."
 #: ../grub-installer.templates:25001
 msgid "Checking whether to force usage of the removable media path"
 msgstr ""
+"Euskarri aldagarriaren bide-izena erabiltzera derrigortzea edo ez begiratzen"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:26001
-#, fuzzy
 msgid "Mounting filesystems"
-msgstr "Fitxategi-sistemak desmuntatzen..."
+msgstr "Fitxategi-sistemak muntatzen"
 
 #. Type: text
 #. Description
@@ -478,14 +474,17 @@ msgstr "Fitxategi-sistemak desmuntatzen..."
 #: ../grub-installer.templates:27001
 msgid "Configuring grub-efi for future usage of the removable media path"
 msgstr ""
+"grub-efi konfiguratzen etorkizunean euskarri aldagarriaren bide-izena erabil "
+"ahal izateko"
 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Instalatu GRUB abioko kargatzailea disko gogorrean"
+msgid "Install the GRUB boot loader"
+msgstr "Instalatu GRUB abioko kargatzailea"
 
 #. Type: text
 #. Description
@@ -514,7 +513,7 @@ msgstr "Huts egin du proc fitxategi-sistema /target/proc-en muntatzean."
 #. :sl4:
 #: ../grub-installer.templates:32001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "Egiaztatu /var/log/messages edo ikusi 4. kontsola xehetasunetarako."
+msgstr "Egiaztatu /var/log/syslog edo ikusi 4. kontsola xehetasunetarako."
 
 #. Type: error
 #. Description
@@ -529,14 +528,14 @@ msgstr "Abisua: baliteke sistema ezin abiarazi izatea!"
 #. :sl2:
 #: ../grub-installer.templates:33001
 msgid "Force GRUB installation to the EFI removable media path"
-msgstr ""
+msgstr "Behartu GRUB instalatzea EFI euskarri aldagarriaren bide-izenean"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:34001
 msgid "Force GRUB installation to the EFI removable media path?"
-msgstr ""
+msgstr "GRUB derrigortu EFI euskarri aldagarriaren bide-izenean instalatzea?"
 
 #. Type: boolean
 #. Description
@@ -549,6 +548,11 @@ msgid ""
 "buggy!) and do not support proper configuration of boot options from system "
 "hard drives."
 msgstr ""
+"Ordenagailua EFI bidez abiatzeko konfiguratuta dagoela dirudi arren, "
+"baliteke konfigurazio horrek balio ez izatea disko gogorretik abiatzeko. EFI "
+"firmware batzuk ez dute EFI zehaztapena jarraitzen (adib., akastunak dira!) "
+"eta ez dute disko gogorretako abioko aukeren konfigurazioa modu egoki batean "
+"onartzen."
 
 #. Type: boolean
 #. Description
@@ -559,19 +563,22 @@ msgid ""
 "of the GRUB boot loader to a fallback location, the \"removable media path"
 "\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
 msgstr ""
+"Arazo honi irtenbide bat emateko instalatu GRUB abioko kargatzailearen EFI "
+"bertsioa babeseko abioaren kokaleku batean: \"euskarri aldagarriaren bide-"
+"izena\". Ia EFI sistema guztiek (berdin dio haien akats-tasa) abiaraziko "
+"dute GRUB modu horretan."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:34001
-#, fuzzy
 msgid ""
 "Warning: If the installer failed to detect another operating system that is "
 "present on your computer that also depends on this fallback, installing GRUB "
 "there will make that operating system temporarily unbootable. GRUB can be "
 "manually configured later to boot it if necessary."
 msgstr ""
-"Kontuz: instalatzaileak ordenagailuan dagoen beste sistema eragile bat "
-"atzeman ez badu, abioko erregistro maisua aldatzean sistema eragile hori ez "
-"abiarazteko moduan utziko du, nahiz eta gero GRUB eskuz konfiguratu ahal "
-"izango duzun hura abiarazteko."
+"Kontuz: instalatzaileak huts egiten badu babeseko abioa erabiltzen duen "
+"ordenagailuko beste sistema eragile bat detektatzean, GRUB han instalatzean "
+"sistema eragile hori ez abiarazteko moduan utziko du, nahiz eta gero GRUB "
+"eskuz konfiguratu ahal izango duzun hura abiarazteko."

@@ -17,14 +17,16 @@
 #   Vlatko Kosturjak, 2001
 #   Tomislav Krznar <tomislav.krznar@gmail.com>, 2012, 2013, 2014, 2015.
 #   Valentin Vidic <Valentin.Vidic@CARNet.hr>, 2017
+#   Milo Ivir <mail@milotype.de>, 2019.
+#   gogogogi <trebelnik2@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian-installer 1st-stage master file HR\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2019-07-04 17:02+0000\n"
-"Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2021-04-23 16:46+0200\n"
+"Last-Translator: Valentin Vidic <vvidic@debian.org>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -40,8 +42,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Instaliraj GRUB učitač pokretanja u glavni zapis pokretanja?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Instalacija GRUB učitača pokretanja na čvrsti disk"
 
 #. Type: boolean
 #. Description
@@ -58,14 +60,15 @@ msgstr "Na ovom računalu pronađeni su sljedeći operativni sustavi: ${OS_LIST}
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"Ako su vaši operativni sustavi na popisu iznad, najsigurnije bi vam bilo "
-"instalirati učitača pokretanja u glavni zapis pokretanja vašeg prvog čvrstog "
-"diska. Kada se vaše računalo bude pokretalo, moći ćete odabrati učitavanje "
-"jednog od tih drugih sustava, ili vaš svježe instalirani sustav."
+"Ako su svi vaši operativni sustavi navedeni gore, tada bi trebalo biti "
+"sigurno instalirati učitač pokretanja sustava na vaš glavni disk (UEFI "
+"particija/zapis pokretanja). Kad se vaše računalo pokrene, moći ćete "
+"odabrati učitavanje jednog od tih operativnih sustava ili novoinstalirani "
+"Debianov sustav."
 
 #. Type: boolean
 #. Description
@@ -73,27 +76,26 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Izgleda kako je nova instalacija jedini operativni sustav na ovom računalu. "
-"Ako je tako, najsigurnije bi vam bilo instalirati GRUB učitač pokretanja u "
-"glavni zapis pokretanja vašeg prvog čvrstog diska."
+"Ako je tako, instalacija GRUB učitača pokretanja sustava na vaš glavni disk "
+"(UEFI particija/zapis pokretanja) trebala bi biti bezopasna."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Upozorenje: ako instalacijski program nije pronašao druge prisutne "
-"operativne sustave na vašem računalu, promjena glavnog zapisa pokretanja "
-"učinit će te sustave privremeno nedostupnim. GRUB možete kasnije ručno "
-"podesiti za pokretanje tih operativnih sustava."
+"Upozorenje: ako vaše računalo sadrži drugi operativni sustav koji "
+"instalacijski program nije pronašao, to će učiniti operativni sustav "
+"privremeno nedostupnim. GRUB možete kasnije ručno podesiti za pokretanje tog "
+"operativnog sustava."
 
 #. Type: boolean
 #. Description
@@ -217,37 +219,38 @@ msgstr "Uređaj za instalaciju učitača pokretanja:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
-"Trebate učiniti vaš svježe instalirani sustav sposobnim da se pokreće, i to "
-"tako da instalirate GRUB učitač pokretanja na odgovarajući diskovni uređaj. "
-"Uobičajeno je instalirati ga u glavni zapis pokretanja vašeg prvog čvrstog "
-"diska. Možete ga instalirati i drugdje na disku, ili na drugi disk, ili čak "
-"i na disketu."
+"Trebate učiniti vaš novo instalirani sustav sposobnim da se pokreće, "
+"instalacijom GRUB učitača pokretanja sustava na odgovarajući diskovni "
+"uređaj. Uobičajen način je instalacija GRUB učitača pokretanja sustava na "
+"vaš glavni disk (UEFI particija/zapis pokretanja). Možete ga instalirati i "
+"drugdje na disku, ili na drugi disk, ili čak i na disketu."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "Uređaj bi trebao biti određen kao uređaj u /dev. U nastavku slijedi nekoliko "
 "primjera:\n"
-" - \"/dev/sda\" instalirati će GRUB na glavni zapis pokretanja prvog\n"
-"   čvrstog diska;\n"
-" - \"/dev/sda2\" koristiti će drugu particiju prvog čvrstog diska;\n"
-" - \"/dev/sdc5\" koristiti će prvu proširenu particiju vašeg trećeg čvrstog "
-"diska;\n"
+" - \"/dev/sda\" instalirati će GRUB na vaš glavni disk (UEFI particija/"
+"zapis\n"
+"   pokretanja)\n"
+" - \"/dev/sda2\" instalirati će GRUB na drugi disk (što na primjer može "
+"biti\n"
+"   USB memorija);\n"
 " - \"/dev/fd0\" instalirati će GRUB na disketu."
 
 #. Type: select
@@ -474,10 +477,11 @@ msgstr "Podešavanje grub-efi za buduće korištenje uklonjivih medija"
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Instalacija GRUB učitača pokretanja na čvrsti disk"
+msgid "Install the GRUB boot loader"
+msgstr "Instalacija GRUB učitača pokretanja"
 
 #. Type: text
 #. Description
@@ -542,10 +546,10 @@ msgid ""
 "hard drives."
 msgstr ""
 "Izgleda da je ovo računalo podešeno za pokretanje putem EFI-ja, ali možda to "
-"podešavanje neće raditi za pokretanje s čvrstog diska. Određene "
-"implementacije EFI frimvera ne zadovoljavaju EFI specifikaciju (tj. sadrže "
-"greške!) i ne podržavaju ispravno podešavanje mogućnosti pokretanja s "
-"čvrstog diska sustava."
+"podešavanje neće raditi za pokretanje s čvrstog diska. Određene EFI "
+"implementacije ne zadovoljavaju EFI specifikaciju (tj. sadrže greške!) i ne "
+"podržavaju ispravno podešavanje mogućnosti pokretanja s čvrstog diska "
+"sustava."
 
 #. Type: boolean
 #. Description

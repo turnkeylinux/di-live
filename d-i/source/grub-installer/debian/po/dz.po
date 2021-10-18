@@ -18,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dDz.po\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2012-02-29 04:41-0500\n"
-"Last-Translator: Jurmey Rabgay <jrabgay@dit.gov.bt>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2019-08-28 18:09+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
 "Language: dz\n"
 "MIME-Version: 1.0\n"
@@ -35,8 +35,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "GRUB བུཊིཨམ་དྲན་ཐོ་ལུ་ བུཊི་མངོན་གསལ་པ་གཞི་བཙུགས་འབད?"
+#, fuzzy
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "ཧརཌི་ཌིཀསི་འདི་ལུ་ GRUB་བུཊི་མངོན་གསལ་པ་འདི་གཞི་བཙུགས་འབད།"
 
 #. Type: boolean
 #. Description
@@ -51,11 +52,12 @@ msgstr "འོག་གི་གཞན་བཀལ་སྤྱོད་འབད
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001
+#, fuzzy
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "ཁྱོད་ཀྱི་བཀལ་སྤྱོད་འབད་ནིའི་རིམ་ལུགས་ཚུ་ཆ་མཉམ་ལྟག་ལུ་ཐོ་བཀོད་འབད་ཡོད་པ་ཅིན་ དེ་ལས་འ་ནི་འདི་ཁྱོད་ཀྱི་"
 "ཧརཌི་ཌའིབ་དང་པ་གི་བུཊི་ཨམ་དྲན་ཐོ་ལུ་བུཊི་མངོན་གསལ་པ་གཞི་བཙུགས་འབད་ནི་ལུ་ཉེན་ཁག་མེདཔ་འབད་དགོ། "
@@ -66,10 +68,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "གློག་རིག་འདི་ལུ་འ་ནི་གཞི་བཙུགས་གསརཔ་འདི་རྐྱངམ་ཅིག་བཀལ་སྤྱོད་འབད་ནིའི་རིམ་ལུགས་འབད་མཐོངམ་མས་ དེ་སྦེ་"
 "ཨིན་པ་ཅིན་ ཁྱོད་ཀྱི་ཧརཌི་ཌའབི་དང་པ་གི་བུཊི་ཨམ་དྲན་ཐོ་ལུ་GRUB བུཊི་མངོན་གསལ་པ་འདི་གཞི་བཙུགས་འབད་ནི་"
@@ -79,11 +82,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "ཉེན་བརྡ་ ཁྱོད་ཀྱི་གློག་རིག་ནང་ལུ་ཡོད་པའི་གཞན་བཀལ་སྤྱོད་འབད་ནིའི་རིམ་ལུགས་སྐྱོན་འཛིན་ནི་ལུ་གཞི་བཙུགས་པ་"
 "འཐུས་ཤོར་འབྱུང་པ་ཅིན་ བུཊི་ཨམ་དྲན་ཐོ་ལེགས་བཅོས་འབད་མི་འདི་གིས་བཀལ་སྤྱོད་འབད་ནིའི་རིམ་ལུགས་གནས་སྐབས་"
@@ -209,12 +212,12 @@ msgstr "བུཊི་མངོན་གསལ་པ་གཞི་བཙུག
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "བུཊི་འབད་བཏུབ་མིའི་ཐབས་འཕྲུལ་ལུ་ GRUB བུཊི་མངོན་གསལ་པ་གཞི་བཙུགས་འབད་བའི་ཐོག་ལས་ ཁྱོད་ཀྱིས་གཞི་"
 "བཙུགས་འབད་ཡོད་པའི་རིམ་ལུགས་གསརཔ་བུཊི་འབད་བཏུབ་བཟོ་དགོ། འདི་འབད་ནི་ལུ་ཨ་རྟག་གི་ཐབས་ལམ་འདི་ཁྱོད་"
@@ -226,14 +229,16 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 " ཐབས་འཕྲུལ་འདི་ /dev  ནང་གི་ཐབས་འཕྲུལ་བཟུམ་སྦེ་དམིགས་བསལ་དགོ། འོག་ལུ་བཀོད་དེ་ཡོད་པའི་དཔེ་ཚུ་"
@@ -470,10 +475,12 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "ཧརཌི་ཌིཀསི་འདི་ལུ་ GRUB་བུཊི་མངོན་གསལ་པ་འདི་གཞི་བཙུགས་འབད།"
+#, fuzzy
+msgid "Install the GRUB boot loader"
+msgstr "GRUB བུཊི་མངོན་གསལ་པ་གཞི་བཙུགས་འབད་དོ།"
 
 #. Type: text
 #. Description

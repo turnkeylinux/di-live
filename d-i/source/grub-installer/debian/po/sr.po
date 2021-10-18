@@ -11,6 +11,7 @@
 # Janos Guljas <janos@resenje.org>, 2010-2012.
 # Veselin Mijušković <veselin.mijuskovic@gmail.com>, 2008.
 # Milan Kostic <kosticmilan77@open.telekom.rs>, 2012.
+# Filipovic Dragan <filipovic@tutanota.com>, 2018, 2020.
 #
 # Translations from iso-codes:
 #   Aleksandar Jelenak <aleksandar.jelenak@gmail.com>, 2010.
@@ -24,14 +25,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2016-04-10 12:34+0100\n"
-"Last-Translator: Dragan Filipović <filipovic@tutanota.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-09-07 19:36+0000\n"
+"Last-Translator: Filipovic Dragan <filipovic@tutanota.com>\n"
 "Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #. Type: boolean
 #. Description
@@ -40,8 +43,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Инсталирати GRUB покретачки програм у мастер бут запису?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Инсталирај GRUB покретачки програм на примарни диск?"
 
 #. Type: boolean
 #. Description
@@ -58,14 +61,14 @@ msgstr "На овом рачунару су детектовани следећ�
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Ако су горе набројани сви ваши оперативни системи, онда би требало бити "
-"безбедно инсталирати покретачки програм на мастер бут запису на вашем првом "
-"хард диску. Када се ваш рачунар стартује моћи ћете да одаберете неки од ових "
-"оперативних система или ваш нови систем."
+"безбедно инсталирати покретачки програм на вашем првом хард диску (УЕФИ "
+"партиција/бут сектор). Када се ваш рачунар стартује моћи ћете да одаберете "
+"неки од ових оперативних система или ваш тек инсталирани систем."
 
 #. Type: boolean
 #. Description
@@ -73,27 +76,25 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Изгледа да је нова инсталација једини оперативни систем на овом рачунару. "
-"Ако је то тачно, било би безбедно инсталирати GRUB покретачки програм на "
-"мастер бут запису вашег првог хард диска."
+"Ако је то тачно, било би безбедно инсталирати GRUB покретачки програм на ваш "
+"први хард диск (УЕФИ партиција/бут запис)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Упозорење: ако програм за инсталацију није успео да детектује неки други "
-"оперативни систем који се налази на вашем рачунару, мењање мастер бут записа "
-"ће учинити да тај оперативни систем привремено неће моћи да се покрене, мада "
-"се GRUB може касније ручно подесити да га покреће."
+"Упозорење: Ако ваш рачунар има још неки оперативни систем и инсталер није "
+"успео да га пронађе, ово ће учинити да тај оперативни систем привремено неће "
+"моћи да се покрене, мада се GRUB може касније ручно подесити да га покреће."
 
 #. Type: boolean
 #. Description
@@ -217,38 +218,37 @@ msgstr "Уређај на коме ће се инсталирати бут ло�
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Морате новоинсталирани систем учинити бутабилним тако што ћете инсталирати "
 "GRUB бут лоудер на бутабилан уређај. Уобичајен начин да се то уради је да се "
-"GRUB инсталира на мастер бут запису вашег првог хард диску. Ако желите, GRUB "
-"можете инсталирати негде другде на хард диску, на другом диску или чак на "
-"флопи диску."
+"GRUB инсталира на први хард диск (УЕФИ партиција/бут запис). Уместо тога "
+"можете инсталирати ГРУБ на други диск (или партицију), или на изменљиви "
+"медиј."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Уређај може бити специфициран уређај у /dev директоријуму. Неколико "
+"Обележавање уређаја треба да се наведе као уређај у /dev. Следе неки од "
 "примера:\n"
-"  - „/dev/sda“ ће инсталирати GRUB на мастер бут запис\n"
-"   вашег првог хард драјва;\n"
-" - „/dev/sda2“ ће користити другу партицију вашег првог хард драјва;\n"
-" - „/dev/sdc5“ ће користити прву проширену партицију\n"
-"   вашег трећег хард драјвa;\n"
-" - „/dev/fd0“ ће инсталирати GRUB на флопи диск."
+" - \"/dev/sda\" ће инсталирати GRUB на први диск (УЕФИ партиција/бут\n"
+"   запис);\n"
+" - \"/dev/sdb\" ће инсталирати GRUB на други диск (који може као пример\n"
+"   бити измењиви диск);\n"
+" - \"/dev/fd0\" ће инсталирати GRUB на флопи диск."
 
 #. Type: select
 #. Choices
@@ -476,10 +476,11 @@ msgstr "Подешавање grub-efi за будуће коришћење на 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "Инсталирај GRUB покретачки програм на хард диск"
+msgid "Install the GRUB boot loader"
+msgstr "Инсталирај GRUB покретачки програм"
 
 #. Type: text
 #. Description
@@ -558,8 +559,8 @@ msgid ""
 "\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
 msgstr ""
 "Алтернативно решење за овај проблем је да инсталирате једну копију EFI "
-"верзије GRUB-а на резервну локацију  \"путања до преносивог медија \". Скоро "
-"сви EFI системи, без обзира на грешке, ће  покренути GRUB на овај начин."
+"верзије GRUB-а на резервну локацију \"путања до преносивог медија \". Скоро "
+"сви EFI системи, без обзира на грешке, ће покренути GRUB на овај начин."
 
 #. Type: boolean
 #. Description

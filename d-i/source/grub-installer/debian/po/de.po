@@ -17,7 +17,8 @@
 # #
 # Translations from iso-codes:
 # Translations taken from ICU SVN on 2007-09-09
-# Holger Wansing <linux@wansing-online.de>, 2008 - 2017, 2018.
+# Holger Wansing <hwansing@mailbox.org>, 2019, 2020.
+# Holger Wansing <linux@wansing-online.de>, 2008 - 2018.
 # Jens Seidel <jensseidel@users.sf.net>, 2005, 2006, 2007, 2008.
 # Dennis Stampfer <seppy@debian.org>, 2003, 2004, 2005.
 # Alwin Meschede <ameschede@gmx.de>, 2003, 2004.
@@ -38,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2018-12-16 12:59+0100\n"
-"Last-Translator: Holger Wansing <linux@wansing-online.de>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-10-28 22:05+0100\n"
+"Last-Translator: Holger Wansing <hwansing@mailbox.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -55,8 +56,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "Den GRUB-Bootloader in den Master Boot Record installieren?"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "Den GRUB-Bootloader auf Ihrem primären Laufwerk installieren?"
 
 #. Type: boolean
 #. Description
@@ -75,15 +76,15 @@ msgstr ""
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "Sind alle installierten Betriebssysteme oben aufgelistet, sollte es kein "
-"Problem sein, den Bootloader in den Master Boot Record Ihrer ersten "
-"Festplatte zu installieren. Wenn Ihr Computer startet, werden Sie die "
-"Möglichkeit haben, eines dieser Betriebssysteme oder das neue Debian-System "
-"zu starten."
+"Problem sein, den Bootloader auf Ihrem primären Laufwerk zu installieren "
+"(auf der UEFI-Partition/dem Boot Record). Wenn Ihr Computer startet, werden "
+"Sie die Möglichkeit haben, eines dieser Betriebssysteme oder das neue Debian-"
+"System zu starten."
 
 #. Type: boolean
 #. Description
@@ -91,31 +92,29 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "Es scheint, als ob diese Installation von Debian das einzige Betriebssystem "
 "auf diesem Computer ist. Wenn dies der Fall ist, sollte es kein Problem "
-"sein, den Bootloader in den Master Boot Record Ihrer ersten Festplatte zu "
-"installieren."
+"sein, den Bootloader auf Ihrem primären Laufwerk zu installieren (auf der "
+"UEFI-Partition/dem Boot Record)."
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"Warnung: Wenn der Installer ein anderes Betriebssystem auf Ihrem Computer "
-"nicht richtig erkennt, Sie aber den Master Boot Record verändern, werden Sie "
-"dieses andere Betriebssystem vorläufig nicht mehr starten können. Allerdings "
-"kann GRUB im Nachhinein manuell konfiguriert werden, so dass das andere "
-"Betriebssystem wieder startet."
+"Warnung: Wenn auf Ihrem Computer ein anderes Betriebssystem installiert ist, "
+"das der Installer nicht erkannt hat, wird diese Änderung unter Umständen "
+"dazu führen, dass Sie dieses andere Betriebssystem vorläufig nicht mehr "
+"starten können. Allerdings kann GRUB im Nachhinein manuell konfiguriert "
+"werden, so dass alles wieder wie vorher funktioniert."
 
-# FIXME: THE disk?
 #. Type: boolean
 #. Description
 #. :sl3:
@@ -241,38 +240,37 @@ msgstr "Gerät für die Bootloader-Installation:"
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "Das neu installierte System muss boot-fähig gemacht werden, indem der GRUB-"
-"Bootloader auf einem boot-fähigen Medium installiert wird. Gewöhnlich wird "
-"dazu GRUB im Master Boot Record Ihrer ersten Festplatte installiert. Wenn "
-"Sie möchten, können Sie GRUB auch auf einer anderen Partition, einem anderen "
-"Laufwerk oder auch auf einer Diskette installieren."
+"Bootloader auf einem boot-fähigen Laufwerk installiert wird. Gewöhnlich wird "
+"GRUB auf Ihrem primären Laufwerk (auf der UEFI-Partition/dem Boot Record) "
+"installiert. Wenn Sie möchten, können Sie GRUB aber auch auf einem anderen "
+"Laufwerk (bzw. einer anderen Partition) oder einem Wechseldatenträger "
+"installieren."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
-"Das Gerät sollte als Gerätedatei in /dev angegeben werden. Im Folgenden "
-"einige Beispiele:\n"
-" - »/dev/sda« installiert GRUB in den Master Boot Record\n"
-"   Ihrer ersten Festplatte;\n"
-" - »/dev/sda2« installiert GRUB in die zweite Partition\n"
-"   Ihrer ersten Festplatte;\n"
-" - »/dev/sdc5« installiert GRUB in die erste erweiterte\n"
-"   Partition Ihrer dritten Festplatte;\n"
+"Die Bezeichnung des Geräts sollte eine Gerätedatei in /dev sein. Im "
+"Folgenden einige Beispiele:\n"
+" - »/dev/sda« installiert GRUB auf dem primären Laufwerk (in der UEFI-\n"
+"   Partition/dem Boot Record);\n"
+" - »/dev/sdb« installiert GRUB auf einem anderen Laufwerk (dies könnte\n"
+"   z.B. ein USB-Stick sein);\n"
 " - »/dev/fd0« installiert GRUB auf eine Diskette."
 
 #. Type: select
@@ -511,10 +509,11 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "GRUB-Bootloader auf einer Festplatte installieren"
+msgid "Install the GRUB boot loader"
+msgstr "Den GRUB-Bootloader installieren"
 
 #. Type: text
 #. Description

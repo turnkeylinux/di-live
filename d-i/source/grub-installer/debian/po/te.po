@@ -20,9 +20,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2018-07-23 06:44+0000\n"
-"Last-Translator: Praveen Illa <mail2ipn@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: d-i <kde-i18n-doc@kde.org>\n"
 "Language: te\n"
 "MIME-Version: 1.0\n"
@@ -37,8 +37,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "GRUB బూట్ లోడర్ ని మాస్టర్ బూట్ రికార్డ్ లో స్థాపించాలా?"
+#, fuzzy
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "GRUB బూట్ లోడర్ ని  హార్డ్ డిస్క్ లో  స్థాపన చేయు"
 
 #. Type: boolean
 #. Description
@@ -54,11 +55,12 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001
+#, fuzzy
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "అన్ని ఆపరేటింగ్ సిస్టమ్లు  పైన ఇవ్వబడిన ట్లయితే, బూట్ లోడర్ ని  మొదటి  హార్డ్ డిస్క్ లో  మాస్టర్ బూట్ రికార్డ్ "
 "లో స్థాపన చేయడం సురక్షితం. మీ కంప్యూటర్ బూట్  అయినప్పుడు, ఆపరేటింగ్ సిస్టమ్ లలో ఒకదానిని కాని, మీ కొత్త "
@@ -68,10 +70,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "మీ కంప్యూటర్ పై   కొత్త స్థాపన  అయిన  ఆపరేటింగ్ సిస్టము ఒక్కటే   వున్నట్లుగా వుంది. అలాగయితే, GRUB "
 "బూట్ లోడర్ ని  మొదటి  హార్డ్ డిస్క్ లో  మాస్టర్ బూట్ రికార్డ్ లో స్థాపన చేయడం సురక్షితం."
@@ -80,11 +83,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "హెచ్చరిక:  స్థాపక వ్యవస్థ   మీ కంప్యూటర్లో వున్ని ఇంకొక  ఆపరేటింగ్ సిస్టము   కనుగొనటంలో విఫలమైతే,    "
 "మాస్టర్ బూట్ రికార్డ్  మార్చితే  ఆ ఆపరేటింగ్ సిస్టము తాత్కాలికంగా  బూట్ చేయుటకుదరదు. GRUB ని స్వయంగా  "
@@ -101,8 +104,9 @@ msgstr "సరణి  ATA RAID డిస్క్ పై  GRUB బూట్ ల�
 #. Description
 #. :sl3:
 #: ../grub-installer.templates:3001
+#, fuzzy
 msgid "Installation of GRUB on Serial ATA RAID is experimental."
-msgstr "సరణి  ATA RAID డిస్క్ పై  GRUB  స్థాపన  ప్రయోగస్థతిలో వున్నది ?"
+msgstr "సరణి  ATA RAID డిస్క్ పై  GRUB  స్థాపన  ప్రయోగస్థతిలో వున్నది."
 
 #. Type: boolean
 #. Description
@@ -207,12 +211,12 @@ msgstr "బూట్ లోడర్ స్థాపన కు డివైస�
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "మీ కొత్త వ్యవస్థ బూట్ చేయటానికి , బూట్ లోడర్ ని బూట్ చేయగల డివైస్ పై స్థాపించాలి. GRUB ని మాస్టర్ బూట్ "
 "రికార్డ్ ని మొదటి హార్డ్ డిస్క్ పై స్థాపన చేయటం సాధారణంగా చేస్తారు.  మీకిష్టమైతే, GRUB ని డ్రైవ్ పై వేరేచోట, లేక "
@@ -222,14 +226,16 @@ msgstr ""
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
+#, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "/dev లో డివైస్ ని పేర్కొనవచ్చు. కొన్ని ఉదాహరణలు క్రింద ఇవ్వబడినవి:\n"
@@ -460,10 +466,12 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "GRUB బూట్ లోడర్ ని  హార్డ్ డిస్క్ లో  స్థాపన చేయు"
+#, fuzzy
+msgid "Install the GRUB boot loader"
+msgstr "GRUB బూట్ లోడర్ ని  స్థాపన చేయుట"
 
 #. Type: text
 #. Description

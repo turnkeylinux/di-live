@@ -28,15 +28,17 @@
 #   Mai Hao Hui <mhh@126.com>, 2001 (translations from galeon)
 # YunQiang Su <wzssyqa@gmail.com>, 2010, 2011, 2012, 2013.
 # Yangfl <mmyangfl@gmail.com>, 2017.
+# Boyuan Yang <073plan@gmail.com>, 2018, 2019, 2020.
+# 玉堂白鹤 <yjwork@qq.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2017-06-11 18:20+0800\n"
-"Last-Translator: Yangfl <mmyangfl@gmail.com>\n"
-"Language-Team:  <debian-l10n-chinese@lists.debian.org>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2020-06-26 02:41+0000\n"
+"Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
+"Language-Team: <debian-l10n-chinese@lists.debian.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,8 +52,8 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "将 GRUB 启动引导器安装到主引导记录 (MBR) 上吗？"
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "将 GRUB 启动引导器安装至您的主驱动器？"
 
 #. Type: boolean
 #. Description
@@ -68,13 +70,13 @@ msgstr "安装程序在这台计算机上探测到了以下其他操作系统：
 #: ../grub-installer.templates:1001
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
-"如果以上列出了您所有的操作系统，那么您应该可以安全地将启动引导器安装到第一硬"
-"盘的主引导记录 (MBR) 上。当计算机启动时，您应该可以选择以上任意一种操作系统或"
-"者您的新系统。"
+"如果以上列出了您所有的操作系统，那么您应该可以安全地将启动引导器安装到您的主"
+"驱动器（UEFI 分区/引导记录）上。当计算机启动时，您应该可以选择以上任意一种操"
+"作系统或者新安装的 Debian 系统。"
 
 #. Type: boolean
 #. Description
@@ -82,24 +84,23 @@ msgstr ""
 #: ../grub-installer.templates:2001
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "看起来新安装的系统将是这台计算机上唯一的操作系统。如果的确如此，您应该可以安"
-"全地将 GRUB 启动引导器安装到第一硬盘的主引导记录 (MBR) 上。"
+"全地将 GRUB 启动引导器安装到您的主驱动器（UEFI 分区/引导记录）上。"
 
 #. Type: boolean
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
-"警告：如果安装程序无法在您的计算机上探测到已存在的其他操作系统，修改主引导记"
-"录动作暂时将使该操作系统无法启动。但是，您可以稍后再手动设置 GRUB 以启动它。"
+"警告：您的计算机上存在其它本安装程序无法探测的操作系统的话，修改引导记录将暂"
+"时使该操作系统无法启动。但是，您可以稍后再手动设置 GRUB 以启动它。"
 
 #. Type: boolean
 #. Description
@@ -221,33 +222,33 @@ msgstr "安装启动引导器的设备："
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "您需要通过将 GRUB 启动引导器安装到可启动设备上以使新安装的系统能够启动。通常"
-"的作法是将 GRUB 安装到您第一块硬盘的主引导记录 (MBR) 上。如果您愿意，也可以"
-"将 GRUB 安装到驱动器的其他地方，或者其他的驱动器上，甚至还可以安装到一张软盘"
-"上。"
+"的做法是将 GRUB 安装到您的主驱动器上（UEFI 分区/引导记录）。您也可以将 GRUB "
+"安装到其它驱动器（或分区）上，也可以安装到可移除介质上。"
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "设备应该以 /dev 目录下的设备名称的方式指定。举例如下：\n"
-" - “/dev/sda”将会把 GRUB 安装到您的第一块硬盘的主引导  记录 (MBR) 上；\n"
-" - “/dev/sda2”将安装到您的第一个硬盘的第二分区上；\n"
-" - “/dev/sdc5”将安装到您的第三个驱动器的第一扩展分区上；\n"
+" - “/dev/sda”将会把 GRUB 安装到您的主驱动器上\n"
+"   UEFI 分区/引导记录）；\n"
+" - “/dev/sdb”将会把 GRUB 安装到某个次要驱动器上（例如，可能是\n"
+"   U 盘等存储设备）；\n"
 " - “/dev/fd0”将会把 GRUB 安装到软盘上。"
 
 #. Type: select
@@ -451,7 +452,7 @@ msgstr "正在更新 /etc/kernel-img.conf..."
 #. :sl1:
 #: ../grub-installer.templates:25001
 msgid "Checking whether to force usage of the removable media path"
-msgstr "检查是否强制使用可移动媒体路径"
+msgstr "检查是否强制使用可移动介质路径"
 
 #. Type: text
 #. Description
@@ -465,15 +466,16 @@ msgstr "正在挂载文件系统"
 #. :sl1:
 #: ../grub-installer.templates:27001
 msgid "Configuring grub-efi for future usage of the removable media path"
-msgstr "配置 grub-efi 以便将来使用可移动媒体路径"
+msgstr "配置 grub-efi 以便将来使用可移动介质路径"
 
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "将 GRUB 安装至硬盘"
+msgid "Install the GRUB boot loader"
+msgstr "安装 GRUB 启动引导器"
 
 #. Type: text
 #. Description
@@ -524,7 +526,7 @@ msgstr "强制将 GRUB 安装到 EFI 可移动媒体路径"
 #. :sl1:
 #: ../grub-installer.templates:34001
 msgid "Force GRUB installation to the EFI removable media path?"
-msgstr "是否强制将 GRUB 安装到 EFI 可移动媒体路径？"
+msgstr "是否强制将 GRUB 安装到 EFI 可移动介质路径？"
 
 #. Type: boolean
 #. Description
@@ -551,7 +553,7 @@ msgid ""
 "\". Almost all EFI systems, no matter how buggy, will boot GRUB that way."
 msgstr ""
 "此问题的变通方法是将 EFI 版的 GRUB 引导加载程序安装一个额外副本到备用位置，也"
-"就是“可移动媒体路径”。几乎所有的 EFI 系统，无论多么糟糕，都能以这种方式启动 "
+"就是“可移动介质路径”。几乎所有的 EFI 系统，无论多么糟糕，都能以这种方式启动 "
 "GRUB。"
 
 #. Type: boolean

@@ -24,15 +24,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer.2006071\n"
 "Report-Msgid-Bugs-To: grub-installer@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-30 22:01+0000\n"
-"PO-Revision-Date: 2011-03-01 12:49+0400\n"
-"Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
+"POT-Creation-Date: 2020-03-31 20:02+0000\n"
+"PO-Revision-Date: 2019-08-28 18:09+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Georgian\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: boolean
 #. Description
@@ -41,8 +41,9 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001 ../grub-installer.templates:2001
-msgid "Install the GRUB boot loader to the master boot record?"
-msgstr "დავაყენოთ სისტემური ჩამტვირთველი GRUB ჩატვირთვის მთავარ ჩანაწერში?"
+#, fuzzy
+msgid "Install the GRUB boot loader to your primary drive?"
+msgstr "GRUB სისტემური ჩამტვირთველის დაყენება დისკზე"
 
 #. Type: boolean
 #. Description
@@ -57,11 +58,12 @@ msgstr "თქვენს კომპიუტერზე დაყენე�
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:1001
+#, fuzzy
 msgid ""
 "If all of your operating systems are listed above, then it should be safe to "
-"install the boot loader to the master boot record of your first hard drive. "
+"install the boot loader to your primary drive (UEFI partition/boot record). "
 "When your computer boots, you will be able to choose to load one of these "
-"operating systems or your new system."
+"operating systems or the newly installed Debian system."
 msgstr ""
 "თუ სიაში არის ყველა ოპერაციული სისტემა, რაც კი დაყენებულია თქვენს "
 "კომპიუტერზე, შეგიძლიათ დაიწყოთ სისტემური ჩამტვირთველის დაყენება პირველი "
@@ -72,10 +74,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
 "It seems that this new installation is the only operating system on this "
-"computer. If so, it should be safe to install the GRUB boot loader to the "
-"master boot record of your first hard drive."
+"computer. If so, it should be safe to install the GRUB boot loader to your "
+"primary drive (UEFI partition/boot record)."
 msgstr ""
 "როგორც სჩანს, ახლად ინსტალირებული სისტემა ერთადერთია კომპიუტერში. თუ ასეა, "
 "შეგიძლიათ უკვე დააყენოთ სისტემური ჩამტვირთველი GRUB პირველი დისკის "
@@ -85,11 +88,11 @@ msgstr ""
 #. Description
 #. :sl1:
 #: ../grub-installer.templates:2001
+#, fuzzy
 msgid ""
-"Warning: If the installer failed to detect another operating system that is "
-"present on your computer, modifying the master boot record will make that "
-"operating system temporarily unbootable, though GRUB can be manually "
-"configured later to boot it."
+"Warning: If your computer has another operating system that the installer "
+"failed to detect, this will make that operating system temporarily "
+"unbootable, though GRUB can be manually configured later to boot it."
 msgstr ""
 "ყურადღება! თუ კომპიუტერზე აყენია ოპერაციული სისტემა, რომელიც ვერ აღმოაჩინა "
 "ინსტალერმა, მაშინ ჩატვირთვის მთავარ ჩანაწერში ცვლილების შეტანამ შეიძლება "
@@ -200,9 +203,6 @@ msgstr ""
 msgid "An error occurred while setting up GRUB for the multipath device."
 msgstr "შეცდომა GRUB ჩამტვირთველის multipath მოწყობილობაზე დაყენებისას."
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: string
 #. Description
 #. :sl2:
@@ -220,12 +220,12 @@ msgstr "მოწყობილობა სისტემური ჩამ�
 #. Description
 #. :sl2:
 #: ../grub-installer.templates:7001 ../grub-installer.templates:8002
+#, fuzzy
 msgid ""
 "You need to make the newly installed system bootable, by installing the GRUB "
 "boot loader on a bootable device. The usual way to do this is to install "
-"GRUB on the master boot record of your first hard drive. If you prefer, you "
-"can install GRUB elsewhere on the drive, or to another drive, or even to a "
-"floppy."
+"GRUB to your primary drive (UEFI partition/boot record). You may instead "
+"install GRUB to a different drive (or partition), or to removable media."
 msgstr ""
 "იმისათვის, რომ ახალდაყენებული სისტემა ჩატვირთვადი გახდეს, საჭიროა GRUB-"
 "ჩამტვირთველის დაყენება ჩატვირთვის მოწყობილობაზე. როგორც წესი, ამისათვის GRUB "
@@ -239,13 +239,14 @@ msgstr ""
 #: ../grub-installer.templates:7001
 #, fuzzy
 msgid ""
-"The device should be specified as a device in /dev. Below are some "
+"The device notation should be specified as a device in /dev. Below are some "
 "examples:\n"
-" - \"/dev/sda\" will install GRUB to the master boot record of your first\n"
-"   hard drive;\n"
-" - \"/dev/sda2\" will use the second partition of your first hard drive;\n"
-" - \"/dev/sdc5\" will use the first extended partition of your third hard\n"
-"   drive;\n"
+" - \"/dev/sda\" will install GRUB to your primary drive (UEFI partition/"
+"boot\n"
+"   record);\n"
+" - \"/dev/sdb\" will install GRUB to a secondary drive (which may for "
+"instance\n"
+"   be a thumbdrive);\n"
 " - \"/dev/fd0\" will install GRUB to a floppy."
 msgstr ""
 "მოწყობილობის მითითება შეიძლება როგორც GRUB-ის ჩანაწერით \"(hdn,m)\", ასევე /"
@@ -258,9 +259,6 @@ msgstr ""
 "   მესამე დისკისა (SCSI);↵\n"
 " - \"(fd0)\" ან \"/dev/fd0\" GRUB დადგება ფლოპიზე."
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: select
 #. Choices
 #: ../grub-installer.templates:8001
@@ -489,10 +487,12 @@ msgstr ""
 #. Type: text
 #. Description
 #. Main menu item
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../grub-installer.templates:28001
-msgid "Install the GRUB boot loader on a hard disk"
-msgstr "GRUB სისტემური ჩამტვირთველის დაყენება დისკზე"
+#, fuzzy
+msgid "Install the GRUB boot loader"
+msgstr "GRUB სისტემური ჩამტვირთველის ინსტალაცია"
 
 #. Type: text
 #. Description
