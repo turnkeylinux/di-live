@@ -3,26 +3,39 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of nl.po to Dutch
-# Dutch messages for debian-installer.
+# translation of debian-installer/sublevel1 to Dutch
+# Dutch messages for debian-installer/sublevel1.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-#
 # Frans Pop <aragorn@tiscali.nl>, 2005.
 # Frans Pop <elendil@planet.nl>, 2007, 2008, 2009, 2010.
-# Eric Spreen <erispre@gmail.com>, 2010
+# Eric Spreen <erispre@gmail.com>, 2010.
+# Jeroen Schot <schot@a-eskwadraat.nl>, 2011, 2012.
+#
+# Translations from iso-codes:
+# Translations taken from ICU SVN on 2007-09-09.
+# Tobias Toedter <t.toedter@gmx.net>, 2007.
+#
+# Elros Cyriatan <cyriatan@fastmail.fm>, 2004.
+# Luk Claes <luk.claes@ugent.be>, 2005.
+# Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2006, 2007, 2008, 2009, 2010, 2011.
+# Taco Witte <tcwitte@cs.uu.nl>, 2004.
+# Reinout van Schouwen <reinouts@gnome.org>, 2007.
+# Frans Spiesschaert <Frans.Spiesschaert@yucom.be>, 2014-2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: nl\n"
+"Project-Id-Version: debian-installer/sublevel1\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-01-26 07:32+0000\n"
-"PO-Revision-Date: 2010-10-25 14:06+0200\n"
-"Last-Translator: Eric Spreen <erispre@gmail.com>\n"
-"Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"PO-Revision-Date: 2020-03-30 22:36+0200\n"
+"Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
+"Language-Team: Debian Dutch l10n Team <debian-l10n-dutch@lists.debian.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: boolean
 #. Description
@@ -56,7 +69,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-basicmethods.templates:2001
 msgid "do not use the partition"
-msgstr "Deze partitie niet gebruiken"
+msgstr "deze partitie niet gebruiken"
 
 #. Type: text
 #. Description
@@ -115,7 +128,7 @@ msgstr "formatteer"
 #. :sl2:
 #: ../partman-basicmethods.templates:10001
 msgid "keep and use the existing data"
-msgstr "Bestaande data behouden en gebruiken"
+msgstr "bestaande data behouden en gebruiken"
 
 #. Type: text
 #. Description

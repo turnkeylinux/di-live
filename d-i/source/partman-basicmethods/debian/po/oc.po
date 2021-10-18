@@ -3,45 +3,33 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of eu.po to Euskara
-# Basque messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
-# Translations from iso-codes:
-# Copyright (C)
-# Translations from KDE:
-# Piarres Beobide <pi@beobide.net>, 2004-2009, 2011.
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2010.
-# Mikel Olasagasti <hey_neken@mundurat.net>, 2004.
-# Piarres Beobide Egaña <pi@beobide.net>, 2004,2006,2007, 2008, 2009.
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2010.
-# Free Software Foundation, Inc., 2002.
-# Alastair McKinstry <mckinstry@computer.org>, 2002.
-# Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
-# Piarres Beobide <pi@beobide.net>, 2008.
-# Xabier Bilbao <xabidu@gmail.com>, 2008.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2020.
+# Occitan (post 1500) translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# Yannig MARCHEGAY <yannick.marchegay@lokanova.com>, 2006.
+# Cédric VALMARY <cvalmary@yahoo.fr>, 2016.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2020.
+#
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: di-sublevel1_eu\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: debian-boot@lists.debian.org\n"
 "POT-Creation-Date: 2008-01-26 07:32+0000\n"
-"PO-Revision-Date: 2020-11-03 18:23+0100\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: Basque <librezale@librezale.eus>\n"
-"Language: eu\n"
+"PO-Revision-Date: 2020-10-11 15:47+0200\n"
+"Last-Translator: Quentin PAGÈS\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-basicmethods.templates:1001
 msgid "Go back to the menu?"
-msgstr "Menura itzuli?"
+msgstr "Tornar al menú ?"
 
 #. Type: boolean
 #. Description
@@ -49,8 +37,8 @@ msgstr "Menura itzuli?"
 #: ../partman-basicmethods.templates:1001
 msgid "No file system is specified for partition #${PARTITION} of ${DEVICE}."
 msgstr ""
-"Ez da ${DEVICE} gailuko ${PARTITION}. partizioaren fitxategi-sistemarik "
-"zehaztu."
+"Pas de sistèma de fichièrs indicat per la particion n° ${PARTITION} de "
+"${DEVICE}."
 
 #. Type: boolean
 #. Description
@@ -60,15 +48,15 @@ msgid ""
 "If you do not go back to the partitioning menu and assign a file system to "
 "this partition, it won't be used at all."
 msgstr ""
-"Partizioak egiteko menura itzultzen ez bazara eta partizio horri fitxategi-"
-"sistema bat esleitzen ez badiozu, partizioa ez da erabiliko."
+"Vos cal tornar al menú de particionament per associar un sistèma de fichièrs "
+"per aquesta particion si que non serà absolutament inutilizabla."
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicmethods.templates:2001
 msgid "do not use the partition"
-msgstr "ez erabili partizioa"
+msgstr "utilizar pas la particion"
 
 #. Type: text
 #. Description
@@ -76,28 +64,28 @@ msgstr "ez erabili partizioa"
 #. :sl2:
 #: ../partman-basicmethods.templates:3001
 msgid "Format the partition:"
-msgstr "Formateatu partizioa:"
+msgstr "Formatar la particion :"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicmethods.templates:4001
 msgid "yes, format it"
-msgstr "bai, formateatu"
+msgstr "òc, formatatz-la"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicmethods.templates:5001
 msgid "no, keep existing data"
-msgstr "ez, utzi lehendik dauden datuak"
+msgstr "non, gardatz las donadas existentas"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicmethods.templates:6001
 msgid "do not use"
-msgstr "ez erabili"
+msgstr "utilizar pas"
 
 #. Type: text
 #. Description
@@ -105,14 +93,14 @@ msgstr "ez erabili"
 #. :sl1:
 #: ../partman-basicmethods.templates:7001
 msgid "unused"
-msgstr "erabili gabe"
+msgstr "pas utilizat"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicmethods.templates:8001
 msgid "format the partition"
-msgstr "formateatu partizioa"
+msgstr "formatar la particion"
 
 #. Type: text
 #. Description
@@ -120,14 +108,14 @@ msgstr "formateatu partizioa"
 #. :sl1:
 #: ../partman-basicmethods.templates:9001
 msgid "format"
-msgstr "formateatu"
+msgstr "formatar"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-basicmethods.templates:10001
 msgid "keep and use the existing data"
-msgstr "utzi eta erabili lehendik dauden datuak"
+msgstr "conservar e utilizar las donadas existentas"
 
 #. Type: text
 #. Description
@@ -135,4 +123,4 @@ msgstr "utzi eta erabili lehendik dauden datuak"
 #. :sl1:
 #: ../partman-basicmethods.templates:11001
 msgid "keep"
-msgstr "utzi"
+msgstr "conservar"
