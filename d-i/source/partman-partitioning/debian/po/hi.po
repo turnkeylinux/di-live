@@ -3,8 +3,7 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_hi.po to Hindi
-# translation of debian-installer_packages_po_sublevel1_hi.po to
+# translation of debian-installer_packages_po_sublevel1 to Hindi
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
 # Debian Installer translators, please read the D-I i18n documentation
@@ -26,19 +25,25 @@
 #   Alastair McKinstry <mckinstry@debian.org>, 2004.
 # Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008.
 # Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011, 2012.
+# Sruthi Chandran <srud@openmailbox.org>, 2018.
+# Himanshu Awasthi <johim9493@gmail.com>, 2018.
+# KushagraKarira <kushagrakarira@gmail.com>, 2020, 2021.
+# षिखर् <dnitesigm@gmail.com>, 2020.
+# Indrani Roy <indrani@scriptek.co.in>, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2012-10-02 08:22-0500\n"
-"Last-Translator: Kumar Appaiah\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
-"Language: en_US\n"
+"PO-Revision-Date: 2021-01-20 18:26+0000\n"
+"Last-Translator: KushagraKarira <kushagrakarira@gmail.com>\n"
+"Language-Team: \n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: 2X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: text
 #. Description
@@ -149,7 +154,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:6001
 msgid "The size entered is invalid"
-msgstr "दिया गया आकर अवैध है."
+msgstr "दर्ज किया गया आकार अमान्य है"
 
 #. Type: error
 #. Description
@@ -177,14 +182,16 @@ msgstr "दिया गया आकार बहुत अधिक है"
 msgid ""
 "The size you entered is larger than the maximum size of the partition. "
 "Please enter a smaller size to continue."
-msgstr "दिया गया आकार  सबसे बड़े पार्टीशन से भी बड़ा है.कृपया इससे कम आकार दीजिये."
+msgstr ""
+"आपके द्वारा दर्ज किया गया आकार विभाजन के अधिकतम आकार से बड़ा है। कृपया जारी रखने के "
+"लिए एक छोटे आकार में प्रवेश करें।"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:8001
 msgid "The size entered is too small"
-msgstr "दिया गया आकार बहुत कम है."
+msgstr "दर्ज किया गया आकार बहुत छोटा है"
 
 #. Type: error
 #. Description
@@ -193,7 +200,9 @@ msgstr "दिया गया आकार बहुत कम है."
 msgid ""
 "The size you entered is smaller than the minimum size of the partition. "
 "Please enter a larger size to continue."
-msgstr "दिया गया आकार  सबसे छोटे पार्टीशन से भी छोटा है.कृपया इससे अधिक आकार दीजिये."
+msgstr ""
+"आपके द्वारा दर्ज किया गया आकार विभाजन के न्यूनतम आकार से छोटा है। जारी रखने के लिए "
+"कृपया एक बड़ा आकार दर्ज करें।"
 
 #. Type: error
 #. Description
@@ -258,7 +267,8 @@ msgstr "नए पार्टीशन के लिए स्थान:"
 msgid ""
 "Please choose whether you want the new partition to be created at the "
 "beginning or at the end of the available space."
-msgstr "आप नया पार्टिशन उपलब्ध स्थान के प्रारंभ में बनाना चाहते हैं या अंत में?"
+msgstr ""
+"कृपया चुनें कि क्या आप चाहते हैं कि नया विभाजन शुरुआत में या उपलब्ध स्थान के अंत में बनाया जाए।"
 
 #. Type: select
 #. Choices
@@ -304,7 +314,7 @@ msgstr "पार्टीशन नाम:"
 #: ../partman-partitioning.templates:16001
 #: ../partman-partitioning.templates:17001
 msgid "Continue with partitioning?"
-msgstr "पार्टीशनिंग जारी रखें? "
+msgstr "विभाजन के साथ जारी रखें?"
 
 #. Type: boolean
 #. Description
@@ -315,8 +325,8 @@ msgid ""
 "partition tables on your architecture.  Please send an e-mail message to "
 "debian-boot@lists.debian.org with information."
 msgstr ""
-"आपके संघटन के अनुरूप विभाजन तालिका इस विभाजक के संज्ञान में नहीं है। कृपया सूचना के साथ इस "
-"पते पर ई-मेल करें debian-boot@lists.debian.org"
+"इस पार्टीशनर को आपके आर्किटेक्चर पर डिफॉल्ट टाइप के पार्टीशन टेबल के बारे में जानकारी नहीं "
+"है। कृपया जानकारी के साथ debian-boot@lists.debian.org पर एक ई-मेल संदेश भेजें।"
 
 #. Type: boolean
 #. Description
@@ -389,7 +399,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:20001
 msgid "Note that you will be able to undo this operation later if you wish."
-msgstr "ज्ञात रहे कि  कि इस प्रक्रिया को बाद में यदि आप चाहें तो वापस ले सकते हैं."
+msgstr "ध्यान दें कि यदि आप चाहें तो बाद में आप इस ऑपरेशन को पूर्ववत कर पाएंगे।"
 
 #. Type: boolean
 #. Description

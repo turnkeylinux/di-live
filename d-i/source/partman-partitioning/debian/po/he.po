@@ -21,14 +21,14 @@
 # Meni Livne <livne@kde.org>, 2000.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2019-02-28 22:08+0000\n"
+"PO-Revision-Date: 2020-07-26 03:41+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
 "Language: he\n"
@@ -70,7 +70,7 @@ msgstr "עקב סיבה בלתי ידועה אין אפשרות לשנות את 
 #. :sl2:
 #: ../partman-partitioning.templates:3001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "מוטב לעיין ב־‎/var/log/syslod או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
+msgstr "מוטב לעיין ב־‎/var/log/syslog או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
 
 #. Type: boolean
 #. Description
@@ -445,7 +445,7 @@ msgid ""
 msgstr ""
 "הגדרת את דגלון האתחול עבור מחיצה לוגית. דגלון האתחול מביא תועלת רק עבור "
 "מחיצות ראשיות, לכן הגדרתו על מחיצות לוגיות אינו מומלץ בדרך כלל. ידוע כי "
-"גרסאות BIOS  מסוימות אינן מצליחות להפעיל את המערכת אם אין מחיצה ראשית עם "
+"גרסאות BIOS מסוימות אינן מצליחות להפעיל את המערכת אם אין מחיצה ראשית עם "
 "דגלון אתחול."
 
 #. Type: boolean

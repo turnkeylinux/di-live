@@ -1,11 +1,118 @@
-partman-partitioning (131) UNRELEASED; urgency=medium
+partman-partitioning (140) unstable; urgency=medium
 
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Kimmo Kujansuu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 23 Jul 2021 19:23:44 +0200
+
+partman-partitioning (139) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Lithuanian (lt.po) by Gediminas Murauskas
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 08 Jul 2021 17:23:36 +0200
+
+partman-partitioning (138) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Valentin Vidic
+  * Japanese (ja.po) by YOSHINO Yoshihito
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 31 May 2021 00:03:18 +0200
+
+partman-partitioning (137) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by KushagraKarira
+  * Kabyle (kab.po) by Selyan Sliman Amiri
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Ukrainian (uk.po) by Anton Gladky
+  * Traditional Chinese (zh_TW.po) by louies0623
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 18 Feb 2021 23:31:37 +0100
+
+partman-partitioning (136) unstable; urgency=medium
+
+  [ Shawn Guo ]
+  * Include ntfs-3g-udeb on arm64
+
+ -- Steve McIntyre <93sam@debian.org>  Tue, 24 Nov 2020 23:42:21 +0000
+
+partman-partitioning (135) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Persian (fa.po) by سهیل خانعلی‌پور
+  * Traditional Chinese (zh_TW.po) by Walter Cheuk
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 19:29:21 +0100
+
+partman-partitioning (134) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Indonesian (id.po) by Andika Triwidada
+  * Polish (pl.po) by Bartosz Feński
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Sep 2020 23:09:02 +0200
+
+partman-partitioning (133) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Dutch (nl.po) by Frans Spiesschaert
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 22:07:24 +0200
+
+partman-partitioning (132) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Amharic (am.po)
+  * Georgian (ka.po)
+  * Nepali (ne.po)
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 29 Jan 2020 19:27:31 +0100
+
+partman-partitioning (131) unstable; urgency=medium
+
+  [ Cyril Brulebois ]
   * Remove Christian Perrier from Uploaders, with many thanks for all
     his contributions over the years! (Closes: #927496)
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:40:35 +0200
+  [ Karsten Merker ]
+  * Set default partition table format on riscv64 based on boot mode
+    (EFI/non-EFI). Non-EFI systems use MBR-style partition tables,
+    EFI systems use GPT-style partition tables.
+
+  [ Updated translations ]
+  * Croatian (hr.po) by gogogogi
+
+ -- Karsten Merker <merker@debian.org>  Thu, 15 Aug 2019 20:12:35 +0200
 
 partman-partitioning (130) unstable; urgency=medium
+
   * Team upload.
 
   [ Updated translations ]
@@ -14,6 +121,7 @@ partman-partitioning (130) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Thu, 28 Mar 2019 19:11:36 +0100
 
 partman-partitioning (129) unstable; urgency=medium
+
   * Team upload.
 
   [ Updated translations ]
@@ -32,6 +140,7 @@ partman-partitioning (128) unstable; urgency=medium
  -- Steve McIntyre <93sam@debian.org>  Mon, 11 Feb 2019 16:26:10 +0000
 
 partman-partitioning (127) unstable; urgency=medium
+
   * Team upload.
 
   [ Updated translations ]
@@ -43,6 +152,7 @@ partman-partitioning (127) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Sat, 09 Feb 2019 10:08:16 +0100
 
 partman-partitioning (126) unstable; urgency=medium
+
   * Team upload.
 
   [ Karsten Merker ]

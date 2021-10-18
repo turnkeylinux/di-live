@@ -3,8 +3,8 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of nl.po to Dutch
-# Dutch messages for debian-installer.
+# translation of debian-installer/sublevel1 to Dutch
+# Dutch messages for debian-installer/sublevel1.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Frans Pop <aragorn@tiscali.nl>, 2005.
@@ -21,19 +21,21 @@
 # Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2006, 2007, 2008, 2009, 2010, 2011.
 # Taco Witte <tcwitte@cs.uu.nl>, 2004.
 # Reinout van Schouwen <reinouts@gnome.org>, 2007.
+# Frans Spiesschaert <Frans.Spiesschaert@yucom.be>, 2014-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer/sublevel1\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2012-10-19 16:11+0200\n"
-"Last-Translator: Jeroen Schot <schot@a-eskwadraat.nl>\n"
-"Language-Team: Debian l10n Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"PO-Revision-Date: 2020-03-30 22:36+0200\n"
+"Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
+"Language-Team: Debian Dutch l10n Team <debian-l10n-dutch@lists.debian.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -54,7 +56,7 @@ msgstr "Nieuwe staat van de schijfindelingstabel wordt berekend..."
 #. :sl2:
 #: ../partman-partitioning.templates:3001
 msgid "The resize operation is impossible"
-msgstr "Het aanpassen van de partitiegrootte is niet mogelijk."
+msgstr "Het aanpassen van de partitiegrootte is niet mogelijk"
 
 #. Type: error
 #. Description
@@ -97,7 +99,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:4001
 msgid "You cannot undo this operation."
-msgstr "Deze operatie kan niet ongedaan gemaakt worden!"
+msgstr "Deze operatie kan niet ongedaan gemaakt worden."
 
 #. Type: boolean
 #. Description
@@ -376,7 +378,7 @@ msgstr "Type schijfindelingstabel:"
 #. :sl2:
 #: ../partman-partitioning.templates:19001
 msgid "Select the type of partition table to use."
-msgstr "Welk type partitietabel wilt u gebruiken?"
+msgstr "Selecteer het te gebruiken type partitietabel."
 
 #. Type: boolean
 #. Description
@@ -444,8 +446,8 @@ msgid ""
 "Confirm whether you actually want to create a new partition table and write "
 "it to disk."
 msgstr ""
-"Weet u zeker dat u een nieuwe schijfindelingstabel wilt aanmaken en deze "
-"vervolgens naar de schijf wilt wegschrijven?"
+"Bevestig dat u daadwerkelijk een nieuwe schijfindelingstabel wilt aanmaken "
+"en deze naar de schijf wilt wegschrijven."
 
 #. Type: boolean
 #. Description

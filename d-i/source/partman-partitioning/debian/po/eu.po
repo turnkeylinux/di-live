@@ -20,20 +20,21 @@
 # Marcos Goienetxe <marcos_g@infonegocio.com>, 2002.
 # Piarres Beobide <pi@beobide.net>, 2008.
 # Xabier Bilbao <xabidu@gmail.com>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2020.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: di-sublevel1_eu\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2012-10-19 19:41+0200\n"
+"PO-Revision-Date: 2020-11-03 18:23+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: debian-l10n-eu@lists.debian.org\n"
+"Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Content-Transfer-Encoding=UTF-8Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: text
 #. Description
@@ -47,7 +48,7 @@ msgstr "Partizioa tamainaz aldatzen..."
 #. :sl1:
 #: ../partman-partitioning.templates:2001
 msgid "Computing the new state of the partition table..."
-msgstr "Partizio taularen egoera berria kalkulatzen..."
+msgstr "Partizio-taularen egoera berria kalkulatzen..."
 
 #. Type: error
 #. Description
@@ -68,14 +69,14 @@ msgstr "Arrazoi ezezagun batengatik ezin da partizio hau tamainaz aldatu."
 #. :sl2:
 #: ../partman-partitioning.templates:3001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "Egiaztatu /var/log/messages edo ikusi 4. kontsola xehetasunetarako."
+msgstr "Egiaztatu /var/log/syslog edo ikusi 4. kontsola xehetasunetarako."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:4001
 msgid "Write previous changes to disk and continue?"
-msgstr "Eginiko aldaketak diskoan idatzi eta jarraitu nahi duzu?"
+msgstr "Egindako aldaketak diskoan idatzi eta jarraitu nahi duzu?"
 
 #. Type: boolean
 #. Description
@@ -85,8 +86,8 @@ msgid ""
 "Before you can select a new partition size, any previous changes have to be "
 "written to disk."
 msgstr ""
-"Partizio tamaina berria aukeratu aurretik, eginiko aldaketak diskoan idatzi "
-"behar dira."
+"Partizioaren tamaina berria aukeratu aurretik, egindako aldaketak diskoan "
+"idatzi behar dira."
 
 #. Type: boolean
 #. Description
@@ -111,7 +112,7 @@ msgstr "Kontuan izan tamainaz aldatzeko eragiketak luze jo dezakeela."
 #: ../partman-partitioning.templates:5001
 #: ../partman-partitioning.templates:10001
 msgid "New partition size:"
-msgstr "Partizio tamaina berria:"
+msgstr "Partizio-tamaina berria:"
 
 #. Type: string
 #. Description
@@ -137,16 +138,16 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
-"Gomendioa: \"max\" gehienezko tamaina ezartzeko laburpen gisa erabili "
-"daiteke, edo idatzi ehuneko bat (adib. \"20%\") ehuneko hori erabiltzeko "
-"gehienezko gisa."
+"Argibidea: \"max\" gehienezko tamaina ezartzeko laburpen gisa erabili "
+"daiteke, edo idatzi ehuneko bat (adib. \"20%\") ehuneko hori gehienezko gisa "
+"erabiltzeko."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:6001
 msgid "The size entered is invalid"
-msgstr "Sartutako tamaina baliogabea da."
+msgstr "Sartutako tamaina baliogabea da"
 
 #. Type: error
 #. Description
@@ -157,16 +158,16 @@ msgid ""
 "size followed by an optional unit of measure (e.g. \"200 GB\"). The default "
 "unit of measure is the megabyte."
 msgstr ""
-"Zuk emandako tamaina ulertezina da. Mesedez idatzi zenbaki oso positibo "
-"baten tamaina aukerako neurri batekin (adib, \"200 GB\"). Lehenetsitako "
-"neurri unitatea megabytea da."
+"Sartutako tamaina ulertezina da. Idatzi zenbaki oso positibo baten tamaina "
+"aukerako neurri batekin (adib, \"200 GB\"). Neurriaren unitate lehenetsia "
+"megabytea da."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:7001
 msgid "The size entered is too large"
-msgstr "Sartutako tamaina luzeegia da"
+msgstr "Sartutako tamaina handiegia da"
 
 #. Type: error
 #. Description
@@ -176,8 +177,8 @@ msgid ""
 "The size you entered is larger than the maximum size of the partition. "
 "Please enter a smaller size to continue."
 msgstr ""
-"Sartutako tamaina partizioan dagoen leku handiena baino luzeagoa da. Mesedez "
-"idatzi tamaina txikiago bat aurrera jarraitzeko."
+"Sartutako tamaina partizioaren gehienezkoaren baino handiagoa da. Idatzi "
+"tamaina txikiago bat aurrera jarraitzeko."
 
 #. Type: error
 #. Description
@@ -194,15 +195,15 @@ msgid ""
 "The size you entered is smaller than the minimum size of the partition. "
 "Please enter a larger size to continue."
 msgstr ""
-"Sartutako tamaina partizioan dagoen leku txikiena baino txikiagoa da. "
-"Mesedez idatzi tamaina handiago bat aurrera jarraitzeko."
+"Sartutako tamaina partizioaren gutxienekoaren baino txikiagoa da. Idatzi "
+"tamaina handiago bat aurrera jarraitzeko."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:9001
 msgid "Resize operation failure"
-msgstr "Ezin izan da tamainaz aldatu"
+msgstr "Huts egin du tamainaz aldatzean"
 
 #. Type: error
 #. Description
@@ -216,7 +217,7 @@ msgstr "Errorea gertatu da aldaketak biltegiratze gailuetan idaztean."
 #. :sl2:
 #: ../partman-partitioning.templates:9001
 msgid "The resize operation has been aborted."
-msgstr "Tamainaz aldatzeko eragiketa abortatua izan da."
+msgstr "Tamainaz aldatzeko eragiketa abortatu egin da."
 
 #. Type: string
 #. Description
@@ -290,7 +291,7 @@ msgstr "Partizio berriaren mota:"
 #. :sl2:
 #: ../partman-partitioning.templates:14001
 msgid "Flags for the new partition:"
-msgstr "Partizio berriarentzako banderak:"
+msgstr "Partizio berriaren banderak:"
 
 #. Type: string
 #. Description
@@ -310,6 +311,7 @@ msgstr "Partizioaren izena:"
 msgid "Continue with partitioning?"
 msgstr "Partizioak egiten jarraitu nahi duzu?"
 
+# Kasu honetan _mesedez_  terminoa sartu dut garrantzitsua delako Debian-eko garatzaileek txostena jasotzea.
 #. Type: boolean
 #. Description
 #. :sl2:
@@ -319,9 +321,9 @@ msgid ""
 "partition tables on your architecture.  Please send an e-mail message to "
 "debian-boot@lists.debian.org with information."
 msgstr ""
-"Partiziogile honek ez du informaziorik arkitekturako partizio taulen mota "
-"lehenetsiari buruz. Bidali mezu elektroniko bat informazioarekin debian-"
-"boot@lists.debian.org helbidera."
+"Partiziogile honek ez du informaziorik arkitekturako partizio-taulen mota "
+"lehenetsiari buruz. Mesedez, bidali mezu elektroniko bat informazioarekin "
+"debian-boot@lists.debian.org helbidera.txosten bat jasotzea."
 
 #. Type: boolean
 #. Description
@@ -331,7 +333,7 @@ msgid ""
 "Please note that if the type of the partition table is unsupported by "
 "libparted, then this partitioner will not work properly."
 msgstr ""
-"Kontuan izan libparted-ek partizio taularen mota onartzen ez badu, "
+"Kontuan izan libparted-ek partizio-taularen mota onartzen ez badu, "
 "partiziogile honek ez duela behar bezala funtzionatuko."
 
 #. Type: boolean
@@ -344,7 +346,7 @@ msgid ""
 "recommended that you exit this partitioner."
 msgstr ""
 "Partiziogile hau libparted liburutegian oinarrituta dago eta horrek ez du "
-"arkitektura honetan erabilitako partitizio tauletarako euskarririk. Biziki "
+"arkitektura honetan erabilitako partizio-tauletarako euskarririk. Biziki "
 "gomendatzen dizugu partiziogile hau ixtea."
 
 #. Type: boolean
@@ -355,29 +357,29 @@ msgid ""
 "If you can, please help to add support for your partition table type to "
 "libparted."
 msgstr ""
-"Ahal baduzu, lagundu partizio taularen motarako euskarria gehitzen libparted-"
-"i."
+"Ahal baduzu, mesedez lagundu partizio-taularen motaren euskarria gehitzen "
+"libparted-i."
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:19001
 msgid "Partition table type:"
-msgstr "Partizio taularen mota:"
+msgstr "Partizio-taularen mota:"
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:19001
 msgid "Select the type of partition table to use."
-msgstr "Hautatu erabili beharreko partizio taularen mota."
+msgstr "Hautatu erabili beharreko partizio-taularen mota."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:20001
 msgid "Create new empty partition table on this device?"
-msgstr "Partizio taula berri hutsa sortu nahi duzu gailu honetan?"
+msgstr "Partizio-taula berri hutsa sortu nahi duzu gailu honetan?"
 
 #. Type: boolean
 #. Description
@@ -388,7 +390,7 @@ msgid ""
 "creating a new partition table on the device, then all current partitions "
 "will be removed."
 msgstr ""
-"Partizioak egiteko gailu oso bat hautatu duzu. Gailuan partizio taula berria "
+"Partizioak egiteko gailu oso bat hautatu duzu. Gailuan partizio-taula berria "
 "sortzen hasten bazara, uneko partizio guztiak kenduko dira."
 
 #. Type: boolean
@@ -404,7 +406,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:21001
 msgid "Write a new empty partition table?"
-msgstr "Partizio taula berri hutsa idatzi nahi duzu?"
+msgstr "Partizio-taula berri hutsa idatzi nahi duzu?"
 
 #. Type: boolean
 #. Description
@@ -415,8 +417,8 @@ msgid ""
 "tables in libparted, the newly created partition table has to be written to "
 "the disk immediately."
 msgstr ""
-"libparted-eko Sun partizio taulen uneko inplementazioen mugak direla eta, "
-"sortu berri duzun partizio taula diskoan idatzi behar da berehala."
+"libparted-eko Sun partizio-taulen uneko inplementazioen mugak direla eta, "
+"sortu berri duzun partizio-taula diskoan idatzi behar da berehala."
 
 #. Type: boolean
 #. Description
@@ -427,7 +429,7 @@ msgid ""
 "the disk will be irreversibly removed."
 msgstr ""
 "Eragiketa hau EZINGO duzu geroago desegin eta diskoko datu guztiak "
-"berreskuratzeko aukerarik gabe kenduko dira."
+"berreskuratzeko aukerarik gabe ezabatuko dira."
 
 #. Type: boolean
 #. Description
@@ -437,7 +439,7 @@ msgid ""
 "Confirm whether you actually want to create a new partition table and write "
 "it to disk."
 msgstr ""
-"Berretsi une honetan partizio taula berri bat sortu eta diskoan idatzi nahi "
+"Berretsi une honetan partizio-taula berri bat sortu eta diskoan idatzi nahi "
 "duzun."
 
 #. Type: boolean
@@ -458,10 +460,10 @@ msgid ""
 "fail to boot if there is no bootable primary partition."
 msgstr ""
 "Abioko bandera partizio logiko batean ezartzen saiatzen ari zara. Abioko "
-"bandera normalean lehen mailako partizioetan bakarrik da erabilgarria, beraz "
-"berau partizio logikoetan instalatzea normalean ez da gomendagarria. Jakina "
-"da zenbait BIOS bertsiok abiaraztean huts egiten dutela ez badago lehen "
-"mailako partizio abiarazgarri bat."
+"bandera lehen mailako partizioetan bakarrik ohi izaten denez erabilgarri, ez "
+"da partizio logikoetan instalatzea gomendatzen. Jakina da zenbait BIOS "
+"bertsiok abiaraztean huts egiten dutela ez badago lehen mailako partizio "
+"abiarazgarririk."
 
 #. Type: boolean
 #. Description
@@ -481,7 +483,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:23001
 msgid "Set the partition flags"
-msgstr "Ezarri partizio banderak"
+msgstr "Ezarri partizioaren banderak"
 
 #. Type: text
 #. Description
@@ -516,7 +518,7 @@ msgstr "desaktibatuta"
 #. :sl2:
 #: ../partman-partitioning.templates:28001
 msgid "Resize the partition (currently ${SIZE})"
-msgstr "Partizio tamaina aldatu (uneko tamaina ${SIZE})"
+msgstr "Aldatu partizio tamaina (uneko tamaina ${SIZE})"
 
 #. Type: text
 #. Description
@@ -537,7 +539,7 @@ msgstr "Sortu partizio berri bat"
 #. :sl2:
 #: ../partman-partitioning.templates:31001
 msgid "Create a new empty partition table on this device"
-msgstr "Sortu partizio taula berri hutsa gailu honetan"
+msgstr "Sortu partizio-taula berri hutsa gailu honetan"
 
 #. Type: text
 #. Description

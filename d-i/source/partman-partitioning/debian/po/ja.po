@@ -12,7 +12,7 @@
 #   Alastair McKinstry <mckinstry@computer.org>, 2001, 2002.
 #   Free Software Foundation, Inc., 2000, 2001, 2004, 2005, 2006
 #   IIDA Yosiaki <iida@gnu.org>, 2004, 2005, 2006.
-#   Kenshi Muto <kmuto@debian.org>, 2006-2007
+#   Kenshi Muto <kmuto@debian.org>, 2006-2018
 #   Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2001.
 #   Takuro Ashie <ashie@homa.ne.jp>, 2001.
 #   Tobias Quathamer <toddy@debian.org>, 2007.
@@ -22,18 +22,21 @@
 #   Yasuaki Taniguchi <yasuakit@gmail.com>, 2010, 2011.
 #   Yukihiro Nakai <nakai@gnome.gr.jp>, 2000.
 #
+#   Kentaro Hayashi <kenhys@gmail.com>, 2021.
+#   YOSHINO Yoshihito <yy.y.ja.jp@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2014-04-13 18:58+0900\n"
-"Last-Translator:  Kenshi Muto <kmuto@debian.org>\n"
+"PO-Revision-Date: 2021-04-29 17:54+0000\n"
+"Last-Translator: YOSHINO Yoshihito <yy.y.ja.jp@gmail.com>\n"
 "Language-Team: Debian L10n Japanese <debian-japanese@lists.debian.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: text
 #. Description
@@ -149,7 +152,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:6001
 msgid "The size entered is invalid"
-msgstr "入力されたサイズは無効です。"
+msgstr "入力されたサイズは無効です"
 
 #. Type: error
 #. Description

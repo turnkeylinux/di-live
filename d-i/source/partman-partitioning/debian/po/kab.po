@@ -3,77 +3,66 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Portuguese messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# Console-setup strings translations:
-# (identified by "./console-setup.templates")
-# Copyright (C) 2003-2019 Miguel Figueiredo <elmig@debianpt.org>
-# This file is distributed under the same license as debian-installer.
-#
-#
-# Translations from iso-codes:
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#   Free Software Foundation, Inc., 2001,2004
-#   Filipe Maia <fmaia@gmx.net>, 2001.
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2018
+# Kabyle translation for debian-installer
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the debian-installer package.
+# Slimane Selyan Amiri <selyan.kab@gmail.com>, 2020, 2021.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2019-09-23 20:36+0100\n"
-"Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
-"Language-Team:  Portuguese <traduz@debianpt.org>\n"
-"Language: pt\n"
+"PO-Revision-Date: 2021-01-22 00:39+0000\n"
+"Last-Translator: Selyan Sliman Amiri <selyan.kab@gmail.com>\n"
+"Language-Team: Kabyle <kab@li.org>\n"
+"Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:1001
 msgid "Resizing partition..."
-msgstr "A redimensionar a partição..."
+msgstr "Asemsawi n teɣzi n uḥric..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-partitioning.templates:2001
 msgid "Computing the new state of the partition table..."
-msgstr "A calcular o novo estado da tabela de partições..."
+msgstr "Siḍen addad amaynut n tfelwit n uḥric..."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:3001
 msgid "The resize operation is impossible"
-msgstr "A operação de redimensionamento é impossível."
+msgstr "Tamhelt n usemsawi n teɣzi d tawezɣit"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:3001
 msgid "Because of an unknown reason it is impossible to resize this partition."
-msgstr ""
-"Devido a uma razão desconhecida é impossível redimensionar esta partição."
+msgstr "Ssabba n tizeɣt tarussint d awezɣi ad nsemsawi teɣzi n uḥric-a."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:3001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "Para detalhes veja /var/log/syslog ou a consola virtual 4."
+msgstr "Senqed /var/log/syslog neɣ wali tadiwent tuhlist 4 i wugar n telqayt."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:4001
 msgid "Write previous changes to disk and continue?"
-msgstr "Escrever as alterações anteriores os disco e continuar?"
+msgstr "Aru isenfal yezrin ɣef uḍebsi syen kemmel?"
 
 #. Type: boolean
 #. Description
@@ -83,15 +72,15 @@ msgid ""
 "Before you can select a new partition size, any previous changes have to be "
 "written to disk."
 msgstr ""
-"Antes de poder escolher um novo tamanho da partição, quaisquer alterações "
-"têm de ser escritas para o disco."
+"Seld ad tizmireḍ ad tferneḍ teɣzi tamaynut n uḥric, yal isenfal yezrin ilaq "
+"ad ttwarun ɣef uḍebsi."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:4001
 msgid "You cannot undo this operation."
-msgstr "Não pode desfazer esta operação."
+msgstr "Ur tezmireḍ ara ad tesfesxeḍ tamhelt-a."
 
 #. Type: boolean
 #. Description
@@ -99,7 +88,8 @@ msgstr "Não pode desfazer esta operação."
 #: ../partman-partitioning.templates:4001
 msgid "Please note that the resize operation may take a long time."
 msgstr ""
-"Por favor que a operação de redimensionamento poderá demorar bastante tempo."
+"Ttxil-k·m ẓer belli tamhelty n usemsawi n teɣzi tezmer ad teṭṭef aṭas n "
+"wakud."
 
 #. Type: string
 #. Description
@@ -110,7 +100,7 @@ msgstr ""
 #: ../partman-partitioning.templates:5001
 #: ../partman-partitioning.templates:10001
 msgid "New partition size:"
-msgstr "Novo tamanho de partição:"
+msgstr "Teɣzi tamaynut n uḥric:"
 
 #. Type: string
 #. Description
@@ -120,8 +110,8 @@ msgid ""
 "The minimum size for this partition is ${MINSIZE} (or ${PERCENT}) and its "
 "maximum size is ${MAXSIZE}."
 msgstr ""
-"O tamanho mínimo para esta partição é ${MINSIZE} (ou ${PERCENT}) e o seu "
-"tamanho máximo é ${MAXSIZE}."
+"Teɣzi taddayt i uḥric-a d ${MINSIZE} (or ${PERCENT}) rnu teɣzi-ines akk "
+"tafellayt d ${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -136,16 +126,15 @@ msgid ""
 "Hint: \"max\" can be used as a shortcut to specify the maximum size, or "
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
-"Dica: pode ser utilizado \"max\" como atalho para especificar o tamanho "
-"máximo, ou introduza uma percentagem (e.g. \"20%\") para utilizar essa "
-"percentagem do tamanho máximo."
+"Assumer: \"max\" yezmer ad yettuseqdac i ufran n teɣzi tafellayt, neɣ sekcem "
+"afmiḍi (am. \"20%\") i useqdec n ufmiḍi-a n teɣzi tafellayt."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:6001
 msgid "The size entered is invalid"
-msgstr "O tamanho introduzido é inválido"
+msgstr "Teɣzi yettuskecmen d arameɣtu"
 
 #. Type: error
 #. Description
@@ -156,16 +145,16 @@ msgid ""
 "size followed by an optional unit of measure (e.g. \"200 GB\"). The default "
 "unit of measure is the megabyte."
 msgstr ""
-"O tamanho que introduziu não foi compreendido. Por favor introduza um "
-"tamanho positivo inteiro seguido de uma unidade de medida opcional (e.g. "
-"\"200 GB\"). A unidade de tamanho por omissão é o megabyte."
+"Teɣzi i teskecmeḍ ur tettwafham ara. Ttxil-k·m sekcem teɣzi tilawt tummidt "
+"yettwaḍefren s uferdis n wasket afrayan (d am. \"200 GB\"). Aferdis n uskat "
+"amezwer d umigaṭamḍan."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:7001
 msgid "The size entered is too large"
-msgstr "O tamanho introduzido é demasiado grande"
+msgstr "Teɣzi yettuskecmen meqqer aṭas"
 
 #. Type: error
 #. Description
@@ -175,15 +164,15 @@ msgid ""
 "The size you entered is larger than the maximum size of the partition. "
 "Please enter a smaller size to continue."
 msgstr ""
-"O tamanho que introduziu é maior do que o tamanho máximo da partição. Por "
-"favor introduza um tamanho mais pequeno para continuar."
+"Teɣzi i teskecmeḍ ɣezzifet aṭas ɣef teɣzi tafellayt n uḥric. Ttxil-k·m "
+"sekcem teɣzi mecṭuḥen i wakken ad tkemmleḍ."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:8001
 msgid "The size entered is too small"
-msgstr "O tamanho que introduziu é demasiado pequeno"
+msgstr "Teɣzi yettuskecmen mecṭuḥ aṭas"
 
 #. Type: error
 #. Description
@@ -193,66 +182,64 @@ msgid ""
 "The size you entered is smaller than the minimum size of the partition. "
 "Please enter a larger size to continue."
 msgstr ""
-"O tamanho que introduziu é mais pequeno do que o tamanho mínimo da partição. "
-"Por favor introduza um tamanho maior para continuar."
+"Teɣzi i teskecmeḍ mecṭuḥet aṭas ɣef teɣzi taddayt n uḥric. Ttxil-k·m sekcem "
+"teɣzi ɣezzifen i wakken ad tkemmleḍ."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:9001
 msgid "Resize operation failure"
-msgstr "Falha na operação de redimensionamento"
+msgstr "Tamhelt n usemsawi n teɣzi ur teddi ara"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:9001
 msgid "An error occurred while writing the changes to the storage devices."
-msgstr ""
-"Um erro ocorreu durante a escrita das alterações nos dispositivos de "
-"armazenamento."
+msgstr "Tella-d tuccḍa lawan n tira n yisenfal ɣef yibenkan n uklas."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:9001
 msgid "The resize operation has been aborted."
-msgstr "A operação de redimensionamento foi abortada."
+msgstr "Tamhelt n usemsawi n teɣzi tettwanef."
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:10001
 msgid "The maximum size for this partition is ${MAXSIZE}."
-msgstr "O tamanho máximo para esta partição é ${MAXSIZE}."
+msgstr "Teɣzi tafellayt i uḥric-a d ${MAXSIZE}."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:11001
 msgid "Invalid size"
-msgstr "Tamanho inválido"
+msgstr "Teɣzi tarameɣtut"
 
 #. Type: select
 #. Choices
 #. :sl1:
 #: ../partman-partitioning.templates:12001
 msgid "Beginning"
-msgstr "Início"
+msgstr "Beddu"
 
 #. Type: select
 #. Choices
 #. :sl1:
 #: ../partman-partitioning.templates:12001
 msgid "End"
-msgstr "Fim"
+msgstr "Fin"
 
 #. Type: select
 #. Description
 #. :sl1:
 #: ../partman-partitioning.templates:12002
 msgid "Location for the new partition:"
-msgstr "Localização para a nova partição:"
+msgstr "Ideg n uḥric amaynut:"
 
 #. Type: select
 #. Description
@@ -262,43 +249,43 @@ msgid ""
 "Please choose whether you want the new partition to be created at the "
 "beginning or at the end of the available space."
 msgstr ""
-"Por favor escolha se deseja que a nova partição seja criada no início ou no "
-"fim do espaço disponível."
+"Ttxil-k·m fren ma yella amek i tebɣiḍ aḥric amaynut ad yettwarnu, deg "
+"tazwara neɣ deg taggara n tallunt yellan."
 
 #. Type: select
 #. Choices
 #. :sl1:
 #: ../partman-partitioning.templates:13001
 msgid "Primary"
-msgstr "Primária"
+msgstr "Agejdan"
 
 #. Type: select
 #. Choices
 #. :sl1:
 #: ../partman-partitioning.templates:13001
 msgid "Logical"
-msgstr "Lógica"
+msgstr "Tameẓla"
 
 #. Type: select
 #. Description
 #. :sl1:
 #: ../partman-partitioning.templates:13002
 msgid "Type for the new partition:"
-msgstr "Tipo da nova partição:"
+msgstr "Anaw n uḥric amaynut:"
 
 #. Type: multiselect
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:14001
 msgid "Flags for the new partition:"
-msgstr "Flags para a nova partição:"
+msgstr "Anayen i yiḥricen imaynuten:"
 
 #. Type: string
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:15001
 msgid "Partition name:"
-msgstr "Nome da partição:"
+msgstr "Isem n uḥric:"
 
 #. Type: boolean
 #. Description
@@ -309,7 +296,7 @@ msgstr "Nome da partição:"
 #: ../partman-partitioning.templates:16001
 #: ../partman-partitioning.templates:17001
 msgid "Continue with partitioning?"
-msgstr "Continuar com o particionador?"
+msgstr "Kemmel akked beṭṭu?"
 
 #. Type: boolean
 #. Description
@@ -320,9 +307,9 @@ msgid ""
 "partition tables on your architecture.  Please send an e-mail message to "
 "debian-boot@lists.debian.org with information."
 msgstr ""
-"Este particionador não tem informação acerca do tipo de tabelas de partição "
-"por omissão na sua arquitectura.  Por favor, envie uma mensagem de e-mail "
-"para debian-boot@lists.debian.org com a informação."
+"Amesnulfu-a n yiḥricen ulac ɣur-s talɣut ɣef wanaw amezwer n tfelwiyin n "
+"uḥric deg tsegda-inek·inem. Ttxil-k·m azen izen s yimayl ɣer debian-"
+"boot@lists.debian.org s telɣut."
 
 #. Type: boolean
 #. Description
@@ -332,8 +319,8 @@ msgid ""
 "Please note that if the type of the partition table is unsupported by "
 "libparted, then this partitioner will not work properly."
 msgstr ""
-"Por favor note que se o tipo de tabela de partição não é suportado pela "
-"libparted, então este particionador não funcionará correctamente."
+"Ma ulac aɣilif, ẓer belli ma yella anaw n tfelwit n uḥric ur yettusefrak ara "
+"sɣur libparted, syen aḥric-a ur iteddu ara akken ilaq."
 
 #. Type: boolean
 #. Description
@@ -344,9 +331,9 @@ msgid ""
 "support for the partition tables used on your architecture.  It is strongly "
 "recommended that you exit this partitioner."
 msgstr ""
-"Este particionador é baseado na biblioteca libparted a qual não tem suporte "
-"para as tabelas de partição utilizadas na sua arquitectura.  É fortemente "
-"aconselhado que termine este particionador."
+"Amesnulfu-a n yiḥricen yebna ɣef temkarḍa libparted ur nsefrak ara "
+"tifelwiyin n uḥric i yettusqedcen ɣef tsegda.  Tiǧǧin n umesnulfu-a n "
+"yiḥricen d ayen i d-yettuwellhen s waṭas."
 
 #. Type: boolean
 #. Description
@@ -356,29 +343,29 @@ msgid ""
 "If you can, please help to add support for your partition table type to "
 "libparted."
 msgstr ""
-"Se lhe for possível, por favor ajude a criar suporte para o seu tipo de "
-"tabela de partição no libparted."
+"Ma yella tzemreḍ, ttxil-k·m ɛiwen deg tmerna n tallalt i wanaw n tfelwit n "
+"uḥric ɣer libparted."
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:19001
 msgid "Partition table type:"
-msgstr "Tipo da tabela da partição:"
+msgstr "Anaw n tfelwit n uḥric:"
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:19001
 msgid "Select the type of partition table to use."
-msgstr "Definir o tipo da tabela da partição a utilizar."
+msgstr "Fren anaw n tfelwit n uḥric i useqdec."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:20001
 msgid "Create new empty partition table on this device?"
-msgstr "Criar uma nova tabela de partições vazia neste dispositivo?"
+msgstr "Rnu tafelwit tamaynut n uḥric ilem ɣef yibenk-a?"
 
 #. Type: boolean
 #. Description
@@ -389,25 +376,23 @@ msgid ""
 "creating a new partition table on the device, then all current partitions "
 "will be removed."
 msgstr ""
-"Você escolheu um dispositivo inteiro para particionar. Se proceder com a "
-"criação de uma nova tabela de partições no dispositivo, então todas as "
-"partições actuais serão removidas."
+"Aql-ak·akem tferneḍ ibenk n unekcum ɣer uḥric. Ma yella tɛeddaḍ ɣer tmerna n "
+"tfelwit n uḥric amaynut ɣef yibenk, i wakken meṛṛa iḥricen imiranen ad "
+"ttwakksen."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:20001
 msgid "Note that you will be able to undo this operation later if you wish."
-msgstr ""
-"Note que poderá voltar atrás nesta operação posteriormente se assim o "
-"desejar."
+msgstr "Ẓer belli ad tizmireḍ ad tesfesxeḍ aḥric-a mbeɛd ma yella tebɣiḍ."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:21001
 msgid "Write a new empty partition table?"
-msgstr "Escrever uma nova tabela de partições vazia?"
+msgstr "Rnu tafelwit tamaynut n uḥric ilem?"
 
 #. Type: boolean
 #. Description
@@ -418,9 +403,8 @@ msgid ""
 "tables in libparted, the newly created partition table has to be written to "
 "the disk immediately."
 msgstr ""
-"Devido às limitações na implementação actual das tabelas de partições da Sun "
-"na libparted, a tabela de partições recentemente criada tem que ser escrita "
-"no disco imediatamente."
+"Ssebba n tlisa deg wuẓu amiran n tfelwiyin n uḥric Sun deg libparted, "
+"tafelwit akk tamaynut n uḥric yettwarnan ilaq ad tettwaru ɣef uḍebsi din-din."
 
 #. Type: boolean
 #. Description
@@ -430,8 +414,8 @@ msgid ""
 "You will NOT be able to undo this operation later and all existing data on "
 "the disk will be irreversibly removed."
 msgstr ""
-"NÃO poderá voltar atrás nesta operação posteriormente e toda a informação no "
-"disco será irreversivelmente apagada."
+"Ur tettizmireḍ ara ad tesfesxeḍ aḥric-a mbeɛd yerna meṛṛa isefka yellan ɣef "
+"uḍebsi ad ttwakksen i lebda."
 
 #. Type: boolean
 #. Description
@@ -441,15 +425,15 @@ msgid ""
 "Confirm whether you actually want to create a new partition table and write "
 "it to disk."
 msgstr ""
-"Confirme se realmente pretende criar uma nova tabela de partições e escrevê--"
-"la no disco."
+"Sentem ma yella tebɣiḍ s tidet ad ternuḍ tafelwit n uḥric tamaynut akked "
+"tira ɣef uḍebsi."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:22001
 msgid "Are you sure you want a bootable logical partition?"
-msgstr "Tem a certeza que quer uma partição lógica de arranque?"
+msgstr "D tidet tebɣiḍ aḥric ameẓẓul aziraz?"
 
 #. Type: boolean
 #. Description
@@ -461,11 +445,10 @@ msgid ""
 "logical partitions is normally discouraged. Some BIOS versions are known to "
 "fail to boot if there is no bootable primary partition."
 msgstr ""
-"Você está a tentar definir a 'flag' de arranque numa partição lógica. A "
-"'flag' de arranque é normalmente útil em partições primárias, por isso "
-"defini-la em partições lógicas é normalmente desencorajado. Algumas versões "
-"de BIOS são conhecidas por falharem o arranque se não existir uma partição "
-"primária de arranque."
+"Tettaɛraḍeḍ ad tesbaduḍ anay aziraz ɣef uḥric ameẓẓul. Anay aziraz deg tuget "
+"yelha kan ɣef yiḥricen igejdanen, ɣef waya ur d-yettuwelleh ara ad "
+"yettusbadu ɣef yiḥricen imeẓẓulen. Kra n yileqman n BIOS ttwassnen s tuccḍa-"
+"nsen deg usenker ma yili ulac aḥric agejdan aziraz."
 
 #. Type: boolean
 #. Description
@@ -476,72 +459,72 @@ msgid ""
 "you are using a custom boot manager that pays attention to bootable logical "
 "partitions, then setting this flag may make sense."
 msgstr ""
-"No entanto, se tem a certeza que a sua BIOS não tem este problema, ou se "
-"está a utilizar um gestor de arranque personalizado que tem em atenção "
-"partições lógicas de arranque, então faz sentido definir esta 'flag'."
+"Ɣas akken, ma yella tetḥeqqeḍ BIOS inek·inem ur yesɛi ara ugur-a, neɣ ma "
+"yella tseqdaceḍ amsefrak n usenker udmawan i yettarran ddehn-is ɣer yiḥricen "
+"imeẓẓulen izirazen, yezmer asbadu n wanay-a ad yesɛu anamek."
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:23001
 msgid "Set the partition flags"
-msgstr "Definir flags da partição"
+msgstr "Sbadu anayen n uḥric"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:24001
 msgid "Name:"
-msgstr "Nome:"
+msgstr "Name:"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:25001
 msgid "Bootable flag:"
-msgstr "Flag de arranque:"
+msgstr "Anay aziraz:"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:26001
 msgid "on"
-msgstr "activa"
+msgstr "ɣef"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:27001
 msgid "off"
-msgstr "inactiva"
+msgstr "off"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:28001
 msgid "Resize the partition (currently ${SIZE})"
-msgstr "Redimensionar a partição (actualmente ${SIZE})"
+msgstr "Semsawi teɣzi n uḥric (tamirant ${SIZE})"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:29001
 msgid "Delete the partition"
-msgstr "Remover a partição"
+msgstr "Kkes aḥric"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:30001
 msgid "Create a new partition"
-msgstr "Criar uma nova partição"
+msgstr "Rnu aḥric amaynut"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-partitioning.templates:31001
 msgid "Create a new empty partition table on this device"
-msgstr "Criar uma nova tabela de partições vazia neste dispositivo"
+msgstr "Rnu tafelwit n uḥric ilem ɣef yibenk-a"
 
 #. Type: text
 #. Description
@@ -550,7 +533,7 @@ msgstr "Criar uma nova tabela de partições vazia neste dispositivo"
 #. such as GRUB.
 #: ../partman-partitioning.templates:32001
 msgid "Reserved BIOS boot area"
-msgstr "Área de arranque da BIOS reservada"
+msgstr "Tamnaḍt n usenker n BIOS yettwaḥarren"
 
 #. Type: text
 #. Description

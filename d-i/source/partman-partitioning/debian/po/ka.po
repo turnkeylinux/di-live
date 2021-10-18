@@ -25,14 +25,14 @@ msgstr ""
 "Project-Id-Version: debian-installer.2006071\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2011-03-01 12:49+0400\n"
-"Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
+"PO-Revision-Date: 2019-08-28 18:09+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Georgian\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: text
 #. Description
@@ -258,10 +258,11 @@ msgstr "ახალი დანაყოფის მდებარეობ�
 #. Description
 #. :sl1:
 #: ../partman-partitioning.templates:12002
+#, fuzzy
 msgid ""
 "Please choose whether you want the new partition to be created at the "
 "beginning or at the end of the available space."
-msgstr "სად გაიხსნას ახალი დანაყოფი - თავისუფალი სივრცის თავში თუ ბოლოში?"
+msgstr "სად გაიხსნას ახალი დანაყოფი - თავისუფალი სივრცის თავში თუ ბოლოში."
 
 #. Type: select
 #. Choices

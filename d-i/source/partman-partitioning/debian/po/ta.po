@@ -7,6 +7,8 @@
 # Tamil messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
+# Jeyanthinath MuthuRam <jeyanthinath10@gmail.com>, 2020.
+# Vasudevan Tirumurti <agnihot3@gmail.com>, 2021.
 #
 #
 # Translations from iso-codes:
@@ -22,8 +24,8 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: partman-partitioning@packages.debian.org\n"
 "POT-Creation-Date: 2014-07-06 22:00+0000\n"
-"PO-Revision-Date: 2018-08-05 09:04+0000\n"
-"Last-Translator: Dr.T.Vasudevan <drtvasudevan@gmail.com>\n"
+"PO-Revision-Date: 2021-02-09 18:59+0000\n"
+"Last-Translator: Vasudevan Tirumurti <agnihot3@gmail.com>\n"
 "Language-Team: Tamil <<gnome-tamil-translation@googlegroups.com>>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +121,7 @@ msgid ""
 "maximum size is ${MAXSIZE}."
 msgstr ""
 "இந்த பகிர்வுக்கு நீங்கள் பயன்படுத்தக்கூடிய குறைந்தபட்ச அளவு ${MINSIZE} அல்லது ${PERCENT} "
-"மற்றும் அதிகபட்ச அளவு ${MAXSIZE}"
+"மற்றும் அதிகபட்ச அளவு ${MAXSIZE}."
 
 #. Type: string
 #. Description
@@ -135,7 +137,7 @@ msgid ""
 "enter a percentage (e.g. \"20%\") to use that percentage of the maximum size."
 msgstr ""
 "உதவி: \"max\"ஐ அதிக பட்ச அளவை குறிப்பிட குறுக்கு விசையாக பயன்படுத்தலாம். அல்லது "
-"அதிக பட்ச அளவில்  ஒரு சதவிகிதமாக (எ-டு. \"20%\")  பயன்படுத்த சதவிகிதத்தை "
+"அதிக பட்ச அளவில் ஒரு சதவிகிதமாக (எ-டு. \"20%\") பயன்படுத்த சதவிகிதத்தை "
 "குறிப்பிடலாம்."
 
 #. Type: error
@@ -143,7 +145,7 @@ msgstr ""
 #. :sl2:
 #: ../partman-partitioning.templates:6001
 msgid "The size entered is invalid"
-msgstr "உள்ளீடு செய்த அளவு செல்லுபடியாகாதது."
+msgstr "உள்ளீடு செய்த அளவு செல்லுபடியாகாதது"
 
 #. Type: error
 #. Description
@@ -190,7 +192,7 @@ msgid ""
 "Please enter a larger size to continue."
 msgstr ""
 "நீங்கள் உள்ளிட்ட அளவு குறைந்த பட்ச பகிர்வின் அளவைவிட மிகக் குறைவு. தொடருவதற்கு ஒரு "
-"பெரிய அளவை உள்ளிடவும்"
+"பெரிய அளவை உள்ளிடவும்."
 
 #. Type: error
 #. Description
@@ -349,7 +351,7 @@ msgid ""
 "If you can, please help to add support for your partition table type to "
 "libparted."
 msgstr ""
-"இயலுமாயின் லிப் பார்டட் (libparted) உங்கள் பகிர்வு அட்டவணை வகையை ஆதரிக்க உதவுங்கள்"
+"இயலுமாயின் லிப் பார்டட் (libparted) உங்கள் பகிர்வு அட்டவணை வகையை ஆதரிக்க உதவுங்கள்."
 
 #. Type: select
 #. Description
@@ -536,7 +538,7 @@ msgstr "இந்த சாதனத்தில் வெற்று பகி
 #. such as GRUB.
 #: ../partman-partitioning.templates:32001
 msgid "Reserved BIOS boot area"
-msgstr "ஒதுக்கீடு செய்த பயாஸ் (BIOS) துவக்கி இடம்."
+msgstr "ஒதுக்கீடு செய்த பயாஸ் (BIOS) துவக்கி இடம்"
 
 #. Type: text
 #. Description

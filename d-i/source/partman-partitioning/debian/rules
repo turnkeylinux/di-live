@@ -19,6 +19,9 @@ endif
 ifeq ($(ARCH), alpha)
 FS_DEPENDS=ntfs-3g-udeb
 endif
+ifeq ($(ARCH), arm64)
+FS_DEPENDS=ntfs-3g-udeb
+endif
 
 override_dh_gencontrol:
 	dh_gencontrol -- -Vfs:Depends="$(FS_DEPENDS)"
