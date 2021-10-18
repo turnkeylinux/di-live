@@ -19,11 +19,5 @@ arch_check_usable_kernel () {
 }
 
 arch_get_kernel () {
-	case "$KERNEL_MAJOR" in
-	    2.6|3.*|4.*)
-		echo "linux-image-$1"
-		;;
-	    *)	warning "Unsupported kernel major '$KERNEL_MAJOR'."
-		;;
-	esac
+	echo "linux-image-$1"
 }

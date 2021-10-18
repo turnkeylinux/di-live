@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2011-03-21 02:13+0100\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -162,9 +162,13 @@ msgstr "Základný systém sa nedá nainštalovať"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Inštalačný program nevie určiť spôsob inštalácie základného systému. Nebolo "
 "nájdené žiadne inštalačné CD ani nebol nastavený žiaden Debian archív."
@@ -287,12 +291,14 @@ msgstr "Vyskytla sa nasledujúca chyba:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Nástroj na vytvorenie initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -525,9 +531,13 @@ msgstr "Nesprávny Release súbor: neobsahuje položku pre ${SUBST0}."
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0} sa nedá stiahnuť. V závislosti od metódy inštalácie to môže byť "
 "spôsobené chybným CD alebo problémom so sieťou."
@@ -697,6 +707,7 @@ msgstr "Nastavuje sa ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

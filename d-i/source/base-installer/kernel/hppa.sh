@@ -15,8 +15,5 @@ arch_check_usable_kernel () {
 }
 
 arch_get_kernel () {
-	if [ "$NUMCPUS" ] && [ "$NUMCPUS" -gt 1 ]; then
-		echo "linux-image-$1-smp"
-	fi
 	echo "linux-image-$1"
 }

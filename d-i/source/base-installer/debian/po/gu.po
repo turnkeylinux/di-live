@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: d-i\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2008-08-07 11:42+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -163,9 +163,13 @@ msgstr "પાયાની સિસ્ટમ સ્થાપિત કરી �
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "સ્થાપક પાયાની સિસ્ટમ કઇ રીત સ્થાપિત કરવી તે નક્કી કરી શકતું નથી. કોઇ પણ સ્થાપિત કરી "
 "શકાય તેવી સીડી-રોમ મળી નહોતી અને કોઇ યોગ્ય મિરર રુપરેખાંકિત કરેલ નહોતો."
@@ -286,12 +290,14 @@ msgstr "નીચે પ્રમાણેની ક્ષતિ ઉદભવી
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "બૂટ initrd બનાવવામાં ઉપયોગ થતાં સાધન:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -520,9 +526,13 @@ msgstr "અયોગ્ય રીલીઝ ફાઇલ: ${SUBST0} માટે 
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0} મેળવી શકાતું નથી. તમારી સ્થાપન પધ્ધતિ મુજબ, આ કદાચ નેટવર્ક મુશ્કલી હોઇ શકે "
 "અથવા ખરાબ સીડી હોઇ શકે છે."
@@ -692,6 +702,7 @@ msgstr "રૂપરેખાંકિત કરે છે ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

@@ -4,7 +4,7 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Spanish messages for debian-installer.
-# Copyright (C) 2003-2007 Software in the Public Interest, Inc.
+# Copyright (C) 2003-2020 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
 # Contributors to the translation of debian-installer:
@@ -16,8 +16,8 @@
 # Steve Langasek <vorlon@debian.org>, 2004
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2005
 # Rubén Porras Campo <nahoo@inicia.es>, 2005
-# Javier Fernández-Sanguino <jfs@debian.org>, 2003-2010
 # Omar Campagne <ocampagne@gmail.com>, 2010
+# Javier Fernández-Sanguino <jfs@debian.org>, 2003-2012, 2014-2018, 2020
 #
 # Equipo de traducción al español, por favor lean antes de traducir
 # los siguientes documentos:
@@ -44,16 +44,25 @@
 # - 'array' no está traducido aún. La traducción como 'arreglo' suena
 # fatal (y es poco conocida)
 #
-#  
+#
+# Translations from iso-codes:
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Free Software Foundation, Inc., 2001,2003,2004
+#   Javier Fernández-Sanguino <jfs@debian.org>, 2004-2008, 2010
+#   Juan Manuel García Molina <juanmagm@mail.com>, 2001.
+#   Ricardo Fernández Pascual <ric@users.sourceforge.net>, 2000, 2001.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2011-02-04 03:13+0100\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-08-23 19:21+0200\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team:  Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -199,12 +208,12 @@ msgstr "No se pudo instalar el sistema base"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "El instalador no puede determinar cómo instalar el sistema base. No se ha "
-"encontrado ninguna unidad de CD-ROM válida y no se ha configurado una "
-"réplica válida."
+"encontrado ningún medio de instalación y no se ha configurado una réplica "
+"válida."
 
 #. Type: error
 #. Description
@@ -327,12 +336,14 @@ msgstr "Tuvo lugar el siguiente error:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Herramienta a utilizar para generar el initrd de arranque:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -576,11 +587,12 @@ msgstr "Fichero de versión incorrecto: no hay entrada para ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "No se ha podido obtener ${SUBST0}. Esto puede ser debido a un problema de "
-"red o a un CD defectuoso, según su método de instalación."
+"red o a un medio de instalación defectuoso, dependiendo de su método de "
+"instalación."
 
 #. Type: error
 #. Description
@@ -747,6 +759,7 @@ msgstr "Configurando ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

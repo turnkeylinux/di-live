@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2019-03-20 22:31+0100\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-01-02 22:03+0100\n"
 "Last-Translator: Anton Gladky <gladk@debian.org>\n"
 "Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
 "Language: uk\n"
@@ -57,7 +57,7 @@ msgstr ""
 #. :sl2:
 #: ../base-installer.templates:2001
 msgid "No file system mounted on /target"
-msgstr "Файлова система не змонтована у /target."
+msgstr "Файлова система не змонтована у /target"
 
 #. Type: error
 #. Description
@@ -76,7 +76,7 @@ msgstr ""
 #. :sl2:
 #: ../base-installer.templates:3001
 msgid "Not installing to unclean target"
-msgstr "Не встановлюємо на непорожній розділ."
+msgstr "Не встановлюємо на непорожній розділ"
 
 #. Type: error
 #. Description
@@ -173,9 +173,10 @@ msgstr "Неможливо встановити базову систему"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Встановлювач не може визначити, яким чином встановлювати базову систему. Не "
 "знайдено CD-ROM, з якого можна провести встановлення, та не було вибрано "
@@ -297,12 +298,14 @@ msgstr "Виникла наступна помилка:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Інструмент для створення initrd для завантаження:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -539,9 +542,10 @@ msgstr "Невірний файл Release: відсутній запис для 
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Неможливо отримати ${SUBST0}. Це може бути викликано проблемою з мережею або "
 "поганим компакт-диском, залежно від методу встановлення."
@@ -711,6 +715,7 @@ msgstr "Налаштування ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

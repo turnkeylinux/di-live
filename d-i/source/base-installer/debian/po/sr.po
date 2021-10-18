@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2018-01-11 20:47+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2019-12-05 21:45+0000\n"
 "Last-Translator: Filipovic Dragan <filipovic@tutanota.com>\n"
 "Language-Team: Serbian <debian-l10n-serbian@lists.debian.org>\n"
 "Language: sr\n"
@@ -177,11 +177,11 @@ msgstr "Немогућа инсталација основног система"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Програм за инсталацију не може да инсталира основни систем. Није пронађен ни "
-"један CD-ROM са инсталацијом и ниједан валидан мирор није конфигурисан."
+"једна слика са инсталацијом и ниједан валидан мирор није конфигурисан."
 
 #. Type: error
 #. Description
@@ -300,12 +300,14 @@ msgstr "Дошло је до следеће грешке:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Алат који се користи за генерисање покретачког „initrd“-а:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -541,11 +543,11 @@ msgstr "Неисправан „Release“ фајл: нема ставке за 
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Неуспело преузимање ${SUBST0}. Разлог може бити проблем са мрежом или лош "
-"CD, зависно од изабраног метода инсталације."
+"медиј, зависно од изабраног метода инсталације."
 
 #. Type: error
 #. Description
@@ -711,6 +713,7 @@ msgstr "Конфигурисање ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

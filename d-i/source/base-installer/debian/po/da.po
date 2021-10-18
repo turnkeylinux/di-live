@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_da\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2015-08-16 20:20+0200\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: <dansk@dansk-gruppen.dk>\n"
@@ -186,9 +186,13 @@ msgstr "Kan ikke installere basissystemet"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Installationsprogrammet kan ikke finde ud af hvordan det skal installere "
 "basissystemet. Der blev ikke fundet nogen installerbar cd, og der blev ikke "
@@ -311,12 +315,14 @@ msgstr "Følgende fejl opstod:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Værktøj der skal bruges til at generere en opstarts-ramdisk (initrd):"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -554,9 +560,13 @@ msgstr "Ugyldig Release-fil; ingen forekomst af ${SUBST0}."
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Kunne ikke hente ${SUBST0}. Dette kan skyldes et netværksproblem eller en "
 "dårlig cd, alt afhængig af din installationsmetode."
@@ -727,6 +737,7 @@ msgstr "Sætter ${SUBST0} op ..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

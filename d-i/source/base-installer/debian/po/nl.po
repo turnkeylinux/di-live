@@ -3,14 +3,14 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of nl.po to Dutch
-# Dutch messages for debian-installer.
+# translation of debian-installer/sublevel1 to Dutch
+# Dutch messages for debian-installer/sublevel1.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Frans Pop <aragorn@tiscali.nl>, 2005.
 # Frans Pop <elendil@planet.nl>, 2007, 2008, 2009, 2010.
 # Eric Spreen <erispre@gmail.com>, 2010.
-# Jeroen Schot <schot@a-eskwadraat.nl>, 2011.
+# Jeroen Schot <schot@a-eskwadraat.nl>, 2011, 2012.
 #
 # Translations from iso-codes:
 # Translations taken from ICU SVN on 2007-09-09.
@@ -21,19 +21,21 @@
 # Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2006, 2007, 2008, 2009, 2010, 2011.
 # Taco Witte <tcwitte@cs.uu.nl>, 2004.
 # Reinout van Schouwen <reinouts@gnome.org>, 2007.
+# Frans Spiesschaert <Frans.Spiesschaert@yucom.be>, 2014-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer/sublevel1\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2012-02-17 20:20+0100\n"
-"Last-Translator: Jeroen Schot <schot@a-eskwadraat.nl>\n"
-"Language-Team: Debian l10n Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-03-30 22:36+0200\n"
+"Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
+"Language-Team: Debian Dutch l10n Team <debian-l10n-dutch@lists.debian.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Type: boolean
 #. Description
@@ -178,11 +180,11 @@ msgstr "Kan het basissysteem niet installeren"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Het installatieprogramma vindt geen manier om het basissysteem te "
-"installeren. Er is noch een installeerbare CD-ROM gevonden, noch een geldige "
+"installeren. Het vond geen bruikbaar image en er werd geen geldige "
 "spiegelserver ingesteld."
 
 #. Type: error
@@ -305,12 +307,14 @@ msgstr "De volgende fout is opgetreden:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Te gebruiken hulpprogramma voor het genereren van een initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -407,14 +411,14 @@ msgid ""
 "system."
 msgstr ""
 "Er is een fout opgetreden bij het installeren van de kernel op het "
-"doelsysteem"
+"doelsysteem."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Kernel package: '${KERNEL}'."
-msgstr "Kernelpakket: '${KERNEL}'"
+msgstr "Kernelpakket: '${KERNEL}'."
 
 #. Type: select
 #. Choices
@@ -441,8 +445,8 @@ msgid ""
 "The list shows the available kernels. Please choose one of them in order to "
 "make the system bootable from the hard drive."
 msgstr ""
-"Deze lijst toont de beschikbare kernels. Welke hiervan wilt u gebruiken om "
-"het systeem opstartbaar te maken?"
+"Deze lijst toont de beschikbare kernels. Selecteer één ervan om het systeem "
+"vanaf de harde schijf te kunnen opstarten."
 
 #. Type: boolean
 #. Description
@@ -554,11 +558,11 @@ msgstr "Ongeldig 'Release'-bestand, geen ingang voor ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Kon ${SUBST0} niet ophalen. Afhankelijk van uw installatiemethode is dit "
-"(mogelijk) het gevolg van een netwerkprobleem, of een slechte CD."
+"(mogelijk) het gevolg van een netwerkprobleem, of van slechte media."
 
 #. Type: error
 #. Description
@@ -725,6 +729,7 @@ msgstr "${SUBST0} wordt geconfigureerd..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

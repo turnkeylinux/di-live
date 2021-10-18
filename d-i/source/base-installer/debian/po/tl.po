@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2009-03-28 18:49+0800\n"
 "Last-Translator: Eric Pareja <eric.pareja@gmail.com>\n"
 "Language-Team: Tagalog <debian-tl@banwa.upm.edu.ph>\n"
@@ -169,9 +169,13 @@ msgstr "Hindi mailuklok ng base system"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Hindi matuklasan ng installer kung paano nito mailuklok ang batayang "
 "sistema. Walang CD-ROM na maaaring ma-iluklok at walang tugmang mirror na "
@@ -296,12 +300,14 @@ msgstr "Naganap ang susunod na error:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Kasangkapang gagamitin sa pagbuo ng initramfs initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -539,9 +545,13 @@ msgstr "Hindi tanggap na talaksang Release: walang entry para sa ${SUBST0}."
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Hindi makuha ang ${SUBST0}. Maaaring dahil ito sa problema sa network o "
 "sirang CD, depende sa paraan ng inyong pagluklok."
@@ -711,6 +721,7 @@ msgstr "Isinasaayos ang ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

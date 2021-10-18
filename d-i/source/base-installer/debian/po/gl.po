@@ -17,13 +17,14 @@
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@gmail.com>, 2009.
 # Jorge Barreiro <xurxo@findomundo.es>, 2010, 2011, 2012, 2013, 2014, 2015, 2017.
-# mantinan <github@manty.net>, 2018.
+# mantinan <github@manty.net>, 2018, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2018-09-18 21:24+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-01-06 18:53+0000\n"
 "Last-Translator: mantinan <github@manty.net>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "Language: gl\n"
@@ -174,10 +175,10 @@ msgstr "Non se pode instalar o sistema base"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"O instalador non pode instalar o sistema base. Non se atopou un CD-ROM "
+"O instalador non pode instalar o sistema base. Non se atopou unha imaxe "
 "instalábel e non se configurou unha réplica válida."
 
 #. Type: error
@@ -296,12 +297,14 @@ msgstr "Aconteceu o seguinte erro:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Ferramenta para xerar o initrd de arranque:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -539,11 +542,11 @@ msgstr "Ficheiro Release non válido: non hai ningunha entrada para ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Non foi posíbel obter ${SUBST0}. Isto pode estar causado por un erro na rede "
-"ou un CD defectuoso, segundo o método de instalación."
+"ou un medio defectuoso, segundo o método de instalación."
 
 #. Type: error
 #. Description
@@ -710,6 +713,7 @@ msgstr "Estase a configurar ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

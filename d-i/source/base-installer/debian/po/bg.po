@@ -8,18 +8,10 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004, 2005, 2006.
-# Nikola Antonov <nikola@linux-bg.org>, 2004.
 #
 #
 # Translations from iso-codes:
-#   Tobias Quathamer <toddy@debian.org>, 2007.
 #     Translations taken from ICU SVN on 2007-09-09
-#   Free Software Foundation, Inc., 2004.
-#   Georgi Georgiev <assenov_g@operamail.com>, 2001, 2004.
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
-#   Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004.
-#   Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010.
 # Copyright (C)
 #   (translations from drakfw)
 #   - further translations from ICU-3.9
@@ -27,15 +19,24 @@
 # Copyright (C) 2010 Free Software Foundation, Inc.
 #
 # Copyright (C)
+#
+# Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004, 2005, 2006.
+# Nikola Antonov <nikola@linux-bg.org>, 2004.
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#   Free Software Foundation, Inc., 2004.
+#   Georgi Georgiev <assenov_g@operamail.com>, 2001, 2004.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Ognyan Kulev <ogi@fmi.uni-sofia.bg>, 2004.
+#   Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010.
 #   Roumen Petrov <transl@roumenpetrov.info>, 2010.
-# Damyan Ivanov <dmn@debian.org>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Damyan Ivanov <dmn@debian.org>, 2006-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2012-02-25 18:10+0200\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-10-24 09:53+0300\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
 "Language-Team: Български <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -186,11 +187,11 @@ msgstr "Не може да бъде инсталирана основна сис
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Инсталаторът не може да определи как да инсталира основната система. Не е "
-"намерен инсталационен компактдиск и не е настроено валидно огледало."
+"намерен инсталационен носител и няма настроен валиден огледален сървър."
 
 #. Type: error
 #. Description
@@ -310,12 +311,14 @@ msgstr "Получена бе следната грешка:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Инструмент за генериране на initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -425,7 +428,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" means \"no kernel\" ]"
-msgstr "без ядро"
+msgstr "няма"
 
 #. Type: select
 #. Description
@@ -551,11 +554,11 @@ msgstr "Невалиден файл Release: няма ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"Не може да бъде доставен ${SUBST0}. Причината може да е в мрежов проблем или "
-"в развален компактдиск, в зависимост от начина на инсталиране."
+"Не може да бъде доставен „${SUBST0}“. Причината може да е в мрежов проблем "
+"или в повреден носител, в зависимост от начина на инсталиране."
 
 #. Type: error
 #. Description
@@ -722,6 +725,7 @@ msgstr "Настройване на ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

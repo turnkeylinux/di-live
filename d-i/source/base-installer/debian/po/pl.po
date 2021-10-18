@@ -27,21 +27,23 @@
 #      Jakub Bogusz <qboosh@pld-linux.org>, 2007-2011.
 #      Tomasz Z. Napierala <zen@debian.linux.org.pl>, 2004, 2006.
 # Marcin Owsiany <porridge@debian.org>, 2011.
-# Michał Kułach <michal.kulach@gmail.com>, 2012, 2013.
+# Michał Kułach <michal.kulach@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Bartosz Feński <fenio@debian.org>, 2020.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2011-09-26 10:46+0100\n"
-"Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-09-11 20:10+0000\n"
+"Last-Translator: Bartosz Feński <fenio@debian.org>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 
 #. Type: boolean
 #. Description
@@ -184,11 +186,11 @@ msgstr "Nie udało się zainstalować systemu podstawowego"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Instalator nie znalazł sposobu na instalację systemu podstawowego. Nie "
-"znaleziono CD instalacyjnego ani odpowiednio skonfigurowanego serwera "
+"znaleziono nośnika instalacyjnego ani odpowiednio skonfigurowanego serwera "
 "lustrzanego."
 
 #. Type: error
@@ -247,7 +249,7 @@ msgstr "Nie udało się zainstalować systemu podstawowego"
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "The base system installation into /target/ failed."
-msgstr "Instalacja systemu podstawowego do /target/ nie powiodła się"
+msgstr "Instalacja systemu podstawowego do /target/ nie powiodła się."
 
 #. Type: error
 #. Description
@@ -308,12 +310,14 @@ msgstr "Wystąpił następujący błąd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Narzędzie wykorzystywane do tworzenia initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -405,7 +409,7 @@ msgstr "Nie można było zainstalować wybranego jądra"
 msgid ""
 "An error was returned while trying to install the kernel into the target "
 "system."
-msgstr "Wystąpił błąd podczas próby instalacji jądra w docelowym systemie"
+msgstr "Wystąpił błąd podczas próby instalacji jądra w docelowym systemie."
 
 #. Type: error
 #. Description
@@ -454,7 +458,7 @@ msgstr "Kontynuować bez instalacji jądra?"
 #. :sl2:
 #: ../bootstrap-base.templates:14001
 msgid "No installable kernel was found in the defined APT sources."
-msgstr "Nie znaleziono zdolnego do instalacji jądra w podanych źródłach APT"
+msgstr "Nie znaleziono zdolnego do instalacji jądra w podanych źródłach APT."
 
 #. Type: boolean
 #. Description
@@ -548,11 +552,12 @@ msgstr "Nieprawidłowy plik Release: brak wpisu dla ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Nie udało się pobrać ${SUBST0}. Zależnie od wybranej metody instalacji może "
-"to być spowodowane problemem z siecią lub uszkodzoną płytą CD."
+"to być spowodowane problemem z siecią lub uszkodzonym nośnikiem "
+"instalacyjnym."
 
 #. Type: error
 #. Description
@@ -719,6 +724,7 @@ msgstr "Konfigurowanie ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
@@ -864,7 +870,7 @@ msgstr "Ostrzeżenie: ${INFO}"
 #. :sl2:
 #: ../bootstrap-base.templates:58001
 msgid "Retrying failed download of ${SUBST0}"
-msgstr "Ponawianie nieskutecznego pobrania ${SUBST0}."
+msgstr "Ponawianie nieskutecznego pobrania ${SUBST0}"
 
 #. Type: text
 #. Description

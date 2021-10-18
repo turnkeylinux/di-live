@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2011-01-19 21:00+0530\n"
 "Last-Translator: Arjuna Rao Chavala <arjunaraoc@gmail.com>\n"
 "Language-Team: Telugu <debian-in-workers@lists.alioth.debian.org>\n"
@@ -160,9 +160,13 @@ msgstr "బేస్ సిస్టమ్ ని స్థాపన చేయ�
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "బేస్ సిస్టమ్ ని స్థాపన చేయుట ఎలాగో స్థాపన వ్యవస్థకి అర్థం కాలేదు. స్థాపన చేయుటకు CD-ROM కనబడలేదు "
 "మరియు సరియైన మిర్రర్  అమరిక లేదు."
@@ -283,12 +287,14 @@ msgstr "ఈ క్రింది పొరపాటు జరిగింది
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "బూట్ ఇనిట్-ఆర్-డి (boot initrd) ఉత్పత్తి చేయు సాఫ్ట్వేర్ ఉపకరణము:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -514,9 +520,13 @@ msgstr "విడుదల ఫైల్ సరిలేదు. ${SUBST0} కొ�
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0} తెచ్చుట కుదరలేదు.  మీ స్థాపన  ప్రక్రియ ప్రకారం నెట్వర్క్ సమస్య లేక చెడిపోయిన  CD "
 "అయివుండవచ్చు."
@@ -686,6 +696,7 @@ msgstr "${SUBST0} అమరికచేయు..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

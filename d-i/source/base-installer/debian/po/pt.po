@@ -7,15 +7,24 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # Console-setup strings translations:
 # (identified by "./console-setup.templates")
-# Copyright (C) 2007-2009 Pedro Ribeiro <p.m42.ribeiro@gmail.com>
+# Copyright (C) 2003-2019 Miguel Figueiredo <elmig@debianpt.org>
 # This file is distributed under the same license as debian-installer.
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Free Software Foundation, Inc., 2001,2004
+#   Filipe Maia <fmaia@gmx.net>, 2001.
+#   Alastair McKinstry <mckinstry@computer.org>, 2001.
+#   Miguel Figueiredo <elmig@debianpt.org>, 2005-2018
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2009-09-06 16:24+0100\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2019-09-23 20:36+0100\n"
 "Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team:  Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -59,7 +68,7 @@ msgid ""
 "Before the installation can proceed, a root file system must be mounted on /"
 "target. The partitioner and formatter should have done this for you."
 msgstr ""
-"Antes da instalação poder continuar, um sistema de ficheiros raíz tem de ser "
+"Antes da instalação poder continuar, um sistema de ficheiros raiz tem de ser "
 "montado no alvo / . O particionador e formatador devem ter feito isto para "
 "si."
 
@@ -165,12 +174,12 @@ msgstr "Não pode instalar o sistema base"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"O instalador não consegue descobrir como instalar o sistema base. Não foi "
-"encontrado nenhum CD-ROM de instalação e não foi configurado nenhum mirror "
-"válido."
+"O instalador não consegue descobrir como instalar o sistema base. Não "
+"encontrou nenhuma imagem de instalação, e não foram configurados mirrors "
+"válidos."
 
 #. Type: error
 #. Description
@@ -289,12 +298,14 @@ msgstr "Ocorreu o seguinte erro:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Ferramenta a utilizar para gerar boot initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -372,7 +383,7 @@ msgstr ""
 "grande que alguns gestores de arranque não sejam capazes de o carregar. Mas "
 "tem a vantagem de poder ser utilizado para arrancar o sistema alvo com "
 "praticamente qualquer hardware. Com o initrd direccionado, mais pequeno, há "
-"uma muito pequena probabilidade de não serem incluidos todos os "
+"uma muito pequena probabilidade de não serem incluídos todos os "
 "controladores necessários."
 
 #. Type: error
@@ -531,11 +542,11 @@ msgstr "Ficheiro Release inválido: sem entrada para ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Não foi possível obter ${SUBST0}. Isto pode ser devido a um problema de rede "
-"ou a um CD mau, dependendo do método de instalação utilizado."
+"ou a mídia errada, dependendo do seu método de instalação."
 
 #. Type: error
 #. Description
@@ -702,6 +713,7 @@ msgstr "A configurar ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

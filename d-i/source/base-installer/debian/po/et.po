@@ -8,7 +8,7 @@
 # This translation is released under the same licence as the debian-installer.
 #
 # Siim Põder <siim@p6drad-teel.net>, 2007.
-# Kristjan Räts <kristjanrats@gmail.com>, 2017.
+# Kristjan Räts <kristjanrats@gmail.com>, 2017, 2018, 2020.
 #
 # Thanks to following Ubuntu Translators for review and fixes:
 #     Laur Mõtus
@@ -31,8 +31,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2017-11-19 13:25+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-04-12 08:11+0000\n"
 "Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
 "Language-Team: Estonian <>\n"
 "Language: et\n"
@@ -180,11 +180,12 @@ msgstr "Alussüsteemi pole võimalik paigaldada"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Paigaldaja ei suuda leida viisi alussüsteemi paigaldamiseks. Ei leitud ühtki "
-"paigaldamiskõlblikku laserketast ega seadistatud ühtki sobivat peeglit."
+"paigaldamiskõlblikku tõmmist ning mitte ühtegi kehtivat peeglit ei "
+"seadistatud."
 
 #. Type: error
 #. Description
@@ -302,12 +303,14 @@ msgstr "Tekkis järgnev viga:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Alglaadimise initrd loomise tööriist:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -539,11 +542,11 @@ msgstr "Kehv Release fail: ${SUBST0} jaoks pole sissekannet."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Ei suutnud ${SUBST0} hankida. Põhjus võib vastavalt paigaldusmeetodile olla "
-"kas võrguprobleem või vigane plaat."
+"kas võrgu probleem või vigane meedia."
 
 #. Type: error
 #. Description
@@ -710,6 +713,7 @@ msgstr "${SUBST0} seadistamine..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

@@ -1,3 +1,221 @@
+base-installer (1.206) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Kimmo Kujansuu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 23 Jul 2021 18:54:13 +0200
+
+base-installer (1.205) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Lithuanian (lt.po) by Gediminas Murauskas
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 08 Jul 2021 09:30:56 +0200
+
+base-installer (1.204) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Romanian (ro.po) by Christian Eichert
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 23 Jun 2021 21:02:04 +0200
+
+base-installer (1.203) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+  * Croatian (hr.po) by Valentin Vidic
+  * Japanese (ja.po) by YOSHINO Yoshihito
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 30 May 2021 22:05:27 +0200
+
+base-installer (1.202) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Traditional Chinese (zh_TW.po) by louies0623
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 21 Mar 2021 17:34:31 +0100
+
+base-installer (1.201) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * Galician (gl.po) by mantinan
+  * Hindi (hi.po) by KushagraKarira
+  * Latvian (lv.po) by Tranzistors
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Thai (th.po) by Theppitak Karoonboonyanan
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 14 Feb 2021 18:50:25 +0100
+
+base-installer (1.200) unstable; urgency=medium
+
+  * Team upload
+
+  [ Steve McIntyre ]
+  * Re-add the removed is_ports_architecture() function - it's used by
+    other packages and library.sh looks like a fair central place for
+    it to be. Closes: #979193
+
+ -- Steve McIntyre <93sam@debian.org>  Tue, 05 Jan 2021 23:51:17 +0000
+
+base-installer (1.199) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by EG
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Romanian (ro.po) by Sergiu
+  * Russian (ru.po) by Yuri Kozlov
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 27 Dec 2020 19:53:13 +0100
+
+base-installer (1.198) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Greek (el.po) by EG
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Persian (fa.po) by سهیل خانعلی‌پور
+  * Italian (it.po) by Milo Casagrande
+  * Lithuanian (lt.po) by Kornelijus Tvarijanavičius
+
+  [ Updated translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 01 Nov 2020 11:19:43 +0100
+
+base-installer (1.197) unstable; urgency=medium
+
+  * Team upload
+
+  [ Ben Hutchings ]
+  * kernel/tests: Generalise variables for kernel flavour lists
+  * kernel/tests: Update Linux tests to try version 5.7
+  * kernel: Fix arch_get_kernel on various architectures to accept
+    Linux 5.x
+  * kernel: hppa: Stop preferring -smp metapackages on SMP
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Spanish (es.po) by Javier Fernández-Sanguino
+  * Polish (pl.po) by Bartosz Feński
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 21 Sep 2020 22:16:41 +0200
+
+base-installer (1.196) unstable; urgency=medium
+
+  * Team upload
+
+  * Revert passing "--extra-suites=unreleased" to debootstrap for ports
+    architectures, unreleased is not always available, this needs to be
+    rethought.
+
+ -- Samuel Thibault <sthibault@debian.org>  Mon, 17 Aug 2020 11:59:39 +0200
+
+base-installer (1.195) unstable; urgency=medium
+
+  * Team upload
+
+  [ наб ]
+  * Pass "--extra-suites=unreleased" to debootstrap for ports architectures,
+    fixing, e.g., hurd installs from mini ISOs.
+
+  [ Updated translations ]
+  * Icelandic (is.po) by Sveinn í Felli
+  * Norwegian Bokmal (nb.po) by Allan Nordhøy
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 12 Jul 2020 13:30:23 +0200
+
+base-installer (1.194) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Estonian (et.po) by Kristjan Räts
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Korean (ko.po) by Changwoo Ryu
+  * Norwegian Bokmal (nb.po) by Allan Nordhøy
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 12:31:46 +0200
+
+base-installer (1.193) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Esperanto (eo.po) by Felipe Castro
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Croatian (hr.po) by Milo Ivir
+  * Simplified Chinese (zh_CN.po) by 玉堂白鹤
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 29 Jan 2020 19:01:28 +0100
+
+base-installer (1.192) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Latvian (lv.po) by Tranzistors
+  * Norwegian Bokmal (nb.po) by Petter Reinholdtsen
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Punjabi (Gurmukhi) (pa.po) by Aman ALam
+  * Serbian (sr.po) by Filipovic Dragan
+  * Swedish (sv.po) by Mattias Münster
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 20 Dec 2019 16:45:48 +0100
+
+base-installer (1.191) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Holger Wansing ]
+  * Rephrase templates, to rename "CD"/"CD-ROM" into "installation media"
+    (and add missing sublevel definition).
+
+  [ Aurelien Jarno ]
+  * Stop installing the apt-transport-https transitional package.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 06 Oct 2019 21:03:40 +0200
+
+base-installer (1.190) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Karsten Merker ]
+  * Add kernel selection for riscv64.
+
+  [ Updated translations ]
+  * Croatian (hr.po) by gogogogi
+  * Bulgarian (bg.po)
+  * Irish (ga.po)
+  * Kannada (kn.po)
+  * Nepali (ne.po)
+  * Tibetan (bo.po)
+
+ -- Karsten Merker <merker@debian.org>  Thu, 15 Aug 2019 20:44:08 +0200
+
 base-installer (1.189) unstable; urgency=high
 
   * Team upload

@@ -4,7 +4,8 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Italian messages for debian-installer.
-# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2103, 2014 Software in the Public Interest, Inc.
+# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017 Software in the Public Interest, Inc.
+# Copyright (C) 2018 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # The translation team (for all four levels):
 # Cristian Rigamonti <cri@linux.it>
@@ -32,14 +33,14 @@
 # Marcello Raffa <mrooth@tiscalinet.it>, 2001
 # Tobias Toedter <t.toedter@gmx.net>, 2007.
 # Translations taken from ICU SVN on 2007-09-09
-# Milo Casagrande <milo@milo.name>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Milo Casagrande <milo@milo.name>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2017, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2011-08-21 18:53+0200\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-10-26 09:14+0100\n"
 "Last-Translator: Milo Casagrande <milo@milo.name>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -191,12 +192,12 @@ msgstr "Impossibile installare il sistema base"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Il programma d'installazione non è in grado di installare il sistema di "
-"base. Non è stato trovato alcun CD-ROM e non è stato configurato alcun "
-"mirror valido."
+"base. Non è stata trovata alcuna immagine installabili e non è stato "
+"configurato alcun mirror valido."
 
 #. Type: error
 #. Description
@@ -316,12 +317,14 @@ msgstr "Si è verificato il seguente errore:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Strumento da usare per generare initrd di avvio:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -563,11 +566,11 @@ msgstr "File Release non valido: nessuna voce per ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"Impossibile ricevere ${SUBST0}. La causa potrebbe essere, a seconda del "
-"metodo d'installazione, un problema di rete o un CD difettoso."
+"Impossibile recuperare ${SUBST0}. La causa potrebbe essere, a seconda del "
+"metodo d'installazione, un problema di rete o un supporto difettoso."
 
 #. Type: error
 #. Description
@@ -734,6 +737,7 @@ msgstr "Configurazione di ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

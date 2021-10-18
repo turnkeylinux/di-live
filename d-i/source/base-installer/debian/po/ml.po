@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Debian Installer Level 1\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2009-02-03 14:50-0800\n"
 "Last-Translator: Praveen Arimbrathodiyil <pravi.a@gmail.com>\n"
 "Language-Team: Debian Malayalam <debian-l10n-malayalam@lists.debian.org>\n"
@@ -170,9 +170,13 @@ msgstr "അടിസ്ഥാന സിസ്റ്റം ഇന്‍സ്റ�
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "അടിസ്ഥാന സിസ്റ്റം ഇന്‍സ്റ്റോള്‍ ചെയ്യുന്നതെങ്ങനെയെന്നു് മനസ്സിലാക്കാന്‍ ഇന്‍സ്റ്റാളറിനു് സാധിച്ചില്ല. "
 "ഇന്‍സ്റ്റോള്‍ ചെയ്യാവുന്ന സിഡിറോം കണ്ടതുമില്ല സാധുവായ മിറര്‍ ക്രമീകരിച്ചതുമില്ല."
@@ -293,12 +297,14 @@ msgstr "താഴെ കൊടുത്തിരിക്കുന്ന തെ�
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "ഇനിറ്റാര്‍ഡി ഉത്പാദിപ്പിക്കാനുപയോഗിക്കേണ്ട പണിയായുധം:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -534,9 +540,13 @@ msgstr "അസാധുവായ റിലീസ് ഫയല്‍: ${SUBST0} �
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0} വീണ്ടെടുക്കാന്‍ സാധിച്ചില്ല. നിങ്ങളുടെ ഇന്‍സ്റ്റളേഷന്‍ രീതിക്കനുസരിച്ച് ഇതു് ചീത്ത "
 "സിഡിയോ ശൃഖലയിലെ പ്രശ്നമോ കൊണ്ടാകാം."
@@ -706,6 +716,7 @@ msgstr "${SUBST0} ക്രമീകരിച്ചു കൊണ്ടിരി�
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

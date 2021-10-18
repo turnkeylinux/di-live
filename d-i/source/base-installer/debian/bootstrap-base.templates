@@ -11,8 +11,8 @@ Type: error
 # See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 # :sl2:
 _Description: Cannot install base system
- The installer cannot figure out how to install the base system. No
- installable CD-ROM was found and no valid mirror was configured.
+ The installer cannot figure out how to install the base system. It found no
+ installable image, and no valid mirror was configured.
 
 Template: base-installer/no_codename
 Type: error
@@ -57,8 +57,8 @@ _Description: Debootstrap Error
 
 Template: base-installer/initramfs/generator
 Type: select
-# :sl3:
 Choices: ${GENERATORS}
+# :sl3:
 _Description: Tool to use to generate boot initrd:
  The list shows the available tools. If you are unsure which to select,
  you should select the default. If your system fails to boot, you can
@@ -184,8 +184,8 @@ Type: error
 # SUBST0 is a filename or package name
 # Debootstrap is a program name: should not be translated
 _Description: Debootstrap Error
- Couldn't retrieve ${SUBST0}. This may be due to a network problem or a
- bad CD, depending on your installation method.
+ Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad
+ media, depending on your installation method.
  .
  If you are installing from CD-R or CD-RW, burning the CD at a lower
  speed may help.
@@ -311,6 +311,7 @@ _Description: Configuring ${SUBST0}...
 
 Template: base-installer/debootstrap/info/releasesig
 Type: text
+# :sl1:
 # Release is a filename which should not be translated
 _Description: Checking Release signature
 

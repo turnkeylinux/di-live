@@ -21,14 +21,14 @@
 # Meni Livne <livne@kde.org>, 2000.
 # Meital Bourvine <meitalbourvine@gmail.com>, 2007.
 # Lior Kaplan <kaplan@debian.org>, 2004-2007, 2008, 2010, 2011, 2015, 2017.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2019-02-28 22:08+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-07-26 03:41+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew (https://www.transifex.com/yaron/teams/79473/he/)\n"
 "Language: he\n"
@@ -175,11 +175,11 @@ msgstr "לא ניתן להתקין את מערכת הבסיס"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"תוכנית ההתקנה לא יכולה להבין כיצד להתקין את מערכת הבסיס. לא נמצא תקליטור "
-"התקנה ולא הוגדר אתר מראה תקין."
+"תכנית ההתקנה לא יכולה להבין כיצד להתקין את מערכת הבסיס. לא נמצאה דמות להתקנה "
+"ולא הוגדר אתר מראה תקין."
 
 #. Type: error
 #. Description
@@ -261,7 +261,7 @@ msgstr "התקנת בסיס מערכת לתוך /target/ נכשלה."
 #: ../bootstrap-base.templates:6001 ../bootstrap-base.templates:7001
 #: ../bootstrap-base.templates:11001 ../bootstrap-base.templates:16001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr "מוטב לעיין ב־‎/var/log/syslod או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
+msgstr "מוטב לעיין ב־‎/var/log/syslog או במסוף וירטואלי מס׳ 4 לקבלת פרטים."
 
 #. Type: error
 #. Description
@@ -297,12 +297,14 @@ msgstr "השגיאה הבאה קרתה:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "כלי ליצירת initrd לשימוש בזמן האתחול:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -383,7 +385,7 @@ msgstr ""
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Unable to install the selected kernel"
-msgstr "לא מצליח להתקין קרנל נבחר"
+msgstr "התקנת הליבה הנבחרת לא מצליחה"
 
 #. Type: error
 #. Description
@@ -392,14 +394,14 @@ msgstr "לא מצליח להתקין קרנל נבחר"
 msgid ""
 "An error was returned while trying to install the kernel into the target "
 "system."
-msgstr "שגיאה החוזרה בזמן הניסיון להתקין את הקרנל לתוך למערכת היעד."
+msgstr "הוחזרה שגיאה בזמן הניסיון להתקין את הליבה לתוך למערכת היעד."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Kernel package: '${KERNEL}'."
-msgstr "חבילת קרנל: '${KERNEL}'."
+msgstr "חבילת ליבה: ‚${KERNEL}’."
 
 #. Type: select
 #. Choices
@@ -416,7 +418,7 @@ msgstr "ללא ליבה"
 #. :sl2:
 #: ../bootstrap-base.templates:12002
 msgid "Kernel to install:"
-msgstr "קרנל להתקנה:"
+msgstr "ליבה להתקנה:"
 
 #. Type: select
 #. Description
@@ -441,7 +443,7 @@ msgstr "להמשיך ללא התקנת קרנל?"
 #. :sl2:
 #: ../bootstrap-base.templates:14001
 msgid "No installable kernel was found in the defined APT sources."
-msgstr "לא נמצאו קרנלים הניתנים להתקנה מהמקורות המוגדרים ב-APT."
+msgstr "לא נמצאו ליבות שניתן להתקין במקורות ה־APT שהוגדרו מראש."
 
 #. Type: boolean
 #. Description
@@ -500,7 +502,7 @@ msgstr "כישלון בהשגת הקובץ Release ${SUBST0}."
 #. SUBST0 is a Release.gpg file name
 #: ../bootstrap-base.templates:18001
 msgid "Failed getting Release signature file ${SUBST0}."
-msgstr "שגיאה בקבלת ${SUBST0}, קובץ החתימות של ה-Release."
+msgstr "שגיאה בקבלת ${SUBST0}, קובץ החתימות של ה־Release."
 
 #. Type: error
 #. Description
@@ -532,10 +534,10 @@ msgstr "הקובץ Release לא חוקי: אין רשומה עבור ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"לא ניתן להביא את ${SUBST0}. יכול להיות בגלל בעיית רשת או תקליטור דפוק, תלוי "
+"לא ניתן להביא את ${SUBST0}. יכול להיות בגלל בעיית רשת או אמצעי פגום, תלוי "
 "בשיטת ההתקנה."
 
 #. Type: error
@@ -548,8 +550,8 @@ msgid ""
 "If you are installing from CD-R or CD-RW, burning the CD at a lower speed "
 "may help."
 msgstr ""
-"אם ההתקנה מבוצעת מ-CD-R או CD-RW, צריבה של ה-CD במהירות נמוכה יותר יכולה "
-"לעזור."
+"אם ההתקנה מתבצעת מתקליטור צרוב או תקליטור לצריבה רב פעמית, צריבה של התקליטור "
+"במהירות נמוכה יותר יכולה לעזור."
 
 #. Type: text
 #. Description
@@ -703,6 +705,7 @@ msgstr "מתבצעת הגדרה של ${SUBST0}…"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
@@ -869,4 +872,4 @@ msgstr "הליבה מותקנת…"
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:62001
 msgid "Installing the kernel - retrieving and installing ${SUBST0}..."
-msgstr "הליבה מותקנת  - ${SUBST0} מתקבל ומותקן…"
+msgstr "הליבה מותקנת - ${SUBST0} מתקבל ומותקן…"

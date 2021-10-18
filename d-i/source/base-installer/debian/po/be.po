@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: be\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2015-12-21 15:13+0300\n"
 "Last-Translator: Viktar Siarheichyk <vics@fsfe.org>\n"
 "Language-Team: Debian l10n team for Belarusian <debian-l10n-belarusian@lists."
@@ -172,9 +172,13 @@ msgstr "Не атрымалася ўсталяваць базавую сістэ
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Праграма ўсталявання не здолела вынайсці спосабу ўсталявання базавай сістэмы."
 "Не знойдзена прыдатнага кампакт-дыска і не наладжана слушнага люстэрка."
@@ -295,12 +299,14 @@ msgstr "Адбылася наступная памылка:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Прылада для генерацыі загрузачнага вобразу initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -534,9 +540,13 @@ msgstr "Няслушны файл Release: няма запісу для ${SUBST0
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Немагчыма атрымаць ${SUBST0}. Можа, прычына ў праблемах з сеткай альбо "
 "кампакт-дыскам (у залежнасці ад спосабу ўсталявання)."
@@ -706,6 +716,7 @@ msgstr "Наладка ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

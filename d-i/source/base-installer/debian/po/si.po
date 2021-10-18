@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2011-09-15 07:01+0530\n"
 "Last-Translator: \n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
@@ -164,9 +164,13 @@ msgstr "මූල පද්ධතිය ස්ථාපනය කල නොහ�
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "ස්ථාපකයට මූල පද්ධතිය ස්ථාපනය කල හැකි ආකාරය හඳුනාගත නොහැක. කිසිඳු ස්ථාපනය කල හැකි CD-ROM "
 "හමු නොවූ අතර කිසිඳු වලංගු පිළිබිඹුවක්ද සකසා නොමැත"
@@ -287,12 +291,14 @@ msgstr "පහත දෝශය හටගැණිනි:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "ඇරඹුම් initrd ජණනය සඳහා මෙවලම:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -519,9 +525,13 @@ msgstr "වලංගු නොවන නිකුතු ගොනුවක්: $
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0} ලබාගත නොහැකි විය. මෙය ඇතැම්විට ජාල ගැටළුවක් හෝ නුසුදුසු CD තැටියක් නිසා විය හැක. "
 "එය ඔබේ ස්ථාපන ක්‍රමය මත රඳාපවතී."
@@ -690,6 +700,7 @@ msgstr "${SUBST0} සකසමින්..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

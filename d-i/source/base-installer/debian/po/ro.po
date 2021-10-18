@@ -19,6 +19,9 @@
 #    Developers do not need to manually edit POT or PO files.
 #
 # Eddy Petrișor <eddy.petrisor@gmail.com>, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
+# Jobava <jobaval10n@gmail.com>, 2018.
+# Andrei Popescu <andreimpopescu@gmail.com>, 2018, 2020.
+# Sergiu <adinfinitvm@wail.ch>, 2020.
 #
 # Translations from iso-codes:
 # Alastair McKinstry <mckinstry@debian.org>, 2004
@@ -35,10 +38,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2011-09-15 09:41+0300\n"
-"Last-Translator: Ioan Eugen Stan <stan.ieugen@gmail.com>\n"
-"Language-Team: ro <debian-l10n-romanian@lists.debian.org>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-06-17 12:33+0000\n"
+"Last-Translator: Christian Eichert <c@zp1.net>\n"
+"Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -189,12 +192,11 @@ msgstr "Instalarea sistemului de bază este imposibilă"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"Programul de instalare nu își poate da seama cum să instaleze sistemul de "
-"bază. Nu a fost găsit nici un CD instalabil și nu a fost configurat nici un "
-"sit alternativ."
+"Instalatorul nu poate afla cum să instaleze sistemul de bază. Nu a găsit "
+"nicio imagine instalabilă și nu a fost configurată nicio oglindă validă."
 
 #. Type: error
 #. Description
@@ -314,12 +316,14 @@ msgstr "A apărut următoarea eroare:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Unealta utilizată pentru a genera imaginea initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -560,11 +564,11 @@ msgstr "Fișier Release invalid: nu există înregistrări pentru ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"Nu s-a putut descărca ${SUBST0}. Aceasta ar putea să fie datorită unei "
-"probleme de rețea sau a unui CD defect, în funcție de metoda de instalare."
+"Nu s-a putut prelua ${SUBST0}. Acest lucru poate fi cauzat de o problemă de "
+"rețea sau de un suport necorespunzător, în funcție de metoda de instalare."
 
 #. Type: error
 #. Description
@@ -731,6 +735,7 @@ msgstr "Se configurează ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
@@ -758,7 +763,7 @@ msgstr "Se rezolvă dependențele pachetelor de bază..."
 #. SUBST0 is a list of packages
 #: ../bootstrap-base.templates:45001
 msgid "Found additional base dependencies: ${SUBST0}"
-msgstr "Au fost găsite dependențe de bază suplimentare:  ${SUBST0}"
+msgstr "Au fost găsite dependențe de bază suplimentare: ${SUBST0}"
 
 #. Type: text
 #. Description

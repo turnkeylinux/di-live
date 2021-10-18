@@ -6,11 +6,17 @@
 # Irish messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
+#
+# Translations from iso-codes:
+# Alastair McKinstry <mckinstry@computer.org>, 2001,2002
+# Free Software Foundation, Inc., 2001,2003
+# Kevin Patrick Scannell <scannell@SLU.EDU>, 2004, 2008, 2009, 2011.
+# Sean V. Kelley <s_oceallaigh@yahoo.com>, 1999
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2006-03-21 14:42-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -159,9 +165,13 @@ msgstr "Ní féidir an bunchóras a shuiteáil"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Ní féidir leis an suiteálaí déanamh amach conas is féidir an bunchóras a "
 "shuiteáil. Níor aimsíodh CD-ROM insuiteáilte agus níor cumraíodh suíomh "
@@ -285,12 +295,14 @@ msgstr "Tharla an earráid seo a leanas:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Uirlis le húsáid chun initrd a ghiniúint:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -402,7 +414,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" means \"no kernel\" ]"
-msgstr "neamhní"
+msgstr "faic"
 
 #. Type: select
 #. Description
@@ -526,9 +538,13 @@ msgstr "Comhad neamhbhailí Release: gan iontráil ${SUBST0}."
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Níorbh fhéidir ${SUBST0} a ghabháil.  B'fhéidir go raibh fadhb leis an "
 "líonra nó leis an dlúthdhiosca, ag brath ar do mhodh suiteála."
@@ -698,6 +714,7 @@ msgstr "${SUBST0} á chumrú..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

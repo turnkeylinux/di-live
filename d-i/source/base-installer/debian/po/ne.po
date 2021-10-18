@@ -23,10 +23,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_ne\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2017-12-17 18:40+0000\n"
 "Last-Translator: Jeewal Kunwar <jeewalkunwar1@gmail.com>\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -171,9 +171,13 @@ msgstr "आधार प्रणाली स्थापना गर्न �
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "स्थापनाकर्ताले आधार प्रणाली कसरी स्थापना गर्ने भन्ने खाका निकाल्न सक्दैन । कुनै स्थापित सी "
 "डी-रोम फेला पर्न सकेन र कुनै वैध मिरर कन्फिगर भएन ।"
@@ -294,12 +298,14 @@ msgstr "निम्न त्रुटि रहन गयो:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "boot initrd उत्पन्न गर्न प्रयोग गरिने उपकरण:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -407,9 +413,6 @@ msgid ""
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" means \"no kernel\" ]"
 msgstr ""
-"कुनै पनि होइन[ कोष्ठ भित्र के छ त्यसलाई अनुवाद नगर्नुहोस् र तपाईँको भाषामा कुनै पनि कोष्ठ "
-"बिनै \"कुनैपनि होईन\" शव्दलाई अनुवाद मा मात्र राख्नुहोस् । यो \"कुनैपनि होईन\" ले \"कर्नेल "
-"होईन\" भन्ने अर्थ राख्दछ । ]"
 
 #. Type: select
 #. Description
@@ -531,9 +534,13 @@ msgstr "अवैध नििष्काश फाइलन : ${SUBST0} का
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0} सुधार्न सक्दैन । यो सञ्जाल समस्या वा खराब सी डीको कारणले हुन सक्छ, जुन "
 "तपाईँको स्थापना विधिमा भर परिरहेको हुन्छ ।"
@@ -703,6 +710,7 @@ msgstr "कन्फिगर गरिदै ${SUBST0} ..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

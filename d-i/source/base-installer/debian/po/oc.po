@@ -3,43 +3,34 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_is.po to Icelandic
-# Icelandic messages for debian-installer.
-# This file is distributed under the same license as debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
+# Occitan (post 1500) translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# Yannig MARCHEGAY <yannick.marchegay@lokanova.com>, 2006.
+# Cédric VALMARY <cvalmary@yahoo.fr>, 2016.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2020.
 #
-# Copyright (C) 2010 Free Software Foundation
-# Sveinn í Felli <sv1@fellsnet.is>, 2018, 2019, 2020.
 #
-# Translations from iso-codes:
-# Copyright (C) 2002,2003, 2010, 2011, 2012 Free Software Foundation, Inc.
-# Translations from KDE:
-# Þórarinn Rúnar Einarsson <thori@mindspring.com>
-# zorglubb <debian-user-icelandic@lists.debian.org>, 2008.
-# Sveinn í Felli <sveinki@nett.is>, 2010.
-# Alastair McKinstry, <mckinstry@computer.org>, 2002.
-# Sveinn í Felli <sveinki@nett.is>, 2010, 2011, 2012, 2013.
-# Alastair McKinstry <mckinstry@computer.org>, 2002.
 msgid ""
 msgstr ""
-"Project-Id-Version: Icelandic (Debian Installer)\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
 "POT-Creation-Date: 2019-11-02 20:56+0100\n"
-"PO-Revision-Date: 2020-06-23 09:41+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
-"Language: is\n"
+"PO-Revision-Date: 2020-11-15 18:28+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../base-installer.templates:1001
 msgid "Proceed with installation to unclean target?"
-msgstr "Halda áfram með uppsetningu á óhreina staðsetningu?"
+msgstr "Per installar lo sistèma de basa, volètz escafar l'ancian ?"
 
 #. Type: boolean
 #. Description
@@ -50,16 +41,16 @@ msgid ""
 "could cause problems with the installation process, and if you proceed, some "
 "of the existing files may be overwritten."
 msgstr ""
-"Viðkomandi skráarkerfi inniheldur skrár frá fyrri uppsetningu. Þessar skrár "
-"gætu valdið vandamálum með uppsetningarferlið, og ef þú heldur áfram, þá "
-"gæti verið skrifað yfir einhverjar af þessum skrám."
+"Lo sistèma de fichièrs de destinacion a de fichièrs d'una installacion "
+"anteriora. Aquestes fichièrs pòdon provocar de problèmas dins la procedura "
+"d'installacion. Se contunhatz, benlèu que d'unes fichièrs seràn escafats."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../base-installer.templates:2001
 msgid "No file system mounted on /target"
-msgstr "Ekkert skráarkerfi var tengt við /target"
+msgstr "Cap de sistèma de fichièrs pas montat sus /target"
 
 #. Type: error
 #. Description
@@ -69,15 +60,16 @@ msgid ""
 "Before the installation can proceed, a root file system must be mounted on /"
 "target. The partitioner and formatter should have done this for you."
 msgstr ""
-"Áður en uppsetningin getur haldið áfram þarf að tengja rótarskráarkerfi við /"
-"target. Disksneiðitólið og forsníðitólin ættu að hafa gert þetta fyrir þig."
+"Abans l'installacion, un sistèma de fichièrs raiç deu èsser creat sus /"
+"target. L'aisina de particionament e de formatatge deuriá aver efectuat "
+"aquesta operacion."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../base-installer.templates:3001
 msgid "Not installing to unclean target"
-msgstr "Set ekki upp á óhreina disksneið"
+msgstr "Cap d'installacion sus una cibla pas voida"
 
 #. Type: error
 #. Description
@@ -88,58 +80,58 @@ msgid ""
 "back and erase or format the target file system before proceeding with the "
 "install."
 msgstr ""
-"Hætt hefur verið við uppsetningu fyrir viðkomandi skráarkerfi. Þú ættir að "
-"fara til baka og eyða eða forsníða skráarkerfið áður en þú heldur áfram með "
-"uppsetninguna."
+"L'installacion sul sistèma de fichièrs causit a pas capitat. Vos caldriá "
+"tornar puèi escafar o tornar formatar lo sistèma de fichièrs de destinacion "
+"abans d'efectuar l'installacion."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:4001
 msgid "Preparing to install the base system..."
-msgstr "Býst undir að setja upp grunn kerfið..."
+msgstr "Preparacion de l'installacion del sistèma de basa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:5001 ../bootstrap-base.templates:30001
 msgid "Installing the base system"
-msgstr "Set upp grunn kerfi"
+msgstr "Installacion del sistèma de basa"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:6001
 msgid "Running ${SCRIPT}..."
-msgstr "Keyri ${SCRIPT}..."
+msgstr "Execucion de ${SCRIPT}..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:7001
 msgid "Setting up the base system..."
-msgstr "Set upp grunnkerfið..."
+msgstr "Configuracion del sistèma de basa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:8001 ../bootstrap-base.templates:59001
 msgid "Configuring APT sources..."
-msgstr "Stilli APT pakkalista..."
+msgstr "Configuracion de las fonts d'APT..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:9001
 msgid "Updating the list of available packages..."
-msgstr "Uppfæri lista yfir tiltæka pakka..."
+msgstr "Mesa a jorn de la tièra dels paquetatges disponibles..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:10001
 msgid "Installing extra packages..."
-msgstr "Set upp viðbótarpakka..."
+msgstr "Installacion dels paquetes suplementaris..."
 
 #. Type: text
 #. Description
@@ -147,7 +139,9 @@ msgstr "Set upp viðbótarpakka..."
 #. :sl1:
 #: ../base-installer.templates:11001
 msgid "Installing extra packages - retrieving and installing ${SUBST0}..."
-msgstr "Set upp viðbótarpakka - sæki og set upp ${SUBST0}..."
+msgstr ""
+"Installacion dels paquetatges suplementaris : recobrança e installacion de "
+"${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -156,7 +150,7 @@ msgstr "Set upp viðbótarpakka - sæki og set upp ${SUBST0}..."
 #. :sl1:
 #: ../bootstrap-base.templates:1001
 msgid "Install the base system"
-msgstr "Setja upp grunn kerfi"
+msgstr "Intallacion del sistèma de basa"
 
 #. Type: error
 #. Description
@@ -165,7 +159,7 @@ msgstr "Setja upp grunn kerfi"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid "Cannot install base system"
-msgstr "Get ekki sett upp grunnkerfi"
+msgstr "Impossible d'installar lo sistèma de basa"
 
 #. Type: error
 #. Description
@@ -177,9 +171,8 @@ msgid ""
 "The installer cannot figure out how to install the base system. It found no "
 "installable image, and no valid mirror was configured."
 msgstr ""
-"Uppsetningarforritið getur ekki fundið út hvernig á að setja upp "
-"grunnkerfið, enginn uppsetjanlegur gagnamiðill fannst og enginn réttmætur "
-"spegill var settur upp."
+"L'aisina d'installacion a pas trobat de metòde per installar lo sistèma de "
+"basa. A pas trobat cap d’imatge installable e cap de miralh valid configurat."
 
 #. Type: error
 #. Description
@@ -216,28 +209,30 @@ msgstr ""
 #: ../bootstrap-base.templates:19001 ../bootstrap-base.templates:20001
 #: ../bootstrap-base.templates:21001 ../bootstrap-base.templates:22001
 msgid "Debootstrap Error"
-msgstr "Villa í debootstrap"
+msgstr "Error de debootstrap"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:3001
 msgid "Failed to determine the codename for the release."
-msgstr "Tókst ekki að finna út nafn á útgáfu."
+msgstr ""
+"Es pas possible de determinar lo nom de còdi d'aquesta version de la "
+"distribucion."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "Failed to install the base system"
-msgstr "Mistókst að setja upp grunn kerfi"
+msgstr "L'installacion del sistèma de basa a pas capitat"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "The base system installation into /target/ failed."
-msgstr "Uppsetning á grunn kerfi í /target/ mistókst."
+msgstr "L'installacion del sistèma de basa dins /target/ a pas capitat."
 
 #. Type: error
 #. Description
@@ -262,8 +257,8 @@ msgstr "Uppsetning á grunn kerfi í /target/ mistókst."
 #: ../bootstrap-base.templates:11001 ../bootstrap-base.templates:16001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
 msgstr ""
-"Skoðaðu skránna /var/log/syslog, eða skipanalínu (virtual console) 4 fyrir "
-"nánari upplýsingar."
+"Consultatz lo fichièr /var/log/syslog o la quatrena consòla virtuala per "
+"obténer de precisions."
 
 #. Type: error
 #. Description
@@ -273,7 +268,7 @@ msgstr ""
 #. :sl2:
 #: ../bootstrap-base.templates:5001 ../bootstrap-base.templates:6001
 msgid "Base system installation error"
-msgstr "Villa í uppsetningu á grunnkerfi"
+msgstr "Error al moment de l'installacion del sistèma de basa"
 
 #. Type: error
 #. Description
@@ -282,28 +277,29 @@ msgstr "Villa í uppsetningu á grunnkerfi"
 msgid ""
 "The debootstrap program exited with an error (return value ${EXITCODE})."
 msgstr ""
-"debootstrap ræsiforritið hætti keyrslu vegna villu (skilagildi ${EXITCODE})."
+"Lo programa debootstrap s'es acabat amb una error (valor tornada "
+"${EXITCODE})."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:6001
 msgid "The debootstrap program exited abnormally."
-msgstr "debootstrap ræsiforritið hætti keyrslu á óeðlilegan hátt."
+msgstr "Lo programa debootstrap s'es pas acabat d'un biais normal."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:7001
 msgid "The following error occurred:"
-msgstr "Eftirfarandi villa kom upp:"
+msgstr "I a agut l'error seguenta :"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
-msgstr "Tól til að búa til initrd fyrir ræsingu:"
+msgstr "Aisina de creacion de l'imatge del disc d'aviada :"
 
 #. Type: select
 #. Description
@@ -314,16 +310,16 @@ msgid ""
 "should select the default. If your system fails to boot, you can retry the "
 "installation using the other options."
 msgstr ""
-"Listinn sýnir tiltæk tól. Ef þú ert ekki viss hvað á að velja getur þú valið "
-"sjálgefinn kost. Ef ekki næst að ræsa kerfið, getur þú reynt uppsetningu með "
-"öðrum valkosti."
+"Las aisinas disponiblas son dins la tièra. Se sabètz pas lo qual causir, "
+"daissatz la valor per defaut. Se lo sistèma es pas a s'aviar corrèctament, "
+"lo podètz tornar installar amb una opcion diferenta."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../bootstrap-base.templates:9001
 msgid "Unsupported initrd generator"
-msgstr "Óstuddur initrd smiður"
+msgstr "Aisina de creacion d'imatge del disc pas gerit"
 
 #. Type: error
 #. Description
@@ -333,28 +329,28 @@ msgid ""
 "The package ${GENERATOR} that was selected to generate the initrd is not "
 "supported."
 msgstr ""
-"Pakkinn sem var valinn til að búa til initrd (${GENERATOR}) er ekki studdur."
+"Lo paquet ${GENERATOR} qu'avètz causit per crear l'imatge disc es pas gerit."
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../bootstrap-base.templates:10001
 msgid "generic: include all available drivers"
-msgstr "almennt: taka með alla tiltæka rekla"
+msgstr "imatge generic : compòrta totes los pilòts disponibles"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../bootstrap-base.templates:10001
 msgid "targeted: only include drivers needed for this system"
-msgstr "markvisst: setja bara upp þá rekla sem þú þarfnast"
+msgstr "imatge ciblat : solament los pilòts necessaris per aqueste sistèma"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../bootstrap-base.templates:10002
 msgid "Drivers to include in the initrd:"
-msgstr "Reklar sem á að hafa með í initrd:"
+msgstr "Pilòts d'inclure sus l'imatge del disc en memòria (« initrd ») :"
 
 #. Type: select
 #. Description
@@ -365,8 +361,9 @@ msgid ""
 "file system. It therefore needs to contain all drivers and supporting "
 "programs required to do that."
 msgstr ""
-"Helsti tilgangur initrd er að leyfa kjarnanum að tengja rótarskráakerfið. "
-"Því þarf það að innihalda alla nauðsynlega rekla og stuðningsforrit."
+"L'objectiu primièr d'un imatge de disc en memòria es de permetre al nucli de "
+"montar lo sistèma de fichièrs raiç. Aqueste imatge a doncas besonh de totes "
+"los pilòts e dels programas de gestion indispensables per aquesta accion."
 
 #. Type: select
 #. Description
@@ -379,18 +376,18 @@ msgid ""
 "smaller targeted initrd there is a very small chance that not all needed "
 "drivers are included."
 msgstr ""
-"Almennt initrd er miklu stærra en það sem hefur verið aðlagað og gæti meira "
-"að segja verið svo stórt að sumir ræsistjórar ráða ekki við að hlaða því "
-"inn, en hefur aftur á móti þann kost að hægt er að nota það til að ræsa "
-"kerfi á næstum hvaða vélbúnaði sem er. Með niðurslípuðu aðlöguðu initrd er "
-"örlítill möguleiki á að ekki fylgi með allir nauðsynlegir reklar."
+"Un imatge disc en memòria a una talha plan mai importanta qu'un imatge "
+"ciblat. Aquesta talha pòt èsser talament importanta que d'unes gestionaris "
+"d'amorsatge la pòdon pas aviar. Aquel tipe d'imatge es per contra plan "
+"adaptat per aviar sus un material quin que siá. Amb l'imatge ciblat, existís "
+"una febla possibilitat que totes los pilòts sián pas incluses."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Unable to install the selected kernel"
-msgstr "Gat ekki sett upp valinn kjarna"
+msgstr "Impossible d'installar lo nucli seleccionat"
 
 #. Type: error
 #. Description
@@ -400,14 +397,15 @@ msgid ""
 "An error was returned while trying to install the kernel into the target "
 "system."
 msgstr ""
-"Villa kom upp þegar reynt var að setja upp kjarnann á viðkomandi kerfi."
+"I a agut una error al moment de l'ensag d'installacion del nucli cap al "
+"sistèma cibla."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Kernel package: '${KERNEL}'."
-msgstr "Kjarnapakki: '${KERNEL}'."
+msgstr "Paquetatge del nucli : '${KERNEL}'."
 
 #. Type: select
 #. Choices
@@ -417,14 +415,14 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" means \"no kernel\" ]"
-msgstr "enginn"
+msgstr "pas cap"
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:12002
 msgid "Kernel to install:"
-msgstr "Kjarni til að setja upp:"
+msgstr "Nucli d'installar :"
 
 #. Type: select
 #. Description
@@ -434,22 +432,24 @@ msgid ""
 "The list shows the available kernels. Please choose one of them in order to "
 "make the system bootable from the hard drive."
 msgstr ""
-"Listinn sýnir tiltæka kjarna. Veldu einn af þeim til að gera kerfið "
-"ræsanlegt af harða disknum."
+"La tièra aficha los nuclis disponibles. Causissètz-ne un per que lo sistèma "
+"se pòsca aviar a partir del disc dur."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:14001
 msgid "Continue without installing a kernel?"
-msgstr "Halda áfram án þess að setja upp kjarna?"
+msgstr "Contunhar sens installar un nucli ?"
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:14001
 msgid "No installable kernel was found in the defined APT sources."
-msgstr "Enginn uppsetjanlegur kjarni fannst í APT debian pakkasafninu."
+msgstr ""
+"Pas cap de nucli, que se pòsca installar, trobat dins las fonts APT "
+"definidas."
 
 #. Type: boolean
 #. Description
@@ -460,31 +460,30 @@ msgid ""
 "kernel later. This is only recommended for experts, otherwise you will "
 "likely end up with a machine that doesn't boot."
 msgstr ""
-"Þú getur haldið áfram án þess að setja upp kjarna og sett hann upp síðar. "
-"Þetta er samt aðeins ráðlagt fyrir fagmenn, því annars er líklegt að vélin "
-"ræsi ekki."
+"Podètz contunhar sens installacion del nucli e n'installar un vos meteis mai "
+"tard. Aquò es conselhat sonque als utilizaires experimentats perque es pas "
+"segur que vòstra maquina se torne amodar."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:15001
 msgid "Cannot install kernel"
-msgstr "Get ekki sett upp kjarna"
+msgstr "Impossible d'installar lo nucli"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:15001
 msgid "The installer cannot find a suitable kernel package to install."
-msgstr ""
-"Uppsetningarforritið getur ekki fundið viðeigandi kjarna til að setja upp."
+msgstr "L'installador pòt pas trobar de nucli adaptat d'installar."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:16001
 msgid "Unable to install ${PACKAGE}"
-msgstr "Get ekki sett upp ${PACKAGE}"
+msgstr "Impossible d'installar ${PACKAGE}"
 
 #. Type: error
 #. Description
@@ -494,8 +493,8 @@ msgid ""
 "An error was returned while trying to install the ${PACKAGE} package onto "
 "the target system."
 msgstr ""
-"Uppsetningarforritið skilaði villu þegar það reyndi að setja upp ${PACKAGE} "
-"á viðkomandi kerfi."
+"Una error s'es producha pendent la temptativa d'installacion del paquet "
+"${PACKAGE} cap al sistèma cibla."
 
 #. Type: error
 #. Description
@@ -503,7 +502,7 @@ msgstr ""
 #. SUBST0 is a Release file name.
 #: ../bootstrap-base.templates:17001
 msgid "Failed getting Release file ${SUBST0}."
-msgstr "Mistókst að ná í útgáfuskrá ${SUBST0}."
+msgstr "La recuperacion del fichièr Release ${SUBST0} a pas capitada."
 
 #. Type: error
 #. Description
@@ -511,7 +510,7 @@ msgstr "Mistókst að ná í útgáfuskrá ${SUBST0}."
 #. SUBST0 is a Release.gpg file name
 #: ../bootstrap-base.templates:18001
 msgid "Failed getting Release signature file ${SUBST0}."
-msgstr "Mistókst að ná í undirskriftarskrá útgáfu ${SUBST0}."
+msgstr "La recuperacion del fichièr ${SUBST0} a pas capitat."
 
 #. Type: error
 #. Description
@@ -519,14 +518,14 @@ msgstr "Mistókst að ná í undirskriftarskrá útgáfu ${SUBST0}."
 #. SUBST0 is a gpg key ID
 #: ../bootstrap-base.templates:19001
 msgid "Release file signed by unknown key (key id ${SUBST0})"
-msgstr "Útgáfu skrá (Release) með óþekktum lykli (lykill nr ${SUBST0})"
+msgstr "Lo fichièr Release es signat per una clau desconeguda (clau ${SUBST0})"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:20001
 msgid "Invalid Release file: no valid components."
-msgstr "Ekki rétt útgáfu (Release) skrá: engir réttmætir hlutar."
+msgstr "Lo fichièr Release es pas valid : cap de compausant pas valid."
 
 #. Type: error
 #. Description
@@ -534,7 +533,7 @@ msgstr "Ekki rétt útgáfu (Release) skrá: engir réttmætir hlutar."
 #. SUBST0 is a filename
 #: ../bootstrap-base.templates:21001
 msgid "Invalid Release file: no entry for ${SUBST0}."
-msgstr "Ekki rétt útgáfu (Release) skrá: engin færsla fyrir ${SUBST0}."
+msgstr "Lo fichièr Release es pas valid : pas cap d'entradas per ${SUBST0}."
 
 #. Type: error
 #. Description
@@ -546,8 +545,8 @@ msgid ""
 "Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
 "media, depending on your installation method."
 msgstr ""
-"Gat ekki náð í ${SUBST0}. Þetta gæti verið vegna sambandsleysis á neti eða "
-"galla í gagnamiðli, fer eftir uppsetningaraðferð."
+"Recuperacion impossibla de ${SUBST0}. Aquò pòt venir d'un problèma de malhum "
+"o d'un mèdia defectuós, segon lo metòde d’installacion."
 
 #. Type: error
 #. Description
@@ -559,8 +558,8 @@ msgid ""
 "If you are installing from CD-R or CD-RW, burning the CD at a lower speed "
 "may help."
 msgstr ""
-"Ef þú ert að setja upp kerfið frá geisladiski (CR-R) eða skrifuðum "
-"geisladiski (CD-RW), þá gæti hjálpað að skrifa diskinn á lægri hraða."
+"Se sètz a installar un CD-R o un CD-RW, vos caldriá enregistrar lo CD-Rom "
+"amb una velocitat mai febla, aquò vos ajudariá."
 
 #. Type: text
 #. Description
@@ -568,7 +567,7 @@ msgstr ""
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:23001
 msgid "Retrieving Release file"
-msgstr "Sæki útgáfu skrá (Release)"
+msgstr "Recepcion del fichièr Release"
 
 #. Type: text
 #. Description
@@ -576,7 +575,7 @@ msgstr "Sæki útgáfu skrá (Release)"
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:24001
 msgid "Retrieving Release file signature"
-msgstr "Sæki undirskrift útgáfu (Release) skráar"
+msgstr "Recepcion de la signatura del fichièr Release"
 
 #. Type: text
 #. Description
@@ -584,7 +583,7 @@ msgstr "Sæki undirskrift útgáfu (Release) skráar"
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:25001
 msgid "Finding package sizes"
-msgstr "Finn stærðir á pökkum"
+msgstr "Recèrca de la talha dels paquetatges"
 
 #. Type: text
 #. Description
@@ -592,7 +591,7 @@ msgstr "Finn stærðir á pökkum"
 #. Packages is a filename which should not be translated
 #: ../bootstrap-base.templates:26001
 msgid "Retrieving Packages files"
-msgstr "Sæki pakkalista (Packages)"
+msgstr "Recepcion dels fichièrs de paquetatges"
 
 #. Type: text
 #. Description
@@ -600,7 +599,7 @@ msgstr "Sæki pakkalista (Packages)"
 #. Packages is a filename which should not be translated
 #: ../bootstrap-base.templates:27001
 msgid "Retrieving Packages file"
-msgstr "Sæki pakkalista (Packages)"
+msgstr "Recepcion dels fichièrs de paquetatges"
 
 #. Type: text
 #. Description
@@ -608,7 +607,7 @@ msgstr "Sæki pakkalista (Packages)"
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:28001
 msgid "Retrieving packages"
-msgstr "Sæki pakka"
+msgstr "Recepcion dels paquetatges"
 
 #. Type: text
 #. Description
@@ -616,7 +615,7 @@ msgstr "Sæki pakka"
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:29001
 msgid "Extracting packages"
-msgstr "Afþjappa pökkum"
+msgstr "Extraccion dels paquetatges"
 
 #. Type: text
 #. Description
@@ -627,7 +626,7 @@ msgstr "Afþjappa pökkum"
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:31001
 msgid "Installing core packages"
-msgstr "Set upp undirstöðupakka"
+msgstr "Installacion dels paquetatges de basa"
 
 #. Type: text
 #. Description
@@ -638,14 +637,14 @@ msgstr "Set upp undirstöðupakka"
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:32001
 msgid "Unpacking required packages"
-msgstr "Afþjappa nauðsynlegum pökkum"
+msgstr "Descompression dels paquetatges necessaris"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:33001
 msgid "Configuring required packages"
-msgstr "Stilli nauðsynlega pakka"
+msgstr "Configuracion dels paquetatges necessaris"
 
 #. Type: text
 #. Description
@@ -654,7 +653,7 @@ msgstr "Stilli nauðsynlega pakka"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #: ../bootstrap-base.templates:34001
 msgid "Unpacking the base system"
-msgstr "Afþjappa grunn kerfi"
+msgstr "Descompression del sistèma de basa"
 
 #. Type: text
 #. Description
@@ -663,14 +662,14 @@ msgstr "Afþjappa grunn kerfi"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #: ../bootstrap-base.templates:35001
 msgid "Configuring the base system"
-msgstr "Stilli grunn kerfi"
+msgstr "Configuracion del sistèma de basa"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:36001
 msgid "${SECTION}: ${INFO}..."
-msgstr "${SECTION}: ${INFO}..."
+msgstr "${SECTION} : ${INFO}..."
 
 #. Type: text
 #. Description
@@ -678,7 +677,7 @@ msgstr "${SECTION}: ${INFO}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:37001
 msgid "Validating ${SUBST0}..."
-msgstr "Staðfesti ${SUBST0}..."
+msgstr "Validacion de ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -686,7 +685,7 @@ msgstr "Staðfesti ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:38001
 msgid "Retrieving ${SUBST0}..."
-msgstr "Sæki ${SUBST0}..."
+msgstr "Recepcion de ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -694,7 +693,7 @@ msgstr "Sæki ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:39001
 msgid "Extracting ${SUBST0}..."
-msgstr "Afþjappa ${SUBST0}..."
+msgstr "Extraccion de ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -702,7 +701,7 @@ msgstr "Afþjappa ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:40001
 msgid "Unpacking ${SUBST0}..."
-msgstr "Afpakka ${SUBST0}..."
+msgstr "Descompression de ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -710,7 +709,7 @@ msgstr "Afpakka ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:41001
 msgid "Configuring ${SUBST0}..."
-msgstr "Stilli ${SUBST0}..."
+msgstr "Configuracion de ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -718,7 +717,7 @@ msgstr "Stilli ${SUBST0}..."
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
-msgstr "Athuga útgáfu (Release) undirskrift"
+msgstr "Contraròtle de la signatura del fichièr Release"
 
 #. Type: text
 #. Description
@@ -727,14 +726,14 @@ msgstr "Athuga útgáfu (Release) undirskrift"
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:43001
 msgid "Valid Release signature (key id ${SUBST0})"
-msgstr "Rétt undirskrift útgáfu (Release) (lykill nr ${SUBST0})"
+msgstr "Signatura valabla pel fichièr « Release » (clau ${SUBST0})"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:44001
 msgid "Resolving dependencies of base packages..."
-msgstr "Uppfylli ákvæði grunn-pakka..."
+msgstr "Resolucion de las dependéncias dels paquets de basa..."
 
 #. Type: text
 #. Description
@@ -742,7 +741,7 @@ msgstr "Uppfylli ákvæði grunn-pakka..."
 #. SUBST0 is a list of packages
 #: ../bootstrap-base.templates:45001
 msgid "Found additional base dependencies: ${SUBST0}"
-msgstr "Fann aukalegar grunnkröfur: ${SUBST0}"
+msgstr "Dependéncias suplementàrias trapadas pel sistèma de basa : ${SUBST0}"
 
 #. Type: text
 #. Description
@@ -750,7 +749,7 @@ msgstr "Fann aukalegar grunnkröfur: ${SUBST0}"
 #. SUBST0 is a list of packages
 #: ../bootstrap-base.templates:46001
 msgid "Found additional required dependencies: ${SUBST0}"
-msgstr "Fann aukalegar stuðningskröfur: ${SUBST0}"
+msgstr "Dependéncias obligatòrias suplementàrias trobadas : ${SUBST0}"
 
 #. Type: text
 #. Description
@@ -758,14 +757,14 @@ msgstr "Fann aukalegar stuðningskröfur: ${SUBST0}"
 #. SUBST0 is a list of packages
 #: ../bootstrap-base.templates:47001
 msgid "Found packages in base already in required: ${SUBST0}"
-msgstr "Fann pakka sem við þurfum nú þegar ${SUBST0}"
+msgstr "Paquets obligatòris del sistèma de basa trobats : ${SUBST0}"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:48001
 msgid "Resolving dependencies of required packages..."
-msgstr "Uppfylli ákvæði nauðsynlegra pakka..."
+msgstr "Resolucion de las dependéncias dels paquets necessaris..."
 
 #. Type: text
 #. Description
@@ -774,7 +773,7 @@ msgstr "Uppfylli ákvæði nauðsynlegra pakka..."
 #. SUBST1 is a mirror
 #: ../bootstrap-base.templates:49001
 msgid "Checking component ${SUBST0} on ${SUBST1}..."
-msgstr "Athuga hluta ${SUBST0} á ${SUBST1}..."
+msgstr "Verificacion del compausant ${SUBST0} dins ${SUBST1}..."
 
 #. Type: text
 #. Description
@@ -785,7 +784,7 @@ msgstr "Athuga hluta ${SUBST0} á ${SUBST1}..."
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:50001
 msgid "Installing core packages..."
-msgstr "Set upp undirstöðupakka..."
+msgstr "Installacion dels paquets de basa..."
 
 #. Type: text
 #. Description
@@ -796,7 +795,7 @@ msgstr "Set upp undirstöðupakka..."
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:51001
 msgid "Unpacking required packages..."
-msgstr "Afpakka nauðsynlegum pökkum..."
+msgstr "Descompression dels paquets necessaris..."
 
 #. Type: text
 #. Description
@@ -807,35 +806,35 @@ msgstr "Afpakka nauðsynlegum pökkum..."
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:52001
 msgid "Configuring required packages..."
-msgstr "Stilli nauðsynlega pakka..."
+msgstr "Configuracion dels paquets necessaris..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:53001
 msgid "Installing base packages..."
-msgstr "Set upp grunn kerfi..."
+msgstr "Installacion dels paquets de basa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:54001
 msgid "Unpacking the base system..."
-msgstr "Afpakka grunn kerfi..."
+msgstr "Descompression del sistèma de basa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:55001
 msgid "Configuring the base system..."
-msgstr "Stilli grunn kerfi..."
+msgstr "Configuracion del sistèma de basa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:56001
 msgid "Base system installed successfully."
-msgstr "Grunn kerfi sett upp án vandræða."
+msgstr "Lo sistèma de basa es estat installat amb succès."
 
 #. Type: error
 #. Description
@@ -843,7 +842,7 @@ msgstr "Grunn kerfi sett upp án vandræða."
 #. :sl2:
 #: ../bootstrap-base.templates:57001
 msgid "Debootstrap warning"
-msgstr "Aðvörun frá debootstrap forriti"
+msgstr "Avertiment de debootstrap"
 
 #. Type: error
 #. Description
@@ -851,7 +850,7 @@ msgstr "Aðvörun frá debootstrap forriti"
 #. :sl2:
 #: ../bootstrap-base.templates:57001
 msgid "Warning: ${INFO}"
-msgstr "Aðvörun: ${INFO}"
+msgstr "Avertiment : ${INFO}"
 
 #. Type: text
 #. Description
@@ -859,21 +858,21 @@ msgstr "Aðvörun: ${INFO}"
 #. :sl2:
 #: ../bootstrap-base.templates:58001
 msgid "Retrying failed download of ${SUBST0}"
-msgstr "Reyni misheppnað niðurhal á ${SUBST0} aftur"
+msgstr "Temptativa de represa del telecargament de ${SUBST0}"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:60001
 msgid "Selecting the kernel to install..."
-msgstr "Vel kjarna til að setja upp..."
+msgstr "Causida del nucli d'installar dins /target/..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:61001
 msgid "Installing the kernel..."
-msgstr "Set upp kjarna..."
+msgstr "Installacion del nucli..."
 
 #. Type: text
 #. Description
@@ -881,4 +880,4 @@ msgstr "Set upp kjarna..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:62001
 msgid "Installing the kernel - retrieving and installing ${SUBST0}..."
-msgstr "Set upp kjarna - sæki og set upp ${SUBST0}..."
+msgstr "Installacion del nucli : recuperacion e installacion de ${SUBSTO}..."

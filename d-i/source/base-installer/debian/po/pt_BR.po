@@ -7,6 +7,7 @@
 # This file is distributed under the same license as debian-installer.
 #
 # Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008-2012.
+# Adriano Rafael Gomes <adrianorg@debian.org>, 2010-2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry <mckinstry@computer.org>, 2001-2002.
@@ -21,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2012-04-07 19:57-0300\n"
-"Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-04-12 20:04-0300\n"
+"Last-Translator: Adriano Rafael Gomes <adrianorg@debian.org>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
 "Language: pt_BR\n"
@@ -172,11 +173,11 @@ msgstr "Não foi possível instalar o sistema básico"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"O instalador não sabe como instalar o sistema básico. Nenhum CD-ROM "
-"instalável foi encontrado e nenhum espelho válido foi configurado."
+"O instalador não sabe como instalar o sistema básico. Nenhuma imagem "
+"instalável foi encontrada e nenhum espelho válido foi configurado."
 
 #. Type: error
 #. Description
@@ -297,12 +298,14 @@ msgstr "O seguinte erro ocorreu:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Ferramenta a ser usada para gerar o initrd de inicialização:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -543,11 +546,11 @@ msgstr "Arquivo 'Release' inválido: nenhuma entrada para ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "Não foi possível obter ${SUBST0}. Isto pode ser devido a um problema de rede "
-"ou um CD ruim, dependendo do seu tipo de instalação."
+"ou uma mídia ruim, dependendo do seu tipo de instalação."
 
 #. Type: error
 #. Description
@@ -714,6 +717,7 @@ msgstr "Configurando ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

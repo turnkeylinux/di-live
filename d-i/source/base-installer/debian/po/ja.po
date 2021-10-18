@@ -12,7 +12,7 @@
 #   Alastair McKinstry <mckinstry@computer.org>, 2001, 2002.
 #   Free Software Foundation, Inc., 2000, 2001, 2004, 2005, 2006
 #   IIDA Yosiaki <iida@gnu.org>, 2004, 2005, 2006.
-#   Kenshi Muto <kmuto@debian.org>, 2006-2007
+#   Kenshi Muto <kmuto@debian.org>, 2006-2018
 #   Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2001.
 #   Takuro Ashie <ashie@homa.ne.jp>, 2001.
 #   Tobias Quathamer <toddy@debian.org>, 2007.
@@ -22,18 +22,21 @@
 #   Yasuaki Taniguchi <yasuakit@gmail.com>, 2010, 2011.
 #   Yukihiro Nakai <nakai@gnome.gr.jp>, 2000.
 #
+#   Kentaro Hayashi <kenhys@gmail.com>, 2021.
+#   YOSHINO Yoshihito <yy.y.ja.jp@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2018-10-17 18:49+0900\n"
-"Last-Translator:  Kenshi Muto <kmuto@debian.org>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-04-29 17:54+0000\n"
+"Last-Translator: YOSHINO Yoshihito <yy.y.ja.jp@gmail.com>\n"
 "Language-Team: Debian L10n Japanese <debian-japanese@lists.debian.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: boolean
 #. Description
@@ -177,11 +180,11 @@ msgstr "ベースシステムをインストールできませんでした"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "インストーラはベースシステムをどのようにインストールしたらよいか理解できませ"
-"んでした。インストール可能な CD-ROM が見つからないか、有効なミラーが設定され"
+"んでした。インストール可能なイメージが見つからず、また有効なミラーが設定され"
 "ていません。"
 
 #. Type: error
@@ -302,12 +305,14 @@ msgstr "以下のエラーが発生しました:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "ブート initrd を生成するのに使うツール:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -545,11 +550,11 @@ msgstr "無効な Release ファイルです: ${SUBST0} のエントリがあり
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0} を取得できません。これは、あなたのインストール方法に依存しますが、"
-"ネットワークの問題か、壊れた CD といった原因によります。"
+"ネットワークの問題か、壊れたメディアといった原因によります。"
 
 #. Type: error
 #. Description
@@ -716,6 +721,7 @@ msgstr "${SUBST0} を設定しています..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

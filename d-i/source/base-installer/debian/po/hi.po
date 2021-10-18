@@ -3,8 +3,7 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_hi.po to Hindi
-# translation of debian-installer_packages_po_sublevel1_hi.po to
+# translation of debian-installer_packages_po_sublevel1 to Hindi
 # Debian Installer master translation file template
 # Don't forget to properly fill-in the header of PO files
 # Debian Installer translators, please read the D-I i18n documentation
@@ -25,20 +24,26 @@
 # Kumar Appaiah <kumar.appaiah@gmail.com>, 2009.
 #   Alastair McKinstry <mckinstry@debian.org>, 2004.
 # Kumar Appaiah <a.kumar@alumni.iitm.ac.in>, 2008.
-# Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011.
+# Kumar Appaiah <kumar.appaiah@gmail.com>, 2008, 2011, 2012.
+# Sruthi Chandran <srud@openmailbox.org>, 2018.
+# Himanshu Awasthi <johim9493@gmail.com>, 2018.
+# KushagraKarira <kushagrakarira@gmail.com>, 2020, 2021.
+# षिखर् <dnitesigm@gmail.com>, 2020.
+# Indrani Roy <indrani@scriptek.co.in>, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer_packages_po_sublevel1_hi\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2011-09-17 09:17-0500\n"
-"Last-Translator: Kumar Appaiah\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
-"Language: en_US\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-01-23 12:32+0000\n"
+"Last-Translator: KushagraKarira <kushagrakarira@gmail.com>\n"
+"Language-Team: \n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: 2X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: boolean
 #. Description
@@ -179,11 +184,11 @@ msgstr "आधार तंत्र संस्थापित नहीं �
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"संस्थापक पता नहीं कर पाया कि आधार तंत्र किस प्रकार संस्थापित करें। संस्थापन योग्य सीडी-"
-"रॉम नहीं पाई गई और नहि कोई वैध मिरर व्यवस्थित पाया गया।"
+"इंस्टॉलर यह पता नहीं लगा सकता कि आधार प्रणाली को कैसे स्थापित किया जाए। इसमें कोई "
+"इंस्टॉल करने योग्य छवि नहीं मिली, और कोई मान्य दर्पण कॉन्फ़िगर नहीं किया गया था।"
 
 #. Type: error
 #. Description
@@ -301,12 +306,14 @@ msgstr "निम्नलिखित त्रुटि हुई:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "बूट इनिटआरडी बनाने के लिये औजार:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -411,7 +418,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" means \"no kernel\" ]"
-msgstr "कुछ नहीं."
+msgstr "कोई नहीं"
 
 #. Type: select
 #. Description
@@ -532,11 +539,11 @@ msgstr "अवैध रिलीज़ फाइलः ${SUBST0} के लि�
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"${SUBST0} को प्राप्त नहीं कर सके। आपके संस्थापन विधि के अनुसार, ऐसा या तो नेटवर्क में "
-"समस्या या खराब सीडी के कारण है।"
+"${SUBST0} पुनर्प्राप्त नहीं किया जा सका। यह आपके इंस्टॉलेशन विधि के आधार पर नेटवर्क "
+"समस्या या खराब मीडिया के कारण हो सकता है।"
 
 #. Type: error
 #. Description
@@ -597,7 +604,7 @@ msgstr "पैकेजेज़ फ़ाइल को प्राप्त �
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:28001
 msgid "Retrieving packages"
-msgstr "पैकेजों  को प्राप्त किया जा रहा है"
+msgstr "पुनः प्राप्त पैकेज"
 
 #. Type: text
 #. Description
@@ -616,7 +623,7 @@ msgstr "पैकेजों को निकाला जा रहा है"
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:31001
 msgid "Installing core packages"
-msgstr "क्रोड़ पैकेजों को संस्थापित किया जा रहा है..."
+msgstr "कोर पैकेज स्थापित करना"
 
 #. Type: text
 #. Description
@@ -627,14 +634,14 @@ msgstr "क्रोड़ पैकेजों को संस्थापि
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:32001
 msgid "Unpacking required packages"
-msgstr "पैकेजों को खोला जा रहा है..."
+msgstr "आवश्यक पैकेज खोलना"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:33001
 msgid "Configuring required packages"
-msgstr "एपीटी स्रोत व्यवस्थित किया जा रहा है..."
+msgstr "आवश्यक पैकेज कॉन्फ़िगर करना"
 
 #. Type: text
 #. Description
@@ -703,6 +710,7 @@ msgstr "${SUBST0} व्यवस्थित किया जा रहा ह�
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

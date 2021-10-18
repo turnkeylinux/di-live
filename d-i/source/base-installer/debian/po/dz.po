@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dDz.po\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2012-02-29 04:41-0500\n"
 "Last-Translator: Jurmey Rabgay <jrabgay@dit.gov.bt>\n"
 "Language-Team: Dzongkha <pgeyleg@dit.gov.bt>\n"
@@ -167,9 +167,13 @@ msgstr "གཞི་རྟེན་རིམ་ལུགས་གཞི་བཙ
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "གཞི་བཙུགས་པ་འདི་གྱིས་གཞི་རྟེན་རིམ་ལུགས་ག་དེ་སྦེ་གཞི་བཙུགས་ནི་ཨིན་ན་ཕྱི་ཁར་དཔར་རིས་འབད་མི་ཚུགས་ སི་"
 "ཌི་-རོམ་གཞི་བཙུགས་འབད་བཏུབ་འཚོལ་མ་ཐོབ་མ་ཚད་ནུས་ཅན་ངོ་འཆར་གཞི་སྒྲིག་མ་འབད་བས། "
@@ -290,12 +294,14 @@ msgstr "འོག་གི་འདི་འཛོལ་བ་བྱུང་ན
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "བུཊི་ཨི་ནི་ཊརཌ་བཟོ་བཏོན་འབད་ནི་ལུ་ལག་ལེན་འཐབ་ལི་གྱི་ལག་ཆས:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -527,9 +533,13 @@ msgstr "ནུས་མེད་Releaseཡིག་སྣོད་ ${SUBST0}.ག
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0}.འདི་སླར་འདྲེན་མ་ཚུགས་ འ་ནི་འདི་ཁྱོད་ཀྱི་གཞི་བཙུགས་འབད་ནིའི་ཐབས་ལམ་དང་བསྟུན་འདི་སི་ཌི་"
 "བྱང་ཉེས་དང་ཡང་ན་ཡོངས་འབྲེལ་གྱི་དཀའ་ངལ་ལུ་བརྟེན་ཏེ་འོང་།"
@@ -699,6 +709,7 @@ msgstr "${SUBST0}...རིམ་སྒྲིག་འབད་དོ།"
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

@@ -24,13 +24,14 @@
 #   Grégoire Colbert <gregus@linux-mandrake.com>, 2001.
 #   Tobias Quathamer <toddy@debian.org>, 2007, 2008.
 # Alban Vidal <alban.vidal@zordhak.fr>, 2018.
+# Baptiste Jammet <baptiste@mailoo.org>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2018-08-28 07:19+0100\n"
-"Last-Translator: Alban Vidal <alban.vidal@zordhak.fr>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-08-17 10:18+0100\n"
+"Last-Translator: Baptiste Jammet <baptiste@mailoo.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -183,12 +184,12 @@ msgstr "Impossible d'installer le système de base"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "L'outil d'installation n'a pas trouvé de méthode pour installer le système "
-"de base. Aucun CD d'installation n'a été trouvé et aucun miroir valable n'a "
-"été configuré."
+"de base. Aucune image d'installation n'a été trouvée et aucun miroir valable "
+"n'a été configuré."
 
 #. Type: error
 #. Description
@@ -312,12 +313,14 @@ msgstr "L'erreur suivante s'est produite :"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Outil de création de l'image disque de démarrage (« initrd ») :"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -352,14 +355,14 @@ msgstr ""
 #. :sl3:
 #: ../bootstrap-base.templates:10001
 msgid "generic: include all available drivers"
-msgstr "image générique : comporte tous les pilotes disponibles"
+msgstr "image générique : comporte tous les pilotes disponibles"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../bootstrap-base.templates:10001
 msgid "targeted: only include drivers needed for this system"
-msgstr "image ciblée : seulement les pilotes nécessaires pour ce système"
+msgstr "image ciblée : seulement les pilotes nécessaires pour ce système"
 
 #. Type: select
 #. Description
@@ -548,7 +551,7 @@ msgstr "Fichier « Release » non valable : aucun composant n'est valable."
 #. SUBST0 is a filename
 #: ../bootstrap-base.templates:21001
 msgid "Invalid Release file: no entry for ${SUBST0}."
-msgstr "Fichier « Release » invalide : pas d'entrée pour ${SUBST0}."
+msgstr "Fichier « Release » non valable : pas d'entrée pour ${SUBST0}."
 
 #. Type: error
 #. Description
@@ -557,11 +560,11 @@ msgstr "Fichier « Release » invalide : pas d'entrée pour ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"Impossible de récupérer ${SUBST0}. Ceci peut être dû à un problème de réseau "
-"ou un CD défectueux, selon votre méthode d'installation."
+"Impossible de récupérer ${SUBST0}. Cela peut être dû à un problème de réseau "
+"ou un support défectueux, selon votre méthode d'installation."
 
 #. Type: error
 #. Description
@@ -573,8 +576,8 @@ msgid ""
 "If you are installing from CD-R or CD-RW, burning the CD at a lower speed "
 "may help."
 msgstr ""
-"Si vous installez à partir d'un CD-R ou CD-RW, enregistrer le CD à une "
-"vitesse plus faible peut aider."
+"Si vous installez à partir d'un CD-R ou CD-RW, graver le CD à une vitesse "
+"plus faible peut aider."
 
 #. Type: text
 #. Description
@@ -728,6 +731,7 @@ msgstr "Configuration de ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
@@ -865,7 +869,7 @@ msgstr "Avertissement de debootstrap"
 #. :sl2:
 #: ../bootstrap-base.templates:57001
 msgid "Warning: ${INFO}"
-msgstr "Avertissement : ${INFO}"
+msgstr "Avertissement : ${INFO}"
 
 #. Type: text
 #. Description
@@ -880,7 +884,7 @@ msgstr "Tentative de reprise du téléchargement de ${SUBST0}"
 #. :sl1:
 #: ../bootstrap-base.templates:60001
 msgid "Selecting the kernel to install..."
-msgstr "Choix du noyau à installer dans /target/..."
+msgstr "Choix du noyau à installer..."
 
 #. Type: text
 #. Description

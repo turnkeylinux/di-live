@@ -1,11 +1,11 @@
 subarch versatile
 cpuinfo qemu-versatilepb.cpuinfo
-majors 2.6
+majors 5.7
 flavour versatile
-kernel-2.6 linux-image-versatile
+kernel-5.7 linux-image-versatile
 usable \
   linux-image-versatile \
-  linux-image-2.6.18-4-versatile
+  linux-image-5.7.0-1-versatile
 unusable \
   linux-image-netwinder \
   linux-image-marvell \
@@ -13,9 +13,9 @@ unusable \
   linux-image-orion5x \
   linux-image-rpc \
   linux-image-s3c2410 \
-  linux-image-2.6.18-4-netwinder \
+  linux-image-5.7.0-1-netwinder \
   linux-image-4.4.2-1-marvell \
-  linux-image-2.6.18-4-orion5x \
-  linux-image-2.6.18-4-rpc \
-  linux-image-2.6.18-4-s3c2410 \
-  linux-image-2.6.18-4-versatile-dbg
+  linux-image-5.7.0-1-orion5x \
+  linux-image-5.7.0-1-rpc \
+  linux-image-5.7.0-1-s3c2410 \
+  linux-image-5.7.0-1-versatile-dbg

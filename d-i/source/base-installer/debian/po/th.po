@@ -4,17 +4,27 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Thai translation of debian-installer.
-# Copyright (C) 2006-2011 Software in the Public Interest, Inc.
+# Copyright (C) 2006-2021 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2006-2011.
+# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2006-2021.
+#
+#
+# Translations from iso-codes:
+#   Tobias Quathamer <toddy@debian.org>, 2007.
+#     Translations taken from ICU SVN on 2007-09-09
+#   Free Software Foundation, Inc., 2002,2003,2004
+#   Alastair McKinstry <mckinstry@computer.org>, 2002, 2004
+# Translations from KDE:
+#   Thanomsub Noppaburana <donga@midaassets.com>
+# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2005-2017
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2011-02-02 11:11+0700\n"
-"Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-02-03 16:48+0700\n"
+"Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
@@ -159,10 +169,10 @@ msgstr "ไม่สามารถติดตั้งระบบพื้น
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"โปรแกรมติดตั้งไม่สามารถหาวิธีติดตั้งระบบพื้นฐานได้ เนื่องจากไม่พบซีดีรอมติดตั้ง "
+"โปรแกรมติดตั้งไม่สามารถหาวิธีติดตั้งระบบพื้นฐานได้ เนื่องจากไม่พบอิมเมจที่จะใช้ติดตั้งได้ "
 "และไม่ได้กำหนดแหล่งสำเนาแพกเกจที่จะใช้"
 
 #. Type: error
@@ -281,12 +291,14 @@ msgstr "เกิดข้อผิดพลาดดังนี้:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "เครื่องมือที่จะใช้สร้าง initrd สำหรับบูต:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -512,10 +524,11 @@ msgstr "แฟ้ม Release ไม่ถูกต้อง: ไม่มีร�
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"ไม่สามารถอ่าน ${SUBST0} ซึ่งอาจเกิดจากปัญหาของเครือข่าย หรือแผ่นซีดีเสีย ขึ้นอยู่กับวิธีติดตั้งของคุณ"
+"ไม่สามารถอ่าน ${SUBST0} ซึ่งอาจเกิดจากปัญหาของเครือข่าย หรือสื่อติดตั้งเสีย "
+"ขึ้นอยู่กับวิธีติดตั้งของคุณ"
 
 #. Type: error
 #. Description
@@ -680,6 +693,7 @@ msgstr "กำลังตั้งค่า ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

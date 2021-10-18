@@ -11,6 +11,10 @@
 # Abdelhak Bougouffa, 2017.
 # najib LAARIBI <supnano@gmail.com>, 2018.
 # ButterflyOfFire <ButterflyOfFire@protonmail.com>, 2018.
+# Osama <osama.ibrahim.89@gmail.com>, 2019.
+# zer0-x <ProFessorHassan3@gmail.com>, 2021.
+# Fahim Sabah <katheer.kaleel@gmail.com>, 2021.
+#
 #
 # Translations from iso-codes:
 #     Translations taken from ICU SVN on 2007-09-09
@@ -26,9 +30,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ar\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2019-02-22 14:15+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-04-01 14:26+0000\n"
+"Last-Translator: Fahim Sabah <katheer.kaleel@gmail.com>\n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -175,11 +179,11 @@ msgstr "لا يمكن تثبيت النظام الأساسي"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"لا يعرف برنامج التثبيت كيف سيقوم بتثبيت النظام الأساسي. لم يعثر على قرص "
-"تثبيت مدمج ولم تقم بتهيئة أيّة مرآة صالحة."
+"لا يعرف برنامج التثبيت كيف سيقوم بتثبيت النظام الأساسي. لم يعثر على أية صورة "
+"ولم تقم بتهيئة أيّة مرآة صالحة."
 
 #. Type: error
 #. Description
@@ -297,12 +301,14 @@ msgstr "حدث الخطأ التّالي:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "الأداة المطلوب استخدامها لتوليد initrd للإقلاع:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -531,11 +537,11 @@ msgstr "ملف إصدار غير سليم: لا مُدخل لـ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"تعذر جلب ${SUBST0}. قد يكون هذا بسبب مشكلة في الشبكة أو قرص مدمج سيء، بناء "
-"على طريقة قيامك بالتثبيت."
+"تعذر جلب ${SUBST0}. قد يكون هذا بسبب مشكلة في الشبكة أو صورة سيئة، بناء على "
+"طريقة التثبيت."
 
 #. Type: error
 #. Description
@@ -701,6 +707,7 @@ msgstr "تهيئة ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

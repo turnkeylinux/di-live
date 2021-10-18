@@ -4,10 +4,11 @@
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
 # Catalan messages for debian-installer.
-# Copyright 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010, 2012 Software in the Public Interest, Inc.
+# Copyright 2002-2008, 2010, 2012, 2015, 2017-2018 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
-# Jordi Mallach <jordi@debian.org>, 2002, 2003, 2004, 2006, 2007, 2008, 2010, 2012.
+# Jordi Mallach <jordi@debian.org>, 2002-2008, 2010, 2012, 2015, 2017-2018.
 # Guillem Jover <guillem@debian.org>, 2005, 2007.
+# d <dmanye@gmail.com>, 2021.
 #
 # Translations from iso-codes:
 # Alastair McKinstry <mckinstry@computer.org>, 2001.
@@ -18,16 +19,17 @@
 # Traductor: Jordi Ferré <jordiferre@catalonia.altranet.fr>
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer wheezy\n"
+"Project-Id-Version: debian-installer buster\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2012-10-18 18:34+0200\n"
-"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-02-12 18:39+0000\n"
+"Last-Translator: d <dmanye@gmail.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: boolean
 #. Description
@@ -172,11 +174,11 @@ msgstr "No es pot instal·lar el sistema base"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"L'instal·lador no sap com instal·lar el sistema base. No s'ha trobat cap CD-"
-"ROM instal·lable i no s'ha configurat cap rèplica vàlida."
+"L'instal·lador no sap com instal·lar el sistema base. No s'ha trobat cap "
+"imatge instal·lable i no s'ha configurat cap rèplica vàlida."
 
 #. Type: error
 #. Description
@@ -296,12 +298,14 @@ msgstr "S'ha produït el següent error:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Eina a utilitzar per a generar l'initrd d'arrencada:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -542,11 +546,11 @@ msgstr "El fitxer Release és invàlid: no hi ha una entrada per a ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "No s'ha pogut obtindre ${SUBST0}. Això pot ser a causa d'un error de la "
-"xarxa o un CD erroni, depenent del mètode d'instal·lació."
+"xarxa o d'un mitjà erroni, depenent del vostre mètode d'instal·lació."
 
 #. Type: error
 #. Description
@@ -713,6 +717,7 @@ msgstr "S'està configurant ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
@@ -857,7 +862,7 @@ msgstr "Avís: ${INFO}"
 #. :sl2:
 #: ../bootstrap-base.templates:58001
 msgid "Retrying failed download of ${SUBST0}"
-msgstr "Ha fallat el reintent de descàrrega de ${SUBST0}."
+msgstr "Ha fallat el reintent de descàrrega de ${SUBST0}"
 
 #. Type: text
 #. Description

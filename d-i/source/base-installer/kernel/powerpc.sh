@@ -37,15 +37,8 @@ arch_get_kernel () {
 		SMP=
 	fi
 
-	case "$KERNEL_MAJOR" in
-	    2.6|3.*|4.*)
-		if [ "$SMP" ]; then
-			echo "linux-image-$1$SMP"
-		fi
-		echo "linux-image-$1"
-		;;
-	    *)
-		warning "Unsupported kernel major '$KERNEL_MAJOR'."
-		;;
-	esac
+	if [ "$SMP" ]; then
+		echo "linux-image-$1$SMP"
+	fi
+	echo "linux-image-$1"
 }

@@ -18,13 +18,15 @@
 # Christian Rose <menthos@menthos.com>, 2004.
 # Daniel Nylander <po@danielnylander.se>, 2007.
 # Martin Bagge <martin.bagge@bthstudent.se>, 2008, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2018.
+# Mattias Münster <mattiasmun@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2018-03-24 14:40+0000\n"
-"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2019-10-08 08:56+0000\n"
+"Last-Translator: Mattias Münster <mattiasmun@gmail.com>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -171,11 +173,12 @@ msgstr "Misslyckades med att installera grundsystemet"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "Installationsprogrammet kan inte installera grundsystemet eftersom ingen "
-"installerbar cd-skiva eller giltig spegelserver har konfigurerats."
+"installerbar avbildning har hittats, eller giltig spegelserver har "
+"konfigurerats."
 
 #. Type: error
 #. Description
@@ -296,12 +299,14 @@ msgstr "Följande fel inträffade:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "Vilket verktyg ska användas för att generera en uppstartsramdisk:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -535,11 +540,11 @@ msgstr "Release-filen är ogiltig: ingen post för ${SUBST0}."
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"Kan inte hämta ${SUBST0}. Det kan bero på nätverksproblem eller en dålig cd-"
-"skiva, beroende på din installationsmetod."
+"Kan inte hämta ${SUBST0}. Det kan bero på nätverksproblem eller dålig media, "
+"beroende på din installationsmetod."
 
 #. Type: error
 #. Description
@@ -706,6 +711,7 @@ msgstr "Konfigurerar ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

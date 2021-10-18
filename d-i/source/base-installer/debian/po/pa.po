@@ -21,14 +21,14 @@
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
 # A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
-# Aman ALam <alam.yellow@gmail.com>, 2018, 2019.
+# Aman Alam <alam.yellow@gmail.com>, 2018, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2019-02-11 10:09+0000\n"
-"Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2021-01-18 23:32+0000\n"
+"Last-Translator: Aman Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
@@ -174,11 +174,11 @@ msgstr "ਬੇਸ ਸਿਸਟਮ ਇੰਸਟਾਲ ਨਹੀਂ ਕੀਤਾ �
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"ਇੰਸਟਾਲਰ ਨੂੰ ਪਤਾ ਨਹੀਂ ਕਿ ਬੇਸ ਸਿਸਟਮ ਕਿਸ ਤਰਾਂ ਇੰਸਟਾਲ ਕਰਨਾ ਹੈ। ਕੋਈ ਇੰਸਟਾਲ ਕਰਨ ਯੋਗ CD-ROM "
-"ਨਹੀਂ ਲੱਭੀ ਅਤੇ ਕੋਈ ਮਿਰੱਰ ਸੰਰਚਿਤ ਨਹੀਂ।"
+"ਇੰਸਟਾਲਰ ਨੂੰ ਪਤਾ ਨਹੀਂ ਕਿ ਬੇਸ ਸਿਸਟਮ ਕਿਸ ਤਰਾਂ ਇੰਸਟਾਲ ਕਰਨਾ ਹੈ। ਕੋਈ ਇੰਸਟਾਲ ਕਰਨ ਯੋਗ ਈਮੇਜ਼ ਨਹੀਂ "
+"ਲੱਭਿਆ ਅਤੇ ਕੋਈ ਮਿਰੱਰ ਸੰਰਚਿਤ ਨਹੀਂ।"
 
 #. Type: error
 #. Description
@@ -296,12 +296,14 @@ msgstr "ਹੇਠਲੀ ਗਲਤੀ ਹੋਈ ਹੈ:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "ਬੂਟ initrd ਬਣਾਉਣ ਲਈ ਵਰਤਣ ਵਾਲਾ ਟੂਲ:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -530,11 +532,11 @@ msgstr "ਗਲਤ ਜਾਰੀ ਫਾਇਲ: ${SUBST0} ਲਈ ਕੋਈ ਇੰ�
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
-"${SUBST0} ਨੂੰ ਮੁੜ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕਰ ਸਕਿਆ। ਇਸ ਨੈੱਟਵਰਕ ਸਮੱਸਿਆ ਦਾ ਕਾਰਨ ਹੋ ਸਕਦਾ ਹੈ ਜਾਂ ਗਲਤ CD, "
-"ਤੁਹਾਡੀ ਇੰਸਟਾਲੇਸ਼ਨ ਢੰਗ ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ।"
+"${SUBST0} ਨੂੰ ਮੁੜ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕਰ ਸਕਿਆ। ਇਸ ਨੈੱਟਵਰਕ ਸਮੱਸਿਆ ਦਾ ਕਾਰਨ ਹੋ ਸਕਦਾ ਹੈ ਜਾਂ ਗਲਤ "
+"ਮੀਡਿਆ ਤੁਹਾਡੀ ਇੰਸਟਾਲੇਸ਼ਨ ਢੰਗ ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ।"
 
 #. Type: error
 #. Description
@@ -700,6 +702,7 @@ msgstr "${SUBST0} ਨੂੰ ਸੰਰਚਿਤ ਕੀਤਾ ਜਾ ਰਿਹਾ 
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
@@ -750,7 +753,7 @@ msgstr "ਬੇਸ ਵਿੱਚ ਲੋੜੀਦਾ ਪੈਕੇਜ ਪਹਿਲ�
 #. :sl1:
 #: ../bootstrap-base.templates:48001
 msgid "Resolving dependencies of required packages..."
-msgstr "ਲੋੜੀਂਦੇ ਪੈਕੇਜਾਂ ਦੀ ਨਿਰਭਰਤਾ ਹਟਾ ਰਿਹਾ ਰਿਹਾ ਹੈ..."
+msgstr "ਲੋੜੀਂਦੇ ਪੈਕੇਜਾਂ ਦੀ ਨਿਰਭਰਤਾ ਹੱਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
 #. Type: text
 #. Description

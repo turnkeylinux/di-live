@@ -3,43 +3,30 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# translation of debian-installer_packages_po_sublevel1_is.po to Icelandic
-# Icelandic messages for debian-installer.
-# This file is distributed under the same license as debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
+# Kabyle translation for debian-installer
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the debian-installer package.
+# Slimane Selyan Amiri <selyan.kab@gmail.com>, 2020.
 #
-# Copyright (C) 2010 Free Software Foundation
-# Sveinn í Felli <sv1@fellsnet.is>, 2018, 2019, 2020.
-#
-# Translations from iso-codes:
-# Copyright (C) 2002,2003, 2010, 2011, 2012 Free Software Foundation, Inc.
-# Translations from KDE:
-# Þórarinn Rúnar Einarsson <thori@mindspring.com>
-# zorglubb <debian-user-icelandic@lists.debian.org>, 2008.
-# Sveinn í Felli <sveinki@nett.is>, 2010.
-# Alastair McKinstry, <mckinstry@computer.org>, 2002.
-# Sveinn í Felli <sveinki@nett.is>, 2010, 2011, 2012, 2013.
-# Alastair McKinstry <mckinstry@computer.org>, 2002.
 msgid ""
 msgstr ""
-"Project-Id-Version: Icelandic (Debian Installer)\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
 "POT-Creation-Date: 2019-11-02 20:56+0100\n"
-"PO-Revision-Date: 2020-06-23 09:41+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
-"Language: is\n"
+"PO-Revision-Date: 2020-10-24 15:08+0100\n"
+"Last-Translator: Slimane Selyan Amiri <selyan.kab@gmail.com>\n"
+"Language-Team: Kabyle <kab@li.org>\n"
+"Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../base-installer.templates:1001
 msgid "Proceed with installation to unclean target?"
-msgstr "Halda áfram með uppsetningu á óhreina staðsetningu?"
+msgstr "Kemmel asebded ɣef yir asaḍas?"
 
 #. Type: boolean
 #. Description
@@ -50,16 +37,16 @@ msgid ""
 "could cause problems with the installation process, and if you proceed, some "
 "of the existing files may be overwritten."
 msgstr ""
-"Viðkomandi skráarkerfi inniheldur skrár frá fyrri uppsetningu. Þessar skrár "
-"gætu valdið vandamálum með uppsetningarferlið, og ef þú heldur áfram, þá "
-"gæti verið skrifað yfir einhverjar af þessum skrám."
+"Anagraw n yifuyla asaḍas deg-s ifuyla seg usebded aqbur. Ifuyla-a ad glunt s "
+"wuguren akked ukala n usebded, ma yella tkemmleḍ, ad ttwarun kra seg yifuyla "
+"yellan."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../base-installer.templates:2001
 msgid "No file system mounted on /target"
-msgstr "Ekkert skráarkerfi var tengt við /target"
+msgstr "Ulac anagraw n yifuyla yettuserkeb ɣef /target"
 
 #. Type: error
 #. Description
@@ -69,15 +56,15 @@ msgid ""
 "Before the installation can proceed, a root file system must be mounted on /"
 "target. The partitioner and formatter should have done this for you."
 msgstr ""
-"Áður en uppsetningin getur haldið áfram þarf að tengja rótarskráarkerfi við /"
-"target. Disksneiðitólið og forsníðitólin ættu að hafa gert þetta fyrir þig."
+"Send ad ikemmel usebded, anagraw n yifuyla aẓar ilaq ad yettuserkeb ɣef /"
+"target. Ilaq amesnulfu n yiḥricen akked umessal xedmen-ak·am aya."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../base-installer.templates:3001
 msgid "Not installing to unclean target"
-msgstr "Set ekki upp á óhreina disksneið"
+msgstr "Ur sebdad ara ɣef yir asaḍas"
 
 #. Type: error
 #. Description
@@ -88,58 +75,58 @@ msgid ""
 "back and erase or format the target file system before proceeding with the "
 "install."
 msgstr ""
-"Hætt hefur verið við uppsetningu fyrir viðkomandi skráarkerfi. Þú ættir að "
-"fara til baka og eyða eða forsníða skráarkerfið áður en þú heldur áfram með "
-"uppsetninguna."
+"Asebded ɣef unagraw n yifuyla asaḍas yettwasefsex. Ilaq ad tuɣaleḍ ɣer "
+"deffir syen ad tsefḍeḍ ad ternuḍ ad tmesleḍ anagraw n yifuyla asaḍas send ad "
+"tɛeddiḍ ɣer usebded."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:4001
 msgid "Preparing to install the base system..."
-msgstr "Býst undir að setja upp grunn kerfið..."
+msgstr "Aheyyi i usebded n unagraw n taffa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:5001 ../bootstrap-base.templates:30001
 msgid "Installing the base system"
-msgstr "Set upp grunn kerfi"
+msgstr "Asebded n unagraw n taffa"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:6001
 msgid "Running ${SCRIPT}..."
-msgstr "Keyri ${SCRIPT}..."
+msgstr "Aselkem n ${SCRIPT}..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:7001
 msgid "Setting up the base system..."
-msgstr "Set upp grunnkerfið..."
+msgstr "Aswel n unagraw n taffa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:8001 ../bootstrap-base.templates:59001
 msgid "Configuring APT sources..."
-msgstr "Stilli APT pakkalista..."
+msgstr "Tiɣbula n uswel n APT..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:9001
 msgid "Updating the list of available packages..."
-msgstr "Uppfæri lista yfir tiltæka pakka..."
+msgstr "Aleqqem tabdart n yikemmusen i yellan..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../base-installer.templates:10001
 msgid "Installing extra packages..."
-msgstr "Set upp viðbótarpakka..."
+msgstr "Asebded n yikemmusen-nniḍen..."
 
 #. Type: text
 #. Description
@@ -147,7 +134,7 @@ msgstr "Set upp viðbótarpakka..."
 #. :sl1:
 #: ../base-installer.templates:11001
 msgid "Installing extra packages - retrieving and installing ${SUBST0}..."
-msgstr "Set upp viðbótarpakka - sæki og set upp ${SUBST0}..."
+msgstr "Asebded n yikemmusen-nniḍen - tiririt d usebded ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -156,7 +143,7 @@ msgstr "Set upp viðbótarpakka - sæki og set upp ${SUBST0}..."
 #. :sl1:
 #: ../bootstrap-base.templates:1001
 msgid "Install the base system"
-msgstr "Setja upp grunn kerfi"
+msgstr "Sebded n unagraw n taffa"
 
 #. Type: error
 #. Description
@@ -165,7 +152,7 @@ msgstr "Setja upp grunn kerfi"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid "Cannot install base system"
-msgstr "Get ekki sett upp grunnkerfi"
+msgstr "Yegguma ad yebded unagraw n taffa"
 
 #. Type: error
 #. Description
@@ -177,9 +164,8 @@ msgid ""
 "The installer cannot figure out how to install the base system. It found no "
 "installable image, and no valid mirror was configured."
 msgstr ""
-"Uppsetningarforritið getur ekki fundið út hvernig á að setja upp "
-"grunnkerfið, enginn uppsetjanlegur gagnamiðill fannst og enginn réttmætur "
-"spegill var settur upp."
+"Asebdad ur ifhim ara amek ara isebded anagraw n taffa. Ur yufi ara tugna ara "
+"yettusbedden akked tisit tameɣtut i yettusewlen."
 
 #. Type: error
 #. Description
@@ -216,28 +202,28 @@ msgstr ""
 #: ../bootstrap-base.templates:19001 ../bootstrap-base.templates:20001
 #: ../bootstrap-base.templates:21001 ../bootstrap-base.templates:22001
 msgid "Debootstrap Error"
-msgstr "Villa í debootstrap"
+msgstr "Tuccḍa deg Debootstrap"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:3001
 msgid "Failed to determine the codename for the release."
-msgstr "Tókst ekki að finna út nafn á útgáfu."
+msgstr "I tifin n yisem n tengalt i lqem yecceḍ."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "Failed to install the base system"
-msgstr "Mistókst að setja upp grunn kerfi"
+msgstr "Asebded n unagraw n taffa yecceḍ"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:4001
 msgid "The base system installation into /target/ failed."
-msgstr "Uppsetning á grunn kerfi í /target/ mistókst."
+msgstr "Asebded n unagraw n taffa deg /target/ yecceḍ."
 
 #. Type: error
 #. Description
@@ -261,9 +247,7 @@ msgstr "Uppsetning á grunn kerfi í /target/ mistókst."
 #: ../bootstrap-base.templates:6001 ../bootstrap-base.templates:7001
 #: ../bootstrap-base.templates:11001 ../bootstrap-base.templates:16001
 msgid "Check /var/log/syslog or see virtual console 4 for the details."
-msgstr ""
-"Skoðaðu skránna /var/log/syslog, eða skipanalínu (virtual console) 4 fyrir "
-"nánari upplýsingar."
+msgstr "Senqed /var/log/syslog neɣ wali tadiwent tuhlist 4 i wugar n telqayt."
 
 #. Type: error
 #. Description
@@ -273,7 +257,7 @@ msgstr ""
 #. :sl2:
 #: ../bootstrap-base.templates:5001 ../bootstrap-base.templates:6001
 msgid "Base system installation error"
-msgstr "Villa í uppsetningu á grunnkerfi"
+msgstr "Tuccḍa n usebded n unagraw n taffa"
 
 #. Type: error
 #. Description
@@ -281,29 +265,28 @@ msgstr "Villa í uppsetningu á grunnkerfi"
 #: ../bootstrap-base.templates:5001
 msgid ""
 "The debootstrap program exited with an error (return value ${EXITCODE})."
-msgstr ""
-"debootstrap ræsiforritið hætti keyrslu vegna villu (skilagildi ${EXITCODE})."
+msgstr "Ahil debootstrap yekfa s tuccḍa (azal n tuɣalin ${EXITCODE})."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:6001
 msgid "The debootstrap program exited abnormally."
-msgstr "debootstrap ræsiforritið hætti keyrslu á óeðlilegan hátt."
+msgstr "Ahil debootstrap mačči akken ilaq i yekfa."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:7001
 msgid "The following error occurred:"
-msgstr "Eftirfarandi villa kom upp:"
+msgstr "Tuccḍa-a tella-d:"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
-msgstr "Tól til að búa til initrd fyrir ræsingu:"
+msgstr "Afecku ara yettusqedcen i usirew n usenker initrd:"
 
 #. Type: select
 #. Description
@@ -314,16 +297,16 @@ msgid ""
 "should select the default. If your system fails to boot, you can retry the "
 "installation using the other options."
 msgstr ""
-"Listinn sýnir tiltæk tól. Ef þú ert ekki viss hvað á að velja getur þú valið "
-"sjálgefinn kost. Ef ekki næst að ræsa kerfið, getur þú reynt uppsetningu með "
-"öðrum valkosti."
+"Tabdart teskanay-d ifecka i yellan. Ma yella ur tetḥiqeḍ ara anwa ara d-"
+"tferneḍ, ilaq ad tferneḍ amezwer. Ma yella anagraw-ik·im yegguma ad yekker, "
+"tzemreḍ ad tɛerḍeḍ asebded i tikkelt-nniḍen s useqdec n textiṛiyin tiyaḍ."
 
 #. Type: error
 #. Description
 #. :sl3:
 #: ../bootstrap-base.templates:9001
 msgid "Unsupported initrd generator"
-msgstr "Óstuddur initrd smiður"
+msgstr "Asaraw initrd ur yettusefrak ara"
 
 #. Type: error
 #. Description
@@ -333,28 +316,28 @@ msgid ""
 "The package ${GENERATOR} that was selected to generate the initrd is not "
 "supported."
 msgstr ""
-"Pakkinn sem var valinn til að búa til initrd (${GENERATOR}) er ekki studdur."
+"Akemmus ${GENERATOR} i d-yettwafernen i usirew n initrd ur yettusefrak ara."
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../bootstrap-base.templates:10001
 msgid "generic: include all available drivers"
-msgstr "almennt: taka með alla tiltæka rekla"
+msgstr "generic: deg-s meṛṛa inuḍaf i yellan"
 
 #. Type: select
 #. Choices
 #. :sl3:
 #: ../bootstrap-base.templates:10001
 msgid "targeted: only include drivers needed for this system"
-msgstr "markvisst: setja bara upp þá rekla sem þú þarfnast"
+msgstr "yettusaḍas: deg-s ala inuḍaf yettusran i unagraw-a"
 
 #. Type: select
 #. Description
 #. :sl3:
 #: ../bootstrap-base.templates:10002
 msgid "Drivers to include in the initrd:"
-msgstr "Reklar sem á að hafa með í initrd:"
+msgstr "Inuḍaf ara yettwarnun deg initrd:"
 
 #. Type: select
 #. Description
@@ -365,8 +348,9 @@ msgid ""
 "file system. It therefore needs to contain all drivers and supporting "
 "programs required to do that."
 msgstr ""
-"Helsti tilgangur initrd er að leyfa kjarnanum að tengja rótarskráakerfið. "
-"Því þarf það að innihalda alla nauðsynlega rekla og stuðningsforrit."
+"Tamesɣant tagejdant n initrd d asireg n kernel ad iserkeb anagraw n yifuyla "
+"aẓar. Ɣef waya yesra ad ilin deg-s meṛṛa inuḍaf d usefrek n wahilen "
+"yettusran i wakken ad yeg aya."
 
 #. Type: select
 #. Description
@@ -379,18 +363,18 @@ msgid ""
 "smaller targeted initrd there is a very small chance that not all needed "
 "drivers are included."
 msgstr ""
-"Almennt initrd er miklu stærra en það sem hefur verið aðlagað og gæti meira "
-"að segja verið svo stórt að sumir ræsistjórar ráða ekki við að hlaða því "
-"inn, en hefur aftur á móti þann kost að hægt er að nota það til að ræsa "
-"kerfi á næstum hvaða vélbúnaði sem er. Með niðurslípuðu aðlöguðu initrd er "
-"örlítill möguleiki á að ekki fylgi með allir nauðsynlegir reklar."
+"initrd imcettel meqqer aṭas ɣef win i yellan d asaḍas, yezmer ad yili meqqer "
+"ugar ula d isalayen n usenker ur ssawḍen ara ad t-id-salin, maca ɣur-s "
+"abaɣur n useqdec deg usenker n unagraw asaḍas qrib ɣef yal arrum. S initrd "
+"akk ameẓẓyan asaḍas, drus maḍi n tegnatin i wakken ad ilin deg-s meṛṛa "
+"inuḍaf i ilaqen."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Unable to install the selected kernel"
-msgstr "Gat ekki sett upp valinn kjarna"
+msgstr "Asebded n kernel yettufernen d awezɣi"
 
 #. Type: error
 #. Description
@@ -399,15 +383,14 @@ msgstr "Gat ekki sett upp valinn kjarna"
 msgid ""
 "An error was returned while trying to install the kernel into the target "
 "system."
-msgstr ""
-"Villa kom upp þegar reynt var að setja upp kjarnann á viðkomandi kerfi."
+msgstr "Tuccḍa tuɣal-d mi ara nettaɛraḍ ad nsebded kernel deg unagraw asaḍas."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:11001
 msgid "Kernel package: '${KERNEL}'."
-msgstr "Kjarnapakki: '${KERNEL}'."
+msgstr "Akemmus n kernel: '${KERNEL}'."
 
 #. Type: select
 #. Choices
@@ -417,14 +400,17 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" means \"no kernel\" ]"
-msgstr "enginn"
+msgstr ""
+"none[ Ur ssuqul ara ayen yellan gar yikrucciyen, err kan tasuqilt n wawal "
+"\"none\" deg tutlayt-inek·inem war ikrucciyen. \"none\"-agi anamek-is \"Ulac "
+"kernel:\" ]"
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:12002
 msgid "Kernel to install:"
-msgstr "Kjarni til að setja upp:"
+msgstr "Iɣes i usebded:"
 
 #. Type: select
 #. Description
@@ -434,22 +420,23 @@ msgid ""
 "The list shows the available kernels. Please choose one of them in order to "
 "make the system bootable from the hard drive."
 msgstr ""
-"Listinn sýnir tiltæka kjarna. Veldu einn af þeim til að gera kerfið "
-"ræsanlegt af harða disknum."
+"Tabdart i d-yeskanayen yal akernel i yellan. Ttxil-k·m fren yiwen seg-sen i "
+"wakken ad terreḍ anagraw aziraz seg umeɣri aqquran."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:14001
 msgid "Continue without installing a kernel?"
-msgstr "Halda áfram án þess að setja upp kjarna?"
+msgstr "Kemmel s war asebded n kernel?"
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:14001
 msgid "No installable kernel was found in the defined APT sources."
-msgstr "Enginn uppsetjanlegur kjarni fannst í APT debian pakkasafninu."
+msgstr ""
+"Ur yettwaf ara kernel i izemren ad yettusebded deg teɣbula APT i yettusbadun."
 
 #. Type: boolean
 #. Description
@@ -460,31 +447,30 @@ msgid ""
 "kernel later. This is only recommended for experts, otherwise you will "
 "likely end up with a machine that doesn't boot."
 msgstr ""
-"Þú getur haldið áfram án þess að setja upp kjarna og sett hann upp síðar. "
-"Þetta er samt aðeins ráðlagt fyrir fagmenn, því annars er líklegt að vélin "
-"ræsi ekki."
+"Tzemreḍ ad tɛerḍeḍ ad tkemmleḍ s war kernel, syen ticki ad tesbeddeḍ kernel-"
+"inek·inem s ufus. Ayagi yettuwelleh-d kan i yimazzayen, neɣ ma ulac ad d-"
+"tafeḍ iman-ik·im akked tmacint ur nettenker ara."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:15001
 msgid "Cannot install kernel"
-msgstr "Get ekki sett upp kjarna"
+msgstr "Ur nezmr ara ad nsebded iɣes"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:15001
 msgid "The installer cannot find a suitable kernel package to install."
-msgstr ""
-"Uppsetningarforritið getur ekki fundið viðeigandi kjarna til að setja upp."
+msgstr "Asebdad ur yufi ara akemmus n kernel iwulmen i usebded."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:16001
 msgid "Unable to install ${PACKAGE}"
-msgstr "Get ekki sett upp ${PACKAGE}"
+msgstr "Yegguma ad yettusebded ${PACKAGE}"
 
 #. Type: error
 #. Description
@@ -494,8 +480,8 @@ msgid ""
 "An error was returned while trying to install the ${PACKAGE} package onto "
 "the target system."
 msgstr ""
-"Uppsetningarforritið skilaði villu þegar það reyndi að setja upp ${PACKAGE} "
-"á viðkomandi kerfi."
+"Tuccḍa tuɣal-d mi ara nettaɛraḍ ad nsebded akemmus ${PACKAGE} deg unagraw "
+"asaḍas."
 
 #. Type: error
 #. Description
@@ -503,7 +489,7 @@ msgstr ""
 #. SUBST0 is a Release file name.
 #: ../bootstrap-base.templates:17001
 msgid "Failed getting Release file ${SUBST0}."
-msgstr "Mistókst að ná í útgáfuskrá ${SUBST0}."
+msgstr "Awway n ufaylu n lqem ${SUBST0} yecceḍ."
 
 #. Type: error
 #. Description
@@ -511,7 +497,7 @@ msgstr "Mistókst að ná í útgáfuskrá ${SUBST0}."
 #. SUBST0 is a Release.gpg file name
 #: ../bootstrap-base.templates:18001
 msgid "Failed getting Release signature file ${SUBST0}."
-msgstr "Mistókst að ná í undirskriftarskrá útgáfu ${SUBST0}."
+msgstr "Awway n ufaylu n uzmul n lqem ${SUBST0} yecceḍ."
 
 #. Type: error
 #. Description
@@ -519,14 +505,15 @@ msgstr "Mistókst að ná í undirskriftarskrá útgáfu ${SUBST0}."
 #. SUBST0 is a gpg key ID
 #: ../bootstrap-base.templates:19001
 msgid "Release file signed by unknown key (key id ${SUBST0})"
-msgstr "Útgáfu skrá (Release) með óþekktum lykli (lykill nr ${SUBST0})"
+msgstr ""
+"Afaylu n lqem yettuzemlen s tsarut tarussint (asulay n tsarut ${SUBST0})"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../bootstrap-base.templates:20001
 msgid "Invalid Release file: no valid components."
-msgstr "Ekki rétt útgáfu (Release) skrá: engir réttmætir hlutar."
+msgstr "Afaylu n lqem d arameɣtu: ulac isuddas imeɣta."
 
 #. Type: error
 #. Description
@@ -534,7 +521,7 @@ msgstr "Ekki rétt útgáfu (Release) skrá: engir réttmætir hlutar."
 #. SUBST0 is a filename
 #: ../bootstrap-base.templates:21001
 msgid "Invalid Release file: no entry for ${SUBST0}."
-msgstr "Ekki rétt útgáfu (Release) skrá: engin færsla fyrir ${SUBST0}."
+msgstr "Afaylu n lqem d arameɣtu: ulac anekcum i ${SUBST0}."
 
 #. Type: error
 #. Description
@@ -546,8 +533,8 @@ msgid ""
 "Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
 "media, depending on your installation method."
 msgstr ""
-"Gat ekki náð í ${SUBST0}. Þetta gæti verið vegna sambandsleysis á neti eða "
-"galla í gagnamiðli, fer eftir uppsetningaraðferð."
+"D awezɣi ad d-nerr ${SUBST0}. Ahat ssebba d wugur n uzeṭṭa neɣ d yir "
+"amidyat, almend n tarrayt n usebded-inek·inem."
 
 #. Type: error
 #. Description
@@ -559,8 +546,8 @@ msgid ""
 "If you are installing from CD-R or CD-RW, burning the CD at a lower speed "
 "may help."
 msgstr ""
-"Ef þú ert að setja upp kerfið frá geisladiski (CR-R) eða skrifuðum "
-"geisladiski (CD-RW), þá gæti hjálpað að skrifa diskinn á lægri hraða."
+"Ma yella tsebdadeḍ seg CD-ROM neɣ seg CD-RW, ahat ad ak·akem-inqac umsal n "
+"CD s usenqes n urured."
 
 #. Type: text
 #. Description
@@ -568,7 +555,7 @@ msgstr ""
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:23001
 msgid "Retrieving Release file"
-msgstr "Sæki útgáfu skrá (Release)"
+msgstr "Tiririt n ufaylu n lqem"
 
 #. Type: text
 #. Description
@@ -576,7 +563,7 @@ msgstr "Sæki útgáfu skrá (Release)"
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:24001
 msgid "Retrieving Release file signature"
-msgstr "Sæki undirskrift útgáfu (Release) skráar"
+msgstr "Tiririt n uzmul n ufaylu n lqem"
 
 #. Type: text
 #. Description
@@ -584,7 +571,7 @@ msgstr "Sæki undirskrift útgáfu (Release) skráar"
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:25001
 msgid "Finding package sizes"
-msgstr "Finn stærðir á pökkum"
+msgstr "Tifin n tiddiwin n yikemmusen"
 
 #. Type: text
 #. Description
@@ -592,7 +579,7 @@ msgstr "Finn stærðir á pökkum"
 #. Packages is a filename which should not be translated
 #: ../bootstrap-base.templates:26001
 msgid "Retrieving Packages files"
-msgstr "Sæki pakkalista (Packages)"
+msgstr "Tiririt n yifuyla n yikemmusen"
 
 #. Type: text
 #. Description
@@ -600,7 +587,7 @@ msgstr "Sæki pakkalista (Packages)"
 #. Packages is a filename which should not be translated
 #: ../bootstrap-base.templates:27001
 msgid "Retrieving Packages file"
-msgstr "Sæki pakkalista (Packages)"
+msgstr "Tiririt n ufaylu n yikemmusen"
 
 #. Type: text
 #. Description
@@ -608,7 +595,7 @@ msgstr "Sæki pakkalista (Packages)"
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:28001
 msgid "Retrieving packages"
-msgstr "Sæki pakka"
+msgstr "Tiririt n yikemmusen"
 
 #. Type: text
 #. Description
@@ -616,7 +603,7 @@ msgstr "Sæki pakka"
 #. "packages" here can be translated
 #: ../bootstrap-base.templates:29001
 msgid "Extracting packages"
-msgstr "Afþjappa pökkum"
+msgstr "Asuffeɣ n yikemmusen"
 
 #. Type: text
 #. Description
@@ -627,7 +614,7 @@ msgstr "Afþjappa pökkum"
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:31001
 msgid "Installing core packages"
-msgstr "Set upp undirstöðupakka"
+msgstr "Asebded n yikemmusen igejdanen"
 
 #. Type: text
 #. Description
@@ -638,14 +625,14 @@ msgstr "Set upp undirstöðupakka"
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:32001
 msgid "Unpacking required packages"
-msgstr "Afþjappa nauðsynlegum pökkum"
+msgstr "Asefruri n yikemmusen yettusran"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:33001
 msgid "Configuring required packages"
-msgstr "Stilli nauðsynlega pakka"
+msgstr "Aswel n yikemmusen yettusran"
 
 #. Type: text
 #. Description
@@ -654,7 +641,7 @@ msgstr "Stilli nauðsynlega pakka"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #: ../bootstrap-base.templates:34001
 msgid "Unpacking the base system"
-msgstr "Afþjappa grunn kerfi"
+msgstr "Asefruri n unagraw n taffa"
 
 #. Type: text
 #. Description
@@ -663,7 +650,7 @@ msgstr "Afþjappa grunn kerfi"
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #: ../bootstrap-base.templates:35001
 msgid "Configuring the base system"
-msgstr "Stilli grunn kerfi"
+msgstr "Aswel n unagraw n taffa"
 
 #. Type: text
 #. Description
@@ -678,7 +665,7 @@ msgstr "${SECTION}: ${INFO}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:37001
 msgid "Validating ${SUBST0}..."
-msgstr "Staðfesti ${SUBST0}..."
+msgstr "Aseɣbel ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -686,7 +673,7 @@ msgstr "Staðfesti ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:38001
 msgid "Retrieving ${SUBST0}..."
-msgstr "Sæki ${SUBST0}..."
+msgstr "Tiririt ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -694,7 +681,7 @@ msgstr "Sæki ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:39001
 msgid "Extracting ${SUBST0}..."
-msgstr "Afþjappa ${SUBST0}..."
+msgstr "Asuffeɣ ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -702,7 +689,7 @@ msgstr "Afþjappa ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:40001
 msgid "Unpacking ${SUBST0}..."
-msgstr "Afpakka ${SUBST0}..."
+msgstr "Asefruri ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -710,7 +697,7 @@ msgstr "Afpakka ${SUBST0}..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:41001
 msgid "Configuring ${SUBST0}..."
-msgstr "Stilli ${SUBST0}..."
+msgstr "Aswel ${SUBST0}..."
 
 #. Type: text
 #. Description
@@ -718,7 +705,7 @@ msgstr "Stilli ${SUBST0}..."
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
-msgstr "Athuga útgáfu (Release) undirskrift"
+msgstr "Asenqed n uzmul n lqem"
 
 #. Type: text
 #. Description
@@ -727,14 +714,14 @@ msgstr "Athuga útgáfu (Release) undirskrift"
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:43001
 msgid "Valid Release signature (key id ${SUBST0})"
-msgstr "Rétt undirskrift útgáfu (Release) (lykill nr ${SUBST0})"
+msgstr "Azmul n lqem ameɣtu (asulay n tsarut ${SUBST0})"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:44001
 msgid "Resolving dependencies of base packages..."
-msgstr "Uppfylli ákvæði grunn-pakka..."
+msgstr "Ferru n tugal n yikemmusen n taffa..."
 
 #. Type: text
 #. Description
@@ -742,7 +729,7 @@ msgstr "Uppfylli ákvæði grunn-pakka..."
 #. SUBST0 is a list of packages
 #: ../bootstrap-base.templates:45001
 msgid "Found additional base dependencies: ${SUBST0}"
-msgstr "Fann aukalegar grunnkröfur: ${SUBST0}"
+msgstr "Af-d tugal-nniḍen n taffa: ${SUBST0}"
 
 #. Type: text
 #. Description
@@ -750,7 +737,7 @@ msgstr "Fann aukalegar grunnkröfur: ${SUBST0}"
 #. SUBST0 is a list of packages
 #: ../bootstrap-base.templates:46001
 msgid "Found additional required dependencies: ${SUBST0}"
-msgstr "Fann aukalegar stuðningskröfur: ${SUBST0}"
+msgstr "Af-d tugal-nniḍen yettusran: ${SUBST0}"
 
 #. Type: text
 #. Description
@@ -758,14 +745,14 @@ msgstr "Fann aukalegar stuðningskröfur: ${SUBST0}"
 #. SUBST0 is a list of packages
 #: ../bootstrap-base.templates:47001
 msgid "Found packages in base already in required: ${SUBST0}"
-msgstr "Fann pakka sem við þurfum nú þegar ${SUBST0}"
+msgstr "Ikemmusen yettwafen yakan deg taffa ttusran: ${SUBST0}"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:48001
 msgid "Resolving dependencies of required packages..."
-msgstr "Uppfylli ákvæði nauðsynlegra pakka..."
+msgstr "Ferru n tugal n yikemmusen yettusran..."
 
 #. Type: text
 #. Description
@@ -774,7 +761,7 @@ msgstr "Uppfylli ákvæði nauðsynlegra pakka..."
 #. SUBST1 is a mirror
 #: ../bootstrap-base.templates:49001
 msgid "Checking component ${SUBST0} on ${SUBST1}..."
-msgstr "Athuga hluta ${SUBST0} á ${SUBST1}..."
+msgstr "Asenqed n usuddis ${SUBST0} ɣef ${SUBST1}..."
 
 #. Type: text
 #. Description
@@ -785,7 +772,7 @@ msgstr "Athuga hluta ${SUBST0} á ${SUBST1}..."
 #. be installed on the base system because of dependency resolution
 #: ../bootstrap-base.templates:50001
 msgid "Installing core packages..."
-msgstr "Set upp undirstöðupakka..."
+msgstr "Asebded n yikemmusen igejdanen..."
 
 #. Type: text
 #. Description
@@ -796,7 +783,7 @@ msgstr "Set upp undirstöðupakka..."
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:51001
 msgid "Unpacking required packages..."
-msgstr "Afpakka nauðsynlegum pökkum..."
+msgstr "Asefruri n yikemmusen yettusran..."
 
 #. Type: text
 #. Description
@@ -807,35 +794,35 @@ msgstr "Afpakka nauðsynlegum pökkum..."
 #. packages from the core packages depends on them
 #: ../bootstrap-base.templates:52001
 msgid "Configuring required packages..."
-msgstr "Stilli nauðsynlega pakka..."
+msgstr "Aswel n yikemmusen yettusran..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:53001
 msgid "Installing base packages..."
-msgstr "Set upp grunn kerfi..."
+msgstr "Asebded n yikemmusen n taffa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:54001
 msgid "Unpacking the base system..."
-msgstr "Afpakka grunn kerfi..."
+msgstr "Asefruri n unagraw n taffa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:55001
 msgid "Configuring the base system..."
-msgstr "Stilli grunn kerfi..."
+msgstr "Aswel n unagraw n taffa..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:56001
 msgid "Base system installed successfully."
-msgstr "Grunn kerfi sett upp án vandræða."
+msgstr "Anagraw n taffa yettusebded akken iwata."
 
 #. Type: error
 #. Description
@@ -843,7 +830,7 @@ msgstr "Grunn kerfi sett upp án vandræða."
 #. :sl2:
 #: ../bootstrap-base.templates:57001
 msgid "Debootstrap warning"
-msgstr "Aðvörun frá debootstrap forriti"
+msgstr "Alɣu n Debootstrap"
 
 #. Type: error
 #. Description
@@ -851,7 +838,7 @@ msgstr "Aðvörun frá debootstrap forriti"
 #. :sl2:
 #: ../bootstrap-base.templates:57001
 msgid "Warning: ${INFO}"
-msgstr "Aðvörun: ${INFO}"
+msgstr "ƔUR-K: ${INFO}"
 
 #. Type: text
 #. Description
@@ -859,21 +846,21 @@ msgstr "Aðvörun: ${INFO}"
 #. :sl2:
 #: ../bootstrap-base.templates:58001
 msgid "Retrying failed download of ${SUBST0}"
-msgstr "Reyni misheppnað niðurhal á ${SUBST0} aftur"
+msgstr "Ɛreḍ tikkelt-nniḍen asider ur neddi ara n ${SUBST0}"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:60001
 msgid "Selecting the kernel to install..."
-msgstr "Vel kjarna til að setja upp..."
+msgstr "Fren iɣes i usebded..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../bootstrap-base.templates:61001
 msgid "Installing the kernel..."
-msgstr "Set upp kjarna..."
+msgstr "Asebded n yiɣes..."
 
 #. Type: text
 #. Description
@@ -881,4 +868,4 @@ msgstr "Set upp kjarna..."
 #. SUBST0 is a package name
 #: ../bootstrap-base.templates:62001
 msgid "Installing the kernel - retrieving and installing ${SUBST0}..."
-msgstr "Set upp kjarna - sæki og set upp ${SUBST0}..."
+msgstr "Asebded n kernel - tiririt d usebded ${SUBST0}..."

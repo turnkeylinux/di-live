@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lo\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
 "PO-Revision-Date: 2010-11-26 09:11+0700\n"
 "Last-Translator: Anousak Souphavanh <anousak@gmail.com>\n"
 "Language-Team: Lao <lo@li.org>\n"
@@ -157,9 +157,13 @@ msgstr "ບໍ່ສາມາດຕິດຕັ້ງລະບົບພື້ນ
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
+#| msgid ""
+#| "The installer cannot figure out how to install the base system. No "
+#| "installable CD-ROM was found and no valid mirror was configured."
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "ໂປແກຣັມຕິດຕັ້ງບໍ່ສາມາດຫາວິທີຕິດຕັ້ງລະບົບພື້ນຖານໄດ້ເນື່ອງຈາກບໍ່ພົບຊີດີລອ້ມຕິດຕັ້ງ "
 "ແລະບໍ່ໄດ້ກຳນົດແຫຼ່ງສຳເນົາແພັກເກັດທີ່ຈະໃຊ້"
@@ -280,12 +284,14 @@ msgstr "ເກີດຂໍ້ຜິດພາດ:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "ເຄື່ອງມືທີ່ໃຊ້ສ້າງສຳຫລັບບູດ:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -509,9 +515,13 @@ msgstr "ແຟັມ Release ບໍ່ຖືກຕອ້ງ: ບໍ່ມີລ�
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
+#| msgid ""
+#| "Couldn't retrieve ${SUBST0}. This may be due to a network problem or a "
+#| "bad CD, depending on your installation method."
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "ບໍ່ສາມາດອ່ານ ${SUBST0} ຊື່ງອາດເກີດຈາກປັນຫາຂອງເຄືອຂ່າຍຫຼືແຜ່ນຊີດີເສີຍ ຂື້ນຢູ່ກັບວິທີຕິດຕັ້ງຂອງເຈົ້າ "
 
@@ -678,6 +688,7 @@ msgstr "ກຳລັງຕັ້ງຄ່າ ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

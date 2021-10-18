@@ -7,7 +7,7 @@
 # Copyright (C) 2003,2004,2005,2008 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Changwoo Ryu <cwryu@debian.org>, 2010, 2011.
+# Changwoo Ryu <cwryu@debian.org>, 2010-2012, 2014-2015, 2017-2018, 2020.
 #
 # Translations from iso-codes:
 # Copyright (C)
@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2011-09-13 08:15+0900\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-04-21 05:24+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team:  Korean <debian-l10n-korean@lists.debian.org>\n"
 "Language: ko\n"
@@ -177,10 +177,10 @@ msgstr "베이스 시스템을 설치하는데 실패했습니다"
 #. :sl2:
 #: ../bootstrap-base.templates:2001
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
-"설치 프로그램이 베이스 시스템을 설치할 방법이 없습니다. 설치 CD-ROM이 없고, "
+"설치 프로그램이 베이스 시스템을 설치할 방법이 없습니다. 설치 이미지가 없고, "
 "올바른 미러 사이트를 설정하지도 않았습니다."
 
 #. Type: error
@@ -302,12 +302,14 @@ msgstr "다음 오류가 발생했습니다:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "initrd를 만드는데 사용할 도구:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -538,11 +540,11 @@ msgstr "Release 파일이 잘못되었습니다: ${SUBST0}에 대한 항목이 �
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "${SUBST0} 파일을 가져올 수 없습니다. (어떤 설치 방법을 사용했느냐에 따라) 네"
-"트워크 문제가 있거나 CD가 잘못되었을 것입니다."
+"트워크 문제가 있거나 미디어가 잘못되었을 것입니다."
 
 #. Type: error
 #. Description
@@ -709,6 +711,7 @@ msgstr "${SUBST0} 패키지를 설정하는 중입니다..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"

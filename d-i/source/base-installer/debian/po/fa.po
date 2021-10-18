@@ -7,6 +7,8 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Nima Sahraneshin <unix.nima@gmail.com>, 2018.
+# Seyed Hany Hosseini <hany1894@gmail.com>, 2020.
+# <soheilkhanalipur@tutanota.com>, 2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry - further translations from ICU-3.0
@@ -21,11 +23,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: fa\n"
+"Project-Id-Version: fa sublevel1\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2019-01-01 17:49+0000\n"
-"Last-Translator: nima sahraneshin <unix.nima@gmail.com>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2020-10-24 17:09+0000\n"
+"Last-Translator: سهیل خانعلی‌پور <soheilkhanalipur@tutanota.com>\n"
 "Language-Team: Debian-l10n-persian <debian-l10n-persian@lists.debian.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -154,7 +156,7 @@ msgstr "نصب بسته‌های اضافی - دریافت و نصب ${SUBST0}..
 #. :sl1:
 #: ../bootstrap-base.templates:1001
 msgid "Install the base system"
-msgstr "نصب سیستم پایه"
+msgstr "نصب سامانه پایه"
 
 #. Type: error
 #. Description
@@ -171,9 +173,10 @@ msgstr "نصب سیستم پایه شکست خورد."
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "نصاب نمی‌تواند متوجه شود چگونه سیستم پایه را نصب کند. هیچ CD-ROM قابل نصبی "
 "یافت نشد و هیچ آینهٔ دریافت معتبری پیکر‌بندی نشد."
@@ -295,12 +298,14 @@ msgstr "خطای زیر اتفاق افتاد:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
 msgstr "ابزار برای ایجاد boot initrd:"
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
@@ -532,9 +537,10 @@ msgstr "پروندهٔ انتشار نامعتبر است. هیچ ورودی ب�
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr ""
 "بازیابی ${SUBST0} ناممکن بود. ممکن است به علت مشکل شبکه یا CD بد باشد، بسته "
 "به روش نصب شما."
@@ -704,6 +710,7 @@ msgstr "پیکربندی ${SUBST0}..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
@@ -763,7 +770,7 @@ msgstr "بررسی و یافتن وابستگی‌های بسته های مور�
 #. SUBST1 is a mirror
 #: ../bootstrap-base.templates:49001
 msgid "Checking component ${SUBST0} on ${SUBST1}..."
-msgstr "بررسی مؤلفه  ${SUBST0} در  ${SUBST1} ..."
+msgstr "بررسی مؤلفه ${SUBST0} در ${SUBST1} ..."
 
 #. Type: text
 #. Description

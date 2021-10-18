@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: base-installer@packages.debian.org\n"
-"POT-Creation-Date: 2010-09-28 22:48+0000\n"
-"PO-Revision-Date: 2012-04-14 22:12+0600\n"
-"Last-Translator: Tennom <tankola@ymail.com, tennomyathog@gmail.com>\n"
+"POT-Creation-Date: 2019-11-02 20:56+0100\n"
+"PO-Revision-Date: 2019-08-28 18:09+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: bo <translation-team-bo@lists.sourceforge.net>\n"
 "Language: bo\n"
 "MIME-Version: 1.0\n"
@@ -156,9 +156,10 @@ msgstr "རྨང་གཞིའི་མ་ལག་སྒྲིག་འཇུ
 #. See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 #. :sl2:
 #: ../bootstrap-base.templates:2001
+#, fuzzy
 msgid ""
-"The installer cannot figure out how to install the base system. No "
-"installable CD-ROM was found and no valid mirror was configured."
+"The installer cannot figure out how to install the base system. It found no "
+"installable image, and no valid mirror was configured."
 msgstr ""
 "སྒྲིག་འཇུག་ཆས་ཀྱིས་རྨང་གཞིའི་མ་ལག་དེ་གང་འདྲ་བྱས་ནས་སྒྲིག་འཇུག་བྱེད་དགོས་མི་ཤེས་པ། སྒྲིག་འཇུག་རུང་བའི་CD-"
 "ROM དང་ཡང་ན་ཕན་ནུས་ཡོད་པའི་དྲ་ཚིགས་ཞིག་མ་རྙེད་པ"
@@ -279,21 +280,20 @@ msgstr "གཤམ་གྱི་ནོར་འཁྲུལ་བྱུང་བ
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid "Tool to use to generate boot initrd:"
-msgstr "initrd འགོ་འཛུགས་སྒུལ་བྱེད་ལག་ཆ:"
+msgstr ""
 
 #. Type: select
 #. Description
+#. :sl3:
 #: ../bootstrap-base.templates:8001
 msgid ""
 "The list shows the available tools. If you are unsure which to select, you "
 "should select the default. If your system fails to boot, you can retry the "
 "installation using the other options."
 msgstr ""
-"ཐོ་འདིའི་ནང་སྤྱོད་རུང་བའི་ལག་ཆ་མངོན་ཡོད། ཁྱོད་ཀྱིས་གང་ཞིག་འདེམས་དགོས་པ་མ་ཤེས་ན་སྔོན་སྒྲིག་འདེམས་དགོས། "
-"གལ་སྲིད་ཁྱོད་ཀྱི་མ་ལག་འགོ་འཛུགས་མ་ཐུབ་ན་འདིའི་ནང་གི་འདེམས་བྱ་གཞན་ཞིག་བདམས་ནས་སྒྲིག་འཇུག་བྱེད་ཐུབ་"
-"མིན་ཚོད་ལྟ་བྱེད་ཆོག"
 
 #. Type: error
 #. Description
@@ -385,10 +385,7 @@ msgid ""
 "none[ Do not translate what's inside the brackets and just put the "
 "translation for the word \"none\" in your language without any brackets. "
 "This \"none\" means \"no kernel\" ]"
-msgstr ""
-"ཅི་ཡང་མེད[ Do not translate what's inside the brackets and just put the "
-"translation for the word \"none\" in your language without any brackets. "
-"This \"none\" means \"no kernel\" ]"
+msgstr "ཅི་ཡང་མེད"
 
 #. Type: select
 #. Description
@@ -509,9 +506,10 @@ msgstr "ཕན་མེད་ཡིན་པའི་འགྲེམ་སྤེ
 #. SUBST0 is a filename or package name
 #. Debootstrap is a program name: should not be translated
 #: ../bootstrap-base.templates:22001
+#, fuzzy
 msgid ""
-"Couldn't retrieve ${SUBST0}. This may be due to a network problem or a bad "
-"CD, depending on your installation method."
+"Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad "
+"media, depending on your installation method."
 msgstr "${SUBST0} ཐོབ་མི་ཐུབ་པ། འདི་དྲ་བའི་སྐྱོན་ཞིག་ཡིན་པའམ་ཡང་ན་འོད་སྡེར་སྐྱོན་ཅན་ཞིག་ཡིན། "
 
 #. Type: error
@@ -679,6 +677,7 @@ msgstr "${SUBST0} སྒྲིག་འགོད་བཞིན་པ..."
 
 #. Type: text
 #. Description
+#. :sl1:
 #. Release is a filename which should not be translated
 #: ../bootstrap-base.templates:42001
 msgid "Checking Release signature"
