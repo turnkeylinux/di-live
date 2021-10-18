@@ -1,13 +1,12 @@
 partman-auto/text/multi_scheme ::
 
-10 10 10 free
+1 1 1 free
 	$iflabel{ gpt }
 	$reusemethod{ }
 	method{ biosgrub } .
 
 512 512 768 ext2
-	$iflabel{ sun }
-	$bootable{ }
+	$defaultignore{ }
 	method{ format }
 	format{ }
 	use_filesystem{ }
@@ -30,8 +29,9 @@ partman-auto/text/multi_scheme ::
 	$default_filesystem{ }
 	mountpoint{ /var } .
 
-100% 512 300% linux-swap
+100% 512 200% linux-swap
 	$lvmok{ }
+	$reusemethod{ }
 	method{ swap }
 	format{ } .
 

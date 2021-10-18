@@ -5,6 +5,8 @@
 #
 # Traditional Chinese messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
+# Louies <louies0623@gmail.com>, 2019, 2021.
+# Walter Cheuk <wwycheuk@gmail.com>, 2019.
 # This file is distributed under the same license as debian-installer.
 #
 #
@@ -25,14 +27,15 @@
 #   JOE MAN <trmetal@yahoo.com.hk>, 2001.
 #   Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2005.
 #   Yao Wei (魏銘廷) <mwei@lxde.org>, 2012.
+#   Walter Cheuk <wwycheuk@gmail.com>, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-25 22:00+0000\n"
-"PO-Revision-Date: 2019-01-13 14:06+0000\n"
-"Last-Translator: Louies <louies0623@gmail.com>\n"
+"POT-Creation-Date: 2020-03-10 20:01+0000\n"
+"PO-Revision-Date: 2021-02-16 09:50+0000\n"
+"Last-Translator: louies0623 <louies0623@gmail.com>\n"
 "Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
 "debian.org>\n"
 "Language: zh_TW\n"
@@ -46,14 +49,14 @@ msgstr ""
 #. :sl1:
 #: ../partman-auto.templates:1001
 msgid "Please wait..."
-msgstr "請稍候……"
+msgstr "請稍候…"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:2001
 msgid "Computing the new partitions..."
-msgstr "正在計算新的分割區……"
+msgstr "正在計算新的分割區…"
 
 #. Type: error
 #. Description
@@ -82,7 +85,7 @@ msgstr ""
 msgid ""
 "This probably happened because there are too many (primary) partitions in "
 "the partition table."
-msgstr "這或許是因為在磁碟分割表中有過多的 (主) 分割區。"
+msgstr "這或許是因為在磁碟分割表有過多的 (主) 分割區。"
 
 #. Type: select
 #. Description
@@ -90,7 +93,7 @@ msgstr "這或許是因為在磁碟分割表中有過多的 (主) 分割區。"
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+#: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid "Partitioning method:"
 msgstr "磁碟分割方式:"
 
@@ -114,7 +117,7 @@ msgstr ""
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+#: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
@@ -125,7 +128,7 @@ msgstr ""
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid "Partitioning scheme:"
 msgstr "磁碟分割方式:"
 
@@ -138,14 +141,14 @@ msgstr "磁碟分割方式:"
 #.
 #. It is followed by a variable giving the chosen disk, hence the colon
 #. at the end of the sentence. Please keep it.
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid "Selected for partitioning:"
 msgstr "被選定為要進行磁碟分割:"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
@@ -154,26 +157,26 @@ msgstr "該磁碟可以使用以下數種不同方式來進行分割。如果您
 #. Type: error
 #. Description
 #. :sl2:
-#: ../partman-auto.templates:10001
+#: ../partman-auto.templates:11001
 msgid "Unusable free space"
 msgstr "無法使用的未使用空間"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../partman-auto.templates:10001
+#: ../partman-auto.templates:11001
 msgid ""
 "Partitioning failed because the chosen free space may not be used. There are "
 "probably too many (primary) partitions in the partition table."
 msgstr ""
-"也許是因為所指定的未使用空間無法使用，以致於無法分割該磁碟。在磁碟分割表中可"
-"能有過多的 (主) 分割區。"
+"也許是因為所指定的未使用空間無法使用，以致於無法分割該磁碟。磁碟分割表可能有"
+"過多的 (主) 分割區。"
 
 #. Type: text
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:13001
+#: ../partman-auto.templates:14001
 msgid "Guided partitioning"
 msgstr "磁碟分割導引"
 
@@ -181,7 +184,7 @@ msgstr "磁碟分割導引"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:14001
+#: ../partman-auto.templates:15001
 msgid "Guided - use the largest continuous free space"
 msgstr "導引 - 使用最大的連續未使用空間"
 
@@ -189,21 +192,21 @@ msgstr "導引 - 使用最大的連續未使用空間"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:15001
+#: ../partman-auto.templates:16001
 msgid "Guided - use entire disk"
 msgstr "導引 - 使用整顆磁碟"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:16001
+#: ../partman-auto.templates:17001
 msgid "Select disk to partition:"
 msgstr "選擇要進行分割的磁碟:"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:16001
+#: ../partman-auto.templates:17001
 msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
@@ -216,7 +219,7 @@ msgstr ""
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #. This is a method for partioning - as in guided (automatic) versus manual
-#: ../partman-auto.templates:17001
+#: ../partman-auto.templates:18001
 msgid "Manual"
 msgstr "手動"
 
@@ -224,7 +227,7 @@ msgstr "手動"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:18001
+#: ../partman-auto.templates:19001
 msgid "Automatically partition the free space"
 msgstr "對未使用空間進行自動磁碟分割"
 
@@ -232,7 +235,7 @@ msgstr "對未使用空間進行自動磁碟分割"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:19001
+#: ../partman-auto.templates:20001
 msgid "All files in one partition (recommended for new users)"
 msgstr "把所有的檔案全部放到同一個分割區中 (新手推介)"
 
@@ -240,7 +243,7 @@ msgstr "把所有的檔案全部放到同一個分割區中 (新手推介)"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:20001
+#: ../partman-auto.templates:21001
 msgid "Separate /home partition"
 msgstr "將 /home 分割區獨立出來"
 
@@ -248,7 +251,7 @@ msgstr "將 /home 分割區獨立出來"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:21001
+#: ../partman-auto.templates:22001
 msgid "Separate /home, /var, and /tmp partitions"
 msgstr "將 /home、/var 及 /tmp 分割區獨立出來"
 
@@ -256,6 +259,6 @@ msgstr "將 /home、/var 及 /tmp 分割區獨立出來"
 #. Description
 #. :sl2:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:22001
+#: ../partman-auto.templates:23001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "小型磁碟 (< 1GB) 分割方案"

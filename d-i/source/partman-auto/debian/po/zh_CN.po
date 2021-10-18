@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"POT-Creation-Date: 2020-03-10 20:01+0000\n"
 "PO-Revision-Date: 2017-06-11 18:20+0800\n"
 "Last-Translator: Yangfl <mmyangfl@gmail.com>\n"
 "Language-Team:  <debian-l10n-chinese@lists.debian.org>\n"
@@ -91,7 +91,7 @@ msgstr "可能是因为分区表中存在过多 (主) 分区。"
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+#: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid "Partitioning method:"
 msgstr "分区方法："
 
@@ -114,7 +114,7 @@ msgstr ""
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+#: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
@@ -124,7 +124,7 @@ msgstr ""
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid "Partitioning scheme:"
 msgstr "分区方案："
 
@@ -137,14 +137,14 @@ msgstr "分区方案："
 #.
 #. It is followed by a variable giving the chosen disk, hence the colon
 #. at the end of the sentence. Please keep it.
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid "Selected for partitioning:"
 msgstr "选定要分区："
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
@@ -153,14 +153,14 @@ msgstr "该磁盘可以使用以下数种不同方式来进行分区。如果您
 #. Type: error
 #. Description
 #. :sl2:
-#: ../partman-auto.templates:10001
+#: ../partman-auto.templates:11001
 msgid "Unusable free space"
 msgstr "不可用的空闲空间"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../partman-auto.templates:10001
+#: ../partman-auto.templates:11001
 msgid ""
 "Partitioning failed because the chosen free space may not be used. There are "
 "probably too many (primary) partitions in the partition table."
@@ -171,7 +171,7 @@ msgstr ""
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:13001
+#: ../partman-auto.templates:14001
 msgid "Guided partitioning"
 msgstr "分区向导"
 
@@ -179,7 +179,7 @@ msgstr "分区向导"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:14001
+#: ../partman-auto.templates:15001
 msgid "Guided - use the largest continuous free space"
 msgstr "向导 - 使用最大的连续空闲空间"
 
@@ -187,21 +187,21 @@ msgstr "向导 - 使用最大的连续空闲空间"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:15001
+#: ../partman-auto.templates:16001
 msgid "Guided - use entire disk"
 msgstr "向导 - 使用整个磁盘"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:16001
+#: ../partman-auto.templates:17001
 msgid "Select disk to partition:"
 msgstr "请选择要分区的磁盘："
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:16001
+#: ../partman-auto.templates:17001
 msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
@@ -214,7 +214,7 @@ msgstr ""
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #. This is a method for partioning - as in guided (automatic) versus manual
-#: ../partman-auto.templates:17001
+#: ../partman-auto.templates:18001
 msgid "Manual"
 msgstr "手动"
 
@@ -222,7 +222,7 @@ msgstr "手动"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:18001
+#: ../partman-auto.templates:19001
 msgid "Automatically partition the free space"
 msgstr "对空闲空间进行自动分区"
 
@@ -230,7 +230,7 @@ msgstr "对空闲空间进行自动分区"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:19001
+#: ../partman-auto.templates:20001
 msgid "All files in one partition (recommended for new users)"
 msgstr "将所有文件放在同一个分区中 (推荐新手使用)"
 
@@ -238,7 +238,7 @@ msgstr "将所有文件放在同一个分区中 (推荐新手使用)"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:20001
+#: ../partman-auto.templates:21001
 msgid "Separate /home partition"
 msgstr "将 /home 放在单独的分区"
 
@@ -246,7 +246,7 @@ msgstr "将 /home 放在单独的分区"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:21001
+#: ../partman-auto.templates:22001
 msgid "Separate /home, /var, and /tmp partitions"
 msgstr "将 /home、/var 和 /tmp 都分别放在单独的分区"
 
@@ -254,6 +254,6 @@ msgstr "将 /home、/var 和 /tmp 都分别放在单独的分区"
 #. Description
 #. :sl2:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:22001
+#: ../partman-auto.templates:23001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "小磁盘 (< 1GB) 分区方案"

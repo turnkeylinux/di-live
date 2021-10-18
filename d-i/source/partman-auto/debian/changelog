@@ -1,3 +1,95 @@
+partman-auto (157) unstable; urgency=medium
+
+  [ John Paul Adrian Glaubitz ]
+  * Switch NewWorld PowerMac recipes to use a GRUB boot partition
+
+  [ Update translations ]
+  * Finnish (fi.po) by Kimmo Kujansuu
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 24 Jul 2021 05:48:12 +0200
+
+partman-auto (156) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Traditional Chinese (zh_TW.po) by louies0623
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 19 Mar 2021 19:50:17 +0100
+
+partman-auto (155) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by EG
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 30 Dec 2020 23:47:14 +0100
+
+partman-auto (154) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Traditional Chinese (zh_TW.po) by Walter Cheuk
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 18:56:22 +0100
+
+partman-auto (153) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Indonesian (id.po) by Andika Triwidada
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 21 Sep 2020 22:00:34 +0200
+
+partman-auto (152) unstable; urgency=medium
+
+  * Team upload
+
+  [ Julien Cristau ]
+  * Bump /boot sizes in most recipes from between 128 and 256M to
+    between 512 and 768M.  As initramfs keep growing, and kernel ABI
+    bumps keep happening, running out of space on /boot is unpleasant.
+    Closes: #893886, 951709.
+  * Import from Ubuntu: Introduce partman-auto/cap-ram, to allow capping RAM
+    size as used for swap partition calculations. This allows us to cap the
+    minimum size of swap partitions size to 1*CAP, and their maximum size to a
+    maximum of 2 or 3*CAP depending on architecture. Default is set to 1024,
+    thus capping swap partitions to between 1 and 3GB. LP: #1351267, closes:
+    #949651, #950344.  Patch from Dimitri John Ledkov.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 18:14:11 +0200
+
+partman-auto (151) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Dutch (nl.po) by Frans Spiesschaert
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 07 Mar 2020 21:15:03 +0100
+
+partman-auto (150) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by gogogogi
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 13 Nov 2019 22:37:57 +0100
+
 partman-auto (149) unstable; urgency=medium
 
   * Team upload

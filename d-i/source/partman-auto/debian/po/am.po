@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"POT-Creation-Date: 2020-03-10 20:01+0000\n"
 "PO-Revision-Date: 2014-04-04 22:07+0100\n"
 "Last-Translator: Tegegne Tefera <tefera@mekuria.com>\n"
 "Language-Team: Amharic <linux-ethiopia@googlegroups.com>\n"
@@ -75,7 +75,7 @@ msgstr "ይህ የሆነው ምናልባት ከመጠን ብዙ ዋና ክፋዮ
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+#: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid "Partitioning method:"
 msgstr "የከፈላ ዘዴ፦"
 
@@ -98,7 +98,7 @@ msgstr ""
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+#: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
@@ -107,7 +107,7 @@ msgstr "ሙሉ ዲስኩን እየተመሩ ለመክፈል ከመረጥ ቀጥ�
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid "Partitioning scheme:"
 msgstr "የመክፈል መርሃግብር፦"
 
@@ -120,14 +120,14 @@ msgstr "የመክፈል መርሃግብር፦"
 #.
 #. It is followed by a variable giving the chosen disk, hence the colon
 #. at the end of the sentence. Please keep it.
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid "Selected for partitioning:"
 msgstr "ለመክፈል የተመረጠ፦"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
@@ -136,14 +136,14 @@ msgstr "ይህ ዲስክ የተለያየ መርሃግብር በመጠቀም ሊ�
 #. Type: error
 #. Description
 #. :sl2:
-#: ../partman-auto.templates:10001
+#: ../partman-auto.templates:11001
 msgid "Unusable free space"
 msgstr "የማይሰራ ባዶ ቦታ"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../partman-auto.templates:10001
+#: ../partman-auto.templates:11001
 msgid ""
 "Partitioning failed because the chosen free space may not be used. There are "
 "probably too many (primary) partitions in the partition table."
@@ -154,7 +154,7 @@ msgstr ""
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:13001
+#: ../partman-auto.templates:14001
 msgid "Guided partitioning"
 msgstr "ከፈላ በመሪ"
 
@@ -162,7 +162,7 @@ msgstr "ከፈላ በመሪ"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:14001
+#: ../partman-auto.templates:15001
 msgid "Guided - use the largest continuous free space"
 msgstr "በመሪ - ትልቁን ተከታታይ ባዶ ቦታ ይጠቀሙ"
 
@@ -170,21 +170,21 @@ msgstr "በመሪ - ትልቁን ተከታታይ ባዶ ቦታ ይጠቀሙ"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:15001
+#: ../partman-auto.templates:16001
 msgid "Guided - use entire disk"
 msgstr "በመሪ - ዲስኩን በሙሉ ይጠቀሙ"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:16001
+#: ../partman-auto.templates:17001
 msgid "Select disk to partition:"
 msgstr "ዲስክ ለመክፈል ምረጥ፦"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:16001
+#: ../partman-auto.templates:17001
 msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
@@ -196,7 +196,7 @@ msgstr ""
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #. This is a method for partioning - as in guided (automatic) versus manual
-#: ../partman-auto.templates:17001
+#: ../partman-auto.templates:18001
 msgid "Manual"
 msgstr "በእጅ ክፈል"
 
@@ -204,7 +204,7 @@ msgstr "በእጅ ክፈል"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:18001
+#: ../partman-auto.templates:19001
 msgid "Automatically partition the free space"
 msgstr "ባዶ ቦታን በራስሰር ክፈል"
 
@@ -212,7 +212,7 @@ msgstr "ባዶ ቦታን በራስሰር ክፈል"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:19001
+#: ../partman-auto.templates:20001
 msgid "All files in one partition (recommended for new users)"
 msgstr "ሁሉም ፍይሎች በአንድ ክፋይ (ለአዲስ ተጠቃሚዎች ይህንን ይመክሯል)"
 
@@ -220,7 +220,7 @@ msgstr "ሁሉም ፍይሎች በአንድ ክፋይ (ለአዲስ ተጠቃሚ
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:20001
+#: ../partman-auto.templates:21001
 msgid "Separate /home partition"
 msgstr "የ /home ክፋይ ይለይ፦"
 
@@ -228,7 +228,7 @@ msgstr "የ /home ክፋይ ይለይ፦"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:21001
+#: ../partman-auto.templates:22001
 msgid "Separate /home, /var, and /tmp partitions"
 msgstr "የተለዩ  /home, /var, and /tmp ክፋዮች"
 
@@ -236,6 +236,6 @@ msgstr "የተለዩ  /home, /var, and /tmp ክፋዮች"
 #. Description
 #. :sl2:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:22001
+#: ../partman-auto.templates:23001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "ትንሽ ዲስክ (< 1ጊባ) ክፍያ መርሃግብር"

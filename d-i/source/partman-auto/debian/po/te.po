@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
-"POT-Creation-Date: 2014-09-25 22:00+0000\n"
+"POT-Creation-Date: 2020-03-10 20:01+0000\n"
 "PO-Revision-Date: 2012-03-08 22:29+0530\n"
 "Last-Translator: Arjuna Rao Chavala <arjunaraoc@googlemail.com>\n"
 "Language-Team: d-i <kde-i18n-doc@kde.org>\n"
@@ -79,7 +79,7 @@ msgstr "విభజన  పట్టికలో  ఎక్కువ( ప్ర
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+#: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid "Partitioning method:"
 msgstr "విభజన (పార్టీషనింగ్ ) పద్ధతి:"
 
@@ -103,7 +103,7 @@ msgstr ""
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:5001 ../partman-auto.templates:8001
+#: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
@@ -114,7 +114,7 @@ msgstr ""
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid "Partitioning scheme:"
 msgstr "విభజన (పార్టీషనింగ్ ) ప్రణాలిక:"
 
@@ -127,14 +127,14 @@ msgstr "విభజన (పార్టీషనింగ్ ) ప్రణా�
 #.
 #. It is followed by a variable giving the chosen disk, hence the colon
 #. at the end of the sentence. Please keep it.
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid "Selected for partitioning:"
 msgstr "విభజన (పార్టీషనింగ్ ) కొరకు ఎన్నుకొన్నది:"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:9001
+#: ../partman-auto.templates:10001
 msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
@@ -145,14 +145,14 @@ msgstr ""
 #. Type: error
 #. Description
 #. :sl2:
-#: ../partman-auto.templates:10001
+#: ../partman-auto.templates:11001
 msgid "Unusable free space"
 msgstr "ఉపయోగించలేని ఉపలబ్ధ స్థలం"
 
 #. Type: error
 #. Description
 #. :sl2:
-#: ../partman-auto.templates:10001
+#: ../partman-auto.templates:11001
 msgid ""
 "Partitioning failed because the chosen free space may not be used. There are "
 "probably too many (primary) partitions in the partition table."
@@ -164,7 +164,7 @@ msgstr ""
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:13001
+#: ../partman-auto.templates:14001
 msgid "Guided partitioning"
 msgstr "మార్గదర్శక విభజన (పార్టీషనింగ్ )"
 
@@ -172,7 +172,7 @@ msgstr "మార్గదర్శక విభజన (పార్టీషన
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:14001
+#: ../partman-auto.templates:15001
 msgid "Guided - use the largest continuous free space"
 msgstr "మార్గదర్శక - అత్యధిక  కలిసివున్న వాడబడని నిల్వని వాడు"
 
@@ -180,21 +180,21 @@ msgstr "మార్గదర్శక - అత్యధిక  కలిసి�
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:15001
+#: ../partman-auto.templates:16001
 msgid "Guided - use entire disk"
 msgstr "మార్గదర్శక -మొత్తము డిస్క్ వాడు"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:16001
+#: ../partman-auto.templates:17001
 msgid "Select disk to partition:"
 msgstr "విభజించు డిస్కును(disk) ఎంచుకో:"
 
 #. Type: select
 #. Description
 #. :sl1:
-#: ../partman-auto.templates:16001
+#: ../partman-auto.templates:17001
 msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
@@ -207,7 +207,7 @@ msgstr ""
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #. This is a method for partioning - as in guided (automatic) versus manual
-#: ../partman-auto.templates:17001
+#: ../partman-auto.templates:18001
 msgid "Manual"
 msgstr "మాన్యువల్ (స్వయంగా)"
 
@@ -215,7 +215,7 @@ msgstr "మాన్యువల్ (స్వయంగా)"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:18001
+#: ../partman-auto.templates:19001
 msgid "Automatically partition the free space"
 msgstr "వాడబడని నిల్వని స్వయంచాలకంగా విభజన చేయి"
 
@@ -223,7 +223,7 @@ msgstr "వాడబడని నిల్వని స్వయంచాలక�
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:19001
+#: ../partman-auto.templates:20001
 msgid "All files in one partition (recommended for new users)"
 msgstr "అన్ని ఫైళ్లు ఒక విభజనలో (కొత్త వాడుకరులకు  సరియైనది)"
 
@@ -231,7 +231,7 @@ msgstr "అన్ని ఫైళ్లు ఒక విభజనలో (కొ�
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:20001
+#: ../partman-auto.templates:21001
 msgid "Separate /home partition"
 msgstr "ప్రత్యేక /home విభజన"
 
@@ -239,7 +239,7 @@ msgstr "ప్రత్యేక /home విభజన"
 #. Description
 #. :sl1:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:21001
+#: ../partman-auto.templates:22001
 msgid "Separate /home, /var, and /tmp partitions"
 msgstr "ప్రత్యేక  /home, /var, మరియు /tmp విభజనలు"
 
@@ -247,6 +247,6 @@ msgstr "ప్రత్యేక  /home, /var, మరియు /tmp విభజ
 #. Description
 #. :sl2:
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
-#: ../partman-auto.templates:22001
+#: ../partman-auto.templates:23001
 msgid "Small-disk (< 1GB) partitioning scheme"
 msgstr "చిన్నడిస్క్ (< 1GB)  విభజన పద్ధతి"

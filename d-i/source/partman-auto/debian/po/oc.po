@@ -3,55 +3,41 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Georgian messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# This file is distributed under the same license as debian-installer.
+# Occitan (post 1500) translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# Yannig MARCHEGAY <yannick.marchegay@lokanova.com>, 2006.
+# Cédric VALMARY <cvalmary@yahoo.fr>, 2016.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2020.
 #
-# Aiet Kolkhi <aietkolkhi@gmail.com>, 2005, 2006, 2007, 2008.
-#
-# This file is maintained by Aiet Kolkhi <aietkolkhi@gmail.com>
-#
-# Includes contributions by Malkhaz Barkalaza <malxaz@gmail.com>,
-# Alexander Didebulidze <didebuli@in.tum.de>, Vladimer Sichinava <vlsichinava@gmail.com>
-# Taya Kharitonashvili <taya13@gmail.com>, Gia Shervashidze - www.gia.ge
-#
-#
-# Translations from iso-codes:
-#   Alastair McKinstry <mckinstry@debian.org>, 2004.
-#   Aiet Kolkhi <aietkolkhi@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer.2006071\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-auto@packages.debian.org\n"
 "POT-Creation-Date: 2020-03-10 20:01+0000\n"
-"PO-Revision-Date: 2011-03-01 12:49+0400\n"
-"Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
-"Language-Team: Georgian\n"
-"Language: ka\n"
+"PO-Revision-Date: 2020-11-15 18:28+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:1001
 msgid "Please wait..."
-msgstr "მოითმინეთ..."
+msgstr "Esperatz..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:2001
 msgid "Computing the new partitions..."
-msgstr "ახალი დანაყოფების გამოთვლა..."
+msgstr "Calcular las particions novèlas..."
 
 #. Type: error
 #. Description
@@ -61,7 +47,7 @@ msgstr "ახალი დანაყოფების გამოთვლ�
 #. :sl2:
 #: ../partman-auto.templates:3001 ../partman-auto.templates:4001
 msgid "Failed to partition the selected disk"
-msgstr "შეცდომა მონიშნული დისკის დაყოფისას"
+msgstr "Impossible de particionar lo disc seleccionat"
 
 #. Type: error
 #. Description
@@ -71,8 +57,8 @@ msgid ""
 "This probably happened because the selected disk or free space is too small "
 "to be automatically partitioned."
 msgstr ""
-"ამის მიზეზი სავარაუდოდ ის გახლავთ, რომ ამორჩეული დისკი ან მასზე თავისუფალი "
-"ადგილი ავტომატური დაყოფისათვის არ კმარა."
+"Lo disc o l’espaci disponible benlèu son tròp pichons per que lo "
+"particionament automatic pòsca foncionar."
 
 #. Type: error
 #. Description
@@ -81,9 +67,7 @@ msgstr ""
 msgid ""
 "This probably happened because there are too many (primary) partitions in "
 "the partition table."
-msgstr ""
-"სავარაუდოდ ამის მიზეზია დანაყოფთა ცხრილში ძალიან ბევრ (პირველად) დანაყოფთა "
-"რაოდენობა."
+msgstr "Benlèu i a tròp de particions primàrias dins la taula de particions."
 
 #. Type: select
 #. Description
@@ -93,7 +77,7 @@ msgstr ""
 #. :sl1:
 #: ../partman-auto.templates:5001 ../partman-auto.templates:9001
 msgid "Partitioning method:"
-msgstr "დაყოფის მეთოდი:"
+msgstr "Metòde de particionament :"
 
 #. Type: select
 #. Description
@@ -105,9 +89,10 @@ msgid ""
 "partitioning you will still have a chance later to review and customise the "
 "results."
 msgstr ""
-"ინსტალერი დაგეხმარებათ დისკის დაყოფაში (სხვადსხვა სტანდარტული გზით). ან ეს "
-"შეგიძლიათ გააკეთოთ თქვენ თვითონ. თუ თქვენ მიანდობთ ამას ინსტალერს, შემდეგში "
-"მაინც შეგეძლებათ შეამოწმოთ და შეასწოროთ ინსტალერის გადაწყვეტილებები."
+"Lo programa d'installacion vos pòt ajudar pel particionament d'un disc (amb "
+"mai d'una causida d'organizacion). Tanben podètz efectuar aqueste "
+"particionament vos meteis. Se causissètz lo particionament ajudat, auretz la "
+"possibilitat de verificar e personalizar las causidas fachas."
 
 #. Type: select
 #. Description
@@ -120,15 +105,15 @@ msgid ""
 "If you choose guided partitioning for an entire disk, you will next be asked "
 "which disk should be used."
 msgstr ""
-"თუ თქვენ დაყოფის ოსტატს ამოირჩევთ, თქვენ შეგეძლებათ აირჩიოთ თუ რომელი დისკის "
-"წაშლა გსურთ."
+"Se causissètz lo particionament ajudat per tot un disc , vos calrà causir "
+"aprèp lo disc de particionar."
 
 #. Type: select
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:10001
 msgid "Partitioning scheme:"
-msgstr "დაყოფის სქემა:"
+msgstr "Esquèma del particionament :"
 
 #. Type: select
 #. Description
@@ -141,7 +126,7 @@ msgstr "დაყოფის სქემა:"
 #. at the end of the sentence. Please keep it.
 #: ../partman-auto.templates:10001
 msgid "Selected for partitioning:"
-msgstr "ამორჩეული დაყოფისათვის:"
+msgstr "Seleccionat per particionament :"
 
 #. Type: select
 #. Description
@@ -151,15 +136,15 @@ msgid ""
 "The disk can be partitioned using one of several different schemes. If you "
 "are unsure, choose the first one."
 msgstr ""
-"დისკი შეიძლება დაიყოს სხვადასხვა სქემით. თუ არ იცით რომელი აირჩიოთ, დატოვეთ "
-"პირველი მათგანი."
+"Lo disc pòt èsser particionat en seguissent mai d'un esquèma. Se dobtatz, "
+"caussisètz lo primièr."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-auto.templates:11001
 msgid "Unusable free space"
-msgstr "გამოუყენებელი თავისუფალი ადგილი"
+msgstr "Espaci liure inutilizable"
 
 #. Type: error
 #. Description
@@ -169,9 +154,9 @@ msgid ""
 "Partitioning failed because the chosen free space may not be used. There are "
 "probably too many (primary) partitions in the partition table."
 msgstr ""
-"დაყოფა შეწყვეტილია, რადგან მითითებული თავისუფალი ადგილის გამოყენება "
-"შეუძლებელია. სავარაუდოდ ამის მიზეზია დანაყოფთა ცხრილში ძალიან ბევრ "
-"(პირველად) დანაყოფთა რაოდენობა."
+"Lo particionament a pas capitat perque l’espaci liure pòt pas èsser "
+"utilizat. Benlèu i a tròp de particions primàrias dins la taula de "
+"particions."
 
 #. Type: text
 #. Description
@@ -179,7 +164,7 @@ msgstr ""
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:14001
 msgid "Guided partitioning"
-msgstr "ავტომატური დაყოფა"
+msgstr "Particionament assistit"
 
 #. Type: text
 #. Description
@@ -187,7 +172,7 @@ msgstr "ავტომატური დაყოფა"
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:15001
 msgid "Guided - use the largest continuous free space"
-msgstr "ოსტატი - უდიდესი უწყვ. სივრცის გამოყენება"
+msgstr "Ajudat - utilizar l'espaci lo mai grand diponible"
 
 #. Type: text
 #. Description
@@ -195,14 +180,14 @@ msgstr "ოსტატი - უდიდესი უწყვ. სივრც
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:16001
 msgid "Guided - use entire disk"
-msgstr "ოსტატი - სრული დისკისგამოყენებით"
+msgstr "Ajudat - utilizar lo disc tot"
 
 #. Type: select
 #. Description
 #. :sl1:
 #: ../partman-auto.templates:17001
 msgid "Select disk to partition:"
-msgstr "აირჩიეთ დასაყოფი დისკი:"
+msgstr "Seleccionatz lo disc de particionar :"
 
 #. Type: select
 #. Description
@@ -212,9 +197,8 @@ msgid ""
 "Note that all data on the disk you select will be erased, but not before you "
 "have confirmed that you really want to make the changes."
 msgstr ""
-"გაითვალისწინეთ, რომ თქვენს მიერ ამორჩეულ დისკზე არსებული მთელი ინფორმაცია "
-"წაიშლება, თუმცა მხოლოდ მას შემდეგ, რაც თქვენ დაადასტურებთ, რომ მართლა გსურთ "
-"ამის განხორციელება."
+"Notatz que las donadas totas del disc causit seràn escafadas mas pas abans "
+"la vòstra confirmacion d'efectuar aquestas modificacions."
 
 #. Type: text
 #. Description
@@ -223,7 +207,7 @@ msgstr ""
 #. This is a method for partioning - as in guided (automatic) versus manual
 #: ../partman-auto.templates:18001
 msgid "Manual"
-msgstr "მანუალური"
+msgstr "Manual"
 
 #. Type: text
 #. Description
@@ -231,7 +215,7 @@ msgstr "მანუალური"
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:19001
 msgid "Automatically partition the free space"
-msgstr "თავისუფალი ადგილის ავტომატური დაყოფა"
+msgstr "Particionar automaticament l'espaci disponible"
 
 #. Type: text
 #. Description
@@ -239,7 +223,8 @@ msgstr "თავისუფალი ადგილის ავტომა�
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:20001
 msgid "All files in one partition (recommended for new users)"
-msgstr "ყველა ფაილი ერთ დანაყოფში (ახალ მომხმარებელთათვის)"
+msgstr ""
+"Totes los fichièrs dins una particion (recomandat pels utilizaires novèls)"
 
 #. Type: text
 #. Description
@@ -247,7 +232,7 @@ msgstr "ყველა ფაილი ერთ დანაყოფში (�
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:21001
 msgid "Separate /home partition"
-msgstr "დამოუკიდებელი /home დანაყოფი"
+msgstr "Particion /home separada"
 
 #. Type: text
 #. Description
@@ -255,7 +240,7 @@ msgstr "დამოუკიდებელი /home დანაყოფი"
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:22001
 msgid "Separate /home, /var, and /tmp partitions"
-msgstr "დამოუკიდებელი /home, /var, და /tmp დანაყოფები"
+msgstr "Particions /home, /var e /tmp separadas"
 
 #. Type: text
 #. Description
@@ -263,4 +248,4 @@ msgstr "დამოუკიდებელი /home, /var, და /tmp და�
 #. TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 #: ../partman-auto.templates:23001
 msgid "Small-disk (< 1GB) partitioning scheme"
-msgstr "პატარა დისკის (< 1GB) დაყოფის სქემა"
+msgstr "Esquèma de particionament dels disques pichons (< 1 Go)"

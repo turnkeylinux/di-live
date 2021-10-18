@@ -286,7 +286,7 @@ select_auto_disk() {
 
 	DEVS=$(get_auto_disks)
 	[ -n "$DEVS" ] || return 1
-	debconf_select critical partman-auto/select_disk "$DEVS" ""
+	debconf_select critical partman-auto/select_disk "$DEVS" "" || return 1
 	echo "$RET"
 	return 0
 }
