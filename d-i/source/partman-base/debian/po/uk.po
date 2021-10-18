@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uk\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2019-03-20 22:31+0100\n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
+"PO-Revision-Date: 2021-01-02 22:03+0100\n"
 "Last-Translator: Anton Gladky <gladk@debian.org>\n"
 "Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
 "Language: uk\n"
@@ -406,7 +406,7 @@ msgstr "ATA%s, розділ #%s (%s)"
 #: ../partman-base.templates:43001
 #, no-c-format
 msgid "IDE%s master (%s)"
-msgstr "основний IDE%s (%s)"
+msgstr "Основний диск IDE%s (%s)"
 
 #. Type: text
 #. Description
@@ -415,7 +415,7 @@ msgstr "основний IDE%s (%s)"
 #: ../partman-base.templates:44001
 #, no-c-format
 msgid "IDE%s slave (%s)"
-msgstr "підлеглий IDE%s (%s)"
+msgstr "Підлеглий диск IDE%s (%s)"
 
 #. Type: text
 #. Description
@@ -424,7 +424,7 @@ msgstr "підлеглий IDE%s (%s)"
 #: ../partman-base.templates:45001
 #, no-c-format
 msgid "IDE%s master, partition #%s (%s)"
-msgstr "основний IDE%s, розділ #%s (%s)"
+msgstr "Основний диск IDE%s, роздiл #%s (%s)"
 
 #. Type: text
 #. Description
@@ -433,7 +433,7 @@ msgstr "основний IDE%s, розділ #%s (%s)"
 #: ../partman-base.templates:46001
 #, no-c-format
 msgid "IDE%s slave, partition #%s (%s)"
-msgstr "підлеглий IDE%s, розділ #%s (%s)"
+msgstr "Підлеглий диск IDE%s, розділ #%s (%s)"
 
 #. Type: text
 #. Description
@@ -614,6 +614,7 @@ msgstr "Скасувати це меню"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

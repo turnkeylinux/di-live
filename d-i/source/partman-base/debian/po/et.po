@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
 "PO-Revision-Date: 2014-08-23 09:54+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -624,6 +624,7 @@ msgstr "Loobu sellest menüüst"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

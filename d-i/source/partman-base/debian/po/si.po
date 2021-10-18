@@ -12,14 +12,14 @@
 # in doc/i18n/i18n.txt
 #
 #
-# Danishka Navin <danishka@gmail.com>, 2009, 2011.
+# Danishka Navin <danishka@gmail.com>, 2009, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2011-09-15 07:01+0530\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
+"PO-Revision-Date: 2019-08-28 18:10+0000\n"
+"Last-Translator: leela <53352@protonmail.com>\n"
 "Language-Team: Sinhala <info@hanthana.org>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
@@ -205,8 +205,9 @@ msgstr "පහත උපකරණ වල කොටස් වගු වෙනස�
 #. Description
 #. :sl2:
 #: ../partman-base.templates:17001
+#, fuzzy
 msgid "What to do with this device:"
-msgstr "මෙම උපකරණය සමඟ කුමක් කරන්නද?"
+msgstr "මෙම උපකරණය සමඟ කුමක් කරන්නද:"
 
 #. Type: select
 #. Description
@@ -605,6 +606,7 @@ msgstr "මෙම මෙනුව අහෝසි කරන්න"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

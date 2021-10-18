@@ -413,7 +413,8 @@ _Description: Cancel this menu
 
 Template: debian-installer/partman-base/title
 Type: text
-# Main menu entry
+#  Main menu entry
+#  Translators: keep below 55 columns
 # :sl1:
 _Description: Partition disks
 

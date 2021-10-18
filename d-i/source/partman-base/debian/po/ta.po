@@ -7,6 +7,8 @@
 # Tamil messages for debian-installer.
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
+# Jeyanthinath MuthuRam <jeyanthinath10@gmail.com>, 2020.
+# Vasudevan Tirumurti <agnihot3@gmail.com>, 2021.
 #
 #
 # Translations from iso-codes:
@@ -21,9 +23,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2018-08-05 09:04+0000\n"
-"Last-Translator: Dr.T.Vasudevan <drtvasudevan@gmail.com>\n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
+"PO-Revision-Date: 2021-01-27 12:32+0000\n"
+"Last-Translator: Vasudevan Tirumurti <agnihot3@gmail.com>\n"
 "Language-Team: Tamil <<gnome-tamil-translation@googlegroups.com>>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
@@ -237,7 +239,7 @@ msgid ""
 "${DESTROYED}"
 msgstr ""
 "நீங்கள் ${DEVICE}-${OTHERINFO} ${DESTROYED} இல் உள்ள பகிர்வு #${PARTITION}-ஐ "
-"திருத்துகிறீர்கள்."
+"திருத்துகிறீர்கள்"
 
 #. Type: text
 #. Description
@@ -272,7 +274,7 @@ msgstr "பகிர்வு ${FROMCHS}'ல் துவங்கி ${TOCHS}'�
 #. :sl2:
 #: ../partman-base.templates:24001
 msgid "The free space starts from ${FROMCHS} and ends at ${TOCHS}."
-msgstr "${FROMCHS} துவங்கி ${TOCHS} வரை காலி இடமாக உள்ளது"
+msgstr "${FROMCHS} துவங்கி ${TOCHS} வரை காலி இடமாக உள்ளது."
 
 #. Type: text
 #. Description
@@ -303,7 +305,7 @@ msgstr "உருளை/தலை/பகுதி விவரங்களை �
 #. :sl2:
 #: ../partman-base.templates:30001
 msgid "Done setting up the partition"
-msgstr "பகிர்வு செய்தாகிவிட்டது."
+msgstr "பகிர்வு அமைப்பு செய்தாகிவிட்டது"
 
 #. Type: text
 #. Description
@@ -559,7 +561,7 @@ msgstr "LVM VG %s, LV %s"
 #: ../partman-base.templates:60001
 #, no-c-format
 msgid "ZFS pool %s, volume %s"
-msgstr "இஸட்எஃப்எஸ்  பொதுச் சேர்மம் %s, தொகுதி %s"
+msgstr "இஸட்எஃப்எஸ் பொதுச் சேர்மம் %s, தொகுதி %s"
 
 #. Type: text
 #. Description
@@ -613,6 +615,7 @@ msgstr "இந்த பட்டியை ரத்து செய்க"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

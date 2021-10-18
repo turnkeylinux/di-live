@@ -18,13 +18,15 @@
 # Christian Rose <menthos@menthos.com>, 2004.
 # Daniel Nylander <po@danielnylander.se>, 2007.
 # Martin Bagge <martin.bagge@bthstudent.se>, 2008, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2018, 2020.
+# Mattias Münster <mattiasmun@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2018-01-04 06:20+0000\n"
-"Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
+"PO-Revision-Date: 2020-08-20 09:36+0000\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -111,7 +113,7 @@ msgid ""
 "partition table."
 msgstr ""
 "Det här är en överblick över dina för närvarande konfigurerade partitioner "
-"och monteringspunkter.  Välj en partition för att ändra dess inställningar "
+"och monteringspunkter. Välj en partition för att ändra dess inställningar "
 "(filsystem, monteringspunkt, etc.), ett ledigt utrymme för att skapa "
 "partitioner eller en enhet för att initiera dess partitionstabell."
 
@@ -616,6 +618,7 @@ msgstr "Avbryt den här menyn"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

@@ -7,6 +7,8 @@
 # Copyright (C) 2003 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 # Nima Sahraneshin <unix.nima@gmail.com>, 2018.
+# Seyed Hany Hosseini <hany1894@gmail.com>, 2020.
+# <soheilkhanalipur@tutanota.com>, 2020.
 #
 # Translations from iso-codes:
 #   Alastair McKinstry - further translations from ICU-3.0
@@ -21,11 +23,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: fa\n"
+"Project-Id-Version: fa sublevel1\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2019-01-01 17:49+0000\n"
-"Last-Translator: nima sahraneshin <unix.nima@gmail.com>\n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
+"PO-Revision-Date: 2020-10-24 17:09+0000\n"
+"Last-Translator: سهیل خانعلی‌پور <soheilkhanalipur@tutanota.com>\n"
 "Language-Team: Debian-l10n-persian <debian-l10n-persian@lists.debian.org>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -111,9 +113,9 @@ msgid ""
 "etc.), a free space to create partitions, or a device to initialize its "
 "partition table."
 msgstr ""
-"این شمایی از پارتیشن‌های موجود شما و محلهای بارگزاری آنهاست. برای تغییر دادن "
+"این شمایی از پارتیشن‌های موجود شما و محل‌های بارگزاری آنهاست. برای تغییر دادن "
 "مشخصات یک پارتیشن آن را انتخاب کنید، برای ایجاد پارتیشن جدید فضای خالی را "
-"انتخاب کنید. برای  تغییر جدول پارتیشن یک دیسک آن را انتخاب کنید."
+"انتخاب کنید. برای تغییر جدول پارتیشن یک دیسک، آن را انتخاب کنید."
 
 #. Type: boolean
 #. Description
@@ -174,9 +176,8 @@ msgid ""
 "WARNING: This will destroy all data on any partitions you have removed as "
 "well as on the partitions that are going to be formatted."
 msgstr ""
-"اخطـــــــار: این عمل تمام اطلاعات را بر روی تمامی پارتیشن‌هایی که حذف "
-"کرده‌اید ناود خواهد کرد.  و همچنین تمام پارتیشن‌هایی که شما قصد ایجاد فایل "
-"سیستم جدید را بر روی آنها دارید."
+"هشدار: این همه داده‌های روی هر پارتنیشنی که شما پاک کردید و همچنین "
+"پارتنیشن‌هایی که فرمت خواهند شد را نابود خواهد کرد."
 
 #. Type: text
 #. Description
@@ -335,7 +336,7 @@ msgstr "اطلاعات ... پارتیشن در %s"
 #. :sl1:
 #: ../partman-base.templates:35001
 msgid "FREE SPACE"
-msgstr "فضای خالی"
+msgstr "جای تهی"
 
 #. Type: text
 #. Description
@@ -434,7 +435,7 @@ msgstr "IDE%s master, پارتیشن #%s (%s)"
 #: ../partman-base.templates:46001
 #, no-c-format
 msgid "IDE%s slave, partition #%s (%s)"
-msgstr "IDE%s slave, پارتیشن  #%s (%s)"
+msgstr "IDE%s slave, پارتیشن #%s (%s)"
 
 #. Type: text
 #. Description
@@ -615,6 +616,7 @@ msgstr "کنسل کردن این منو"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

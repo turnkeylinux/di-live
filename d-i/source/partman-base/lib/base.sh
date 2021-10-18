@@ -775,7 +775,7 @@ humandev () {
 		echo "$1"
 	    fi
 	    ;;
-	/dev/sd[a-z][0-9]*|/dev/sd[a-z][a-z][0-9]*)
+	/dev/sd[a-z][0-9]*|/dev/sd[a-z][a-z][0-9]*|/dev/wd[0-9]*|/dev/wd[a-z][0-9]*|/dev/wd[a-z][a-z][0-9]*)
 	    part="${1#/dev/}"
 	    disk="${part%%[0-9]*}"
 	    part="${part#$disk}"

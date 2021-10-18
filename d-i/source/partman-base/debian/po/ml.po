@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Debian Installer Level 1\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
 "PO-Revision-Date: 2012-10-19 10:16+0530\n"
 "Last-Translator: Hrishikesh K B <hrishi.kb@gmail.com>\n"
 "Language-Team: Debian Malayalam <debian-l10n-malayalam@lists.debian.org>\n"
@@ -616,6 +616,7 @@ msgstr "ഈ മെനു റദ്ദാക്കുക"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

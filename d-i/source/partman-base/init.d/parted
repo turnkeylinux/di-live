@@ -77,7 +77,7 @@ if [ ! -f /var/run/parted_server.pid ]; then
 
 	IFS="$NL"
 	for partdev in $(parted_devices |
-		sed 's,^/dev/\(ide\|scsi\|[hs]d\|md/\?[0-9]\+\),!/dev/\1,' |
+		sed 's,^/dev/\(ide\|scsi\|[hsw]d\|md/\?[0-9]\+\),!/dev/\1,' |
 		sort |
 		sed 's,^!,,' ); do
 

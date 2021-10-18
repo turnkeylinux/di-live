@@ -7,7 +7,7 @@
 # Copyright (C) 2003,2004,2005,2008 Software in the Public Interest, Inc.
 # This file is distributed under the same license as debian-installer.
 #
-# Changwoo Ryu <cwryu@debian.org>, 2010, 2011.
+# Changwoo Ryu <cwryu@debian.org>, 2010-2012, 2014-2015, 2017-2018, 2020.
 #
 # Translations from iso-codes:
 # Copyright (C)
@@ -27,8 +27,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2011-09-13 08:15+0900\n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
+"PO-Revision-Date: 2020-04-21 05:24+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team:  Korean <debian-l10n-korean@lists.debian.org>\n"
 "Language: ko\n"
@@ -58,7 +58,7 @@ msgstr "잠시 기다리십시오..."
 #. :sl1:
 #: ../partman-base.templates:3001
 msgid "Scanning disks..."
-msgstr "디스크를 읽는 중입니다..."
+msgstr "디스크를 검사하는 중입니다..."
 
 #. Type: text
 #. Description
@@ -616,6 +616,7 @@ msgstr "이 메뉴를 취소합니다"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

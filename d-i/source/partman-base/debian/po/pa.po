@@ -21,13 +21,14 @@
 # Amanpreet Singh Alam <aalam@users.sf.net>, 2008, 2009.
 # Amanpreet Singh Alam[ਆਲਮ] <amanpreetalam@yahoo.com>, 2005.
 # A S Alam <aalam@users.sf.net>, 2009, 2012, 2014, 2017.
+# Aman Alam <alam.yellow@gmail.com>, 2018, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
-"POT-Creation-Date: 2011-07-27 22:47+0000\n"
-"PO-Revision-Date: 2018-01-04 06:20+0000\n"
-"Last-Translator: Aman ALam <alam.yellow@gmail.com>\n"
+"POT-Creation-Date: 2019-09-26 22:03+0000\n"
+"PO-Revision-Date: 2021-01-18 23:32+0000\n"
+"Last-Translator: Aman Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
@@ -112,9 +113,9 @@ msgid ""
 "etc.), a free space to create partitions, or a device to initialize its "
 "partition table."
 msgstr ""
-"ਇਹ ਤੁਹਾਡੇ ਮੌਜੂਦਾ ਸੰਰਚਿਤ ਭਾਗ ਅਤੇ ਮਾਊਂਟ ਪੁਆਂਇਟ ਦੀ ਜਾਣਕਾਰੀ ਹੈ। ਸੈਟਿੰਗ (ਫਾਇਲ ਸਿਸਟਮ, ਮਾਊਂਟ "
-"ਪੁਆਂਇਟ, ਆਦਿ) ਤਬਦੀਲ ਕਰਨ ਲਈ ਭਾਗ, ਭਾਗ ਬਣਾਉਣ ਲਈ ਖਾਲੀ ਥਾਂ, ਜਾਂ ਪਾਰਟੀਸ਼ਨ ਟੇਬਲ ਸ਼ੁਰੂ ਕਰਨ ਲਈ "
-"ਜੰਤਰ ਚੁਣੋ।"
+"ਇਹ ਤੁਹਾਡੇ ਮੌਜੂਦਾ ਸੰਰਚਿਤ ਪਾਰਟੀਸ਼ਨਾਂ ਅਤੇ ਮਾਊਂਟ ਪੁਆਇੰਟਾਂ ਦੀ ਸੰਖੇਪ ਜਾਣਕਾਰੀ ਹੈ। ਪਾਰਟੀਸ਼ਨ ਦੀਆਂ "
+"ਸੈਟਿੰਗਾਂ (ਫਾਈਲ ਸਿਸਟਮ, ਮਾਊਂਟ ਪੁਆਇੰਟ ਆਦਿ) ਨੂੰ ਸੋਧਣ, ਪਾਰਟੀਸ਼ਨ ਬਣਾਉਣ ਲਈ ਖਾਲੀ ਥਾਂ ਜਾਂ ਡਿਵਾਈਸ "
+"ਦੇ ਪਾਰਟੀਸ਼ਨ ਟੇਬਲ ਨੂੰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਚੁਣੋ।"
 
 #. Type: boolean
 #. Description
@@ -613,6 +614,7 @@ msgstr "ਇਹ ਮੇਨੂ ਰੱਦ ਕਰੋ"
 #. Type: text
 #. Description
 #. Main menu entry
+#. Translators: keep below 55 columns
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"

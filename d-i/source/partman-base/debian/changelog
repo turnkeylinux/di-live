@@ -1,11 +1,113 @@
-partman-base (209) UNRELEASED; urgency=medium
+partman-base (217) unstable; urgency=medium
 
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Kimmo Kujansuu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 24 Jul 2021 07:53:16 +0200
+
+partman-base (216) unstable; urgency=medium
+
+  * Team upload
+
+  [ Samuel Thibault ]
+  * lib/base.sh: Also support /dev/wd[0-9] from rumpdisk.
+  * init.d/parted: Fix supporting wd* from rumpdisk.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Jun 2021 20:03:29 +0200
+
+partman-base (215) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by KushagraKarira
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Telugu (te.po) by Praveen Illa
+  * Ukrainian (uk.po) by Anton Gladky
+  * Traditional Chinese (zh_TW.po) by louies0623
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 17 Feb 2021 01:13:43 +0100
+
+partman-base (214) unstable; urgency=medium
+
+  * Team upload
+
+  * lib/base.sh: Support /dev/wd* from rumpdisk.
+
+ -- Samuel Thibault <sthibault@debian.org>  Fri, 20 Nov 2020 14:14:12 +0100
+
+partman-base (213) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Persian (fa.po) by سهیل خانعلی‌پور
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 18:59:31 +0100
+
+partman-base (212) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Kannada (kn.po) by Yogesh
+  * Polish (pl.po) by Bartosz Feński
+  * Swedish (sv.po) by Anders Jonsson
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Sep 2020 22:44:58 +0200
+
+partman-base (211) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Persian (fa.po) by Reg3xp
+  * Hindi (hi.po) by Sanket Pardhi
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 12 Jul 2020 13:16:57 +0200
+
+partman-base (210) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Korean (ko.po) by Changwoo Ryu
+  * Dutch (nl.po) by Frans Spiesschaert
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 21:41:33 +0200
+
+partman-base (209) unstable; urgency=medium
+
+  * Team upload
+
+  [ Cyril Brulebois ]
   * Remove Christian Perrier from Uploaders, with many thanks for all
     his contributions over the years! (Closes: #927514)
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:37:56 +0200
+  [ Holger Wansing ]
+  * Add comment for translators, to keep main menu entry below a 55 columns
+    limit. This updates all po|pot files.
+
+  [ Updated translations ]
+  * Croatian (hr.po) by gogogogi
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 13 Oct 2019 21:57:14 +0200
 
 partman-base (208) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -33,6 +135,7 @@ partman-base (206) unstable; urgency=medium
  -- Colin Watson <cjwatson@debian.org>  Mon, 04 Mar 2019 22:49:35 +0000
 
 partman-base (205) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -42,6 +145,7 @@ partman-base (205) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Mon, 04 Mar 2019 05:15:55 +0100
 
 partman-base (204) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -52,6 +156,7 @@ partman-base (204) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 Feb 2019 11:50:22 +0100
 
 partman-base (203) unstable; urgency=medium
+
   * Team upload
 
   [ Holger Wansing ]

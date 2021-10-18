@@ -3,41 +3,34 @@
 #
 # DO NOT MODIFY THIS FILE DIRECTLY: SUCH CHANGES WILL BE LOST
 #
-# Portuguese messages for debian-installer.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
-# Console-setup strings translations:
-# (identified by "./console-setup.templates")
-# Copyright (C) 2003-2011 Miguel Figueiredo <elmig@debianpt.org>
-# This file is distributed under the same license as debian-installer.
+# Occitan (post 1500) translation for debian-installer
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the debian-installer package.
+# Yannig MARCHEGAY <yannick.marchegay@lokanova.com>, 2006.
+# Cédric VALMARY <cvalmary@yahoo.fr>, 2016.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2020.
 #
-#
-# Translations from iso-codes:
-#   Tobias Quathamer <toddy@debian.org>, 2007.
-#     Translations taken from ICU SVN on 2007-09-09
-#   Miguel Figueiredo <elmig@debianpt.org>, 2005, 2006, 2008, 2009, 2010
-#   Free Software Foundation, Inc., 2001,2004
-#   Filipe Maia <fmaia@gmx.net>, 2001.
-#   Alastair McKinstry <mckinstry@computer.org>, 2001.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: debian-installer\n"
+"Project-Id-Version: debian-installer sublevel1\n"
 "Report-Msgid-Bugs-To: partman-base@packages.debian.org\n"
 "POT-Creation-Date: 2019-09-26 22:03+0000\n"
-"PO-Revision-Date: 2011-07-24 08:28+0100\n"
-"Last-Translator:  Miguel Figueiredo <elmig@debianpt.org>\n"
-"Language-Team:  Portuguese <traduz@debianpt.org>\n"
-"Language: pt\n"
+"PO-Revision-Date: 2020-11-15 18:28+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-base.templates:1001
 msgid "Starting up the partitioner"
-msgstr "A iniciar o particionador"
+msgstr "Aviada del programa de particionament"
 
 #. Type: text
 #. Description
@@ -47,28 +40,28 @@ msgstr "A iniciar o particionador"
 #. :sl2:
 #: ../partman-base.templates:2001 ../partman-base.templates:25001
 msgid "Please wait..."
-msgstr "Por favor aguarde..."
+msgstr "Esperatz..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-base.templates:3001
 msgid "Scanning disks..."
-msgstr "A verificar os discos..."
+msgstr "Analisi dels disques..."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-base.templates:4001
 msgid "Detecting file systems..."
-msgstr "A detectar sistemas de ficheiros..."
+msgstr "Deteccion dels sistèmas de fichièrs..."
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-base.templates:5001
 msgid "Device in use"
-msgstr "Dispositivo em uso:"
+msgstr "Periferic  ocupat"
 
 #. Type: error
 #. Description
@@ -78,15 +71,15 @@ msgid ""
 "No modifications can be made to the device ${DEVICE} for the following "
 "reasons:"
 msgstr ""
-"Não pode ser feita nenhuma modificação ao dispositivo ${DEVICE} devido às "
-"seguintes razões:"
+"Pas cap de modificacion possibla sul periferic ${DEVICE} per las rasons "
+"seguentas :"
 
 #. Type: error
 #. Description
 #. :sl2:
 #: ../partman-base.templates:6001
 msgid "Partition in use"
-msgstr "Partição em uso:"
+msgstr "Particion ocupada"
 
 #. Type: error
 #. Description
@@ -99,8 +92,8 @@ msgid ""
 "No modifications can be made to the partition #${PARTITION} of device "
 "${DEVICE} for the following reasons:"
 msgstr ""
-"Não pode ser feita nenhuma modificação à partição #${PARTITION} do "
-"dispositivo  ${DEVICE} devido às seguintes razões:"
+"Pas cap de modificacion possibla sus la particion n° ${PARTITION} del "
+"periferic ${DEVICE} per las rasons seguentas :"
 
 #. Type: select
 #. Description
@@ -112,17 +105,17 @@ msgid ""
 "etc.), a free space to create partitions, or a device to initialize its "
 "partition table."
 msgstr ""
-"Isto é uma visão geral das partições actualmente configuradas e pontos de "
-"montagem. Escolha uma partição para modificar as suas definições (sistema de "
-"ficheiros, ponto de montagem, etc.), um espaço livre para criar partições, "
-"ou um dispositivo para inicializar a sua tabela de partições."
+"Vaquí la taula de las particions e los punts de montatge actualament "
+"configurats. Podètz causir una particion e modificar sas caracteristicas "
+"(sistèma de fichièrs, punt de montatge, etc.), un espaci liure per crear una "
+"particion novèla o un periferic per crear sa taula de las particions."
 
 #. Type: boolean
 #. Description
 #. :sl2:
 #: ../partman-base.templates:10001
 msgid "Continue with the installation?"
-msgstr "Continuar com a instalação?"
+msgstr "Contunhar l’installacion ?"
 
 #. Type: boolean
 #. Description
@@ -131,8 +124,8 @@ msgstr "Continuar com a instalação?"
 msgid ""
 "No partition table changes and no creation of file systems have been planned."
 msgstr ""
-"Não foram planeadas alterações na tabela de partições nem a criação de "
-"sistemas de ficheiros."
+"Cap de modificacion de taulas de particions ni de cap de creacion de "
+"sistèmas de fichièrs pas prevista."
 
 #. Type: boolean
 #. Description
@@ -142,9 +135,9 @@ msgid ""
 "If you plan on using already created file systems, be aware that existing "
 "files may prevent the successful installation of the base system."
 msgstr ""
-"Se planeia utilizar sistemas de ficheiros já criados, tenha em atenção que "
-"ficheiros existentes poderão impedir a instalação com sucesso do sistema "
-"base."
+"Se volètz utilizar los sistèmas de fichièrs qu’existisson, es possible que "
+"la preséncia d’unes fichièrs pòsca pertubar l’installacion del sistèma de "
+"basa."
 
 #. Type: boolean
 #. Description
@@ -154,7 +147,7 @@ msgstr ""
 #. :sl1:
 #: ../partman-base.templates:11001 ../partman-base.templates:12001
 msgid "Write the changes to disks?"
-msgstr "Escrever as alterações nos discos?"
+msgstr "Aplicar los cambiaments suls disques ?"
 
 #. Type: boolean
 #. Description
@@ -167,8 +160,8 @@ msgid ""
 "If you continue, the changes listed below will be written to the disks. "
 "Otherwise, you will be able to make further changes manually."
 msgstr ""
-"Se continuar, as alterações listadas abaixo serão escritas nos discos. Caso "
-"contrário, poderá fazer mais alterações manualmente."
+"Se contunhatz, los cambiaments imprimits çai-jos, seràn escriches suls "
+"disques. De tot biais, poiretz modificar las informacions manualament."
 
 #. Type: boolean
 #. Description
@@ -178,15 +171,15 @@ msgid ""
 "WARNING: This will destroy all data on any partitions you have removed as "
 "well as on the partitions that are going to be formatted."
 msgstr ""
-"AVISO: Isto irá destruir todos os dados em quaisquer partições que tenha "
-"removido bem como nas partições que irão ser formatadas."
+"ATENCION : Aquò escafarà totas las donadas que son sus las particions "
+"qu'avètz suprimidas e sus las que seràn formatadas."
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-base.templates:13001
 msgid "The following partitions are going to be formatted:"
-msgstr "As seguintes partições irão ser formatadas:"
+msgstr "Las particions seguentas seràn formatadas :"
 
 #. Type: text
 #. Description
@@ -194,7 +187,7 @@ msgstr "As seguintes partições irão ser formatadas:"
 #. for example: "partition #6 of IDE0 master as ext3 journaling file system"
 #: ../partman-base.templates:14001
 msgid "partition #${PARTITION} of ${DEVICE} as ${TYPE}"
-msgstr "partição #${PARTITION} de ${DEVICE} como ${TYPE}"
+msgstr "particion n° ${PARTITION} sus ${DEVICE} de tipe ${TYPE}"
 
 #. Type: text
 #. Description
@@ -203,35 +196,35 @@ msgstr "partição #${PARTITION} de ${DEVICE} como ${TYPE}"
 #. for example: "LVM VG Debian, LV Root as ext3 journaling file system"
 #: ../partman-base.templates:15001
 msgid "${DEVICE} as ${TYPE}"
-msgstr "${DEVICE} como ${TYPE}"
+msgstr "${DEVICE} de tipe ${TYPE}"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-base.templates:16001
 msgid "The partition tables of the following devices are changed:"
-msgstr "As tabelas de partições dos seguintes dispositivos foram modificadas:"
+msgstr "Las taulas de particions dels periferics seguents seràn modificadas :"
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-base.templates:17001
 msgid "What to do with this device:"
-msgstr "O que fazer com este dispositivo:"
+msgstr "Qué far amb aqueste periferic :"
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-base.templates:18001
 msgid "How to use this free space:"
-msgstr "Como utilizar este espaço livre:"
+msgstr "Cossí utilizar l’espaci liure :"
 
 #. Type: select
 #. Description
 #. :sl2:
 #: ../partman-base.templates:19001
 msgid "Partition settings:"
-msgstr "Definições da partição:"
+msgstr "Paramètres de la particion :"
 
 #. Type: select
 #. Description
@@ -241,56 +234,57 @@ msgid ""
 "You are editing partition #${PARTITION} of ${DEVICE}. ${OTHERINFO} "
 "${DESTROYED}"
 msgstr ""
-"Está a editar a partição #${PARTITION} de ${DEVICE}. ${OTHERINFO}${DESTROYED}"
+"Modicatz la particion n° ${PARTITION} sus ${DEVICE}. ${OTHERINFO} "
+"${DESTROYED}"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-base.templates:20001
 msgid "This partition is formatted with the ${FILESYSTEM}."
-msgstr "Esta partição está formatada com o ${FILESYSTEM}."
+msgstr "Aquesta particion utiliza lo sistèma de fichièrs « ${FILESYSTEM} »."
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-base.templates:21001
 msgid "No existing file system was detected in this partition."
-msgstr "Não foi detectado nenhum sistema de ficheiros nesta partição."
+msgstr "Cap de sistèma de fichièrs pas detectat sus la particion."
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-base.templates:22001
 msgid "All data in it WILL BE DESTROYED!"
-msgstr "Todos os dados dentro SERÃO DESTRUÍDOS!"
+msgstr "Totas las donadas que conten seràn SUPRIMIDAS !"
 
 #. Type: note
 #. Description
 #. :sl2:
 #: ../partman-base.templates:23001
 msgid "The partition starts from ${FROMCHS} and ends at ${TOCHS}."
-msgstr "A partição começa em ${FROMCHS} e acaba em ${TOCHS}."
+msgstr "La particion comença a ${FROMCHS} e s’acaba a ${TOCHS}."
 
 #. Type: note
 #. Description
 #. :sl2:
 #: ../partman-base.templates:24001
 msgid "The free space starts from ${FROMCHS} and ends at ${TOCHS}."
-msgstr "O espaço livre começa em ${FROMCHS} e acaba em ${TOCHS}."
+msgstr "L’espaci liure comença a ${FROMCHS} e s’acaba a ${TOCHS}."
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-base.templates:26001
 msgid "Partitions formatting"
-msgstr "Formatação de partições"
+msgstr "Formatatge de las particions"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-base.templates:27001
 msgid "Processing..."
-msgstr "A processar..."
+msgstr "Tractament en cors..."
 
 #. Type: text
 #. Description
@@ -300,28 +294,28 @@ msgstr "A processar..."
 #. :sl2:
 #: ../partman-base.templates:29001 ../partman-base.templates:33001
 msgid "Show Cylinder/Head/Sector information"
-msgstr "Exibir informações de Cilindros/Cabeças/Sectores"
+msgstr "Afichar las entresenhas suls cilindres, las tèstas e sectors"
 
 #. Type: text
 #. Description
 #. :sl2:
 #: ../partman-base.templates:30001
 msgid "Done setting up the partition"
-msgstr "Preparação da partição terminada"
+msgstr "Finalizar la configuracion de la particion"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-base.templates:31001
 msgid "Finish partitioning and write changes to disk"
-msgstr "Terminar o particionamento e escrever as alterações no disco"
+msgstr "Acabar lo particionament e aplicar los cambiaments"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-base.templates:32001
 msgid "Undo changes to partitions"
-msgstr "Anular as alterações efectuadas nas partições"
+msgstr "Anullar las modificacions de las particions"
 
 #. Type: text
 #. Description
@@ -329,7 +323,7 @@ msgstr "Anular as alterações efectuadas nas partições"
 #: ../partman-base.templates:34001
 #, no-c-format
 msgid "Dump partition info in %s"
-msgstr "Depositar informação de partição em %s"
+msgstr "Exportar las entresenhas de particionament dins %s"
 
 #. Type: text
 #. Description
@@ -337,7 +331,7 @@ msgstr "Depositar informação de partição em %s"
 #. :sl1:
 #: ../partman-base.templates:35001
 msgid "FREE SPACE"
-msgstr "ESPAÇO LIVRE"
+msgstr "ESPACI LIURE"
 
 #. Type: text
 #. Description
@@ -345,7 +339,7 @@ msgstr "ESPAÇO LIVRE"
 #. :sl1:
 #: ../partman-base.templates:36001
 msgid "unusable"
-msgstr "sem uso"
+msgstr "inutilizable"
 
 #. Type: text
 #. Description
@@ -353,7 +347,7 @@ msgstr "sem uso"
 #. :sl1:
 #: ../partman-base.templates:37001
 msgid "primary"
-msgstr "primária"
+msgstr "primari"
 
 #. Type: text
 #. Description
@@ -361,7 +355,7 @@ msgstr "primária"
 #. :sl1:
 #: ../partman-base.templates:38001
 msgid "logical"
-msgstr "lógica"
+msgstr "logic"
 
 #. Type: text
 #. Description
@@ -382,7 +376,7 @@ msgstr "pri/log"
 #: ../partman-base.templates:40001
 #, no-c-format
 msgid "#%s"
-msgstr "#%s"
+msgstr "n° %s"
 
 #. Type: text
 #. Description
@@ -400,7 +394,7 @@ msgstr "ATA%s (%s)"
 #: ../partman-base.templates:42001
 #, no-c-format
 msgid "ATA%s, partition #%s (%s)"
-msgstr "ATA%s, partição #%s (%s)"
+msgstr "ATA%s, particion n° %s (%s)"
 
 #. Type: text
 #. Description
@@ -409,7 +403,7 @@ msgstr "ATA%s, partição #%s (%s)"
 #: ../partman-base.templates:43001
 #, no-c-format
 msgid "IDE%s master (%s)"
-msgstr "IDE%s principal (%s)"
+msgstr "IDE%s màger (%s)"
 
 #. Type: text
 #. Description
@@ -418,7 +412,7 @@ msgstr "IDE%s principal (%s)"
 #: ../partman-base.templates:44001
 #, no-c-format
 msgid "IDE%s slave (%s)"
-msgstr "IDE%s secundário (%s)"
+msgstr "IDE%s segondari (%s)"
 
 #. Type: text
 #. Description
@@ -427,7 +421,7 @@ msgstr "IDE%s secundário (%s)"
 #: ../partman-base.templates:45001
 #, no-c-format
 msgid "IDE%s master, partition #%s (%s)"
-msgstr "IDE%s principal, partição #%s (%s)"
+msgstr "IDE%s màger, particion n° %s (%s)"
 
 #. Type: text
 #. Description
@@ -436,7 +430,7 @@ msgstr "IDE%s principal, partição #%s (%s)"
 #: ../partman-base.templates:46001
 #, no-c-format
 msgid "IDE%s slave, partition #%s (%s)"
-msgstr "IDE%s secundário, partição #%s (%s)"
+msgstr "IDE%s segondari, particion n° %s (%s)"
 
 #. Type: text
 #. Description
@@ -452,7 +446,7 @@ msgstr "SCSI%s (%s,%s,%s) (%s)"
 #: ../partman-base.templates:48001
 #, no-c-format
 msgid "SCSI%s (%s,%s,%s), partition #%s (%s)"
-msgstr "SCSI%s (%s,%s,%s), partição #%s (%s)"
+msgstr "SCSI%s (%s,%s,%s), particion n° %s (%s)"
 
 #. Type: text
 #. Description
@@ -468,7 +462,7 @@ msgstr "SCSI%s (%s)"
 #: ../partman-base.templates:50001
 #, no-c-format
 msgid "SCSI%s, partition #%s (%s)"
-msgstr "SCSI%s, partição #%s (%s)"
+msgstr "SCSI%s, particion n° %s (%s)"
 
 #. Type: text
 #. Description
@@ -477,7 +471,7 @@ msgstr "SCSI%s, partição #%s (%s)"
 #: ../partman-base.templates:51001
 #, no-c-format
 msgid "MMC/SD card #%s (%s)"
-msgstr "Cartão MMC/SD #%s (%s)"
+msgstr "Carta MMC/SD n° %s (%s)"
 
 #. Type: text
 #. Description
@@ -486,7 +480,7 @@ msgstr "Cartão MMC/SD #%s (%s)"
 #: ../partman-base.templates:52001
 #, no-c-format
 msgid "MMC/SD card #%s, partition #%s (%s)"
-msgstr "Cartão MMC/SD #%s, partição #%s (%s)"
+msgstr "Carta MMC/SD n° %s, particion n° %s (%s)"
 
 #. Type: text
 #. Description
@@ -494,7 +488,7 @@ msgstr "Cartão MMC/SD #%s, partição #%s (%s)"
 #: ../partman-base.templates:53001
 #, no-c-format
 msgid "RAID%s device #%s"
-msgstr "RAID%s dispositivo #%s"
+msgstr "Periferic RAID%s n° %s"
 
 #. Type: text
 #. Description
@@ -502,7 +496,7 @@ msgstr "RAID%s dispositivo #%s"
 #: ../partman-base.templates:54001
 #, no-c-format
 msgid "Encrypted volume (%s)"
-msgstr "Volume encriptado (%s)"
+msgstr "Volum chifrat (%s)"
 
 #. Type: text
 #. Description
@@ -511,7 +505,7 @@ msgstr "Volume encriptado (%s)"
 #: ../partman-base.templates:55001
 #, no-c-format
 msgid "Serial ATA RAID %s (%s)"
-msgstr "Serial ATA RAID %s (%s)"
+msgstr "SATA RAID %s (%s)"
 
 #. Type: text
 #. Description
@@ -520,7 +514,7 @@ msgstr "Serial ATA RAID %s (%s)"
 #: ../partman-base.templates:56001
 #, no-c-format
 msgid "Serial ATA RAID %s (partition #%s)"
-msgstr "Serial ATA RAID %s (partição #%s)"
+msgstr "SATA RAID %s (particion n° %s)"
 
 #. Type: text
 #. Description
@@ -539,7 +533,7 @@ msgstr "Serial ATA RAID %s (partição #%s)"
 #: ../partman-base.templates:57001
 #, no-c-format
 msgid "Multipath %s (WWID %s)"
-msgstr "Multipath %s (WWID %s)"
+msgstr "Multicamin %s (WWID %s)"
 
 #. Type: text
 #. Description
@@ -547,7 +541,7 @@ msgstr "Multipath %s (WWID %s)"
 #: ../partman-base.templates:58001
 #, no-c-format
 msgid "Multipath %s (partition #%s)"
-msgstr "Multipath %s (partição #%s)"
+msgstr "Multicamin %s (particion n° %s)"
 
 #. Type: text
 #. Description
@@ -555,7 +549,7 @@ msgstr "Multipath %s (partição #%s)"
 #: ../partman-base.templates:59001
 #, no-c-format
 msgid "LVM VG %s, LV %s"
-msgstr "LVM VG %s, LV %s"
+msgstr "Grop de volums LVM %s, volum logic %s"
 
 #. Type: text
 #. Description
@@ -563,7 +557,7 @@ msgstr "LVM VG %s, LV %s"
 #: ../partman-base.templates:60001
 #, no-c-format
 msgid "ZFS pool %s, volume %s"
-msgstr "Pool ZFS %s, volume %s"
+msgstr "pool ZFS %s, volum %s"
 
 #. Type: text
 #. Description
@@ -571,7 +565,7 @@ msgstr "Pool ZFS %s, volume %s"
 #: ../partman-base.templates:61001
 #, no-c-format
 msgid "Loopback (loop%s)"
-msgstr "Loopback (loop%s)"
+msgstr "Boclatge (« loopback », loop%s)"
 
 #. Type: text
 #. Description
@@ -587,7 +581,7 @@ msgstr "DASD %s (%s)"
 #: ../partman-base.templates:63001
 #, no-c-format
 msgid "DASD %s (%s), partition #%s"
-msgstr "DASD%s (%s), partição #%s"
+msgstr "DASD %s (%s), particion n° %s"
 
 #. Type: text
 #. Description
@@ -596,7 +590,7 @@ msgstr "DASD%s (%s), partição #%s"
 #: ../partman-base.templates:64001
 #, no-c-format
 msgid "Virtual disk %s (%s)"
-msgstr "Disco virtual %s (%s)"
+msgstr "Disc virtual n° %s (%s)"
 
 #. Type: text
 #. Description
@@ -605,14 +599,14 @@ msgstr "Disco virtual %s (%s)"
 #: ../partman-base.templates:65001
 #, no-c-format
 msgid "Virtual disk %s, partition #%s (%s)"
-msgstr "Disco virtual %s, partição #%s (%s)"
+msgstr "Disc virtual n° %s, particion n° %s (%s)"
 
 #. Type: text
 #. Description
 #. :sl1:
 #: ../partman-base.templates:66001
 msgid "Cancel this menu"
-msgstr "Cancelar este menu"
+msgstr "Anullar aqueste menú"
 
 #. Type: text
 #. Description
@@ -621,4 +615,4 @@ msgstr "Cancelar este menu"
 #. :sl1:
 #: ../partman-base.templates:67001
 msgid "Partition disks"
-msgstr "Particionar discos"
+msgstr "Particionar los disques"
