@@ -254,3 +254,12 @@ def target_mounted(target='/target'):
         db.go()
         return False
     return True
+
+
+def is_efi():
+    """Function to determine if 'efi' is in kernel commandline."""
+    with open('/proc/cmdline', 'r') as fob:
+        if 'efi' in fob.readline().split():
+            return True
+        else:
+            return False
