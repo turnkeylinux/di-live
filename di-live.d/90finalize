@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
+# Copyright (c) 2019-2021 TurnKey GNU/Linux <admin@turnkeylinux.org>
 
 import os
 import debconf
@@ -67,27 +68,18 @@ class DiliveFinish():
         option to 'Exit' if running live and eject hasn't previously been
         selected)."""
         if self.is_install:  # "install" option from ISO menu
-            return 'di-live/finalize_install'
+            return None
         else:  # assume running live
             return 'di-live/finalize_live'
 
     def cache(self):
         """Cache files & remount '/' read-only - show debconf progressbar"""
-        self.db.progress_init(2, description=
-                              "Caching files and remounting '/' read-only")
+        self.db.progress_init(2, description="Caching files and remounting" +
+                                             " '/' read-only")
         self.db.progress_step(1)
         system(['/usr/bin/live-medium-cache'], stdout=PIPE, write_log=False)
         self.db.progress_step(2)
         self.is_install = True
-
-    def eject(self):
-        """Cache files, remount '/' read-only and ask user to eject live
-        medium; wait for OK."""
-        self.cache()
-        if not self._is_usb:
-            system(['eject', '-p', '-m', '/dev/' + self.live_dev],
-                   stdout=PIPE, write_log=False)
-        self.db.get_input('di-live/eject')
 
     def reboot(self):
         system(["/usr/bin/systemctl", "reboot"],  write_log=False)
@@ -96,7 +88,9 @@ class DiliveFinish():
     def ask_eject_reboot(self):
         """Ask user (via debconf) if they wish to eject or reboot (or exit if
         running live)"""
-        return self.db.get_input(self._get_template())
+        if self.template:
+            return self.db.get_input(self._get_template())
+        return None
 
 
 def main():
@@ -105,9 +99,7 @@ def main():
 
     while True:
         response = finalize.ask_eject_reboot()
-        if response == 'Eject Live medium':
-            finalize.eject()
-        elif response == 'Reboot system':
+        if not response:
             finalize.reboot()
         elif response == 'Exit installer':
             exit()

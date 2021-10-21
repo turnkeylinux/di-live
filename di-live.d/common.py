@@ -7,49 +7,14 @@ import subprocess
 from subprocess import PIPE
 from typing import List
 
+import chroot
+
 LOGFILE = '/var/log/di-live.log'
 
 
 def log(s):
     with open(LOGFILE, 'a') as fob:
         fob.write(s + "\n")
-
-
-class Chroot:
-    """Run commands inside a chroot."""
-
-    def __init__(self, newroot, environ={}):
-        # hack to allow exiting the chroot later - see rest in __del__()
-        self.real_root = os.open('/', os.O_RDONLY)
-        self.initial_cwd = os.getcwd()
-
-        PATH = "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/bin:/usr/sbin"
-        self.environ = {'HOME': '/root',
-                        'TERM': os.environ['TERM'],
-                        'LC_ALL': 'C',
-                        'PATH': PATH}
-        self.environ.update(environ)
-
-        self.targetmounts = TargetMounts(newroot)
-
-        # enter chroot and explicitly change to chroot's root; as python cwd
-        # is not auto updated and python cwd may not exist in chroot
-        os.chroot(newroot)
-        os.chdir('/')
-
-    def system(self, command, shell=False, stdout=None) -> None:
-        """Leverages system function to execute command in chroot."""
-        system(command, shell=shell, stdout=stdout, env=self.environ)
-
-    def exit(self):
-        # hack to escape python chroot and get back to initial cwd
-        os.fchdir(self.real_root)
-        os.chroot('.')
-        os.chdir(self.initial_cwd)
-        self.targetmounts.umount()
-
-    def __del__(self):
-        self.exit()
 
 
 class DiliveDebconf:
@@ -177,7 +142,7 @@ class ExecError(Exception):
 
 
 def prepend_path(path):
-    os.environ['PATH'] = path + ":" + os.environ.get('PATH')
+    os.environ['PATH'] = f"{path}:{os.environ.get('PATH')}"
 
 
 def system(command, shell=False, stdout=None, write_log=True,
@@ -194,7 +159,7 @@ def system(command, shell=False, stdout=None, write_log=True,
     if write_log:
         log('Running command: {}'.format(command))
     run_command = subprocess.run(command, shell=shell, env=env,
-                              stderr=PIPE, stdout=stdout)
+                                 stderr=PIPE, stdout=stdout)
     if run_command.returncode != 0:
         if write_log:
             log('Command {}: Exit code {}\nSTDERR: {}'.format(
@@ -236,18 +201,9 @@ def preset_debconf(resets=None, preseeds=None, seen=None):
             db.fset(template, 'seen', value)
 
 
-def is_mounted(directory):
-    with open("/proc/mounts", 'r') as fob:
-        for line in fob.readlines():
-            host, guest, *others = line.split(' ')
-            if guest == directory:
-                return True
-    return False
-
-
 def target_mounted(target='/target'):
 
-    if not os.path.exists(target) or not is_mounted(target):
+    if not os.path.exists(target) or chroot.is_mounted(target):
         db = debconf.Debconf(run_frontend=True)
         db.capb('backup')
         db.input(debconf.CRITICAL, 'base-installer/no_target_mounted')

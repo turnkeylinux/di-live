@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
-# Copyright (c) 2019-2021 TurnKey GNU/Linux <admin@turnkeylinux.org> - all rights reserved
+# Copyright (c) 2019-2021 TurnKey GNU/Linux <admin@turnkeylinux.org>
 
 """
 Debian Installer Live
@@ -26,8 +26,8 @@ import argparse
 
 from os.path import *
 
-sys.path.insert(0,'/usr/lib/di-live.d')
-from common import is_efi
+sys.path.insert(0, '/usr/lib/di-live.d')
+from common import is_efi  # noqa: E402
 
 LOGFILE = '/var/log/di-live.log'
 
@@ -227,7 +227,8 @@ def usage(s=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--debug', '-d', action='store_true',
-                        help='Set DEBCONF_DEBUG=developer DEBIAN_FRONTEND=readline')
+                        help='Set DEBCONF_DEBUG=developer' +
+                             ' DEBIAN_FRONTEND=readline')
     args = parser.parse_args()
 
     if args.debug:
