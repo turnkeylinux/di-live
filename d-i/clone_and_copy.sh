@@ -40,3 +40,8 @@ for item in $repos; do
 	ver=${item#*:}
 	clone_and_copy $repo $ver
 done
+
+find source/ -type d -name po -exec rm -rf {} +
+find source/ -type f -name *.templates -exec sed -i "s|_Description|Description|g; \|#.*$|d" {} \;
+git add source/
+git commit -m "Remove all translations (we only support en-US) & clean up templates."
