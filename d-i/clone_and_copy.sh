@@ -7,9 +7,12 @@ clone_and_copy() {
 	ver=$2
 	[[ -n "$repo" ]] || fatal "repo not set."
     [[ -n "$ver" ]] || fatal "ver not set."
-    git clone --depth=1 --branch=$ver https://salsa.debian.org/installer-team/${repo}.git source/${repo}-src
+    git clone --depth=1 --branch=$ver \
+        https://salsa.debian.org/installer-team/${repo}.git source/${repo}-src
     rm -r source/${repo}-src/.git
     rm -rf source/${repo}-src/debian/po
+    find source/${repo}-src -type f -name *.templates \
+        -exec sed -i "s|^_*||g; \|#.*$|d" {} \;
     cp -a source/${repo}-src/. source/${repo}
     rm -rf source/${repo}-src
     git add source/${repo}
@@ -33,15 +36,12 @@ repos="	base-installer:1.206
         partman-lvm:140
         partman-partitioning:140
         partman-target:122
-        preseed:1.109"
+        preseed:1.109
+        partman-efi:94
+        efi-reader:0.16"
 
 for item in $repos; do
 	repo=${item%:*}
 	ver=${item#*:}
 	clone_and_copy $repo $ver
 done
-
-find source/ -type d -name po -exec rm -rf {} +
-find source/ -type f -name *.templates -exec sed -i "s|^_*||g; \|#.*$|d" {} \;
-git add source/
-git commit -m "Remove all translations (we only support en-US) & clean up templates."
