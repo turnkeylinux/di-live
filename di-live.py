@@ -216,14 +216,6 @@ class Components_Menu:
                 self.priority.decrease()
 
 
-def usage(s=None):
-    if s:
-        print("Error:", s, file=sys.stderr)
-    print("Syntax: %s [options]" % sys.argv[0], file=sys.stderr)
-    print(__doc__, file=sys.stderr)
-    sys.exit(1)
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--debug', '-d', action='store_true',
