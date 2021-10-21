@@ -60,7 +60,7 @@ Description: Unsupported initrd generator
 Template: base-installer/initramfs-tools/driver-policy
 Type: select
 Choices-C: most, dep
-__Choices: generic: include all available drivers, targeted: only include drivers needed for this system
+Choices: generic: include all available drivers, targeted: only include drivers needed for this system
 Description: Drivers to include in the initrd:
  The primary function of an initrd is to allow the kernel to mount the
  root file system. It therefore needs to contain all drivers and supporting
@@ -84,7 +84,7 @@ Description: Unable to install the selected kernel
 
 Template: base-installer/kernel/image
 Type: select
-__Choices: ${KERNELS}, none[ Do not translate what's inside the brackets and just put the translation for the word "none" in your language without any brackets. This "none" means "no kernel" ]
+Choices: ${KERNELS}, none[ Do not translate what's inside the brackets and just put the translation for the word "none" in your language without any brackets. This "none" means "no kernel" ]
 Description: Kernel to install:
  The list shows the available kernels. Please choose one of them in order
  to make the system bootable from the hard drive.

@@ -29,7 +29,7 @@ Description: Running ${SCRIPT}...
 Template: live-installer/mode
 Type: select
 Default: normal
-__Choices: normal, live
+Choices: normal, live
 Description: Type of installation:
  The live system can be installed to hard disk using one of the following
  options.

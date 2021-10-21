@@ -80,7 +80,7 @@ Description: Device for boot loader installation:
 Template: grub-installer/choose_bootdev
 Type: select
 Choices-C: manual, ${DEVICES_LIST}
-__Choices: Enter device manually, ${DESCRIPTIONS}
+Choices: Enter device manually, ${DESCRIPTIONS}
 Description: Device for boot loader installation:
  You need to make the newly installed system bootable, by installing
  the GRUB boot loader on a bootable device. The usual way to do this is to

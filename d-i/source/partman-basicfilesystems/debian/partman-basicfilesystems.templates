@@ -68,12 +68,12 @@ Description: Invalid file system for this mount point
 
 Template: partman-basicfilesystems/mountpoint
 Type: select
-__Choices: / - the root file system, /boot - static files of the boot loader, /home - user home directories, /tmp - temporary files, /usr - static data, /var - variable data, /srv - data for services provided by this system, /opt - add-on application software packages, /usr/local - local hierarchy, Enter manually, Do not mount it
+Choices: / - the root file system, /boot - static files of the boot loader, /home - user home directories, /tmp - temporary files, /usr - static data, /var - variable data, /srv - data for services provided by this system, /opt - add-on application software packages, /usr/local - local hierarchy, Enter manually, Do not mount it
 Description: Mount point for this partition:
 
 Template: partman-basicfilesystems/fat_mountpoint
 Type: select
-__Choices: /dos, /windows, Enter manually, Do not mount it
+Choices: /dos, /windows, Enter manually, Do not mount it
 Description: Mount point for this partition:
 
 Template: partman-basicfilesystems/mountpoint_manual

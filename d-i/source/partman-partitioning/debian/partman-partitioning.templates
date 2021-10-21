@@ -74,14 +74,14 @@ Description: Invalid size
 
 Template: partman-partitioning/new_partition_place
 Type: select
-__Choices: Beginning, End
+Choices: Beginning, End
 Description: Location for the new partition:
  Please choose whether you want the new partition to be created at the
  beginning or at the end of the available space.
 
 Template: partman-partitioning/new_partition_type
 Type: select
-__Choices: Primary, Logical
+Choices: Primary, Logical
 Description: Type for the new partition:
 
 Template: partman-partitioning/set_flags

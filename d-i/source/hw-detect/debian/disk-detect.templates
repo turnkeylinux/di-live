@@ -8,7 +8,7 @@ Description: Detecting disks and all other hardware
 
 Template: disk-detect/module_select
 Type: select
-__Choices: continue with no disk drive, ${CHOICES}, none of the above
+Choices: continue with no disk drive, ${CHOICES}, none of the above
 Default: continue with no disk drive
 Description: Driver needed for your disk drive:
  No disk drive was detected. If you know the name of the driver

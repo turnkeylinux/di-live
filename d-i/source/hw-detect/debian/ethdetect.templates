@@ -1,6 +1,6 @@
 Template: ethdetect/module_select
 Type: select
-__Choices: no ethernet card, ${CHOICES}, none of the above
+Choices: no ethernet card, ${CHOICES}, none of the above
 Default: no ethernet card
 Description: Driver needed by your Ethernet card:
  No Ethernet card was detected. If you know the name of the driver
