@@ -9,6 +9,7 @@ clone_and_copy() {
     [[ -n "$ver" ]] || fatal "ver not set."
     git clone --depth=1 --branch=$ver https://salsa.debian.org/installer-team/${repo}.git source/${repo}-src
     rm -r source/${repo}-src/.git
+    rm -rf source/${repo}-src/debian/po
     cp -a source/${repo}-src/. source/${repo}
     rm -rf source/${repo}-src
     git add source/${repo}
