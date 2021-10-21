@@ -1,0 +1,14 @@
+Source: efi-reader
+Section: debian-installer
+Priority: optional
+Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
+Uploaders: dann frazier <dannf@debian.org>, Christian Perrier <bubulle@debian.org>
+Build-Depends: debhelper (>= 9), libdebconfclient0-dev (>= 0.47), libdebian-installer4-dev, po-debconf (>= 0.5.0), iso-codes (>= 0.012), isoquery
+Vcs-Browser: https://salsa.debian.org/installer-team/efi-reader
+Vcs-Git: https://salsa.debian.org/installer-team/efi-reader.git
+
+Package: efi-reader
+Architecture: ia64 amd64 i386 arm64 armhf
+Depends: ${shlibs:Depends}
+Description: Select default values from EFI configuration.
+Package-Type: udeb
