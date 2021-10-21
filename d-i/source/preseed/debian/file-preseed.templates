@@ -1,9 +1,6 @@
 Template: debian-installer/file-preseed/title
 Type: text
-#  Main menu item
-#  Translators: keep below 55 columns
-# :sl3:
-_Description: Load debconf preconfiguration file
+Description: Load debconf preconfiguration file
 
 Template: preseed/file
 Type: string

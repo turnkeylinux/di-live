@@ -1,8 +1,6 @@
 Template: base-installer/progress/register-modules
 Type: text
-# base-installer progress bar item
-# :sl1:
-_Description: Registering modules...
+Description: Registering modules...
 
 Template: debian-installer/add-kernel-opts
 Type: string
@@ -22,14 +20,11 @@ Description: ${TITLE}
 
 Template: debian-installer/shell-plugin-default-title
 Type: text
-# :sl2:
-_Description: Interactive shell
+Description: Interactive shell
 
 Template: debian-installer/terminal-plugin-unavailable
 Type: error
-# :sl2:
-#flag:translate!:4
-_Description: Terminal plugin not available
+Description: Terminal plugin not available
  This build of the debian-installer requires the terminal plugin in
  order to display a shell. Unfortunately, this plugin is currently
  unavailable.
@@ -41,7 +36,6 @@ _Description: Terminal plugin not available
 
 Template: debian-installer/workaround-gtk
 Type: text
-# :sl2:
-_Description: Alternatively, you can open a shell by pressing Ctrl+Alt+F2. Use Alt+F5 to get back to the installer.
+Description: Alternatively, you can open a shell by pressing Ctrl+Alt+F2. Use Alt+F5 to get back to the installer.
 
 

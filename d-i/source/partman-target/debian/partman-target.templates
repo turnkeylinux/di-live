@@ -1,8 +1,6 @@
 Template: partman-target/help
 Type: note
-# :sl1:
-#flag:translate!:8
-_Description: Help on partitioning
+Description: Help on partitioning
  Partitioning a hard drive consists of dividing it to create the space
  needed to install your new system.  You need to choose which
  partition(s) will be used for the installation.
@@ -33,18 +31,15 @@ _Description: Help on partitioning
 
 Template: partman-target/arch_help/i386/generic
 Type: text
-# :sl1:
-_Description: In order to start your new system, a so called boot loader is used.  It can be installed either in the master boot record of the first hard disk, or in a partition.  When the boot loader is installed in a partition, you must set the bootable flag for it. Such a partition will be marked with "${BOOTABLE}" in the main partitioning menu.
+Description: In order to start your new system, a so called boot loader is used.  It can be installed either in the master boot record of the first hard disk, or in a partition.  When the boot loader is installed in a partition, you must set the bootable flag for it. Such a partition will be marked with "${BOOTABLE}" in the main partitioning menu.
 
 Template: partman-target/arch_help/powerpc/powermac_newworld
 Type: text
-# :sl4:
-_Description: In order to start your new system, a so called boot loader is used.  It is installed in a boot partition.  You must set the bootable flag for the partition.  Such a partition will be marked with "${BOOTABLE}" in the main partitioning menu.
+Description: In order to start your new system, a so called boot loader is used.  It is installed in a boot partition.  You must set the bootable flag for the partition.  Such a partition will be marked with "${BOOTABLE}" in the main partitioning menu.
 
 Template: partman-target/same_label
 Type: error
-# :sl2:
-_Description: Identical labels for two file systems
+Description: Identical labels for two file systems
  Two file systems are assigned the same label (${LABEL}): ${PART1} and
  ${PART2}. Since file system labels are usually used as unique identifiers,
  this is likely to cause reliability problems later.
@@ -53,8 +48,7 @@ _Description: Identical labels for two file systems
 
 Template: partman-target/same_mountpoint
 Type: error
-# :sl2:
-_Description: Identical mount points for two file systems
+Description: Identical mount points for two file systems
  Two file systems are assigned the same mount point (${MOUNTPOINT}):
  ${PART1} and ${PART2}.
  .
@@ -62,16 +56,14 @@ _Description: Identical mount points for two file systems
 
 Template: partman-target/no_root
 Type: error
-# :sl2:
-_Description: No root file system
+Description: No root file system
  No root file system is defined.
  .
  Please correct this from the partitioning menu.
 
 Template: partman-target/must_be_on_root
 Type: error
-# :sl2:
-_Description: Separate file system not allowed here
+Description: Separate file system not allowed here
  You assigned a separate file system to ${MOUNTPOINT}, but in order for
  the system to start correctly this directory must be on the root file
  system.
@@ -81,8 +73,7 @@ _Description: Separate file system not allowed here
 Template: partman-target/mount_failed
 Type: boolean
 Default: true
-# :sl2:
-_Description: Do you want to resume partitioning?
+Description: Do you want to resume partitioning?
  The attempt to mount a file system with type ${TYPE} in ${DEVICE} at
  ${MOUNTPOINT} failed.
  .
@@ -92,19 +83,16 @@ Template: partman-target/choose_method
 Type: select
 Choices-C: ${CHOICES}
 Choices: ${DESCRIPTIONS}
-# :sl2:
-_Description: How to use this partition:
+Description: How to use this partition:
 Help: partman-target/help
 
 Template: partman-target/text/method
 Type: text
-# :sl2:
-_Description: Use as:
+Description: Use as:
 
 Template: partman-target/text/get_help
 Type: text
-# :sl1:
-_Description: Help on partitioning
+Description: Help on partitioning
 
 Template: partman/mount_style
 Type: select
