@@ -10,6 +10,7 @@ Build-Depends:
  dh-di (>= 3),
  turnkey-chroot,
  isoquery,
+ iso-codes,
  dpkg-dev (>= 1.14.4),
  libdebconfclient0-dev (>= 0.68),
  libdebian-installer4-dev (>= 0.41),
