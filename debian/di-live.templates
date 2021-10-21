@@ -31,32 +31,15 @@ Template: di-live/progress/remove_pkgs
 Type: text
 Description: Removing unrequired packages from installed system
 
-Template: di-live/finalize_install
-Type: select
-Choices: Eject Live medium, Reboot system
-Default: Eject Live medium
-Description: Select option
- Installation is complete.
- .
- Select Eject to eject the live medium or Reboot to reboot the system.
- .
- Please note that rebooting without ejecting, will likely result in rerunning
- the installer. Eject can be retried multiple times if desired.
-
 Template: di-live/finalize_live
 Type: select
-Choices: Eject Live medium, Reboot system, Exit installer
-Default: Eject Live medium
+Choices: Reboot system, Exit installer
+Default: Reboot system
 Description: Select option
  Installation is complete.
  .
- Select Eject to eject the live medium, Reboot to reboot the system, or Exit to
- exit back to the Live system command prompt.
- .
- Please note that rebooting without ejecting, will likely result in rerunning
- this installer. Eject can be rerun multiple times if desired.
- .
- Important: if you wish to Exit continue using the live system; DO NOT eject!
+ Select Reboot to reboot the system, or Exit to exit back to the Live system
+ command prompt.
 
 Template: di-live/eject
 Type: text
