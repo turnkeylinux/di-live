@@ -1,0 +1,46 @@
+#!/bin/sh
+
+. /lib/partman/lib/base.sh
+
+ARCH="$(archdetect)"
+case $ARCH in
+    i386/mac|amd64/mac)
+	# Not yet sure what to do on Intel Macs.  Mounting the EFI System
+	# Partition on /boot/efi will change the behaviour of grub-install,
+	# so it seems best to avoid it for the moment.
+	exit 0
+	;;
+esac
+
+# Resolve the device that is mounted as /cdrom
+cdrom_device=
+while IFS=" " read -r f1 f2 f3 f4 f5 f6
+do
+	if [ $f2 == "/cdrom" ]; then
+		cdrom_device=$f1
+	fi
+done < /proc/mounts
+
+seen_efi=
+for dev in $DEVICES/*; do
+	[ -d $dev ] || continue
+	cd $dev
+	open_dialog PARTITIONS
+	while { read_line num id size type fs path name; [ "$id" ]; }; do
+		[ -z "$seen_efi" ] || continue
+		[ $fs != free ] || continue
+		[ -f "$id/method" ] || continue
+		method=$(cat $id/method)
+		[ "$method" = efi ] || continue
+		# If the device we are mounting as /boot/efi also happens to
+		# be the /cdrom device, we must remount it read-write, else
+		# the mounting of /boot/efi fails.
+		if [ "$path" == "$cdrom_device" ]; then
+			log "Remounting /cdrom read-write for use as ESP"
+			mount -o remount,rw "$path" /cdrom
+		fi
+		echo "$path" /boot/efi vfat umask=0077 0 1
+		seen_efi=1
+	done
+	close_dialog
+done

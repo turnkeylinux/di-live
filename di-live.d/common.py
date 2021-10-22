@@ -7,49 +7,14 @@ import subprocess
 from subprocess import PIPE
 from typing import List
 
+import chroot
+
 LOGFILE = '/var/log/di-live.log'
 
 
 def log(s):
     with open(LOGFILE, 'a') as fob:
         fob.write(s + "\n")
-
-
-class Chroot:
-    """Run commands inside a chroot."""
-
-    def __init__(self, newroot, environ={}):
-        # hack to allow exiting the chroot later - see rest in __del__()
-        self.real_root = os.open('/', os.O_RDONLY)
-        self.initial_cwd = os.getcwd()
-
-        PATH = "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/bin:/usr/sbin"
-        self.environ = {'HOME': '/root',
-                        'TERM': os.environ['TERM'],
-                        'LC_ALL': 'C',
-                        'PATH': PATH}
-        self.environ.update(environ)
-
-        self.targetmounts = TargetMounts(newroot)
-
-        # enter chroot and explicitly change to chroot's root; as python cwd
-        # is not auto updated and python cwd may not exist in chroot
-        os.chroot(newroot)
-        os.chdir('/')
-
-    def system(self, command, shell=False, stdout=None) -> None:
-        """Leverages system function to execute command in chroot."""
-        system(command, shell=shell, stdout=stdout, env=self.environ)
-
-    def exit(self):
-        # hack to escape python chroot and get back to initial cwd
-        os.fchdir(self.real_root)
-        os.chroot('.')
-        os.chdir(self.initial_cwd)
-        self.targetmounts.umount()
-
-    def __del__(self):
-        self.exit()
 
 
 class DiliveDebconf:
@@ -114,50 +79,6 @@ class DiliveDebconf:
         self.db.progress('STEP {}'.format(step_no))
 
 
-class TargetMounts:
-    """Set up and remove required mountpoints for a chroot."""
-
-    def __init__(self, target='/target'):
-        self.targetdev = os.path.join(target, 'dev')
-        self.targetproc = os.path.join(target, 'proc')
-        self.targetsys = os.path.join(target, 'sys')
-        self.targetrun = os.path.join(target, 'run')
-        self.mount()
-
-    def mount(self):
-        def _mount(primary_dir, secondary_dir):
-            system(["mount", "-o", "bind", primary_dir, secondary_dir])
-
-        if not is_mounted(self.targetdev):
-            _mount("/dev", self.targetdev)
-        if not is_mounted(self.targetproc):
-            _mount("/proc", self.targetproc)
-        if not is_mounted(self.targetsys):
-            _mount("/sys", self.targetsys)
-
-    def umount(self):
-        def _umount(mounted_dir):
-            system(["umount", "-f", mounted_dir])
-
-        if is_mounted(self.targetsys):
-            with open("/proc/mounts", 'r') as fob:
-                for line in fob.readlines():
-                    host, guest, *others = line.split(' ')
-                    if (guest.startswith(self.targetsys)
-                            and not guest == self.targetsys):
-                        _umount(guest)
-            _umount(self.targetsys)
-        if is_mounted(self.targetdev):
-            _umount(self.targetdev)
-        if is_mounted(self.targetproc):
-            _umount(self.targetproc)
-        if is_mounted(self.targetrun):
-            _umount(self.targetrun)
-
-    def __del__(self):
-        self.umount()
-
-
 class ExecError(Exception):
     """Accessible attributes:
 
@@ -177,7 +98,7 @@ class ExecError(Exception):
 
 
 def prepend_path(path):
-    os.environ['PATH'] = path + ":" + os.environ.get('PATH')
+    os.environ['PATH'] = f"{path}:{os.environ.get('PATH')}"
 
 
 def system(command, shell=False, stdout=None, write_log=True,
@@ -194,7 +115,7 @@ def system(command, shell=False, stdout=None, write_log=True,
     if write_log:
         log('Running command: {}'.format(command))
     run_command = subprocess.run(command, shell=shell, env=env,
-                              stderr=PIPE, stdout=stdout)
+                                 stderr=PIPE, stdout=stdout)
     if run_command.returncode != 0:
         if write_log:
             log('Command {}: Exit code {}\nSTDERR: {}'.format(
@@ -236,21 +157,21 @@ def preset_debconf(resets=None, preseeds=None, seen=None):
             db.fset(template, 'seen', value)
 
 
-def is_mounted(directory):
-    with open("/proc/mounts", 'r') as fob:
-        for line in fob.readlines():
-            host, guest, *others = line.split(' ')
-            if guest == directory:
-                return True
-    return False
-
-
 def target_mounted(target='/target'):
 
-    if not os.path.exists(target) or not is_mounted(target):
+    if not os.path.exists(target) or chroot.is_mounted(target):
         db = debconf.Debconf(run_frontend=True)
         db.capb('backup')
         db.input(debconf.CRITICAL, 'base-installer/no_target_mounted')
         db.go()
         return False
     return True
+
+
+def is_efi():
+    """Function to determine if 'efi' is in kernel commandline."""
+    with open('/proc/cmdline', 'r') as fob:
+        if 'efi' in fob.readline().split():
+            return True
+        else:
+            return False

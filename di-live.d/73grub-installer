@@ -1,18 +1,20 @@
 #!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
+# Copyright (c) 2019-2021 TurnKey GNU/Linux <admin@turnkeyliux.org>
 
 import os
 import sys
 
-from common import dilive_system, target_mounted, preset_debconf, TargetMounts
+import chroot
+
+from common import is_efi, dilive_system, target_mounted, preset_debconf
 
 
 def main():
     if not target_mounted('/target'):
         sys.exit(10)  # return to menu
 
-    # mount bind dev, proc & sys on target otherwise grub-installer will fail
-    targetmounts = TargetMounts('/target')
+    # if is_efi:
 
     preseeds = [('grub-installer/only_debian', True),
                 ('grub-installer/with_other_os', True),
@@ -21,7 +23,8 @@ def main():
 
     preset_debconf(preseeds=preseeds)
 
-    dilive_system(['/usr/share/grub-installer/grub-installer', '/target'])
+    with chroot.mount('/target', mnt_profile=chroot.MNT_FULL) as mnt:
+        dilive_system(['/usr/share/grub-installer/grub-installer', '/target'])
 
 
 if __name__ == "__main__":

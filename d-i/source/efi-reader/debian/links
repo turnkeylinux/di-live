@@ -1,0 +1,1 @@
+/usr/bin/efi-reader /lib/debian-installer-startup.d/S40efi-reader

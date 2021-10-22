@@ -1,0 +1,147 @@
+efi-reader (0.16) unstable; urgency=medium
+
+  * Team upload
+
+  [ Cyril Brulebois ]
+  * Update Vcs-{Browser,Git} to point to salsa (alioth's replacement).
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 29 Aug 2018 12:14:18 +0200
+
+efi-reader (0.15) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * Use HTTPS for Vcs-* URLs, and link to cgit rather than gitweb.
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 03 Feb 2016 07:10:37 +0100
+
+efi-reader (0.14) unstable; urgency=low
+
+  * Add arm64 arnd armhf to architectures list. Closes: #758753
+
+ -- Christian Perrier <bubulle@debian.org>  Thu, 21 Aug 2014 09:07:48 +0200
+
+efi-reader (0.13) unstable; urgency=low
+
+  [ Dmitrijs Ledkovs ]
+  * Set debian source format to '3.0 (native)'.
+  * Bump debhelper compat level to 9.
+  * Set Vcs-* to canonical format.
+
+  [ Christian Perrier ]
+  * Add myself to Uploaders
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 14 Jul 2013 13:15:39 +0200
+
+efi-reader (0.12) unstable; urgency=low
+
+  * Team upload
+
+  [ Colin Watson ]
+  * Fix a few compiler warnings.
+
+  [ Christian Perrier ]
+  * Replace XC-Package-Type by Package-Type in debian/control
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 15 May 2013 16:36:54 +0200
+
+efi-reader (0.11) unstable; urgency=low
+
+  [ Steve McIntyre ]
+  * Build on amd64 and i386 as well as ia64, now we have EFI support there
+    too. Closes: #512348.
+
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 20 Sep 2012 12:18:47 +0200
+
+efi-reader (0.10) unstable; urgency=low
+
+  [ Frans Pop ]
+  * Remove Alastair McKinstry as Uploader with many thanks for his past
+    contributions.
+
+  [ Colin Watson ]
+  * Upgrade to debhelper v7.
+  * /usr/share/iso-codes/iso_639.tab no longer exists; use isoquery.
+
+  [ Frans Pop ]
+  * Remove Standards-Version field.
+
+ -- dann frazier <dannf@debian.org>  Mon, 15 Nov 2010 11:23:08 -0700
+
+efi-reader (0.9) unstable; urgency=low
+
+  * Performing a "clean" upload - last version had .svn goo in it
+
+ -- dann frazier <dannf@debian.org>  Tue, 31 Oct 2006 16:09:32 -0700
+
+efi-reader (0.8) unstable; urgency=low
+
+  * Include <linux/types.h> for __u8 and friends.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Thu, 7 Sep 2006 08:02:43 +0100
+
+efi-reader (0.7) unstable; urgency=low
+
+  * Colin Watson
+    - Spell "Debian GNU/Linux" thus in debian/copyright.
+  * Alastair McKinstry
+    - Build out of the _current_ SVN to get Colin Watson's correction.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 12 Jul 2005 07:37:20 +0100
+
+efi-reader (0.6) unstable; urgency=low
+
+  * Alastair McKinstry
+    - Now use /lib/debian-installer-startup.d instead of /etc/rcS.d
+      Closes: #260815.
+    - Move to Standards-Version: 3.6.2
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Sun, 17 Oct 2004 20:00:00 +0100
+
+efi-reader (0.5) unstable; urgency=low
+
+  * Joshua Kwan
+    - Use debhelper's new udeb support.
+  * Joey Hess
+    - Fix use of udeb support.
+
+ -- Joey Hess <joeyh@debian.org>  Wed,  6 Oct 2004 16:18:34 -0400
+
+efi-reader (0.4) unstable; urgency=low
+
+  * Use the new debconf_* macros
+  * Move to new libdebian-installer API.
+  * Richard Hirst
+    - Make it compile with libdebian-installer4 and current
+      linux-kernel-headers.
+    - Change table.h generation to end with null string, not 0, to fix
+      compiler warnings.  Change code to match.
+  * Thiemo Seufer
+    - Add CFLAGS -W.
+  * Add myself to Uploaders & Release 0.4
+
+ -- dann frazier <dannf@debian.org>  Sun, 14 Dec 2003 19:19:36 -0700
+
+efi-reader (0.3) unstable; urgency=low
+
+  * Changed dependency from libcdebconf-dev to libddebconfclient0-dev.
+    Closes: #212072.
+  * Moved to Standards-Version: 3.6.1 ; no changes required.
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Mon, 22 Sep 2003 13:07:38 +0000
+
+efi-reader (0.2) unstable; urgency=low
+
+
+  * Moved Standards-Version to 3.6.0; no changes required. 
+
+ -- Alastair McKinstry <mckinstry@debian.org>  Tue, 29 Jul 2003 20:34:35 +0100
+
+efi-reader (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Alastair McKinstry <mckinstry@computer.org>  Fri, 7 Mar 2003 20:28:31 +1100
+
+Local variables:
+mode: debian-changelog
+End:

@@ -1,8 +1,8 @@
 subarch loongson-3
 cpuinfo lemote-3.cpuinfo
-majors 2.6
+majors 5.7
 flavour loongson-3
-kernel-2.6 linux-image-loongson-3
+kernel-5.7 linux-image-loongson-3
 usable \
   linux-image-loongson-3
 unusable \

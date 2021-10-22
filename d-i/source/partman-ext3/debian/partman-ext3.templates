@@ -1,43 +1,30 @@
 Template: partman-ext3/text/ext3
 Type: text
-# :sl1:
-# File system name (untranslatable in many languages)
-_Description: ext3
+Description: ext3
 
 Template: partman/filesystem_long/ext3
 Type: text
-# :sl2:
-# File system name
-_Description: Ext3 journaling file system
+Description: Ext3 journaling file system
 
 Template: partman/filesystem_short/ext3
 Type: text
-# :sl1:
-# Short file system name (untranslatable in many languages)
-_Description: ext3
+Description: ext3
 
 Template: partman-ext3/text/ext4
 Type: text
-# :sl1:
-# File system name (untranslatable in many languages)
-_Description: ext4
+Description: ext4
 
 Template: partman/filesystem_long/ext4
 Type: text
-# :sl2:
-# File system name
-_Description: Ext4 journaling file system
+Description: Ext4 journaling file system
 
 Template: partman/filesystem_short/ext4
 Type: text
-# :sl1:
-# Short file system name (untranslatable in many languages)
-_Description: ext4
+Description: ext4
 
 Template: partman-ext3/boot_not_ext2_or_ext3
 Type: boolean
-# :sl2:
-_Description: Go back to the menu and correct this problem?
+Description: Go back to the menu and correct this problem?
  Your boot partition has not been configured with the ext2 or ext3
  file system. This is needed by your machine in order to boot. Please go
  back and use either the ext2 or ext3 file system.
@@ -48,8 +35,7 @@ _Description: Go back to the menu and correct this problem?
 
 Template: partman/boot_not_first_partition
 Type: boolean
-# :sl2:
-_Description: Go back to the menu and correct this problem?
+Description: Go back to the menu and correct this problem?
  Your boot partition is not located on the first primary partition of your
  hard disk. This is needed by your machine in order to boot.  Please go
  back and use your first primary partition as a boot partition.
@@ -60,8 +46,7 @@ _Description: Go back to the menu and correct this problem?
 
 Template: partman-ext3/boot_not_bootable
 Type: boolean
-# :sl2:
-_Description: Return to the menu to set the bootable flag?
+Description: Return to the menu to set the bootable flag?
  The boot partition has not been marked as a bootable partition, even
  though this is required by your machine in order to boot. You should go
  back and set the bootable flag for the boot partition.
@@ -71,8 +56,7 @@ _Description: Return to the menu to set the bootable flag?
 
 Template: partman-ext3/bad_alignment
 Type: boolean
-# :sl2:
-_Description: Do you want to return to the partitioning menu?
+Description: Do you want to return to the partitioning menu?
  The partition ${PARTITION} assigned to ${MOUNTPOINT} starts at an offset of
  ${OFFSET} bytes from the minimum alignment for this disk, which may lead to
  very poor performance.

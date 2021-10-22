@@ -1,0 +1,9 @@
+*.debhelper*
+*.substvars
+files
+partconf
+partconf.postinst
+partconf-find-partitions
+partconf-mkfstab
+partconf-mkfstab.postinst
+

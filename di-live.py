@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
+# Copyright (c) 2019-2021 TurnKey GNU/Linux <admin@turnkeylinux.org>
 
 """
 Debian Installer Live
@@ -20,10 +21,13 @@ Options:
 import re
 import os
 import sys
-import getopt
 import debconf
+import argparse
 
 from os.path import *
+
+sys.path.insert(0, '/usr/lib/di-live.d')
+from common import is_efi  # noqa: E402
 
 LOGFILE = '/var/log/di-live.log'
 
@@ -212,28 +216,14 @@ class Components_Menu:
                 self.priority.decrease()
 
 
-def usage(s=None):
-    if s:
-        print("Error:", s, file=sys.stderr)
-    print("Syntax: %s [options]" % sys.argv[0], file=sys.stderr)
-    print(__doc__, file=sys.stderr)
-    sys.exit(1)
-
-
 def main():
-    try:
-        opts, args = getopt.gnu_getopt(sys.argv[1:], "hd", ['help', 'debug'])
-    except getopt.GetoptError as e:
-        usage(e)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--debug', '-d', action='store_true',
+                        help='Set DEBCONF_DEBUG=developer' +
+                             ' DEBIAN_FRONTEND=readline')
+    args = parser.parse_args()
 
-    debug = False
-    for opt, val in opts:
-        if opt in ('-h', '--help'):
-            usage()
-        elif opt in ('-d', '--debug'):
-            debug = True
-
-    if debug:
+    if args.debug:
         os.environ['DEBCONF_DEBUG'] = 'developer'
         os.environ['DEBIAN_FRONTEND'] = 'readline'
     else:
@@ -245,6 +235,8 @@ def main():
     components_dir = '/usr/lib/di-live.d'
     menu_template = 'di-live/main_menu'
     menu_title = 'Debian Installer Live'
+    if is_efi:
+        menu_title = menu_title + ' (UEFI)'
 
     Components_Menu(components_dir, menu_template, menu_title).run()
 

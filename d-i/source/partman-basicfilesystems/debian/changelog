@@ -1,3 +1,99 @@
+partman-basicfilesystems (156) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Kimmo Kujansuu
+  * Kabyle (kab.po)
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 23 Jul 2021 19:12:30 +0200
+
+partman-basicfilesystems (155) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 30 May 2021 23:29:53 +0200
+
+partman-basicfilesystems (154) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by KushagraKarira
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Ukrainian (uk.po) by Anton Gladky
+  * Traditional Chinese (zh_TW.po) by louies0623
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 17 Feb 2021 01:21:29 +0100
+
+partman-basicfilesystems (153) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by george k
+  * Esperanto (eo.po) by Felipe Castro
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 30 Dec 2020 23:52:24 +0100
+
+partman-basicfilesystems (152) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Persian (fa.po) by Seyed Hany Hosseini
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 19:02:46 +0100
+
+partman-basicfilesystems (151) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Indonesian (id.po) by Andika Triwidada
+  * Kannada (kn.po) by Yogesh
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Polish (pl.po) by Bartosz Feński
+  * Serbian (sr.po) by Filipovic Dragan
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Sep 2020 22:48:05 +0200
+
+partman-basicfilesystems (150) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Latvian (lv.po) by Tranzistors
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 20 Dec 2019 19:47:52 +0100
+
+partman-basicfilesystems (149) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by ButterflyOfFire
+  * Croatian (hr.po) by gogogogi
+  * Bulgarian (bg.po)
+  * Irish (ga.po)
+  * Kannada (kn.po)
+  * Nepali (ne.po)
+  * Tibetan (bo.po)
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 15 Aug 2019 19:28:47 +0200
+
 partman-basicfilesystems (148) unstable; urgency=medium
 
   * Team upload

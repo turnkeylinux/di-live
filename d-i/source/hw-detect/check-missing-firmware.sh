@@ -2,7 +2,6 @@
 set -e
 . /usr/share/debconf/confmodule
 
-MISSING='/dev/.udev/firmware-missing /run/udev/firmware-missing'
 DENIED=/tmp/missing-firmware-denied
 
 if [ "x$1" = "x-n" ]; then
@@ -15,6 +14,10 @@ IFACES="$@"
 
 log () {
 	logger -t check-missing-firmware "$@"
+}
+
+log_output() {
+	log-output -t check-missing-firmware "$@"
 }
 
 # Not all drivers register themselves if firmware is missing; in that
@@ -75,7 +78,7 @@ get_fresh_dmesg() {
 		# "^$tspattern" (-F for fixed string doesn't play well with ^ to
 		# anchor the pattern on the left):
 		tspattern=$(cat $dmesg_ts | sed 's,\[,\\[,;s,\],\\],')
-		log "looking at dmesg again, restarting from $tspattern"
+		log "looking at dmesg again, restarting from timestamp: $(cat $dmesg_ts)"
 
 		# Find the line number for the first match, empty if not found:
 		ln=$(grep -n "^$tspattern" $dmesg_file |sed 's/:.*//'|head -n 1)
@@ -103,17 +106,22 @@ check_missing () {
 
 	# Give modules some time to request firmware.
 	sleep 1
-	
+
 	modules=""
 	files=""
 
-	# The linux kernel and udev no longer let us know via
-	# /dev/.udev/firmware-missing and /run/udev/firmware-missing
-	# which firmware files the kernel drivers look for.  Check
-	# dmesg instead.  See also bug #725714.
+	# Parse dmesg using a started parttern to detect firmware
+	# files the kernel drivers look for (#725714):
 	fwlist=/tmp/check-missing-firmware-dmesg.list
 	get_fresh_dmesg | sed -rn 's/^(\[[^]]*\] )?([^ ]+) [^ ]+: firmware: failed to load ([^ ]+) .*/\2 \3/p' > $fwlist
 	while read module fwfile ; do
+	    # ignore specific files:
+	    #  - iwlwifi, debug-only (#969264, #966218)
+	    if [ "$fwfile" = "iwl-debug-yoyo.bin" ]; then
+		log "ignoring firmware file $fwfile requested by $module"
+		continue
+	    fi
+
 	    log "looking for firmware file $fwfile requested by $module"
 	    if [ ! -e /lib/firmware/$fwfile ] ; then
 		if grep -q "^$fwfile$" $DENIED 2>/dev/null; then
@@ -125,58 +133,9 @@ check_missing () {
 	    fi
 	done < $fwlist
 
-	# This block looking in $MISSING should be removed when
-	# hw-detect no longer should support installing using older
-	# udev and kernel versions.
-	for missing_dir in $MISSING
-	do
-		if [ ! -d "$missing_dir" ]; then
-			log "$missing_dir does not exist, skipping"
-			continue
-		fi
-		for file in $(find $missing_dir -type l); do
-			# decode firmware filename as encoded by
-			# udev firmware.agent
-			fwfile="$(basename $file | sed -e 's#\\x2f#/#g')"
-			
-			# strip probably nonexistant firmware subdirectory
-			devpath="$(readlink $file | sed 's/\/firmware\/.*//')"
-			# the symlink is supposed to point to the device in /sys
-			if ! echo "$devpath" | grep -q '^/sys/'; then
-				devpath="/sys$devpath"
-			fi
-
-			module=$(get_module "$devpath")
-			if [ -z "$module" ]; then
-				log "failed to determine module from $devpath"
-				continue
-			fi
-
-			rm -f "$file"
-
-			if grep -q "^$fwfile$" $DENIED 2>/dev/null; then
-				continue
-			fi
-			
-			files="$fwfile${files:+ $files}"
-
-			if [ "$module" = usbcore ]; then
-				# Special case for USB bus, which puts the
-				# real module information in a subdir of
-				# the devpath.
-				for dir in $(find "$devpath" -maxdepth 1 -mindepth 1 -type d); do
-					module=$(get_module "$dir")
-					if [ -n "$module" ]; then
-						modules="$module${modules:+ $modules}"
-					fi
-				done
-			else
-				modules="$module${modules:+ $modules}"
-			fi
-		done
-	done
-
 	if [ -n "$modules" ]; then
+		# Uniquify since a single module may request *many* firmware files:
+		modules=$(echo $modules | tr " " "\n" | sort -u)
 		log "missing firmware files ($files) for $modules"
 		return 0
 	else
@@ -329,13 +288,26 @@ while check_missing && ask_load_firmware; do
 	fi
 
 	# remove and reload modules so they see the new firmware
-	# Sort to only reload a given module once if it asks for more
-	# than one firmware file (example iwlagn)
-	for module in $(echo $modules | tr " " "\n" | sort -u); do
+	for module in $modules; do
 		if ! nic_is_configured $module; then
 			log "removing and loading kernel module $module"
-			modprobe -r $module || true
-			modprobe $module || true
+			log_output modprobe -r $module || true
+			log_output modprobe $module || true
+
+			# iterate to avoid dealing with multiplicity explicitly:
+			for driver in $(find /sys/bus/*/drivers -name "$module"); do
+				# module name mentioned in dmesg might differ from the actual module
+				# (rtw_8821ce vs. rtw88_8821ce, see #973733); also beware of the
+				# module symlink, it doesn't always exist:
+				if [ -e "$driver/module" ]; then
+					actual_module=$(basename $(readlink -f "$driver/module"))
+					if [ "$actual_module" != "$module" ]; then
+						log "removing and loading kernel module $actual_module as well (actual module for $module)"
+						log_output modprobe -r $actual_module || true
+						log_output modprobe $actual_module || true
+					fi
+				fi
+			done
 		fi
 	done
 done

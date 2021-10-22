@@ -1,11 +1,128 @@
-partman-lvm (131) UNRELEASED; urgency=medium
+partman-lvm (140) unstable; urgency=medium
 
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Kimmo Kujansuu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 23 Jul 2021 19:21:06 +0200
+
+partman-lvm (139) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Lithuanian (lt.po) by Gediminas Murauskas
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 08 Jul 2021 17:15:39 +0200
+
+partman-lvm (138) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+  * Croatian (hr.po) by Valentin Vidic
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 30 May 2021 23:49:30 +0200
+
+partman-lvm (137) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * Hindi (hi.po) by KushagraKarira
+  * Kabyle (kab.po) by Selyan Sliman Amiri
+  * Tamil (ta.po) by Vasudevan Tirumurti
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 19 Feb 2021 20:23:03 +0100
+
+partman-lvm (136) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by Vangelis Skarmoutsos
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 31 Dec 2020 00:04:43 +0100
+
+partman-lvm (135) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Greek (el.po) by Vangelis Skarmoutsos
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 19:24:26 +0100
+
+partman-lvm (134) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Estonian (et.po) by Kristjan Räts
+  * French (fr.po) by Baptiste Jammet
+  * Indonesian (id.po) by Andika Triwidada
+  * Icelandic (is.po) by Sveinn í Felli
+  * Polish (pl.po) by Bartosz Feński
+  * Serbian (sr.po) by Filipovic Dragan
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Sep 2020 22:59:54 +0200
+
+partman-lvm (133) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Tibetan (bo.po)
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Korean (ko.po) by Changwoo Ryu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 21:59:57 +0200
+
+partman-lvm (132) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Add comment for translators, to keep main menu entry below a 55 columns
+    limit. This updates all po|pot files.
+
+  [ Updated translations ]
+  * Latvian (lv.po) by Tranzistors
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 18 Oct 2019 22:47:32 +0200
+
+partman-lvm (131) unstable; urgency=medium
+
+  * Team upload
+
+  [ Cyril Brulebois ]
   * Remove Christian Perrier from Uploaders, with many thanks for all
     his contributions over the years! (Closes: #927512)
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:39:20 +0200
+  [ Updated translations ]
+  * Asturian (ast.po) by Xuacu Saturio
+  * Croatian (hr.po) by gogogogi
+  * Bulgarian (bg.po)
+  * Irish (ga.po)
+  * Kannada (kn.po)
+  * Nepali (ne.po)
+  * Tibetan (bo.po)
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 15 Aug 2019 19:43:48 +0200
 
 partman-lvm (130) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -22,6 +139,7 @@ partman-lvm (129) unstable; urgency=medium
  -- Steve McIntyre <93sam@debian.org>  Sat, 09 Mar 2019 15:11:46 +0000
 
 partman-lvm (128) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -41,6 +159,7 @@ partman-lvm (127) unstable; urgency=medium
  -- Steve McIntyre <93sam@debian.org>  Wed, 13 Feb 2019 17:46:39 +0000
 
 partman-lvm (126) unstable; urgency=medium
+
   * Team upload
 
   * Remove trailing whitespace from control file, to fix lintian tag.
@@ -52,6 +171,7 @@ partman-lvm (126) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 Feb 2019 12:19:53 +0100
 
 partman-lvm (125) unstable; urgency=medium
+
   * Team upload
 
   [ Hideki Yamane ]

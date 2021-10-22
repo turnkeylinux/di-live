@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
+# Copyright (c) 2019-2021 TurnKey GNU/Linux <admin@turnkeylinux.org>
 
 import os
 import signal
 import shutil
 
-from common import dilive_system, preset_debconf
+from common import is_efi, dilive_system, preset_debconf
 
 
 def kill_server(pidfile):
@@ -46,9 +47,16 @@ def main():
                  'partman/exception_handler',
                  'partman/exception_handler_note']
 
-    preseeds = [('partman-auto-lvm/new_vg_name', 'turnkey'),
-                ('partman-auto-lvm/guided_size', '90%'),
-                ('partman-auto/choose_recipe', 'atomic')]
+    if is_efi:
+        preseeds = [('partman-partitioning/choose_label', 'gpt'),
+                    ('partman-partitioning/default_label', 'gpt'),
+                    ('partman-efi/non_efi_system', 'true')]
+    else:
+        preseeds = []
+
+    preseeds.extend([('partman-auto-lvm/new_vg_name', 'turnkey'),
+                     ('partman-auto-lvm/guided_size', '90%'),
+                     ('partman-auto/choose_recipe', 'atomic')])
 
     # hack: if not seen the default value will be max size
     seen = [('partman-auto-lvm/guided_size', True)]

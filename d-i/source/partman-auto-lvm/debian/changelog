@@ -1,3 +1,102 @@
+partman-auto-lvm (85) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+  * Japanese (ja.po) by YOSHINO Yoshihito
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 30 May 2021 23:23:56 +0200
+
+partman-auto-lvm (84) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Czech (cs.po)
+  * Portuguese (pt.po)
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 20 Mar 2021 22:46:26 +0100
+
+partman-auto-lvm (83) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by Vangelis Skarmoutsos
+  * Hindi (hi.po) by KushagraKarira
+  * Indonesian (id.po) by Andika Triwidada
+  * Tamil (ta.po) by Vasudevan Tirumurti
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 19 Feb 2021 19:48:03 +0100
+
+partman-auto-lvm (82) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Bulgarian (bg.po) by Damyan Ivanov
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 18:50:51 +0100
+
+partman-auto-lvm (81) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Polish (pl.po) by Bartosz Feński
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 21 Sep 2020 21:55:22 +0200
+
+partman-auto-lvm (80) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Korean (ko.po) by Changwoo Ryu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 21:36:34 +0200
+
+partman-auto-lvm (79) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Hebrew (he.po) by Yaron Shahrabani
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 31 Jan 2020 23:22:46 +0100
+
+partman-auto-lvm (78) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Fix missing package name in 'Project-Id-Version' header of template.pot
+    file, to allow correct declaration in po|pot files.
+
+  [ Updated translations ]
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 20 Dec 2019 17:36:43 +0100
+
+partman-auto-lvm (77) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by gogogogi
+  * Tajik (tg.po) by Victor Ibragimov
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 04 Aug 2019 12:00:22 +0200
+
 partman-auto-lvm (76) unstable; urgency=medium
 
   * Team upload

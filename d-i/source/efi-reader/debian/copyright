@@ -1,0 +1,7 @@
+This module reads default configuration from EFI for the Debian GNU/Linux installer.
+
+Author(s): Alastair McKinstry <mckinstry@debian.org>
+
+Copyright (c) 2003  Alastair McKinstry <mckinstry@debian.org>
+
+The copyright of this package is GPL, version 2 or later.

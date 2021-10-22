@@ -1,12 +1,12 @@
 subarch generic
 cpuinfo highbank.cpuinfo
-majors 3.10
+majors 5.7
 flavour armmp
-kernel-3.10 \
+kernel-5.7 \
   linux-image-armmp
 usable \
   linux-image-armmp \
-  linux-image-3.10-3-armmp
+  linux-image-5.7.0-1-armmp
 unusable \
   linux-image-armmp-lpae \
   linux-image-netwinder \
@@ -16,4 +16,4 @@ unusable \
   linux-image-kirkwood \
   linux-image-mx5 \
   linux-image-vexpress \
-  linux-image-3.10-3-armmp-dbg
+  linux-image-5.7.0-1-armmp-dbg

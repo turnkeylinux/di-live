@@ -887,3 +887,14 @@ EOT
 cleanup () {
 	rm -f "$KERNEL_LIST" "$KERNEL_LIST.unfiltered"
 }
+
+is_ports_architecture() {
+	case "$1" in
+		alpha|hppa|hurd-i386|ia64|kfreebsd-amd64|kfreebsd-i386|m68k|powerpc|ppc64|riscv64|sh4|sparc64|x32)
+			return 0
+			;;
+		*)
+			return 1
+			;;
+	esac
+}

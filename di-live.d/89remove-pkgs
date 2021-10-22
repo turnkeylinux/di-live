@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-# Copyright (c) 2019 TurnKey GNU/Linux <admin@turnkeylinux.org>
+# Copyright (c) 2019-2021 TurnKey GNU/Linux <admin@turnkeylinux.org>
 # all rights reserved
 
 import sys
 
-from common import Chroot, DiliveDebconf, PIPE, target_mounted
+import chroot
+
+from common import DiliveDebconf, target_mounted
 
 pkgs_to_clean = ['di-live', 'live-boot', 'live-tools',
                  'live-boot-initramfs-tools']
@@ -12,17 +14,15 @@ pkgs_to_clean = ['di-live', 'live-boot', 'live-tools',
 
 def clean_target_pkgs(*pkgs, path='/target'):
     """Clean up unrequired pkgs from installed system"""
-    chroot = Chroot(path)
-    chroot.system(['apt-get', 'purge', '--autoremove', '-y', *pkgs], stdout=PIPE)
-    chroot.exit()
+    with chroot.mount(path, mnt_profile=chroot.MNT_FULL) as mnt:
+        run = mnt.run(['apt-get', 'purge', '--autoremove', '-y', *pkgs])
 
 
 def main():
     if not target_mounted('/target'):
         sys.exit(10)  # return to menu
     db = DiliveDebconf(title='Remove live packages')
-    db.progress_init(2, description=
-                     'Removing live packages from installed system')
+    db.progress_init(2, description='Removing live packages from install')
     db.progress_step(1)
     clean_target_pkgs(*pkgs_to_clean, path='/target')
     db.progress_step(2)

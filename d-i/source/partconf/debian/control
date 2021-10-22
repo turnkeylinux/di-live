@@ -3,14 +3,14 @@ Section: debian-installer
 Priority: standard
 Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Colin Watson <cjwatson@debian.org>
-Build-Depends: debhelper (>= 9), libparted-dev (>= 2.2), libdebian-installer4-dev (>= 0.41)
+Build-Depends: debhelper-compat (= 12), libparted-dev (>= 2.2), libdebian-installer4-dev (>= 0.41)
 Vcs-Browser: https://salsa.debian.org/installer-team/partconf
 Vcs-Git: https://salsa.debian.org/installer-team/partconf.git
 
 Package: partconf-find-partitions
 Architecture: any
 Priority: optional
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Package-Type: udeb
 Description: debian-installer utility for finding partitions
  Helper program for finding partitions and detecting their size and
@@ -19,7 +19,7 @@ Description: debian-installer utility for finding partitions
 Package: partconf-mkfstab
 Architecture: any
 Priority: optional
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Package-Type: udeb
 Description: debian-installer utility for creating fstab file
  Helper program for creating fstab files in the new installed Debian

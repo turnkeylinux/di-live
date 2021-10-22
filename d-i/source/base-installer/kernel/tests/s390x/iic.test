@@ -1,8 +1,8 @@
 machine s390x
 cpuinfo iic.cpuinfo
 flavour s390x
-majors 2.6
-kernel-2.6 \
+majors 5.7
+kernel-5.7 \
   linux-image-s390x
 usable \
   linux-image-s390x

@@ -5,7 +5,7 @@ README.wget404 -- adding a return code of 4 for 404 errors to wget
 This was originally inspired by a patch submitted by Alex Owen in bug #422088
 
 As mentioned by Joey, the fragile bit of a script like this is due to
-it's dependence on wget's output not changing.  That being the case,
+its dependence on wget's output not changing.  That being the case,
 I've made the search string quite long so that it's very unlikely to
 match something that's not a 404 error, and also ensured that if the
 output does change, the sed will fail safe by returning 1 (i.e. general
@@ -53,7 +53,7 @@ might as well see the one that's being documented as well ;-)
                         echo 1
                         wget "$@" 2>&1 >&3 && echo %OK%
                         echo %EOF%
-                        } | ( sed -ne '1{h;d};/'"$file_not_found_pattern"'/{p;s/.*/4/;h;d};/^%OK%$/{s/.*/0/;h;d};$!p;$x;$w /dev/fd/4' >&2 ) 4>&1
+                        } | ( sed -ne '1{h;d};/'"$file_not_found_pattern"'/{p;s/.*/4/;h;d};/^%OK%$/{s/.*/0/;h;d};$!p;$x;$w /proc/self/fd/4' >&2 ) 4>&1
                 ) 3>&1
                 return $RETVAL
         }
@@ -84,13 +84,13 @@ It manages this by doing the following:
   $x     -- when we get to the last line (provided by the echo %EOF%) swap the pattern
             with the hold space -- so now we have our return code in the pattern space
 
-  $w /dev/fd/4 -- write the result to file handle 4
+  $w /proc/self/fd/4 -- write the result to file handle 4
 
 The rest of this is just making sure that the standard error, and standard
 out pops out of the function as if it were just wget, while allowing us
 to do things with the results in between.
 
-So, we call wget and put it's STDERR on STDOUT, and it's STDOUT on file
+So, we call wget and put its STDERR on STDOUT, and its STDOUT on file
 handle 3
 
    2>&1 >&3
