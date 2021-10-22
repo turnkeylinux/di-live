@@ -23,7 +23,7 @@ def main():
 
     preset_debconf(preseeds=preseeds)
 
-    with chroot.mount('/target') as mnt:
+    with chroot.mount('/target', mnt_profile=chroot.MNT_FULL) as mnt:
         dilive_system(['/usr/share/grub-installer/grub-installer', '/target'])
 
 
