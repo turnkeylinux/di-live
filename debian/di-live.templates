@@ -33,8 +33,8 @@ Description: Removing unrequired packages from installed system
 
 Template: di-live/finalize_install
 Type: select
-Choices: Eject Live medium, Reboot system
-Default: Eject Live medium
+Choices: Reboot system
+Default: Reboot system
 Description: Select option
  Installation is complete.
  .
@@ -45,8 +45,8 @@ Description: Select option
 
 Template: di-live/finalize_live
 Type: select
-Choices: Eject Live medium, Reboot system, Exit installer
-Default: Eject Live medium
+Choices: Reboot system, Exit installer
+Default: Reboot system
 Description: Select option
  Installation is complete.
  .
