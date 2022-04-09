@@ -104,10 +104,13 @@ def main():
     finalize = DiliveFinish()
 
     while True:
+        # Only 'exit' (when running from live OS) should be offered, but
+        # d-i/debconf are not my strong suit and I don't want to delay v17.0
+        # any longer...
         response = finalize.ask_eject_reboot()
-        if response == 'Eject Live medium':
+        if response == 'Eject Live medium':  # this will never match
             finalize.eject()
-        elif response == 'Reboot system':
+        elif response == 'Reboot system' or response == 'Eject and Reboot':
             finalize.reboot()
         elif response == 'Exit installer':
             exit()
