@@ -33,15 +33,12 @@ Description: Removing unrequired packages from installed system
 
 Template: di-live/finalize_install
 Type: select
-Choices: Reboot system
+Choices: Eject and Reboot, Reboot system
 Default: Reboot system
-Description: Select option
+Description: Enter to reboot
  Installation is complete.
  .
- Select Eject to eject the live medium or Reboot to reboot the system.
- .
- Please note that rebooting without ejecting, will likely result in rerunning
- the installer. Eject can be retried multiple times if desired.
+ The system needs to reboot now. Please be sure to remove the CD/USB when prompted.
 
 Template: di-live/finalize_live
 Type: select
