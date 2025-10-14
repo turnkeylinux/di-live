@@ -14,7 +14,8 @@ packages = (
     "live-installer",
     "partconf",
     "partman-auto",
-#    "partman-auto-loop",
+    # this was in original tkl di-live source, but not in Debina?
+    # "partman-auto-loop",
     "partman-auto-lvm",
     "partman-base",
     "partman-basicfilesystems",
@@ -39,7 +40,7 @@ def get_version(package: str, suite: str = "stable") -> str:
             package,
             "--source-and-binary",
             "--architecture=amd64,all",
-            f"--suite={suite}"
+            f"--suite={suite}",
         ],
         capture_output=True,
         text=True,
