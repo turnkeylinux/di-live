@@ -6,12 +6,12 @@ import sys
 from common import TargetMounts, dilive_system, preset_debconf, target_mounted
 
 
-def main():
+def main() -> None:
     if not target_mounted("/target"):
         sys.exit(10)  # return to menu
 
     # mount bind dev, proc & sys on target otherwise grub-installer will fail
-    targetmounts = TargetMounts("/target")
+    _targetmounts = TargetMounts("/target")
 
     preseeds = [
         ("grub-installer/only_debian", True),

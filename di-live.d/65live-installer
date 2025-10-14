@@ -14,7 +14,7 @@ sys_paths = {
 }
 
 
-def _chkdirs(path="/target"):
+def _chkdirs(path: str = "/target") -> None:
     """Check that /target dir is mounted; then check that important sys dirs
     (e.g. dev, proc, etc) exist - if not create them, with correct
     permissions."""
@@ -25,7 +25,7 @@ def _chkdirs(path="/target"):
                 os.mkdir(directory, permissions)
 
 
-def main():
+def main() -> None:
     _chkdirs("/target")
     dilive_system(["/lib/live-installer/live-installer"])
 

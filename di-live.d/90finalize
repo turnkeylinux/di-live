@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
-from pathlib import Path
+from os.path import join, realpath
 
 from common import PIPE, DiliveDebconf, system
 
 
-def deep_umount(target):
+def deep_umount(target: str) -> None:
     system(["swapoff", "-a"])
     paths = []
     with open("/proc/mounts") as fob:
@@ -19,7 +19,7 @@ def deep_umount(target):
     for path in paths:
         try:
             system(["umount", "-f", path])
-        except:
+        except Exception:
             pass
 
 
@@ -27,21 +27,21 @@ class DiliveFinish:
     """Singleton class that contains all the methods and values for a clean
     finish of di-live"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         deep_umount("/target")
         self.db = DiliveDebconf(title="Finalize Install")
         self.is_install = self._is_install()
         self.live_dev = self._find_live_src()
         self.cached = False
 
-    def _is_install(self):
+    def _is_install(self) -> bool:
         """Check if running from "Install" ISO boot option"""
         with open("/proc/cmdline") as fob:
             if "di-live" in fob.read():
                 return True
         return False
 
-    def _find_live_src(self):
+    def _find_live_src(self) -> str:
         """Return the device (i.e. the XXX in /dev/XXX) which live-medium is
         running on, e.g. sr0"""
         with open("/proc/mounts") as fob:
@@ -50,16 +50,17 @@ class DiliveFinish:
                     return mount.split()[0][5:]
         return ""
 
-    def _is_usb(self):
+    @property
+    def _is_usb(self) -> bool:
         """Check to see if the live medium device is a USB (eject will fail on
         a USB)"""
-        device = str(Path("/sys/block/" + self.live_dev).resolve())
+        device = str(realpath(join("/sys/block", self.live_dev)))
         if "usb" in device:
             return True
         else:
             return False
 
-    def _get_template(self):
+    def _get_template(self) -> str:
         """Decide which template to use when giving user options (only give
         option to 'Exit' if running live and eject hasn't previously been
         selected)."""
@@ -68,7 +69,7 @@ class DiliveFinish:
         else:  # assume running live
             return "di-live/finalize_live"
 
-    def cache(self):
+    def cache(self) -> None:
         """Cache files & remount '/' read-only - show debconf progressbar"""
         self.db.progress_init(
             2, description="Caching files and remounting '/' read-only"
@@ -78,7 +79,7 @@ class DiliveFinish:
         self.db.progress_step(2)
         self.is_install = True
 
-    def eject(self):
+    def eject(self) -> None:
         """Cache files, remount '/' read-only and ask user to eject live
         medium; wait for OK."""
         self.cache()
@@ -90,17 +91,17 @@ class DiliveFinish:
             )
         self.db.get_input("di-live/eject")
 
-    def reboot(self):
+    def reboot(self) -> None:
         system(["/usr/bin/systemctl", "reboot"], write_log=False)
         exit()
 
-    def ask_eject_reboot(self):
+    def ask_eject_reboot(self) -> str:
         """Ask user (via debconf) if they wish to eject or reboot (or exit if
         running live)"""
         return self.db.get_input(self._get_template())
 
 
-def main():
+def main() -> None:
     finalize = DiliveFinish()
 
     while True:

@@ -8,11 +8,11 @@ import signal
 from common import dilive_system, preset_debconf
 
 
-def kill_server(pidfile):
+def kill_server(pidfile: str) -> None:
     if os.path.exists(pidfile):
         try:
-            pid = open(pidfile).readline().strip()
-            pid = int(pid)
+            with open(pidfile) as fob:
+                pid = int(fob.readline().strip())
             os.kill(pid, signal.SIGTERM)
         except Exception:
             pass
@@ -23,7 +23,7 @@ def kill_server(pidfile):
             pass
 
 
-def main():
+def main() -> None:
     templates = [
         "partman-auto/init_automatically_partition",
         "partman-auto/automatically_partition",

@@ -21,14 +21,15 @@ import getopt
 import os
 import re
 import sys
-from os.path import *
+from collections.abc import Iterator
+from os.path import basename, exists, join
 
 import debconf
 
 LOGFILE = "/var/log/di-live.log"
 
 
-def log(s):
+def log(s: str) -> None:
     with open(LOGFILE, "a") as fob:
         fob.write(s + "\n")
 
@@ -40,17 +41,17 @@ class Error(Exception):
 class Debian_Priority:
     """class for controlling DEBIAN_PRIORITY"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.original = os.environ.get("DEBIAN_PRIORITY")
         self.current = self.original
 
-    def __del__(self):
+    def __del__(self) -> None:
         self.revert()
 
-    def get(self):
+    def get(self) -> str | None:
         return self.current
 
-    def set(self, priority):
+    def set(self, priority: str | None) -> None:
         if priority in (None, self.current):
             return
 
@@ -61,11 +62,11 @@ class Debian_Priority:
         os.environ["DEBIAN_PRIORITY"] = priority
         self.current = priority
 
-    def revert(self):
+    def revert(self) -> None:
         """revert priority back to original priority"""
         self.set(self.original)
 
-    def decrease(self):
+    def decrease(self) -> None:
         """decrease priority to medium (or low if original was low)"""
         if self.original == "low":
             self.set("low")
@@ -76,7 +77,13 @@ class Debian_Priority:
 class Menu:
     """class for controlling a debconf menu with choices"""
 
-    def __init__(self, template, title=None, priority="high", subst="CHOICES"):
+    def __init__(
+        self,
+        template: str,
+        title: str | None = None,
+        priority: str = "high",
+        subst: str = "CHOICES",
+    ) -> None:
         debconf.runFrontEnd()
         self.template = template
         self.db = debconf.Debconf(title)
@@ -85,20 +92,20 @@ class Menu:
         self.priority = priority
         self.subst = subst
 
-    def __del__(self):
+    def __del__(self) -> None:
         self.db.stop()
 
-    def display(self, names):
+    def display(self, names: list[str]) -> None:
         titles = []
         self.choices = {}
         for name in names:
             title = name.capitalize()
             try:
-                template = "debian-installer/%s/title" % name
+                template = f"debian-installer/{name}/title"
                 title = self.db.metaget(template, "description")
             except debconf.DebconfError as e:
                 if not e.args[0] == 10:
-                    raise Error("DebconfError", e)
+                    raise Error("DebconfError", e) from e
 
             titles.append(title)
             self.choices[title] = name
@@ -110,9 +117,9 @@ class Menu:
             self.db.go()
         except debconf.DebconfError as e:
             if not e.args[0] == 30 and not e.args[1] == "backup":
-                raise Error("debconf error", e)
+                raise Error("debconf error", e) from e
 
-    def get_choice(self):
+    def get_choice(self) -> str:
         ret = self.db.get(self.template)
         if ret in self.choices:
             return self.choices[ret]
@@ -122,12 +129,12 @@ class Menu:
 class Component:
     """class for managing a component"""
 
-    def __init__(self, path):
+    def __init__(self, path: str) -> None:
         self.path = path
         self.name = re.sub(r"^[\d]*", "", basename(path))
-        self.exitcode = None
+        self.exitcode: int | None = None
 
-    def execute(self):
+    def execute(self) -> bool:
         error = os.system(self.path)
         if error:
             self.exitcode = os.WEXITSTATUS(error)
@@ -140,7 +147,7 @@ class Component:
 class Components(dict):
     """class for holding components"""
 
-    def __init__(self, dirpath):
+    def __init__(self, dirpath: str) -> None:
         if not exists(dirpath):
             raise Error("non existent components path", dirpath)
 
@@ -149,7 +156,7 @@ class Components(dict):
             if self._is_executable(path):
                 self.add(path)
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator[str]:
         """return component in alpha-numeric ordering according to name"""
         keys = list(self.keys())
         keys.sort()
@@ -157,32 +164,37 @@ class Components(dict):
             yield self[key]
 
     @staticmethod
-    def _is_executable(path):
+    def _is_executable(path: str) -> bool:
         if os.stat(path).st_mode & 0o111 == 0:
             return False
         return True
 
-    def add(self, path):
+    def add(self, path: str) -> None:
         if not self._is_executable(path):
             raise Error("component not executable", path)
 
         name = basename(path)
         self[name] = Component(path)
 
-    def remove(self, name):
+    def remove(self, name: str) -> None:
         del self[name]
 
 
 class Components_Menu:
     """class to mimic d-i main-menu"""
 
-    def __init__(self, components_dir, menu_template, menu_title=None):
+    def __init__(
+        self,
+        components_dir: str,
+        menu_template: str,
+        menu_title: str | None = None,
+    ) -> None:
         self.components = Components(components_dir)
         self.menu = Menu(menu_template, menu_title)
 
         self.priority = Debian_Priority()
 
-    def _get_next_component(self):
+    def _get_next_component(self) -> str | None:
         if self.priority.get() in ("low", "medium"):
             self.menu.display([c.name for c in self.components])
             choice = self.menu.get_choice()
@@ -197,7 +209,7 @@ class Components_Menu:
 
         return None
 
-    def run(self):
+    def run(self) -> None:
         self.last = ""
         while 1:
             component = self._get_next_component()
@@ -212,15 +224,15 @@ class Components_Menu:
                 self.priority.decrease()
 
 
-def usage(s=None):
-    if s:
-        print("Error:", s, file=sys.stderr)
-    print("Syntax: %s [options]" % sys.argv[0], file=sys.stderr)
+def usage(msg: getopt.GetoptError | None = None) -> NoReturn:
+    if msg:
+        print(f"Error: {msg}", file=sys.stderr)
+    print(f"Syntax: {sys.argv[0]} [options]", file=sys.stderr)
     print(__doc__, file=sys.stderr)
     sys.exit(1)
 
 
-def main():
+def main() -> None:
     try:
         opts, args = getopt.gnu_getopt(sys.argv[1:], "hd", ["help", "debug"])
     except getopt.GetoptError as e:

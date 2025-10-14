@@ -14,7 +14,7 @@ pkgs_to_clean = [
 ]
 
 
-def clean_target_pkgs(*pkgs, path="/target"):
+def clean_target_pkgs(*pkgs: str, path: str = "/target") -> None:
     """Clean up unrequired pkgs from installed system"""
     chroot = Chroot(path)
     chroot.system(
@@ -23,7 +23,7 @@ def clean_target_pkgs(*pkgs, path="/target"):
     chroot.exit()
 
 
-def main():
+def main() -> None:
     if not target_mounted("/target"):
         sys.exit(10)  # return to menu
     db = DiliveDebconf(title="Remove live packages")
