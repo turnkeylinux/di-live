@@ -2,3 +2,4 @@
 *.pyo
 *.tar.bz2
 tags
+tmp
