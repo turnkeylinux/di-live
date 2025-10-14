@@ -44,6 +44,8 @@ override_dh_auto_install:
 		cp -pL $$file debian/di-utils-terminfo/$$file; \
 		chmod 644 debian/di-utils-terminfo/$$file; \
 	done
+	# added by Jeremy D in di-live
+	mkdir -p debian/di-utils-terminfo/lib
 	tic vt102-di -o debian/di-utils-terminfo/lib/terminfo
 
 	mkdir -p debian/di-utils/bin
