@@ -35,7 +35,7 @@ d-i/source/grub-installer/otheros.sh usr/share/grub-installer
 d-i/source/hw-detect/archdetect bin
 d-i/source/hw-detect/debian/hw-detect/bin/hw-detect bin
 d-i/source/hw-detect/debian/hw-detect/bin/sysfs-update-devnames bin
-d-i/source/live-installer/live-installer lib/live-installer
+d-i/source/live-installer/debian/live-installer.postinst lib/live-installer
 d-i/source/live-installer/src/print-inodes bin
 d-i/source/partconf/debian/partconf-*/* .
 d-i/source/partman-*/debian/partman-*/* .
