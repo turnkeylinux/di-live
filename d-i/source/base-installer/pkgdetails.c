@@ -54,7 +54,7 @@ static void outputdeps(char *deps) {
         if (!*pch) break;
 
         while (*pch && *pch != '(' && *pch != '|' && *pch != ','
-               && !isspace(*pch))
+               && *pch != ':' && !isspace(*pch))
         {
             fputc(*pch++, stdout);
         }

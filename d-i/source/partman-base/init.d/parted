@@ -29,16 +29,6 @@ part_of_mdraid () {
 	return 1
 }
 
-part_of_sataraid () {
-	local raiddev
-	for raiddev in $(dmraid -r -c); do
-		if [ "$(readlink -f $raiddev)" = $1 ]; then
-			return 0
-		fi
-	done
-	return 1
-}
-
 part_of_multipath() {
 	local mpdev
 	type multipath >/dev/null 2>&1 || return 1
@@ -77,7 +67,7 @@ if [ ! -f /var/run/parted_server.pid ]; then
 
 	IFS="$NL"
 	for partdev in $(parted_devices |
-		sed 's,^/dev/\(ide\|scsi\|[hs]d\|md/\?[0-9]\+\),!/dev/\1,' |
+		sed 's,^/dev/\(ide\|scsi\|[hsw]d\|md/\?[0-9]\+\),!/dev/\1,' |
 		sort |
 		sed 's,^!,,' ); do
 
@@ -109,14 +99,6 @@ if [ ! -f /var/run/parted_server.pid ]; then
 			continue
 		fi
 
-		# Skip devices that are part of a dmraid device
-		if type dmraid >/dev/null 2>&1 && \
-		   dmraid -r -c >/dev/null 2>&1; then
-			if part_of_sataraid $device; then
-				continue
-			fi
-		fi
-
 		# Skip devices that are part of a multipathed device
 		if part_of_multipath $device; then
 			continue
@@ -133,14 +115,6 @@ if [ ! -f /var/run/parted_server.pid ]; then
 		printf "%s" "$size" >$dev/size
 		printf "%s" "$model" >$dev/model
 		printf "%s" "$label" >$dev/label
-
-		# Set the sataraid flag for dmraid arrays.
-		if type dmraid >/dev/null 2>&1 && \
-		   dmraid -s -c >/dev/null 2>&1; then
-			if dmraid -sa -c | grep -q $(basename $device); then
-				>$dev/sataraid
-			fi
-		fi
 
 		cd $dev
 		open_dialog OPEN "$(cat $dev/device)"

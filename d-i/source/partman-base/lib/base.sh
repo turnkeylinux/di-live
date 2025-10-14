@@ -280,6 +280,71 @@ longint_le () {
 	fi
 }
 
+expr01() { # ignore the '1' return code
+	expr "$@" || [ $? = 1 ]
+}
+
+exp1024() { # compute $((1024**$1)) as dash does not support '**'
+	case "$1" in
+	0) echo 1 ;;
+	1) echo 1024 ;;
+	2) echo 1048576 ;;
+	3) echo 1073741824 ;;
+	esac
+}
+
+longmult() {
+	local a="$1" # no size limit
+	local b="$2" # <= 2^30
+
+	local carry=0
+	local endres=""
+	local partres
+	local enda
+
+	while [ "${#a}" -gt 6 ]; do
+		enda="$(expr01 substr "$a" $((${#a} - 5)) ${#a})"
+		a="${a%$enda}"
+		partres="$(expr01 "$enda" '*' "$b" + "$carry")"
+		if [ "${#partres}" -gt 6 ]; then
+			carry="$(expr01 substr "$partres" 1 $((${#partres} - 6)))"
+			endres="${partres#$carry}$endres"
+		else
+			partres="000000$partres"
+			carry=0
+			endres="$(expr01 substr "$partres" $((${#partres} - 5)) 6)$endres"
+		fi
+	done
+	partres="$(expr01 "$a" '*' "$b" + "$carry")"
+	echo "$partres$endres"
+}
+
+longadd() {
+	local a="$1" # no size limit
+	local b="$2" # <= 2^60
+
+	local carry="$b"
+	local endres=""
+	local partres
+	local enda
+
+	while [ "${#a}" -gt 15 ]; do
+		enda="$(expr01 substr "$a" $((${#a} - 14)) ${#a})"
+		a="${a%$enda}"
+		partres="$(expr01 "$enda" + "$carry")"
+		if [ "${#partres}" -gt 15 ]; then
+			carry="$(expr01 substr "$partres" 1 $((${#partres} - 15)))"
+			endres="${partres#$carry}$endres"
+		else
+			partres="000000000000000$partres"
+			echo "${a}$(expr01 substr "$partres" $((${#partres} - 14)) ${#partres})$endres"
+			return
+		fi
+	done
+	partres="$(expr01 "$a" + "$carry")"
+	echo "$partres$endres"
+}
+
 longint2human () {
 	local longint suffix bytes int frac deci
 	# fallback value for $deci:
@@ -313,19 +378,79 @@ longint2human () {
 	printf "%i%s%i %s\n" $int $deci $frac $suffix
 }
 
+human2longint_binary_unit() {
+	local int="$1"
+	local frac="$2"
+	local powbase="$3" # 1 <= powbase <= 6
+	# must return "$int.$frac * 1024^$powbase"
+	# contraints :
+	# - no floating point operation
+	# - no computed values above 2^63-1
+	# - expr has no exponentiation
+	# - bash arithmetics consider that 0-leading numbers are octal
+
+	# max of useful decimals when converting: powbase*10
+	# next ones, when multipled by 1024^powbase, would be <1
+	# so no need to take into account to many decimals
+	frac="$(expr01 substr "$frac" 1 $((powbase * 10 )))"
+	local longint="${int}${frac}"
+	longint="$(echo "$longint" | sed 's/^0*//')" # remove leading 0
+	[ "$longint" ] || {
+		echo 0
+		return
+	}
+	while [ "$powbase" -gt 3 ]; do
+		longint="$(longmult "$longint" "1073741824")"
+		powbase=$((powbase - 3))
+	done
+	longint="$(longmult "$longint" "$(exp1024 $powbase)")"
+
+	if [ -z "$frac" ]; then
+		# no fractional part, just return the result
+		echo "$longint"
+		return
+	fi
+	# non-null fractional part.
+	# longint must be divided by 10^length(frac)
+	local posfrac="$(( ${#longint} - ${#frac} ))"
+	if [ $posfrac -le 0 ]; then
+		echo 0
+		return
+	fi
+	local res="$(expr01 substr "$longint" 1 $posfrac)"
+	# roundup if the next decimal is >= 5
+	case "$(expr01 substr "$longint" $((posfrac + 1)) 1)" in
+	[5-9]*) # roundup
+		longadd "$res" 1
+		;;
+	*)
+		echo "$res"
+		;;
+	esac
+}
+
 human2longint () {
-	local human orighuman gotb suffix int frac longint
-	set -- $*; human="$1$2$3$4$5" # without the spaces
+	local human orighuman gotb suffix int frac
+	local binary powbase dfrac
+	human="$(echo "$*" | tr -d ' ')" # without the spaces
 	orighuman="$human"
-	human=${human%b} #remove last b
-	human=${human%B} #remove last B
+	human=${human%[bB]} #remove last b or B
 	gotb=''
 	if [ "$human" != "$orighuman" ]; then
 		gotb=1
 	fi
+	binary=${human#${human%?}} # the last symbol of $human
+	case $binary in
+	i)
+		human=${human%$binary}
+		;;
+	*)
+		binary=''
+		;;
+	esac
 	suffix=${human#${human%?}} # the last symbol of $human
 	case $suffix in
-	k|K|m|M|g|G|t|T)
+	k|K|m|M|g|G|t|T|p|P|e|E)
 		human=${human%$suffix}
 		;;
 	*)
@@ -337,49 +462,45 @@ human2longint () {
 		;;
 	esac
 	int="${human%[.,]*}"
-	[ "$int" ] || int=0
 	frac=${human#$int}
-	frac="${frac#[.,]}0000" # to be sure there are at least 4 digits
-	frac=${frac%${frac#????}} # only the first 4 digits of $frac
-	longint=$(expr "$int" \* 10000 + "$frac")
+	int="$(echo "$int" | sed 's/^0*//')" # remove leading 0
+	[ "$int" ] || int=0
+	frac="${frac#[.,]}"
+	# to be sure there are at least 18 digits, the maximum possible precision for decimal units
+	dfrac="${frac}0000000000000000000"
 	case $suffix in
 	b|B)
-		longint=${longint%????}
-		[ "$longint" ] || longint=0
+		dfrac=
+		binary=''
+		powbase=
 		;;
-	k|K)
-		longint=${longint%?}
-		;;
-	m|M)
-		longint=${longint}00
-		;;
-	g|G)
-		longint=${longint}00000
-		;;
-	t|T)
-		longint=${longint}00000000
-		;;
-	*) # no suffix:
-		# bytes
-		#longint=${longint%????}
-		#[ "$longint" ] || longint=0
-		# megabytes
-		longint=${longint}00
-		;;
+	k|K)    powbase=1 ;;
+	m|M|'') powbase=2 ;; # without units, suppose MB
+	g|G)    powbase=3 ;;
+	t|T)    powbase=4 ;;
+	p|P)    powbase=5 ;;
+	e|E)    powbase=6 ;;
 	esac
-	echo $longint
+	[ "$powbase" ] && dfrac=$(expr01 substr "$dfrac" 1 $((powbase * 3))) || true
+	case "$binary" in
+	'')
+		echo "${int}${dfrac}"
+		;;
+	i)
+		human2longint_binary_unit "$int" "$frac" "$powbase"
+	esac
 }
 
 valid_human () {
 	local IFS patterns
 	patterns='[0-9][0-9]* *$
 [0-9][0-9]* *[bB] *$
-[0-9][0-9]* *[kKmMgGtT] *$
-[0-9][0-9]* *[kKmMgGtT][bB] *$
+[0-9][0-9]* *[kKmMgGtTpPeE] *$
+[0-9][0-9]* *[kKmMgGtTpPeE]i\?[bB] *$
 [0-9]*[.,][0-9]* *$
 [0-9]*[.,][0-9]* *[bB] *$
-[0-9]*[.,][0-9]* *[kKmMgGtT] *$
-[0-9]*[.,][0-9]* *[kKmMgGtT][bB] *$'
+[0-9]*[.,][0-9]* *[kKmMgGtTpPeE] *$
+[0-9]*[.,][0-9]* *[kKmMgGtTpPeE]i\?[bB] *$'
 	IFS="$NL"
 	for regex in $patterns; do
 		if expr "$1" : "$regex" >/dev/null; then return 0; fi
@@ -775,7 +896,7 @@ humandev () {
 		echo "$1"
 	    fi
 	    ;;
-	/dev/sd[a-z][0-9]*|/dev/sd[a-z][a-z][0-9]*)
+	/dev/sd[a-z][0-9]*|/dev/sd[a-z][a-z][0-9]*|/dev/wd[0-9]*|/dev/wd[a-z][0-9]*|/dev/wd[a-z][a-z][0-9]*)
 	    part="${1#/dev/}"
 	    disk="${part%%[0-9]*}"
 	    part="${part#$disk}"
@@ -875,32 +996,7 @@ humandev () {
 	/dev/mapper/*)
 	    type=$(dm_table "$1")
 
-	    # First check for Serial ATA RAID devices
-	    if type dmraid >/dev/null 2>&1 && \
-	       dmraid -s -c >/dev/null 2>&1; then
-		for frdisk in $(dmraid -s -c); do
-			device=${1#/dev/mapper/}
-			case "$1" in
-			    /dev/mapper/$frdisk)
-				type=sataraid
-				desc=$(dmraid -s -c -c "$device")
-				rtype=$(echo "$desc" | cut -d: -f4)
-				db_metaget partman/text/dmraid_volume description
-				printf "$RET" $device $rtype
-				;;
-			    /dev/mapper/$frdisk*)
-				type=sataraid
-				part=${device#$frdisk}
-				db_metaget partman/text/dmraid_part description
-				printf "$RET" $device $part
-				;;
-			esac
-		done
-	    fi
-
-	    if [ "$type" = sataraid ]; then
-		:
-	    elif [ "$type" = crypt ]; then
+	    if [ "$type" = crypt ]; then
 	        mapping=${1#/dev/mapper/}
 	        db_metaget partman/text/dmcrypt_volume description
 	        printf "$RET" $mapping

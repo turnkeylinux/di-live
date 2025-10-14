@@ -1,0 +1,160 @@
+#!/bin/sh
+
+# This script sets method "efi" for all fat16/fat32 partitions that
+# have the bootable flag set.
+
+ARCH="$(archdetect)"
+
+# Prod the kernel to load EFI stuff and mount the efivarfs fs if
+# needed
+modprobe efivarfs >/dev/null 2>&1 || true
+mount -t efivarfs none /sys/firmware/efi/efivars 2>&1 || true
+
+in_efi_mode() {
+    [ -d /sys/firmware/efi ]
+}
+
+if in_efi_mode; then
+	> /var/lib/partman/efi
+else
+	case $ARCH in
+	    i386/mac|amd64/mac)
+		# Intel Macs have an EFI partition, regardless of
+		# whether we're currently booted using BIOS
+		# compatibility or not (if we are, we won't be able to
+		# talk to EFI directly).
+		> /var/lib/partman/efi
+		;;
+	    *)
+		rm -f /var/lib/partman/efi
+		exit 0
+		;;
+	esac
+fi
+
+. /lib/partman/lib/base.sh
+
+gpt_efi_type=c12a7328-f81f-11d2-ba4b-00a0c93ec93b
+gpt_bios_boot_type=21686148-6449-6e6f-744e-656564454649
+msdos_efi_type=0xef
+
+NUM_ESP=0
+NUM_NOT_ESP=0
+
+for dev in /var/lib/partman/devices/*; do
+	[ -d "$dev" ] || continue
+	cd $dev
+
+	open_dialog GET_LABEL_TYPE
+	read_line label_type
+	close_dialog
+
+	if [ "$label_type" = msdos ]; then
+		DISK_BIOS_BOOT=yes
+	else
+		DISK_BIOS_BOOT=no
+	fi
+
+	NON_EFI_THIS_DISK=0
+	partitions=
+	open_dialog PARTITIONS
+	while { read_line num id size type fs path name; [ "$id" ]; }; do
+		# Build a list of partitions that:
+		# 1. Will *not* be bios-bootable (e.g. ESP)
+		# 2. Might be bios-bootable (~anything that's not
+		#    "free space"
+		if [ "$fs" = fat16 ]; then
+			partitions="$partitions $id"
+		elif [ "$fs" = fat32 ] && echo "$name" |
+                     grep -i "^EFI System Partition" >/dev/null; then
+			partitions="$partitions $id"
+		elif [ "$label_type" = msdos ] && \
+		     [ "$(blkid -o value -s PART_ENTRY_TYPE -p "$path" 2>/dev/null)" = "$msdos_efi_type" ]; then
+			partitions="$partitions $id"
+		elif [ "$label_type" = gpt ] && \
+		     [ "$(blkid -o value -s PART_ENTRY_TYPE -p "$path" 2>/dev/null)" = "$gpt_efi_type" ]; then
+			partitions="$partitions $id"
+		elif [ "$label_type" = gpt ] && \
+		     [ "$(blkid -o value -s PART_ENTRY_TYPE -p "$path" 2>/dev/null)" = "$gpt_bios_boot_type" ]; then
+			# We have a GPT disk with a "BIOS BOOT"
+			# partition included, so this disk might be
+			# set up for BIOS boot.
+			DISK_BIOS_BOOT=yes
+			log "Disk $dev contains a BIOS boot partition"
+			partitions="$partitions $id"
+		else
+			if [ "$fs" != "free" ]; then
+				log "Partition $path might be bios-bootable, checking further"
+				partitions="$partitions $id"
+			fi
+		fi
+	done
+	close_dialog
+
+	# Now look for more details on each of those partitions
+	for id in $partitions; do
+		efi=no
+
+		open_dialog GET_FLAGS $id
+		# cannot break here until we've hit close_dialog below
+		while { read_line flag; [ "$flag" ]; }; do
+			log "$dev $id has $flag flag"
+			if [ "$flag" = boot ] && [ "$label_type" = gpt ]; then
+				efi=yes
+			elif [ "$flag" = esp ]; then
+				efi=yes
+			fi
+		done
+		close_dialog
+
+		if [ "$efi" = yes ]; then
+			# An ESP is clearly not for BIOS use!
+			log "$dev $id is an ESP"
+			mkdir -p $id
+			echo efi >$id/method
+			NUM_ESP=$(($NUM_ESP + 1))
+		else
+			# BIOS may well work with anything else
+			# remaining
+			log "$dev $id is possibly bootable"
+			NON_EFI_THIS_DISK=$(($NON_EFI_THIS_DISK + 1))
+		fi
+	done
+
+	if [ "$DISK_BIOS_BOOT" = "yes" ]; then
+		log "Disk $dev is BIOS-bootable"
+		log "Disk $dev has $NON_EFI_THIS_DISK non-ESP partition(s)"
+		if [ $NON_EFI_THIS_DISK -gt 0 ]; then
+			NUM_NOT_ESP=$(($NUM_NOT_ESP + 1))
+		fi
+	fi
+
+done
+
+log "Found $NUM_ESP ESP(s), $NUM_NOT_ESP BIOS-bootable disk(s) total"
+
+if [ -f /var/lib/partman/uefi_check_done ]; then
+	log "Found flag file /var/lib/partman/uefi_check_done, not checking further"
+else
+	if in_efi_mode && [ $NUM_ESP = 0 ] && [ $NUM_NOT_ESP -gt 0 ]; then
+		case $ARCH in
+			i386/*|amd64/*)
+				db_input critical partman-efi/non_efi_system || true
+				db_go || exit 1
+				db_fset partman-efi/non_efi_system seen true
+				db_get partman-efi/non_efi_system
+				if [ "$RET" = false ]; then
+					log "User chose to ignore UEFI"
+					touch /var/lib/partman/ignore_uefi
+				else
+					log "User chose to continue in UEFI mode"
+				fi
+				;;
+		esac
+	fi
+	# We've got this far at least once without triggering the
+	# check. Flag that so that any further changes we make in this
+	# d-i session can't trigger a false-positive here.
+	touch /var/lib/partman/uefi_check_done
+	log "UEFI check done, wrote flag file /var/lib/partman/uefi_check_done"
+fi

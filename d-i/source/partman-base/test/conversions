@@ -38,9 +38,14 @@ test_eq "$(human2longint 2B)" 2
 test_eq "$(human2longint '3.9 b')" 3
 test_eq "$(human2longint '4294967296 B')" 4294967296
 test_eq "$(human2longint 2k)" 2000
+test_eq "$(human2longint 2ki)" 2048
+test_eq "$(human2longint 2.5 KiB)" 2560
 test_eq "$(human2longint '2 M')" 2000000
+test_eq "$(human2longint '2 MiB')" 2097152
 test_eq "$(human2longint 20000KB)" 20000000
 test_eq "$(human2longint '500.7 TB')" 500700000000000
+test_eq "$(human2longint '500.7 PB')" 500700000000000000
+test_eq "$(human2longint '12 EiB')" 13835058055282163712
 
 if [ "$failures" != 0 ]; then
 	exit 1

@@ -2,6 +2,19 @@
 set -e
 . /usr/share/debconf/confmodule
 
+log () {
+	logger -t install-firmware "$@"
+}
+
+# For those who don't want to load any firmware, even if available on
+# installation images (#1029848):
+db_get hw-detect/firmware-lookup
+firmware_lookup="$RET"
+if [ "$firmware_lookup" = "never" ]; then
+	log "firmware lookup disabled (=$firmware_lookup), exiting"
+	exit 0
+fi
+
 # copy any loose firmware files to /target (incl. subdirs)
 if [ -d /lib/firmware ]; then
 	for f in /lib/firmware/*; do
@@ -12,16 +25,54 @@ if [ -d /lib/firmware ]; then
 	done
 fi
 
-# enable non-free repository if any firmware / injected drivers are
-# detected.
-if [ -d /var/cache/firmware ]; then
-	for deb in /var/cache/firmware/*.deb; do
-		if [ -f "$deb" ]; then
-			need_nonfree=1
-		fi
-	done
-fi
+# queue firmware packages based on modalias info (#989863):
+for fw_dir in /firmware /cdrom/firmware; do
+	if [ -d "$fw_dir/dep11" ]; then
+		# Query only once:
+		udevadm info --export-db | sed -n 's/.* MODALIAS=\(.*\)/\1/p' > /tmp/modalias.cache
+		for patterns_file in "$fw_dir/dep11"/*.patterns; do
+			if log-output -t install-firmware grep -f "$patterns_file" /tmp/modalias.cache; then
+				package=$(basename "$patterns_file" .patterns)
+				component=$(cat "${patterns_file%%.patterns}.component")
+				log "detected the need for $package ($component) via modalias"
+				find $fw_dir -name "${package}_*.deb" | while read deb; do
+					mkdir -p /var/cache/firmware
+					cp "$deb" /var/cache/firmware
+					log "... added $deb to the firmware cache"
+					echo $component >> /var/cache/firmware/components
+					echo "$package $component modalias" >> /var/log/firmware-summary
+				done
+			fi
+		done
+		rm -f /tmp/modalias.cache
+	fi
+done
 
-if [ "$need_nonfree" ]; then
-	db_set apt-setup/non-free true
+# Check whether microcode packages are desirable, based on CPU vendor.
+# Only detect and queue installation: they aren't needed in the
+# installer context, and they cannot be deployed via `dpkg -i` by the
+# install-firmware hook due their dependencies; let the finish-install
+# hook handle them instead. Note the component hardcoding.
+printf "GenuineIntel intel-microcode\nAuthenticAMD amd64-microcode\n" | while read vendor pkg; do
+	if grep -qs "^vendor_id.*$vendor$" /proc/cpuinfo; then
+		log "queuing $pkg installation ($vendor)"
+		echo $pkg >> /tmp/microcode.list
+		mkdir -p /var/cache/firmware
+		echo non-free-firmware >> /var/cache/firmware/components
+		echo "$pkg non-free-firmware cpu" >> /var/log/firmware-summary
+	fi
+done
+
+# enable components based on firmware packages that were installed:
+if [ -d /var/cache/firmware ]; then
+	for component in $(sort -u /var/cache/firmware/components); do
+		# Pulling firmware packages from main is unlikely, but if that
+		# happens, we don't need to tweak apt-setup… and local packages
+		# can be added to installation images without archive support:
+		if [ "$component" = main ] || [ "$component" = local ]; then
+			continue
+		fi
+		log "pre-enabling $component component for apt-setup"
+		db_set "apt-setup/$component" true
+	done
 fi

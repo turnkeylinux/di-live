@@ -4,8 +4,39 @@
 
 . /usr/share/grub-installer/functions.sh
 
+mountvirtfs () {
+	fstype="$1"
+	path="$2"
+	if grep -q "[[:space:]]$fstype\$" /proc/filesystems && \
+	   ! grep -q "^[^ ]\+ \+$path " /proc/mounts; then
+		mkdir -p "$path" || \
+			die grub-installer/mounterr "Error creating $path"
+		mount -t "$fstype" "$fstype" "$path" || \
+			die grub-installer/mounterr "Error mounting $path"
+		EXTRA_PATHS="$EXTRA_PATHS $path"
+		trap "umount $EXTRA_PATHS" HUP INT QUIT KILL PIPE TERM EXIT
+	fi
+}
+
+
+
 db_progress START 0 2 grub-installer/progress/title
 db_progress INFO grub-installer/progress/step_bootdev
+
+# If we're installing grub-efi, it wants /sys mounted in the
+# target. Maybe /proc too, and definitely the efivars fs. Should be
+# harmless if we're not using it.
+mountvirtfs proc /target/proc
+mountvirtfs sysfs /target/sys
+modprobe efivarfs >/dev/null 2>&1 || true
+mountvirtfs efivarfs /target/sys/firmware/efi/efivars || true
+if [ -e /target/boot/efi ]; then
+    chroot /target mount /boot/efi || true
+    EXTRA_PATHS="$EXTRA_PATHS /target/boot/efi"
+fi
+if [ -n "$EXTRA_PATHS" ]; then
+    trap "umount $EXTRA_PATHS" HUP INT QUIT KILL PIPE TERM EXIT
+fi
 
 db_input critical grub-installer/bootdev
 if ! db_go; then

@@ -13,7 +13,21 @@ for dev in $DEVICES/*; do
 	open_dialog PARTITIONS
 	while { read_line num id size type fs path name; [ "$id" ]; }; do
 		[ "$fs" != free ] || continue
-		[ -f $id/method -a -f $id/acting_filesystem ] || continue
+		[ -f $id/method ] || continue
+		method=$(cat $id/method)
+
+		# First, check for an ESP, either FAT16 or FAT32
+		if [ "$method" = "efi" ] && [ -f $id/detected_filesystem ]; then
+			filesystem=$(cat $id/detected_filesystem)
+			case $filesystem in
+				fat16|fat32)
+					fat=yes
+				;;
+			esac
+		fi
+
+		# Next, check for filesystems we've created
+		[ -f $id/acting_filesystem ] || continue
 		filesystem=$(cat $id/acting_filesystem)
 		case $filesystem in
 		    linux-swap)

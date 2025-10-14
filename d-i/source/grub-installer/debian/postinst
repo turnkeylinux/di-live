@@ -1,5 +1,7 @@
 #! /bin/sh -e
 
+. /usr/share/debconf/confmodule
+
 log () {
 	logger -t grub-installer "$@"
 }
@@ -25,9 +27,15 @@ mountvirtfs () {
 	   ! grep -q "^[^ ]\+ \+$path " /proc/mounts; then
 		mkdir -p "$path" || \
 			die grub-installer/mounterr "Error creating $path"
-		mount -t "$fstype" "$fstype" "$path" || \
+
+		if mount -t "$fstype" "$fstype" "$path"; then
+			log "Success mounting $path"
+			trap "umount $path" HUP INT QUIT KILL PIPE TERM EXIT
+		elif [ "$fstype" = "efivarfs" ]; then
+			error "Error mounting $path (non-fatal)"
+		else
 			die grub-installer/mounterr "Error mounting $path"
-		trap "umount $path" HUP INT QUIT KILL PIPE TERM EXIT
+		fi
 	fi
 }
 
@@ -35,5 +43,6 @@ mountvirtfs () {
 # target. Maybe /proc too?
 mountvirtfs proc /target/proc
 mountvirtfs sysfs /target/sys
+mountvirtfs efivarfs /target/sys/firmware/efi/efivars
 
 grub-installer /target

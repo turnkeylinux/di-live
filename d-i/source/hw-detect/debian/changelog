@@ -1,4 +1,383 @@
-hw-detect (1.138) UNRELEASED; urgency=medium
+hw-detect (1.159) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Norwegian Nynorsk (nn.po) by Yngve Spjeld-Landro
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 23 May 2023 22:22:00 +0200
+
+hw-detect (1.158) unstable; urgency=medium
+
+  [ Pascal Hambourg ]
+  * Restore support for firmware license prompts (Closes: #1033921).
+
+  [ Cyril Brulebois ]
+  * Pick Pascal's minimal patch (duplicating standard input) to implement
+    the aforementioned fix for Bookworm, and postpone reworking the loop
+    until the next development cycle begins (See: #1035356, #1029843).
+
+ -- Cyril Brulebois <kibi@debian.org>  Thu, 11 May 2023 23:14:28 +0200
+
+hw-detect (1.157) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Norwegian Nynorsk (nn.po) by Kjetil Sørlund
+  * Polish (pl.po) by Matthaiks
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 09 May 2023 21:59:55 +0200
+
+hw-detect (1.156) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Macedonian (mk.po) by Kristijan Fremen Velkovski
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 26 Apr 2023 01:39:26 +0200
+
+hw-detect (1.155) unstable; urgency=medium
+
+  [ Cyril Brulebois ]
+  * Deduplicate the list of requested firmware files, not just the list of
+    requesting modules (Closes: #1031631).
+  * Implement microcode support when /proc/cpuinfo contains a vendor_id
+    field, with one of the following values (Closes: #1029804):
+     - Install amd64-microcode on AuthenticAMD.
+     - Install intel-microcode on GenuineIntel.
+     - Enable non-free-firmware accordingly.
+     - Perform installation via finish-install, making sure apt-setup has
+       been configured, and using apt-install for dependency resolution.
+  * Optimize firmware package installation: process dpkg triggers once,
+    after all packages have been installed (i.e. install-firmware only
+    triggers a single update-initramfs call).
+  * Fix condition around moutmedia calls (See: #1032377).
+  * Fix files removal for non-accepted firmware packages (See: #1032377).
+  * Add a special case for the mhi module: when the module requesting
+    firmware files is “mhi”, use the modules listed as holders (e.g.
+    ath11k_pci and qrtr_mhi). This is less precise than the usb special
+    case, since /sys/bus/mhi/devices/<device> gives no hints as to which
+    network module would be involved (See: #1032140). Thanks to Nicolas
+    Dandrimont and Benoît Chauvet for the tests.
+  * Adjust dmesg timestamp management: only update the timestamp file if
+    there are new lines.
+  * Fix package name extraction when removing a firmware package (e.g.
+    it failed to install because it was corrupted). Regression in 1.153,
+    spotted in #1032970.
+  * Build /var/log/firmware-summary as a 3-column summary of firmware (and
+    microcode) packages getting installed (Closes: #1029849). Those three
+    columns are: package, component, and reason. The reason might be dmesg
+    (check-missing-firmware), modalias (install-firmware hook), or cpu
+    (install-firmware hook).
+
+  [ Pascal Hambourg ]
+  * Fix several glitches (Closes: #1033035):
+     - Fix removal of temporary files in /target after installing firmware
+       packages (they're in /tmp so the next reboot has been doing the
+       trick until now).
+     - Determine the package name by using the Package field instead of
+       trusting the filename when installing firmware packages.
+     - Make sure not to include the possible -n option when setting the
+       IFACES variables in check-missing-firmware.
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 22 Mar 2023 20:31:11 +0100
+
+hw-detect (1.154) unstable; urgency=medium
+
+  * Implement support for the hw-detect/firmware-lookup=never setting
+    (Closes: #1029848):
+     - It can be set on the kernel command line or via preseed.
+     - It can be set via the firmware=never alias.
+     - It changes check-missing-firmware's behaviour:
+        + It will still scan kernel logs for missing firmware files, and
+          generate log lines accordingly.
+        + It will not try to load firmware packages from the installation
+          image, even if firmware packages are included (as that's the
+          case for official installation images starting with Bookworm).
+        + It will not ask whether to load firmware from removable media.
+     - It changes install-firmware's behaviour:
+        + It will not copy any firmware files into the installed system.
+        + It will not try to install firmware packages based on modalias
+          information.
+  * Reinstate “mountmedia” and “mountmedia driver” calls, even if use
+    cases haven't been clarified yet (See: #1029543); but skip them during
+    the first iteration:
+     - The “Load missing firmware from removable media?” question hasn't
+       been asked yet, so that seems better consistency-wise.
+     - If firmware is found in /firmware or /cdrom/firmware, which is
+       likely now that installation images include packages from
+       non-free-firmware, the first iteration might be sufficient and
+       skipping those calls means an improved user experience (less
+       waiting).
+
+ -- Cyril Brulebois <kibi@debian.org>  Mon, 30 Jan 2023 02:36:59 +0100
+
+hw-detect (1.153) unstable; urgency=medium
+
+  * Add initial support for non-free-firmware, following the 2022 General
+    Resolution about non-free firmware:
+     - Implement firmware lookup using Contents-firmware indices. Those
+       are produced by debian-cd when including firmware packages onto
+       installation images, and they make it possible to map firmware
+       files requested by the kernel to firmware packages and the
+       components they were found in. When performing a search in a
+       directory that doesn't include such Contents-firmware index, the
+       already-existing code is used as a fallback, checking the contents
+       of each and every *.deb package in that directory; in that case,
+       the component is deduced from the Section field of the package.
+     - Add support for *.component files when installing firmware packages
+       based on modalias information. Those are generated alongside the
+       existing *.patterns files (built from DEP-11/AppStream metadata)
+       by debian-cd when including firmware packages onto installation
+       images, and make it possible to map firmware packages to the
+       components they were found in.
+     - Use the aforementioned mechanisms to establish a list of components
+       from which firmware packages were installed, making it possible to
+       enable the relevant apt-setup/$component parameters (among contrib,
+       non-free, and non-free-firmware). This makes sure the package
+       manager's configuration includes the right components, so that
+       those firmware packages can be upgraded like any other regular
+       packages.
+     - The end results should be official installation images with
+       packages only from main and non-free-firmware (without contrib or
+       non-free which used to be present in some unofficial images
+       including firmware packages), configuring the installed system with
+       the main component and possibly the non-free-firmware one when some
+       firmware packages are needed.
+  * Add a special case for the usb module: when the module requesting
+    firmware files is “usb”, search the USB bus using port and device
+    information to find the underlying device and the module managing
+    it. Using a Realtek-based Wi-Fi dongle connected over USB as an
+    example: this makes it possible to trade “usb 4-1.5” found in dmesg
+    for “rtl8192cu”. Instead of trying to unload/reload the usb and
+    usbcore modules (which might not even be feasible), the relevant
+    network module gets reloaded instead, which should make it request its
+    firmware files again, and maybe find them if some firmware packages
+    have just been installed. If the lookup fails, stick to “usb”; the
+    existing link up/down dance implemented by upnics (see below) might be
+    sufficient for firmware files to be requested again.
+  * Tweak the upnics function, trying to stop it from killing any network
+    configuration that might have been set up by users, manually or via
+    preseed (with many thanks to Nicolas Dandrimont):
+     - Historically, to make sure network modules request the firmware
+       files they might require (this might not happen at the time the
+       module is loaded), each interface is brought up and down.
+     - Instead, only perform the link up/down dance for interfaces that
+       aren't up already (working under the assumption that their being up
+       is the result of user actions, as a previous upnics call would have
+       left interfaces down) and that aren't associated with a master
+       interface (that happens when bonding is configured).
+  * Delete support for loading udeb firmware packages (*.udeb or *.ude
+    depending on the filesystem), focus on loading regular deb firmware
+    packages instead. Yes, such udeb firmware packages existed… in Etch!
+  * Temporarily delete support for searching firmware on external media:
+     - users have always struggled with preparing such media;
+     - the lookup doesn't work sufficiently well;
+     - and since non-free firmware can be included directly into official
+       installation images, this feature should be much less useful
+       anyway.
+    A detailed rationale can be found in #1029543, feedback is welcome!
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 24 Jan 2023 05:12:46 +0000
+
+hw-detect (1.152) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Amharic (am.po) by Danial Behzadi
+  * Asturian (ast.po) by Danial Behzadi
+  * Bengali (bn.po) by Danial Behzadi
+  * Japanese (ja.po) by Norimitsu SUGIMOTO
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 01 Jan 2023 12:38:26 +0100
+
+hw-detect (1.151) unstable; urgency=medium
+
+  * Team upload
+
+  * Revert template change in v1.148 (that changed /etc/pcmcia/ path into
+    /etc/pcmciautils/), which was done by error. Closes: #1020535.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 09 Oct 2022 17:34:19 +0200
+
+hw-detect (1.150) unstable; urgency=medium
+
+  * Team upload
+
+  [ Chris Hofstaedtler ]
+  * Remove experimental dmraid support.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 04 Aug 2022 17:54:03 +0200
+
+hw-detect (1.149) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Add missing changelog entry for 1.148
+
+  [ Debian Janitor ]
+  * Add missing ${misc:Depends} to Depends for hw-detect, ethdetect,
+    disk-detect, driver-injection-disk-detect, archdetect.
+  * Bump debhelper from deprecated 9 to 13.
+  * Set debhelper-compat version in Build-Depends.
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on dpkg-dev,
+      libdebian-installer4-dev and po-debconf.
+    + hw-detect: Drop versioned constraint on cdebconf-udeb, di-utils, rootskel
+      and udpkg in Depends.
+    + ethdetect: Drop versioned constraint on cdebconf-udeb, di-utils and
+      rootskel in Depends.
+    + disk-detect: Drop versioned constraint on cdebconf-udeb and di-utils in
+      Depends.
+    + driver-injection-disk-detect: Drop versioned constraint on cdebconf-udeb
+      in Depends.
+
+  [ Updated translations ]
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Vietnamese (vi.po) by Trần Ngọc Quân
+  * Simplified Chinese (zh_CN.po) by Wenbin Lv
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 17 Jul 2022 16:33:50 +0200
+
+hw-detect (1.148) unstable; urgency=medium
+
+  * Team upload
+
+  [ Frédéric Bonnard ]
+  * install opal-prd package on OpenPOWER machines.
+
+  [ Samuel Thibault ]
+  * Make gbp produce the right tag format
+
+  [ Holger Wansing ]
+  * Path /etc/pcmcia/ has been moved to /etc/pcmciautils/ (see #980271).
+    Update the template accordingly.
+    + Syncing translations.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 02 Jan 2022 17:02:34 +0100
+
+hw-detect (1.147) unstable; urgency=medium
+
+  * Add support for CHECK_MISSING_FIRMWARE=0 to hw-detect. This makes it
+    possible for some callers (e.g. cdrom-detect, maybe iso-scan too) to
+    avoid triggering firmware-related prompts when it's too early in the
+    installation process to do anything about it (See: #991587, #991590).
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 28 Jul 2021 09:05:05 +0200
+
+hw-detect (1.146) unstable; urgency=medium
+
+  * Make the install-firmware script check both /firmware (PXE) and
+    /cdrom/firmware (ISO) for patterns extracted from DEP-11 metadata,
+    like check-missing-firmware does.
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 28 Jul 2021 00:46:22 +0200
+
+hw-detect (1.145) unstable; urgency=medium
+
+  * Drop firmware-map file and surrounding logic: it never went further
+    than a proof-of-concept, and we're approaching the firmware problem
+    differently now (see: #989863).
+  * If /firmware/dep11 is present (which should be the case starting with
+    D-I Bullseye RC 3, for firmware-enabled images), query the udev
+    database, extract modalias information, and use the patterns available
+    under that directory to figure out which firmware packages might be
+    helpful. Copy the relevant /firmware/<package>_*.deb files under
+    /var/cache/firmware, and let the existing code enable non-free in
+    apt-setup and install those packages in /target (see: #989863).
+  * Check the actual module behind a given driver, since there might be a
+    slight mismatch between the name coming up in dmesg (e.g. rtw_8821ce)
+    and the actual module name (e.g. rtw88_8821ce). With many thanks to
+    Daniel Lewart for the original patch (Closes: #973733).
+  * Uniquify module list earlier in check-missing-firmware, to avoid
+    repeating n times the same module if it requests n firmware files
+    (e.g. iwlwifi).
+  * Finally stop looking into the obsolete /dev/.udev/firmware-missing and
+    /run/udev/firmware-missing locations, which were obsoleted upstream
+    (udev) in 2013. This only generates noise in the installer's syslog.
+  * When resuming parsing dmesg from a timestamp, just mention the
+    timestamp in the log instead of the actual pattern, for better
+    readability.
+  * Set udevdir to /lib/udev/rules.d (instead of /etc/udev/rules.d), to
+    appease lintian (udev-rule-in-etc).
+  * Ignore iwl-debug-yoyo.bin requested by iwlwifi as it seems to be about
+    debugging, it doesn't seem actually required, and it's not packaged
+    anyway (see: #969264, #966218).
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 27 Jul 2021 02:26:23 +0200
+
+hw-detect (1.144) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 30 May 2021 22:33:19 +0200
+
+hw-detect (1.143) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by KushagraKarira
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Traditional Chinese (zh_TW.po) by louies0623
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 13 Mar 2021 19:19:38 +0100
+
+hw-detect (1.142) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by Vangelis Skarmoutsos
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * Lithuanian (lt.po) by Kornelijus Tvarijanavičius
+  * Punjabi (Gurmukhi) (pa.po) by Aman ALam
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 04 Nov 2020 19:22:45 +0100
+
+hw-detect (1.141) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Icelandic (is.po) by Sveinn í Felli
+  * Polish (pl.po) by Bartosz Feński
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Sep 2020 22:24:07 +0200
+
+hw-detect (1.140) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 18:03:38 +0200
+
+hw-detect (1.139) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 02 Feb 2020 19:08:46 +0100
+
+hw-detect (1.138) unstable; urgency=medium
+
+  * Team upload
 
   [ Cyril Brulebois ]
   * Remove Christian Perrier from Uploaders, with many thanks for all
@@ -8,9 +387,19 @@ hw-detect (1.138) UNRELEASED; urgency=medium
   * Add finish-install.d/08hw-detect.sh to install virtualization related
     packages when virtualization is detected. (Closes: #782287)
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:34:47 +0200
+  [ Holger Wansing ]
+  * Add comment for translators, to keep main menu entry below a 55 columns
+    limit. This updates all po|pot files.
+
+  [ Updated translations ]
+  * Arabic (ar.po) by ButterflyOfFire
+  * Croatian (hr.po) by gogogogi
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 12 Oct 2019 23:20:41 +0200
 
 hw-detect (1.137) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -19,6 +408,7 @@ hw-detect (1.137) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Wed, 27 Mar 2019 21:56:08 +0100
 
 hw-detect (1.136) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -27,6 +417,7 @@ hw-detect (1.136) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Wed, 06 Mar 2019 22:16:49 +0100
 
 hw-detect (1.135) unstable; urgency=medium
+
   * Team upload
 
   * Remove trailing whitespaces from changelog file, to fix lintian tag.

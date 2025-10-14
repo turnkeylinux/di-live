@@ -2,11 +2,11 @@
 set -e
 . /usr/share/debconf/confmodule
 
-MISSING='/dev/.udev/firmware-missing /run/udev/firmware-missing'
 DENIED=/tmp/missing-firmware-denied
 
 if [ "x$1" = "x-n" ]; then
 	NONINTERACTIVE=1
+	shift
 else
 	NONINTERACTIVE=""
 fi
@@ -17,27 +17,67 @@ log () {
 	logger -t check-missing-firmware "$@"
 }
 
-# Not all drivers register themselves if firmware is missing; in that
-# case determine the module via the device's modalias.
-get_module () {
-	local devpath=$1
+log_output() {
+	log-output -t check-missing-firmware "$@"
+}
 
-	if [ -d $devpath/driver ]; then
-		# The real path of the destination of the driver/module
-		# symlink should be something like "/sys/module/e100"
-		basename $(readlink -f $devpath/driver/module) || true
-	elif [ -e $devpath/modalias ]; then
-		modalias="$(cat $devpath/modalias)"
-		# Take the last module returned by modprobe
-		modprobe --show-depends "$modalias" 2>/dev/null | \
-			sed -n -e '$s#^.*/\([^.]*\)\.ko.*$#\1#p'
+# USB is special, and we don't want to take it all done:
+get_usb_module() {
+	address="$1"
+	device="/sys/bus/usb/devices/$address"
+
+	# Make sure there's a single subdirectory (e.g. 4-1.5:1.0 below 4-1.5):
+	subdirs=$(find -L "$device" -maxdepth 1 -type d -name "$address:*")
+	subdirs_n=$(echo "$subdirs" | wc -w)
+	if [ $(echo "$subdirs" | wc -w) != 1 ]; then
+		log "failed to perform usb $address lookup (got: $subdirs_n entries, expected: 1)"
+		log "=> sticking with the usb module"
+		echo 'usb'
+		return
+	fi
+
+	# Make sure driver resolution returns something:
+	driver=$(basename $(readlink "$subdirs/driver") 2>/dev/null)
+	if [ "$driver" = "" ]; then
+		log "failed to perform usb $address lookup (no driver found)"
+		log "=> sticking with the usb module"
+		echo 'usb'
+		return
+	fi
+	echo $driver
+}
+
+# MHI is special, but different from USB; at least with ath11k_pci,
+# /sys/bus/mhi/devices/mhi0* doesn't list anything ath11k-related.
+# The mhi module's holders directory lists ath11k_pci and qrtr_mhi
+# though!
+get_mhi_holders() {
+	holders=$(find -L /sys/module/mhi/holders/ -mindepth 1 -maxdepth 1 -exec basename {} ';')
+	if [ "$holders" = "" ]; then
+		log "failed to perform mhi lookup (no holders found)"
+		log "=> sticking with the mhi module"
+		echo 'mhi'
+	else
+		echo $holders
 	fi
 }
 
 # Some modules only try to load firmware once brought up. So bring up and
-# then down any interfaces specified by ethdetect.
+# then down any interfaces specified by ethdetect. Don't touch interfaces
+# that users might have configured (manually or via preseeding) though!
 upnics() {
 	for iface in $IFACES; do
+		# Don't rely on ip's output, it lacks at least state UP/DOWN:
+		sys_iface="/sys/class/net/$iface"
+		if grep -qs ^up$ "$sys_iface/operstate"; then
+			log "leaving network interface $iface alone (state=up)"
+			continue
+		elif [ -e "$sys_iface/master" ]; then
+			# Most likely bonding:
+			master=$(basename $(readlink "$sys_iface/master") 2>/dev/null)
+			log "leaving network interface $iface alone (master=${master:-<unknown>})"
+			continue
+		fi
 		log "taking network interface $iface up/down"
 		ip link set "$iface" up || true
 		ip link set "$iface" down || true
@@ -75,7 +115,7 @@ get_fresh_dmesg() {
 		# "^$tspattern" (-F for fixed string doesn't play well with ^ to
 		# anchor the pattern on the left):
 		tspattern=$(cat $dmesg_ts | sed 's,\[,\\[,;s,\],\\],')
-		log "looking at dmesg again, restarting from $tspattern"
+		log "looking at dmesg again, restarting from timestamp: $(cat $dmesg_ts)"
 
 		# Find the line number for the first match, empty if not found:
 		ln=$(grep -n "^$tspattern" $dmesg_file |sed 's/:.*//'|head -n 1)
@@ -89,9 +129,13 @@ get_fresh_dmesg() {
 		log "looking at dmesg for the first time"
 	fi
 
-	# Save the last timestamp:
-	grep -o '^\[ *[0-9.]\+\]' $dmesg_file | tail -n 1 > $dmesg_ts
-	log "saving timestamp for a later use: $(cat $dmesg_ts)"
+	if [ -s $dmesg_file ]; then
+		# Save the last timestamp:
+		grep -o '^\[ *[0-9.]\+\]' $dmesg_file | tail -n 1 > $dmesg_ts
+		log "saving timestamp for a later use: $(cat $dmesg_ts)"
+	else
+		log "keeping timestamp (no new lines): $(cat $dmesg_ts)"
+	fi
 
 	# Write and clean-up:
 	cat $dmesg_file
@@ -103,17 +147,34 @@ check_missing () {
 
 	# Give modules some time to request firmware.
 	sleep 1
-	
+
 	modules=""
 	files=""
 
-	# The linux kernel and udev no longer let us know via
-	# /dev/.udev/firmware-missing and /run/udev/firmware-missing
-	# which firmware files the kernel drivers look for.  Check
-	# dmesg instead.  See also bug #725714.
+	# Parse dmesg using a started parttern to detect firmware
+	# files the kernel drivers look for (#725714):
 	fwlist=/tmp/check-missing-firmware-dmesg.list
-	get_fresh_dmesg | sed -rn 's/^(\[[^]]*\] )?([^ ]+) [^ ]+: firmware: failed to load ([^ ]+) .*/\2 \3/p' > $fwlist
-	while read module fwfile ; do
+	get_fresh_dmesg | sed -rn 's/^(\[[^]]*\] )?([^ ]+) ([^ ]+): firmware: failed to load ([^ ]+) .*/\2 \3 \4/p' > $fwlist
+	while read module address fwfile ; do
+	    # rewrite module is necessary
+	    case "$module" in
+		usb)
+		    module=$(get_usb_module "$address")
+		    log "using module $module instead of usb $address"
+		;;
+		mhi)
+		    module=$(get_mhi_holders)
+		    log "using $module instead of mhi"
+		;;
+	    esac
+
+	    # ignore specific files:
+	    #  - iwlwifi, debug-only (#969264, #966218)
+	    if [ "$fwfile" = "iwl-debug-yoyo.bin" ]; then
+		log "ignoring firmware file $fwfile requested by $module"
+		continue
+	    fi
+
 	    log "looking for firmware file $fwfile requested by $module"
 	    if [ ! -e /lib/firmware/$fwfile ] ; then
 		if grep -q "^$fwfile$" $DENIED 2>/dev/null; then
@@ -125,58 +186,11 @@ check_missing () {
 	    fi
 	done < $fwlist
 
-	# This block looking in $MISSING should be removed when
-	# hw-detect no longer should support installing using older
-	# udev and kernel versions.
-	for missing_dir in $MISSING
-	do
-		if [ ! -d "$missing_dir" ]; then
-			log "$missing_dir does not exist, skipping"
-			continue
-		fi
-		for file in $(find $missing_dir -type l); do
-			# decode firmware filename as encoded by
-			# udev firmware.agent
-			fwfile="$(basename $file | sed -e 's#\\x2f#/#g')"
-			
-			# strip probably nonexistant firmware subdirectory
-			devpath="$(readlink $file | sed 's/\/firmware\/.*//')"
-			# the symlink is supposed to point to the device in /sys
-			if ! echo "$devpath" | grep -q '^/sys/'; then
-				devpath="/sys$devpath"
-			fi
-
-			module=$(get_module "$devpath")
-			if [ -z "$module" ]; then
-				log "failed to determine module from $devpath"
-				continue
-			fi
-
-			rm -f "$file"
-
-			if grep -q "^$fwfile$" $DENIED 2>/dev/null; then
-				continue
-			fi
-			
-			files="$fwfile${files:+ $files}"
-
-			if [ "$module" = usbcore ]; then
-				# Special case for USB bus, which puts the
-				# real module information in a subdir of
-				# the devpath.
-				for dir in $(find "$devpath" -maxdepth 1 -mindepth 1 -type d); do
-					module=$(get_module "$dir")
-					if [ -n "$module" ]; then
-						modules="$module${modules:+ $modules}"
-					fi
-				done
-			else
-				modules="$module${modules:+ $modules}"
-			fi
-		done
-	done
-
 	if [ -n "$modules" ]; then
+		# Uniquify since a single module may request *many* firmware files,
+		# and a file might be requested several times:
+		modules=$(echo $modules | tr " " "\n" | sort -u)
+		files=$(echo $files | tr " " "\n" | sort -u)
 		log "missing firmware files ($files) for $modules"
 		return 0
 	else
@@ -254,88 +268,164 @@ check_deb_arch () {
 	[ "$arch" = all ] || [ "$arch" = "$(udpkg --print-architecture)" ]
 }
 
+get_deb_component () {
+	# This trusts the contents of the .deb, but packages in the archive could
+	# have overrides (controlled by ftpmaster):
+	section=$(udpkg -f "$1" | grep '^Section:' | sed -e 's/Section: *//')
+	if ! echo "$section" | grep -qs '/'; then
+		echo "main"
+	else
+		echo "$section" | sed 's,/.*,,'
+	fi
+}
+
 # Remove non-accepted firmware package
 remove_pkg() {
 	pkgname="$1"
-	# Remove all files listed in /var/lib/dpkg/info/$pkgname.md5sum
-	for file in $(cut -d" " -f 2- /var/lib/dpkg/info/$pkgname.md5sum) ; do
+	# Remove all files listed in /var/lib/dpkg/info/$pkgname.md5sums
+	for file in $(cut -d" " -f 2- /var/lib/dpkg/info/$pkgname.md5sums) ; do
 		rm /$file
 	done
 }
 
 install_firmware_pkg () {
-	if echo "$1" | grep -q '\.deb$'; then
-		# cache deb for installation into /target later
-		mkdir -p /var/cache/firmware/
-		cp -aL "$1" /var/cache/firmware/ || true
-		filename="$(basename "$1")"
-		pkgname="$(echo $filename |cut -d_ -f1)"
-		udpkg --unpack "/var/cache/firmware/$filename"
-		if [ -f /var/lib/dpkg/info/$pkgname.preinst ] ; then
-			# Run preinst script to see if the firmware
-			# license is accepted Exit code of preinst
-			# decide if the package should be installed or
-			# not.
-			if /var/lib/dpkg/info/$pkgname.preinst ; then
-				:
-			else
-				remove_pkg "$pkgname"
-				rm "/var/cache/firmware/$filename"
-			fi
+	# cache deb for installation into /target later
+	mkdir -p /var/cache/firmware/
+	cp -aL "$1" /var/cache/firmware/ || true
+	filename="$(basename "$1")"
+	pkgname="$(udpkg -f "$1" | grep '^Package:' | sed -e 's/^Package: *//')"
+	udpkg --unpack "/var/cache/firmware/$filename"
+	if [ -f /var/lib/dpkg/info/$pkgname.preinst ] ; then
+		# Run preinst script to see if the firmware
+		# license is accepted Exit code of preinst
+		# decide if the package should be installed or
+		# not.
+		if /var/lib/dpkg/info/$pkgname.preinst ; then
+			:
+		else
+			remove_pkg "$pkgname"
+			rm "/var/cache/firmware/$filename"
+			removed=1
 		fi
-	else
-		udpkg --unpack "$1"
+	fi
+	if [ "$removed" != 1 ]; then
+		echo "$2" >> /var/cache/firmware/components
+		echo "$pkgname $2 dmesg" >> /var/log/firmware-summary
 	fi
 }
 
-# Try to load udebs (or debs) that contain the missing firmware.
+# Try to load debs that contain the missing firmware.
 # This does not use anna because debs can have arbitrary
 # dependencies, which anna might try to install.
 check_for_firmware() {
 	echo "$files" | sed -e 's/ /\n/g' >/tmp/grepfor
-	for filename in $@; do
-		if [ -f "$filename" ]; then
-			if check_deb_arch "$filename" && list_deb_firmware "$filename" | grep -qf /tmp/grepfor; then
-				log "installing firmware package $filename"
-				install_firmware_pkg "$filename" || true
-			fi
+	for dir in $@; do
+		# An index file might exist, mapping firmware files to firmware
+		# packages, saving us from iterating over each firmware *.deb:
+		if [ -f $dir/Contents-firmware ]; then
+			log "lookup with $dir/Contents-firmware"
+			# Duplicating stdin makes license prompts work again (#1033921). The
+			# workaround is meant for Bookworm, but this should be reconsidered
+			# (#1035356, #1029843).
+			{
+			grep -f /tmp/grepfor $dir/Contents-firmware | while read fw_file fw_pkg_file component; do
+				# Don't install a package for each file it ships!
+				if grep -qs "^$fw_pkg_file$" /tmp/pkginstalled 2>/dev/null; then
+					continue
+				fi
+				if check_deb_arch "$dir/$fw_pkg_file"; then
+					log "installing firmware package $dir/$fw_pkg_file ($component)"
+					install_firmware_pkg "$dir/$fw_pkg_file" "$component" <&9 || true
+					echo "$fw_pkg_file" >> /tmp/pkginstalled
+				fi
+			done
+			} 9<&0
+			continue
 		fi
+
+		# If no such index exists, fall back to iterating over everyone:
+		log "lookup without $dir/Contents-firmware"
+		for filename in $dir/*.deb; do
+			if [ -f "$filename" ]; then
+				if check_deb_arch "$filename" && list_deb_firmware "$filename" | grep -qf /tmp/grepfor; then
+					log "installing firmware package $filename"
+					install_firmware_pkg "$filename" $(get_deb_component "$filename") || true
+				fi
+			fi
+		done
 	done
 	rm -f /tmp/grepfor
+	rm -f /tmp/pkginstalled
 }
 
+# For those who don't want to load any firmware, even if available on
+# installation images (#1029848). The loop is still entered so that
+# logs are generated.
+db_get hw-detect/firmware-lookup
+firmware_lookup="$RET"
+
+# NOTE: The ask_load_firmware function returns true the first time around,
+# without asking any questions. For consistency, skip mountmedia calls during
+# the first iteration of the loop. For systems which have all firmware material
+# found in {,/cdrom}/firmware, this also means a noticeable speed-up.
+loop=0
 while check_missing && ask_load_firmware; do
-	# first, check if needed firmware (u)debs are available on the
+	loop=$((loop+1))
+	log "mainloop iteration #$loop"
+
+	if [ "$firmware_lookup" = "never" ]; then
+		log "firmware lookup disabled (=$firmware_lookup), exiting"
+		exit 0
+	fi
+
+	# first, check if needed firmware debs are available on the
 	# PXE initrd or the installation CD.
 	if [ -d /firmware ]; then
-		check_for_firmware /firmware/*.deb /firmware/*.udeb
+		check_for_firmware /firmware
 	fi
 	if [ -d /cdrom/firmware ]; then
-		check_for_firmware /cdrom/firmware/*.deb /cdrom/firmware/*.udeb
+		check_for_firmware /cdrom/firmware
 	fi
 
-	# second, look for loose firmware files on the media device.
-	if mountmedia; then
-		for file in $files; do
-			try_copy "$file"
-		done
-		umount /media || true
-	fi
+	# Whether we should keep both mountmedia calls, and whether mountmedia
+	# is doing a good job is discussed in #1029543:
+	if [ "$loop" -gt 1 ]; then
+		# second, look for loose firmware files on the media device.
+		if mountmedia; then
+			for file in $files; do
+				try_copy "$file"
+			done
+			umount /media || true
+		fi
 
-	# last, look for firmware (u)debs on the media device
-	if mountmedia driver; then
-		check_for_firmware /media/*.deb /media/*.udeb /media/*.ude /media/firmware/*.deb /media/firmware/*.udeb /media/firmware/*.ude
-		umount /media || true
+		# last, look for firmware debs on the media device
+		if mountmedia driver; then
+			check_for_firmware /media /media/firmware
+			umount /media || true
+		fi
 	fi
 
 	# remove and reload modules so they see the new firmware
-	# Sort to only reload a given module once if it asks for more
-	# than one firmware file (example iwlagn)
-	for module in $(echo $modules | tr " " "\n" | sort -u); do
+	for module in $modules; do
 		if ! nic_is_configured $module; then
 			log "removing and loading kernel module $module"
-			modprobe -r $module || true
-			modprobe $module || true
+			log_output modprobe -r $module || true
+			log_output modprobe $module || true
+
+			# iterate to avoid dealing with multiplicity explicitly:
+			for driver in $(find /sys/bus/*/drivers -name "$module"); do
+				# module name mentioned in dmesg might differ from the actual module
+				# (rtw_8821ce vs. rtw88_8821ce, see #973733); also beware of the
+				# module symlink, it doesn't always exist:
+				if [ -e "$driver/module" ]; then
+					actual_module=$(basename $(readlink -f "$driver/module"))
+					if [ "$actual_module" != "$module" ]; then
+						log "removing and loading kernel module $actual_module as well (actual module for $module)"
+						log_output modprobe -r $actual_module || true
+						log_output modprobe $actual_module || true
+					fi
+				fi
+			done
 		fi
 	done
 done

@@ -506,6 +506,11 @@ if [ -n "$(list-devices cd; list-devices maybe-usb-floppy)" ]; then
 	apt-install eject || true
 fi
 
+# Install opal-prd for OpenPOWER machines LP: #1555904
+if [ -d /sys/firmware/devicetree/base/ibm,opal/diagnostics ]; then
+	apt-install opal-prd || true
+fi
+
 db_progress SET $MAX_STEPS
 db_progress STOP
 
@@ -513,7 +518,11 @@ if [ -n "$MISSING_MODULES_LIST" ]; then
 	log "Missing modules '$MISSING_MODULES_LIST"
 fi
 
-check-missing-firmware
+if [ "$CHECK_MISSING_FIRMWARE" != 0 ]; then
+	check-missing-firmware
+else
+	log "skipping check-missing-firmware as requested by the caller"
+fi
 
 sysfs-update-devnames
 

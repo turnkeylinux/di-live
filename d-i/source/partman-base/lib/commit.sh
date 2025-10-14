@@ -75,9 +75,8 @@ confirm_changes () {
 			# Special case d-m devices to use a different description
 			if cat device | grep -q "/dev/mapper" ; then
 				device=$(cat device)
-				# dmraid and multipath devices are partitioned
-				if [ ! -f sataraid ] && \
-				   ! is_multipath_dev $device && \
+				# multipath devices are partitioned
+				if ! is_multipath_dev $device && \
 				   ! is_multipath_part $device; then
 					partdesc="partman/text/confirm_unpartitioned_item"
 				fi
@@ -140,10 +139,6 @@ $items"
 			db_input critical $template/confirm_nochanges
 			db_go || true
 			db_capb backup align
-			if [ $template = partman-dmraid ]; then
-				# for dmraid, only a note is displayed
-				return 1
-			fi
 			db_get $template/confirm_nochanges
 			if [ "$RET" = false ]; then
 				db_reset $template/confirm_nochanges

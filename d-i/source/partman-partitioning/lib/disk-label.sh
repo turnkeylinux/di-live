@@ -80,7 +80,12 @@ default_disk_label () {
 	    ppc64el)
 		echo gpt;;
 	    riscv*)
-		echo gpt;;
+		case "$sub" in
+		    efi)
+			echo gpt;;
+		    *)
+			echo msdos;;
+		esac;;
 	    s390|s390x)
 		if [ -e ./label ]; then
 		    disklabel=$(cat label)

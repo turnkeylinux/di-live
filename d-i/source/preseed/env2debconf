@@ -3,6 +3,31 @@
 set -e
 export DEBIAN_FRONTEND=none
 . /usr/share/debconf/confmodule
+
+# The hostname parameter might have been consumed by the kernel already
+# (kernel parameter since v6.0-rc1):
+if [ "$(hostname)" != '(none)' ]; then
+	# Propagate accordingly so that the debconf magic can happen as usual
+	# (#1031643):
+	hostname="$(hostname)"
+
+	# Unset in UTS so that netcfg doesn't see an already-set hostname, which
+	# would defeat the idea of supplying a default value (#1035349).
+	#
+	# Notes:
+	#  - If using `hostname ''`, busybox's hostname would return '?' instead
+	#    of '(none)'; the former happens when the first character of the
+	#    nodename member of the utsname struct is null; the latter is the
+	#    actual default string, courtesy of CONFIG_DEFAULT_HOSTNAME since
+	#    2011, and of the hardcoded '(none)' before then.
+	#  - netcfg's dhcp.c detects both empty string and '(none)', so setting
+	#    either of those should work equally well.
+	#  - Settle for '(none)' to stay in line with what would have happened
+	#    if the kernel hadn't started considering hostname to be a kernel
+	#    parameter: the default value would have been kept.
+	hostname '(none)'
+fi
+
 NEWLINE='
 '
 OLDIFS=$IFS

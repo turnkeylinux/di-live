@@ -1,11 +1,11 @@
 cpuinfo merulo.cpuinfo
-majors 2.6
+majors 5.7
 flavour itanium
-kernel-2.6 \
+kernel-5.7 \
   linux-image-itanium
 usable \
   linux-image-itanium \
-  linux-image-2.6.18-1-itanium
+  linux-image-5.7.0-1-itanium
 unusable \
   linux-image-mckinley \
-  linux-image-2.6.18-1-mckinley
+  linux-image-5.7.0-1-mckinley

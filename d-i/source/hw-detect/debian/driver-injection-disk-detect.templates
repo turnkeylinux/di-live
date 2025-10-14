@@ -1,10 +1,1 @@
-Template: debian-installer/driver-injection-disk-detect/title
-Type: text
-Description: Detect virtual driver disks from hardware manufacturer
-
-Template: driver-injection-disk/load
-Default: true
-Type: boolean
-Description: Load drivers from internal virtual driver disk?
- Installing on this hardware may require some drivers provided by the
  manufacturer to be loaded from the built-in driver injection disk.

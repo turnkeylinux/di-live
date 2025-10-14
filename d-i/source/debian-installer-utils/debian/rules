@@ -17,14 +17,14 @@ export DEB_CFLAGS_MAINT_APPEND := -Wall -W -Os -fomit-frame-pointer
 CFLAGS := $(shell dpkg-buildflags --get CPPFLAGS; dpkg-buildflags --get CFLAGS)
 LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS)
 
-TERMNAMES = a/ansi d/dumb s/screen
+TERMNAMES = a/ansi d/dumb s/screen x/xterm
 
 ifeq ($(DEB_HOST_ARCH_OS),linux)
 TERMNAMES += l/linux
 endif
 
 ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
-TERMNAMES += c/cons25 x/xterm
+TERMNAMES += c/cons25
 endif
 
 ifeq ($(DEB_HOST_ARCH_OS),hurd)

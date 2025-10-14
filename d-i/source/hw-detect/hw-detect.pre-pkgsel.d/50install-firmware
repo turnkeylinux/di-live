@@ -2,20 +2,27 @@
 set -e
 
 deb_package () {
-	ar p "$1" control.tar.gz | tar zxO ./control | grep 'Package:' |  sed -e 's/Package: *//'
+	udpkg -f "$1" | grep '^Package:' | sed -e 's/^Package: *//'
 }
 
 # install cached firmware debs
 if [ -d /var/cache/firmware ]; then
+	n=0
 	for deb in /var/cache/firmware/*.deb; do
 		if [ -f "$deb" ]; then
 			cp -a "$deb" /target/tmp
 			# TODO debconf passthrough
-			if ! in-target dpkg -i "/tmp/$(basename "$deb")"; then
+			if ! in-target dpkg --no-triggers -i "/tmp/$(basename "$deb")"; then
 				# dpkg failed, force removal of package
 				in-target dpkg --force-depends --remove "$(deb_package "$deb")" || true
+			else
+				n=$((n+1))
 			fi
-			rm -f "/target/tmp/$deb"
+			rm -f "/target/tmp/$(basename "$deb")"
 		fi
 	done
+	if [ $n -gt 0 ]; then
+		logger -t install-firmware "processing triggers (after $n installations)"
+		in-target dpkg --triggers-only -a
+	fi
 fi

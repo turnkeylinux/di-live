@@ -5,7 +5,7 @@ partman-auto/text/atomic_scheme ::
 	$bootable{ }
 	method{ prep } .
 
-128 512 256 ext2
+512 512 768 ext2
 	$defaultignore{ }
 	$primary{ }
 	method{ format }

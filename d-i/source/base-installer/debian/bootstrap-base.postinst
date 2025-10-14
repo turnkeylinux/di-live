@@ -77,7 +77,7 @@ install_base_system () {
 	db_get mirror/protocol
 	mirror_protocol="$RET" || true
 	if [ "$mirror_protocol" = https ]; then
-		INCLUDES="$INCLUDES,apt-transport-https,ca-certificates"
+		INCLUDES="$INCLUDES,ca-certificates"
 	fi
 
 	if [ -s /cdrom/.disk/base_include ]; then

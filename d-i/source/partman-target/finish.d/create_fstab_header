@@ -11,6 +11,9 @@ case `udpkg --print-os` in
 # device; this may be used with UUID= as a more robust way to name devices
 # that works even if disks are added and removed. See fstab(5).
 #
+# systemd generates mount units based on this file, see systemd.mount(5).
+# Please run 'systemctl daemon-reload' after making changes here.
+#
 EOF
 		printf "%-15s %-15s %-7s %-15s %-7s %s\n" '# <file system>' '<mount point>' '<type>' '<options>' '<dump>' '<pass>' >> /target/etc/fstab
 	;;

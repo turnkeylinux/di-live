@@ -1,11 +1,26 @@
-live-installer (58) UNRELEASED; urgency=medium
+live-installer (58) unstable; urgency=medium
 
   [ Jonathan Carter ]
   * Fix typo in previous changelog entry
+  * Update standards version to 4.6.1
+  * Upload MR!3 from Roland Clobus
+    - Remove the live packages before the cdrom is unmounted
+  * Remove myself from uploaders
 
   [ Cyril Brulebois ]
   * Remove Christian Perrier from Uploaders, with many thanks for all
     his contributions over the years! (Closes: #927548)
+
+  [ Holger Wansing ]
+  * Remove trailing whitespace from changelog file, to fix lintian tag.
+  * Change Format URI in copyright file to https, to fix lintian tag.
+
+  [ Debian Janitor ]
+  * Add missing ${misc:Depends} to Depends for live-installer.
+  * Drop custom source compression, custom source compression level.
+  * Bump debhelper from old 10 to 13.
+  * Set debhelper-compat version in Build-Depends.
+  * Update standards version to 4.6.0, no changes needed.
 
  -- Jonathan Carter <jcc@debian.org>  Mon, 15 Apr 2019 17:43:07 +0000
 
@@ -89,7 +104,7 @@ live-installer (49) unstable; urgency=medium
 live-installer (48) unstable; urgency=low
 
   * Drop cruft files from my unclean git copy. Sigh:
-    - live-installer.d/remove-packages 
+    - live-installer.d/remove-packages
     - live-installer.d/xserver-xorg
 
  -- Christian Perrier <bubulle@debian.org>  Mon, 09 Mar 2015 16:56:58 +0100
@@ -476,7 +491,7 @@ live-installer (18) unstable; urgency=low
   * Lithuanian (lt.po) by Kęstutis Biliūnas
   * Slovenian (sl.po) by Vanja Cvelbar
 
- -- Daniel Baumann <daniel@debian.org>  Thu, 18 May 2010 18:53:34 +0200
+ -- Daniel Baumann <daniel@debian.org>  Tue, 18 May 2010 18:53:34 +0200
 
 live-installer (17) unstable; urgency=low
 

@@ -20,3 +20,4 @@ desktop	tasksel:tasksel/desktop
 dmraid	disk-detect/dmraid/enable
 keymap keyboard-configuration/xkb-keymap
 preseed-md5 preseed/file/checksum
+firmware	hw-detect/firmware-lookup

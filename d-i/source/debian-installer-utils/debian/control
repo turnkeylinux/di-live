@@ -3,13 +3,13 @@ Section: debian-installer
 Priority: standard
 Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Bastian Blank <waldi@debian.org>, Colin Watson <cjwatson@debian.org>
-Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.15.7), libdebconfclient0-dev (>= 0.68), po-debconf (>= 0.5.0), libdebian-installer4-dev (>= 0.41)
+Build-Depends: debhelper-compat (= 13), libdebconfclient0-dev, po-debconf, libdebian-installer4-dev
 Vcs-Browser: https://salsa.debian.org/installer-team/debian-installer-utils
 Vcs-Git: https://salsa.debian.org/installer-team/debian-installer-utils.git
 
 Package: di-utils-shell
 Architecture: all
-Depends: ${misc:Depends}, di-utils (>= 1.62)
+Depends: ${misc:Depends}, di-utils
 XB-Installer-Menu-Item: 95000
 Description: Execute a shell
 Package-Type: udeb
@@ -31,13 +31,13 @@ Package-Type: udeb
 
 Package: di-utils
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, busybox-udeb (>= 1:1.35.0-2)
 Description: Miscellaneous utilities for the debian installer
 Package-Type: udeb
 
 Package: di-utils-mapdevfs
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: mapdevfs utility for the debian installer
 Package-Type: udeb
 
@@ -45,3 +45,4 @@ Package: di-utils-terminfo
 Architecture: any
 Description: Terminfo entries needed by newt/slang in debian installer
 Package-Type: udeb
+Depends: ${misc:Depends}

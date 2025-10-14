@@ -54,17 +54,11 @@ arch_check_usable_kernel () {
 }
 
 arch_get_kernel () {
-	case "$KERNEL_MAJOR" in
-	    2.6|3.*|4.*)
-		imgbase="linux-image"
+	imgbase="linux-image"
 
-		set -- $1
-		while [ $# -ge 1 ]; do
-			echo "$imgbase-$1"
-			shift
-		done
-		;;
-	    *)	warning "Unsupported kernel major '$KERNEL_MAJOR'."
-		;;
-	esac
+	set -- $1
+	while [ $# -ge 1 ]; do
+		echo "$imgbase-$1"
+		shift
+	done
 }

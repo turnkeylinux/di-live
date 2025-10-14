@@ -110,7 +110,7 @@ load_extra
 
 # Make sure all modules are available
 # Should really be done whenever anna installs a kernel package
-depmod -a
+[ ! -x /sbin/depmod ] || depmod -a
 
 # We need to set the capabilities after anna-install
 db_capb backup align

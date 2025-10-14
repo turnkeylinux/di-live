@@ -3,14 +3,14 @@ Section: debian-installer
 Priority: standard
 Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Anton Zinoviev <zinoviev@debian.org>, Colin Watson <cjwatson@debian.org>, Max Vozeler <xam@debian.org>, Steve McIntyre <93sam@debian.org>
-Build-Depends: debhelper (>= 9), dh-autoreconf, dh-di (>= 2), pkg-config, po-debconf (>= 0.5.0), libparted-dev (>= 2.2)
+Build-Depends: debhelper-compat (= 13), dh-di, pkg-config, po-debconf, libparted-dev
 Vcs-Browser: https://salsa.debian.org/installer-team/partman-base
 Vcs-Git: https://salsa.debian.org/installer-team/partman-base.git
 
 Package: partman-base
 Package-Type: udeb
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, partman-utils, partman-partitioning (>=54), partman-target, archdetect, harddrive-detection, di-utils-mapdevfs, di-utils (>= 1.66), cdebconf-udeb (>= 0.133)
+Depends: ${shlibs:Depends}, ${misc:Depends}, partman-utils, partman-partitioning, partman-target, archdetect, harddrive-detection, di-utils-mapdevfs, di-utils, cdebconf-udeb
 Provides: ${provides}
 XB-Installer-Menu-Item: ${menuitemnum}
 Description: Partition the storage devices (partman)

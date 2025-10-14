@@ -23,8 +23,9 @@ verbose () {
 run_test () {
 	TEST="$1"
 
-	unset SUBARCH CPUINFO OFCPUS MACHINE FLAVOUR KERNEL_26 KERNEL_3_10 KERNEL_7 KERNEL_8 USABLE UNUSABLE \
+	unset SUBARCH CPUINFO OFCPUS MACHINE FLAVOUR USABLE UNUSABLE \
 		|| true
+	unset $(set | sed -n 's/^\(KERNEL_.*\)=.*/\1/p')
 	NUMCPUS=1
 	MAJORS=2.6
 
@@ -51,17 +52,10 @@ run_test () {
 			flavour)
 				FLAVOUR="$value"
 				;;
-			kernel-2.6)
-				KERNEL_26="$value"
-				;;
-			kernel-3.10)
-				KERNEL_3_10="$value"
-				;;
-			kernel-7)
-				KERNEL_7="$value"
-				;;
-			kernel-8)
-				KERNEL_8="$value"
+			kernel-*)
+				KERNEL_LIST_NAME="$(echo "$name" | tr '[a-z].-' '[A-Z]__')"
+				eval $KERNEL_LIST_NAME="\$value"
+				export $KERNEL_LIST_NAME
 				;;
 			usable)
 				USABLE="$value"
@@ -78,7 +72,7 @@ run_test () {
 	done < "$TEST"
 
 	export ARCH SUBARCH CPUINFO OFCPUS NUMCPUS MACHINE
-	export MAJORS FLAVOUR KERNEL_26 KERNEL_3_10 KERNEL_7 KERNEL_8
+	export MAJORS FLAVOUR
 	export USABLE UNUSABLE
 
 	TMP="$(mktemp -t base-installer-tests.XXXXXX)"

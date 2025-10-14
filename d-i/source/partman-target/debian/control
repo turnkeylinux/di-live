@@ -5,13 +5,13 @@ Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Anton Zinoviev <zinoviev@debian.org>,
            Max Vozeler <xam@debian.org>,
 	   Steve McIntyre <93sam@debian.org>
-Build-Depends: debhelper (>= 9), dh-di, po-debconf (>= 0.5.0)
+Build-Depends: debhelper-compat (= 13), dh-di, po-debconf
 Vcs-Browser: https://salsa.debian.org/installer-team/partman-target
 Vcs-Git: https://salsa.debian.org/installer-team/partman-target.git
 
 Package: partman-target
 Package-Type: udeb
 Architecture: all
-Depends: ${misc:Depends}, partman-basicfilesystems, partman-basicmethods, di-utils-mapdevfs, di-utils (>= 1.68)
+Depends: ${misc:Depends}, partman-basicfilesystems, partman-basicmethods, di-utils-mapdevfs, di-utils
 Description: Provides partman with ability to prepare /target
  This udeb allows the user to choose how partitions should be used.

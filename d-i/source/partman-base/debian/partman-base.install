@@ -2,4 +2,3 @@ bin/parted_server
 bin/partman
 bin/partman-command
 lib lib/partman
-post-base-installer.d usr/lib

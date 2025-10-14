@@ -1,8 +1,8 @@
 subarch 4kc-malta
 cpuinfo 4kc-malta.cpuinfo
-majors 2.6
+majors 5.7
 flavour 4kc-malta
-kernel-2.6 linux-image-4kc-malta
+kernel-5.7 linux-image-4kc-malta
 usable \
   linux-image-4kc-malta
 unusable \

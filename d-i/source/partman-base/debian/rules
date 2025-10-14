@@ -1,6 +1,6 @@
 #! /usr/bin/make -f
 %:
-	dh $@ --with autoreconf,d-i
+	dh $@ --with d-i
 
 DEB_HOST_ARCH_OS := $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
 
@@ -22,9 +22,6 @@ export DEB_CFLAGS_MAINT_APPEND := -Wall -Os
 
 override_dh_auto_configure:
 	dh_auto_configure -- --prefix=/
-
-override_dh_install:
-	dh_install --fail-missing
 
 override_dh_installdebconf:
 	dh_installdebconf

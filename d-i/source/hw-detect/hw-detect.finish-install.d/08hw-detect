@@ -131,3 +131,10 @@ case "$(detect_virt)" in
 	# XXX: do we need anything for Xen?
 	;;
 esac
+
+# Might have been queued early on, expecting either 0 or 1 by construction:
+if [ -s /tmp/microcode.list ]; then
+    pkg=$(cat /tmp/microcode.list)
+    log "installing $pkg"
+    apt-install --with-recommends $pkg || true
+fi

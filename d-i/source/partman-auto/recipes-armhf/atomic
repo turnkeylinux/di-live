@@ -1,6 +1,6 @@
 partman-auto/text/atomic_scheme ::
 
-128 512 256 ext2
+512 512 768 ext2
 	$primary{ }
 	$bootable{ }
 	method{ format }

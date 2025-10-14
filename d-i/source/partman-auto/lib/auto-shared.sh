@@ -270,10 +270,9 @@ get_auto_disks() {
 		$(mount | grep -qF "$device on /cdrom ") && continue
 
 		# Skip device mapper devices (/dev/mapper/),
-		# except for dmraid or multipath devices
+		# except for multipath devices
 		if echo $device | grep -q "^/dev/mapper/"; then
-			if [ ! -f "$dev/sataraid" ] && \
-			   ! is_multipath_dev $device; then
+			if ! is_multipath_dev $device; then
 				continue
 			fi
 		fi
@@ -286,7 +285,7 @@ select_auto_disk() {
 
 	DEVS=$(get_auto_disks)
 	[ -n "$DEVS" ] || return 1
-	debconf_select critical partman-auto/select_disk "$DEVS" ""
+	debconf_select critical partman-auto/select_disk "$DEVS" "" || return 1
 	echo "$RET"
 	return 0
 }

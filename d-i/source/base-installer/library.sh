@@ -542,10 +542,14 @@ EOF
 	if [ "$do_initrd" = yes ]; then
 		rd_generator=initramfs-tools
 
-		# initramfs-tools needs busybox pre-installed (and only
-		# recommends it)
+		# initramfs-tools may need busybox, and prefers to use
+		# zstd over gzip, but only recommends them
 		if ! log-output -t base-installer apt-install busybox; then
 			db_subst base-installer/kernel/failed-package-install PACKAGE busybox
+			exit_error base-installer/kernel/failed-package-install
+		fi
+		if ! log-output -t base-installer apt-install zstd; then
+			db_subst base-installer/kernel/failed-package-install PACKAGE zstd
 			exit_error base-installer/kernel/failed-package-install
 		fi
 
@@ -886,4 +890,15 @@ EOT
 
 cleanup () {
 	rm -f "$KERNEL_LIST" "$KERNEL_LIST.unfiltered"
+}
+
+is_ports_architecture() {
+	case "$1" in
+		alpha|hppa|hurd-i386|ia64|kfreebsd-amd64|kfreebsd-i386|m68k|powerpc|ppc64|riscv64|sh4|sparc64|x32)
+			return 0
+			;;
+		*)
+			return 1
+			;;
+	esac
 }

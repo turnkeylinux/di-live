@@ -1,8 +1,8 @@
 subarch octeon
 cpuinfo octeon.cpuinfo
-majors 2.6
+majors 5.7
 flavour octeon
-kernel-2.6 linux-image-octeon
+kernel-5.7 linux-image-octeon
 usable \
   linux-image-octeon
 unusable \

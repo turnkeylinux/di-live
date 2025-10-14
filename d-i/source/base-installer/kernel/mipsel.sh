@@ -21,18 +21,11 @@ arch_check_usable_kernel () {
 }
 
 arch_get_kernel () {
-	case "$KERNEL_MAJOR" in
-	    2.6|3.*|4.*)
-		case $1 in
-		    5kc-malta)
-			echo "linux-image-$1"
-			set 4kc-malta
-			;;
-		esac
+	case $1 in
+	    5kc-malta)
 		echo "linux-image-$1"
-		;;
-	    *)
-		warning "Unsupported kernel major '$KERNEL_MAJOR'."
+		set 4kc-malta
 		;;
 	esac
+	echo "linux-image-$1"
 }

@@ -1,9 +1,119 @@
-partman-ext3 (104) UNRELEASED; urgency=medium
+partman-ext3 (112) unstable; urgency=medium
+
+  [ Cyril Brulebois ]
+  * Revert "Declare Standards-Version"
+
+  [ Updated translations ]
+  * Norwegian Nynorsk (nn.po) by Yngve Spjeld-Landro
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 24 May 2023 10:31:43 +0200
+
+partman-ext3 (111) unstable; urgency=medium
+
+  * Team upload
+
+  [ Samuel Thibault ]
+  * Make gbp produce the right tag format (again).
+
+  [ Debian Janitor ]
+  * Set debhelper-compat version in Build-Depends.
+  * Bump debhelper from deprecated 9 to 13.
+
+  [ Holger Wansing ]
+  * Set Standards-Version to 3.8.4 (checked).
+  * Add myself to Uploaders, to make Lintian happy.
+
+  [ Updated translations ]
+  * Japanese (ja.po) by YOSHINO Yoshihito
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 08 Jan 2023 00:19:11 +0100
+
+partman-ext3 (110) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Ukrainian (uk.po) by Artem
+
+ -- Cyril Brulebois <kibi@debian.org>  Mon, 12 Sep 2022 20:10:01 +0200
+
+partman-ext3 (109) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Vietnamese (vi.po) by Trần Ngọc Quân
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 21 Aug 2022 18:26:58 +0200
+
+partman-ext3 (108) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Galician (gl.po) by Jorge Teijeiro
+  * Simplified Chinese (zh_CN.po) by Wenbin Lv
+
+  [ Samuel Thibault ]
+  * Make gbp produce the right tag format.
+
+  [ Debian Janitor ]
+  * Build-Depends: Drop versioned constraint on po-debconf.
+  * partman-ext3: Drop versioned constraint on partman-base and
+    partman-basicfilesystems in Depends.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 28 May 2022 17:39:26 +0200
+
+partman-ext3 (107) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Latvian (lv.po) by Tranzistors
+  * Tamil (ta.po) by Vasudevan Tirumurti
+  * Ukrainian (uk.po) by Anton Gladky
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 13 Mar 2021 18:44:07 +0100
+
+partman-ext3 (106) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * French (fr.po) by Baptiste Jammet
+  * Punjabi (Gurmukhi) (pa.po) by Aman ALam
+  * Traditional Chinese (zh_TW.po) by Walter Cheuk
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 05 Nov 2020 19:17:13 +0100
+
+partman-ext3 (105) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Fix missing package name in 'Project-Id-Version' header of template.pot
+    file, to allow correct declaration in po|pot files.
+
+  [ Samuel Thibault ]
+  * init.d/kernelmodules_ext3: Don't try to read /proc/modules on non-Linux.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 15 Jul 2020 23:38:11 +0200
+
+partman-ext3 (104) unstable; urgency=medium
+
+  * Team upload
 
   [ John Paul Adrian Glaubitz ]
   * Remove obsolete workaround for Yaboot on powerpc
 
- -- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>  Wed, 24 Apr 2019 12:09:45 +0200
+  [ Updated translations ]
+  * Croatian (hr.po) by gogogogi
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 19 Oct 2019 23:52:59 +0200
 
 partman-ext3 (103) unstable; urgency=medium
 

@@ -1,8 +1,8 @@
 subarch 5kc-malta
 cpuinfo 5kc-malta.cpuinfo
-majors 2.6
+majors 5.7
 flavour 5kc-malta
-kernel-2.6 \
+kernel-5.7 \
   linux-image-5kc-malta \
   linux-image-4kc-malta
 usable \

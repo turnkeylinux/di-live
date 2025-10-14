@@ -1,4 +1,6 @@
-CFLAGS := -Os -g -Wall
+CFLAGS ?= -g
+
+CFLAGS += -Os -Wall
 
 all: ensure-active prep-bootdev
 

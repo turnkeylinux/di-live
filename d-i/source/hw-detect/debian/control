@@ -3,21 +3,21 @@ Section: debian-installer
 Priority: standard
 Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Petter Reinholdtsen <pere@debian.org>, Colin Watson <cjwatson@debian.org>
-Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.9.0), po-debconf (>= 0.5.0), libdebian-installer4-dev (>= 0.76)
+Build-Depends: debhelper-compat (= 13), po-debconf, libdebian-installer4-dev
 Vcs-Browser: https://salsa.debian.org/installer-team/hw-detect
 Vcs-Git: https://salsa.debian.org/installer-team/hw-detect.git
 
 Package: hw-detect
 Package-Type: udeb
 Architecture: any
-Depends: rootskel (>= 1.30), archdetect, cdebconf-udeb (>= 0.75), di-utils (>= 1.73), pciutils-udeb, udpkg (>= 1.14)
+Depends: rootskel, archdetect, cdebconf-udeb, di-utils, pciutils-udeb, udpkg, ${misc:Depends}
 Description: Detect hardware and load kernel drivers for it
 
 Package: ethdetect
 Package-Type: udeb
 Architecture: all
 Priority: optional
-Depends: rootskel (>= 1.30), cdebconf-udeb (>= 0.38), hw-detect, di-utils (>= 1.13), pciutils-udeb
+Depends: rootskel, cdebconf-udeb, hw-detect, di-utils, pciutils-udeb, ${misc:Depends}
 Provides: ethernet-card-detection
 XB-Installer-Menu-Item: 1700
 Description: Detect network hardware and load kernel drivers for it
@@ -25,9 +25,10 @@ Description: Detect network hardware and load kernel drivers for it
 Package: disk-detect
 Package-Type: udeb
 Architecture: any
-Depends: cdebconf-udeb (>= 0.38), hw-detect, di-utils (>= 1.13), pciutils-udeb,
+Depends: cdebconf-udeb, hw-detect, di-utils, pciutils-udeb,
 	 harddrive-detection-dasd [s390x],
-	 harddrive-detection-zfcp [s390x]
+	 harddrive-detection-zfcp [s390x],
+	 ${misc:Depends}
 Priority: optional
 Provides: harddrive-detection
 Enhances: hw-detect
@@ -37,7 +38,7 @@ Description: Detect disk drives
 Package: driver-injection-disk-detect
 Package-Type: udeb
 Architecture: all
-Depends: cdebconf-udeb (>= 0.38), hw-detect, mountmedia
+Depends: cdebconf-udeb, hw-detect, mountmedia, ${misc:Depends}
 Priority: optional
 Enhances: hw-detect
 XB-Installer-Menu-Item: 1500
@@ -46,5 +47,5 @@ Description: Detect OEM driver injection disks
 Package: archdetect
 Package-Type: udeb
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Hardware architecture detector

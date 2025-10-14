@@ -3,12 +3,12 @@ Section: debian-installer
 Priority: standard
 Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>, Steve McIntyre <93sam@debian.org>
-Build-Depends: debhelper (>= 9), dh-di, po-debconf (>= 0.5.0)
+Build-Depends: debhelper-compat (= 13), dh-di, po-debconf
 Vcs-Browser: https://salsa.debian.org/installer-team/partman-auto
 Vcs-Git: https://salsa.debian.org/installer-team/partman-auto.git
 
 Package: partman-auto
 Package-Type: udeb
 Architecture: any
-Depends: ${misc:Depends}, di-utils, partman-base (>= 129), partman-basicfilesystems, partman-ext3 [linux-any], partman-ufs [kfreebsd-any]
+Depends: ${misc:Depends}, di-utils, partman-base, partman-basicfilesystems, partman-ext3 [linux-any], partman-ufs [kfreebsd-any]
 Description: Automatically partition storage devices (partman)

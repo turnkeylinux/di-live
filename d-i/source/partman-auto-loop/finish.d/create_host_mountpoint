@@ -1,6 +1,0 @@
-#! /bin/sh
-
-if [ -d /host ]; then
-	mkdir -p /target/host
-	mount --bind /host /target/host
-fi

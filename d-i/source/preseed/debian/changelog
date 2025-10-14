@@ -1,3 +1,179 @@
+preseed (1.117) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Norwegian Nynorsk (nn.po) by Yngve Spjeld-Landro
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 23 May 2023 19:19:21 +0200
+
+preseed (1.116) unstable; urgency=medium
+
+  [ Cyril Brulebois ]
+  * env2debconf: if hostname is set, keep propagating it (see previous
+    changelog entry) but also reset it to the default “(none)” value so
+    that netcfg considers DHCP-provided hostnames. This restores the
+    longstanding semantics, i.e. defining a fallback instead of taking
+    priority (Closes: #1035349).
+
+  [ Updated translations ]
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 03 May 2023 07:20:10 +0200
+
+preseed (1.115) unstable; urgency=medium
+
+  [ Andreas B. Mundt ]
+  * env2debconf: if hostname is set, propagate it to restore support for
+    the hostname alias (Closes: #1031643, #1034062).
+
+ -- Cyril Brulebois <kibi@debian.org>  Mon, 10 Apr 2023 01:44:37 +0200
+
+preseed (1.114) unstable; urgency=medium
+
+  * Team upload.
+  * Switch auto-install/defaultroot to bookworm.
+
+ -- Andreas B. Mundt <andi@debian.org>  Fri, 07 Apr 2023 17:50:36 +0200
+
+preseed (1.113) unstable; urgency=medium
+
+  * Add “firmware” alias for “hw-detect/firmware-lookup” (See: #1029848).
+
+ -- Cyril Brulebois <kibi@debian.org>  Mon, 30 Jan 2023 02:38:18 +0100
+
+preseed (1.112) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Vietnamese (vi.po) by Trần Ngọc Quân
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 21 Aug 2022 18:43:43 +0200
+
+preseed (1.111) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations]
+  * Simplified Chinese (zh_CN.po) by Wenbin Lv
+
+  [ Debian Janitor ]
+  * Build-Depends: Drop versioned constraint on dpkg-dev.
+  * preseed-common: Drop versioned constraint on di-utils in Depends.
+  * Add missing ${misc:Depends} to Depends for initrd-preseed, env-preseed.
+  * Bump debhelper from deprecated 9 to 13.
+  * Set debhelper-compat version in Build-Depends.
+  * Remove field Priority on binary packages env-preseed, initrd-preseed, that
+    duplicates source.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 28 May 2022 18:42:40 +0200
+
+preseed (1.110) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Fix missing fullstop in template.
+    + Syncing translations.
+
+  [ Samuel Thibault ]
+  * Make gbp produce the right tag format
+
+  [ Updated translations ]
+  * Spanish (es.po) by Javier Fernández-Sanguino
+  * Finnish (fi.po) by Kimmo Kujansuu
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Gediminas Murauskas
+  * Romanian (ro.po) by Christian Eichert
+  * Swedish (sv.po) by Anders Jonsson
+  * Telugu (te.po) by Praveen Illa
+  * Turkish (tr.po) by Fatih Altun
+  * Vietnamese (vi.po) by Tran Dinh Hai
+  * Simplified Chinese (zh_CN.po) by 吕文彬
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 02 Jan 2022 17:32:38 +0100
+
+preseed (1.109) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Fahim Sabah
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 31 May 2021 00:16:54 +0200
+
+preseed (1.108) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by KushagraKarira
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Tamil (ta.po) by Vasudevan Tirumurti
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 13 Mar 2021 18:37:59 +0100
+
+preseed (1.107) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Greek (el.po) by Vangelis Skarmoutsos
+  * Basque (eu.po) by Iñaki Larrañaga Murgoitio
+  * French (fr.po) by Baptiste Jammet
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Punjabi (Gurmukhi) (pa.po) by Aman ALam
+
+  [ New translations ]
+  * Kabyle (kab.po) by Slimane Selyan Amiri
+  * Occitan (oc.po) by Quentin PAGÈS
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 04 Nov 2020 19:51:19 +0100
+
+preseed (1.106) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Korean (ko.po) by Changwoo Ryu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 10 May 2020 22:18:19 +0200
+
+preseed (1.105) unstable; urgency=medium
+
+  * Team upload
+
+  * Update auto-install/defaultroot, replacing buster with bullseye. Thanks
+    to John Doe for the hint.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Mon, 09 Mar 2020 20:40:10 +0100
+
+preseed (1.104) unstable; urgency=medium
+
+  * Team upload
+
+  * Fix missing sublevelX declaration in templates files. Includes updating
+    all po|pot files.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 Jan 2020 22:59:07 +0100
+
+preseed (1.103) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Add comment for translators, to keep main menu entry below a 55 columns
+    limit. This updates all po|pot files.
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Croatian (hr.po) by gogogogi
+  * Portuguese (pt.po) by Miguel Figueiredo
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 18 Oct 2019 17:10:38 +0200
+
 preseed (1.102) unstable; urgency=medium
 
   * Remove Christian Perrier from Uploaders, with many thanks for all
@@ -8,6 +184,7 @@ preseed (1.102) unstable; urgency=medium
  -- Cyril Brulebois <kibi@debian.org>  Fri, 26 Apr 2019 15:05:13 +0200
 
 preseed (1.101) unstable; urgency=medium
+
   * Team upload
 
   [ Updated translations ]
@@ -16,6 +193,7 @@ preseed (1.101) unstable; urgency=medium
  -- Holger Wansing <hwansing@mailbox.org>  Wed, 06 Mar 2019 23:04:27 +0100
 
 preseed (1.100) unstable; urgency=medium
+
   * Team upload
 
   * Remove trailing whitespaces from changelog file, to fix lintian tag.

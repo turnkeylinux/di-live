@@ -1,13 +1,13 @@
 subarch vexpress
 cpuinfo vexpress.cpuinfo
-majors 2.6
+majors 5.7
 flavour vexpress armmp
-kernel-2.6 linux-image-vexpress linux-image-armmp
+kernel-5.7 linux-image-vexpress linux-image-armmp
 usable \
   linux-image-vexpress \
   linux-image-3.2.0-4-vexpress \
   linux-image-armmp \
-  linux-image-3.2.0-4-armmp
+  linux-image-5.7.0-1-armmp
 unusable \
   linux-image-armmp-lpae \
   linux-image-netwinder \
@@ -16,4 +16,4 @@ unusable \
   linux-image-s3c2410 \
   linux-image-kirkwood \
   linux-image-mx5 \
-  linux-image-3.2.0-4-armmp-dbg
+  linux-image-5.7.0-1-armmp-dbg

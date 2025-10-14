@@ -1,7 +1,0 @@
-*.debhelper*
-*.substvars
-autoreconf.*
-files
-partman-base
-partman-utils
-tmp

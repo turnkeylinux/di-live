@@ -59,6 +59,10 @@ It uses methods for each protocol that it finds in /usr/lib/fetch-url/
 non-zero otherwise, although the return codes depend on the error from
 the underlying methods, so specific values should not be relied upon
 at present.
+fetch-url supports the use of `base64` as a fake protocol, which allows one to
+specify data in-line (e.g. base64://SGVsbG8gV29ybGQhCg==) which can be useful to
+when only a URL pointing to a file is accepted, such as
+the keyfile for a repo in the local repos (apt-setup/local<N>/key).
 The options modify its behaviour thus (for those methods where they
 make sense -- ftp & http currently -- otherwise they're ignored):
 

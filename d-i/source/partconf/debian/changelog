@@ -1,10 +1,3 @@
-partconf (1.53) UNRELEASED; urgency=medium
-
-  * Remove Christian Perrier from Uploaders, with many thanks for all
-    his contributions over the years! (Closes: #927554)
-
- -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:37:12 +0200
-
 partconf (1.52) unstable; urgency=medium
 
   * Team upload

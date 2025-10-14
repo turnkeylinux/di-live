@@ -175,29 +175,6 @@ while ! disk_found; do
 	db_capb
 done
 
-# Activate support for Serial ATA RAID
-db_get disk-detect/dmraid/enable
-if [ "$RET" = true ]; then
-	if anna-install dmraid-udeb; then
-		# Device mapper support is required to run dmraid
-		if is_not_loaded dm-mod; then
-			module_probe dm-mod || true
-		fi
-
-		if dmraid -c -s >/dev/null 2>&1; then
-			logger -t disk-detect "Serial ATA RAID disk(s) detected; enabling dmraid support"
-			# Activate only those arrays which have all disks
-			# present.
-			for dev in $(dmraid -r -c); do
-				[ -e "$dev" ] || continue
-				log-output -t disk-detect dmraid-activate "$(basename "$dev")"
-			done
-		else
-			logger -t disk-detect "No Serial ATA RAID disks detected"
-		fi
-	fi
-fi
-
 # Activate support for DM Multipath
 db_get disk-detect/multipath/enable
 if [ "$RET" = true ]; then

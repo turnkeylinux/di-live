@@ -2,13 +2,14 @@ Source: partman-ext3
 Section: debian-installer
 Priority: standard
 Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
-Build-Depends: debhelper (>= 9), dh-di, po-debconf (>= 0.5.0)
+Uploaders: Holger Wansing <hwansing@mailbox.org>
+Build-Depends: debhelper-compat (= 13), dh-di, po-debconf
 Vcs-Browser: https://salsa.debian.org/installer-team/partman-ext3
 Vcs-Git: https://salsa.debian.org/installer-team/partman-ext3.git
 
 Package: partman-ext3
 Package-Type: udeb
 Architecture: all
-Depends: ${misc:Depends}, e2fsprogs-udeb, ext3-modules, ext4-modules, partman-basicfilesystems (>= 59), partman-base (>= 140)
+Depends: ${misc:Depends}, e2fsprogs-udeb, ext3-modules, ext4-modules, partman-basicfilesystems, partman-base
 Provides: partman-filesystem
 Description: Add to partman support for ext3 and ext4

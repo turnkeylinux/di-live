@@ -61,9 +61,12 @@ db_progress INFO grub-installer/progress/step_mount_filesystems
 
 log "Mounting filesystems"
 # If we're installing grub-efi, it wants /sys mounted in the
-# target. Maybe /proc too?
+# target. Maybe /proc too, and definitely the efivars fs. Should be
+# harmless if we're not using it.
 mountvirtfs proc /target/proc
 mountvirtfs sysfs /target/sys
+modprobe efivarfs >/dev/null 2>&1 || true
+mountvirtfs efivarfs /target/sys/firmware/efi/efivars || true
 chroot /target mount /boot/efi || true
 EXTRA_PATHS="$EXTRA_PATHS /target/boot/efi"
 trap "umount $EXTRA_PATHS" HUP INT QUIT KILL PIPE TERM EXIT
