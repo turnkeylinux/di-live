@@ -18,7 +18,7 @@ Source structure
 
 di-live.py  - top level executable script (symlinked from bin/di-live)
 di-live     - drives the installation (similar to d-i's main-menu)
-di-live.d/  - component directory (executed in alpha-numeric ordering)
+di_live.d/  - component directory (executed in alpha-numeric ordering)
 d-i/        - upstream d-i source code
 compat/     - compatibility scripts as d-i code assumes running in 
               initrd/initramfs
