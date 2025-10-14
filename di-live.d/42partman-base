@@ -2,8 +2,8 @@
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
 import os
-import signal
 import shutil
+import signal
 
 from common import dilive_system, preset_debconf
 
@@ -24,45 +24,49 @@ def kill_server(pidfile):
 
 
 def main():
-    templates = ['partman-auto/init_automatically_partition',
-                 'partman-auto/automatically_partition',
-                 'partman-auto/select_disk',
-                 'partman-auto/text/use_device',
-                 'partman-auto/text/custom_partitioning',
-                 'partman-basicfilesystems/fat_mountpoint',
-                 'partman-basicfilesystems/mountpoint',
-                 'partman-basicfilesystems/mountpoint_manual',
-                 'partman-partitioning/confirm_resize',
-                 'partman-partitioning/confirm_new_label',
-                 'partman-partitioning/new_size',
-                 'partman-partitioning/new_partition_size',
-                 'partman-partitioning/new_partition_type',
-                 'partman-partitioning/new_partition_place',
-                 'partman/choose_partition',
-                 'partman/confirm',
-                 'partman/free_space',
-                 'partman/active_partition',
-                 'partman-target/choose_method',
-                 'partman/exception_handler',
-                 'partman/exception_handler_note']
+    templates = [
+        "partman-auto/init_automatically_partition",
+        "partman-auto/automatically_partition",
+        "partman-auto/select_disk",
+        "partman-auto/text/use_device",
+        "partman-auto/text/custom_partitioning",
+        "partman-basicfilesystems/fat_mountpoint",
+        "partman-basicfilesystems/mountpoint",
+        "partman-basicfilesystems/mountpoint_manual",
+        "partman-partitioning/confirm_resize",
+        "partman-partitioning/confirm_new_label",
+        "partman-partitioning/new_size",
+        "partman-partitioning/new_partition_size",
+        "partman-partitioning/new_partition_type",
+        "partman-partitioning/new_partition_place",
+        "partman/choose_partition",
+        "partman/confirm",
+        "partman/free_space",
+        "partman/active_partition",
+        "partman-target/choose_method",
+        "partman/exception_handler",
+        "partman/exception_handler_note",
+    ]
 
-    preseeds = [('partman-auto-lvm/new_vg_name', 'turnkey'),
-                ('partman-auto-lvm/guided_size', '90%'),
-                ('partman-auto/choose_recipe', 'atomic')]
+    preseeds = [
+        ("partman-auto-lvm/new_vg_name", "turnkey"),
+        ("partman-auto-lvm/guided_size", "90%"),
+        ("partman-auto/choose_recipe", "atomic"),
+    ]
 
     # hack: if not seen the default value will be max size
-    seen = [('partman-auto-lvm/guided_size', True)]
+    seen = [("partman-auto-lvm/guided_size", True)]
 
     # kill and cleanup after 'old' parted_server
-    kill_server('/var/run/parted_server.pid')
+    kill_server("/var/run/parted_server.pid")
 
     # force auto-partitioning to be re-run (only if old server?)
-    shutil.rmtree('/var/lib/partman', ignore_errors=True)
+    shutil.rmtree("/var/lib/partman", ignore_errors=True)
 
     # reset debconf for clean re-runs
     preset_debconf(resets=templates, preseeds=preseeds, seen=seen)
 
-    dilive_system(['/bin/partman'])
+    dilive_system(["/bin/partman"])
 
 
 if __name__ == "__main__":

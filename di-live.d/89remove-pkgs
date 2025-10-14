@@ -4,27 +4,34 @@
 
 import sys
 
-from common import Chroot, DiliveDebconf, PIPE, target_mounted
+from common import PIPE, Chroot, DiliveDebconf, target_mounted
 
-pkgs_to_clean = ['di-live', 'live-boot', 'live-tools',
-                 'live-boot-initramfs-tools']
+pkgs_to_clean = [
+    "di-live",
+    "live-boot",
+    "live-tools",
+    "live-boot-initramfs-tools",
+]
 
 
-def clean_target_pkgs(*pkgs, path='/target'):
+def clean_target_pkgs(*pkgs, path="/target"):
     """Clean up unrequired pkgs from installed system"""
     chroot = Chroot(path)
-    chroot.system(['apt-get', 'purge', '--autoremove', '-y', *pkgs], stdout=PIPE)
+    chroot.system(
+        ["apt-get", "purge", "--autoremove", "-y", *pkgs], stdout=PIPE
+    )
     chroot.exit()
 
 
 def main():
-    if not target_mounted('/target'):
+    if not target_mounted("/target"):
         sys.exit(10)  # return to menu
-    db = DiliveDebconf(title='Remove live packages')
-    db.progress_init(2, description=
-                     'Removing live packages from installed system')
+    db = DiliveDebconf(title="Remove live packages")
+    db.progress_init(
+        2, description="Removing live packages from installed system"
+    )
     db.progress_step(1)
-    clean_target_pkgs(*pkgs_to_clean, path='/target')
+    clean_target_pkgs(*pkgs_to_clean, path="/target")
     db.progress_step(2)
 
 

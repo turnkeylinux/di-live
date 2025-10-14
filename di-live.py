@@ -17,19 +17,19 @@ Options:
 
 """
 
-import re
-import os
-import sys
 import getopt
-import debconf
-
+import os
+import re
+import sys
 from os.path import *
 
-LOGFILE = '/var/log/di-live.log'
+import debconf
+
+LOGFILE = "/var/log/di-live.log"
 
 
 def log(s):
-    with open(LOGFILE, 'a') as fob:
+    with open(LOGFILE, "a") as fob:
         fob.write(s + "\n")
 
 
@@ -41,7 +41,7 @@ class Debian_Priority:
     """class for controlling DEBIAN_PRIORITY"""
 
     def __init__(self):
-        self.original = os.environ.get('DEBIAN_PRIORITY')
+        self.original = os.environ.get("DEBIAN_PRIORITY")
         self.current = self.original
 
     def __del__(self):
@@ -54,11 +54,11 @@ class Debian_Priority:
         if priority in (None, self.current):
             return
 
-        priorities = ('low', 'medium', 'high', 'critical')
+        priorities = ("low", "medium", "high", "critical")
         if priority not in priorities:
-            raise Error('illegal debian priority', priority)
+            raise Error("illegal debian priority", priority)
 
-        os.environ['DEBIAN_PRIORITY'] = priority
+        os.environ["DEBIAN_PRIORITY"] = priority
         self.current = priority
 
     def revert(self):
@@ -67,21 +67,21 @@ class Debian_Priority:
 
     def decrease(self):
         """decrease priority to medium (or low if original was low)"""
-        if self.original == 'low':
-            self.set('low')
+        if self.original == "low":
+            self.set("low")
         else:
-            self.set('medium')
+            self.set("medium")
 
 
 class Menu:
     """class for controlling a debconf menu with choices"""
 
-    def __init__(self, template, title=None, priority='high', subst='CHOICES'):
+    def __init__(self, template, title=None, priority="high", subst="CHOICES"):
         debconf.runFrontEnd()
         self.template = template
         self.db = debconf.Debconf(title)
 
-        self.db.capb('backup')
+        self.db.capb("backup")
         self.priority = priority
         self.subst = subst
 
@@ -94,11 +94,11 @@ class Menu:
         for name in names:
             title = name.capitalize()
             try:
-                template = 'debian-installer/%s/title' % name
-                title = self.db.metaget(template, 'description')
+                template = "debian-installer/%s/title" % name
+                title = self.db.metaget(template, "description")
             except debconf.DebconfError as e:
                 if not e.args[0] == 10:
-                    raise Error('DebconfError', e)
+                    raise Error("DebconfError", e)
 
             titles.append(title)
             self.choices[title] = name
@@ -110,7 +110,7 @@ class Menu:
             self.db.go()
         except debconf.DebconfError as e:
             if not e.args[0] == 30 and not e.args[1] == "backup":
-                raise Error('debconf error', e)
+                raise Error("debconf error", e)
 
     def get_choice(self):
         ret = self.db.get(self.template)
@@ -124,7 +124,7 @@ class Component:
 
     def __init__(self, path):
         self.path = path
-        self.name = re.sub('^[\d]*', '', basename(path))
+        self.name = re.sub(r"^[\d]*", "", basename(path))
         self.exitcode = None
 
     def execute(self):
@@ -142,7 +142,7 @@ class Components(dict):
 
     def __init__(self, dirpath):
         if not exists(dirpath):
-            raise Error('non existent components path', dirpath)
+            raise Error("non existent components path", dirpath)
 
         for file in os.listdir(dirpath):
             path = join(dirpath, file)
@@ -164,7 +164,7 @@ class Components(dict):
 
     def add(self, path):
         if not self._is_executable(path):
-            raise Error('component not executable', path)
+            raise Error("component not executable", path)
 
         name = basename(path)
         self[name] = Component(path)
@@ -183,7 +183,7 @@ class Components_Menu:
         self.priority = Debian_Priority()
 
     def _get_next_component(self):
-        if self.priority.get() in ('low', 'medium'):
+        if self.priority.get() in ("low", "medium"):
             self.menu.display([c.name for c in self.components])
             choice = self.menu.get_choice()
 
@@ -198,7 +198,7 @@ class Components_Menu:
         return None
 
     def run(self):
-        self.last = ''
+        self.last = ""
         while 1:
             component = self._get_next_component()
             if component is None:
@@ -222,29 +222,29 @@ def usage(s=None):
 
 def main():
     try:
-        opts, args = getopt.gnu_getopt(sys.argv[1:], "hd", ['help', 'debug'])
+        opts, args = getopt.gnu_getopt(sys.argv[1:], "hd", ["help", "debug"])
     except getopt.GetoptError as e:
         usage(e)
 
     debug = False
     for opt, val in opts:
-        if opt in ('-h', '--help'):
+        if opt in ("-h", "--help"):
             usage()
-        elif opt in ('-d', '--debug'):
+        elif opt in ("-d", "--debug"):
             debug = True
 
     if debug:
-        os.environ['DEBCONF_DEBUG'] = 'developer'
-        os.environ['DEBIAN_FRONTEND'] = 'readline'
+        os.environ["DEBCONF_DEBUG"] = "developer"
+        os.environ["DEBIAN_FRONTEND"] = "readline"
     else:
-        os.environ['DEBIAN_FRONTEND'] = 'dialog'
+        os.environ["DEBIAN_FRONTEND"] = "dialog"
 
     # suppress creation of __pycache__ dir so it does not show in menu.
-    os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
+    os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
 
-    components_dir = '/usr/lib/di-live.d'
-    menu_template = 'di-live/main_menu'
-    menu_title = 'Debian Installer Live'
+    components_dir = "/usr/lib/di-live.d"
+    menu_template = "di-live/main_menu"
+    menu_title = "Debian Installer Live"
 
     Components_Menu(components_dir, menu_template, menu_title).run()
 

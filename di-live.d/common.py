@@ -1,17 +1,18 @@
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 """Common di-live functions and classes."""
-import os
-import sys
-import debconf
-import subprocess
-from subprocess import PIPE
-from typing import List
 
-LOGFILE = '/var/log/di-live.log'
+import os
+import subprocess
+import sys
+from subprocess import PIPE
+
+import debconf
+
+LOGFILE = "/var/log/di-live.log"
 
 
 def log(s):
-    with open(LOGFILE, 'a') as fob:
+    with open(LOGFILE, "a") as fob:
         fob.write(s + "\n")
 
 
@@ -20,14 +21,16 @@ class Chroot:
 
     def __init__(self, newroot, environ={}):
         # hack to allow exiting the chroot later - see rest in __del__()
-        self.real_root = os.open('/', os.O_RDONLY)
+        self.real_root = os.open("/", os.O_RDONLY)
         self.initial_cwd = os.getcwd()
 
         PATH = "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/bin:/usr/sbin"
-        self.environ = {'HOME': '/root',
-                        'TERM': os.environ['TERM'],
-                        'LC_ALL': 'C',
-                        'PATH': PATH}
+        self.environ = {
+            "HOME": "/root",
+            "TERM": os.environ["TERM"],
+            "LC_ALL": "C",
+            "PATH": PATH,
+        }
         self.environ.update(environ)
 
         self.targetmounts = TargetMounts(newroot)
@@ -35,7 +38,7 @@ class Chroot:
         # enter chroot and explicitly change to chroot's root; as python cwd
         # is not auto updated and python cwd may not exist in chroot
         os.chroot(newroot)
-        os.chdir('/')
+        os.chdir("/")
 
     def system(self, command, shell=False, stdout=None) -> None:
         """Leverages system function to execute command in chroot."""
@@ -44,7 +47,7 @@ class Chroot:
     def exit(self):
         # hack to escape python chroot and get back to initial cwd
         os.fchdir(self.real_root)
-        os.chroot('.')
+        os.chroot(".")
         os.chdir(self.initial_cwd)
         self.targetmounts.umount()
 
@@ -64,12 +67,12 @@ class DiliveDebconf:
             self.db = debconf.Debconf(run_frontend=True, title=title)
         else:
             self.db = debconf.Debconf(run_frontend=True)
-        self.db.capb('backup')
+        self.db.capb("backup")
 
     def _db_input(self, template, description=None, default=None):
         self.db.reset(template)
         if description:
-            self.db.subst(template, 'DESCRIPTION', description)
+            self.db.subst(template, "DESCRIPTION", description)
         if default:
             self.db.set(template, default)
         self.db.input(debconf.HIGH, template)
@@ -83,45 +86,47 @@ class DiliveDebconf:
         self.db.reset(template)
         return ret
 
-    def get_input(self, template='di-live/get-string', description=None,
-                  default=None):
+    def get_input(
+        self, template="di-live/get-string", description=None, default=None
+    ):
         return self._db_input(template, description, default)
 
     def get_password(self, description, allow_empty=False):
         while 1:
-            password = self._db_input('di-live/password', description)
-            if password == self._db_input('di-live/password_again'):
+            password = self._db_input("di-live/password", description)
+            if password == self._db_input("di-live/password_again"):
                 if not password and not allow_empty:
-                    self._db_input('di-live/password_empty')
+                    self._db_input("di-live/password_empty")
                     continue
 
                 break
 
-            self._db_input('di-live/password_mismatch')
+            self._db_input("di-live/password_mismatch")
 
         return password
 
-    def progress_init(self, steps, template='di-live/progress/generic',
-                      description=None):
+    def progress_init(
+        self, steps, template="di-live/progress/generic", description=None
+    ):
         if description:
-            self.db.subst(template, 'DESCRIPTION', description)
+            self.db.subst(template, "DESCRIPTION", description)
         self.progress_steps = steps
-        self.db.progress('START 0 {} {}'.format(steps, template))
+        self.db.progress(f"START 0 {steps} {template}")
 
     def progress_step(self, step_no):
         if step_no > self.progress_steps:
             return
-        self.db.progress('STEP {}'.format(step_no))
+        self.db.progress(f"STEP {step_no}")
 
 
 class TargetMounts:
     """Set up and remove required mountpoints for a chroot."""
 
-    def __init__(self, target='/target'):
-        self.targetdev = os.path.join(target, 'dev')
-        self.targetproc = os.path.join(target, 'proc')
-        self.targetsys = os.path.join(target, 'sys')
-        self.targetrun = os.path.join(target, 'run')
+    def __init__(self, target="/target"):
+        self.targetdev = os.path.join(target, "dev")
+        self.targetproc = os.path.join(target, "proc")
+        self.targetsys = os.path.join(target, "sys")
+        self.targetrun = os.path.join(target, "run")
         self.mount()
 
     def mount(self):
@@ -140,11 +145,13 @@ class TargetMounts:
             system(["umount", "-f", mounted_dir])
 
         if is_mounted(self.targetsys):
-            with open("/proc/mounts", 'r') as fob:
+            with open("/proc/mounts") as fob:
                 for line in fob.readlines():
-                    host, guest, *others = line.split(' ')
-                    if (guest.startswith(self.targetsys)
-                            and not guest == self.targetsys):
+                    host, guest, *others = line.split(" ")
+                    if (
+                        guest.startswith(self.targetsys)
+                        and not guest == self.targetsys
+                    ):
                         _umount(guest)
             _umount(self.targetsys)
         if is_mounted(self.targetdev):
@@ -171,17 +178,20 @@ class ExecError(Exception):
         self.exitcode = exitcode
 
     def __str__(self):
-        str = "non-zero exitcode (%d) for command: %s" % (self.exitcode,
-                                                          self.command)
+        str = "non-zero exitcode (%d) for command: %s" % (
+            self.exitcode,
+            self.command,
+        )
         return str
 
 
 def prepend_path(path):
-    os.environ['PATH'] = path + ":" + os.environ.get('PATH')
+    os.environ["PATH"] = path + ":" + os.environ.get("PATH")
 
 
-def system(command, shell=False, stdout=None, write_log=True,
-           env=os.environ) -> None:
+def system(
+    command, shell=False, stdout=None, write_log=True, env=os.environ
+) -> None:
     """Execute command.
 
     If command returns non-zero exitcode raises ExecError
@@ -192,15 +202,15 @@ def system(command, shell=False, stdout=None, write_log=True,
     """
     command = list(command)
     if write_log:
-        log('Running command: {}'.format(command))
-    run_command = subprocess.run(command, shell=shell, env=env,
-                              stderr=PIPE, stdout=stdout)
+        log(f"Running command: {command}")
+    run_command = subprocess.run(
+        command, shell=shell, env=env, stderr=PIPE, stdout=stdout
+    )
     if run_command.returncode != 0:
         if write_log:
-            log('Command {}: Exit code {}\nSTDERR: {}'.format(
-                run_command.args,
-                run_command.returncode,
-                run_command.stderr.decode()))
+            log(
+                f"Command {run_command.args}: Exit code {run_command.returncode}\nSTDERR: {run_command.stderr.decode()}"
+            )
         raise ExecError(command, run_command.returncode)
 
 
@@ -212,7 +222,7 @@ def dilive_system(command):
     - catch and log execution exception, exit with exitcode
     - stderr is redirected to the logfile by system()
     """
-    prepend_path('/usr/lib/di-live/compat')
+    prepend_path("/usr/lib/di-live/compat")
     try:
         system(command)
     except ExecError as e:
@@ -233,24 +243,23 @@ def preset_debconf(resets=None, preseeds=None, seen=None):
 
     if seen:
         for template, value in seen:
-            db.fset(template, 'seen', value)
+            db.fset(template, "seen", value)
 
 
 def is_mounted(directory):
-    with open("/proc/mounts", 'r') as fob:
+    with open("/proc/mounts") as fob:
         for line in fob.readlines():
-            host, guest, *others = line.split(' ')
+            host, guest, *others = line.split(" ")
             if guest == directory:
                 return True
     return False
 
 
-def target_mounted(target='/target'):
-
+def target_mounted(target="/target"):
     if not os.path.exists(target) or not is_mounted(target):
         db = debconf.Debconf(run_frontend=True)
-        db.capb('backup')
-        db.input(debconf.CRITICAL, 'base-installer/no_target_mounted')
+        db.capb("backup")
+        db.input(debconf.CRITICAL, "base-installer/no_target_mounted")
         db.go()
         return False
     return True
