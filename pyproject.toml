@@ -1,0 +1,12 @@
+[project]
+name = "di-live"
+version = "2.0.0"
+authors = [{name = "TurnKey GNU/Linux", email = "jeremy@turnkeylinux.org"}]
+license = "GPL-3.0-or-later"
+description = "Debian Installer for Live systems"
+
+[project.urls]
+Homepage = "https://github.com/turnkeylinux/di-live"
+
+[tool.mypy]
+mypy_path = ["stubs"]
