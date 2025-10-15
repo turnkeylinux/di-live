@@ -12,6 +12,7 @@ Description: do not use the partition
 
 Template: partman-basicmethods/text/format
 Type: text
+# up to 25 character positions
 Description: Format the partition:
 
 Template: partman-basicmethods/text/yes_format
@@ -28,6 +29,7 @@ Description: do not use
 
 Template: partman/method_short/dont_use
 Type: text
+# short variant of `do not use the partition'
 Description: unused
 
 Template: partman/method_long/format
@@ -36,6 +38,7 @@ Description: format the partition
 
 Template: partman/method_short/format
 Type: text
+# short variant of `format the partition'
 Description: format
 
 Template: partman/method_long/keep
@@ -44,4 +47,5 @@ Description: keep and use the existing data
 
 Template: partman/method_short/keep
 Type: text
+# short variant of `keep and use the existing data'
 Description: keep

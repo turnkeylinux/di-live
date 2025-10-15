@@ -26,6 +26,8 @@ Description: Modules to load:
 Template: hw-detect/start_pcmcia
 Type: boolean
 Default: true
+# FIXME: not in use and kept just while we're still in doubt it will
+#        be needed
 Description: Start PC card services?
  Please choose whether PC card services should be started in order to allow
  the use of PCMCIA cards.
@@ -82,11 +84,13 @@ Template: base-installer/progress/hw-detect
 Type: text
 Description: Checking for firmware...
 
+# Temporary template to force old behavior of loading IDE modules by default
 Template: hw-detect/load-ide
 Type: boolean
 Default: false
 Description: for internal use; can be preseeded
 
+# This is an initial implementation, which might evolve over time (#1029848):
 Template: hw-detect/firmware-lookup
 Type: text
 Default:

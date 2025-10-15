@@ -1,5 +1,7 @@
 Template: debian-installer/disk-detect/title
 Type: text
+#  Main menu item
+#  Translators: keep below 55 columns
 Description: Detect disks
 
 Template: disk-detect/detect_progress_title
@@ -8,7 +10,9 @@ Description: Detecting disks and all other hardware
 
 Template: disk-detect/module_select
 Type: select
-_Choices: continue with no disk drive, ${CHOICES}, none of the above
+#flag:comment:3
+# "none of the above" should be understood as "none of the above choices"
+Choices: continue with no disk drive, ${CHOICES}, none of the above
 Default: continue with no disk drive
 Description: Driver needed for your disk drive:
  No disk drive was detected. If you know the name of the driver

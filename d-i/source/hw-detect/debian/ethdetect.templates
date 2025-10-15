@@ -1,6 +1,8 @@
 Template: ethdetect/module_select
 Type: select
-_Choices: no ethernet card, ${CHOICES}, none of the above
+#flag:comment:3
+# "none of the above" should be understood as "none of the above choices"
+Choices: no ethernet card, ${CHOICES}, none of the above
 Default: no ethernet card
 Description: Driver needed by your Ethernet card:
  No Ethernet card was detected. If you know the name of the driver
@@ -31,4 +33,6 @@ Description: for internal use; can be preseeded
 
 Template: debian-installer/ethdetect/title
 Type: text
+#  Main menu item
+#  Translators: keep below 55 columns
 Description: Detect network hardware

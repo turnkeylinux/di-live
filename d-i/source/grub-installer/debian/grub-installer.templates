@@ -42,7 +42,7 @@ Description: Device for boot loader installation:
 Template: grub-installer/choose_bootdev
 Type: select
 Choices-C: manual, ${DEVICES_LIST}
-_Choices: Enter device manually, ${DESCRIPTIONS}
+Choices: Enter device manually, ${DESCRIPTIONS}
 Description: Device for boot loader installation:
  You need to make the newly installed system bootable, by installing
  the GRUB boot loader on a bootable device. The usual way to do this is to
@@ -73,6 +73,8 @@ Type: error
 Description: Password input error
  The two passwords you entered were not the same. Please try again.
 
+# Allow preseeding the GRUB password with an encrypted password
+# rather than cleartext
 Template: grub-installer/password-crypted
 Type: password
 Description: for internal use; can be preseeded
@@ -152,10 +154,13 @@ Description: Configuring grub-efi for future usage of the removable media path
 
 Template: debian-installer/grub-installer/title
 Type: text
+#  Main menu item
+#  Translators: keep below 55 columns
 Description: Install the GRUB boot loader
 
 Template: rescue/menu/grub-reinstall
 Type: text
+# Rescue menu item
 Description: Reinstall GRUB boot loader
 
 Template: grub-installer/skip
@@ -181,6 +186,7 @@ Description: Failed to mount ${PATH}
 
 Template: rescue/menu/grub-efi-force-removable
 Type: text
+# Rescue menu item
 Description: Force GRUB installation to the EFI removable media path
 
 Template: grub-installer/force-efi-extra-removable
@@ -207,6 +213,7 @@ Description: Force GRUB installation to the EFI removable media path?
 Template: grub-installer/update-nvram
 Type: boolean
 Default: true
+# Same as grub2/update_nvram
 Description: Update NVRAM variables to automatically boot into Debian?
  GRUB can configure your platform's NVRAM variables so that it boots into
  Debian automatically when powered on. However, you may prefer to disable
@@ -217,6 +224,7 @@ Description: Update NVRAM variables to automatically boot into Debian?
 Template: grub-installer/enable_os_prober_otheros_yes
 Type: boolean
 Default: true
+# Very similar to grub2/disable_os_prober
 Description: Run os-prober automatically to detect and boot other OSes?
  GRUB can use the os-prober tool to attempt to detect other
  operating systems on your computer and add them to its list of boot
@@ -234,6 +242,7 @@ Description: Run os-prober automatically to detect and boot other OSes?
 Template: grub-installer/enable_os_prober_otheros_no
 Type: boolean
 Default: false
+# Very similar to grub2/disable_os_prober
 Description: Run os-prober automatically to detect and boot other OSes?
  GRUB can use the os-prober tool to attempt to detect other
  operating systems on your computer and add them to its list of boot

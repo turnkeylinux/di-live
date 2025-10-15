@@ -13,8 +13,13 @@ Description: EFI System Partition
 
 Template: partman/method_short/efi
 Type: text
+# short variant of 'EFI System Partition'
+# Up to 10 character positions
 Description: ESP
 
+#Template: partman/filesystem_long/efi
+#Type: text
+#_Description: EFI System Partition (FAT16)
 
 Template: partman/filesystem_short/efi
 Type: text

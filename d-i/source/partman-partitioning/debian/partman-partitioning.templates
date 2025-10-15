@@ -78,14 +78,14 @@ Description: Invalid size
 
 Template: partman-partitioning/new_partition_place
 Type: select
-_Choices: Beginning, End
+Choices: Beginning, End
 Description: Location for the new partition:
  Please choose whether you want the new partition to be created at the
  beginning or at the end of the available space.
 
 Template: partman-partitioning/new_partition_type
 Type: select
-_Choices: Primary, Logical
+Choices: Primary, Logical
 Description: Type for the new partition:
 
 Template: partman-partitioning/set_flags
@@ -208,9 +208,13 @@ Description: Create a new empty partition table on this device
 
 Template: partman/method_long/biosgrub
 Type: text
+# Setting to reserve a small part of the disk for use by BIOS-based bootloaders
+# such as GRUB.
 Description: Reserved BIOS boot area
 
 Template: partman/method_short/biosgrub
 Type: text
+# short variant of 'Reserved BIOS boot area'
+# Up to 10 character positions
 Description: biosgrub
 

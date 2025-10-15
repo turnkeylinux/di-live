@@ -1,25 +1,31 @@
 Template: partman-ext3/text/ext3
 Type: text
+# File system name (untranslatable in many languages)
 Description: ext3
 
 Template: partman/filesystem_long/ext3
 Type: text
+# File system name
 Description: Ext3 journaling file system
 
 Template: partman/filesystem_short/ext3
 Type: text
+# Short file system name (untranslatable in many languages)
 Description: ext3
 
 Template: partman-ext3/text/ext4
 Type: text
+# File system name (untranslatable in many languages)
 Description: ext4
 
 Template: partman/filesystem_long/ext4
 Type: text
+# File system name
 Description: Ext4 journaling file system
 
 Template: partman/filesystem_short/ext4
 Type: text
+# Short file system name (untranslatable in many languages)
 Description: ext4
 
 Template: partman-ext3/boot_not_ext2_or_ext3

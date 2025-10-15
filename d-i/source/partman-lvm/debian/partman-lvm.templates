@@ -16,11 +16,13 @@ Description: Provides logical volume:
 
 Template: partman-lvm/text/configuration_none_pvs
 Type: text
-Description: none[ Do not translate what's inside the brackets and just put the translation for the word "none" in your language without any brackets. This "none" relates to "Physical Volumes:" ]
+# "none" here == "No Physical Volumes"
+Description: none
 
 Template: partman-lvm/text/configuration_none_vgs
 Type: text
-Description: none[ Do not translate what's inside the brackets and just put the translation for the word "none" in your language without any brackets. This "none" relates to "Volume Groups:" ]
+# "none" here == "No Volume Groups"
+Description: none
 
 Template: partman-lvm/text/configure_lvm
 Type: text
@@ -28,42 +30,60 @@ Description: Configure the Logical Volume Manager
 
 Template: partman-lvm/text/pvs
 Type: text
+# Translators: use the acronym for "Physical Volume" in your language here
 Description: PV
 
 Template: partman-lvm/text/in_use
 Type: text
+# What is "in use" is a partition
 Description: In use by LVM volume group ${VG}
 
 Template: partman-lvm/menu/display
 Type: text
+# Menu entry
+# Use infinitive form
 Description: Display configuration details
 
 Template: partman-lvm/menu/createvg
 Type: text
+# Menu entry
+# Use infinitive form
 Description: Create volume group
 
 Template: partman-lvm/menu/deletevg
 Type: text
+# Menu entry
+# Use infinitive form
 Description: Delete volume group
 
 Template: partman-lvm/menu/extendvg
 Type: text
+# Menu entry
+# Use infinitive form
 Description: Extend volume group
 
 Template: partman-lvm/menu/reducevg
 Type: text
+# Menu entry
+# Use infinitive form
 Description: Reduce volume group
 
 Template: partman-lvm/menu/createlv
 Type: text
+# Menu entry
+# Use infinitive form
 Description: Create logical volume
 
 Template: partman-lvm/menu/deletelv
 Type: text
+# Menu entry
+# Use infinitive form
 Description: Delete logical volume
 
 Template: partman-lvm/menu/finish
 Type: text
+# Menu entry
+# Use infinitive form
 Description: Finish
 
 Template: partman-lvm/confirm
@@ -103,10 +123,14 @@ Description: physical volume for LVM
 
 Template: partman/method_short/lvm
 Type: text
+# keep it short (ideally a 3-letter acronym)
 Description: lvm
 
 Template: debian-installer/partman-lvm/title
 Type: text
+#  Main menu item
+#  Translators: keep below 55 columns
+# Use infinitive form
 Description: Configure the Logical Volume Manager
 
 Template: partman-lvm/mainmenu

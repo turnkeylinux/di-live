@@ -1,5 +1,6 @@
 Template: partman-auto-lvm/text/choice
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Guided - use entire disk and set up LVM
 
 Template: partman-auto-lvm/new_vg_name

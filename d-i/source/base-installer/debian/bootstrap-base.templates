@@ -1,9 +1,13 @@
 Template: debian-installer/bootstrap-base/title
 Type: text
+#  Item in the main menu to select this package
+# TRANSLATORS: <65 columns
 Description: Install the base system
 
 Template: base-installer/cannot_install
 Type: error
+# The base system is the minimal Debian system 
+# See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 Description: Cannot install base system
  The installer cannot figure out how to install the base system. It found no
  installable image, and no valid mirror was configured.
@@ -60,7 +64,7 @@ Description: Unsupported initrd generator
 Template: base-installer/initramfs-tools/driver-policy
 Type: select
 Choices-C: most, dep
-_Choices: generic: include all available drivers, targeted: only include drivers needed for this system
+Choices: generic: include all available drivers, targeted: only include drivers needed for this system
 Description: Drivers to include in the initrd:
  The primary function of an initrd is to allow the kernel to mount the
  root file system. It therefore needs to contain all drivers and supporting
@@ -84,7 +88,9 @@ Description: Unable to install the selected kernel
 
 Template: base-installer/kernel/image
 Type: select
-_Choices: ${KERNELS}, none[ Do not translate what's inside the brackets and just put the translation for the word "none" in your language without any brackets. This "none" means "no kernel" ]
+# For base-installer, "none" is an additional choice to a list of kernels.
+# It means "no kernel"
+Choices: ${KERNELS}, none
 Description: Kernel to install:
  The list shows the available kernels. Please choose one of them in order
  to make the system bootable from the hard drive.
@@ -121,16 +127,19 @@ Description: Unable to install ${PACKAGE}
 
 Template: base-installer/debootstrap/error/nogetrel
 Type: error
+# SUBST0 is a Release file name.
 Description: Debootstrap Error
  Failed getting Release file ${SUBST0}.
 
 Template: base-installer/debootstrap/error/nogetrelsig
 Type: error
+# SUBST0 is a Release.gpg file name
 Description: Debootstrap Error
  Failed getting Release signature file ${SUBST0}.
 
 Template: base-installer/debootstrap/error/unknownrelsig
 Type: error
+# SUBST0 is a gpg key ID
 Description: Debootstrap Error
  Release file signed by unknown key (key id ${SUBST0})
 
@@ -141,11 +150,13 @@ Description: Debootstrap Error
 
 Template: base-installer/debootstrap/error/missingrelentry
 Type: error
+# SUBST0 is a filename
 Description: Debootstrap Error
  Invalid Release file: no entry for ${SUBST0}.
 
 Template: base-installer/debootstrap/error/couldntdl
 Type: error
+# SUBST0 is a filename or package name
 Description: Debootstrap Error
  Couldn't retrieve ${SUBST0}. This may be due to a network problem or bad
  media, depending on your installation method.
@@ -187,10 +198,18 @@ Description: Installing the base system
 
 Template: base-installer/debootstrap/section/instcore
 Type: text
+# Core packages are packages that are part of the Debian base system
+# The "core" packages are indeed packages that are specifically
+# recorded as part of the base system. Other packages may
+# be installed on the base system because of dependency resolution
 Description: Installing core packages
 
 Template: base-installer/debootstrap/section/unpackreq
 Type: text
+# Required packages are packages which installation is triggered
+# by the dependency chain of core packages
+# In short, they are "required" because at least one of the
+# packages from the core packages depends on them
 Description: Unpacking required packages
 
 Template: base-installer/debootstrap/section/confreq
@@ -199,10 +218,14 @@ Description: Configuring required packages
 
 Template: base-installer/debootstrap/section/unpackbase
 Type: text
+# The base system is the minimal Debian system 
+# See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 Description: Unpacking the base system
 
 Template: base-installer/debootstrap/section/confbase
 Type: text
+# The base system is the minimal Debian system 
+# See http://www.debian.org/doc/debian-policy/ch-binary.html#s3.7
 Description: Configuring the base system
 
 Template: base-installer/debootstrap/fallback-info
@@ -211,22 +234,27 @@ Description: ${SECTION}: ${INFO}...
 
 Template: base-installer/debootstrap/info/validating
 Type: text
+# SUBST0 is a package name
 Description: Validating ${SUBST0}...
 
 Template: base-installer/debootstrap/info/retrieving
 Type: text
+# SUBST0 is a package name
 Description: Retrieving ${SUBST0}...
 
 Template: base-installer/debootstrap/info/extracting
 Type: text
+# SUBST0 is a package name
 Description: Extracting ${SUBST0}...
 
 Template: base-installer/debootstrap/info/unpacking
 Type: text
+# SUBST0 is a package name
 Description: Unpacking ${SUBST0}...
 
 Template: base-installer/debootstrap/info/configuring
 Type: text
+# SUBST0 is a package name
 Description: Configuring ${SUBST0}...
 
 Template: base-installer/debootstrap/info/releasesig
@@ -235,6 +263,7 @@ Description: Checking Release signature
 
 Template: base-installer/debootstrap/info/validrelsig
 Type: text
+# SUBST0 is a gpg key id
 Description: Valid Release signature (key id ${SUBST0})
 
 Template: base-installer/debootstrap/info/resolvebase
@@ -243,14 +272,17 @@ Description: Resolving dependencies of base packages...
 
 Template: base-installer/debootstrap/info/newbase
 Type: text
+# SUBST0 is a list of packages
 Description: Found additional base dependencies: ${SUBST0}
 
 Template: base-installer/debootstrap/info/newrequired
 Type: text
+# SUBST0 is a list of packages
 Description: Found additional required dependencies: ${SUBST0}
 
 Template: base-installer/debootstrap/info/redundantbase
 Type: text
+# SUBST0 is a list of packages
 Description: Found packages in base already in required: ${SUBST0}
 
 Template: base-installer/debootstrap/info/resolvereq
@@ -259,18 +291,32 @@ Description: Resolving dependencies of required packages...
 
 Template: base-installer/debootstrap/info/checkingsizes
 Type: text
+# SUBST0 is an archive component (main, etc)
+# SUBST1 is a mirror
 Description: Checking component ${SUBST0} on ${SUBST1}...
 
 Template: base-installer/debootstrap/info/instcore
 Type: text
+# Core packages are packages that are part of the Debian base system
+# The "core" packages are indeed packages that are specifically
+# recorded as part of the base system. Other packages may
+# be installed on the base system because of dependency resolution
 Description: Installing core packages...
 
 Template: base-installer/debootstrap/info/unpackreq
 Type: text
+# Required packages are packages which installation is triggered
+# by the dependency chain of core packages
+# In short, they are "required" because at least one of the
+# packages from the core packages depends on them
 Description: Unpacking required packages...
 
 Template: base-installer/debootstrap/info/confreq
 Type: text
+# Required packages are packages which installation is triggered
+# by the dependency chain of core packages
+# In short, they are "required" because at least one of the
+# packages from the core packages depends on them
 Description: Configuring required packages...
 
 Template: base-installer/debootstrap/info/instbase
@@ -296,6 +342,7 @@ Description: Debootstrap warning
 
 Template: base-installer/debootstrap/warning/retrying
 Type: text
+# SUBST0 is an url
 Description: Retrying failed download of ${SUBST0}
 
 Template: base-installer/section/configure_apt
@@ -312,6 +359,7 @@ Description: Installing the kernel...
 
 Template: base-installer/section/install_kernel_package
 Type: text
+# SUBST0 is a package name
 Description: Installing the kernel - retrieving and installing ${SUBST0}...
 
 Template: base-installer/includes

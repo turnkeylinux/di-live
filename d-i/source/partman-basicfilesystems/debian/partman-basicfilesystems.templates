@@ -78,12 +78,15 @@ Description: Invalid file system for this mount point
 
 Template: partman-basicfilesystems/mountpoint
 Type: select
-_Choices: / - the root file system, /boot - static files of the boot loader, /home - user home directories, /tmp - temporary files (default: tmpfs), /usr - static data, /var - variable data, /srv - data for services provided by this system, /opt - add-on application software packages, /usr/local - local hierarchy, Enter manually, Do not mount it
+# Note to translators : Please keep your translations of the choices
+# below a 65 columns limit (which means 65 characters
+# in single-byte languages) including the initial path
+Choices: / - the root file system, /boot - static files of the boot loader, /home - user home directories, /tmp - temporary files (default: tmpfs), /usr - static data, /var - variable data, /srv - data for services provided by this system, /opt - add-on application software packages, /usr/local - local hierarchy, Enter manually, Do not mount it
 Description: Mount point for this partition:
 
 Template: partman-basicfilesystems/fat_mountpoint
 Type: select
-_Choices: /dos, /windows, Enter manually, Do not mount it
+Choices: /dos, /windows, Enter manually, Do not mount it
 Description: Mount point for this partition:
 
 Template: partman-basicfilesystems/mountpoint_manual
@@ -107,22 +110,27 @@ Description: Format the swap area:
 
 Template: partman-basicfilesystems/text/yes
 Type: text
+# In the following context: "Format the partition: yes"
 Description: yes
 
 Template: partman-basicfilesystems/text/no
 Type: text
+# In the following context: "Format the partition: no"
 Description: no
 
 Template: partman-basicfilesystems/text/specify_label
 Type: text
+# label of file system
 Description: Label:
 
 Template: partman-basicfilesystems/text/none
 Type: text
-Description: none[ Do not translate what's inside the brackets and just put the translation for the word "none" in your language without any brackets. This "none" relates to "Label:" ]
+# for partman-basicfilesystems: in the following context: "Label: none"
+Description: none
 
 Template: partman-basicfilesystems/text/reserved_for_root
 Type: text
+# Up to 24 character positions
 Description: Reserved blocks:
 
 Template: partman-basicfilesystems/specify_reserved
@@ -131,15 +139,18 @@ Description: Percentage of the file system blocks reserved for the super-user:
 
 Template: partman-basicfilesystems/text/usage
 Type: text
+# Up to 25 character positions
 Description: Typical usage:
 
 Template: partman-basicfilesystems/text/typical_usage
 Type: text
+# In the following context: "Typical usage: standard"
 Description: standard
 
 Template: partman-basicfilesystems/specify_usage
 Type: select
 Choices: ${CHOICES}
+# partman-basicfilesystems/text/typical_usage template.  Do not
 Description: Typical usage of this partition:
  Please specify how the file system is going to be used, so that
  optimal file system parameters can be chosen for that use.
@@ -151,11 +162,13 @@ Description: Typical usage of this partition:
 
 Template: partman-basicfilesystems/text/specify_mountpoint
 Type: text
+# This is an item in the menu "Partition settings"
 Description: Mount point:
 
 Template: partman-basicfilesystems/text/no_mountpoint
 Type: text
-Description: none[ Do not translate what's inside the brackets and just put the translation for the word "none" in your language without any brackets. This "none" relates to "Mount point:" ]
+# In the following context: "Mount point: none"
+Description: none
 
 Template: partman/filesystem_long/ext2
 Type: text
@@ -163,6 +176,7 @@ Description: Ext2 file system
 
 Template: partman/filesystem_short/ext2
 Type: text
+# Short file system name (untranslatable in many languages)
 Description: ext2
 
 Template: partman/filesystem_long/fat16
@@ -171,6 +185,7 @@ Description: FAT16 file system
 
 Template: partman/filesystem_short/fat16
 Type: text
+# Short file system name (untranslatable in many languages)
 Description: fat16
 
 Template: partman/filesystem_long/fat32
@@ -179,6 +194,7 @@ Description: FAT32 file system
 
 Template: partman/filesystem_short/fat32
 Type: text
+# Short file system name (untranslatable in many languages)
 Description: fat32
 
 Template: partman/filesystem_long/ntfs
@@ -187,6 +203,7 @@ Description: NTFS journaling file system
 
 Template: partman/filesystem_short/ntfs
 Type: text
+# Short file system name (untranslatable in many languages)
 Description: ntfs
 
 Template: partman/method_long/swap
@@ -195,6 +212,7 @@ Description: swap area
 
 Template: partman/method_short/swap
 Type: text
+# Short variant of `swap space'
 Description: swap
 
 Template: partman/filesystem_long/linux-swap
@@ -203,6 +221,7 @@ Description: swap area
 
 Template: partman/filesystem_short/linux-swap
 Type: text
+# Short variant of `swap space'
 Description: swap
 
 Template: partman-basicfilesystems/text/options
@@ -218,66 +237,98 @@ Description: Mount options:
 
 Template: partman-basicfilesystems/text/noatime
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: noatime - do not update inode access times at each access
 
 Template: partman-basicfilesystems/text/nodiratime
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: nodiratime - do not update directory inode access times
 
 Template: partman-basicfilesystems/text/relatime
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: relatime - update inode access times relative to modify time
 
 Template: partman-basicfilesystems/text/nodev
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: nodev - do not support character or block special devices
 
 Template: partman-basicfilesystems/text/nosuid
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: nosuid - ignore set-user-identifier or set-group-identifier bits
 
 Template: partman-basicfilesystems/text/noexec
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: noexec - do not allow execution of any binaries
 
 Template: partman-basicfilesystems/text/ro
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: ro - mount the file system read-only
 
 Template: partman-basicfilesystems/text/sync
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: sync - all input/output activities occur synchronously
 
 Template: partman-basicfilesystems/text/usrquota
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: usrquota - user disk quota accounting enabled
 
 Template: partman-basicfilesystems/text/grpquota
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: grpquota - group disk quota accounting enabled
 
 Template: partman-basicfilesystems/text/user_xattr
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: user_xattr - support user extended attributes
 
 Template: partman-basicfilesystems/text/quiet
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: quiet - changing owner and permissions does not return errors
 
 Template: partman-basicfilesystems/text/notail
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: notail - disable packing of files into the file system tree
 
 Template: partman-basicfilesystems/text/discard
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: discard - trim freed blocks from underlying block device
 
 Template: partman-basicfilesystems/text/acls
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: acls - support POSIX.1e Access Control List
 
 Template: partman-basicfilesystems/text/shortnames
 Type: text
+# Note to translators: Please keep your translations of this string below
+# a 65 columns limit (which means 65 characters in single-byte languages)
 Description: shortnames - only use the old MS-DOS 8.3 style filenames
 
 Template: partman-basicfilesystems/boot_not_ext2

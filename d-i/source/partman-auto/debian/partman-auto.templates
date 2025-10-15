@@ -92,6 +92,13 @@ Template: partman-auto/choose_recipe
 Type: select
 Choices-C: ${CHOICES}
 Choices: ${DESCRIPTIONS}
+#flag:comment:2
+# "Selected for partitioning" can be either an entire disk
+# of "the largest continuous free space" on an existing disk
+# TRANSLATORS, please take care to choose something appropriate for both
+#
+# It is followed by a variable giving the chosen disk, hence the colon
+# at the end of the sentence. Please keep it.
 Description: Partitioning scheme:
  Selected for partitioning:
  .
@@ -109,6 +116,8 @@ Description: Unusable free space
 
 Template: partman-auto/expert_recipe_file
 Type: string
+# Not translatable, this is for use by custom distributions that want
+# to force the use of their own recipe.
 Description: for internal use; can be preseeded
  File to load for expert recipe
 
@@ -119,14 +128,17 @@ Description: for internal use; can be preseeded
 
 Template: partman-auto/text/automatically_partition
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Guided partitioning
 
 Template: partman-auto/text/use_biggest_free
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Guided - use the largest continuous free space
 
 Template: partman-auto/text/use_device
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Guided - use entire disk
 
 Template: partman-auto/select_disk
@@ -139,28 +151,36 @@ Description: Select disk to partition:
 
 Template: partman-auto/text/custom_partitioning
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
+# This is a method for partitioning - as in guided (automatic) versus manual
 Description: Manual
 
 Template: partman-auto/text/auto_free_space
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Automatically partition the free space
 
 Template: partman-auto/text/atomic_scheme
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: All files in one partition (recommended for new users)
 
 Template: partman-auto/text/home_scheme
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Separate /home partition
 
 Template: partman-auto/text/multi_scheme
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Separate /home, /var, and /tmp partitions
 
 Template: partman-auto/text/small_disk
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Small-disk (< 10GB) partitioning scheme
 
 Template: partman-auto/text/server_scheme
 Type: text
+# TRANSLATORS: This is a menu entry. Keep in under 55 columns/characters
 Description: Separate /var and /srv, swap < 1GB (for servers)

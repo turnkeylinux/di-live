@@ -49,6 +49,7 @@ Description: Installing extra packages...
 
 Template: base-installer/section/install_extra_package
 Type: text
+# SUBST0 is a package name
 Description: Installing extra packages - retrieving and installing ${SUBST0}...
 
 Template: base-installer/install-recommends

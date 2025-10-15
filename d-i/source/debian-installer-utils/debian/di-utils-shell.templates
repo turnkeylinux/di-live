@@ -12,4 +12,7 @@ Description: Interactive shell
 
 Template: debian-installer/di-utils-shell/title
 Type: text
+#  Main menu item
+# The translation should not exceed 55 columns except for languages
+# that are only supported in the graphical version of the installer
 Description: Execute a shell

@@ -24,6 +24,9 @@ Description: Device in use
 
 Template: partman-base/partlocked
 Type: error
+#flag:comment:2
+# In short, ${PARTITION} will indeed contain the partition
+# NUMBER and not the partition NAME
 Description: Partition in use
  No modifications can be made to the partition #${PARTITION} of
  device ${DEVICE} for the following reasons:
@@ -84,10 +87,13 @@ Description: The following partitions are going to be formatted:
 
 Template: partman/text/confirm_item
 Type: text
+# for example: "partition #6 of IDE0 master as ext3 journaling file system"
 Description: partition #${PARTITION} of ${DEVICE} as ${TYPE}
 
 Template: partman/text/confirm_unpartitioned_item
 Type: text
+# for devices which have no partitions
+# for example: "LVM VG Debian, LV Root as ext3 journaling file system"
 Description: ${DEVICE} as ${TYPE}
 
 Template: partman/text/confirm_partitem_header
@@ -178,50 +184,66 @@ Description: Dump partition info in %s
 
 Template: partman/text/free_space
 Type: text
+# Keep short
 Description: FREE SPACE
 
 Template: partman/text/unusable
 Type: text
+# "unusable free space".  No more than 8 symbols.
 Description: unusable
 
 Template: partman/text/primary
 Type: text
+# "primary partition".  No more than 8 symbols.
 Description: primary
 
 Template: partman/text/logical
 Type: text
+# "logical partition".  No more than 8 symbols.
 Description: logical
 
 Template: partman/text/pri/log
 Type: text
+# "primary or logical".  No more than 8 symbols.
 Description: pri/log
 
 Template: partman/text/number
 Type: text
+# How to print the partition numbers in your language
+# Examples:
+# %s.
+# No %s
+# N. %s
 Description: #%s
 
 Template: partman/text/ata_disk
 Type: text
+# For example ATA1 (ad0)
 Description: ATA%s (%s)
 
 Template: partman/text/ata_partition
 Type: text
+# For example ATA1, partition #5 (ad0s5)
 Description: ATA%s, partition #%s (%s)
 
 Template: partman/text/ide_master_disk
 Type: text
+# For example IDE0 master (hda)
 Description: IDE%s master (%s)
 
 Template: partman/text/ide_slave_disk
 Type: text
+# For example IDE1 slave (hdd)
 Description: IDE%s slave (%s)
 
 Template: partman/text/ide_master_partition
 Type: text
+# For example IDE1 master, partition #5 (hdc5)
 Description: IDE%s master, partition #%s (%s)
 
 Template: partman/text/ide_slave_partition
 Type: text
+# For example IDE2 slave, partition #5 (hdf5)
 Description: IDE%s slave, partition #%s (%s)
 
 Template: partman/text/scsi_disk
@@ -242,10 +264,12 @@ Description: SCSI%s, partition #%s (%s)
 
 Template: partman/text/mmc_disk
 Type: text
+# For example MMC/SD card #1 (mmcblk0)
 Description: MMC/SD card #%s (%s)
 
 Template: partman/text/mmc_partition
 Type: text
+# For example MMC/SD card #1, partition #2 (mmcblk0p2)
 Description: MMC/SD card #%s, partition #%s (%s)
 
 Template: partman/text/raid_device
@@ -258,6 +282,16 @@ Description: Encrypted volume (%s)
 
 Template: partman/text/multipath
 Type: text
+# You'll find some documentation about it at 
+# http://www.redhat.com/docs/manuals/csgfs/browse/4.6/DM_Multipath/index.html
+# "Short" definition:
+# Device Mapper Multipathing (DM-Multipath) allows you to configure
+# multiple I/O paths between server nodes and storage arrays into a
+# single device. These I/O paths are physical SAN connections that can
+# include separate cables, switches, and controllers. Multipathing
+# aggregates the I/O paths, creating a new device that consists of the
+# aggregated paths.
+# WWID stands for World-Wide IDentification
 Description: Multipath %s (WWID %s)
 
 Template: partman/text/multipath_partition
@@ -286,10 +320,12 @@ Description: DASD %s (%s), partition #%s
 
 Template: partman/text/virtual_disk
 Type: text
+# eg. Virtual disk 1 (xvda)
 Description: Virtual disk %s (%s)
 
 Template: partman/text/virtual_partition
 Type: text
+# eg. Virtual disk 1, partition #1 (xvda1)
 Description: Virtual disk %s, partition #%s (%s)
 
 Template: partman/text/cancel_menu
@@ -298,6 +334,8 @@ Description: Cancel this menu
 
 Template: debian-installer/partman-base/title
 Type: text
+#  Main menu entry
+#  Translators: keep below 55 columns
 Description: Partition disks
 
 Template: partman/early_command
