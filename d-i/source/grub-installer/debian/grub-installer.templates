@@ -1,1 +1,250 @@
+Template: grub-installer/with_other_os
+Type: boolean
+Default: true
+Description: Install the GRUB boot loader to your primary drive?
+ The following other operating systems have been detected on this
+ computer: ${OS_LIST}
+ .
+ If all of your operating systems are listed above, then it should be safe to
+ install the boot loader to your primary drive (UEFI partition/boot record).
+ When your computer boots, you will be able to choose to load one of these
+ operating systems or the newly installed Debian system.
+
+Template: grub-installer/only_debian
+Type: boolean
+Default: true
+Description: Install the GRUB boot loader to your primary drive?
+ It seems that this new installation is the only operating system
+ on this computer. If so, it should be safe to install the GRUB boot loader
+ to your primary drive (UEFI partition/boot record).
+ .
+ Warning: If your computer has another operating system that the installer
+ failed to detect, this will make that operating system temporarily
+ unbootable, though GRUB can be manually configured later to boot it.
+
+Template: grub-installer/bootdev
+Type: string
+Description: Device for boot loader installation:
+ You need to make the newly installed system bootable, by installing
+ the GRUB boot loader on a bootable device. The usual way to do this is to
+ install GRUB to your primary drive (UEFI partition/boot record). You may
+ instead install GRUB to a different drive (or partition), or to removable
+ media.
+ .
+ The device notation should be specified as a device in /dev. Below are some
+ examples:
+  - "/dev/sda" will install GRUB to your primary drive (UEFI partition/boot
+    record);
+  - "/dev/sdb" will install GRUB to a secondary drive (which may for instance
+    be a thumbdrive);
+  - "/dev/fd0" will install GRUB to a floppy.
+
+Template: grub-installer/choose_bootdev
+Type: select
+Choices-C: manual, ${DEVICES_LIST}
+_Choices: Enter device manually, ${DESCRIPTIONS}
+Description: Device for boot loader installation:
+ You need to make the newly installed system bootable, by installing
+ the GRUB boot loader on a bootable device. The usual way to do this is to
+ install GRUB to your primary drive (UEFI partition/boot record). You may
+ instead install GRUB to a different drive (or partition), or to removable
+ media.
+
+Template: grub-installer/password
+Type: password
+Description: GRUB password:
+ The GRUB boot loader offers many powerful interactive features, which could
+ be used to compromise your system if unauthorized users have access to the
+ machine when it is starting up. To defend against this, you may choose a
+ password which will be required before editing menu entries or entering the
+ GRUB command-line interface. By default, any user will still be able to
+ start any menu entry without entering the password.
+ .
+ If you do not wish to set a GRUB password, leave this field blank.
+
+Template: grub-installer/password-again
+Type: password
+Description: Re-enter password to verify:
+ Please enter the same GRUB password again to verify that you have typed it
+ correctly.
+
+Template: grub-installer/password-mismatch
+Type: error
+Description: Password input error
+ The two passwords you entered were not the same. Please try again.
+
+Template: grub-installer/password-crypted
+Type: password
+Description: for internal use; can be preseeded
+
+Template: grub-installer/apt-install-failed
+Type: error
+Description: GRUB installation failed
+ The '${GRUB}' package failed to install into /target/. Without the GRUB
+ boot loader, the installed system will not boot.
+
+Template: grub-installer/grub-install-failed
+Type: error
+Description: Unable to install GRUB in ${BOOTDEV}
+ Executing 'grub-install ${BOOTDEV}' failed.
+ .
+ This is a fatal error.
+
+Template: grub-installer/update-grub-failed
+Type: error
+Description: Unable to configure GRUB
+ Executing 'update-grub' failed.
+ .
+ This is a fatal error.
+
+Template: grub-installer/grub_not_mature_on_this_platform
+Type: boolean
+Default: false
+Description: Install GRUB?
+ GRUB 2 is the next generation of GNU GRUB, the boot loader that is commonly
+ used on i386/amd64 PCs. It is now also available for ${ARCH}.
+ .
+ It has interesting new features but is still experimental software
+ for this architecture. If you choose to install it, you should be prepared
+ for breakage, and have an idea on how to recover your system if it
+ becomes unbootable. You're advised not to try this in production
+ environments.
+
+Template: grub-installer/progress/title
+Type: text
+Description: Installing GRUB boot loader
+
+Template: grub-installer/progress/step_os-probe
+Type: text
+Description: Looking for other operating systems...
+
+Template: grub-installer/progress/step_install
+Type: text
+Description: Installing the '${GRUB}' package...
+
+Template: grub-installer/progress/step_bootdev
+Type: text
+Description: Determining GRUB boot device...
+
+Template: grub-installer/progress/step_install_loader
+Type: text
+Description: Running "grub-install ${BOOTDEV}"...
+
+Template: grub-installer/progress/step_config_loader
+Type: text
+Description: Running "update-grub"...
+
+Template: grub-installer/progress/step_update_etc
+Type: text
+Description: Updating /etc/kernel-img.conf...
+
+Template: grub-installer/progress/step_force_efi_removable
+Type: text
+Description: Checking whether to force usage of the removable media path
+
+Template: grub-installer/progress/step_mount_filesystems
+Type: text
+Description: Mounting filesystems
+
+Template: grub-installer/progress/step_update_debconf_efi_removable
+Type: text
+Description: Configuring grub-efi for future usage of the removable media path
+
+Template: debian-installer/grub-installer/title
+Type: text
+Description: Install the GRUB boot loader
+
+Template: rescue/menu/grub-reinstall
+Type: text
+Description: Reinstall GRUB boot loader
+
+Template: grub-installer/skip
+Type: boolean
+Default: false
+Description: for internal use; can be preseeded
+ Skip installing grub?
+
+Template: grub-installer/make_active
+Type: boolean
+Default: true
+Description: for internal use; can be preseeded
+ Make sure that at least one partition is marked as active (bootable).
+
+Template: grub-installer/mounterr
+Type: error
+Description: Failed to mount ${PATH}
+ Mounting the ${FSTYPE} file system on ${PATH} failed.
+ .
+ Check /var/log/syslog or see virtual console 4 for the details.
+ .
+ Warning: Your system may be unbootable!
+
+Template: rescue/menu/grub-efi-force-removable
+Type: text
+Description: Force GRUB installation to the EFI removable media path
+
+Template: grub-installer/force-efi-extra-removable
+Type: boolean
+Default: false
+Description: Force GRUB installation to the EFI removable media path?
+ It seems that this computer is configured to boot via EFI, but maybe
+ that configuration will not work for booting from the hard
+ drive. Some EFI firmware implementations do not meet the EFI
+ specification (i.e. they are buggy!) and do not support proper
+ configuration of boot options from system hard drives.
+ .
+ A workaround for this problem is to install an extra copy of the EFI
+ version of the GRUB boot loader to a fallback location, the
+ "removable media path". Almost all EFI systems, no matter how buggy,
+ will boot GRUB that way.
+ .
+ Warning: If the installer failed to detect another operating system
+ that is present on your computer that also depends on this fallback,
+ installing GRUB there will make that operating system temporarily
+ unbootable. GRUB can be manually configured later to boot it if
+ necessary.
+
+Template: grub-installer/update-nvram
+Type: boolean
+Default: true
+Description: Update NVRAM variables to automatically boot into Debian?
+ GRUB can configure your platform's NVRAM variables so that it boots into
+ Debian automatically when powered on. However, you may prefer to disable
+ this behavior and avoid changes to your boot configuration. For example,
+ if your NVRAM variables have been set up such that your system contacts a
+ PXE server on every boot, this would preserve that behavior.
+
+Template: grub-installer/enable_os_prober_otheros_yes
+Type: boolean
+Default: true
+Description: Run os-prober automatically to detect and boot other OSes?
+ GRUB can use the os-prober tool to attempt to detect other
+ operating systems on your computer and add them to its list of boot
+ options automatically.
+ .
+ If your computer has multiple operating systems installed, then this
+ is probably what you want. However, if your computer is a host for
+ guest OSes installed via LVM or raw disk devices, running os-prober
+ can cause damage to those guest OSes as it mounts filesystems to look
+ for things.
+ .
+ The following other operating systems have been detected on this
+ computer: ${OS_LIST}
+
+Template: grub-installer/enable_os_prober_otheros_no
+Type: boolean
+Default: false
+Description: Run os-prober automatically to detect and boot other OSes?
+ GRUB can use the os-prober tool to attempt to detect other
+ operating systems on your computer and add them to its list of boot
+ options automatically.
+ .
+ If your computer has multiple operating systems installed, then this
+ is probably what you want. However, if your computer is a host for
+ guest OSes installed via LVM or raw disk devices, running os-prober
+ can cause damage to those guest OSes as it mounts filesystems to look
+ for things.
+ .
+ os-prober did not detect any other operating systems on your computer
+ at this time, but you may still wish to enable it in case you install
  more in the future.

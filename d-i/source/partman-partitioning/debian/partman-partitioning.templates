@@ -1,1 +1,216 @@
+Template: partman-partitioning/progress_resizing
+Type: text
+Description: Resizing partition...
+
+Template: partman-partitioning/new_state
+Type: text
+Description: Computing the new state of the partition table...
+
+Template: partman-partitioning/impossible_resize
+Type: error
+Description: The resize operation is impossible
+ Because of an unknown reason it is impossible to resize this partition.
+ .
+ Check /var/log/syslog or see virtual console 4 for the details.
+
+Template: partman-partitioning/confirm_resize
+Type: boolean
+Description: Write previous changes to disk and continue?
+ Before you can select a new partition size, any previous changes have to be
+ written to disk.
+ .
+ You cannot undo this operation.
+ .
+ Please note that the resize operation may take a long time.
+
+Template: partman-partitioning/new_size
+Type: string
+Default: some number
+Description: New partition size:
+ The minimum size for this partition is ${MINSIZE} (or ${PERCENT}) and its
+ maximum size is ${MAXSIZE}.
+ .
+ Hint: "max" can be used as a shortcut to specify the maximum size, or
+ enter a percentage (e.g. "20%") to use that percentage of the maximum size.
+ You can specify partition sizes in decimal units (like MB or GB) as well as
+ in binary units (like GiB or TiB).
+
+Template: partman-partitioning/bad_new_size
+Type: error
+Description: The size entered is invalid
+ The size you entered was not understood.
+ Please enter a positive integer size followed by an optional unit of measure
+ (e.g. "200 GB"). The default unit of measure is the megabyte.
+
+Template: partman-partitioning/big_new_size
+Type: error
+Description: The size entered is too large
+ The size you entered is larger than the maximum size of the partition.
+ Please enter a smaller size to continue.
+
+Template: partman-partitioning/small_new_size
+Type: error
+Description: The size entered is too small
+ The size you entered is smaller than the minimum size of the partition.
+ Please enter a larger size to continue.
+
+Template: partman-partitioning/new_size_commit_failed
+Type: error
+Description: Resize operation failure
+ An error occurred while writing the changes to the storage devices.
+ .
+ The resize operation has been aborted.
+
+Template: partman-partitioning/new_partition_size
+Type: string
+Default: some number
+Description: New partition size:
+ The maximum size for this partition is ${MAXSIZE}.
+ .
+ Hint: "max" can be used as a shortcut to specify the maximum size, or
+ enter a percentage (e.g. "20%") to use that percentage of the maximum size.
+ You can specify partition sizes in decimal units (like MB or GB) as well as
+ in binary units (like GiB or TiB).
+
+Template: partman-partitioning/bad_new_partition_size
+Type: error
+Description: Invalid size
+
+Template: partman-partitioning/new_partition_place
+Type: select
+_Choices: Beginning, End
+Description: Location for the new partition:
+ Please choose whether you want the new partition to be created at the
+ beginning or at the end of the available space.
+
+Template: partman-partitioning/new_partition_type
+Type: select
+_Choices: Primary, Logical
+Description: Type for the new partition:
+
+Template: partman-partitioning/set_flags
+Type: multiselect
+Choices: ${CHOICES}
+Description: Flags for the new partition:
+
+Template: partman-partitioning/set_name
+Type: string
+Description: Partition name:
+
+Template: partman-partitioning/unknown_label
+Type: boolean
+Default: true
+Description: Continue with partitioning?
+ This partitioner doesn't have information about the default type of
+ the partition tables on your architecture.  Please send an e-mail
+ message to debian-boot@lists.debian.org with information.
+ .
+ Please note that if the type of the partition table is unsupported by
+ libparted, then this partitioner will not work properly.
+
+Template: partman-partitioning/unsupported_label
+Type: boolean
+Default: false
+Description: Continue with partitioning?
+ This partitioner is based on the library libparted which doesn't have
+ support for the partition tables used on your architecture.  It is
+ strongly recommended that you exit this partitioner.
+ .
+ If you can, please help to add support for your partition table type
+ to libparted.
+
+Template: partman-partitioning/default_label
+Type: string
+Description: for internal use; can be preseeded
+ You may preseed this template to override the partitioner's
+ platform-specific default choice of disk label.  For example, on x86
+ architectures it may be useful to set this to "gpt" to cause new partition
+ tables to be created using GPT.
+
+Template: partman-partitioning/choose_label
+Type: select
+Choices: ${CHOICES}
+Description: Partition table type:
+ Select the type of partition table to use.
+
+Template: partman-partitioning/confirm_new_label
+Type: boolean
+Default: false
+Description: Create new empty partition table on this device?
+ You have selected an entire device to partition. If you proceed with
+ creating a new partition table on the device, then all current partitions
+ will be removed.
+ .
+ Note that you will be able to undo this operation later if you wish.
+
+Template: partman-partitioning/confirm_write_new_label
+Type: boolean
+Default: false
+Description: Write a new empty partition table?
+ Because of limitations in the current implementation of the Sun
+ partition tables in libparted, the newly created partition table has
+ to be written to the disk immediately.
+ .
+ You will NOT be able to undo this operation later and all existing
+ data on the disk will be irreversibly removed.
+ .
+ Confirm whether you actually want to create a new partition table and
+ write it to disk.
+
+Template: partman-partitioning/bootable_logical
+Type: boolean
+Default: false
+Description: Are you sure you want a bootable logical partition?
+ You are trying to set the bootable flag on a logical partition. The
+ bootable flag is generally only useful on primary partitions, so setting it
+ on logical partitions is normally discouraged. Some BIOS versions are known
+ to fail to boot if there is no bootable primary partition.
+ .
+ However, if you are sure that your BIOS does not have this problem, or if
+ you are using a custom boot manager that pays attention to bootable logical
+ partitions, then setting this flag may make sense.
+
+Template: partman-partitioning/text/set_flags
+Type: text
+Description: Set the partition flags
+
+Template: partman-partitioning/text/set_name
+Type: text
+Description: Name:
+
+Template: partman-partitioning/text/bootable
+Type: text
+Description: Bootable flag:
+
+Template: partman-partitioning/text/on
+Type: text
+Description: on
+
+Template: partman-partitioning/text/off
+Type: text
+Description: off
+
+Template: partman-partitioning/text/resize
+Type: text
+Description: Resize the partition (currently ${SIZE})
+
+Template: partman-partitioning/text/delete
+Type: text
+Description: Delete the partition
+
+Template: partman-partitioning/text/new
+Type: text
+Description: Create a new partition
+
+Template: partman-partitioning/text/label
+Type: text
+Description: Create a new empty partition table on this device
+
+Template: partman/method_long/biosgrub
+Type: text
+Description: Reserved BIOS boot area
+
+Template: partman/method_short/biosgrub
+Type: text
+Description: biosgrub
 

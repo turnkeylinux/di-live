@@ -1,1 +1,10 @@
+Template: di-utils-reboot/really_reboot
+Type: boolean
+Default: false
+Description: Are you sure you want to exit now?
+ If you have not finished the install, your system may be left in an
+ unusable state.
+
+Template: debian-installer/di-utils-reboot/title
+Type: text
 Description: Abort the installation
