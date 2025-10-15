@@ -23,6 +23,7 @@ import re
 import sys
 from collections.abc import Iterator
 from os.path import basename, exists, join
+from typing import NoReturn
 
 import debconf
 
@@ -147,6 +148,9 @@ class Component:
 class Components(dict):
     """class for holding components"""
 
+    name: str
+    path: str
+
     def __init__(self, dirpath: str) -> None:
         if not exists(dirpath):
             raise Error("non existent components path", dirpath)
@@ -156,7 +160,7 @@ class Components(dict):
             if self._is_executable(path):
                 self.add(path)
 
-    def __iter__(self) -> Iterator[str]:
+    def __iter__(self) -> Iterator[Component]:
         """return component in alpha-numeric ordering according to name"""
         keys = list(self.keys())
         keys.sort()
@@ -194,7 +198,7 @@ class Components_Menu:
 
         self.priority = Debian_Priority()
 
-    def _get_next_component(self) -> str | None:
+    def _get_next_component(self) -> Component | None:
         if self.priority.get() in ("low", "medium"):
             self.menu.display([c.name for c in self.components])
             choice = self.menu.get_choice()
@@ -234,12 +238,12 @@ def usage(msg: getopt.GetoptError | None = None) -> NoReturn:
 
 def main() -> None:
     try:
-        opts, args = getopt.gnu_getopt(sys.argv[1:], "hd", ["help", "debug"])
+        opts, _ = getopt.gnu_getopt(sys.argv[1:], "hd", ["help", "debug"])
     except getopt.GetoptError as e:
         usage(e)
 
     debug = False
-    for opt, val in opts:
+    for opt, _ in opts:
         if opt in ("-h", "--help"):
             usage()
         elif opt in ("-d", "--debug"):

@@ -10,14 +10,17 @@ import debconf
 
 DEBCONF_METHODS_TO_ADD = (
     # new line for debconf.pyi - line added will be:
-    # f"   def {METHOD_TO_ADD} -> None: ..."
-    "capb(self, arg: str)",
-    "metaget(self, arg1: str, arg2: str)",
-    "reset(self, arg: str)",
-    "subst(self, arg1: str, arg2: str, arg3: str)",
-    "input(self, arg1: str, arg2: str)",
-    "go(self)",
-    "get(self, arg: str)",
+    # f"   def {METHOD_TO_ADD}: ..."
+    "capb(self, arg: str) -> None",
+    "metaget(self, arg1: str, arg2: str) -> None",
+    "reset(self, arg: str) -> None",
+    "subst(self, arg1: str, arg2: str, arg3: str) -> None",
+    "input(self, arg1: str, arg2: str) -> None",
+    "go(self) -> None",
+    "get(self, arg: str) -> str",
+    "set(self, arg1: str, arg2: str | bool) -> None",
+    "progress(self, arg: str) -> None",
+    "fset(self, arg1: str, arg2: str, arg3: bool) -> None",
 )
 
 
@@ -56,9 +59,12 @@ def main() -> None:
                     " Debconf methods used by di-live (edit this script and"
                     " re-run if used methods change)"
                 )
+                new_debconf_stub.append(
+                    "    # dynamic methods added by gen_type_stubs.py\n"
+                )
                 for method_to_add in DEBCONF_METHODS_TO_ADD:
                     new_debconf_stub.append(
-                        f"   def {method_to_add} -> None: ...\n"
+                        f"    def {method_to_add}: ...\n"
                     )
                 new_debconf_stub.append("\n")
                 in_debconf_cls = False

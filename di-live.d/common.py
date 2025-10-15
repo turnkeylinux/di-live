@@ -4,11 +4,12 @@
 import os
 import subprocess
 import sys
-from subprocess import PIPE
+from collections.abc import Sequence
 
 import debconf
 
 LOGFILE = "/var/log/di-live.log"
+PIPE = subprocess.PIPE
 
 
 def log(msg: str) -> None:
@@ -48,7 +49,7 @@ class Chroot:
         self,
         command: str | list[str],
         shell: bool = False,
-        stdout: bool | None = None,
+        stdout: int | None = None,
     ) -> None:
         """Leverages system function to execute command in chroot."""
         system(command, shell=shell, stdout=stdout, env=self.environ)
@@ -210,7 +211,7 @@ def prepend_path(path: str) -> None:
 def system(
     command: str | list[str],
     shell: bool = False,
-    stdout: bool | None = None,
+    stdout: int | None = None,
     write_log: bool = True,
     env: dict[str, str] | None = None,
 ) -> None:
@@ -262,8 +263,8 @@ def dilive_system(command: list[str]) -> None:
 
 def preset_debconf(
     resets: list[str] | None = None,
-    preseeds: list[tuple[str, int]] | None = None,
-    seen: list[tuple[str, int]] | None = None,
+    preseeds: Sequence[tuple[str, str | bool]] | None = None,
+    seen: list[tuple[str, bool]] | None = None,
 ) -> None:
     db = debconf.Debconf(run_frontend=True)
 

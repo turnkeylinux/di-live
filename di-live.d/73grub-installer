@@ -13,7 +13,7 @@ def main() -> None:
     # mount bind dev, proc & sys on target otherwise grub-installer will fail
     _targetmounts = TargetMounts("/target")
 
-    preseeds = [
+    preseeds: list[tuple[str, str | bool]] = [
         ("grub-installer/only_debian", True),
         ("grub-installer/with_other_os", True),
         ("grub-installer/bootdev", "default"),
