@@ -103,9 +103,9 @@ def get_src(package: str, version: str) -> None:
                 with open(file) as fob:
                     for line in fob:
                         if line.startswith("_"):
+                            line = line[1:]
+                        elif line.startswith("#"):
                             continue
-                        elif "#" in line:
-                            line = line.split("#", 1)[0] + "\n"
                     lines.append(line)
                 with open(file, "w") as fob:
                     fob.writelines(lines)
