@@ -1,7 +1,9 @@
 #!/bin/sh
+set -e
 
 # This script sets method "efi" for all fat16/fat32 partitions that
-# have the bootable flag set.
+# have the esp flag set.
+#FIXME This is not true: it does not care about the filesystem
 
 ARCH="$(archdetect)"
 
@@ -99,9 +101,7 @@ for dev in /var/lib/partman/devices/*; do
 		# cannot break here until we've hit close_dialog below
 		while { read_line flag; [ "$flag" ]; }; do
 			log "$dev $id has $flag flag"
-			if [ "$flag" = boot ] && [ "$label_type" = gpt ]; then
-				efi=yes
-			elif [ "$flag" = esp ]; then
+			if [ "$flag" = esp ]; then
 				efi=yes
 			fi
 		done
@@ -110,8 +110,17 @@ for dev in /var/lib/partman/devices/*; do
 		if [ "$efi" = yes ]; then
 			# An ESP is clearly not for BIOS use!
 			log "$dev $id is an ESP"
-			mkdir -p $id
-			echo efi >$id/method
+			method=
+			if [ -f $id/method ]; then
+				method=$(cat $id/method)
+			fi
+			# skip if already seen and changed
+			if [ "$method" != efi ] && [ ! -e $id/old_efi ]; then
+				log "efi_debug: set method efi and old_efi on partition $dev $id"
+				mkdir -p $id
+				echo efi >$id/method
+				>$id/old_efi
+			fi
 			NUM_ESP=$(($NUM_ESP + 1))
 		else
 			# BIOS may well work with anything else

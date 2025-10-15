@@ -3,7 +3,7 @@ Section: debian-installer
 Priority: optional
 Maintainer: Debian Install System Team <debian-boot@lists.debian.org>
 Uploaders: Anton Zinoviev <zinoviev@debian.org>, Colin Watson <cjwatson@debian.org>
-Build-Depends: debhelper (>= 9), dh-di, po-debconf (>= 0.5.0)
+Build-Depends: debhelper-compat (= 13), dh-di, po-debconf
 Vcs-Browser: https://salsa.debian.org/installer-team/partman-basicmethods
 Vcs-Git: https://salsa.debian.org/installer-team/partman-basicmethods.git
 

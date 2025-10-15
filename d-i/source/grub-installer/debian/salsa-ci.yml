@@ -1,0 +1,13 @@
+---
+include:
+  - https://salsa.debian.org/installer-team/branch2repo/raw/main/trigger_b2r.yml
+
+variables:
+  # this has no Architecture: all packages, so don't try to test them:
+  SALSA_CI_DISABLE_BUILD_PACKAGE_ALL: 1
+  # this package currently has no autopkgtest
+  SALSA_CI_DISABLE_AUTOPKGTEST: 1
+  ### b2r disables these, so uncomment the ones you want (useful for combined deb/udeb packages)
+  #SALSA_CI_DISABLE_AUTOPKGTEST: 0
+  SALSA_CI_DISABLE_REPROTEST: 0
+  SALSA_CI_DISABLE_LINTIAN: 0

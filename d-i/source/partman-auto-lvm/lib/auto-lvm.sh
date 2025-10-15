@@ -17,6 +17,29 @@ add_envelope() {
 	echo "$scheme${NL}100 1000 -1 ext3 method{ $method }"
 }
 
+# Add a partition to hold a Physical Volume to the given recipe
+# limits are calculated from lvmok partition limits
+# to be used on a single device to match the recipe more closely
+add_envelope_single() {
+	local scheme="$1" method="$2" lvmscheme="$3"
+	local pvmin=0 pvprio=0 pvmax=0
+	local min prio max x
+	echo "$lvmscheme" | { # variables values are not preserved outside
+		while read min prio max x; do
+			pvmin=$(($pvmin+$min))
+			pvprio=$(($pvprio+$prio))
+			if [ "$pvmax" -ne -1 ]; then
+				if [ "$max" -eq -1 ]; then
+					pvmax=-1;
+				else
+					pvmax=$(($pvmax+$max))
+				fi
+			fi
+		done
+		echo "$scheme${NL}$pvmin $pvprio $pvmax ext3 method{ $method }"
+	}
+}
+
 # Create the partitions needed by a recipe to hold all PVs
 # (need $scheme and $pv_devices in scope)
 auto_lvm_create_partitions() {
@@ -229,7 +252,11 @@ auto_lvm_prepare() {
 	scheme="$scheme$NL$(echo "$pvscheme" | grep -v 'device{')"
 	# If we still don't have a partition to hold PV, add it
 	if ! echo "$scheme" | grep -q "method{ $method }"; then
-		scheme="$(add_envelope "$scheme")"
+		if [ -z "$extra_devices" ] && [ -n "$lvmscheme" ]; then
+			scheme="$(add_envelope_single "$scheme" "$method" "$lvmscheme")"
+		else
+			scheme="$(add_envelope "$scheme")"
+		fi
 	fi
 	auto_lvm_create_partitions $main_device
 
@@ -252,12 +279,7 @@ auto_lvm_prepare() {
 
 	disable_swap
 	# Write the partition tables
-	for dev in $devs; do
-		cd $dev
-		open_dialog COMMIT
-		close_dialog
-		device_cleanup_partitions
-	done
+	commit_changes
 
 	# Remove zombie LVMs which happed to be left-over on the newly
 	# created partition, because the disk was not zeroed out.

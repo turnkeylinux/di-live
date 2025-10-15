@@ -4,7 +4,7 @@ arch_get_kernel_flavour () {
 
 arch_check_usable_kernel () {
 	case "$1" in
-	    *-dbg)
+	    *-dbg|*-signed-template)
 		return 1
 		;;
 	    *-amd64 | *-amd64-*)

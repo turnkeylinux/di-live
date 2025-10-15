@@ -475,8 +475,8 @@ human2longint () {
 		powbase=
 		;;
 	k|K)    powbase=1 ;;
-	m|M|'') powbase=2 ;; # without units, suppose MB
-	g|G)    powbase=3 ;;
+	m|M)    powbase=2 ;;
+	g|G|'') powbase=3 ;; # without units, suppose GB
 	t|T)    powbase=4 ;;
 	p|P)    powbase=5 ;;
 	e|E)    powbase=6 ;;
@@ -896,7 +896,7 @@ humandev () {
 		echo "$1"
 	    fi
 	    ;;
-	/dev/sd[a-z][0-9]*|/dev/sd[a-z][a-z][0-9]*|/dev/wd[0-9]*|/dev/wd[a-z][0-9]*|/dev/wd[a-z][a-z][0-9]*)
+	/dev/sd[a-z][0-9]*|/dev/sd[a-z][a-z][0-9]*|/dev/ud[0-9]*|/dev/wd[0-9]*)
 	    part="${1#/dev/}"
 	    disk="${part%%[0-9]*}"
 	    part="${part#$disk}"

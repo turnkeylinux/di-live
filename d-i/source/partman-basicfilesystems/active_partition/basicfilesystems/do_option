@@ -8,8 +8,11 @@ part=$dev/$id
 
 cd $dev
 
-[ -f $part/method -a -f $part/acting_filesystem ] || exit 0
-filesystem=$(cat $part/acting_filesystem)
+[ -f $part/method ] || exit 0
+if [ "$(cat $part/method)" != swap ]; then
+	[ -f $part/acting_filesystem ] || exit 0
+	filesystem=$(cat $part/acting_filesystem)
+fi
 
 do_fatmountpoint () {
 	local noninteractive tpl
@@ -94,14 +97,12 @@ case $1 in
 	select_mountoptions $dev $id
 	;;
     format_swap)
-	>$part/format
-	update_partition $dev $id
-	;;
-    dont_format_swap)
 	if [ -f $part/format ]; then
 		rm $part/format
-		update_partition $dev $id
+	else
+		>$part/format
 	fi
+	update_partition $dev $id
 	;;
     label)
 	label=''

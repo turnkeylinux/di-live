@@ -1,12 +1,19 @@
 protocol_fetch() {
-	mountmedia || true
-
 	local FILE="${1#file://*}"
-	if [ ! -e "$FILE" ]; then
-		return 4
-	elif ! cp "$FILE" $2; then
-		return 1
-	else
-		return 0
+	local media_mounted=
+	local retval=1
+
+	if [ "${FILE#/media/}" != "$FILE" ] && mountmedia; then
+		media_mounted=1
 	fi
+
+	if [ ! -e "$FILE" ]; then
+		retval=4
+	elif cp "$FILE" $2; then
+		# only if the file exists, and the cp succeeds, do we return 0
+		retval=0
+	fi
+
+	[ -n "$media_mounted" ] && umount /media || true
+	return $retval
 }

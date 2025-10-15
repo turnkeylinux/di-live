@@ -17,6 +17,8 @@ for dev in $devs; do
 
 	if [ -z "$2" ]; then
 		# Only one parameter. Being run for initial autopartitioning.
+		# Do not reuse existing partitions
+		reuse=
 		target="$target: $(longint2human $size)"
 		free_size=$(convert_to_megabytes $size)
 
@@ -26,6 +28,8 @@ for dev in $devs; do
 		get_last_free_partition_infos $dev
 	else
 		# Two parameters, being run on selected free space.
+		# Reuse existing partitions
+		reuse=reuse
 		free_space=$2
 
 		open_dialog PARTITION_INFO $free_space
@@ -35,10 +39,10 @@ for dev in $devs; do
 		target="$target: $(longint2human $free_size) ($(longint2human $size))"
 		free_size=$(convert_to_megabytes $free_size)
 
-		choose_recipe default "$target" "$free_size" || exit $?
+		choose_recipe default "$target" "$free_size" reuse || exit $?
 	fi
 
-	perform_recipe $dev $free_space $recipe || exit $?
+	perform_recipe $dev $free_space $recipe $reuse || exit $?
 done
 
 # default to accepting the autopartitioning

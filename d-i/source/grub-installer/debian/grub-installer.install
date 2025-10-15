@@ -1,4 +1,4 @@
-rescue.d/* lib/rescue.d
+rescue.d/* usr/lib/rescue.d
 grub-installer usr/bin
 functions.sh usr/share/grub-installer
 otheros.sh usr/share/grub-installer

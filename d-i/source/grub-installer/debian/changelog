@@ -1,3 +1,301 @@
+grub-installer (1.212) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+  * Hungarian (hu.po) by Szia Tomi
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:21 +0200
+
+grub-installer (1.211) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Joe
+  * Hungarian (hu.po) by Szia Tomi
+  * Kabyle (kab.po) by ButterflyOfFire
+  * Khmer (km.po) by Chou Chamnan
+  * Lao (lo.po)
+  * Russian (ru.po) by vladiruzz
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 26 Jun 2025 22:00:31 +0200
+
+grub-installer (1.210) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Greek (el.po) by galaxico
+  * Kabyle (kab.po) by Azwaw
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+  [ Pascal Hambourg ]
+  * Tweak logic for EFI targets: set force-efi-extra-removable to
+    "true" by default in some cases. Should help in cases where EFI
+    firmware does not manage EFI boot variables properly.
+
+ -- Steve McIntyre <93sam@debian.org>  Tue, 27 May 2025 11:57:30 +0100
+
+grub-installer (1.209) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Galician (gl.po) by Parodper
+  * Croatian (hr.po) by Valentin Vidic
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 01 Apr 2025 11:59:16 +0200
+
+grub-installer (1.208) unstable; urgency=medium
+
+  * Team upload.
+
+  * Changelog changes for 1.207: changes by Pascal Hambourg.
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Ricky Tigg
+  * Hungarian (hu.po) by Szia Tomi
+  * Italian (it.po) by Milo Casagrande
+  * Polish (pl.po) by Matthaiks
+  * Serbian (sr.po) by Мирослав Николић
+  * Vietnamese (vi.po) by Dagon Vn
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 08 Mar 2025 23:46:49 +0100
+
+grub-installer (1.207) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Pascal Hambourg ]
+  * Fix wrong or empty bootdev value for grub-pc. Closes: #1035096, #1058638.
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Hungarian (hu.po) by Szia Tomi
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 17 Jan 2025 22:47:16 +0100
+
+grub-installer (1.206) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Cyril Brulebois ]
+  * When installing a grub-efi* package and when efibootmgr is available,
+    use it to dump the bootloader configuration, for debugging purposes
+    (Closes: #931917).
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Italian (it.po) by Giuseppe Sacco
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 10 Jan 2025 10:20:48 +0100
+
+grub-installer (1.205) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Pascal Hambourg ]
+  * Fixes for some grub-installer/os-prober quirks (Closes: #1035085):
+    * In expert install, the os-prober dialog shows only unsupported OS but
+      not supported OS.
+    * "efi", "macosx" and "minix" os-prober types are added to the unsupported
+      OS list although GRUB os-prober helper script can add menu entries for
+      them, so these types should be added to the supported OS list instead.
+    * os-prober is needlessly enabled by default when only unsupported OS are
+      detected.
+    * Do not ask about os-prober again on subsequent runs; it would not have
+      any effect at all.
+  * Remove grub-legacy support. (Closes: #1086750, #1086840)
+  * Some additional code clean-up.
+  * isinstallable: Exclude non-EFI armhf. (Closes: #1091441)
+
+  [ Updated translations ]
+  * Belarusian (be.po) by vics
+  * Persian (fa.po) by Danial Behzadi
+  * Hungarian (hu.po) by Szia Tomi
+  * Icelandic (is.po) by Sveinn í Felli
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Tamil (ta.po) by TamilNeram
+  * Turkish (tr.po) by Fatih Altun
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 01 Jan 2025 21:52:10 +0100
+
+grub-installer (1.204) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * French (fr.po) by Baptiste Jammet
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Japanese (ja.po) by Sadaharu Wakisaka
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Kabyle (kab.po) by Aksel Azwaw
+  * Macedonian (mk.po) by Kristijan Fremen Velkovski
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Russian (ru.po) by Yuri Kozlov
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 29 Nov 2024 23:14:53 +0100
+
+grub-installer (1.203) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Philip Hands ]
+  * Enable salsa-CI (with branch2repo).
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Hungarian (hu.po) by Szia Tomi
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Latvian (lv.po) by GGLVXD
+  * Macedonian (mk.po) by Kristijan Fremen Velkovski
+  * Dutch (nl.po) by Frans Spiesschaert
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 20 Oct 2024 21:55:25 +0200
+
+grub-installer (1.202) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Traditional Chinese (zh_TW.po) by yubike
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 May 2024 19:14:58 +0200
+
+grub-installer (1.201) unstable; urgency=medium
+
+  * Team upload.
+
+  [ John Paul Adrian Glaubitz ]
+  * Add loong64 support (Closes: #1059991)
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Der Marschall
+  * Esperanto (eo.po) by phlostically
+  * Persian (fa.po) by EndermanXD
+  * Hindi (hi.po) by Scrambled777
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Macedonian (mk.po) by Kristijan Fremen Velkovski
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Norwegian Nynorsk (nn.po) by Ola Haugen Havrevoll
+  * Romanian (ro.po) by ThinkRoot
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 04 May 2024 12:42:44 +0200
+
+grub-installer (1.200) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Kamelulo
+  * Estonian (et.po) by Kristjan Räts
+  * Galician (gl.po) by gallegonovato
+  * Hindi (hi.po) by omwani
+  * Indonesian (id.po) by Andika Triwidada
+  * Japanese (ja.po) by Kenshi Muto
+  * Kabyle (kab.po) by Selyan Sliman Amiri
+  * Turkish (tr.po) by Fatih Altun
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 16 Feb 2024 20:25:38 +0100
+
+grub-installer (1.199) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Aurelien Jarno ]
+  * Add support for riscv64.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 07 Jan 2024 12:30:56 +0000
+
+grub-installer (1.198) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Holger Wansing ]
+  * Correct changelog for 1.196
+
+  [ Samuel Thibault ]
+  * Add hurd-amd64 case.
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * Icelandic (is.po) by Sveinn í Felli
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Macedonian (mk.po) by Kristijan Fremen Velkovski
+  * Malayalam (ml.po) by Anish Sheela
+  * Marathi (mr.po) by omwani
+  * Norwegian Bokmal (nb.po) by Petter Reinholdtsen
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Serbian (sr.po) by Filipovic Dragan
+  * Tamil (ta.po) by FRANKLIN PRAKASH
+  * Ukrainian (uk.po) by Сергій
+  * Simplified Chinese (zh_CN.po) by Zi Jiaxu
+  * Traditional Chinese (zh_TW.po) by reimu105
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 04 Jan 2024 20:28:40 +0100
+
+grub-installer (1.197) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+  * Spanish (es.po) by gallegonovato
+  * Gujarati (gu.po) by Kartik Mistry
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Polish (pl.po) by Matthaiks
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+  * Swedish (sv.po) by Anders Jonsson
+
+ -- Philip Hands <phil@hands.com>  Wed, 20 Sep 2023 13:00:26 +0200
+
+grub-installer (1.196) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+  * Spanish (es.po) by gallegonovato
+  * Gujarati (gu.po) by Kartik Mistry
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Polish (pl.po) by Matthaiks
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+  * Swedish (sv.po) by Anders Jonsson
+
+  [ Arnaud Rebillout ]
+  * Don't fail if we can't mkdir efivars (Closes: #1031183)
+
+  [ Pascal Hambourg ]
+  * grub-installer: propagate ignore_uefi flag to target system for os-prober
+
+  [ Pascal Hambourg & Philip Hands ]
+  * Miscellaneous refactoring & code tidying relating to efivars changes
+
+ -- Philip Hands <phil@hands.com>  Wed, 20 Sep 2023 11:51:31 +0200
+
+grub-installer (1.195) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Esperanto (eo.po) by Felipe Castro
+  * Icelandic (is.po) by Sveinn Ã­ Felli
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by NicolaeFericitu
+  * Ukrainian (uk.po) by Tymofii Lytvynenko
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 24 Aug 2023 07:16:25 +0200
+
 grub-installer (1.194) unstable; urgency=medium
 
   * Team upload.

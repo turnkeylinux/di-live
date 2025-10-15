@@ -18,7 +18,7 @@ default_disk_label () {
 		else
 			echo msdos
 		fi;;
-	    amd64|kfreebsd-amd64|i386|kfreebsd-i386|hurd-i386|armhf)
+	    amd64|kfreebsd-amd64|hurd-amd64|i386|kfreebsd-i386|hurd-i386|armhf)
 		case "$sub" in
 		    mac|efi)
 			echo gpt;;
@@ -32,6 +32,8 @@ default_disk_label () {
 	    hppa)
 		echo msdos;;
 	    ia64)
+		echo gpt;;
+	    loong64)
 		echo gpt;;
 	    m68k)
 		case "$sub" in
@@ -80,12 +82,7 @@ default_disk_label () {
 	    ppc64el)
 		echo gpt;;
 	    riscv*)
-		case "$sub" in
-		    efi)
-			echo gpt;;
-		    *)
-			echo msdos;;
-		esac;;
+		echo gpt;;
 	    s390|s390x)
 		if [ -e ./label ]; then
 		    disklabel=$(cat label)

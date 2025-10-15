@@ -1,2 +1,3 @@
 parted_names lib/partman
 fstab.d lib/partman
+post-base-installer.d usr/lib

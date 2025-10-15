@@ -9,6 +9,6 @@ Vcs-Git: https://salsa.debian.org/installer-team/partman-efi.git
 
 Package: partman-efi
 Package-Type: udeb
-Architecture: i386 ia64 amd64 arm64 armhf
+Architecture: i386 amd64 arm64 armhf riscv64 loong64
 Depends: partman-base, efi-modules, dosfstools-udeb, ${misc:Depends}
 Description: Add to partman support for EFI System Partitions

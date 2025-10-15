@@ -5,6 +5,9 @@
 devs="$*"
 method="lvm"
 
+# Ensure no existing partitions will be used
+clean_method
+
 auto_lvm_prepare "$devs" $method || exit $?
 
 auto_lvm_perform || exit 1

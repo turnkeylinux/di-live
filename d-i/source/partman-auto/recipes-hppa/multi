@@ -4,12 +4,12 @@ partman-auto/text/multi_scheme ::
 	$primary{ }
 	method{ palo } .
 
-70 1000 250 ext2
+70 1000 250 ext4
 	$primary{ }
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext2 }
+	filesystem{ ext4 }
 	mountpoint{ /boot } .
 
 2000 3500 25000 $default_filesystem

@@ -32,7 +32,7 @@ for dev in $DEVICES/*; do
 		size=${part#*,}
 		[ -f $id/method ] || continue
 		method=$(cat $id/method)
-		if [ "$method" = efi ] && [ -f $id/bootable ]; then
+		if [ "$method" = efi ]; then
 			have_efi=yes
 			if [ -f $id/format ] && [ -z "$new_efi_size" ]; then
 				new_efi_size="$size"

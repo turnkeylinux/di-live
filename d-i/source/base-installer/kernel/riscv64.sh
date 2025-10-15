@@ -13,8 +13,9 @@ arch_get_kernel_flavour () {
 arch_check_usable_kernel () {
 	# parameters: $1=kernel, $2=flavour
 	case "$1" in
-	    *-dbg)
-		# Don't show debug packages in the kernel selection list.
+	    *-dbg|*-signed-template)
+		# Don't show debug and template packages in the kernel
+		# selection list.
 		return 1
 		;;
 	    *-riscv64 | *-riscv64-*)

@@ -894,7 +894,7 @@ cleanup () {
 
 is_ports_architecture() {
 	case "$1" in
-		alpha|hppa|hurd-i386|ia64|kfreebsd-amd64|kfreebsd-i386|m68k|powerpc|ppc64|riscv64|sh4|sparc64|x32)
+		alpha|hppa|hurd-amd64|hurd-i386|ia64|kfreebsd-amd64|kfreebsd-i386|loong64|m68k|powerpc|ppc64|sh4|sparc64|x32)
 			return 0
 			;;
 		*)

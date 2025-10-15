@@ -1,3 +1,63 @@
+partman-basicmethods (80) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:57 +0200
+
+partman-basicmethods (79) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Russian (ru.po) by vladiruzz
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 14:58:56 +0200
+
+partman-basicmethods (78) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Hungarian (hu.po) by Szia Tomi
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Apr 2025 09:06:34 +0200
+
+partman-basicmethods (77) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 30 Nov 2024 00:13:05 +0100
+
+partman-basicmethods (76) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 13 Oct 2024 23:19:06 +0200
+
+partman-basicmethods (75) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Build-Depends: Drop versioned constraint on po-debconf.
+  * Set debhelper-compat version in Build-Depends.
+  * Bump debhelper from deprecated 9 to 13.
+
+  [ Samuel Thibault ]
+  * Make gbp tag produce the right tag format.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 22 Oct 2022 16:57:58 +0200
+
 partman-basicmethods (74) unstable; urgency=medium
 
   * Team upload

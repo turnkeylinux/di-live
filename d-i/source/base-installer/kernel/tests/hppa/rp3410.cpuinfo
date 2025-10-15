@@ -1,0 +1,16 @@
+processor       : 0
+cpu family      : PA-RISC 2.0
+cpu             : PA8900 (Shortfin)
+cpu MHz         : 800.002200
+physical id     : 0
+siblings        : 1
+core id         : 0
+capabilities    : os64 iopdir_fdc needs_equivalent_aliasing (0x35)
+model           : 9000/800/rp3410   - Storm Peak DC- Slow Mako+
+hversion        : 0x00008970
+sversion        : 0x00000491
+I-cache         : 65536 KB
+D-cache         : 65536 KB (WB, direct mapped, alias=0)
+ITLB entries    : 240
+DTLB entries    : 240 - shared with ITLB
+bogomips        : 1594.36

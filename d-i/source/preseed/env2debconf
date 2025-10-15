@@ -6,7 +6,7 @@ export DEBIAN_FRONTEND=none
 
 # The hostname parameter might have been consumed by the kernel already
 # (kernel parameter since v6.0-rc1):
-if [ "$(hostname)" != '(none)' ]; then
+if [ "$(hostname)" != '(none)' -a "$(hostname)" != '?' ]; then
 	# Propagate accordingly so that the debconf magic can happen as usual
 	# (#1031643):
 	hostname="$(hostname)"

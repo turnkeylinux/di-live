@@ -46,6 +46,12 @@ for item in $(sed -e 's/[^ =]*="[^"]*[ ][^"]*"//g' \
 			continue
 		fi
 
+		# initrd is sometimes appended after "---" by syslinux, and
+		# isn't useful to pass on.
+		if [ "$var" = initrd ]; then
+			continue
+		fi
+
 		# Skip debconf variables
 		varnoslash="${var##*/*}"
 		if [ "$varnoslash" = "" ]; then

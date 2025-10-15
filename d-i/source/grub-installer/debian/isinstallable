@@ -27,6 +27,16 @@ case $ARCH in
 	log "GRUB is only usable on EFI arm64 systems, not $ARCH"
 	exit 1
 	;;
+    armhf/*)
+	log "GRUB is only usable on EFI armhf systems, not $ARCH"
+	exit 1
+	;;
+    riscv64/efi)
+	;;
+    riscv64/*)
+	log "GRUB is only usable on EFI riscv64 systems, not $ARCH"
+	exit 1
+	;;
 esac
 
 db_get grub-installer/skip

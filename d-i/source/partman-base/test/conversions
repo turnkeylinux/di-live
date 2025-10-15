@@ -33,7 +33,7 @@ test_eq "$(longint2human 999999)" '1000.0 kB'
 test_eq "$(longint2human 1000000)" '1.0 MB'
 test_eq "$(longint2human 4294967296)" '4.3 GB'
 
-test_eq "$(human2longint 3.5)" 3500000
+test_eq "$(human2longint 3.5)" 3500000000
 test_eq "$(human2longint 2B)" 2
 test_eq "$(human2longint '3.9 b')" 3
 test_eq "$(human2longint '4294967296 B')" 4294967296

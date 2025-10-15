@@ -1,7 +1,9 @@
 #!/bin/sh
+set -e
 
-# This script removes the efi flag for partitions whose method is not
-# efi and sets it for partition whose method is efi
+# This script sets the esp flag for partition whose method is efi
+# and removes it for partitions whose method is not efi except
+# unused existing ESP.
 
 if [ ! -d /sys/firmware/efi ]; then
 	exit 0
@@ -30,10 +32,13 @@ if [ -f $id/method ]; then
 	method=$(cat $id/method)
 fi
 
+esp=
 flags=''
 open_dialog GET_FLAGS $id
 while { read_line flag; [ "$flag" ]; }; do
-	if [ "$flag" != boot ]; then
+	if [ "$flag" = esp ]; then
+		esp=yes
+	else
 		flags="${flags:+$flags$NL}$flag"
 	fi
 done
@@ -43,31 +48,29 @@ open_dialog USES_NAMES
 read_line uses_names
 close_dialog
 
-if [ "$method" = efi ] && [ ! -f $id/bootable ]; then
+if [ "$esp" != yes ] && { [ "$method" = efi ] || \
+   { [ -z "$method" ] && [ -f $id/old_efi ]; }; }; then
+	log "efi_debug: set esp flag on partition $path"
 	open_dialog SET_FLAGS $id
 	write_line "$flags"
-	write_line boot
 	write_line esp
 	write_line NO_MORE
 	close_dialog
-	>$id/bootable
-	>$id/efi_bootable
 	if [ "$uses_names" = yes ] && [ "$fs" = fat32 ]; then
 		open_dialog SET_NAME $id "EFI System Partition"
 		close_dialog
 	fi
 	RET=''
-elif [ "$method" != efi ] && [ -f $id/bootable ] && \
-     [ -f $id/efi_bootable ]; then
+elif [ "$esp" = yes ] && [ "$method" != efi ] && \
+     { [ -n "$method" ] || [ ! -f $id/old_efi ]; }; then
+	log "efi_debug: remove esp flag from partition $path"
 	open_dialog SET_FLAGS $id
 	write_line "$flags"
 	write_line NO_MORE
 	close_dialog
-	rm $id/bootable
-	rm $id/efi_bootable
 	if [ "$uses_names" = yes ] && [ "$fs" = fat32 ] && \
 	   [ "$name" = "EFI System Partition" ]; then
-		open_dialog SET_NAME ""
+		open_dialog SET_NAME $id ""
 		close_dialog
 	fi
 fi

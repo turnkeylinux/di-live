@@ -22,14 +22,14 @@ full_options=''
 all_options=''
 descriptions=''
 for op in $(cat $optionsfile); do
-	if db_metaget partman-basicfilesystems/text/$op description && \
-	   [ "$RET" ]; then
-		all_options="${all_options:+$all_options, }$op"
-		descriptions="${descriptions:+$descriptions, }$RET"
-	else
-		logger -t partman "Error: no description for mount option $op found; skipping"
-		break
+	if ! db_metaget partman-basicfilesystems/text/$op description || \
+	   ! [ "$RET" ]; then
+		logger -t partman "Warning: no description for mount option $op found"
+		# using option name as fallback description
+		RET="$op"
 	fi
+	all_options="${all_options:+$all_options, }$op"
+	descriptions="${descriptions:+$descriptions, }$RET"
 
 	if [ -f $part/options/$op ]; then
 		full_options="${full_options:+$full_options,}$(cat $part/options/$op)"

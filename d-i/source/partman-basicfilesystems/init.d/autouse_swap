@@ -2,6 +2,9 @@
 
 . /lib/partman/lib/base.sh
 
+# disable automatic use of existing swap
+exit 0
+
 mkdir -p /var/lib/partman/autoused_swap
 
 partitions=

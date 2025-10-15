@@ -22,7 +22,7 @@ protocol_fetch() {
 	}
 
 	# use the proxy for wgets (should speed things up)
-	if db_get mirror/$proto/proxy; then
+	if db_get mirror/$proto/proxy && [ -n "$RET" ]; then
 		export ${proto}_proxy="$RET"
 	fi
 

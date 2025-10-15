@@ -7,10 +7,21 @@ id=$2
 
 cd $dev
 
+open_dialog GET_LABEL_TYPE
+read_line label
+close_dialog
+
+# on GPT the boot flag has a special meaning (esp) so the bootable
+# setting is mapped to the legacy_boot flag instead
+if [ "$label" = gpt ]; then
+	boot_flag=legacy_boot
+else
+	boot_flag=boot
+fi
 valid_boot=no
 open_dialog VALID_FLAGS $id
 while { read_line flag; [ "$flag" ]; }; do
-	if [ "$flag" = boot ]; then
+	if [ "$flag" = "$boot_flag" ]; then
 		valid_boot=yes
 	fi
 done
@@ -21,7 +32,7 @@ close_dialog
 bootable=no
 open_dialog GET_FLAGS $id
 while { read_line flag; [ "$flag" ]; }; do
-	if [ "$flag" = boot ]; then
+	if [ "$flag" = "$boot_flag" ]; then
 		bootable=yes
 	fi
 done

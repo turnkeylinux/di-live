@@ -1,3 +1,101 @@
+partman-efi (110) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 14:54:29 +0200
+
+partman-efi (109) unstable; urgency=medium
+
+  * Team upload.
+
+  * Changelog changes for 108: changes by Pascal Hambourg.
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Apr 2025 09:30:26 +0200
+
+partman-efi (108) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Pascal Hambourg ]
+  * Rework EFI partition management logic. Closes: #1092978, #1092892,
+    #1041168, #1034812, #1034208.
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 17 Jan 2025 23:00:05 +0100
+
+partman-efi (107) unstable; urgency=medium
+
+  * All po|pot files getting updated due to changes in 106.
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 30 Nov 2024 00:33:36 +0100
+
+partman-efi (106) unstable; urgency=medium
+
+  [ Aurelien Jarno ]
+  * Install the u-boot-efi-dtb package on riscv64 hosts using EFI and U-Boot.
+  * Drop ia64 support.
+
+  [ Updated translations in ./packages/partman-efi ]
+  * Persian (fa.po) by Danial Behzadi
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 17 Nov 2024 15:07:08 +0100
+
+partman-efi (105) unstable; urgency=medium
+
+  [ Pascal Hambourg ]
+  * update.d/efi_sync_flag: Fix missing parameter in parted_server command,
+    which makes the installer user interface hang under specific conditions.
+    Closes: #1085849
+
+  [ Updated translations ]
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 22:01:07 +0100
+
+partman-efi (104) unstable; urgency=medium
+
+  * Team upload.
+
+  [ John Paul Adrian Glaubitz ]
+  * Build for loong64 (Closes: #1065592)
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 06 Jun 2024 22:21:01 +0200
+
+partman-efi (103) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Aurelien Jarno ]
+  * Build for riscv64.
+
+  [ Updated translations in ./packages/partman-efi ]
+  * Marathi (mr.po) by omwani
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 06 Jan 2024 22:49:11 +0100
+
+partman-efi (102) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Gujarati (gu.po) by Kartik Mistry
+  * Polish (pl.po) by Matthaiks
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 24 Sep 2023 12:07:10 +0200
+
 partman-efi (101) unstable; urgency=medium
 
   * Team upload

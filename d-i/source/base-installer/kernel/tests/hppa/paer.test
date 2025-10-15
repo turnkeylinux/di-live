@@ -1,16 +1,13 @@
 cpuinfo paer.cpuinfo
 machine parisc64
 numcpus 2
-majors 5.7
+majors 6.12
 flavour parisc64
-kernel-5.7 \
+kernel-6.12 \
   linux-image-parisc64
 usable \
   linux-image-parisc \
-  linux-image-parisc-smp \
   linux-image-parisc64 \
-  linux-image-parisc64-smp \
   linux-image-5.7.0-1-parisc \
-  linux-image-4.19.0-1-parisc-smp \
-  linux-image-5.7.0-1-parisc64 \
-  linux-image-4.19.0-1-parisc64-smp
+  linux-image-6.12.10-parisc \
+  linux-image-6.12.10-parisc64

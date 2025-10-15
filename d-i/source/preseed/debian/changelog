@@ -1,3 +1,72 @@
+preseed (1.125) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+  * Hungarian (hu.po) by Szia Tomi
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:34:27 +0200
+
+preseed (1.124) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 14:46:02 +0200
+
+preseed (1.123) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Apr 2025 22:57:18 +0200
+
+preseed (1.122) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 30 Nov 2024 09:37:38 +0100
+
+preseed (1.121) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 13 Oct 2024 23:39:14 +0200
+
+preseed (1.120) unstable; urgency=medium
+
+  * Team upload.
+
+  [ D-I role ]
+  * [l10n]  Commit changed/added po files (from l10n-sync run at dillon)
+
+  [ Philip Hands ]
+  * optionally treat initrd's /preseed.cfg as internal
+
+ -- Philip Hands <phil@hands.com>  Thu, 31 Aug 2023 10:51:11 +0200
+
+preseed (1.119) unstable; urgency=medium
+
+  * Switch auto-install/defaultroot to trixie.
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 13 Jun 2023 19:21:49 +0200
+
+preseed (1.118) unstable; urgency=medium
+
+  * Fix empty hostname handling on GNU/Hurd.
+
+ -- Samuel Thibault <sthibault@debian.org>  Thu, 01 Jun 2023 01:03:56 +0200
+
 preseed (1.117) unstable; urgency=medium
 
   * Team upload.

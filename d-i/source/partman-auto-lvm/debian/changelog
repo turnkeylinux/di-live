@@ -1,3 +1,163 @@
+partman-auto-lvm (103) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+  * Hungarian (hu.po) by Szia Tomi
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:52 +0200
+
+partman-auto-lvm (102) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Joe
+  * Greek (el.po) by galaxico
+  * Hungarian (hu.po) by Szia Tomi
+  * Kabyle (kab.po) by ButterflyOfFire
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 15:01:43 +0200
+
+partman-auto-lvm (101) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Valentin Vidic
+  * Hungarian (hu.po) by Szia Tomi
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Serbian (sr.po) by Мирослав Николић
+  * Vietnamese (vi.po) by Dagon Vn
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 01 Apr 2025 16:15:28 +0200
+
+partman-auto-lvm (100) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Estonian (et.po) by Priit Jõerüüt
+  * Finnish (fi.po) by Ricky Tigg
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 06 Feb 2025 21:49:03 +0100
+
+partman-auto-lvm (99) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pascal Hambourg ]
+  * Restore call to clean_method, lost with commit cfc6797f. Closes: #1092129.
+  * Call commit_changes to write partition tables.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by vics
+  * Persian (fa.po) by Danial Behzadi
+  * Italian (it.po) by Giuseppe Sacco
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Tamil (ta.po) by TamilNeram
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 17 Jan 2025 22:54:39 +0100
+
+partman-auto-lvm (98) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Persian (fa.po) by peylight
+  * French (fr.po) by Baptiste Jammet
+  * Galician (gl.po) by Víctor Posada
+  * Japanese (ja.po) by Sadaharu Wakisaka
+  * Russian (ru.po) by Yuri Kozlov
+  * Simplified Chinese (zh_CN.po) by Weng Qizhi
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 29 Nov 2024 23:58:01 +0100
+
+partman-auto-lvm (97) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Latvian (lv.po) by GGLVXD
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 21:53:31 +0100
+
+partman-auto-lvm (96) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pascal Hambourg ]
+  * Calculate envelope limits based on lvmok partitions for single disk.
+    See MR5.
+
+  [ Updated translations ]
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 10 Sep 2024 21:28:43 +0200
+
+partman-auto-lvm (95) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Der Marschall
+  * Hindi (hi.po) by Scrambled777
+  * Norwegian Nynorsk (nn.po) by Ola Haugen Havrevoll
+  * Ukranian (uk.po) by Сергій
+  * Traditional Chinese (zh_TW.po) by yubike
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 May 2024 19:59:14 +0200
+
+partman-auto-lvm (94) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Estonian (et.po) by Kristjan Räts
+  * Indonesian (id.po) by Andika Triwidada
+  * Icelandic (is.po) by Sveinn í Felli
+  * Marathi (mr.po) by omwani
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Turkish (tr.po) by Fatih Altun
+  * Ukrainian (uk.po) by Artem
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 16 Feb 2024 19:46:11 +0100
+
+partman-auto-lvm (93) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Norwegian Bokmal (nb.po) by Petter Reinholdtsen
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Serbian (sr.po) by Filipovic Dragan
+  * Simplified Chinese (zh_CN.po) by Boyuan Yang
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 24 Sep 2023 11:33:52 +0200
+
+partman-auto-lvm (92) unstable; urgency=medium
+
+  * Team upload
+
+  * Template change, to mention the new possibility of using values with binary
+    units for partition sizes (in addition to the decimal units).
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * Spanish (es.po) by gallegonovato
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Polish (pl.po) by Matthaiks
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+  * Swedish (sv.po) by Anders Jonsson
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 23 Aug 2023 09:18:30 +0200
+
 partman-auto-lvm (91) unstable; urgency=medium
 
   * Team upload

@@ -1,0 +1,396 @@
+#!/bin/sh
+set -e
+
+# partman-auto recipe generator for default, amd64, amd64-efi, armhf, arm64, arm64-efi, ppc64el, riscv64
+
+# partition limit definitions
+# 1st number is the minimum size in MB; %RAM is not supported
+# 2nd number is the percentage of available disk space to use, is used to calculate the priority
+# 3rd number is the maximum size in MB; %RAM is supported
+
+# common limits
+EFI="768 2 1024"
+BOOT="768 2 1024"
+SWAP="500 5 100%"
+
+# limits for atomic recipe
+ROOT_ATOMIC="8000 85 -1"
+
+# limits for home recipe
+ROOT_HOME="7500 5 100000"
+HOME_HOME="1000 80 -1"
+
+# limits for multi recipe
+ROOT_MULTI="7000 5 100000"
+VAR_MULTI="2000 2 40000"
+TMP_MULTI="500 1 3000"
+HOME_MULTI="1000 77 -1"
+
+# limits for server recipe
+ROOT_SERVER="5000 5 100000"
+VAR_SERVER="2000 2 40000"
+SWAP_SERVER="500 5 1024"
+SRV_SERVER="1000 78 -1"
+
+# limits for small_disk recipe
+EFI_SMALL="512 3 1024"
+ROOT_SMALL="2000 84 -1"
+SWAP_SMALL="500 6 100%"
+
+# for consistency with partman-auto-lvm
+factor_pv=900
+
+boot() {
+	local min=$1 prio=$2 max=$3 filesystem
+	if [ "$boot_fs" = '$default_filesystem' ]; then
+		filesystem='$default_filesystem{ }'
+	else
+		filesystem="filesystem{ $boot_fs }"
+	fi
+	echo "$min $prio $max $boot_fs
+$boot_option	method{ format }
+	format{ }
+	use_filesystem{ }
+	$filesystem
+	mountpoint{ /boot } ."
+}
+
+filesystem() {
+	local min=$1 prio=$2 max=$3 mountpoint=$4 option=
+	if [ "$mountpoint" = / ]; then
+		option="$root_option"
+	fi
+	echo "$min $prio $max \$default_filesystem
+$lvm_option$option	method{ format }
+	format{ }
+	use_filesystem{ }
+	\$default_filesystem{ }
+	mountpoint{ $mountpoint } ."
+}
+
+swap() {
+	local min=$1 prio=$2 max=$3
+	echo "$min $prio $max linux-swap
+$lvm_option$reuse_option	method{ swap }
+	format{ } ."
+}
+
+perc_sum() {
+	local s=0 min perc max
+	while [ -n "$1" ]; do
+		perc=$(echo $1 | {
+			read min perc max
+			echo $perc
+		})
+		s=$(($perc+$s))
+		shift
+	done
+	echo $s
+}
+
+limits() {
+	local min=$1 perc=$2 max=$3 d=$4
+	echo $min $(($perc*factor_pv/$d+$min)) $max
+}
+
+d=$(perc_sum "$ROOT_ATOMIC" "$SWAP")
+EFI_ATOMIC="$(limits $EFI $d)"
+BOOT_ATOMIC="$(limits $BOOT $d)"
+ROOT_ATOMIC="$(limits $ROOT_ATOMIC $d)"
+SWAP_ATOMIC="$(limits $SWAP $d)"
+header_atomic='partman-auto/text/atomic_scheme ::
+'
+
+atomic() {
+	boot $BOOT_ATOMIC
+	echo
+	filesystem $ROOT_ATOMIC /
+	echo
+	swap $SWAP_ATOMIC
+}
+
+d=$(perc_sum "$ROOT_HOME" "$SWAP" "$HOME_HOME")
+EFI_HOME="$(limits $EFI $d)"
+BOOT_HOME="$(limits $BOOT $d)"
+ROOT_HOME="$(limits $ROOT_HOME $d)"
+SWAP_HOME="$(limits $SWAP $d)"
+HOME_HOME="$(limits $HOME_HOME $d)"
+header_home='partman-auto/text/home_scheme ::
+'
+
+home() {
+	boot $BOOT_HOME
+	echo
+	filesystem $ROOT_HOME /
+	echo
+	swap $SWAP_HOME
+	echo
+	filesystem $HOME_HOME /home
+}
+
+d=$(perc_sum "$ROOT_MULTI" "$VAR_MULTI" "$SWAP" "$TMP_MULTI" "$HOME_MULTI")
+EFI_MULTI="$(limits $EFI $d)"
+BOOT_MULTI="$(limits $BOOT $d)"
+ROOT_MULTI="$(limits $ROOT_MULTI $d)"
+VAR_MULTI="$(limits $VAR_MULTI $d)"
+SWAP_MULTI="$(limits $SWAP $d)"
+TMP_MULTI="$(limits $TMP_MULTI $d)"
+HOME_MULTI="$(limits $HOME_MULTI $d)"
+header_multi='partman-auto/text/multi_scheme ::
+'
+
+multi() {
+	boot $BOOT_MULTI
+	echo
+	filesystem $ROOT_MULTI /
+	echo
+	filesystem $VAR_MULTI /var
+	echo
+	swap $SWAP_MULTI
+	echo
+	filesystem $TMP_MULTI /tmp
+	echo
+	filesystem $HOME_MULTI /home
+}
+
+d=$(perc_sum "$ROOT_SERVER" "$VAR_SERVER" "$SWAP_SERVER" "$SRV_SERVER")
+EFI_SERVER="$(limits $EFI $d)"
+BOOT_SERVER="$(limits $BOOT $d)"
+ROOT_SERVER="$(limits $ROOT_SERVER $d)"
+VAR_SERVER="$(limits $VAR_SERVER $d)"
+SWAP_SERVER="$(limits $SWAP_SERVER $d)"
+SRV_SERVER="$(limits $SRV_SERVER $d)"
+header_server='partman-auto/text/server_scheme ::
+'
+
+server() {
+	boot $BOOT_SERVER
+	echo
+	filesystem $ROOT_SERVER /
+	echo
+	filesystem $VAR_SERVER /var
+	echo
+	swap $SWAP_SERVER
+	echo
+	filesystem $SRV_SERVER /srv
+}
+
+d=$(perc_sum "$ROOT_SMALL" "$SWAP_SMALL")
+EFI_SMALL="$(limits $EFI_SMALL $d)"
+BOOT_SMALL="$(limits $BOOT $d)"
+ROOT_SMALL="$(limits $ROOT_SMALL $d)"
+SWAP_SMALL="$(limits $SWAP_SMALL $d)"
+header_small='partman-auto/text/small_disk ::
+'
+
+small_disk() {
+	boot $BOOT_SMALL
+	echo
+	filesystem $ROOT_SMALL /
+	echo
+	swap $SWAP_SMALL
+}
+
+defaultignore='	$defaultignore{ }
+'
+primary='	$primary{ }
+'
+bootable='	$bootable{ }
+'
+legacy_boot='	$legacy_boot{ }
+'
+lvmok='	$lvmok{ }
+'
+reusemethod='	$reusemethod{ }
+'
+
+biosgrub() {
+	echo '1 1 1 free
+	$iflabel{ gpt }
+	$reusemethod{ }
+	method{ biosgrub } .'
+}
+
+efi() {
+	local min=$1 prio=$2 max=$3
+	echo "$min $prio $max"' free
+	$primary{ }
+	$iflabel{ msdos gpt }
+	$reusemethod{ }
+	method{ efi }
+	format{ } .'
+}
+
+prep() {
+	echo '8 1 1 prep
+	$primary{ }
+	$bootable{ }
+	method{ prep } .'
+}
+
+uboot() {
+	echo "18 18 18 free
+	$uboot_option."
+}
+
+for arch in default amd64 amd64-efi armhf arm64 arm64-efi ppc64el riscv64; do
+	case "$arch" in
+	  default)
+		efi=
+		boot_fs=ext2
+		boot_option=
+		root_option=
+		lvm_option="$lvmok"
+		reuse_option="$reusemethod"
+		arch_part="$(biosgrub)
+
+"
+		dir=recipes
+		;;
+	  amd64)
+		efi=
+		boot_fs=ext4
+		boot_option="$defaultignore"
+		root_option=
+		lvm_option="$lvmok"
+		reuse_option="$reusemethod"
+		arch_part="$(biosgrub)
+
+"
+		dir=recipes-amd64
+		;;
+	  amd64-efi)
+		efi=yes
+		boot_fs=ext4
+		boot_option="$defaultignore"
+		root_option=
+		lvm_option="$lvmok"
+		reuse_option="$reusemethod"
+		arch_part=
+		# efi partition limits depend on recipe
+		dir=recipes-amd64-efi
+		;;
+	  armhf)
+		efi=
+		boot_fs=ext4
+		boot_option="$primary$bootable"
+		root_option="$primary"
+		lvm_option="$lvmok"
+		reuse_option=
+		arch_part=
+		dir=recipes-armhf
+		;;
+	  arm64)
+		efi=
+		uboot_option='$primary{ } '
+		boot_fs=ext4
+		boot_option="$primary$bootable$legacy_boot"
+		root_option="$primary"
+		lvm_option="$lvmok"
+		reuse_option=
+		arch_part="$(uboot)
+
+"
+		dir=recipes-arm64
+		;;
+	  arm64-efi)
+		efi=yes
+		uboot_option=
+		boot_fs=ext4
+		boot_option="$defaultignore"
+		root_option=
+		lvm_option="$lvmok"
+		reuse_option="$reusemethod"
+		arch_part="$(uboot)
+
+"
+		# efi partition limits depend on recipe
+		dir=recipes-arm64-efi
+		;;
+	  ppc64el)
+		efi=
+		boot_fs=ext2
+		boot_option="$primary"
+		root_option="$primary"
+		lvm_option="$lvmok"
+		reuse_option=
+		arch_part="$(prep)
+
+"
+		dir=recipes-ppc64el
+		;;
+	  riscv64)
+		efi=
+		boot_fs=ext4
+		boot_option="$defaultignore"
+		root_option=
+		lvm_option="$lvmok"
+		reuse_option="$reusemethod"
+		arch_part=
+		dir=recipes-riscv64
+		;;
+	  *)
+		echo "wrong arch: $arch"
+		exit 1
+	esac
+	mkdir -p "$dir"
+	
+	{
+	echo "$header_atomic"
+	echo -n "$arch_part"
+	if [ "$efi" = yes ]; then
+		efi $EFI_ATOMIC
+		echo
+	fi
+	atomic
+	} > "$dir"/atomic
+
+	{
+	echo "$header_home"
+	echo -n "$arch_part"
+	if [ "$efi" = yes ]; then
+		efi $EFI_HOME
+		echo
+	fi
+	home
+	} > "$dir"/home
+
+	{
+	echo "$header_multi"
+	echo -n "$arch_part"
+	if [ "$efi" = yes ]; then
+		efi $EFI_MULTI
+		echo
+	fi
+	multi
+	} > "$dir"/multi
+
+	{
+	echo "$header_server"
+	echo -n "$arch_part"
+	if [ "$efi" = yes ]; then
+		efi $EFI_SERVER
+		echo
+	fi
+	server
+	} > "$dir"/server
+
+	{
+	echo "$header_small"
+	echo -n "$arch_part"
+	if [ "$efi" = yes ]; then
+		efi $EFI_SMALL
+		echo
+	fi
+	small_disk
+	} > "$dir"/small_disk
+
+	cat << EOF > "$dir"/_numbers
+30 atomic
+50 home
+80 multi
+90 server
+95 small_disk
+EOF
+
+done

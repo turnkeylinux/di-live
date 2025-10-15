@@ -1,3 +1,69 @@
+partman-ext3 (119) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+  * Hungarian (hu.po) by Szia Tomi
+  * Latvian (lv.po) by Aigars Mahinovs
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:34:09 +0200
+
+partman-ext3 (118) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 14:53:31 +0200
+
+partman-ext3 (117) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Apr 2025 09:35:25 +0200
+
+partman-ext3 (116) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 07 Feb 2025 20:59:21 +0100
+
+partman-ext3 (115) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 30 Nov 2024 00:38:27 +0100
+
+partman-ext3 (114) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Macedonian (mk.po) by Kristijan Fremen Velkovski
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 13 Oct 2024 23:25:52 +0200
+
+partman-ext3 (113) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Polish (pl.po) by Matthaiks
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 24 Sep 2023 12:12:53 +0200
+
 partman-ext3 (112) unstable; urgency=medium
 
   [ Cyril Brulebois ]

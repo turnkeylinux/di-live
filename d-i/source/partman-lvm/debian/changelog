@@ -1,3 +1,145 @@
+partman-lvm (156) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+  * Hungarian (hu.po) by Szia Tomi
+  * Russian (ru.po) by Алексей Шилин
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:34:15 +0200
+
+partman-lvm (155) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Joe
+  * Greek (el.po) by galaxico
+  * Hungarian (hu.po) by Szia Tomi
+  * Kabyle (kab.po) by ButterflyOfFire
+  * Russian (ru.po) by vladiruzz
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 14:50:45 +0200
+
+partman-lvm (154) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Amr Walryh
+  * Galician (gl.po) by Parodper
+  * Croatian (hr.po) by Valentin Vidic
+  * Hungarian (hu.po) by Szia Tomi
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Apr 2025 09:48:24 +0200
+
+partman-lvm (153) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Belarusian (be.po) by vics
+  * Estonian (et.po) by Priit Jõerüüt
+  * Persian (fa.po) by Danial Behzadi
+  * Finnish (fi.po) by Ricky Tigg
+  * Italian (it.po) by Milo Casagrande
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Tamil (ta.po) by தமிழ்நேரம்
+  * Traditional Chinese (zh_TW.po) by reimu105
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 02 Feb 2025 22:43:57 +0100
+
+partman-lvm (152) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Persian (fa.po) by peylight
+  * French (fr.po) by Baptiste Jammet
+  * Japanese (ja.po) by Sadaharu Wakisaka
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 30 Nov 2024 09:20:53 +0100
+
+partman-lvm (151) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Holger Wansing
+  * Hungarian (hu.po) by Szia Tomi
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Latvian (lv.po) by GGLVXD
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 22:04:07 +0100
+
+partman-lvm (150) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Der Marschall
+  * Hindi (hi.po) by Scrambled777
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Norwegian Nynorsk (nn.po) by Ola Haugen Havrevoll
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Traditional Chinese (zh_TW.po) by yubike
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 May 2024 20:20:43 +0200
+
+partman-lvm (149) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Estonian (et.po) by Kristjan Räts
+  * Indonesian (id.po) by Andika Triwidada
+  * Icelandic (is.po) by Sveinn í Felli
+  * Marathi (mr.po) by omwani
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Turkish (tr.po) by Fatih Altun
+  * Ukrainian (uk.po) by Сергій
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 16 Feb 2024 19:53:20 +0100
+
+partman-lvm (148) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Norwegian Bokmal (nb.po) by Petter Reinholdtsen
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Serbian (sr.po) by Filipovic Dragan
+  * Simplified Chinese (zh_CN.po) by Boyuan Yang
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 24 Sep 2023 12:28:59 +0200
+
+partman-lvm (147) unstable; urgency=medium
+
+  * Team upload
+
+  * Template change, to mention the new possibility of using values with binary
+    units for volume sizes (in addition to the decimal units).
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * Spanish (es.po) by gallegonovato
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Norwegian Bokmal (nb.po) by Petter Reinholdtsen
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Polish (pl.po) by Matthaiks
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+  * Swedish (sv.po) by Anders Jonsson
+  * Turkish (tr.po) by Fatih Altun
+  * Ukrainian (uk.po) by Serhii Horichenko
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 23 Aug 2023 09:26:40 +0200
+
 partman-lvm (146) unstable; urgency=medium
 
   * Team upload

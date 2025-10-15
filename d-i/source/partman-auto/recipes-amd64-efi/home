@@ -1,20 +1,21 @@
 partman-auto/text/home_scheme ::
 
-538 538 1075 free
-	$iflabel{ gpt }
+768 788 1024 free
+	$primary{ }
+	$iflabel{ msdos gpt }
 	$reusemethod{ }
 	method{ efi }
 	format{ } .
 
-512 512 768 ext2
+768 788 1024 ext4
 	$defaultignore{ }
 	method{ format }
 	format{ }
 	use_filesystem{ }
-	filesystem{ ext2 }
+	filesystem{ ext4 }
 	mountpoint{ /boot } .
 
-1500 6000 30000 $default_filesystem
+7500 7550 100000 $default_filesystem
 	$lvmok{ }
 	method{ format }
 	format{ }
@@ -22,17 +23,16 @@ partman-auto/text/home_scheme ::
 	$default_filesystem{ }
 	mountpoint{ / } .
 
-100% 512 200% linux-swap
+500 550 100% linux-swap
 	$lvmok{ }
 	$reusemethod{ }
 	method{ swap }
 	format{ } .
 
-1000 10000 -1 $default_filesystem
+1000 1800 -1 $default_filesystem
 	$lvmok{ }
 	method{ format }
 	format{ }
 	use_filesystem{ }
 	$default_filesystem{ }
 	mountpoint{ /home } .
-

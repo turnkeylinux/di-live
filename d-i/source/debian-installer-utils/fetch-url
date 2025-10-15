@@ -28,7 +28,8 @@ url="$1"
 dst="$2"
 checksum="$3" # optional parameter
 
-tmpdst=$(dirname "$dst")/_fetch-url_$(basename "$dst").$$
+tmpdst="${dst:-/tmp/.test}.fetch-url.$$"
+trap 'rm -f "$tmpdst"' EXIT HUP INT QUIT TERM
 
 proto=${url%%://*}
 
@@ -44,4 +45,5 @@ if [ "$checksum" ]; then
 	fi
 fi
 
-mv -f "$tmpdst" "$dst"
+[ -z "$dst" ] || mv -f "$tmpdst" "$dst"
+# the trap above discards $tmpdst at this point

@@ -1,0 +1,28 @@
+partman-auto/text/atomic_scheme ::
+
+18 18 18 free
+	$primary{ } .
+
+768 788 1024 ext4
+	$primary{ }
+	$bootable{ }
+	$legacy_boot{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext4 }
+	mountpoint{ /boot } .
+
+8000 8850 -1 $default_filesystem
+	$lvmok{ }
+	$primary{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	$default_filesystem{ }
+	mountpoint{ / } .
+
+500 550 100% linux-swap
+	$lvmok{ }
+	method{ swap }
+	format{ } .

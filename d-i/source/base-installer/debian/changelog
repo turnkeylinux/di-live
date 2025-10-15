@@ -1,3 +1,153 @@
+base-installer (1.226) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+  * Hungarian (hu.po) by Szia Tomi
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:04 +0200
+
+base-installer (1.225) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Russian (ru.po) by vladiruzz
+  * Telugu (te.po) by Sripath Roy Koganti
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 25 Jun 2025 20:13:32 +0200
+
+base-installer (1.224) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pascal Hambourg ]
+  * Filter out *-signed-template packages from kernel selection.
+    Closes: #1104907.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 10 May 2025 19:04:48 +0200
+
+base-installer (1.223) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 01 Apr 2025 00:15:46 +0200
+
+base-installer (1.222) unstable; urgency=medium
+
+  * Team upload
+
+  * Remove Steve Langasek from Uploaders; RIP.
+
+  [ Helge Deller ]
+  * hppa: Improve kernel selector for hppa based on /proc/cpuinfo.
+  * hppa: Add additional hppa kernel test.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by vics
+  * Persian (fa.po) by Danial Behzadi
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Tamil (ta.po) by TamilNeram
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 02 Feb 2025 22:12:17 +0100
+
+base-installer (1.221) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 29 Nov 2024 21:31:16 +0100
+
+base-installer (1.220) unstable; urgency=medium
+
+  * Team upload
+
+  [ John Paul Adrian Glaubitz ]
+  * Add support for loong64 (Closes: #1076505)
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 14 Nov 2024 18:38:57 +0100
+
+base-installer (1.219) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Hungarian (hu.po) by Szia Tomi
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 21:19:41 +0100
+
+base-installer (1.218) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Catalan (ca.po) by victor dargallo
+  * Dutch (nl.po) by Frans Spiesschaert
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 May 2024 18:40:12 +0200
+
+base-installer (1.217) unstable; urgency=medium
+
+  * Team upload
+
+  [ Samuel Thibault ]
+  * Add hurd-amd64 case.
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * Marathi (mr.po) by omwani
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 04 Jan 2024 20:39:47 +0100
+
+base-installer (1.216) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Gujarati (gu.po) by Kartik Mistry
+  * Malayalam (ml.po) by Anish Sheela
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 23 Sep 2023 20:39:41 +0200
+
+base-installer (1.215) unstable; urgency=medium
+
+  * Team upload
+
+  [ Aurelien Jarno ]
+  * library.sh: remove riscv64 from ports architectures.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Tue, 05 Sep 2023 22:40:33 +0200
+
+base-installer (1.214) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Norwegian Bokmal (nb.po) by Petter Reinholdtsen
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by NicolaeFericitu
+  * Turkish (tr.po) by Fatih Altun
+  * Ukrainian (uk.po) by Serhii Horichenko
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 24 Aug 2023 07:11:18 +0200
+
 base-installer (1.213) unstable; urgency=medium
 
   * Team upload

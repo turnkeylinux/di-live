@@ -1,3 +1,232 @@
+partman-auto (177) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:48 +0200
+
+partman-auto (176) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Greek (el.po) by galaxico
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 15:02:36 +0200
+
+partman-auto (175) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Valentin Vidic
+  * Hungarian (hu.po) by Szia Tomi
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Marathi (mr.po) by Kalyani Kenekar
+  * Serbian (sr.po) by Мирослав Николић
+  * Vietnamese (vi.po) by Dagon Vn
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 01 Apr 2025 16:05:15 +0200
+
+partman-auto (174) unstable; urgency=medium
+
+  * Team upload
+
+  * ppc64el: revert /boot filesystem from ext4 back to ext2, since petitboot
+    does not support ext4.
+  * ppc64el: create a separate ext2 /boot partition also for the non-lvm case,
+    as it already is for lvm. So we support petitboot in all partitioning
+    schemes.
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 07 Feb 2025 21:11:08 +0100
+
+partman-auto (173) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Maytham
+  * Persian (fa.po) by Danial Behzadi
+  * Finnish (fi.po) by Jiri Grönroos
+  * Italian (it.po) by Giuseppe Sacco
+  * Korean (ko.po) by Changwoo Ryu
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Tamil (ta.po) by TamilNeram
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 10 Jan 2025 23:17:13 +0100
+
+partman-auto (172) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pascal Hambourg ]
+  * Use ext4 instead of ext2 for the /boot partition when supported.
+    Closes: #985463
+  * Add dedicated recipes for non-EFI amd64 and i386.
+
+  [ Holger Wansing ]
+  * palo bootloader supports ext4 for years already, so use ext4 instead of
+    ext2 for the /boot partition on hppa as well.
+  * Add help screen from partman-target also to partman-auto dialogs.
+    Closes: #287408
+
+  [ Updated translations ]
+  * Estonian (et.po) by Kristjan Räts
+  * Persian (fa.po) by peylight
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Hungarian (hu.po) by Szia Tomi
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Polish (pl.po) by Nik Nikovsky
+  * Russian (ru.po) by Yuri Kozlov
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 29 Nov 2024 15:56:25 +0100
+
+partman-auto (171) unstable; urgency=medium
+
+  * Team upload
+
+  * Adapt changelog for 170 (forgotten bug closure, sorry).
+
+  [ John Paul Adrian Glaubitz ]
+  * Use recipes-amd64-efi for recipes-loong64-efi
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Joe
+  * Persian (fa.po) by Danial Behzadi
+  * Galician (gl.po) by Víctor Posada
+  * Japanese (ja.po) by Sadaharu Wakisaka
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 14 Nov 2024 19:04:41 +0100
+
+partman-auto (170) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pascal Hambourg ]
+  * Add legacy_boot flag support for arm64 recipes. Closes: #1086051
+  * recipes.sh: setup_partition: Clear line when processing ';'
+  * recipes.sh: Add btrfs, jfs and xfs to the lists of filesystems supported
+    by parted.
+  * templates: Fix typo in comment.
+  * Add missing newline in free_space/_numbers.
+  * Allow EFI partitions on msdos disk label in built-in recipes.
+  * Support multiple space-separated disk labels in $iflabel{ }.
+  * Check minimum size of reused partitions.
+  * Strip the format{ } specifier from reused partitions.
+
+  [ Updated translations ]
+  * French (fr.po) by Baptiste Jammet
+  * Icelandic (is.po) by Sveinn í Felli
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Kabyle (kab.po) by Aksel Azwaw
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Swedish (sv.po) by Anders Jonsson
+  * Turkish (tr.po) by Fatih Altun
+  * Simplified Chinese (zh_CN.po) by Lou Letian
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 06 Nov 2024 22:00:24 +0100
+
+partman-auto (169) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * Indonesian (id.po) by Andika Triwidada
+  * Latvian (lv.po) by GGLVXD
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+  * Ukrainian (uk.po) by Serhii Horichenko
+  * Traditional Chinese (zh_TW.po) by hugoalh
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 21:51:10 +0100
+
+partman-auto (168) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pascal Hambourg ]
+  * Enable LVM for the small_disk recipe as well. This allows to use
+    (encrypted) LVM via that recipe.
+  * Add a 16MiB reserved partition to arm64 recipes, to reserve space for
+    the U-Boot bootloader on arm64. Closes: #1078871.
+  * Disable partition reuse when choosing recipes on entire disks. Should be
+    enabled only when partitioning in free space. Otherwise it might result
+    in undersized partitions or failure to create partitions.
+
+  [ Holger Wansing ]
+  * Disable cap-ram by default; with the new server partitioning schemes
+    there should be no longer a need to have it enabled by default.
+
+  [ Updated translations ]
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Ukrainian (uk.po) by Hotripak
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 08 Oct 2024 22:52:09 +0200
+
+partman-auto (167) unstable; urgency=medium
+
+  * Team upload
+
+  [ Holger Wansing ]
+  * Increase default size of /boot partition. See MR!13.
+    Closes: #1076823, #1076753, #972396.
+
+  [ Pascal Hambourg ]
+  * Update partition defaults for current and future needs; see MR15:
+    * Update partition size limits in predefined recipes.
+    * Add server recipe for machines with much RAM; limits the size of swap
+      partition to 1G.
+    * Add small_disk recipe for automatic partitioning on very small disks
+      (3GB-10GB) which are not big enough for other recipes.
+    * Update small_disk recipe description.
+    * choose_recipe(): check built-in recipe contains lvmok tag if using LVM.
+    * Closes: #987503, #929322, #1076952.
+  * Add build_recipes script as a tool to help with building recipes.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 10 Sep 2024 22:40:04 +0200
+
+partman-auto (166) unstable; urgency=medium
+
+  * Team upload
+
+  [ Aurelien Jarno ]
+  * Drop kfreebsd support
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 02 Jun 2024 13:53:57 +0200
+
+partman-auto (165) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Spanish (es.po) by gallegonovato
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 May 2024 20:04:08 +0200
+
+partman-auto (164) unstable; urgency=medium
+
+  * Team upload
+
+  [ Aurelien Jarno ]
+  * Add riscv64 recipes.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 07 Jan 2024 15:36:57 +0100
+
+partman-auto (163) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Romanian (ro.po) by NicolaeFericitu
+  * Turkish (tr.po) by Fatih Altun
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 24 Sep 2023 11:38:45 +0200
+
 partman-auto (162) unstable; urgency=medium
 
   * Team upload

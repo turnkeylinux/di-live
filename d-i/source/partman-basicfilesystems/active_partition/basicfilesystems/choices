@@ -10,19 +10,24 @@ part=$dev/$id
 
 cd $dev
 
-[ -f $part/method -a -f $part/acting_filesystem ] || exit 0
+[ -f $part/method ] || exit 0
 
 method=$(cat $part/method)
-filesystem=$(cat $part/acting_filesystem)
 
-case "$filesystem" in
-    ext2|fat16|fat32|ntfs)
+if [ "$method" = swap ]; then
 	:
-	;;
-    *)
+elif [ -f $part/acting_filesystem ]; then
+	filesystem=$(cat $part/acting_filesystem)
+	case "$filesystem" in
+	    ext2|fat16|fat32|ntfs)
+		;;
+	    *)
+		exit 0
+		;;
+	esac
+else
 	exit 0
-	;;
-esac
+fi
 
 choice_mountpoint () {
 	case "$filesystem" in
@@ -40,6 +45,7 @@ choice_mountpoint () {
 }
 
 choice_options () {
+	[ "$filesystem" ] || return 0
 	db_metaget partman-basicfilesystems/text/options description
 	printf "options\t%s\${!TAB}%.45s\n" "$RET" "$(get_mountoptions $dev $id)"
 }
@@ -51,11 +57,10 @@ choice_format_swap () {
 		description="$RET"
 		if [ -f $part/format ]; then
 			db_metaget partman-basicfilesystems/text/yes description
-			printf "dont_format_swap\t%s\${!TAB}%s\n" "$description" "${RET}"
 		else
 			db_metaget partman-basicfilesystems/text/no description
-			printf "format_swap\t%s\${!TAB}%s\n" "$description" "${RET}"
 		fi
+		printf "format_swap\t%s\${!TAB}%s\n" "$description" "${RET}"
 	fi
 }
 

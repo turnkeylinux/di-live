@@ -2,6 +2,7 @@ processor	: 0
 cpu family	: PA-RISC 2.0
 cpu		: PA8600 (PCX-W+)
 cpu MHz		: 550.000000
+capabilities	: os32 os64
 model		: 9000/800/A500-5X
 model name	: Crescendo 550
 hversion	: 0x00005d50
@@ -17,6 +18,7 @@ processor	: 1
 cpu family	: PA-RISC 2.0
 cpu		: PA8600 (PCX-W+)
 cpu MHz		: 550.000000
+capabilities	: os32 os64
 model		: 9000/800/A500-5X
 model name	: Crescendo 550
 hversion	: 0x00005d50

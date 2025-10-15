@@ -7,6 +7,7 @@
 dev=$1
 free_space=$2
 recipe=$3
+reuse="$4" # optional, boolean, empty=false
 
 # Let us be safe and update the directories
 update_all
@@ -27,7 +28,7 @@ fi
 db_progress START 0 5 partman-auto/text/automatically_partition
 db_progress INFO partman-auto/progress/info
 
-decode_recipe $recipe default
+decode_recipe $recipe default $reuse
 
 db_progress STEP 1
 

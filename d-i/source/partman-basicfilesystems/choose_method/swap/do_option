@@ -11,6 +11,17 @@ else
 	old_method=do_not_use
 fi
 
+# keep settings if already selected as swap
+[ "$old_method" = swap ] && exit 0
+
 echo swap >$dev/$id/method
->$dev/$id/format
+
+# format only if does not already contain swap
+if [ -f $dev/$id/detected_filesystem ] &&
+   [ "$(cat $dev/$id/detected_filesystem)" = linux-swap ]; then
+	rm -f $dev/$id/format
+else
+	>$dev/$id/format
+fi
+
 rm -f $dev/$id/use_filesystem

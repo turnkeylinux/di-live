@@ -1,3 +1,117 @@
+partman-base (237) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Drugi Sapog
+  * Spanish (es.po) by Santiago Vila
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:54 +0200
+
+partman-base (236) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Drugi Sapog
+  * Spanish (es.po) by Santiago Vila
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:23:45 +0200
+
+partman-base (235) unstable; urgency=medium
+
+  [ Samuel Thibault ]
+  * hurd: Support /dev/ud[0-9] from rumpusbdisk.
+  * lib/base.sh: Drop matching /dev/wd[a-z].
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Drugi Sapog
+  * Spanish (es.po) by Santiago Vila
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:20:25 +0200
+
+partman-base (234) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Kabyle (kab.po) by ButterflyOfFire
+  * Russian (ru.po) by vladiruzz
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 14:59:48 +0200
+
+partman-base (233) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Apr 2025 08:56:22 +0200
+
+partman-base (232) unstable; urgency=medium
+
+  * Team upload.
+
+  * Add support for the legacy_boot flag on GPT to manual partitioning.
+    Closes: #1034814, #1087489.
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Italian (it.po) by Giuseppe Sacco
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 10 Jan 2025 21:38:54 +0100
+
+partman-base (231) unstable; urgency=medium
+
+  * Team upload.
+
+  * Change default unit from MB to GB. Closes: #570410
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Tamil (ta.po) by TamilNeram
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 01 Jan 2025 22:17:22 +0100
+
+partman-base (230) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 30 Nov 2024 00:00:55 +0100
+
+partman-base (229) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 21:54:22 +0100
+
+partman-base (228) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Hindi (hi.po) by Scrambled777
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 May 2024 20:08:14 +0200
+
+partman-base (227) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by NicolaeFericitu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 24 Sep 2023 11:42:20 +0200
+
 partman-base (226) unstable; urgency=medium
 
   * Team upload.

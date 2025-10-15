@@ -26,12 +26,50 @@ update_mtab() {
 }
 
 divert () {
+	# begin-remove-after: released:trixie
+	# As long as the installer supports installing bookworm, we need to
+	# take diversions of aliased files into account. They need to be
+	# duplicated and cannot use --rename. DEP17 P3 M18
+	case "$1" in
+		/usr/bin/*|/usr/lib/*|/usr/lib32/*|/usr/lib64/*|/usr/libx32/*|/usr/sbin/*)
+			if chroot /target dpkg -S "${1#/usr}" >/dev/null 2>&1; then
+				mv "/target/${1#/usr}" "/target/${1#/usr}.REAL.usr-is-merged"
+			else
+				mv "/target/$1" "/target/$1.REAL"
+			fi
+			chroot /target dpkg-divert --quiet --add --divert "${1#/usr}.REAL.usr-is-merged" --no-rename "${1#/usr}"
+			chroot /target dpkg-divert --quiet --add --divert "$1.REAL" --no-rename "$1"
+		;;
+		*)
+	# end-remove-after
 	chroot /target dpkg-divert --quiet --add --divert "$1.REAL" --rename "$1"
+	# begin-remove-after: released:trixie
+		;;
+	esac
+	# end-remove-after
 }
 
 undivert () {
 	rm -f "/target$1"
+	# begin-remove-after: released:trixie
+	case "$1" in
+		/usr/bin/*|/usr/lib/*|/usr/lib32/*|/usr/lib64/*|/usr/libx32/*|/usr/sbin/*)
+			rm -f "/target${1#/usr}"
+			chroot /target dpkg-divert --quiet --remove --no-rename "${1#/usr}"
+			chroot /target dpkg-divert --quiet --remove --no-rename "$1"
+			if chroot /target dpkg -S "${1#/usr}" >/dev/null 2>&1; then
+				mv "/target/${1#/usr}.REAL.usr-is-merged" "/target/${1#/usr}"
+			else
+				mv "/target/$1.REAL" "/target/$1"
+			fi
+		;;
+		*)
+	# end-remove-after
 	chroot /target dpkg-divert --quiet --remove --rename "$1"
+	# begin-remove-after: released:trixie
+		;;
+	esac
+	# end-remove-after
 }
 
 chroot_setup () {
@@ -63,30 +101,17 @@ exit 101
 EOF
 	chmod a+rx /target/usr/sbin/policy-rc.d
 	
-	if [ -e /target/sbin/start-stop-daemon ]; then
-		divert /sbin/start-stop-daemon
+	if [ -e /target/usr/sbin/start-stop-daemon ]; then
+		divert /usr/sbin/start-stop-daemon
 	fi
-	cat > /target/sbin/start-stop-daemon <<EOF
+	cat > /target/usr/sbin/start-stop-daemon <<EOF
 #!/bin/sh
 echo 1>&2
 echo 'Warning: Fake start-stop-daemon called, doing nothing.' 1>&2
 exit 0
 EOF
-	chmod a+rx /target/sbin/start-stop-daemon
+	chmod a+rx /target/usr/sbin/start-stop-daemon
 	
-	# If Upstart is in use, add a dummy initctl to stop it starting jobs.
-	if [ -x /target/sbin/initctl ]; then
-		divert /sbin/initctl
-		cat > /target/sbin/initctl <<EOF
-#!/bin/sh
-if [ "\$1" = version ]; then exec /sbin/initctl.REAL "\$@"; fi
-echo 1>&2
-echo 'Warning: Fake initctl called, doing nothing.' 1>&2
-exit 0
-EOF
-		chmod a+rx /target/sbin/initctl
-	fi
-
 	# Record the current mounts
 	mountpoints > /tmp/mount.pre
 
@@ -102,6 +127,11 @@ EOF
 			# Only mount it if not mounted already
 			if [ ! -d /target/sys/devices ]; then
 				mount -t sysfs sysfs /target/sys
+			fi
+
+			# If available mount efivarfs, needed to install systemd-boot
+			if mountpoints | grep -q '^/sys/firmware/efi/efivars$' && ! mountpoints | grep -q '^/target/sys/firmware/efi/efivars$'; then
+				mount -t efivarfs efivarfs /target/sys/firmware/efi/efivars
 			fi
 
 			# In Lenny, /dev/ lacks the pty devices, so we need devpts mounted
@@ -175,10 +205,7 @@ EOF
 
 chroot_cleanup () {
 	rm -f /target/usr/sbin/policy-rc.d
-	undivert /sbin/start-stop-daemon
-	if [ -x /target/sbin/initctl.REAL ]; then
-		undivert /sbin/initctl
-	fi
+	undivert /usr/sbin/start-stop-daemon
 
 	# Undo the mounts done by the packages during installation.
 	# Reverse sorting to umount the deepest mount points first.
@@ -198,10 +225,7 @@ chroot_cleanup () {
 # Variant of chroot_cleanup that only cleans up chroot_setup's mounts.
 chroot_cleanup_localmounts () {
 	rm -f /target/usr/sbin/policy-rc.d
-	undivert /sbin/start-stop-daemon
-	if [ -x /target/sbin/initctl.REAL ]; then
-		undivert /sbin/initctl
-	fi
+	undivert /usr/sbin/start-stop-daemon
 
 	# Undo the mounts done by the packages during installation.
 	# Reverse sorting to umount the deepest mount points first.

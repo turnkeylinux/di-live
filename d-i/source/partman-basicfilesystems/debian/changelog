@@ -1,3 +1,147 @@
+partman-basicfilesystems (174) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Drugi Sapog
+  * Spanish (es.po) by Santiago Vila
+  * Hungarian (hu.po) by Szia Tomi
+  * Malayalam (ml.po) by Nandakumar Edamana
+  * Telugu (te.po) by Divakar
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:59 +0200
+
+partman-basicfilesystems (173) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Joe
+  * Greek (el.po) by galaxico
+  * Kabyle (kab.po) by Azwaw
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 14:58:02 +0200
+
+partman-basicfilesystems (172) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Valentin Vidic
+  * Hungarian (hu.po) by Szia Tomi
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Marathi (mr.po) by Kalyani Kenekar
+  * Polish (pl.po) by Matthaiks
+  * Serbian (sr.po) by Мирослав Николић
+  * Vietnamese (vi.po) by Dagon Vn
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Apr 2025 09:13:28 +0200
+
+partman-basicfilesystems (171) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Maytham
+  * Belarusian (be.po) by vics
+  * Persian (fa.po) by Danial Behzadi
+  * Finnish (fi.po) by Jiri Grönroos
+  * Hungarian (hu.po) by Szia Tomi
+  * Italian (it.po) by Giuseppe Sacco
+  * Korean (ko.po) by Changwoo Ryu
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Tamil (ta.po) by TamilNeram
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 10 Jan 2025 23:22:32 +0100
+
+partman-basicfilesystems (170) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Estonian (et.po) by Kristjan Räts
+  * Galician (gl.po) by Víctor Posada
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Japanese (ja.po) by Sadaharu Wakisaka
+  * Occitan (oc.po) by Quentin PAGÈS
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Russian (ru.po) by Yuri Kozlov
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 30 Nov 2024 00:06:17 +0100
+
+partman-basicfilesystems (169) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pascal Hambourg ]
+  * Disable automatic use and forceful format of existing swaps.
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * French (fr.po) by Baptiste Jammet
+  * Icelandic (is.po) by Sveinn í Felli
+  * Simplified Chinese (zh_CN.po) by Lou Letian
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 06 Nov 2024 21:53:00 +0100
+
+partman-basicfilesystems (168) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Traditional Chinese (zh_TW.po) by hugoalh
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 21:57:27 +0100
+
+partman-basicfilesystems (167) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pascal Hambourg ]
+  * Do not skip mount option if description is missing, just show option name.
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * German (de.po) by Holger Wansing
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Latvian (lv.po) by GGLVXD
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Turkish (tr.po) by Fatih Altun
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 19 Oct 2024 13:17:16 +0200
+
+partman-basicfilesystems (166) unstable; urgency=medium
+
+  * Team upload
+
+  [ Luca Boccassi ]
+  * Note that /tmp is a tmpfs by default in partition choice.
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * German (de.po) by Holger Wansing
+  * Spanish (es.po) by gallegonovato
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Hindi (hi.po) by Scrambled777
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Macedonian (mk.po) by Kristijan Fremen Velkovski
+  * Marathi (mr.po) by omwani
+  * Norwegian Bokmal (nb.po) by Petter Reinholdtsen
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Polish (pl.po) by Matthaiks
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+  * Swedish (sv.po) by bittin1ddc447d824349b2
+  * Ukrainian (uk.po) by Hotripak
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 07 Jul 2024 21:40:26 +0200
+
+partman-basicfilesystems (165) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Polish (pl.po) by Matthaiks
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 24 Sep 2023 11:46:48 +0200
+
 partman-basicfilesystems (164) unstable; urgency=medium
 
   * Team upload

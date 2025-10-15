@@ -1,3 +1,166 @@
+partman-partitioning (159) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Belarusian (be.po) by Drugi Sapog
+  * Spanish (es.po) by Santiago Vila
+  * Latvian (lv.po) by Aigars Mahinovs
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:34:21 +0200
+
+partman-partitioning (158) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Greek (el.po) by galaxico
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 29 Jun 2025 14:46:59 +0200
+
+partman-partitioning (157) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Finnish (fi.po) by Ricky Tigg
+  * Croatian (hr.po) by Valentin Vidic
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+  * Serbian (sr.po) by Мирослав Николић
+  * Vietnamese (vi.po) by Dagon Vn
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 02 Apr 2025 10:55:18 +0200
+
+partman-partitioning (156) unstable; urgency=medium
+
+  * Team upload
+
+  * Add support for the legacy_boot flag on GPT to manual partitioning.
+    See #1034814.
+
+  [ Updated translations ]
+  * Belarusian (be.po) by vics
+  * Persian (fa.po) by Danial Behzadi
+  * Italian (it.po) by Giuseppe Sacco
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Tamil (ta.po) by TamilNeram
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 10 Jan 2025 21:44:54 +0100
+
+partman-partitioning (155) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Polish (pl.po) by Nik Nikovsky
+  * Russian (ru.po) by Yuri Kozlov
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 30 Nov 2024 09:29:05 +0100
+
+partman-partitioning (154) unstable; urgency=medium
+
+  * Team upload
+
+  [ John Paul Adrian Glaubitz ]
+  * Add support for loong64
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * French (fr.po) by Baptiste Jammet
+  * Galician (gl.po) by Víctor Posada
+  * Japanese (ja.po) by Sadaharu Wakisaka
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 14 Nov 2024 19:11:43 +0100
+
+partman-partitioning (153) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Czech (cs.po) by Miroslav Kure
+  * Hungarian (hu.po) by Szia Tomi
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Latvian (lv.po) by GGLVXD
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 22:06:49 +0100
+
+partman-partitioning (152) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Arabic (ar.po) by Der Marschall
+  * Estonian (et.po) by Kristjan Räts
+  * Hindi (hi.po) by Scrambled777
+  * Indonesian (id.po) by Andika Triwidada
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Norwegian Nynorsk (nn.po) by Ola Haugen Havrevoll
+  * Turkish (tr.po) by Fatih Altun
+  * Ukrainian (uk.po) by Сергій
+  * Traditional Chinese (zh_TW.po) by yubike
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 May 2024 20:29:46 +0200
+
+partman-partitioning (151) unstable; urgency=medium
+
+  * Team upload
+
+  [ Samuel Thibault ]
+  * Add hurd-amd64 case.
+
+  [ Updated translations ]
+  * Icelandic (is.po) by Sveinn í Felli
+  * Georgian (ka.po) by Temuri Doghonadze
+  * Marathi (mr.po) by omwani
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Ukrainian (uk.po) by Artem
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 04 Jan 2024 20:35:49 +0100
+
+partman-partitioning (150) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Norwegian Bokmal (nb.po) by Petter Reinholdtsen
+  * Simplified Chinese (zh_CN.po) by Boyuan Yang
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 24 Sep 2023 12:43:54 +0200
+
+partman-partitioning (149) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * German (de.po) by Holger Wansing
+  * Korean (ko.po) by Changwoo Ryu
+  * Lithuanian (lt.po) by Rimas Kudelis
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+  * Portuguese (pt.po) by Miguel Figueiredo
+  * Serbian (sr.po) by Filipovic Dragan
+
+  [ Aurelien Jarno ]
+  * Always set the default disklabel type for RISC-V-based systems to gpt.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Tue, 05 Sep 2023 07:16:38 +0200
+
+partman-partitioning (148) unstable; urgency=medium
+
+  * Team upload
+
+  * Template change, to mention the new possibility of using values with binary
+    units for partition sizes (in addition to the decimal units).
+
+  [ Updated translations ]
+  * Catalan (ca.po) by d
+  * Spanish (es.po) by gallegonovato
+  * Hebrew (he.po) by Yaron Shahrabani
+  * Dutch (nl.po) by Frans Spiesschaert
+  * Polish (pl.po) by Matthaiks
+  * Portuguese (Brazil) (pt_BR.po) by Adriano Rafael Gomes
+  * Swedish (sv.po) by Anders Jonsson
+  * Turkish (tr.po) by Fatih Altun
+
+ -- Holger Wansing <hwansing@mailbox.org>  Wed, 23 Aug 2023 09:30:22 +0200
+
 partman-partitioning (147) unstable; urgency=medium
 
   * Team upload

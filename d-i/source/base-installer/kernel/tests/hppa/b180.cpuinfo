@@ -2,6 +2,7 @@ processor	: 0
 cpu family	: PA-RISC 1.1e
 cpu		: PA7300LC (PCX-L2)
 cpu MHz		: 180.000000
+capabilities	: os32
 model		: 9000/778/B180L
 model name	: Merlin L2+ 180 (9000/778/B180L)
 hversion	: 0x00005040

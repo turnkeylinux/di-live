@@ -15,12 +15,38 @@ if [ "$firmware_lookup" = "never" ]; then
 	exit 0
 fi
 
+# Clean any files that were present because they were embedded in the initrd by
+# debian-cd (e.g. for speech synthesis support), and let the modalias-based
+# logic down below pick the relevant package(s) instead. Otherwise, they would
+# be picked up by the loose files copy step below.
+#
+# This uses deb filenames as we expect everything to be in sync (no version
+# mismatch) on installation images, but we could use package names instead.
+embedded_src=/usr/lib/firmware/.embedded-firmware-debs
+embedded_debs=$(cat $embedded_src || true)
+for fw_dir in /firmware /cdrom/firmware; do
+	contents="$fw_dir/Contents-firmware"
+	if [ -f "$contents" ]; then
+		for deb in $embedded_debs; do
+			log "looking to clean loose files belonging to $deb (according to $contents)"
+			# Alternatively, "\$2 ~ /${package}_/ { print \$1 }" if
+			# using package names instead of deb filenames:
+			files=$(awk "\$2 == \"$deb\" { print \$1 }" "$contents")
+			# shellcheck disable=SC2086
+			rm -f $files
+			log " ... removed up to $(echo "$files"|wc -w) files"
+		done
+		# Don't keep any empty directories:
+		find /usr/lib/firmware -type d -depth -exec rmdir -p {} ';' 2>/dev/null || true
+	fi
+done
+
 # copy any loose firmware files to /target (incl. subdirs)
-if [ -d /lib/firmware ]; then
-	for f in /lib/firmware/*; do
+if [ -d /usr/lib/firmware ]; then
+	for f in /usr/lib/firmware/*; do
 		if [ -e "$f" ]; then
-			mkdir -p /target/lib/firmware/
-			cp -a "$f" /target/lib/firmware/
+			mkdir -p /target/usr/lib/firmware/
+			cp -a "$f" /target/usr/lib/firmware/
 		fi
 	done
 fi

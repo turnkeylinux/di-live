@@ -1,0 +1,24 @@
+partman-auto/text/small_disk ::
+
+768 788 1024 ext4
+	$primary{ }
+	$bootable{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext4 }
+	mountpoint{ /boot } .
+
+2000 2840 -1 $default_filesystem
+	$lvmok{ }
+	$primary{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	$default_filesystem{ }
+	mountpoint{ / } .
+
+500 560 100% linux-swap
+	$lvmok{ }
+	method{ swap }
+	format{ } .

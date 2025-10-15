@@ -25,10 +25,13 @@ autopartitioning_failed () {
 }
 
 find_method () {
-	local num id size type fs path name method found
+	local num id size type fs path name method found minsize
+	minsize=$((${2:-0}*1000000))
 	found=
 	open_dialog PARTITIONS
 	while { read_line num id size type fs path name; [ "$id" ]; }; do
+		# skip partition if size < minimum size
+		[ "$size" -ge "$minsize" ] || continue
 		[ -f $id/method-old ] || continue
 		method="$(cat $id/method-old)"
 		if [ "$method" = "$1" ]; then
@@ -57,6 +60,7 @@ unnamed=0
 decode_recipe () {
 	local ignore ram line word min factor max fs iflabel label map map_end -
 	local reusemethod method id
+	local reuse=$3
 	ignore="${2:+${2}ignore}"
 	unnamed=$(($unnamed + 1))
 	ram=
@@ -135,7 +139,7 @@ decode_recipe () {
 				max=$min
 			fi
 			case "$4" in # allow only valid file systems
-			    ext2|ext3|ext4|xfs|jfs|linux-swap|fat16|fat32|hfs|ufs)
+			    btrfs|ext2|ext3|ext4|xfs|jfs|linux-swap|fat16|fat32|hfs)
 				fs="$4"
 				;;
 			    \$default_filesystem)
@@ -171,19 +175,23 @@ decode_recipe () {
 				open_dialog GET_LABEL_TYPE
 				read_line label
 				close_dialog
-				if [ "$iflabel" != "$label" ]; then
+				# multiple space-separated disk labels are supported
+				iflabel=" $iflabel "
+				if [ -n "${iflabel%%* $label *}" ]; then
 					line=''
 					continue
 				fi
 			fi
 
 			# Check if we can reuse an existing partition.
-			if echo "$line" | grep -q '\$reusemethod{'; then
+			if [ -n "$reuse" ] && echo "$line" | grep -q '\$reusemethod{'; then
 				if [ "${PWD#$DEVICES/}" != "$PWD" ]; then
 					method="$(echo "$line" | sed -n 's/.* method{ \([^}]*\) }.*/\1/p')"
-					id="$(find_method "$method")"
+					id="$(find_method "$method" "$min")"
 					if [ "$id" ]; then
 						line="$(echo "$line" | sed 's/\$reusemethod{[^}]*}/$reuse{ '"$id"' }/')"
+						# strip format{ } from a reused partition
+						line="$(echo "$line" | sed 's/format{[^}]*}//g')"
 					fi
 				fi
 			fi
@@ -277,22 +285,42 @@ pull_primary () {
 }
 
 setup_partition () {
-	local id flags file line
+	local id flags file line label
 	id=$1; shift
+	open_dialog GET_LABEL_TYPE
+	read_line label
+	close_dialog
 	while [ "$1" ]; do
 		case "$1" in
 		    \$bootable{)
 			while [ "$1" != '}' ] && [ "$1" ]; do
 				shift
 			done
-			open_dialog GET_FLAGS $id
-			flags=$(read_paragraph)
-			close_dialog
-			open_dialog SET_FLAGS $id
-			write_line "$flags"
-			write_line boot
-			write_line NO_MORE
-			close_dialog
+			if [ "$label" != "gpt" ]; then
+				open_dialog GET_FLAGS $id
+				flags=$(read_paragraph)
+				close_dialog
+				open_dialog SET_FLAGS $id
+				write_line "$flags"
+				write_line boot
+				write_line NO_MORE
+				close_dialog
+			fi
+			;;
+		    \$legacy_boot{)
+			while [ "$1" != '}' ] && [ "$1" ]; do
+				shift
+			done
+			if [ "$label" = "gpt" ]; then
+				open_dialog GET_FLAGS $id
+				flags=$(read_paragraph)
+				close_dialog
+				open_dialog SET_FLAGS $id
+				write_line "$flags"
+				write_line legacy_boot
+				write_line NO_MORE
+				close_dialog
+			fi
 			;;
 		    \$default_filesystem{)
 			while [ "$1" != '}' ] && [ "$1" ]; do
@@ -321,6 +349,7 @@ setup_partition () {
 			while [ "$1" != '}' ] && [ "$1" ]; do
 				if [ "$1" = ';' ]; then
 					echo "$line" >>$id/$file
+					line=''
 				else
 					line="${line:+$line }$1"
 				fi
@@ -376,6 +405,7 @@ choose_recipe () {
 	type=$1
 	target="$2"
 	free_size=$3
+	local reuse="$4" # optional, boolean, empty=false
 
 	# Preseeding of recipes
 	db_get partman-auto/expert_recipe
@@ -386,8 +416,8 @@ choose_recipe () {
 	db_get partman-auto/expert_recipe_file
 	if [ ! -z "$RET" ] && [ -e "$RET" ]; then
 		recipe="$RET"
-		decode_recipe $recipe $type
-		filter_reused
+		decode_recipe $recipe $type $reuse
+		[ -n "$reuse" ] && filter_reused
 		min_size=$(min_size)
 		if [ $min_size -le $free_size ]; then
 			return 0
@@ -413,8 +443,12 @@ choose_recipe () {
 	old_default_recipe="$RET"
 	for recipe in $recipedir/*; do
 		[ -f "$recipe" ] || continue
-		decode_recipe $recipe $type
-		filter_reused
+		decode_recipe $recipe $type $reuse
+		# Make sure the recipe contains lvmok tags if using LVM
+		if [ "$type" = lvm ] && ! echo "$scheme" | grep -Fq lvmok; then
+			continue
+		fi
+		[ -n "$reuse" ] && filter_reused
 		if [ $(min_size) -le $free_size ]; then
 			choices="${choices}${recipe}${TAB}${name}${NL}"
 			if [ "$default_recipe" = no ]; then
@@ -467,7 +501,7 @@ expand_scheme() {
 		max=$3
 		fs=$4
 		case "$fs" in
-		    ext2|ext3|ext4|linux-swap|fat16|fat32|hfs)
+		    btrfs|ext2|ext3|ext4|xfs|jfs|linux-swap|fat16|fat32|hfs)
 			true
 			;;
 		    *)

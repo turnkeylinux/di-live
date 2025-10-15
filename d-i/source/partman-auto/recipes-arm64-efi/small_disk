@@ -1,0 +1,33 @@
+partman-auto/text/small_disk ::
+
+18 18 18 free
+	.
+
+512 542 1024 free
+	$primary{ }
+	$iflabel{ msdos gpt }
+	$reusemethod{ }
+	method{ efi }
+	format{ } .
+
+768 788 1024 ext4
+	$defaultignore{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	filesystem{ ext4 }
+	mountpoint{ /boot } .
+
+2000 2840 -1 $default_filesystem
+	$lvmok{ }
+	method{ format }
+	format{ }
+	use_filesystem{ }
+	$default_filesystem{ }
+	mountpoint{ / } .
+
+500 560 100% linux-swap
+	$lvmok{ }
+	$reusemethod{ }
+	method{ swap }
+	format{ } .

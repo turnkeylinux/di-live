@@ -21,22 +21,6 @@ newline="
 
 db_capb backup
 
-log() {
-	logger -t grub-installer "$@"
-}
-
-error() {
-	log "error: $@"
-}
-
-info() {
-	log "info: $@"
-}
-
-debug () {
-	[ -z "${DEBCONF_DEBUG}" ] || log "debug: $@"
-}
-
 ARCH="$(archdetect)"
 info "architecture: $ARCH"
 SUBARCH="${ARCH#*/}"
@@ -51,17 +35,21 @@ if [ -z "$initial_proc_contents" ]; then
 	info "Mounting /proc into $ROOT"
 	if [ "$(udpkg --print-os)" = "kfreebsd" ]; then
 		mount -t linprocfs proc $ROOT/proc
+		on_exit "umount '$ROOT/proc'"
 	elif [ "$(udpkg --print-os)" = "hurd" ]; then
 		mount -t proc none $ROOT/proc
+		on_exit "umount '$ROOT/proc'"
 	else
-		mount -t proc proc $ROOT/proc
+		mountvirtfs proc $ROOT/proc
 	fi
 fi
 
 # On Linux, we need /run in the chroot to work around
 # https://bugs.debian.org/918590.
 if [ "$(udpkg --print-os)" = "linux" ] && [ ! -d "$ROOT/run/udev" ]; then
+	info "Bind mounting /run into $ROOT"
 	mount --bind /run $ROOT/run
+	on_exit "umount '$ROOT/run'"
 fi
 
 get_serial_console() {
@@ -116,12 +104,6 @@ grub_probe () {
 # Convert an OS device to the corresponding GRUB drive
 convert () {
 	tmp_drive="$(grub_probe -d -t drive "$1")" || exit $?
-	if [ "$partition_offset" != 0 ]; then
-		tmp_part="$(echo "$tmp_drive" | sed 's%.*,\([0-9]*\)).*%\1%')"
-		if [ "$tmp_part" ] && [ "$tmp_part" != "$tmp_drive" ]; then
-			tmp_drive="$(echo "$tmp_drive" | sed "s%\(.*,\)[0-9]*\().*\)%\1`expr $tmp_part - $partition_offset`\2%")"
-		fi
-	fi
 	echo "$tmp_drive"
 }
 
@@ -278,33 +260,6 @@ disc_offered=$(mapdevfs "$disc_offered_devfs")
 # Identify partition table of the disk containing our boot partition
 bootfslabel=$(partmap $disc_offered || echo unknown)
 
-frdev=""
-# Check if the boot file system is on multipath
-if type multipath >/dev/null 2>&1; then
-	for frdisk in $(multipath -l 2>/dev/null | \
-			grep '^mpath[0-9]\+ ' | cut -d ' ' -f 1); do
-		if echo "$disc_offered" | 	   \
-			grep -q "^/dev/mapper/${frdisk}p[0-9]\+"; then
-			frdev=/dev/mapper/$frdisk
-			frbootpart=${disc_offered#$frdev}
-			frgrubroot=${frbootpart#p}
-			frtype=multipath
-			break
-		fi
-	done
-	if [ "$frdisk" ]; then
-		# Create the device nodes for grub:
-		apt-install dmsetup
-		$chroot $ROOT dmsetup mknodes
-	fi
-elif type lvdisplay >/dev/null 2>&1 && \
-     (lvdisplay "$disc_offered" | grep -q 'LV Name' 2>/dev/null || \
-      [ -e "$(dirname "$disc_offered")/control" ]); then
-	# Don't set frdev/frdisk here, otherwise you'll end up in different
-	# code paths below ...
-	frtype=lvm
-fi
-
 info "Identified partition label for $bootfs: $bootfslabel"
 
 experimental_arch () {
@@ -320,9 +275,11 @@ experimental_arch () {
 case $ARCH in
     arm64/efi)
 	grub_package="grub-efi-arm64"
+	EFI_SUFFIX=AA64
 	;;
     armhf/efi)
 	grub_package="grub-efi-arm"
+	EFI_SUFFIX=ARM
 	;;
     i386/mac|amd64/mac)
 	# Note: depends on partman-efi to load the efivars module!
@@ -335,6 +292,8 @@ case $ARCH in
 	;;
     i386/efi|amd64/efi)
 	if [ -f /var/lib/partman/ignore_uefi ]; then
+		# $SUBARCH != "efi" if partman ignore_uefi flag is set
+		# so this branch should not be reached
 		grub_package="grub-pc"
 	else
 		grub_package="grub-efi"
@@ -344,8 +303,10 @@ case $ARCH in
 			SIZE=$(cat /sys/firmware/efi/fw_platform_size)
 			if [ $SIZE -eq 64 ] ; then
 				grub_package="grub-efi-amd64"
+				EFI_SUFFIX=X64
 			elif [ $SIZE -eq 32 ] ; then
 				grub_package="grub-efi-ia32"
+				EFI_SUFFIX=IA32
 			fi
 		fi
 	fi
@@ -363,12 +324,21 @@ case $ARCH in
 	;;
     ia64/*)
 	grub_package="grub-efi-ia64"
+	EFI_SUFFIX=IA64
+	;;
+    loong64/*)
+	grub_package="grub-efi-loong64"
+	EFI_SUFFIX=LOONGARCH64
 	;;
     powerpc/*|ppc64/*)
 	grub_package="grub-ieee1275"
 	;;
     ppc64el/*)
 	grub_package="grub-ieee1275"
+	;;
+    riscv64/efi)
+	grub_package="grub-efi-riscv64"
+	EFI_SUFFIX=RISCV64
 	;;
     sparc/*|sparc64/*)
 	grub_package="grub-ieee1275"
@@ -380,21 +350,43 @@ case $ARCH in
 	grub_package="grub-pc"
 esac
 
-case "$frtype:$bootfstype:$bootfslabel:$grub_package" in
-    multipath:*:*:*)
-	# Multipath requires GRUB Legacy for now
-	grub_package="grub"
-	;;
-    *:*:*:grub-yeeloong | lvm:*:*:* | *:*:gpt:* | :ext4:*:grub | *:ufs:*:* | *:zfs:*:* | *:btrfs:*:* | *:*:*:grub-xen)
-	# grub-legacy is not an option in these configurations
-	;;
-    *:*:*:grub-pc)
-	db_get grub-installer/grub2_instead_of_grub_legacy
-	if [ "$RET" = false ]; then
-		grub_package="grub"
+if [ "$grub_package" = "grub-efi" ]; then
+	case $ARCH in
+	    i386/*)
+		EFI_SUFFIX=IA32
+		;;
+	    amd64/*)
+		EFI_SUFFIX=X64
+	esac
+fi
+
+if [ -f /var/lib/partman/ignore_uefi ]; then
+	# propagate partman ignore_uefi flag to the target system so that
+	# os-prober performs legacy BIOS probes instead of EFI probes
+	# when running update-grub in target chroot
+	if [ ! -e $ROOT/var/lib/partman ]; then
+		if mkdir -p $ROOT/var/lib/partman; then
+			on_exit "rmdir '$ROOT/var/lib/partman'"
+		else
+			error "Failed to create directory $ROOT/var/lib/partman"
+			exit 1
+		fi
+	elif [ ! -d $ROOT/var/lib/partman ]; then
+		error "$ROOT/var/lib/partman exists but is not a directory"
+		exit 1
 	fi
-	;;
-esac
+	if [ ! -e $ROOT/var/lib/partman/ignore_uefi ]; then
+		if touch $ROOT/var/lib/partman/ignore_uefi; then
+			on_exit "rm '$ROOT/var/lib/partman/ignore_uefi'"
+		else
+			error "Failed to create file $ROOT/var/lib/partman/ignore_uefi"
+			exit 1
+		fi
+	elif [ ! -f $ROOT/var/lib/partman/ignore_uefi ]; then
+		error "$ROOT/var/lib/partman/ignore_uefi exists but is not a regular file"
+		exit 1
+	fi
+fi
 
 case $ARCH:$grub_package in
     powerpc/chrp*:grub-ieee1275|ppc64/chrp*:grub-ieee1275|ppc64el/*:grub-ieee1275)
@@ -419,21 +411,8 @@ case $ARCH:$grub_package in
 	;;
 esac
 
-case $grub_package in
-    grub)
-	grub_version="grub"
-	menu_file="menu.lst"
-	update_grub="update-grub"
-	partition_offset=1
-	frgrubroot=$(($frgrubroot - 1))
-	;;
-    *)
-	grub_version="grub2"
-	menu_file="grub.cfg"
-	update_grub="update-grub"
-	partition_offset=0
-	;;
-esac
+menu_file="grub.cfg"
+update_grub="update-grub"
 
 user_params=$(user-params) || true
 defopt_params=""
@@ -448,21 +427,19 @@ for u_param in $user_params; do
 		kopt_params=${kopt_params:+$kopt_params }$u_param ;;
 	esac
 done
-if [ "$grub_version" = grub2 ]; then
-	# Add user parameters to the menu file; some options are only added
-	# to the default entry for a kernel instead of all entries.
-	# We have to duplicate grub2's default for
-	# GRUB_CMDLINE_LINUX_DEFAULT here.
-	if [ -z "$got_quiet" ]; then
-		defopt_params="quiet${defopt_params:+ $defopt_params}"
-	fi
-	# (quoting to deconfuse vim)
-	$chroot $ROOT 'debconf-set-selections' <<EOF
+# Add user parameters to the menu file; some options are only added
+# to the default entry for a kernel instead of all entries.
+# We have to duplicate grub2's default for
+# GRUB_CMDLINE_LINUX_DEFAULT here.
+if [ -z "$got_quiet" ]; then
+	defopt_params="quiet${defopt_params:+ $defopt_params}"
+fi
+# (quoting to deconfuse vim)
+$chroot $ROOT 'debconf-set-selections' <<EOF
 $grub_package grub2/linux_cmdline string $kopt_params
 $grub_package grub2/linux_cmdline_default string $defopt_params
 $grub_package grub2/gnumach_cmdline string $kopt_params
 EOF
-fi
 if [ "$grub_package" = grub-pc ]; then
 	# Empty this for now to stop it being asked. We'll fix this up later.
 	$chroot $ROOT 'debconf-set-selections' <<EOF
@@ -473,6 +450,13 @@ fi
 
 case $grub_package in
     grub-efi*)
+	# If we're installing grub-efi, it wants /sys and efivarfs
+	# mounted in the target. Conversely, if we're installing grub-pc,
+	# efivarfs must not be mounted in the target to prevent update-grub
+	# from adding a bogus menu entry for UEFI firmware settings.
+	mountvirtfs sysfs $ROOT/sys
+	mountvirtfs efivarfs $ROOT/sys/firmware/efi/efivars non-fatal
+
 	# debconf priority for the EFI removable question. The happy path here
 	# is that efi boot variables are available. If they are not, then the
 	# user most likely has to force grub to the removable media path in
@@ -492,8 +476,22 @@ case $grub_package in
 	fi
 
 	# Should we force a copy of grub-efi to be installed
-	# to the removable media path too? Ask at low
+	# to the removable media path too? Set default to true
+	# if the removable media path is empty, then ask at low
 	# priority, or can also be pre-seeded of course
+	if ! [ -e /var/lib/grub-installer/removable_media_path_checked ]; then
+		info "Checking removable media path $ROOT/boot/efi/EFI/BOOT/BOOT${EFI_SUFFIX}.EFI"
+		if ! [ -f $ROOT/boot/efi/EFI/BOOT/BOOT${EFI_SUFFIX}.EFI ]; then
+			info "Removable media path is empty"
+			db_fget grub-installer/force-efi-extra-removable seen
+			if [ "$RET" = false ]; then
+				info "force-efi-extra-removable not preseeded, set it true"
+				db_set grub-installer/force-efi-extra-removable true
+			fi
+		fi
+		mkdir -p /var/lib/grub-installer
+		touch /var/lib/grub-installer/removable_media_path_checked
+	fi
 	db_input $ER_PRIO grub-installer/force-efi-extra-removable || [ $? -eq 30 ]
 	db_go || exit 10
 	db_get grub-installer/force-efi-extra-removable
@@ -521,19 +519,13 @@ esac
 
 db_progress START 0 6 grub-installer/progress/title
 
-db_subst grub-installer/progress/step_install GRUB "$grub_version"
+db_subst grub-installer/progress/step_install GRUB "$grub_package"
 db_progress INFO grub-installer/progress/step_install
 
 # apt-install passes --no-remove to apt, but grub{,2} conflict each other, so
 # we need to purge them first to support users who try grub2 and then switch
 # to grub legacy, or vice-versa
 case "$grub_package" in
-    grub)
-	log-output -t grub-installer $chroot $ROOT dpkg -P \
-		grub-pc-bin grub-pc grub-efi \
-		grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-amd64 \
-		grub-efi-ia32-bin grub-efi-ia32
-	;;
     grub-pc)
 	log-output -t grub-installer $chroot $ROOT dpkg -P \
 		grub grub-legacy grub-efi \
@@ -557,8 +549,9 @@ info "initial os-prober call found the following OSes:"
 info "$(cat /tmp/os-probed)"
 
 # Work out what probed OSes can be booted from grub
+supported_os_list=""
 if [ -s /tmp/os-probed ]; then
-	other_os_list=""
+	unsupported_os_list=""
 
 	OLDIFS="$IFS"
 	IFS="$newline"
@@ -567,7 +560,7 @@ if [ -s /tmp/os-probed ]; then
 		title=$(echo "$os" | cut -d: -f2)
 		type=$(echo "$os" | cut -d: -f4)
 		case "$type" in
-		    chain)
+		    chain|efi|hurd|macosx|minix)
 			: ;;
 		    linux)
 			# Check for linux systems that we don't
@@ -579,26 +572,14 @@ if [ -s /tmp/os-probed ]; then
 				else
 					unsupported_os_list="$title"
 				fi
-				if [ -n "$other_os_list" ]; then
-					other_os_list="$other_os_list, $title"
-				else
-					other_os_list="$title"
-				fi
 				continue
 			fi
 			;;
-		    hurd)
-			: ;;
 		    *)
 			if [ -n "$unsupported_os_list" ]; then
 				unsupported_os_list="$unsupported_os_list, $title"
 			else
 				unsupported_os_list="$title"
-			fi
-			if [ -n "$other_os_list" ]; then
-				other_os_list="$other_os_list, $title"
-			else
-				other_os_list="$title"
 			fi
 			continue
 			;;
@@ -616,7 +597,6 @@ if [ -s /tmp/os-probed ]; then
 	
 	info "Supported os list: $supported_os_list"
 	info "Unsupported os list: $unsupported_os_list"
-	info "Complete list: $other_os_list"
 
 	if [ -n "$unsupported_os_list" ]; then
 		# Unsupported OS, jump straight to manual boot device question.
@@ -626,70 +606,54 @@ if [ -s /tmp/os-probed ]; then
 		db_subst $q OS_LIST "$supported_os_list"
 		state=1
 	fi
-
-	# We have found other OSes - ask the user (at a low priority)
-	# if we should run os-prober at a low priority, with the
-	# default set to yes
-	info "Found other OSes, triggering question about os-prober, default yes"
-	db_subst grub-installer/enable_os_prober_otheros_yes OS_LIST "$other_os_list"
-	db_input low grub-installer/enable_os_prober_otheros_yes || [ $? -eq 30 ]
-	db_go || exit 10
-	db_get grub-installer/enable_os_prober_otheros_yes
-	if [ "$RET" = true ]; then
-		info "YES on enable_os_prober_otheros_yes"
-		info "Enabling os-prober"
-		$chroot $ROOT 'debconf-set-selections' <<EOF
-$grub_package grub2/enable_os_prober boolean true
-EOF
-	fi
 else
 	q=grub-installer/only_debian
 	state=1
-
-	info "Found NO other OSes, triggering question about os-prober, default false"
-	db_input low grub-installer/enable_os_prober_otheros_no || [ $? -eq 30 ]
-	db_go || exit 10
-	db_get grub-installer/enable_os_prober_otheros_no
-	if [ "$RET" = true ]; then
-		info "YES on enable_os_prober_otheros_no"
-		info "Enabling os-prober"
-		$chroot $ROOT 'debconf-set-selections' <<EOF
-$grub_package grub2/enable_os_prober boolean true
-EOF
-	fi
 fi
 
+if [ -n "$supported_os_list" ]; then
+	# We have found other supported OSes - ask the user (at a low priority)
+	# if we should run os-prober, with the default set to yes
+	info "Found other OSes, triggering question about os-prober, default yes"
+	default=yes
+	db_subst "grub-installer/enable_os_prober_otheros_$default" OS_LIST "$supported_os_list"
+else
+	info "Found NO other OSes, triggering question about os-prober, default no"
+	default=no
+fi
+db_input low "grub-installer/enable_os_prober_otheros_$default" || [ $? -eq 30 ]
+db_go || exit 10
+db_get "grub-installer/enable_os_prober_otheros_$default"
+if [ "$RET" = true ]; then
+	info "YES on enable_os_prober_otheros_$default"
+	info "Enabling os-prober"
+	$chroot $ROOT 'debconf-set-selections' <<EOF
+$grub_package grub2/enable_os_prober boolean true
+EOF
+fi
+# Do not ask again on subsequent runs, it has no effect (#1035085)
+db_fset grub-installer/enable_os_prober_otheros_yes seen true
+db_fset grub-installer/enable_os_prober_otheros_no seen true
+
 exit_code=0
-inst_package=$grub_package
-case "$grub_package" in
-    grub)
-	if apt-install --no-recommends grub-legacy ; then
-		inst_package=grub-legacy
-	else
-		apt-install $grub_package || exit_code=$? 
-	fi
-	;;
-   *)
-	apt-install $grub_package || exit_code=$? 
-	case $grub_package in
-	    # In these cases, we know we have a signed shim
-	    # package. There will be others in future.
-	    grub-efi-amd64*|grub-efi-ia32*|grub-efi-arm64*)
-		info "Additionally installing shim-signed to go with $grub_package"
-		# It seems that in live installations we might have
-		# dkms installed and will have to remove it to install
-		# shim-signed. Add --allow-remove here to make that
-		# work for now.
-		apt-install --allow-remove shim-signed || true
-	    ;;
-	esac
+apt-install $grub_package || exit_code=$?
+case $grub_package in
+    # In these cases, we know we have a signed shim
+    # package. There will be others in future.
+    grub-efi-amd64*|grub-efi-ia32*|grub-efi-arm64*)
+	info "Additionally installing shim-signed to go with $grub_package"
+	# It seems that in live installations we might have
+	# dkms installed and will have to remove it to install
+	# shim-signed. Add --allow-remove here to make that
+	# work for now.
+	apt-install --allow-remove shim-signed || true
 	;;
 esac
 
 if [ $exit_code -ne 0 ] ; then
 	db_progress STOP
-	info "Calling 'apt-install $inst_package' failed"
-	db_subst grub-installer/apt-install-failed GRUB "$inst_package"
+	info "Calling 'apt-install $grub_package' failed"
+	db_subst grub-installer/apt-install-failed GRUB "$grub_package"
 	db_input critical grub-installer/apt-install-failed || true
 	if ! db_go; then
 		exit 10 # back up to menu
@@ -697,19 +661,7 @@ if [ $exit_code -ne 0 ] ; then
 	exit 1
 fi
 
-grub_debian_version="$($chroot $ROOT dpkg-query -W -f '${Version}' $inst_package)"
-
-if [ "$frdev" ]; then
-	if [ -e $ROOT$frdev ] && [ -e $ROOT$frdev$frbootpart ] && \
-	   [ $frgrubroot -ge $((1 - $partition_offset)) ]; then
-		db_subst grub-installer/$frtype GRUBROOT $ROOT$frdev$frbootpart
-		q=grub-installer/$frtype
-	else
-		db_input critical grub-installer/${frtype}-error
-		db_go || true
-		exit 1
-	fi
-fi
+grub_debian_version="$($chroot $ROOT dpkg-query -W -f '${Version}' $grub_package)"
 
 # Try to avoid using (hd0) as a boot device name.  Something which can be
 # turned into a stable by-id name is better.
@@ -735,7 +687,7 @@ if db_get cdrom-detect/hybrid; then
 	hybrid="$RET"
 fi
 case $ARCH:$grub_package in
-    *:grub|*:grub-pc)
+    *:grub-pc)
 	if [ "$(device_to_disk "$cdsrc")" = "$default_bootdev" ] || \
 	   ([ -n "$hdsrc" ] && [ "$(device_to_disk "$hdsrc")" = "$default_bootdev" ]) || \
 	   ([ "$default_bootdev" = '(hd0)' ] && \
@@ -855,7 +807,7 @@ select_bootdev() {
 	echo "$result"
 }
 
-if [ "$bootdev" != "dummy" ] && [ ! "$frdev" ]; then
+if [ "$bootdev" != "dummy" ]; then
 	# check for a preseeded value
 	db_get grub-installer/bootdev || true
 	if [ -n "$RET" ] ; then
@@ -896,12 +848,6 @@ while : ; do
 			    state=2
 			fi
 		else
-			# Exit to menu if /boot is on SATA RAID/multipath; we
-			# don't support device selection in that case
-			if [ "$frdev" ]; then
-				db_progress STOP
-				exit 10
-			fi
 			state=2
 		fi
 	elif [ "$state" = 2 ]; then
@@ -912,25 +858,27 @@ while : ; do
 		fi
 
 		if [ ! -e "$bootdev" ]; then
-		    db_input critical grub-installer/bootdev || true
-		fi
-		if ! db_go; then
-			if [ "$q" ]; then
-				state=1
+			db_input critical grub-installer/bootdev || true
+			if ! db_go; then
+				if [ "$q" ]; then
+					state=1
+				else
+					# back up to menu
+					db_progress STOP
+					exit 10
+				fi
 			else
-				# back up to menu
-				db_progress STOP
-				exit 10
+				db_get grub-installer/bootdev
+				bootdev=$RET
+				if echo "$bootdev" | grep -qv '('; then
+					mappedbootdev=$(mapdevfs "$bootdev") || true
+					if [ -n "$mappedbootdev" ]; then
+						bootdev="$mappedbootdev"
+					fi
+				fi
+				break
 			fi
 		else
-			db_get grub-installer/bootdev
-			bootdev=$RET
-			if echo "$bootdev" | grep -qv '('; then
-				mappedbootdev=$(mapdevfs "$bootdev") || true
-				if [ -n "$mappedbootdev" ]; then
-					bootdev="$mappedbootdev"
-				fi
-			fi
 			break
 		fi
 	else
@@ -946,152 +894,117 @@ info "Installing grub on '$bootdev'"
 
 update_mtab
 
-if [ -z "$frdisk" ]; then
+# Install grub on each space separated disk in the list
+bootdevs="$bootdev"
 
-	# Install grub on each space separated disk in the list
-	bootdevs="$bootdev"
+for bootdev in $bootdevs; do
+	grub_install_params=
+	if is_floppy "$bootdev"; then
+		grub_install_params="$grub_install_params --allow-floppy"
+	fi
 
-	for bootdev in $bootdevs; do
-		grub_install_params=
-		if ! is_floppy "$bootdev"; then
-			if $chroot $ROOT grub-install -h 2>&1 | grep -q no-floppy; then
-				info "grub-install supports --no-floppy"
-				grub_install_params="$grub_install_params --no-floppy"
-			else
-				info "grub-install does not support --no-floppy"
-			fi
-		fi
+	db_get grub-installer/force-efi-extra-removable
+	if [ "$RET" = true ]; then
+		grub_install_params="$grub_install_params --force-extra-removable"
+	fi
 
-		db_get grub-installer/force-efi-extra-removable
-		if [ "$RET" = true ]; then
-			grub_install_params="$grub_install_params --force-extra-removable"
-		fi
+	db_get grub-installer/update-nvram
+	if [ "$RET" = false ]; then
+		grub_install_params="$grub_install_params --no-nvram"
+	fi
 
-		db_get grub-installer/update-nvram
-		if [ "$RET" = false ]; then
-			grub_install_params="$grub_install_params --no-nvram"
-		fi
-
-		case $ARCH in
-		    powerpc/chrp_pegasos)
-			# nvram is broken here
-			grub_install_params="$grub_install_params --no-nvram"
-			;;
-		    powerpc/powermac_newworld|ppc64/powermac_newworld)
-			grub_install_params="$grub_install_params --macppc-directory=/boot/grub --no-nvram"
-			;;
-		    sparc/*|sparc64/*)
-			# see: https://github.com/esnowberg/grub2-sparc/wiki
-			case $SUBARCH in
-			    *_gpt)
-				# No additional parameters for installing GRUB
-				# on disks with GPT disk labels
-				:
-				;;
-			    *)
-				grub_install_params="$grub_install_params --skip-fs-probe"
-				;;
-			esac
-			;;
-		esac
-
-		if [ "$grub_version" = "grub" ] ; then
-			grub_install_params="$grub_install_params --recheck"
-		else
-			# install even if it requires blocklists
-			grub_install_params="$grub_install_params --force"
-		fi
-
-		CODE=0
-		case $ARCH:$grub_package in
-		    *:grub|*:grub-pc|*:grub-efi*|sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275|powerpc/chrp*:grub-ieee1275|ppc64/chrp*:grub-ieee1275|ppc64el/*:grub-ieee1275)
-			info "Running $chroot $ROOT grub-install $grub_install_params \"$bootdev\""
-			log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params "$bootdev" || CODE=$?
-			;;
-		    powerpc/powermac_newworld:grub-ieee1275|ppc64/powermac_newworld:grub-ieee1275)
-			info "Running $chroot $ROOT grub-install $grub_install_params"
-			log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params || CODE=$?
-			;;
-		    amd64/*:grub-xen)
-			info "Running $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params"
-			log-output -t grub-installer $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params || CODE=$?
-			;;
-		    i386/*:grub-xen)
-			info "Running $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params"
-			log-output -t grub-installer $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params || CODE=$?
-			info "Running $chroot $ROOT grub-install --target=i386-xen $grub_install_params"
-			log-output -t grub-installer $chroot $ROOT grub-install --target=i386-xen $grub_install_params || CODE=$?
+	case $ARCH in
+	    powerpc/chrp_pegasos)
+		# nvram is broken here
+		grub_install_params="$grub_install_params --no-nvram"
+		;;
+	    powerpc/powermac_newworld|ppc64/powermac_newworld)
+		grub_install_params="$grub_install_params --macppc-directory=/boot/grub --no-nvram"
+		;;
+	    sparc/*|sparc64/*)
+		# see: https://github.com/esnowberg/grub2-sparc/wiki
+		case $SUBARCH in
+		    *_gpt)
+			# No additional parameters for installing GRUB
+			# on disks with GPT disk labels
+			:
 			;;
 		    *)
-			info "Running $chroot $ROOT grub-install $grub_install_params"
-			log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params || CODE=$?
+			grub_install_params="$grub_install_params --skip-fs-probe"
 			;;
 		esac
-		if [ "$CODE" = 0 ]; then
-			info "grub-install ran successfully"
-			case $ARCH:$grub_package in
-			    powerpc/powermac_newworld:grub-ieee1275|ppc64/powermac_newworld:grub-ieee1275)
-				umount $bootdev
-				$chroot $ROOT hmount $bootdev
-				$chroot $ROOT hattrib -c UNIX -t tbxi :System:Library:CoreServices:BootX
-				$chroot $ROOT hattrib -b :System:Library:CoreServices
-				$chroot $ROOT humount
-				mount $bootdev $ROOT/boot/grub
-				;;
-			    *)
-				:
-				;;
-			esac
-		else
-			case $ARCH:$grub_package in
-			    *:grub|*:grub-pc|*:grub-efi*|sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275|powerpc/chrp*:grub-ieee1275|ppc64/chrp*:grub-ieee1275|ppc64el/*:grub-ieee1275)
-				error "Running 'grub-install $grub_install_params \"$bootdev\"' failed."
-				;;
-			    *)
-				error "Running 'grub-install $grub_install_params failed."
-				;;
-			esac
-			db_subst grub-installer/grub-install-failed BOOTDEV "$bootdev"
-			db_input critical grub-installer/grub-install-failed || [ $? -eq 30 ]
-			db_go || true
-			db_progress STOP
-			exit 1
-		fi
-	done
-
-else
-
-	# Semi-manual grub setup for Serial ATA RAID/multipath
-	info "Boot partition is on a Serial ATA RAID disk or multipath device"
-	info "Installing GRUB to $frdev; grub root is $disc_offered"
-	case $(archdetect) in
-	    i386/*)
-		stagedir=i386-pc ;;
-	    amd64/*)
-		stagedir=x86_64-pc ;;
-	    *)
-		error "Unsupported architecture for SATA RAID/multipath installation"
-		exit 1
 		;;
 	esac
-	if [ ! -d $ROOT/usr/lib/grub/$stagedir/ ]; then
-		error "Grub stage files not available"
+
+	# install even if it requires blocklists
+	grub_install_params="$grub_install_params --force"
+
+	CODE=0
+	case $ARCH:$grub_package in
+	    *:grub-pc|*:grub-efi*|sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275|powerpc/chrp*:grub-ieee1275|ppc64/chrp*:grub-ieee1275|ppc64el/*:grub-ieee1275)
+		info "Running $chroot $ROOT grub-install $grub_install_params \"$bootdev\""
+		log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params "$bootdev" || CODE=$?
+
+		# Debugging information in EFI cases, when efibootmgr is available:
+		case $grub_package in
+		    grub-efi*)
+			if $chroot $ROOT which efibootmgr >/dev/null 2>&1; then
+			    info "Dumping boot loader configuration with efibootgmr"
+			    log-output -t efibootmgr $chroot $ROOT efibootmgr -v || true
+			fi
+			;;
+		esac
+		;;
+	    powerpc/powermac_newworld:grub-ieee1275|ppc64/powermac_newworld:grub-ieee1275)
+		info "Running $chroot $ROOT grub-install $grub_install_params"
+		log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params || CODE=$?
+		;;
+	    amd64/*:grub-xen)
+		info "Running $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params"
+		log-output -t grub-installer $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params || CODE=$?
+		;;
+	    i386/*:grub-xen)
+		info "Running $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params"
+		log-output -t grub-installer $chroot $ROOT grub-install --target=x86_64-xen $grub_install_params || CODE=$?
+		info "Running $chroot $ROOT grub-install --target=i386-xen $grub_install_params"
+		log-output -t grub-installer $chroot $ROOT grub-install --target=i386-xen $grub_install_params || CODE=$?
+		;;
+	    *)
+		info "Running $chroot $ROOT grub-install $grub_install_params"
+		log-output -t grub-installer $chroot $ROOT grub-install $grub_install_params || CODE=$?
+		;;
+	esac
+	if [ "$CODE" = 0 ]; then
+		info "grub-install ran successfully"
+		case $ARCH:$grub_package in
+		    powerpc/powermac_newworld:grub-ieee1275|ppc64/powermac_newworld:grub-ieee1275)
+			umount $bootdev
+			$chroot $ROOT hmount $bootdev
+			$chroot $ROOT hattrib -c UNIX -t tbxi :System:Library:CoreServices:BootX
+			$chroot $ROOT hattrib -b :System:Library:CoreServices
+			$chroot $ROOT humount
+			mount $bootdev $ROOT/boot/grub
+			;;
+		    *)
+			:
+			;;
+		esac
+	else
+		case $ARCH:$grub_package in
+		    *:grub-pc|*:grub-efi*|sparc/*:grub-ieee1275|sparc64/*:grub-ieee1275|powerpc/chrp*:grub-ieee1275|ppc64/chrp*:grub-ieee1275|ppc64el/*:grub-ieee1275)
+			error "Running 'grub-install $grub_install_params \"$bootdev\"' failed."
+			;;
+		    *)
+			error "Running 'grub-install $grub_install_params failed."
+			;;
+		esac
+		db_subst grub-installer/grub-install-failed BOOTDEV "$bootdev"
+		db_input critical grub-installer/grub-install-failed || [ $? -eq 30 ]
+		db_go || true
+		db_progress STOP
 		exit 1
 	fi
-	mkdir -p $ROOT/boot/grub
-	cp $ROOT/usr/lib/grub/$stagedir/* $ROOT/boot/grub
-
-	# TODO: Check for errors during this process!
-	TERM=linux $chroot $ROOT \
-        grub --device-map=/dev/null >/var/log/grub-${frtype}.log 2>&1 </dev/null <<EOF
-device (hd0,$frgrubroot) $disc_offered
-device (hd0) $frdev
-root (hd0,$frgrubroot)
-setup (hd0)
-quit
-EOF
-
-fi
+done
 
 # Split a device name into a disk device name and a partition number, if
 # possible.
@@ -1126,7 +1039,6 @@ make_device_map () {
 	# If you're preseeding (hd0) et al, stop - preseed OS device names
 	# instead.  However, for backward compatibility we ensure that a
 	# device.map exists if you do this.
-	[ "$grub_version" = grub2 ] || return 0
 	[ ! -e "$device_map" ] || return 0
 	local no_floppy
 	case $1 in
@@ -1156,9 +1068,6 @@ make_active_partition () {
 				| sed 's/^ *(.*)[[:space:]]*\(.*\)/\1/')"
 			bootpart="$(echo "$bootdev" | sed 's/.*,\([^)]*\).*/\1/')"
 			[ "$bootpart" != "$bootdev" ] || bootpart=
-			if [ "$bootpart" ]; then
-				bootpart="$(($bootpart + $partition_offset))"
-			fi
 			;;
 		[hf]d[0-9]*)
 			# The GRUB format with no parenthesis.
@@ -1167,9 +1076,6 @@ make_active_partition () {
 				| sed 's/^ *(.*)[[:space:]]*\(.*\)/\1/')"
 			bootpart="${bootdev#*,}"
 			[ "$bootpart" != "$bootdev" ] || bootpart=
-			if [ "$bootpart" ]; then
-				bootpart="$(($bootpart + $partition_offset))"
-			fi
 			;;
 	esac
 
@@ -1225,115 +1131,9 @@ fi
 rm -f $ROOT/boot/grub/$menu_file
 update_grub
 
-# For multipath the grub root may need fixing up
-# TODO: This should really be better supported in update-grub
-if [ "$frdev" ] && \
-   ! grep -q "^# groot=(hd0,$frgrubroot)" $ROOT/boot/grub/$menu_file; then
-	info "Fixing up the grub root to '(hd0,$frgrubroot)'"
-	sed -i "/^# groot/s/(.*)/(hd0,$frgrubroot)/" $ROOT/boot/grub/$menu_file
-	update_grub
-fi
-
-# Set a password if asked
-if [ "$grub_version" = "grub" ] ; then
-	# Set up a password if asked or preseeded.
-	password=
-	db_get grub-installer/password-crypted
-	if [ "$RET" = false ] || [ "$RET" = true ]; then
-		# password-crypted used to be a boolean template
-		error "Preseeding of encrypted passwords changed! Check installation guide."
-		exit 1
-	elif [ "$RET" ]; then
-		password="$RET"
-	else
-		PW_PRIO=low
-		while :; do
-			password=""
-			db_input $PW_PRIO grub-installer/password || true
-			if ! db_go; then
-				# back up to menu
-				db_progress STOP
-				exit 10
-			fi
-
-			db_get grub-installer/password
-			if [ "$RET" ]; then
-				password="$RET"
-				db_input $PW_PRIO grub-installer/password-again || true
-				if ! db_go; then
-					db_progress STOP
-					exit 10
-				fi
-				
-				db_get grub-installer/password-again
-				if [ "$password" = "$RET" ]; then
-					break
-				else
-					db_input critical grub-installer/password-mismatch || true
-					if ! db_go; then
-						db_progress STOP
-						exit 10
-					fi
-				fi
-			else
-				# The user doesn't want a password
-				break
-			fi
-			# We only get here if passwords don't match
-			PW_PRIO=critical
-			db_set grub-installer/password ""
-			db_set grub-installer/password-again ""
-			db_fset grub-installer/password seen false
-			db_fset grub-installer/password-again seen false
-		done
-		if [ "$password" ]; then
-			password=$(echo -e "md5crypt\n$password" | \
-				   $chroot $ROOT \
-				   grub --batch --device-map=/dev/null 2>&1 | \
-				   grep "^Encrypted:" | cut -d' ' -f2)
-		fi
-	fi
-
-	if [ "$password" ]; then
-		echo "password --md5 $password" >/tmp/menu.lst.password
-		# Add a line to menu.lst to use the given password
-		# The line is appended after the commented example
-		sed -i '/^# password/r /tmp/menu.lst.password' $ROOT/boot/grub/$menu_file
-		# By default, menu.lst is world-readable, which is not so good if it
-		# contains a password.
-		chmod o-r $ROOT/boot/grub/$menu_file
-		rm -f /tmp/menu.lst.password
-	fi 
-fi
-
-if [ "$grub_version" = grub ]; then
-	# Add user parameters to menu.lst; some options are only added to
-	# the default entry for a kernel instead of all entries. We can't do
-	# this in the same place as the grub2 case because we need the menu
-	# file to exist.
-	if [ "$defopt_params" ]; then
-		sed -i "s!^\(# defoptions=.*\)!\1 $defopt_params!" $ROOT/boot/grub/$menu_file
-	fi
-	if [ "$kopt_params" ]; then
-		sed -i "s!^\(# kopt=.*\)!\1 $kopt_params!" $ROOT/boot/grub/$menu_file
-	fi
-	# In either case, update the Debian kernel entries
-	if [ "$user_params" ]; then
-		update_grub
-	fi
-fi
-
 if [ "$serial" ] ; then
-	# Modify menu.lst so _grub_ uses serial console.
+	# Modify /etc/default/grub so _grub_ uses serial console.
 	case $grub_package in
-	    grub)
-		(
-			grub_serial_console $serial
-			echo "terminal serial"
-			cat $ROOT/boot/grub/$menu_file
-		) >$ROOT/boot/grub/$menu_file.new
-		mv $ROOT/boot/grub/$menu_file.new $ROOT/boot/grub/$menu_file
-		;;
 	    grub-pc|grub-efi*)
 		if grep -q "^GRUB_TERMINAL=" $ROOT/etc/default/grub; then
 			sed -i $ROOT/etc/default/grub -e "s/^\(GRUB_TERMINAL\)=.*/\1=serial/g"
@@ -1350,107 +1150,90 @@ if [ "$serial" ] ; then
 	esac
 fi 
 
-# Generate menu.lst additions for other OSes
-tmpfile=/tmp/menu.lst.extras
-OLDIFS="$IFS"
-IFS="$newline"
-
-no_floppy=""
-if $chroot $ROOT dpkg --compare-versions $grub_debian_version ge 1.96+20090609-1 ; then
-	no_floppy="--no-floppy"
-fi
-
-# I don't think any of this is needed, as we have os-prober?
-for os in $(cat /tmp/os-probed); do
-	IFS="$OLDIFS"
-	title=$(echo "$os" | cut -d: -f2)
-	shortname=$(echo "$os" | cut -d: -f3)
-	type=$(echo "$os" | cut -d: -f4)
-	case "$type" in
-	    chain)
-		partition=$(mapdevfs $(echo "$os" | cut -d: -f1))
-		grubdrive=$(convert "$partition") || true
-		if [ -n "$grubdrive" ]; then
-			case $grub_version in
-			    grub)	grub_write_chain ;;
-			    grub2)	grub2_write_chain ;;
-			esac
-		fi
-		;;
-	    linux)
-		partition=$(echo "$os" | cut -d: -f1)
-		mappedpartition=$(mapdevfs "$partition")
-		IFS="$newline"
-		for entry in $(linux-boot-prober "$partition"); do
-			IFS="$OLDIFS"
-			bootpart=$(echo "$entry" | cut -d: -f2)
-			mappedbootpart=$(mapdevfs "$bootpart") || true
-			if [ -z "$mappedbootpart" ]; then
-				mappedbootpart="$bootpart"
-			fi
-			label=$(echo "$entry" | cut -d : -f3)
-			if [ -z "$label" ]; then
-				label="$title"
-			fi
-			kernel=$(echo "$entry" | cut -d : -f4)
-			initrd=$(echo "$entry" | cut -d : -f5)
-			if echo "$kernel" | grep -q '^/boot/' && \
-			   [ "$mappedbootpart" != "$mappedpartition" ]; then
-				# separate /boot partition
-				kernel=$(echo "$kernel" | sed 's!^/boot!!')
-				initrd=$(echo "$initrd" | sed 's!^/boot!!')
-				grubdrive=$(convert "$mappedbootpart") || true
-			else
-				grubdrive=$(convert "$mappedpartition") || true
-			fi
-			params="$(echo "$entry" | cut -d : -f6-) $serial"
-			case $grub_version in
-			    grub)	grub_write_linux ;;
-			    grub2)	grub2_write_linux ;;
-			esac
-			IFS="$newline"
-		done
-		IFS="$OLDIFS"
-		;;
-	    hurd)
-		partition=$(mapdevfs $(echo "$os" | cut -d: -f1))
-		grubdrive=$(convert "$partition") || true
-		hurddrive=$(hurd_convert "$partition") || true
-		# Use the standard hurd boilerplate to boot it.
-		case $grub_version in
-		    grub)	grub_write_hurd ;;
-		    grub2)	grub2_write_hurd ;;
-		esac
-		;;
-	    *)
-		info "unhandled: $os"
-		;;
-	esac
+# Generate static menu entries for other OSes if os-prober not present
+if ! $chroot $ROOT which os-prober >/dev/null 2>&1; then
+	tmpfile=/tmp/menu.extras
+	OLDIFS="$IFS"
 	IFS="$newline"
-done
-IFS="$OLDIFS"
-rm -f /tmp/os-probed
 
-if [ -s $tmpfile ] ; then
-	case $grub_version in
-	    grub)
-		grub_write_divider
-		cat $tmpfile >> $ROOT/boot/grub/$menu_file
-		;;
-	    grub2)
-		if ! $chroot $ROOT which os-prober >/dev/null 2>&1; then
-			cat > $ROOT/etc/grub.d/30_otheros << EOF
+	no_floppy=""
+	if $chroot $ROOT dpkg --compare-versions $grub_debian_version ge 1.96+20090609-1 ; then
+		no_floppy="--no-floppy"
+	fi
+
+	# I don't think any of this is needed, as we have os-prober?
+	for os in $(cat /tmp/os-probed); do
+		IFS="$OLDIFS"
+		title=$(echo "$os" | cut -d: -f2)
+		shortname=$(echo "$os" | cut -d: -f3)
+		type=$(echo "$os" | cut -d: -f4)
+		case "$type" in
+		    chain)
+			partition=$(mapdevfs $(echo "$os" | cut -d: -f1))
+			grubdrive=$(convert "$partition") || true
+			if [ -n "$grubdrive" ]; then
+				grub2_write_chain
+			fi
+			;;
+		    linux)
+			partition=$(echo "$os" | cut -d: -f1)
+			mappedpartition=$(mapdevfs "$partition")
+			IFS="$newline"
+			for entry in $(linux-boot-prober "$partition"); do
+				IFS="$OLDIFS"
+				bootpart=$(echo "$entry" | cut -d: -f2)
+				mappedbootpart=$(mapdevfs "$bootpart") || true
+				if [ -z "$mappedbootpart" ]; then
+					mappedbootpart="$bootpart"
+				fi
+				label=$(echo "$entry" | cut -d : -f3)
+				if [ -z "$label" ]; then
+					label="$title"
+				fi
+				kernel=$(echo "$entry" | cut -d : -f4)
+				initrd=$(echo "$entry" | cut -d : -f5)
+				if echo "$kernel" | grep -q '^/boot/' && \
+				   [ "$mappedbootpart" != "$mappedpartition" ]; then
+					# separate /boot partition
+					kernel=$(echo "$kernel" | sed 's!^/boot!!')
+					initrd=$(echo "$initrd" | sed 's!^/boot!!')
+					grubdrive=$(convert "$mappedbootpart") || true
+				else
+					grubdrive=$(convert "$mappedpartition") || true
+				fi
+				params="$(echo "$entry" | cut -d : -f6-) $serial"
+				grub2_write_linux
+				IFS="$newline"
+			done
+			IFS="$OLDIFS"
+			;;
+		    hurd)
+			partition=$(mapdevfs $(echo "$os" | cut -d: -f1))
+			grubdrive=$(convert "$partition") || true
+			hurddrive=$(hurd_convert "$partition") || true
+			# Use the standard hurd boilerplate to boot it.
+			grub2_write_hurd
+			;;
+		    *)
+			info "unhandled: $os"
+			;;
+		esac
+		IFS="$newline"
+	done
+	IFS="$OLDIFS"
+
+	if [ -s $tmpfile ] ; then
+		cat > $ROOT/etc/grub.d/30_otheros << EOF
 #!/bin/sh
 exec tail -n +3 \$0
 EOF
-			cat $tmpfile >> $ROOT/etc/grub.d/30_otheros
-			chmod +x $ROOT/etc/grub.d/30_otheros
-			update_grub # propagate 30_otheros to grub.cfg
-		fi
-		;;
-	esac
+		cat $tmpfile >> $ROOT/etc/grub.d/30_otheros
+		chmod +x $ROOT/etc/grub.d/30_otheros
+		update_grub # propagate 30_otheros to grub.cfg
+	fi
 	rm -f $tmpfile
 fi
+rm -f /tmp/os-probed
 
 case $ARCH in
     mipsel/loongson-2f)
@@ -1499,11 +1282,3 @@ fi
 
 db_progress STEP 1
 db_progress STOP
-
-if [ "$(udpkg --print-os)" = "linux" ] && ! umount $ROOT/run; then
-	info "Failed to unmount /run in $ROOT"
-fi
-
-if ! umount $ROOT/proc; then
-	info "Failed to unmount /proc in $ROOT"
-fi

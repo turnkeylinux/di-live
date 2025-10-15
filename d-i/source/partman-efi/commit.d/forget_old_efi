@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+. /lib/partman/lib/base.sh
+
+for dev in $DEVICES/*; do
+	[ -d "$dev" ] || continue
+	cd $dev
+	open_dialog PARTITIONS
+	while { read_line num id size type fs path name; [ "$id" ]; }; do
+		[ "$fs" != free ] || continue
+		[ -f $id/method ] || continue
+		method=$(cat $id/method)
+		if [ -n "$method" ] && [ "$method" != efi ] && [ -f $id/old_efi ]; then
+			# new method, so forget that the partition was EFI
+			log "efi_debug: new method $method set to former EFI partition $path, so remove old_efi"
+			rm -f $id/old_efi
+		fi
+	done
+	close_dialog
+done

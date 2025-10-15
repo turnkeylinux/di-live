@@ -126,6 +126,9 @@ case "$(detect_virt)" in
 	;;
     kvm|qemu)
 	apt-install --with-recommends qemu-guest-agent || true
+	if detect_desktop; then
+	    apt-install --with-recommends spice-vdagent || true
+	fi
 	;;
     xen)
 	# XXX: do we need anything for Xen?

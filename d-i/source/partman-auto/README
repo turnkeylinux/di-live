@@ -5,7 +5,7 @@ it also adds an item `Automatically partition this free space'.
 For a description of the format and use of recipe files and other important
 documentation, see debian-installer/doc/devel/partman-auto-recipe.txt
 
-Note that for architecture-specific recipe files, partman-auto will look 
+Note that for architecture-specific recipe files, partman-auto will look
 in the following places for recipes:
 
 /lib/partman/recipes-<arch>-<subarch>/*
@@ -14,3 +14,12 @@ in the following places for recipes:
 
 Partman-auto will use the recipes from the first of these directories
 that exists.
+
+Note: In order to compute similar sizes with and witout LVM, the sum
+of (PRIORITY - MINIMUM) of lvmok partitions should be equal to 900.
+
+The script build_recipes is not used to build the binary udeb package.
+It allows to generate recipe files from a reduced set of values for the
+following architectures: default, amd64, amd64/efi, armhf, arm64,
+arm64/efi, ppc64el and risc64v.
+See the comments at the beginning of the script for use and limitations.

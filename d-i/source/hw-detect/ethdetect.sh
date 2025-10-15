@@ -38,7 +38,7 @@ load_module() {
 }
 
 list_nic_modules() {
-	find /lib/modules/*/kernel/drivers/net -name phy -prune -o -type f -print | sed 's/\.ko$//; s/.*\///'
+	find /lib/modules/*/kernel/drivers/net -name phy -prune -o -type f -print | sed 's/\.ko$//; s/\.ko\.xz$//; s/.*\///'
 }
 
 snapshot_devs() {
@@ -62,7 +62,7 @@ compare_devs() {
 DEVNAMES_STATIC=/etc/network/devnames-static.gz
 TEMP_EXTRACT=/tmp/devnames-static.txt
 get_static_modinfo() {
-	local module="$(echo $1 | sed 's/\.ko//')"
+	local module="$(echo $1 | sed 's/\.ko//; s/\.ko\.xz//')"
 	local modinfo=""
 
 	if [ ! -f "$TEMP_EXTRACT" ]; then
@@ -182,6 +182,8 @@ while ! ethernet_found; do
 			if [ "$modinfo" = BLACKLIST ]; then
 				continue
 			fi
+			# Escape the separator for the select field
+			modinfo=$(echo $modinfo | sed -e 's/, /\\, /g')
 			mod="$mod: $modinfo"
 		fi
 		CHOICES="${CHOICES:+$CHOICES, }$mod"

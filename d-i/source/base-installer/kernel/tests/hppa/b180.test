@@ -6,11 +6,8 @@ flavour parisc
 kernel-5.7 linux-image-parisc
 usable \
   linux-image-parisc \
-  linux-image-parisc-smp \
-  linux-image-5.7.0-1-parisc \
-  linux-image-4.19.0-1-parisc-smp
+  linux-image-5.7.0-1-parisc
 unusable \
   linux-image-parisc64 \
-  linux-image-parisc64-smp \
   linux-image-5.7.0-1-parisc64 \
-  linux-image-4.19.0-1-parisc64-smp
+  linux-image-4.19.0-1-parisc64

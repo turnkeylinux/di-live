@@ -1,3 +1,140 @@
+hw-detect (1.171) unstable; urgency=medium
+
+  * Before copying loose files as usual, make sure to delete any files
+    belonging to firmware packages embedded in the initrd by debian-cd,
+    leaving it up to the modalias-based logic to deploy those packages
+    when relevant (Closes: #1106005). Right now, that's only about
+    firmware-sof-signed, but we might have firmware-intel-signed as well
+    later on.
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Aug 2025 19:43:39 +0200
+
+hw-detect (1.170) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+  * Hungarian (hu.po) by Szia Tomi
+  * Russian (ru.po) by Алексей Шилин
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:24 +0200
+
+hw-detect (1.169) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Tamil (ta.po) by anishprabu.t
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 27 Jun 2025 16:03:40 +0200
+
+hw-detect (1.168) unstable; urgency=medium
+
+  [ Laurent Bigonville ]
+  * Install spice-vdagent under qemu/kvm if we are installing a desktop
+    (i.e. if xserver-xorg-core or task-desktop are installed).
+    Closes: #986500.
+
+  [ Pascal Hambourg ]
+  * Ignore renesas_usb_fw.mem requested by xhci-pci-renesas when falling
+    back to the ROM. Devices might already work at this point, and a
+    reload would risk making them disappear all of a sudden. This can
+    catastrophic if that affects the installation medium! See: #1105000.
+
+  [ Cyril Brulebois ]
+  * Congratulations to Felix Crux for the very detailed bug report
+    mentioned above!
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 13 May 2025 20:11:05 +0200
+
+hw-detect (1.167) unstable; urgency=medium
+
+  * Team upload
+
+  [ Roland Clobus ]
+  * ethdetect: Allow commas in the description of modules. Closes: #1090738.
+  * ethdetect: Show description for compressed kernel modules.
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 06 Apr 2025 21:04:41 +0200
+
+hw-detect (1.166) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 01 Apr 2025 12:05:00 +0200
+
+hw-detect (1.165) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+  * Traditional Chinese (zh_TW.po) by reimu105
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 06 Feb 2025 22:03:09 +0100
+
+hw-detect (1.164) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 29 Nov 2024 23:19:43 +0100
+
+hw-detect (1.163) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 21:40:17 +0100
+
+hw-detect (1.162) unstable; urgency=medium
+
+  * Team upload
+
+  [ Michael Biebl ]
+  * Remove obsolete discover related files/dependencies
+
+  [ Carsten Schoenert ]
+  * Fix reload of iwlwifi module (Closes: #1006708)
+
+  [ Updated translations ]
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 10 Sep 2024 21:07:48 +0200
+
+hw-detect (1.161) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Hindi (hi.po) by Scrambled777
+  * Hungarian (hu.po) by SZERVÁC Attila
+  * Marathi (mr.po) by omwani
+  * Punjabi (Gurmukhi) (pa.po) by Aman Alam
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 28 May 2024 19:17:07 +0200
+
+hw-detect (1.160) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Croatian (hr.po) by Milo Ivir
+  * Romanian (ro.po) by NicolaeFericitu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Sat, 23 Sep 2023 22:25:39 +0200
+
 hw-detect (1.159) unstable; urgency=medium
 
   * Team upload
@@ -51,7 +188,7 @@ hw-detect (1.155) unstable; urgency=medium
   * Optimize firmware package installation: process dpkg triggers once,
     after all packages have been installed (i.e. install-firmware only
     triggers a single update-initramfs call).
-  * Fix condition around moutmedia calls (See: #1032377).
+  * Fix condition around mountmedia calls (See: #1032377).
   * Fix files removal for non-accepted firmware packages (See: #1032377).
   * Add a special case for the mhi module: when the module requesting
     firmware files is “mhi”, use the modules listed as holders (e.g.

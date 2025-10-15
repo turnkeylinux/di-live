@@ -21,7 +21,7 @@ log_output() {
 	log-output -t check-missing-firmware "$@"
 }
 
-# USB is special, and we don't want to take it all done:
+# USB is special, and we don't want to take it all down:
 get_usb_module() {
 	address="$1"
 	device="/sys/bus/usb/devices/$address"
@@ -170,7 +170,12 @@ check_missing () {
 
 	    # ignore specific files:
 	    #  - iwlwifi, debug-only (#969264, #966218)
-	    if [ "$fwfile" = "iwl-debug-yoyo.bin" ]; then
+	    #  - renesas_usb_fw.mem, optional if fallback to ROM,
+	    #    unloading module disconnects USB devices (#1105000)
+	    if [ "$fwfile" = "iwl-debug-yoyo.bin" ] || \
+	       { [ "$fwfile" = "renesas_usb_fw.mem" ] && \
+	         dmesg | grep -Fq "failed to load firmware renesas_usb_fw.mem, fallback to ROM"
+	       }; then
 		log "ignoring firmware file $fwfile requested by $module"
 		continue
 	    fi
@@ -408,8 +413,12 @@ while check_missing && ask_load_firmware; do
 	# remove and reload modules so they see the new firmware
 	for module in $modules; do
 		if ! nic_is_configured $module; then
-			log "removing and loading kernel module $module"
-			log_output modprobe -r $module || true
+			if [ "$module" == "iwlwifi" ]; then
+				# iwlmvm depends on iwlwifi and may be loaded, so unload it first
+				log_output modprobe -r iwlmvm iwlwifi || true
+			else
+				log_output modprobe -r $module || true
+			fi
 			log_output modprobe $module || true
 
 			# iterate to avoid dealing with multiplicity explicitly:

@@ -4,14 +4,24 @@ arch_get_kernel_flavour () {
 }
 
 arch_check_usable_kernel () {
-	# TODO recent kernels expose os32/os64 in 'capabilities' line in cpuinfo
-	if echo "$1" | grep -Eq -- "-parisc(32)?(-.*)?$"; then return 0; fi
-	if [ "$2" = parisc ]; then return 1; fi
-	if echo "$1" | grep -Eq -- "-parisc(64)?(-.*)?$"; then return 0; fi
-
-	# default to usable in case of strangeness
-	warning "Unknown kernel usability: $1 / $2"
-	return 0
+	case "$1" in
+	    *-dbg)
+		return 1
+		;;
+	    *-parisc | *-parisc-*)
+	        OS32=$(grep "^capabilities.*os32.*" "$CPUINFO")
+		if [ -n "$OS32" ]; then
+			return 0
+		fi
+		;;
+	    *-parisc64 | *-parisc64-*)
+		OS64=$(grep "^capabilities.*os64.*" "$CPUINFO")
+		if [ -n "$OS64" ]; then
+			return 0
+		fi
+		;;
+	esac
+	return 1
 }
 
 arch_get_kernel () {

@@ -1,0 +1,34 @@
+#! /bin/sh
+set -e
+
+# Systems using U-Boot as firmware might provide old DTB to the kernel with
+# missing features, especially when vendored U-Boot are in the loop. The
+# u-boot-efi-dtb is able to create and keep up-to-date a dtb/ directory on the
+# EFI System Partition (ESP) using the device tree blobs (DTBs) from the
+# installed linux-image packages that can then be loaded by U-Boot when running
+# in EFI mode.
+
+
+detect_uboot() {
+    # Rely on DMI information to detect U-Boot. It is enabled by default on
+    # (upstream) riscv64 kernels since version 6.11.
+    if [ -f "/sys/class/dmi/id/bios_vendor" ] ; then
+        if grep -q "^U-Boot$" "/sys/class/dmi/id/bios_vendor" ; then
+            return 0
+        fi
+    fi
+
+    return 1
+}
+
+# The u-boot-efi-dtb package might be useful on all architectures using U-Boot
+# in EFI mode, but let's limit it to riscv64 for now.
+case "$(archdetect)" in
+    riscv64/efi)
+        if detect_uboot; then
+            apt-install u-boot-efi-dtb
+        fi
+        ;;
+    *)
+        ;;
+esac

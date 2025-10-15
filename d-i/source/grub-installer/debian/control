@@ -8,7 +8,7 @@ Vcs-Browser: https://salsa.debian.org/installer-team/grub-installer
 Vcs-Git: https://salsa.debian.org/installer-team/grub-installer.git
 
 Package: grub-installer
-Architecture: amd64 arm64 armhf i386 ia64 hurd-i386 kfreebsd-i386 kfreebsd-amd64 mipsel powerpc ppc64 ppc64el sparc sparc64
+Architecture: amd64 arm64 armhf i386 ia64 hurd-i386 hurd-amd64 kfreebsd-i386 kfreebsd-amd64 loong64 mipsel powerpc ppc64 ppc64el riscv64 sparc sparc64
 XB-Subarchitecture: ${subarch}
 Provides: bootable-system
 Depends: ${shlibs:Depends}, ${misc:Depends}, kernel-installer, created-fstab, di-utils, di-utils-mapdevfs, os-prober, partman-utils

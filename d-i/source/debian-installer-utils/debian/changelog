@@ -1,3 +1,95 @@
+debian-installer-utils (1.155) unstable; urgency=medium
+
+  [ Samuel Thibault ]
+  * list-devices-hurd: Support USB devices.
+
+  [ Updated translations ]
+  * Spanish (es.po) by Santiago Vila
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 20 Jul 2025 06:33:15 +0200
+
+debian-installer-utils (1.154) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Updated translations ]
+  * Uyghur (ug.po) by Abduqadir Abliz
+
+ -- Holger Wansing <hwansing@mailbox.org>  Thu, 26 Jun 2025 21:43:12 +0200
+
+debian-installer-utils (1.153) unstable; urgency=medium
+
+  [ Helmut Grohne ]
+  * chroot-setup.sh: Duplicate aliased diversions.
+
+  [ Updated translations ]
+  * Hungarian (hu.po) by Szia Tomi
+  * Serbian (sr.po) by Мирослав Николић
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 28 Feb 2025 11:17:13 +0000
+
+debian-installer-utils (1.152) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Emanuele Rocca ]
+  * list-devices-linux: recognize persistent memory block devices (Closes:
+    #879106)
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Hungarian (hu.po) by Szia Tomi
+  * Polish (pl.po) by Matthaiks
+  * Romanian (ro.po) by Remus-Gabriel Chelu
+
+ -- Holger Wansing <hwansing@mailbox.org>  Tue, 04 Feb 2025 22:46:29 +0100
+
+debian-installer-utils (1.151) unstable; urgency=medium
+
+  * Team upload
+
+  [ Updated translations ]
+  * Persian (fa.po) by Danial Behzadi
+  * Hebrew (he.po) by Yaron Shahrabani
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 29 Nov 2024 23:01:06 +0100
+
+debian-installer-utils (1.150) unstable; urgency=medium
+
+  [ Updated translations ]
+  * Indonesian (id.po) by Andika Triwidada
+  * Georgian (ka.po) by Temuri Doghonadze
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 02 Nov 2024 21:37:46 +0100
+
+debian-installer-utils (1.149) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * user-params: Exclude initrd, since it's sometimes hard to avoid syslinux
+    appending it after "---".
+
+  [ Luca Boccassi ]
+  * chroot_setup.sh: Mount efivarfs in /target if available.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 03 Jun 2024 09:26:41 +0100
+
+debian-installer-utils (1.148) unstable; urgency=medium
+
+  [ Philip Hands ]
+  * fetch-url: when $dest == "", attempt the fetch, but discard the result
+  * fetch-url-methods/file: be more circumspect about (un)mounting /media
+    Closes: #1051964
+
+ -- Steve McIntyre <93sam@debian.org>  Mon, 11 Dec 2023 14:44:30 +0000
+
+debian-installer-utils (1.147) unstable; urgency=medium
+
+  [ Sven Joachim ]
+  * Fix FTBFS by writing the vt102-di terminfo entry to /usr/share/terminfo
+    (Closes: #1040048).
+
+ -- Cyril Brulebois <kibi@debian.org>  Sun, 02 Jul 2023 07:29:32 +0200
+
 debian-installer-utils (1.146) unstable; urgency=medium
 
   * Team upload

@@ -5,7 +5,7 @@ partman-auto/text/atomic_scheme ::
 	$reusemethod{ }
 	method{ biosgrub } .
 
-512 512 768 ext2
+768 800 1024 ext2
 	$iflabel{ sun }
 	$bootable{ }
 	method{ format }
