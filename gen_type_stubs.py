@@ -33,21 +33,21 @@ def main() -> None:
     stubgen = shutil.which("stubgen")
     if stubgen is None:
         fatal("stubgen not found in PATH - please install 'mypy'")
-    for py_file in ("di-live.d/common.py", debconf.__file__):
-        stubs_file = f"stubs/{basename(py_file)}i"
-        print(f"- '{stubs_file}'\t- regenerating type stub for {py_file}")
-        stubgen_proc = subprocess.run(
-            [stubgen, "--output=stubs", py_file],
-            capture_output=True,
-            text=True,
+    debconf_stub = f"stubs/{basename(debconf.__file__)}i"
+    print(
+        f"- '{debconf_stub}'\t- regenerating type stub for {debconf.__file__}"
+    )
+    stubgen_proc = subprocess.run(
+        [stubgen, "--output=stubs", debconf.__file__],
+        capture_output=True,
+        text=True,
+    )
+    if stubgen_proc.returncode != 0:
+        fatal(
+            f"type stub generation failed:\n{stubgen_proc.stdout.strip()}"
         )
-        if stubgen_proc.returncode != 0:
-            fatal(
-                f"type stub generation failed:\n{stubgen_proc.stdout.strip()}"
-            )
     # manually add Debconf methods used in di-live.py
     new_debconf_stub = []
-    debconf_stub = f"stubs/{basename(debconf.__file__)}i"
     with open(debconf_stub) as fob:
         in_debconf_cls = False
         for line in fob:
