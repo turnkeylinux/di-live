@@ -3,7 +3,7 @@
 
 import os
 
-from common import dilive_system, is_mounted
+from di_live_lib import dilive_system, is_mounted
 
 sys_paths = {
     "dev": 0o755,

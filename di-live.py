@@ -18,6 +18,7 @@ Options:
 """
 
 import getopt
+import logging
 import os
 import re
 import sys
@@ -26,13 +27,9 @@ from os.path import basename, exists, join
 from typing import NoReturn
 
 import debconf
+import di_live_lib
 
-LOGFILE = "/var/log/di-live.log"
-
-
-def log(s: str) -> None:
-    with open(LOGFILE, "a") as fob:
-        fob.write(s + "\n")
+logger = logging.getLogger(__name__)
 
 
 class Error(Exception):
@@ -251,17 +248,22 @@ def main() -> None:
 
     if debug:
         os.environ["DEBCONF_DEBUG"] = "developer"
-        os.environ["DEBIAN_FRONTEND"] = "readline"
+        #os.environ["DEBIAN_FRONTEND"] = "readline"
+        log_level = logging.DEBUG
     else:
         os.environ["DEBIAN_FRONTEND"] = "dialog"
+        log_level = logging.INFO
 
     # suppress creation of __pycache__ dir so it does not show in menu.
     os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
+
+    di_live_lib.setup_logging(log_level=log_level)
 
     components_dir = "/usr/lib/di-live.d"
     menu_template = "di-live/main_menu"
     menu_title = "Debian Installer Live"
 
+    logger.info("di-live starting...")
     Components_Menu(components_dir, menu_template, menu_title).run()
 
 

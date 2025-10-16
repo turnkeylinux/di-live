@@ -3,7 +3,12 @@
 
 import sys
 
-from common import TargetMounts, dilive_system, preset_debconf, target_mounted
+from di_live_lib import (
+    TargetMounts,
+    dilive_system,
+    preset_debconf,
+    target_mounted,
+)
 
 
 def main() -> None:

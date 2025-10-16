@@ -5,7 +5,7 @@ import os
 import shutil
 import signal
 
-from common import dilive_system, preset_debconf
+from di_live_lib import dilive_system, preset_debconf
 
 
 def kill_server(pidfile: str) -> None:

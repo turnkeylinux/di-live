@@ -1,6 +1,7 @@
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
-"""Common di-live functions and classes."""
+# Copyright (c) 2009-2025 TurnKey GNU/Linux <admin@turnkeylinux.org>
 
+import logging
 import os
 import subprocess
 import sys
@@ -8,13 +9,34 @@ from collections.abc import Sequence
 
 import debconf
 
-LOGFILE = "/var/log/di-live.log"
 PIPE = subprocess.PIPE
+LOG_FILE = "/var/log/di-live.log"
 
 
-def log(msg: str) -> None:
-    with open(LOGFILE, "a") as fob:
-        fob.write(f"{msg}\n")
+def setup_logging(
+    log_file: str = LOG_FILE,
+    log_level: int = logging.INFO,
+) -> logging.Logger:
+    """Configure di-live logging - call once per 'di-live.d/' script."""
+    logger = logging.getLogger()
+    # ensure no duplicate handlers - just in case...
+    if logger.handlers:
+        return logger
+    logger.setLevel(log_level)
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d"
+        " - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S"
+    )
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setLevel(log_level)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    return logger
+
+
+# module logger for these common functions/classes
+logger = logging.getLogger(__name__)
 
 
 class Chroot:
@@ -212,7 +234,6 @@ def system(
     command: str | list[str],
     shell: bool = False,
     stdout: int | None = None,
-    write_log: bool = True,
     env: dict[str, str] | None = None,
 ) -> None:
     """Execute command.
@@ -229,17 +250,15 @@ def system(
         raise ExecError(f"command is a list ({command}) but shell=True", 1)
     elif not shell and isinstance(command, str):
         raise ExecError(f"command is a string ({command}) but shell=False", 1)
-    log(f"Running command: {command}")
+    logger.info(f"Running command: {command}")
     run_command = subprocess.run(
         command, shell=shell, env=env, stderr=PIPE, stdout=stdout
     )
     if run_command.returncode != 0:
-        if write_log:
-            log(
-                f"Command {run_command.args}: Exit code"
-                f" {run_command.returncode}"
-                f"\nSTDERR: {run_command.stderr.decode()}"
-            )
+        logger.info(
+            f"Command {run_command.args}: Exit code {run_command.returncode}"
+            f"\n\tSTDERR: {run_command.stderr.decode()}"
+        )
         if isinstance(command, list):
             command = " ".join(command)
         raise ExecError(command, run_command.returncode)
@@ -257,7 +276,7 @@ def dilive_system(command: list[str]) -> None:
     try:
         system(command)
     except ExecError as e:
-        log(str(e))
+        logger.info(str(e))
         sys.exit(e.exitcode)
 
 

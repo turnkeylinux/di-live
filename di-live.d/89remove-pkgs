@@ -4,7 +4,7 @@
 
 import sys
 
-from common import PIPE, Chroot, DiliveDebconf, target_mounted
+from di_live_lib import PIPE, Chroot, DiliveDebconf, target_mounted
 
 pkgs_to_clean = [
     "di-live",
