@@ -12,7 +12,7 @@ DEBCONF_METHODS_TO_ADD = (
     # new line for debconf.pyi - line added will be:
     # f"   def {METHOD_TO_ADD}: ..."
     "capb(self, arg: str) -> None",
-    "metaget(self, arg1: str, arg2: str) -> None",
+    "metaget(self, arg1: str, arg2: str) -> str",
     "reset(self, arg: str) -> None",
     "subst(self, arg1: str, arg2: str, arg3: str) -> None",
     "input(self, arg1: str, arg2: str) -> None",
