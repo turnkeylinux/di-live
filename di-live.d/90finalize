@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 # Copyright (c) 2008 Alon Swartz <alon@turnkeylinux.org> - all rights reserved
 
+import logging
 from os.path import join, realpath
 
-from di_live_lib import PIPE, DiliveDebconf, system
+from di_live_lib import PIPE, DiliveDebconf, system, setup_logging
+
+logger = logging.getLogger(__name__)
 
 
 def deep_umount(target: str) -> None:
+    logger.debug(f"{__file__}.deep_umount({target})")
     system(["swapoff", "-a"])
     paths = []
     with open("/proc/mounts") as fob:
@@ -28,6 +32,7 @@ class DiliveFinish:
     finish of di-live"""
 
     def __init__(self) -> None:
+        logger.debug(f"{__file__}.DiliveFinish.__init__()")
         deep_umount("/target")
         self.db = DiliveDebconf(title="Finalize Install")
         self.is_install = self._is_install()
@@ -36,34 +41,46 @@ class DiliveFinish:
 
     def _is_install(self) -> bool:
         """Check if running from "Install" ISO boot option"""
+        debug = f"{__file__}.DiliveFinish._is_install()"
         with open("/proc/cmdline") as fob:
             if "di-live" in fob.read():
+                logger.debug(f"{debug} -> True")
                 return True
+        logger.debug(f"{debug} -> False")
         return False
 
     def _find_live_src(self) -> str:
         """Return the device (i.e. the XXX in /dev/XXX) which live-medium is
         running on, e.g. sr0"""
+        debug = f"{__file__}.DiliveFinish._find_live_src()"
+        logger.debug(f"{__file__}.DiliveFinish._find_live_src()")
         with open("/proc/mounts") as fob:
             for mount in fob.readlines():
                 if "run/live/medium" in mount and mount.startswith("/dev/"):
-                    return mount.split()[0][5:]
+                    live_src = mount.split()[0][5:]
+                    logger.debug(f"{debug} -> {live_src}")
+                    return live_src
+        logger.debug(f"{debug} -> ''")
         return ""
 
     @property
     def _is_usb(self) -> bool:
         """Check to see if the live medium device is a USB (eject will fail on
         a USB)"""
+        debug = f"{__file__}.DiliveFinish._is_usb()"
         device = str(realpath(join("/sys/block", self.live_dev)))
         if "usb" in device:
+            logger.debug(f"{debug} -> True")
             return True
         else:
+            logger.debug(f"{debug} -> False")
             return False
 
     def _get_template(self) -> str:
         """Decide which template to use when giving user options (only give
         option to 'Exit' if running live and eject hasn't previously been
         selected)."""
+        logger.debug(f"{__file__}.DiliveFinish._get_template()")
         if self.is_install:  # "install" option from ISO menu
             return "di-live/finalize_install"
         else:  # assume running live
@@ -71,11 +88,18 @@ class DiliveFinish:
 
     def cache(self) -> None:
         """Cache files & remount '/' read-only - show debconf progressbar"""
+        logger.debug(f"{__file__}.DiliveFinish.cache()")
+        dconf = f"{__file__}.DiliveFinish.db"
+        logger.debug(
+            f"{dconf}.progress_init(2, description='caching files etc')"
+        )
         self.db.progress_init(
             2, description="Caching files and remounting '/' read-only"
         )
+        logger.debug(f"{dconf}.progress_step(1)")
         self.db.progress_step(1)
-        system(["/usr/bin/live-medium-cache"], stdout=PIPE, write_log=False)
+        system(["/usr/bin/live-medium-cache"], stdout=PIPE)
+        logger.debug(f"{dconf}.progress_step(2)")
         self.db.progress_step(2)
         self.is_install = True
 

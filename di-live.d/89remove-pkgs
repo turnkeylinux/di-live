@@ -2,9 +2,18 @@
 # Copyright (c) 2019 TurnKey GNU/Linux <admin@turnkeylinux.org>
 # all rights reserved
 
+import logging
 import sys
 
-from di_live_lib import PIPE, Chroot, DiliveDebconf, target_mounted
+from di_live_lib import (
+    Chroot,
+    DiliveDebconf,
+    PIPE,
+    setup_logging,
+    target_mounted
+)
+
+logger = logging.getLogger(__name__)
 
 pkgs_to_clean = [
     "di-live",
@@ -16,6 +25,7 @@ pkgs_to_clean = [
 
 def clean_target_pkgs(*pkgs: str, path: str = "/target") -> None:
     """Clean up unrequired pkgs from installed system"""
+    logger.debug(f"{__file__}.clean_target_pkgs({pkgs=}, {path=})")
     chroot = Chroot(path)
     chroot.system(
         ["apt-get", "purge", "--autoremove", "-y", *pkgs], stdout=PIPE
@@ -24,7 +34,9 @@ def clean_target_pkgs(*pkgs: str, path: str = "/target") -> None:
 
 
 def main() -> None:
+    logger.debug(f"{__file__}.main()")
     if not target_mounted("/target"):
+        logger.debug(" ! '/target' not mounted")
         sys.exit(10)  # return to menu
     db = DiliveDebconf(title="Remove live packages")
     db.progress_init(
@@ -36,4 +48,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    setup_logging()
     main()

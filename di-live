@@ -40,16 +40,22 @@ class Debian_Priority:
     """class for controlling DEBIAN_PRIORITY"""
 
     def __init__(self) -> None:
+        logger.debug("Debian_Priority.__init__()")
         self.original = os.environ.get("DEBIAN_PRIORITY")
         self.current = self.original
+        logger.debug(f"Debian_Priority.original = '{self.original}'")
+        logger.debug(f"Debian_Priority.current = '{self.current}'")
 
     def __del__(self) -> None:
+        logger.debug("Debian_Priority.__del__()")
         self.revert()
 
     def get(self) -> str | None:
+        logger.debug(f"Debian_Priority.get() -> {self.current}")
         return self.current
 
     def set(self, priority: str | None) -> None:
+        logger.debug(f"Debian_Priority.set({priority=})")
         if priority in (None, self.current):
             return
 
@@ -58,14 +64,17 @@ class Debian_Priority:
             raise Error("illegal debian priority", priority)
 
         os.environ["DEBIAN_PRIORITY"] = priority
+        logger.debug(f"Debian_Priority.current = '{self.current}'")
         self.current = priority
 
     def revert(self) -> None:
         """revert priority back to original priority"""
+        logger.debug(f"Debian_Priority.revert() [{self.original=}]")
         self.set(self.original)
 
     def decrease(self) -> None:
         """decrease priority to medium (or low if original was low)"""
+        logger.debug("Debian_Priority.decrease()")
         if self.original == "low":
             self.set("low")
         else:
@@ -82,24 +91,31 @@ class Menu:
         priority: str = "high",
         subst: str = "CHOICES",
     ) -> None:
+        logger.debug(
+            f"Menu.__init__({template=}, {title=}, {priority=}, {subst=}"
+        )
         debconf.runFrontEnd()
         self.template = template
         self.db = debconf.Debconf(title)
 
         self.db.capb("backup")
+        logger.debug('Menu.db.capb("backup")')
         self.priority = priority
         self.subst = subst
 
     def __del__(self) -> None:
+        logger.debug("Menu.__del__()")
         self.db.stop()
 
     def display(self, names: list[str]) -> None:
+        logger.debug(f"Menu.display({names=})")
         titles = []
         self.choices = {}
         for name in names:
             title = name.capitalize()
             try:
                 template = f"debian-installer/{name}/title"
+                logger.debug(f'Menu.db.metaget({template}, "description")')
                 title = self.db.metaget(template, "description")
             except debconf.DebconfError as e:
                 if not e.args[0] == 10:
@@ -108,19 +124,29 @@ class Menu:
             titles.append(title)
             self.choices[title] = name
 
+        logger.debug(f"Menu.db.reset({self.template})")
         self.db.reset(self.template)
+        logger.debug(
+            f"Menu.db.subst('{self.template}', '{self.subst}',"
+            f" '{', '.join(titles)}')"
+        )
         self.db.subst(self.template, self.subst, ", ".join(titles))
+        logger.debug(f"Menu.db.input({self.priority}, {self.template})")
         self.db.input(self.priority, self.template)
         try:
+            logger.debug("Menu.db.go()")
             self.db.go()
         except debconf.DebconfError as e:
             if not e.args[0] == 30 and not e.args[1] == "backup":
                 raise Error("debconf error", e) from e
 
     def get_choice(self) -> str:
+        logger.debug("Menu.get_choice()")
         ret = self.db.get(self.template)
         if ret in self.choices:
+            logger.debug(f"Menu.get_choice() -> {self.choices[ret]}")
             return self.choices[ret]
+        logger.debug(f"Menu.get_choice() -> {ret}")
         return ret
 
 
@@ -128,12 +154,17 @@ class Component:
     """class for managing a component"""
 
     def __init__(self, path: str) -> None:
+        logger.debug(f"Component.__init__({path=})")
         self.path = path
         self.name = re.sub(r"^[\d]*", "", basename(path))
+        logger.debug(f"Component.name = {self.name}")
         self.exitcode: int | None = None
+        logger.debug(f"Component.exitcode = {self.exitcode}")
 
     def execute(self) -> bool:
+        logger.debug(f"Component.execute() ['{self.path}']")
         error = os.system(self.path)
+
         if error:
             self.exitcode = os.WEXITSTATUS(error)
             return False
@@ -149,6 +180,7 @@ class Components(dict):
     path: str
 
     def __init__(self, dirpath: str) -> None:
+        logger.debug(f"Component.__init__({dirpath=})")
         if not exists(dirpath):
             raise Error("non existent components path", dirpath)
 
@@ -159,25 +191,33 @@ class Components(dict):
 
     def __iter__(self) -> Iterator[Component]:
         """return component in alpha-numeric ordering according to name"""
+        logger.debug("Component.__iter__()")
         keys = list(self.keys())
         keys.sort()
         for key in keys:
+            logger.debug(f"Component.__iter__() -> '{key}'")
             yield self[key]
 
     @staticmethod
     def _is_executable(path: str) -> bool:
+        debug = f"Component._is_executable({path=})"
         if os.stat(path).st_mode & 0o111 == 0:
+            logger.debug(f"{debug} -> False")
             return False
+        logger.debug(f"{debug} -> True")
         return True
 
     def add(self, path: str) -> None:
+        logger.debug(f"Component.add({path=})")
         if not self._is_executable(path):
             raise Error("component not executable", path)
 
         name = basename(path)
+        logger.debug(f"Component.self[{name}] = Component({path=})")
         self[name] = Component(path)
 
     def remove(self, name: str) -> None:
+        logger.debug(f"Component.remove({name=})")
         del self[name]
 
 
@@ -190,27 +230,35 @@ class Components_Menu:
         menu_template: str,
         menu_title: str | None = None,
     ) -> None:
+        logger.debug(
+            f"Components_Menu.__init__({components_dir=}, {menu_template=},"
+            f" {menu_title=})"
+        )
         self.components = Components(components_dir)
         self.menu = Menu(menu_template, menu_title)
 
         self.priority = Debian_Priority()
 
     def _get_next_component(self) -> Component | None:
+        debug = "Components_Menu._get_next_component()"
         if self.priority.get() in ("low", "medium"):
             self.menu.display([c.name for c in self.components])
             choice = self.menu.get_choice()
 
             for c in self.components:
                 if c.name == choice:
+                    logger.debug(f"{debug} -> {c}")
                     return c
         else:
             for c in self.components:
                 if basename(c.path) > self.last:
+                    logger.debug(f"{debug} -> {c}")
                     return c
-
+        logger.debug(f"{debug} -> None")
         return None
 
     def run(self) -> None:
+        logger.debug("Components_Menu.run()")
         self.last = ""
         while 1:
             component = self._get_next_component()
