@@ -3,7 +3,7 @@
 
 from os.path import join, realpath
 
-from common import PIPE, DiliveDebconf, system
+from di_live_lib import PIPE, DiliveDebconf, system
 
 
 def deep_umount(target: str) -> None:
