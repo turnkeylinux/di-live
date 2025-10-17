@@ -17,7 +17,9 @@ Build-Depends:
  libparted-dev (>= 2.2),
  pkg-config,
  po-debconf (>= 1.0),
+ python3 (>= 3.11~),
 Standards-Version: 4.0.0
+X-Python-Version: >= 3.11
 
 Package: di-live
 Architecture: any
@@ -34,6 +36,7 @@ Depends:
  live-tools,
  ${misc:Depends},
  ${shlibs:Depends},
+ ${python3:Depends},
 Recommends:
  eject,
  file,

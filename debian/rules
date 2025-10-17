@@ -1,6 +1,7 @@
 #! /usr/bin/make -f
 
-BOOTLOADER_DEPENDS := grub-pc
+BOOTLOADER_DEPENDS := grub-pc | grub-efi-amd64 | grub-efi-amd64-signed
+export PYTHONDONTWRITEBYTECODE=1
 
 %:
 	dh $@

@@ -8,5 +8,13 @@ description = "Debian Installer for Live systems"
 [project.urls]
 Homepage = "https://github.com/turnkeylinux/di-live"
 
+[tool.setuptools]
+packages = ["di_live_lib"]
+script-files = ["di-live"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+di_live_lib = ["py.typed"]
+
 [tool.mypy]
 mypy_path = ["stubs"]
