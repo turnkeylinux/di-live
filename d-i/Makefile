@@ -8,8 +8,9 @@ build:
 	done
 
 install:
+	# (cd $$package && debian/rules binary && rm -rf debian/*/DEBIAN) || exit 1;
 	for package in $(SOURCEDIR)/*; do \
-		(cd $$package && debian/rules binary && rm -rf debian/*/DEBIAN) || exit 1; \
+		(cd $$package && debian/rules binary ) || exit 1; \
 	done
 	mkdir -p udeb-control
 	for udeb in $(SOURCEDIR)/*.udeb; do \
@@ -32,7 +33,7 @@ clean:
 			(cd "$$dir" && debian/rules clean) || exit 1; \
 		fi; \
 	done
-	rm -f $(SOURCEDIR)/*.deb $(SOURCEDIR)/*.udeb
-	rm -rf udeb-control templates
+	#rm -f $(SOURCEDIR)/*.deb $(SOURCEDIR)/*.udeb
+	#rm -rf udeb-control templates
 
 .PHONY: clean build install
